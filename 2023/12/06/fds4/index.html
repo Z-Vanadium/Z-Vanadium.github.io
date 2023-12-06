@@ -186,6 +186,7 @@
 
 <p>可以看到，这是一道图的题目，要求我们找到节点 S 到 D 的<strong>最短路径</strong>，存在多条最短路径时，输出<strong>收费最低</strong>的。</p>
 <h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>不难想到，这是一道<strong>双条件最短路径</strong>问题，解决此类问题，我们常用<strong>Dijkstra算法</strong>或<strong>Floyd算法</strong>，这里由于是<strong>单源对单源</strong>，我们选用时间复杂度上更优的 Dijkstra 算法。</p>
+<span id="more"></span> 
 <pre><code class="c">    scanf(&quot;%d %d %d %d&quot;,&amp;N,&amp;M,&amp;S,&amp;D);
     int i,j,V;
     for(i=0;i&lt;N;++i)

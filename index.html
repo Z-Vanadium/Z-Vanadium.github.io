@@ -193,260 +193,6 @@
 <h1 id="叔本华说：“人的欲望得不到满足就痛苦，得到了就无聊。人生就是在痛苦和无聊中摇摆。”"><a href="#叔本华说：“人的欲望得不到满足就痛苦，得到了就无聊。人生就是在痛苦和无聊中摇摆。”" class="headerlink" title="叔本华说：“人的欲望得不到满足就痛苦，得到了就无聊。人生就是在痛苦和无聊中摇摆。”"></a><strong>叔本华说：“人的欲望得不到满足就痛苦，得到了就无聊。人生就是在痛苦和无聊中摇摆。”</strong></h1></blockquote>
 <p>万物为之所用，但不归我们所有，看清了事物的本质，得到与失去，痛苦与无聊就不会显得那么难以理解，不困于物，不乱于心，我们应该学会用心去创造，而不是费尽心思地去占有。</p>
 <p>选择排序算法亦是如此。$O(N^2)$排序算法有时并不比$O(NlogN)$差，哪个更优取决于我们内心的呼唤。</p>
-<h1 id="0-O-N-2-系列排序"><a href="#0-O-N-2-系列排序" class="headerlink" title="0. $O(N^2)$系列排序"></a>0. $O(N^2)$系列排序</h1><p>冒泡排序 | 谁说冒泡排序不算英雄？</p>
-<pre><code class="c">#define ElementType int
-
-void swap(ElementType* x, ElementType* y)&#123;
-    ElementType tmp;
-    tmp = *x;
-    *x = *y;
-    *y = tmp;
-&#125;
-
-void BubbleSort(ElementType array[], int n)&#123;
-    int p,i;
-    for(p=1;p&lt;n;++p)&#123;
-        for(i=0;i&lt;n-p;++i)&#123;
-            if(array[i]&gt;array[i+1])&#123;
-                swap(array+i,array+i+1);
-            &#125;
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-<p>插入排序</p>
-<pre><code class="c">#define ElementType int
-
-void InsertionSort(ElementType array[], int n)&#123;
-    int p,i;
-    ElementType tmp;
-    for(p=1;p&lt;n;++p)&#123;
-        tmp = array[p];
-        i=p;
-        while(i&gt;0 &amp;&amp; array[i-1]&gt;tmp)&#123;
-            array[i] = array[i-1];
-            --i;
-        &#125;
-        array[i] = tmp;
-    &#125;
-&#125;
-</code></pre>
-<p>希尔排序 | 以凡人之躯比肩神明，极强的实际应用效率</p>
-<pre><code class="c">void ShellSort(ElementType array[], int n)&#123;
-    int Sedgewick[] = &#123;929,505,209,109,41,19,5,1,0&#125;;
-    int s,d;
-    s=0;
-    while(Sedgewick[s]&gt;n)   ++s;
-    int p,i;
-    ElementType tmp;
-    for(d=Sedgewick[s];d&gt;0;d=Sedgewick[++s])
-        for(p=d;p&lt;n;++p)&#123;
-            tmp = array[p];
-            i=p;
-            while(i&gt;=d &amp;&amp; array[i-d]&gt;tmp)&#123;
-                array[i] = array[i-d];
-                i-=d;
-            &#125;
-            array[i] = tmp;
-        &#125;
-&#125;
-</code></pre>
-<h1 id="1-O-NlogN-系列排序-数学理论的极限到此为止了"><a href="#1-O-NlogN-系列排序-数学理论的极限到此为止了" class="headerlink" title="1. $O(NlogN)$系列排序 | 数学理论的极限到此为止了"></a>1. $O(NlogN)$系列排序 | 数学理论的极限到此为止了</h1><p>堆排序 | 一种结构养活一种算法，优秀的原地排序算法</p>
-<pre><code class="c">void swap(ElementType* x, ElementType* y)&#123;
-    ElementType tmp;
-    tmp = *x;
-    *x = *y;
-    *y = tmp;
-&#125;
-
-void HeapSort(ElementType array[], int n)&#123;
-    int i;
-    for(i=1;i&lt;n;++i)&#123;
-        int parent,child;
-        child = i;
-        parent = (child-1)/2;
-        while(parent&gt;=0)&#123;
-            if(array[child] &gt; array[parent])&#123;
-                swap(array+child, array+parent);
-                child = parent;
-                parent = (child-1)/2;
-            &#125;
-            else    break;
-        &#125;
-    &#125;
-    for(i=0;i&lt;n;++i)    printf(&quot;%d &quot;,array[i]); printf(&quot;\n&quot;);
-    for(i=n-1;i&gt;0;--i)&#123;
-        swap(array+0,array+i);
-        int parent,child;
-        parent = 0;
-        child = 2*parent+1;
-        while(child&lt;i)&#123;
-            if(child+1 &lt; i &amp;&amp; array[child+1] &gt; array[child])   ++child;
-            if(array[parent]&lt;array[child])&#123;
-                swap(array+parent, array+child);
-            &#125;    
-            parent = child;
-            child = 2*parent+1;
-        &#125;
-        
-    &#125;
-&#125;
-</code></pre>
-<p>归并排序 | 最喜欢的排序，小时候写这个的时候全村抗洪</p>
-<pre><code class="c">#define ElementType int
-
-void merge(ElementType array[],ElementType assist[],int start,int end)&#123;
-    int i,j,k,mid;
-    mid = (start+end)/2;
-    i = k = start;
-    j = mid+1;
-    while(i&lt;=mid &amp;&amp; j&lt;=end)&#123;
-        if(array[i]&lt;array[j])   assist[k++] = array[i++];
-        else    assist[k++] = array[j++];
-    &#125;
-    while(i&lt;=mid)   assist[k++] = array[i++];
-    while(j&lt;=end)   assist[k++] = array[j++];
-
-    for(i=0;i&lt;=end;++i) array[i] = assist[i];
-&#125;
-
-void MergeSort_(ElementType array[], ElementType assist[], int start, int end)&#123;
-    int mid;
-    if(start&lt;end)&#123;
-        mid = (start+end)/2;
-        MergeSort_(array,assist,start,mid);
-        MergeSort_(array,assist,mid+1,end);
-        merge(array,assist,start,end);
-    &#125;
-&#125;
-
-void MergeSort(ElementType array[], int n)&#123;
-    ElementType* assist = malloc(sizeof(ElementType)*n);
-    MergeSort_(array,assist,0,n-1);
-    free(assist);
-&#125;
-</code></pre>
-<p>快速排序 | 实际应用最广的排序，但一不小心就退化成慢速排序了</p>
-<pre><code class="c">void swap(ElementType* x, ElementType* y)&#123;
-    ElementType tmp;
-    tmp = *x;
-    *x = *y;
-    *y = tmp;
-&#125;
-
-void Qsort(ElementType array[],int left,int right)&#123;
-    if(left&gt;=right) return;
-    int low,high,key;
-    low = left;
-    high = right;
-    key = left;
-    while(low&lt;high)&#123;
-        while(low&lt;high &amp;&amp; array[key]&lt;=array[high])  --high;
-        while(low&lt;high &amp;&amp; array[low]&lt;=array[key])   ++low;
-        swap(array+low,array+high);
-    &#125;
-    swap(array+key,array+high);
-    key = high;
-    Qsort(array,left,key-1);
-    Qsort(array,key+1,right);
-&#125;
-
-void QuickSort(ElementType array[], int N)&#123;
-    Qsort(array,0,N-1);
-&#125;
-</code></pre>
-<h1 id="2-O-N-系列排序-神是没有极限的"><a href="#2-O-N-系列排序-神是没有极限的" class="headerlink" title="2. $O(N)$系列排序 | 神是没有极限的"></a>2. $O(N)$系列排序 | 神是没有极限的</h1><p>桶排序 | 范围内的王者</p>
-<pre><code class="c">#include&lt;stdlib.h&gt;
-#define LOW 1
-#define HIGH 10
-
-void BucketSort(int array[],int N)&#123;
-    int* cnts = (int*)malloc(sizeof(int)*(HIGH-LOW+1));
-    int len = HIGH - LOW + 1;
-    int i;
-    for(i=0;i&lt;len;++i)  cnts[i] = 0;
-    for(i=0;i&lt;N;++i)    ++cnts[array[i]];
-    int cur;
-    cur=0;
-    for(i=0;i&lt;len;++i)&#123;
-        int tmp = cnts[i];
-        while ((tmp&gt;0))&#123;
-            array[cur] = i;
-            --tmp;
-            ++cur;
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-<p>基数排序 | 桶排序升级版，那么代价是什么</p>
-<pre><code class="c">#include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt;
-#define MAXDIGIT 3
-#define RADIX 10
-
-typedef struct Node *PtrToNode;
-struct Node&#123;
-    int key;
-    PtrToNode next;
-&#125;;
-struct HeadNode&#123;
-    PtrToNode head,tail;
-&#125;;
-typedef struct HeadNode Bucket[RADIX];
-
-int GetDigit(int val,int digit)&#123;
-    int ret;
-    while(digit)&#123;
-        --digit;
-        ret = val%RADIX;
-        val /= RADIX;
-    &#125;
-    return ret;
-&#125;
-
-void MSDSort(int array[],int L, int R, int D)&#123;
-    int Di,i,j;
-    Bucket B;
-    PtrToNode tmp,p,List = NULL;
-    if(D==0)    return;
-    for(i=0;i&lt;RADIX;++i)    B[i].head = B[i].tail = NULL;
-    for(i=L;i&lt;=R;++i)&#123;
-        tmp = (PtrToNode)malloc(sizeof(struct Node));
-        tmp-&gt;key = array[i];
-        tmp-&gt;next = List;
-        List = tmp;
-    &#125;
-    p = List;
-    while(p)&#123;
-        Di = GetDigit(p-&gt;key,D);
-        tmp = p;
-        p = p-&gt;next;
-        if(B[Di].head == NULL)  B[Di].tail = tmp;
-        tmp-&gt;next = B[Di].head;
-        B[Di].head = tmp;
-    &#125;
-    i = j = L;
-    for(Di=0;Di&lt;RADIX;++Di)&#123;
-        if(B[Di].head)&#123;
-            p = B[Di].head;
-            while(p)&#123;
-                tmp = p;
-                p = p-&gt;next;
-                array[j++] = tmp-&gt;key;
-                free(tmp);
-            &#125;
-            MSDSort(array,i,j-1,D-1);
-            i = j;
-            
-        &#125;
-    &#125;
-&#125;
-
-void RadixSort(int array[], int N)&#123;
-    MSDSort(array,0,N-1,MAXDIGIT);
-&#125;
-</code></pre>
-
             
         </div>
     </div>
@@ -494,75 +240,6 @@ void RadixSort(int array[], int N)&#123;
 <li><p><strong>最小</strong>，意思是路径最短，或者根据题目要求，某项或某几项最小。</p>
 </li>
 </ul>
-<p>因此，最小生成树问题即可翻译为<strong>从图中选出 N-1 条边使 N 个节点构成一棵树，并且使这棵树满足某一个特定权重最小的条件。</strong></p>
-<h1 id="1-两种算法-归与并"><a href="#1-两种算法-归与并" class="headerlink" title="1. 两种算法 | 归与并"></a>1. 两种算法 | 归与并</h1><p>根据 MST 的定义，我们可以构思出两种解决这个问题的方法，分别是归和并两种方法。<del>（这个名字是作者自己瞎起的）</del></p>
-<p>按照我们所学的知识，和树有关的概念有哪些？<strong>节点</strong>，和<strong>森林</strong>。</p>
-<p>因此，如果我们想要生成一棵最小的树，我们可以考虑<strong>由节点生成</strong>，和<strong>由森林退化</strong>两个角度——也就是归与并。</p>
-<p>当然，我们想到这两点是远不足以获得Turing奖的，因为Prim与Kruskal两个人老早就提出了这两种算法，同时还以自己的名字命好了名。</p>
-<h1 id="2-小树快快长-Prim算法"><a href="#2-小树快快长-Prim算法" class="headerlink" title="2. 小树快快长 | Prim算法"></a>2. 小树快快长 | Prim算法</h1><p>Prim算法是节点生成树。</p>
-<p>首先，从图中任选一个节点S作为MST的根节点。然后，每一次循环都分别从MST的每一个节点出发，寻找一条满足路径最短且不会使MST构成环的边，加入到MST中。当已经寻找到 N-1 条边或找不到满足上述这样条件的边时，循环结束。</p>
-<p>通俗一点就是，Prim算法是先有了一棵MST，然后通过生长的方式把其他节点依次加入进去。</p>
-<p><strong>伪代码</strong>描述如下：</p>
-<pre><code>Prim(S)&#123;
-    new MST;
-    MST.putin(S);
-    while(True)&#123;
-        V = 路径最短且不会使MST构成环;
-        E = 路径最短且不会使MST构成环的边;
-        if( MST.size == N-1 or V == NULL)&#123;
-            break;
-        &#125;
-        MST.putin(V,E);
-    &#125;
-    return MST;
-&#125;
-</code></pre>
-<p>可以看到，伪代码的叙述是十分简洁易懂的<del>（这是作者基于C&#x2F;Python&#x2F;Java发明的新语言！）</del>，但是我们在实现的时候需要考虑一些至关重要的问题。</p>
-<ul>
-<li><p>Q：我们一定要实现一个MST吗？</p>
-</li>
-<li><p>A：当然不需要，在绝大多数问题中，我们只需要一个parent数组来表示某节点的父亲就可以了（同时我们需要一个集合判断某个节点是否属于MST）</p>
-</li>
-<li><p>Q：如何实现寻找V和E的操作？</p>
-</li>
-<li><p>A：首先是路径最短，我们可以直接遍历图的每一条边，也可以以最小堆的形式储存图，也可以先对边按权重为关键字排序，这个任君选择；其次是不会使MST构成环，这个也简单，只要该边的终点节点不属于MST即可。</p>
-</li>
-<li><p>Q：一定有MST吗？</p>
-</li>
-<li><p>A：如果题目没有担保，那就不一定，最后可以根据MST.size()的值判断是否得到的是MST。</p>
-</li>
-</ul>
-<h1 id="3-森林会记住一切-Kruskal算法"><a href="#3-森林会记住一切-Kruskal算法" class="headerlink" title="3. 森林会记住一切 | Kruskal算法"></a>3. 森林会记住一切 | Kruskal算法</h1><p>Kruskal算法是森林生成树。</p>
-<p>首先，算法将图中所有节点视作一棵树<del>（孤零零的也很可爱捏）</del>，这样算法就可以简化为考虑树与树连接成MST了。然后，寻找权重最小，且不会产生连通的边加入到MST中，当已经寻找到 N-1 条边或找不到满足上述这样条件的边时，循环结束。</p>
-<p>相对于Prim算法，Kruskal算法更加容易理解。就是用能用的最短边来连接图中的两棵树，最后把所有已有的树连接成一棵MST。</p>
-<p>依然是伪代码，描述如下：</p>
-<pre><code>Kruskal()&#123;
-    new MST;
-    while(True)&#123;
-        E = 路径最短且不会使MST构成环的边;
-        V, W = E的出发节点的终点节点;
-        if( MST.size == N-1 or V == NULL)&#123;
-            break;
-        &#125;
-        MST.putin(E)
-    &#125;
-    return MST;
-&#125;
-</code></pre>
-<p>可以看到，Kruskal算法与Prim算法是很类似的，当然同样有一些关键问题要回答。</p>
-<ul>
-<li><p>Q1：如何寻找权重最短的边？</p>
-</li>
-<li><p>A1：同上，我们也有三种办法，分别是直接遍历，最小堆，先对边按权重为关键字排序。</p>
-</li>
-<li><p>Q2：如何判断是否会构成环？</p>
-</li>
-<li><p>A2：有且仅有一种情况会构成环，那就是V和W都是某棵树的节点，因此我们只需要判断V和W是不是属于同一棵树即可，实现时我们可以定义root数组，储存每一个节点的根节点，当然，初始化为自己，表示一棵只有一个根节点的树。</p>
-</li>
-</ul>
-<h1 id="4-算法本质-九九归一"><a href="#4-算法本质-九九归一" class="headerlink" title="4. 算法本质 | 九九归一"></a>4. 算法本质 | 九九归一</h1><p>不管是Prim算法还是Kruskal算法，其本质都是贪心算法。可以证明，每一步贪心最后可以得到最优解。</p>
-<p>具体实现的代码就不给了，<del>主要是作者实在懒得写</del>，而且没有伪代码可读性和移植性强，等到刷题的时候，有机会再贴上来吧^_^</p>
-
             
         </div>
     </div>
@@ -605,29 +282,6 @@ void RadixSort(int array[], int N)&#123;
 <p>学下来唯一的感觉就是：快。</p>
 <p>这种快一半是教学进度之快，一半是学习速度之快。</p>
 <p>在中国大学MOOC平台上，陈越、何钦明老师的数据结构课程总共分为 12 周，目前进行至第 8 周，但是已经讲到了最小生成树和拓扑排序（虽然这些知识对于洪神来说小菜一碟） <a href="23%E7%BA%A7%E4%BF%A1%E5%AE%89%E5%BE%AE%E4%BF%A1%E7%BE%A4%E7%BE%A4%E4%B8%BB%EF%BC%8C%E5%89%8DOIer%EF%BC%8C%E5%9B%BD%E9%87%91%E5%AE%9E%E5%8A%9B%EF%BC%8C%E5%90%8E%E5%9B%A0%E7%94%9F%E6%B4%BB%E9%80%80%E5%BD%B9%E3%80%82">^洪神</a>   。</p>
-<img scr="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/640%20(2).png">
-
-<p>简单梳理一下目前为止都讲了些什么吧。</p>
-<p>第 1 周，<strong>数据结构的概念和算法的概念</strong>。</p>
-<p>第 2 周，<strong>线性结构、堆栈和队列</strong>。由于学过C程，数据结构略去了数组和链表，直接介绍了堆栈和队列，但是目前为止这些东西对于高中选课包含技术的同学来说都还是很简单的。</p>
-<p>第 3-5 周，<strong>树</strong>。按照树、二叉树及其遍历、BST、AVL树、堆、Huffman树，最后是并查集的思路展开。</p>
-<p>第 6-8 周，<strong>图</strong>。按照图、图的表示、BFS和DFS、最短路径、最小生成树和拓扑排序展开。这些内容就涉及到了一些经典算法的学习了。</p>
-<img scr="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/640%20(3).png">
-
-<p>然而经典算法之所以是经典算法，其原因并不仅仅在于其优秀的问题解决能力，更在于后人一次次地修补优化，这也就导致很多同学（包括我）学习这些算法时，经常觉得“这也太超出常理了吧，怎么想的？”，但是当你仔细研读之后，你会稍稍理解，但还是不忍直呼“妙！”。</p>
-<p>不过，可惜的是，不论你怎么怎么和经典算法产生共鸣，当你上机尝试时，<strong>90% 的概率一行代码都写不出来，99% 的概率程序就是跑不出正确结果，一直WAWAWAWA。</strong></p>
-<p>这种情况尤其频繁地发生在图这一章。</p>
-<p>由于图的抽象性和复杂性，涉及图的算法常常也是抽象且复杂的。例如最短路径中的 Dijstra 算法，初学时你可能很难很难理解基点节点的作用和缘由，以及好奇这个算法<strong>为什么</strong>就能得到单源最短路径。</p>
-<p>当然，在你学的够多（比如达到洪神知识储备的 1%）时，你会明白贪心，你会去搜集这个算法背后数学证明的文献，但是，<strong>你现在学的不够多。</strong></p>
-<p>很多课程有一个劝退点，数据结构也不例外，我肤浅的认为，图就是这门课的劝退点，当然也是一个升华点——理解图的算法原理后，这门课就学透了。</p>
-<p>如何熬过这样一个瓶颈期呢？一个最显然的方法，或者说最高中的方法，就是<strong>刷题</strong>，从模板题开始，一题一题来，别复制粘贴，加个条件，加大数据规模，反正就是多角度的去刷经典题。</p>
-<p>我是有一点点 OI 经历的，虽然菜到不配参加比赛。我短暂的 OI 经历告诉我，想学透一个算法，唯一的办法就是<strong>多写、多刷、多错。</strong></p>
-<p>依旧以 Dijstra 算法为例吧，作为入门级的最短路径算法，他其实有很多很多变形，但是再怎么变，依旧逃不了 BFS 和贪心的本质，但这不是我在哪本书里看来，或是哪节课上听来的，这是<strong>我多年浅薄的和算法打交道的经历让我顿悟的</strong>。</p>
-<p>当然，编程这个领域不好的点就在于你能<strong>太容易</strong>地接触到大佬了，比如<strong>洪神</strong>，因此你很容易陷入自我否定和怀疑，但是请不要过分地怀疑，或者说，请尽早走出怀疑，<strong>所有大佬都是从小白成长而来的。</strong></p>
-<p>不过呢，现在说这些还是有些早。</p>
-<p>而且很大一部分工信的同学也不用修学这么硬核的课程（据我所知，学习数据结构的大概就计科、信安和软工）。</p>
-<p>但是很多东西都是有共性的，听者权当作者博君一笑吧！</p>
-
             
         </div>
     </div>
@@ -641,12 +295,12 @@ void RadixSort(int array[], int N)&#123;
         
         <span class="tag">
             
-            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #ffa2c4">碎碎念</a>
+            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #39c5bb">碎碎念</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
+            <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
         </span>
         
     </div>
@@ -675,106 +329,6 @@ void RadixSort(int array[], int N)&#123;
 
 <p>可以看到，这是一道图的题目，要求我们找到节点 S 到 D 的<strong>最短路径</strong>，存在多条最短路径时，输出<strong>收费最低</strong>的。</p>
 <h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>不难想到，这是一道<strong>双条件最短路径</strong>问题，解决此类问题，我们常用<strong>Dijkstra算法</strong>或<strong>Floyd算法</strong>，这里由于是<strong>单源对单源</strong>，我们选用时间复杂度上更优的 Dijkstra 算法。</p>
-<pre><code class="c">    scanf(&quot;%d %d %d %d&quot;,&amp;N,&amp;M,&amp;S,&amp;D);
-    int i,j,V;
-    for(i=0;i&lt;N;++i)
-        for(j=0;j&lt;N;++j)&#123;
-            dist[i][j] = -1;
-            cost[i][j] = -1;
-        &#125;
-    for(i=0;i&lt;M;++i)&#123;
-        int x,y,d,c;
-        scanf(&quot;%d %d %d %d&quot;,&amp;x,&amp;y,&amp;d,&amp;c);
-        dist[x][y] = d;
-        dist[y][x] = d;
-        cost[x][y] = c;
-        cost[y][x] = c;
-    &#125;
-</code></pre>
-<p>程序输入部分，我们采用邻接矩阵储存图，除了分别用 dist 和 cost 两个邻接矩阵储存图，我们也可以定义结构体矩阵来储存，对于这道题，两者并无优劣。</p>
-<p>由于我们选用了 Dijkstra 算法，我们需要：</p>
-<p>再定义一个数组 distance[V] ，<strong>储存源点节点 S 到 节点V 的最短路径</strong>（初始化为 INF）；</p>
-<p>一个数组 money[V] ，<strong>储存源点节点 S 到节点 V 在保证路径最短的情况下的最少花费</strong>（初始化为 INF）；</p>
-<p>以及一个数组 visited[V] ，表示<strong>节点 V 是否已经确定为路径最短的节点。</strong></p>
-<pre><code class="c">    for(i=0;i&lt;N;++i)&#123;
-        distance[i] = INF;
-        money[i] = INF;
-        visited[i] = 0;
-    &#125;
-</code></pre>
-<p>做完这么多准备工作，我们可以开始书写 Dijkstra 算法了。</p>
-<p>Dijkstra 算法可以描述为：</p>
-<p>对图进行 N-1 次遍历，其中每一次都会<strong>提前</strong>确定一个<strong>基点节点 baseV</strong>（最开始是源点 S），并对所有节点进行遍历，对于其中每个节点 V 做如下判断：若<strong>该节点 V 未被确定为路径最短节点，且从源点 S 到基点节点 baseV 的最短距离加上基点节点 baseV 到该节点 V 的距离小于 源点 S 到该节点 V 的最短距离</strong>，就更新之；然后再次遍历所有节点，选取未被确定为路径最短，并且目前距离源点 S 最近的的节点作为新的 baseV 下一次循环。</p>
-<p>这个算法看起来很抽象，实则可以理解为 BFS 和贪心的结合体。</p>
-<p>每次遍历进行一次 BFS，贪心选取距离源点最近的节点作为基点，再借助这个基点节点<strong>更新其他节点的最短距离</strong>（术语称之为<strong>松弛</strong>），循环往复 N-1 次即可获得答案。</p>
-<p>剩余代码如下：</p>
-<pre><code class="c">int baseV;
-    baseV = S;
-
-    visited[S] = 1;
-    distance[S] = 0;
-    money[S] = 0;
-    
-    for(i=0;i&lt;N-1;++i)&#123;
-        for(V=0;V&lt;N;++V)&#123;
-            if(visited[V] == 0 &amp;&amp; dist[baseV][V]&gt;0 &amp;&amp; (distance[baseV] + dist[baseV][V] &lt; distance[V]))&#123;
-                distance[V] = distance[baseV] + dist[baseV][V];
-                money[V] = money[baseV] + cost[baseV][V];
-            &#125;
-        &#125;
-
-        int min;
-        min = INF;
-
-        for(V=0;V&lt;N;++V)&#123;
-            if(visited[V] == 0 &amp;&amp; distance[V]  &lt; min )&#123;
-                min = distance[V];
-                baseV = V;
-            &#125;
-        &#125;
-        visited[baseV] = 1;
-    &#125;        
-
-    
-    printf(&quot;%d %d&quot;,distance[D],money[D]);
-</code></pre>
-<p>但是这个程序连样例点都过不了，为什么？</p>
-<p>因为题目要求我们，在有多条最短路径时，找到花费最少的，换言之就是在<strong>从源点 S 到基点节点 baseV 的最短距离加上基点节点 baseV 到该节点 V 的距离等于 源点 S 到该节点 V 的最短距离时，根据花费的变化决定是否进行更新。</strong></p>
-<p>改进如下：</p>
-<pre><code class="c">    int baseV;
-    baseV = S;
-
-    visited[S] = 1;
-    distance[S] = 0;
-    money[S] = 0;
-    
-    for(i=0;i&lt;N-1;++i)&#123;
-        for(V=0;V&lt;N;++V)&#123;
-            if(visited[V] == 0 &amp;&amp; dist[baseV][V]&gt;0 &amp;&amp; (distance[baseV] + dist[baseV][V] &lt; distance[V])
-            ||(distance[baseV] + dist[baseV][V] == distance[V] &amp;&amp; money[V] &gt; money[baseV] + cost[baseV][V]))&#123;
-                distance[V] = distance[baseV] + dist[baseV][V];
-                money[V] = money[baseV] + cost[baseV][V];
-            &#125;
-        &#125;
-
-        int min;
-        min = INF;
-
-        for(V=0;V&lt;N;++V)&#123;
-            if(visited[V] == 0 &amp;&amp; distance[V]  &lt; min )&#123;
-                min = distance[V];
-                baseV = V;
-            &#125;
-        &#125;
-        visited[baseV] = 1;
-    &#125;        
-    
-    printf(&quot;%d %d&quot;,distance[D],money[D]);
-</code></pre>
-<p>此时提交，美美AC。<br><img scr="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/640%20(1).png"></p>
-<h1 id="写在后面："><a href="#写在后面：" class="headerlink" title="写在后面："></a>写在后面：</h1><p>观察可知，Dijkstra 算法的时间复杂度为O(N^2)，这是一个很慢的速度，在ACM竞赛中必然 TLE，因此我们会考虑对其进行堆优化。</p>
-<p>具体思路就是利用堆储存邻接矩阵，这样可以降低寻找离源点最近的节点时的复杂度，C++自带的 stl 提供了堆 priority_queue，同时在「手写」二叉堆的情况下，时间复杂度可以降低到 O(NlogN)。<del>（不过应该没人会手写二叉堆解决这个问题吧）</del></p>
-
             
         </div>
     </div>
@@ -788,7 +342,7 @@ void RadixSort(int array[], int N)&#123;
         
         <span class="tag">
             
-            <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
+            <a href="/tags/FDS/" style="color: #ff7d73">FDS</a>
         </span>
         
     </div>
@@ -816,67 +370,6 @@ void RadixSort(int array[], int N)&#123;
             <h1 id="0-择优而取-堆的建立"><a href="#0-择优而取-堆的建立" class="headerlink" title="0. 择优而取 | 堆的建立"></a>0. 择优而取 | 堆的建立</h1><p>在上一篇的结尾，我们留下了一个问题，就是如何<strong>建立</strong>一个堆。</p>
 <p>在建立一个堆之前，我们需要数据。假设我们已经有了N个数据，储存在数组Array里面，接下来我们的任务就是利用Array的数据建立一个堆Heap。</p>
 <p>回忆上一篇文章，我们主要讨论了堆的<strong>插入与删除</strong>。而为了实现这两个操作，我们专门分别设计了两个维护函数，分别是向上和向下维护的函数，而我们建立一个堆的过程，恰好就是一个破坏-维护的过程。</p>
-<p>为什么这么说，首先假定我们有了一个拥有N-1个节点&#x2F;元素的堆Heap，我们要插入一个数据，获得一个N个节点的堆，那我们插入的新数据，不正是<strong>破坏</strong>么，而我们接下来要做的就是<strong>维护</strong>这个被破坏的堆。最后重复这样的操作N次，我们就可以得到一个合法的大堆。</p>
-<p>接下来我们要书写代码了么？</p>
-<p>先等等，我们要知道，维护一个堆是有两种方法的，分别向上和向下维护，那么显而易见的是，建立一个堆应该也有两种方法。</p>
-<p>首先考虑向上维护来建立一个堆。</p>
-<p>如果要向上维护，我们要做的很简单，对于Array里面的每一个数，我们只需要将其插入Heap当中就可以了。</p>
-<p>回顾一下原先的Insert函数代码。</p>
-<pre><code class="c">int Insert(MaxHeap MaxH, ElementType x)&#123;
-    if(IsFull(MaxH))    return ERROR;
-    MaxH-&gt;MaxSize+=1;
-
-    int child=MaxH-&gt;MaxSize;
-    ElementType* array=MaxH-&gt;Array;
-
-    array[child]=x; //x入堆
-    return UpShift(MaxH, child);
-&#125;
-</code></pre>
-<p>我们唯一要做的事情就是遍历数组Array，对其中所有元素都进行一次插入操作，这个堆就建立好了。</p>
-<p>我们考虑其时间复杂度，对于第 i 个数据，我们要进行比较交换的次数为 logi 次，因此时间复杂度为 O(nlogn) ，这个时间复杂度已经很优秀了。</p>
-<p>接下来考虑向下维护。</p>
-<p>如果我们要向下维护一个堆，我们一定要保证这个堆的子堆是合法的堆。如果我们一个数据一个数据插入，我们能保证子堆，也就是最底下的堆是合法的堆吗？</p>
-<p>显然不行。因为我们插入到堆底的数据是任意的，不一定就小于其父堆。</p>
-<p>因此我们考虑从最后一个非叶节点开始，向上维护堆。</p>
-<p>下面给出代码。</p>
-<pre><code class="c">MaxHeap ArrayToMaxHeap(ElementType* array, int N)&#123;  //通过array建立MaxHeap，返回建立的MaxHeap
-    MaxHeap MaxH = BuildMaxHeap();
-    MaxH-&gt;MaxSize = N;
-    int i;
-    for(i=0;i&lt;N;++i)    MaxH-&gt;Array[i+1]=array[i];
-    for(i=N/2;i&gt;=1;--i)    DownShift(MaxH, i);
-    return MaxH;
-&#125;
-</code></pre>
-<p>首先我们建立一个空堆MaxH，大小比Array大1（注意到MaxSize指向的是MaxH下标的最后一个，而<strong>不是</strong>MaxH的大小）。</p>
-<p>接下来我们无视堆的规则，直接将Array存入堆，这样一个堆是一个无序的堆。</p>
-<p>然后我们从堆的 N&#x2F;2 处开始向下维护，（不从N处开始是为了剪枝，因为N&#x2F;2+1 ~ N处的节点都没有子堆），如此维护到根节点，一个堆就建立好了。</p>
-<p>考虑其时间复杂度，可以发现对于数组Array，我们进行了 1 次遍历和 N&#x2F;2 次向下维护，而向上维护的复杂度为 O(logn) ，根据数学知识，我们可以计算得出向下维护建堆的复杂度为 O(N) 。</p>
-<blockquote>
-<p>为什么是logn而不是nlogn？参见<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52347974/article/details/128731177">这篇</a>文章（需要一些数学知识，因此这里Vanadium略去不写）<br>可以看到，向下维护建堆的方法优于向上建堆（插入建堆），因此我们择优而取，<strong>选择向下维护的方法建堆。</strong></p>
-</blockquote>
-<h1 id="1-优秀的原地排序算法-堆排序"><a href="#1-优秀的原地排序算法-堆排序" class="headerlink" title="1. 优秀的原地排序算法 | 堆排序"></a>1. 优秀的原地排序算法 | 堆排序</h1><p><del>所以……有了一个堆，我们能做什么呢？</del></p>
-<p>接下来，我们就可以做很多事情了！</p>
-<p>比方说，堆排序。</p>
-<p>排序算法大家应该不陌生，在C程课上，我们学习过冒泡排序、选择排序、交换排序等一系列 O(N2) 排序算法，也有接触过高效的快速排序等排序算法。</p>
-<p>然而在我们有了堆的概念之后，我们是否可以做一个全新的排序算法呢？</p>
-<p>我们知道，堆的特点就是根节点的值永远是最大（小）值，所以我们只需要重复<strong>删除</strong>堆的节点，并把删除的节点依次输出即可。</p>
-<p>所以我们的问题就是，如何<strong>建立</strong>一个堆，巧的是，这个问题刚才我们已经解决过了，就是向下维护建堆。</p>
-<p>我们可以轻松的给出代码。</p>
-<pre><code class="c">void HeapSort(ElementType* array, int N)&#123;   //对array原地进行堆排序
-    MaxHeap MaxH = ArrayToMaxHeap(array, N);
-    int i;
-    for(i=0;i&lt;N;++i)   array[i]=Delete(MaxH);
-    return;
-&#125;
-</code></pre>
-<p>可以看到，我们在解决了建堆、删除两个操作之后，实现堆排序的算法不要太简单。</p>
-<p>不过有细心的朋友可能会注意到Vanadium所说的“原地排序”，但是代码实现里面根本不是原地排序，因为额外申请了一个Heap的空间。</p>
-<p>实际上这是因为，我们的代码是实例化一个ADT，是需要封装的，如果我们只是应用堆的思想，而不拘泥于堆的格式，我们可以直接利用Array进行排序——毕竟Array和Heap的array明显是一样的。</p>
-<p>具体的代码实现就不书写了。</p>
-<p>HeapSort的时间复杂度也是 O(nlong)，而空间复杂度为 O(1) ，并且效率基本稳定。因此在一些容易MLE（虽然很少）的大量数据的题中，HeapSort会体现出它的优势。</p>
-
             
         </div>
     </div>
@@ -890,7 +383,7 @@ void RadixSort(int array[], int N)&#123;
         
         <span class="tag">
             
-            <a href="/tags/FDS/" style="color: #ff7d73">FDS</a>
+            <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
         </span>
         
     </div>
