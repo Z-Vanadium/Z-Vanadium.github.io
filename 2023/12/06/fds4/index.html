@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #ff7d73">FDS</a>
+                <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
             </span>
             
         </span>
@@ -283,7 +283,9 @@
     
     printf(&quot;%d %d&quot;,distance[D],money[D]);
 </code></pre>
-<p>此时提交，美美AC。<br><img scr="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/6401.png"></p>
+<p>此时提交，美美AC。</p>
+<img scr="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/641.png">
+
 <h1 id="写在后面："><a href="#写在后面：" class="headerlink" title="写在后面："></a>写在后面：</h1><p>观察可知，Dijkstra 算法的时间复杂度为O(N^2)，这是一个很慢的速度，在ACM竞赛中必然 TLE，因此我们会考虑对其进行堆优化。</p>
 <p>具体思路就是利用堆储存邻接矩阵，这样可以降低寻找离源点最近的节点时的复杂度，C++自带的 stl 提供了堆 priority_queue，同时在「手写」二叉堆的情况下，时间复杂度可以降低到 O(NlogN)。<del>（不过应该没人会手写二叉堆解决这个问题吧）</del></p>
 
