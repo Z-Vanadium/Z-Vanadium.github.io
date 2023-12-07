@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
+                <a href="/tags/FDS/" style="color: #00a596">FDS</a>
             </span>
             
         </span>
@@ -186,7 +186,6 @@
 
 <p>可以看到，这是一道图的题目，要求我们找到节点 S 到 D 的<strong>最短路径</strong>，存在多条最短路径时，输出<strong>收费最低</strong>的。</p>
 <h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>不难想到，这是一道<strong>双条件最短路径</strong>问题，解决此类问题，我们常用<strong>Dijkstra算法</strong>或<strong>Floyd算法</strong>，这里由于是<strong>单源对单源</strong>，我们选用时间复杂度上更优的 Dijkstra 算法。</p>
-<span id="more"></span> 
 <pre><code class="c">    scanf(&quot;%d %d %d %d&quot;,&amp;N,&amp;M,&amp;S,&amp;D);
     int i,j,V;
     for(i=0;i&lt;N;++i)
@@ -284,7 +283,7 @@
     printf(&quot;%d %d&quot;,distance[D],money[D]);
 </code></pre>
 <p>此时提交，美美AC。</p>
-<img scr="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/641.png">
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/641.png">
 
 <h1 id="写在后面："><a href="#写在后面：" class="headerlink" title="写在后面："></a>写在后面：</h1><p>观察可知，Dijkstra 算法的时间复杂度为O(N^2)，这是一个很慢的速度，在ACM竞赛中必然 TLE，因此我们会考虑对其进行堆优化。</p>
 <p>具体思路就是利用堆储存邻接矩阵，这样可以降低寻找离源点最近的节点时的复杂度，C++自带的 stl 提供了堆 priority_queue，同时在「手写」二叉堆的情况下，时间复杂度可以降低到 O(NlogN)。<del>（不过应该没人会手写二叉堆解决这个问题吧）</del></p>
