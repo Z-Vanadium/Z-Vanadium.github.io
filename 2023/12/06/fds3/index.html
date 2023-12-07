@@ -174,7 +174,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
+                <a href="/tags/FDS/" style="color: #00a596">FDS</a>
             </span>
             
         </span>
@@ -292,5 +292,23 @@
 
 
     
+
+
+    <!-- 一言API -->
+    <!-- 现代写法，推荐 -->
+    <script>
+        fetch('https://v1.hitokoto.cn')
+            .then(function (res){
+            return res.json();
+            })
+            .then(function (data) {
+            var hitokoto = document.getElementById('hitokoto');
+            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
+            })
+            .catch(function (err) {
+            console.error(err);
+            })
+        </script>
+
 </body>
 </html>

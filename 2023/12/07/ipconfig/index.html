@@ -3,7 +3,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="utf-8" />
-    <title>最小生成树 | Prim算法与 Kruskal算法 | Vanadium的小屋</title>
+    <title>排序 | 择优而选，不困于物，不乱于心 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -155,7 +155,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>最小生成树 | Prim算法与 Kruskal算法</h1>
+        <h1>排序 | 择优而选，不困于物，不乱于心</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -174,25 +174,33 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
+                <a href="/tags/FDS/" style="color: #00a596">FDS</a>
             </span>
             
         </span>
         
     </div>
+
+    <div class="content" v-pre>
+            <p>Vanadium的本机IP：</p><p id="hitokoto">获取中...</p>
     
-        <p class = "text" id = "p_api">
-                waiting...
-        </p>
     <script>
-        fetch("http://116.62.147.239:11451/ipconfig-api")
-            .then(response => response.json())
-            .then(data => {
-                var p_api = document.getElementById("p_api")
-                p_api.innerText = data.type;
-            })
-            alert(1)
-        </script>
+        fetch('http://116.62.147.239:11451/ipconfig-api',{
+        method : "GET",
+      })
+        .then(function name(response) {
+            return response.json()
+        })
+        .then(function name2(data){
+            var hitokoto = document.getElementById("hitokoto");
+            hitokoto.innerText = data.hitokoto;
+        })
+        .catch(function (err) {
+            console.error(err);
+        })
+    </script>
+    </div>
+    
     
     
     
@@ -230,12 +238,5 @@
     </div>
     <script src="/js/main.js"></script>
 
-    
-    
-
-
-
-
-    
 </body>
 </html>
