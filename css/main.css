@@ -75,6 +75,16 @@
     margin: auto;
     width: 900px;
 }
+#footer #timeDate {
+    color: #5c6b72;
+    margin: auto;
+    width: 900px;
+}
+#footer #times {
+    color: #66afef;
+    margin: auto;
+    width: 900px;
+}
 #footer #footer-wrap div {
     margin: 15px;
 }
