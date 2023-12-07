@@ -253,7 +253,7 @@
         
         <span class="tag">
             
-            <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
+            <a href="/tags/FDS/" style="color: #ff7d73">FDS</a>
         </span>
         
     </div>
@@ -296,7 +296,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #ffa2c4">碎碎念</a>
+            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #39c5bb">碎碎念</a>
         </span>
         
         <span class="tag">
@@ -344,7 +344,7 @@
         
         <span class="tag">
             
-            <a href="/tags/FDS/" style="color: #00a596">FDS</a>
+            <a href="/tags/FDS/" style="color: #ff7d73">FDS</a>
         </span>
         
     </div>
@@ -385,7 +385,7 @@
         
         <span class="tag">
             
-            <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
+            <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
         </span>
         
     </div>
@@ -424,6 +424,7 @@
         
         
         <div class="friend-links">
+            <div class="name">Vanadium的友链</div>
             
             <div class="friend-link">
                 <a target="_blank" rel="noopener" href="http://www.foreverhyx.top">PipipiのBlog</a>
@@ -431,6 +432,16 @@
             
         </div>
         
+
+        <div class="friend-links">
+            <div class="name">Vanadium常用网址</div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -454,6 +465,26 @@
         </div>
         
     </div>
+
+
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+    <script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("09/26/2023 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已经存活 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
 </footer>
 
         </div>
