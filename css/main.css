@@ -91,6 +91,10 @@
 #home-card {
     width: 300px;
 }
+#home-card-in-post{
+    position: absolute;
+    right: 2.5%;
+}
 #home-card #card-style {
     background: #e4efee;
     border: none;
@@ -714,6 +718,7 @@ video,
 }
 b,
 strong {
+    color: #39c5bb;
     font-weight: bold;
     line-height: 2.5;
 }
