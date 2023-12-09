@@ -3,7 +3,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="utf-8" />
-    <title>棋局 | Vanadium的小屋</title>
+    <title>线性代数 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -235,7 +235,7 @@
 
 <div class="article">
     <div>
-        <h1>棋局</h1>
+        <h1>线性代数</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -254,7 +254,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
+                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #00a596">线性代数</a>
             </span>
             
         </span>
@@ -262,126 +262,132 @@
     </div>
     
     <div class="content" v-pre>
-        <blockquote>
-<p>「苍天如圆盖，陆地似棋局。世人黑白分，往来争荣辱。荣者自安安，辱者定碌碌。」<br>——罗贯中《三国演义·第三十七回》</p>
-</blockquote>
-<p>Pac 善观万物往复，而小小棋盘有如世间缩影，尤为她所喜爱。今天闲来无事，她又发明了一种新的棋。</p>
+        <h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><p><strong>授课教师：</strong> 董浙<br><strong>上课教材：</strong> 《线性代数》（hzd版）<br><strong>教辅资料：</strong> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16Z4y1U7oU/?spm_id_from=333.337.search-card.all.click&vd_source=fb60086411a6996e53c3014541e4a3ee">MIT-线性代数</a></p>
 <span id="more"></span>
 
-<p>给出一个有 N 个格子水平排列的棋盘，从左到右标号为 1 到 N ，游戏的开始时有 M 个棋子，标号为 1,⋯,M，标号为 i 的棋子在格子 $a_i$ 上。</p>
-<p><strong>棋子可以重叠，我们默认标号小的棋子位于标号大的棋子上面。</strong></p>
-<p>现有 K 张行动卡片，行动卡片上指定了移动棋子的标号 a 和位移 b，使用卡片会使得标号 a 的棋子向右移动 b 格（注意<strong>位移可能为负值</strong>）。</p>
-<p>当棋子移动到一个已经存在其他棋子的格子上时，移动的棋子会叠在目标位置所有棋子的上方，一个棋子移动时会使得其上方的所有棋子一起移动。 现在按照给出卡片的顺序依次进行操作，请输出操作结束后所有棋子所在的格子的位置。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h4><p>第 1 行三个整数 N,M,K， 表示棋盘的大小，棋子的数量和行动卡片的数量。</p>
-<p>第 2 行 M 个整数 $a_1$ , $a_2$ ,⋯, $a_M$ 表示棋子的初始位置。</p>
-<p>第 3 行到第 2+K 行，每行两个整数 a, b 描述一张行动卡片，分别表示移动的棋子标号和位移。</p>
-<p>保证对于所有用例，每次行动不会超出棋盘的范围。</p>
-<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h4><p>共一行 M 个整数，用空格隔开，第 i 个整数表示标号为 i 的棋子的最终位置。</p>
-<h4 id="样例"><a href="#样例" class="headerlink" title="样例:"></a>样例:</h4><p><strong>输入样例 1</strong></p>
-<pre><code>9 3 12
-2 3 4
-1 1
-1 1
-1 2
-2 1
-2 1
-1 -1
-3 1
-2 2
-3 -1
-2 -1
-3 1
-3 2
-</code></pre>
-<p><strong>输出样例1</strong></p>
-<pre><code>9 9 9
-</code></pre>
-<h4 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h4><p>对于所有测试点，满足 1 ≤ N ≤ $10^3$ ,1≤M≤50,1≤K≤$10^4$ 。</p>
-<p>对于20%的数据，M&#x3D;1。</p>
-<pre><code>代码长度限制                    16 KB
-时间限制                        400 ms
-内存限制                        64 MB
-</code></pre>
-<h4 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h4><p>这道题应该难度不大，思路大概是<strong>开一个一维数组，每个元素储存一个链表，用来维护棋子的状态</strong>，因为棋子可以集体移动，所以链表的表示是最好的。<br>思路没有什么大问题，可惜最后没有AC，在群里面学习之后，分析原因应该是没有额外储存每个棋子的位置，导致部分样例点过不去。<br>下面是120&#x2F;300的代码，现场写的，可读性有亿点差&gt;_&lt;</p>
-<pre><code class="c++">#include&lt;iostream&gt;
-using namespace std;
-
-typedef struct node* pnode;
-struct node &#123;
-    int val;
-    struct node* next;
-&#125;;
-int N,K,M;
-pnode map[1005];
-
-pnode locate(int x,int* where)&#123;
-    for(int i=1;i&lt;=N;++i)&#123;
-        if(map[i]!=NULL)&#123;
-            pnode tmp = map[i];
-            if(tmp-&gt;val == x)&#123;
-                map[i] = NULL;
-                *where = i;
-                return tmp;
-            &#125;
-            else&#123;
-                pnode pre = map[i];
-                pnode cur = map[i]-&gt;next;
-                while(cur!=NULL)&#123;
-                    if(cur-&gt;val == x)&#123;
-                        pre-&gt;next = NULL;
-                        *where = i;
-                        return cur;
-                    &#125;
-                    pre = cur;
-                    cur = cur-&gt;next;
-                &#125;
-            &#125;
-        &#125;
-    &#125;
-    return NULL;
-&#125;
-
-int main()&#123;
-    cin&gt;&gt;N&gt;&gt;M&gt;&gt;K;
-    for(int i = 1;i&lt;=M;++i)&#123;
-        pnode tmp = new node;
-        tmp-&gt;val = i;
-        tmp-&gt;next = NULL;
-        int a;
-        cin&gt;&gt;a;
-        if(map[a]==NULL)&#123;
-            map[a]=tmp;
-        &#125;
-        else&#123;
-            tmp-&gt;next = map[a];
-            map[a] = tmp;
-        &#125;
-    &#125;
-    for(int i=1;i&lt;=K;++i)&#123;
-        int a,b;
-        int newa;
-        cin&gt;&gt;a&gt;&gt;b;
-        pnode pre = locate(a,&amp;newa);
-        newa += b;
-        pnode k = map[newa];
-        if(k == NULL)&#123;
-            map[newa] = pre;
-        &#125;
-        else&#123;
-            while(k-&gt;next!=NULL)&#123;
-                k=k-&gt;next;
-            &#125;
-            k-&gt;next = pre;
-        &#125;
-    &#125;
-
-    for(int i=1;i&lt;=M;++i)&#123;
-        int p;
-        locate(i,&amp;p);
-        cout&lt;&lt;p&lt;&lt;&quot; &quot;;
-    &#125;
-&#125;
-</code></pre>
+<p>&nbsp;</p>
+<h4 id="第-1-章-线性方程组的求解"><a href="#第-1-章-线性方程组的求解" class="headerlink" title="第 1 章 线性方程组的求解"></a>第 1 章 线性方程组的求解</h4><p><strong>定理</strong></p>
+<ol>
+<li>$\overline{A}与A化成行最简后有相同的非零行（即相同的秩r）\hArr 线性方程组有解$</li>
+<li>$\overline{A}与A化成行最简后有不同的非零行（即相同的秩r）\hArr 线性方程组无解$</li>
+</ol>
+<p><strong>推论</strong><br>对于齐次线性方程组，$c_1 &#x3D; c_2 &#x3D; … &#x3D;c_n$</p>
+<ol>
+<li>一定有解 $x_1 &#x3D; x_2 &#x3D;…&#x3D; x_n &#x3D; 0$</li>
+<li>$r&lt;n \hArr 有无穷解 \hArr 有非零解$</li>
+<li>$r&#x3D;n \hArr 解是唯一的 \hArr 无非零解$</li>
+</ol>
+<p>&nbsp;</p>
+<h4 id="第-2-章-行列式与矩阵的秩"><a href="#第-2-章-行列式与矩阵的秩" class="headerlink" title="第 2 章 行列式与矩阵的秩"></a>第 2 章 行列式与矩阵的秩</h4><p><strong>n-排列</strong></p>
+<p>一次对换改变n-排列的奇偶性</p>
+<p>$\tau(i_1i_2…i_n) + \tau(i_ni_{n-1}…i_1) &#x3D; \frac{n(n-1)}{2}$ </p>
+<p>$ \footnotesize{P.S.可以用于说明冒泡等排序的时间复杂度} $</p>
+<p><strong>方阵的行列式</strong></p>
+<p>$\det{A} &#x3D; \displaystyle\sum_{j_1j_2…j_n}(-1)^{\tau(j_1j_2…j_n)}a_{1j_1}a_{2j_2}…a_{nj_n}, 其中A&#x3D;(a_{ij})_{n\times n}$<br>$ \footnotesize{P.S.i,j互换位置依然成立} $<br>解释：对列的每个n-排列都求积，最后求和</p>
+<p>行列式的来源 | Cramer法则：求解线性方程组的解时，满足$x_i &#x3D; \frac{D_i}{D}$</p>
+<p><strong>n阶行列式的性质</strong></p>
+<ul>
+<li>展开后有n项</li>
+<li>每项都有n个元素，且没有两个元素的行或列是重复的</li>
+<li>奇排列的项为负，偶排列的项为正</li>
+</ul>
+<p><strong>特殊n阶行列式计算</strong></p>
+<ul>
+<li>$D_{主对角线三角} &#x3D; a_1a_2…a_n$</li>
+<li>$D_{副对角线三角} &#x3D; (-1)^{\frac{n(n-1)}{2}} a_1a_2…a_n$</li>
+</ul>
+<p>$$\displaystyle\sum_{k&#x3D;1}^na_{ik}A_{jk} &#x3D; \begin{cases}|A|,&amp;\text{if }i &#x3D; j \\ 0,&amp;\text{if }i\ne j \end{cases}\space\space 1 \le i, j \le n(n \gt 1) $$</p>
+<p>即，某一行元素向量乘以<strong>本行代数余子式向量</strong>等于行列式；乘以<strong>其他行代数余子式向量</strong></p>
+<p><strong>Vandermonde行列式</strong></p>
+<p>$$D_n &#x3D; \begin{vmatrix}1&amp;1&amp;…&amp;1\\x_1&amp;x_2&amp;…&amp;x_n\\x_1^2&amp;x_2^2&amp;…&amp;x_n^2\\ \vdots&amp;\vdots&amp;\space&amp;\vdots\\x_1^{n-1}&amp;x_2^{n-1}&amp;…&amp;x_n^{n-1}\end{vmatrix} &#x3D;\displaystyle\prod_{1\le i\le j \le n}(x_j - x_i) $$<br>$\footnotesize{Proof.逐行相减，展开得递推式}$</p>
+<p><strong>Cramer法则</strong></p>
+<p>定理 当且仅当线性方程组系数<strong>行列式不为0</strong>时，有且仅有唯一解<br>$$且x_j &#x3D; \frac{D_j}{D},\space\space j&#x3D;1,2,…,n$$<br>其中$D_j$表示D中第j个列向量被系数向量取代后的行列式</p>
+<p><strong>Laplace定理</strong></p>
+<p>$$|A| &#x3D; \displaystyle\sum_{1\le j_1\lt j_2\lt … \lt j_k\le n}D\begin{pmatrix}j_1\space j_2…j_k\\i_1\space i_2…i_k\end{pmatrix}A\begin{pmatrix}j_1\space j_2…j_k\\ i_1\space i_2…i_k\end{pmatrix}$$<br>即，行列式等于将行列式按某几行&#x2F;列展开后行列式与代数余子式的积的和<br>$eg.\begin{vmatrix}O_{s\times t}&amp;A_{s\times s}\\ B_{t\times t}&amp;C_{t\times s}\end{vmatrix} &#x3D; (-1)^{st}|A||B|$</p>
+<p>初等变换(行&#x2F;列交换,倍乘以及倍加)不改变矩阵的秩</p>
+<p><strong>等价关系</strong></p>
+<ul>
+<li>自反性 $A\stackrel{R}{\backsim}A$</li>
+<li>对称性 $A\stackrel{R}{\backsim}B \hArr B\stackrel{R}{\backsim}A$</li>
+<li>传递性 $A\stackrel{R}{\backsim}B, B\stackrel{R}{\backsim}C \hArr A\stackrel{R}{\backsim}C$</li>
+</ul>
+<p>秩相同的矩阵之间的关系为相抵等价关系<br>$当r(A)&#x3D;r时，\begin{pmatrix}E_r&amp;O\\O&amp;O\end{pmatrix}为A的等价标准形$</p>
+<p>&nbsp;</p>
+<h4 id="第-3-章-矩阵的运算"><a href="#第-3-章-矩阵的运算" class="headerlink" title="第 3 章  矩阵的运算"></a>第 3 章  矩阵的运算</h4><p>$若A是n阶方阵，则|cA| &#x3D; c^n|A|$</p>
+<p>$A_{s\times t}B_{t\times u} &#x3D; C_{s\times u}$<br>即，目标矩阵的行数等于左矩阵的行数，列数等于右矩阵的列数</p>
+<p><strong>重要定理</strong></p>
+<ul>
+<li><p>$|A||B| &#x3D; |AB|$</p>
+</li>
+<li><p>$(AB)^T &#x3D; B^TA^T$</p>
+</li>
+</ul>
+<p><strong>矩阵的逆</strong></p>
+<p>$设A是n阶方阵，则\space A可逆\hArr|A|\ne 0 \hArr r(A) &#x3D; n$</p>
+<p>$A^{-1} &#x3D; \frac{1}{|A|} A^*$<br>$$A^*&#x3D;\begin{pmatrix}A_{11}&amp;A_{21}&amp;…&amp;A_{n1}\\ A_{12}&amp;A_{22}&amp;…&amp;A_{n2}\\ \vdots &amp; \vdots &amp; \space &amp;\vdots \\ A_{1n}&amp;A_{2n}&amp;…&amp;A_{nn} \end{pmatrix}$$<br>$即A^{-1}对a_{ij}求代数余子式$</p>
+<p><strong>矩阵初等变换与矩阵乘法的联系</strong></p>
+<p>定理 对矩阵进行初等变换等价于矩阵乘以该初等变换对应的初等矩阵</p>
+<p><strong>矩阵求逆</strong><br>$$\begin{pmatrix}A\space\vdots\space E\end{pmatrix}\xrightarrow{仅有限次初等行变换}\begin{pmatrix}E\space\vdots\space A^{-1}\end{pmatrix}$$<br>$$\begin{pmatrix}&amp;A&amp;\\&amp;…&amp;\\&amp;E&amp;\end{pmatrix}\xrightarrow{仅有限次初等列变换}\begin{pmatrix}&amp;E&amp;\\&amp;…&amp;\\&amp;A^{-1}&amp;\end{pmatrix}$$</p>
+<p><strong>矩阵运算对秩的影响</strong></p>
+<ul>
+<li>乘以可逆矩阵，秩不变</li>
+<li>$r(AB)\le \min{r(A),r(B)}$</li>
+<li>$r(C) &#x3D; r(A) + r(B),\space C &#x3D; \begin{pmatrix}O&amp;A\\B&amp;O\end{pmatrix}$</li>
+<li>$r(A+B)\le r(A)+r(B)$</li>
+<li>$Sylvester不等式\space r(AB)\ge r(A)+r(B)-n$</li>
+<li>$Frobenius不等式\space r(ABC)\ge r(AB)+r(BC)-r(B)$</li>
+</ul>
+<p><strong>二级结论</strong></p>
+<ul>
+<li>$|A^*| &#x3D; |A|^{n-1}$</li>
+<li>$(A^*)^* &#x3D; |A|^{n-2}A$</li>
+<li>$A^2&#x3D;E_n \hArr r(A+E_n)&#x3D;r(A-E_n)&#x3D;n$</li>
+</ul>
+<p>&nbsp;</p>
+<h4 id="第-7-章-线性空间"><a href="#第-7-章-线性空间" class="headerlink" title="第 7 章 线性空间"></a>第 7 章 线性空间</h4><p><strong>线性空间</strong></p>
+<p>$若P为数域，V为线性空间，则V上定义了V\times V\rightarrow V的加法和P \times V\rightarrow V的乘法，对\forall\alpha,\beta\in V$</p>
+<ul>
+<li>$\alpha +\beta &#x3D; \beta + \alpha$</li>
+<li>$(\alpha+\beta)+\gamma&#x3D;\alpha+(\beta+\gamma)$</li>
+<li>$\exist\theta\in V,\alpha+\theta&#x3D;\alpha$</li>
+<li>$\exist\epsilon\in V,\alpha+\epsilon&#x3D;\theta$</li>
+<li>$1\alpha&#x3D;\alpha$</li>
+<li>$(c_1c_2)\alpha&#x3D;c_1(c_2\alpha)$</li>
+<li>$(c_1+c_2)\alpha&#x3D;c_1\alpha+c_2\alpha$</li>
+<li>$c(\alpha+\beta)&#x3D;c\alpha+c\beta$</li>
+</ul>
+<p><strong>向量组的线性关系</strong></p>
+<ul>
+<li>$称c_1\alpha _1+c_2\alpha _2+…+c_s\alpha _s为向量组{\alpha _1,\alpha _2,…,\alpha _s}的一个线性组合$</li>
+<li>$设向量组{\beta,\alpha _1,\alpha _2,…,\alpha _s}，若有\beta &#x3D; c_1\alpha _1+c_2\alpha _2+…+c_s\alpha _s&#x3D;\begin{pmatrix}\alpha _1,\alpha _2,…,\alpha _s\end{pmatrix}\begin{pmatrix}c_1\\ c_2\\\vdots\\ c_s\end{pmatrix}，则称\beta可由{\alpha _1,\alpha _2,…,\alpha _s}线性表出（与c_i是不是0无关）$</li>
+<li>$若存在不全为零的c，使得\begin{pmatrix}\alpha _1,\alpha _2,…,\alpha _s\end{pmatrix}\begin{pmatrix}c_1\\ c_2\\\vdots\\ c_s\end{pmatrix}&#x3D;\theta，则称{\alpha _1,\alpha _2,…,\alpha _s}线性相关$</li>
+<li>${\alpha _1,\alpha _2,…,\alpha _s}线性相关\hArr\exist\alpha _i可由其余s-1个向量表示$</li>
+<li>${\alpha _1,\alpha _2,…,\alpha _s}线性无关\hArr\forall\alpha _i不可由其余s-1个向量表示$</li>
+<li>$若{\alpha _1,\alpha _2,…,\alpha _s}线性无关，但是{\beta,\alpha _1,\alpha _2,…,\alpha _s}线性相关，则\beta可由{\alpha _1,\alpha _2,…,\alpha _s}线性表出，且表出形式唯一$</li>
+</ul>
+<p><strong>向量组的线性表示及等价</strong></p>
+<ul>
+<li>$两个向量组(I)(II)，若(I)中的任何一个向量均可由(II)中有限个向量线性表出，则称(I)可由(II)线性表出$</li>
+<li>$ (\alpha _1,\alpha _2,…,\alpha _s)&#x3D;(\beta _1,\beta _2,…,\beta <em>t )M</em>{t\times s}，称为形式矩阵运算.$</li>
+<li>$若(I)&#x3D;{\alpha _1,\alpha _2,…,\alpha _s}，(II)&#x3D;{\beta _1,\beta _2,…,\beta _t}，(I)可由(II)线性表出且s&gt;t，则{\alpha _1,\alpha _2,…,\alpha _s}线性相关$</li>
+<li>$若{\alpha _1,\alpha _2,…,\alpha _s}可由{\beta _1,\beta _2,…,\beta _t}线性表出且{\alpha _1,\alpha _2,…,\alpha _s}线性无关，则s\le t$</li>
+<li>$向量组的线性相关称为等价$</li>
+</ul>
+<p><strong>极大线性无关组与向量组的秩</strong></p>
+<ul>
+<li>阶梯头所在的列所对应的原向量为一个极大线性无关组</li>
+<li>向量组的秩等于其极大线性无关组向量个数</li>
+</ul>
+<p><strong>维数 基 坐标</strong></p>
+<ul>
+<li>$\dim V &#x3D; n，则n为V的极大线性无关组的向量个数&#x2F;V的秩，极大线性无关组为一组基$</li>
+<li>$\forall\alpha\in V, \exist X\in P^n, 使得\alpha&#x3D;(\alpha _1,\alpha _2,…,\alpha _n)X,其中X成为\alpha在基{\alpha _1,\alpha _2,…,\alpha _n}下的坐标$</li>
+</ul>
+<p><strong>基之间的过渡矩阵 坐标变换</strong></p>
+<ul>
+<li>$对于两组基，由于等价，有(\beta _1,\beta _2,…,\beta _n)&#x3D;(\alpha _1,\alpha _2,…,\alpha _n)M，其中M称为过渡矩阵，且M可逆，M^{-1}为\beta到\alpha的过渡矩阵$</li>
+<li>$设\alpha\in V在上述两组基下的坐标分别是X_{n\times 1}，Y_{n\times 1}，则Y&#x3D;M^{-1}X$</li>
+</ul>
 
     </div>
     
