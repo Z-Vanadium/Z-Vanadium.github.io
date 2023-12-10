@@ -254,7 +254,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
+                <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
             </span>
             
         </span>
@@ -262,9 +262,9 @@
     </div>
     
     <div class="content" v-pre>
-        <h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><p><strong>授课教师：</strong> 俞欢军<br><strong>上课教材：</strong> <del>用不着</del><br><strong>编译环境：</strong>  MinGW-W64-builds-5.0.0</p>
+        <h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><p><strong>授课教师：</strong> 俞欢军<br><strong>上课教材：</strong> <del>用不着</del><br><strong>编译环境：</strong>  MinGW-W64-builds-5.0.0<br><strong>参考资料：</strong> <a target="_blank" rel="noopener" href="https://note.isshikih.top/cour_note/D1QD_CXiaoCheng/">C小程 琐碎知识点整理</a> | <a target="_blank" rel="noopener" href="https://blog.zhanghai.me/c-exam-notes/">C 语言应试笔记</a> | <a target="_blank" rel="noopener" href="https://blog.yzsun.me/c-traps-and-pitfalls/">《C 陷阱与缺陷》笔记</a></p>
+<p><strong>P.S.</strong> 感恩学长学姐们的无私分享</p>
 <span id="more"></span>
-
 <p>&nbsp;</p>
 <h4 id="0919"><a href="#0919" class="headerlink" title="0919"></a>0919</h4><ol>
 <li>程序调试就是找出并改正C源程序中的语法错误。(<strong>F</strong>)</li>
@@ -479,11 +479,20 @@ E.  int cnt[10] = &#123;1&#125;;
 printf(&quot;%d\n&quot;,--x);
 </code></pre>
 <p> <strong>解释：</strong> 在C语言里面，字符插入整型表示一些特殊进制或计数法：</p>
-<pre><code class="c">printf(&quot;%d\n&quot;,0b10);    //2
+<pre><code class="c">//前缀
+printf(&quot;%d\n&quot;,0b10);    //2
 printf(&quot;%d\n&quot;,010);     //8
 printf(&quot;%d\n&quot;,10);      //10
-printf(&quot;%d\n&quot;,0x10);    //16
+printf(&quot;%d\n&quot;,0x10);    //16 或是0X10
 printf(&quot;%lf\n&quot;,2e3);    //2000.000000
+//后缀 LU不敏感大小写，也可以改变顺序
+printf(&quot;%ld\n&quot;,123L);   //长整型 long (int)
+printf(&quot;%lld\n&quot;,123LL); //长长整型 long long (int)    
+printf(&quot;%u\n&quot;,123U);    //无符号整型 unsigned (int)    
+printf(&quot;%llu\n&quot;,1LLU);  //无符号长长整型 unsigned long long (int)    
+//注意：C只规定了sizeof(short)&lt;=sizeof(int)&lt;=sizeof(long)&lt;=sizeof(long long)
+//具体占用多少字节及数据范围由编译器决定
+//我的编译器分别是2 4 4 8
 </code></pre>
 <p> 08是八进制，不能有8</p>
 </li>
@@ -495,7 +504,7 @@ printf(&quot;%lf\n&quot;,2e3);    //2000.000000
 </li>
 <li><p>表达式 (z&#x3D;0, (x&#x3D;2)||(z&#x3D;1),z) 的值是1。（<strong>F</strong>）<br> <strong>解释：</strong> 逗号运算符，从左往右，返回最后一个表达式的值；||具有短路求值的特性，因此z&#x3D;1没有执行</p>
 </li>
-<li><p>运算符（ ）的优先级最高。<br> <strong>解释：</strong> </p>
+<li><p>运算符（ ）的优先级最高。<br> <strong>解释：</strong><br> 参考：<a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/c/language/operator_precedence">C 运算符优先级</a></p>
 <table>
 <thead>
 <tr>
