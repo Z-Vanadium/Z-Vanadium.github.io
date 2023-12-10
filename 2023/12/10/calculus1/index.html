@@ -317,10 +317,28 @@
 <p>&nbsp;</p>
 <h4 id="第-2-章-函数的极限"><a href="#第-2-章-函数的极限" class="headerlink" title="第 2 章 函数的极限"></a>第 2 章 函数的极限</h4><p><strong>收敛的定义</strong></p>
 <p>$f:D\rightarrow R,D\subset R,if\ \exist A\in R,s.t.\forall\varepsilon&gt;0,\exist\delta&gt;0,while\ x\in\mathring{U}(x_0,\delta)\cup D,|f(x)-A|&lt;\varepsilon\iff\displaystyle\lim_{x\rightarrow x_0}f(x)\rightarrow A$</p>
+<p><strong>归结原理</strong></p>
+<ul>
+<li>$f:D\subset R\rightarrow R,\exist\mathring{U}(x_0)\subset D,s.t.\displaystyle\lim_{x\rightarrow x_0}f(x)&#x3D;A\iff\forall {x_n},\displaystyle\lim_{n\rightarrow\infty}x_n&#x3D;x_0,x_n\ne x_0,n&#x3D;1,2,…,{f(x_n)}\rightarrow A$</li>
+<li>归结原理将数列极限的结果引到了函数极限的结果</li>
+<li>函数极限的不存在，可以由<strong>两个收敛到同一个点的不同数列</strong>使对应的<strong>函数值分别收敛到不同的值</strong>来证明</li>
+</ul>
 <p><strong>局部保号性</strong></p>
 <ul>
 <li>$if\ \displaystyle\lim_{x\rightarrow x_0}f(x)&#x3D;A&gt;0,\forall p\in(0,A),\exist\delta&gt;0,\forall x\in\mathring{U}(x_0,\delta),s.t.f(x)&gt;p&gt;0$</li>
 <li>$if\ \displaystyle\lim_{x\rightarrow x_0}f(x)&#x3D;A&lt;0,\forall -p\in(A,0),\exist\delta&gt;0,\forall x\in\mathring{U}(x_0,\delta),s.t.f(x)&lt;-p&lt;0$</li>
+</ul>
+<p><strong>间断点</strong><br>如果在某一点：</p>
+<ul>
+<li>左右极限都存在但在某处不连续：<strong>一类间断点</strong><ul>
+<li>左右极限不相等：<strong>跳跃间断点</strong></li>
+</ul>
+</li>
+<li>极限存在，但极限值不等于函数值或函数值没有定义：<strong>二类间断点</strong></li>
+</ul>
+<p><strong>一致连续性</strong><br>$f:I\rightarrow R,if\ \forall\varepsilon&gt;0,\exist\delta&gt;0,s.t.\forall x_1,x_2\in I,while\ |x_1-x_2|&lt;\delta,|f(x_1)-f(x_2)|&lt;\varepsilon\iff f 在I上是一致连续的$</p>
+<ul>
+<li>若f满足当两点横坐标之间的距离小于某个值之后，函数值的差可以无限小，则f是一致连续的</li>
 </ul>
 
     </div>
