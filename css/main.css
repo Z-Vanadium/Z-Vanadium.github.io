@@ -212,6 +212,30 @@
     width: 100vw;
     z-index: -1;
 }
+
+.my-home-window{
+    position:absolute; 
+    height: 80px;
+    width: 200px;
+    color: #ffffff;
+    background-color: #ffffff2b;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    border-radius: 20px;
+    border-color: rgba(255, 255, 255, 0.811);
+    border-width: 3px;
+    border-style: groove;
+    display:flex;   
+    justify-content: center;
+}
+
+.my-home-window a{
+    color: white; 
+    font-size: large;
+    text-shadow: 10px;
+}
+
+
 #home-head #home-info .info {
     align-items: center;
     border-radius: 50%;

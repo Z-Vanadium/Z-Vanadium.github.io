@@ -3,7 +3,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="utf-8" />
-    <title>Tags: FDS | Vanadium的小屋</title>
+    <title>Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -40,6 +40,8 @@
 
 
 
+
+<script src="/js/lib/home.js"></script>
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -162,307 +164,222 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
+
+    <!--自定义小窗格  top +120/time-->
+    <div class="my-home-window" style="top: 110px; right: 50px;" >
+        <div style="display: flex; justify-content: center;">
+            <a class="content" ><br>test words</a>
+        </div>
+    </div> 
+    <div class="my-home-window" style="top: 230px; right: 50px;" >
+        <div style="display: flex; justify-content: center;">
+            <a class="content" ><br>Computer Science</a>
+        </div>
+    </div>
+    <div class="my-home-window" style="top: 350px; right: 50px;" >
+        <div style="display: flex; justify-content: center;">
+            <a class="content" ><br>Computer Science</a>
+        </div>
+    </div>
+    <!--end-->
+
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>Vanadium的小屋</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap" true ref="homePostsWrap">
+    <div id="home-posts">
         
+
+<div class="post">
+    <a href="/2023/09/01/training-program/">
+        <h2 class="post-title">信息安全培养方案</h2>
+    </a>
+    <div class="category-and-date">
         
-        
-        <span>
-            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="background: #ffa2c4">
+        <span class="category">
+            <a href="/categories/%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                碎碎念
+                信息查询
             </a>
         </span>
         
-        
-        
-        <span>
-            <a href="/tags/FDS/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                FDS
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                前端
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%85%AC%E5%91%8A/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                公告
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/C-C/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                C/C++
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                线性代数
-            </a>
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/1
         </span>
         
         
     </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p><strong>Page1</strong></p>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/ISdocument_1.jpg">
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/09/01/training-program/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/7</div>
-            <a href="/2023/12/07/fds7/">
-                <h3>排序 | 择优而选，不困于物，不乱于心</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/FDS/" style="color: #00a596">FDS</a>
-                    </span>
-                    
-                </span>
-                
+    <a class="page-num" href="/page/4/">
+        <i class="fa-solid fa-caret-left fa-fw"></i>
+    </a>
+    <a class="page-num" href="/">1</a>
+    <span class="page-omit">...</span>
+    
+    <span class="current">5</span>
+    
+    
+    
+    
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-style" style="max-height: 75vh;">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name"><b>Vanadium</b></div>
+        <div class="description">
+            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            <div class="name"><b>Vanadium的友链</b></div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="http://www.foreverhyx.top">PipipiのBlog</a>
+            </div>
+            
+        </div>
+        
+
+        <div class="friend-links">
+            <div class="name"><b>Vanadium常用网址</b></div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome 6</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://md.qikqiak.com/">Markdown-微信公众号</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="http://116.62.147.239:18080/">在线VSCode | 感恩洪神的无私分享</a>
+            </div>
+        </div>
+
+
+        <!--music player
+        <div class="friend-links">
+            <iframe seamless="seamless" width="300px" id="card" src="//music.163.com/outchain/player?type=2&id=29751583&auto=1&height=66" frameborder="no"></iframe>
+        </div>-->
+    </div>
+    
+    
+    
+</div>
+
+
+    
+        
+        <!-- music player card -->
+        <div id="music-wrap">
+            
+<!--
+<div id="card-style" style="margin-top: 10vh;">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name"><b>MUSIC</b></div>
+        <div class="description">
+            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            <div class="name"><b>Vanadium的友链</b></div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="http://www.foreverhyx.top">PipipiのBlog</a>
+            </div>
+            
+        </div>
+        
+
+        <div class="friend-links">
+            <div class="name"><b>Vanadium常用网址</b></div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome 6</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://md.qikqiak.com/">Markdown-微信公众号</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="http://116.62.147.239:18080/">在线VSCode | 感恩洪神的无私分享</a>
             </div>
         </div>
     </div>
-    
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/7</div>
-            <a href="/2023/12/07/fds6/">
-                <h3>最小生成树 | Prim算法与 Kruskal算法</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/FDS/" style="color: #00a596">FDS</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
+</div>
+
+-->
+
+
         </div>
+
+
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/6</div>
-            <a href="/2023/12/06/fds5/">
-                <h3>数据结构杂谈（二）| 如何学习数据结构</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #03a9f4">碎碎念</a>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-    
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/6</div>
-            <a href="/2023/12/06/fds4/">
-                <h3>【夜深人静码代码】旅游规划 | Dijkstra算法</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-    
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/6</div>
-            <a href="/2023/12/06/fds3/">
-                <h3>堆：堆操作的本质是维护（二）</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-    
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/6</div>
-            <a href="/2023/12/06/fds2/">
-                <h3>堆：堆操作的本质是维护（一）</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/FDS/" style="color: #ff7d73">FDS</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-    
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/6</div>
-            <a href="/2023/12/06/fds1/">
-                <h3>数据结构杂谈（一）</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #00a596">碎碎念</a>
-                    </span>
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-    
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/6</div>
-            <a href="/2023/12/06/heap1/">
-                <h3>堆：高效的优先队列（零）</h3>
-            </a>
-            <div class="info">
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
-                    </span>
-                    
-                </span>
-                
-            </div>
-        </div>
-    </div>
-    
+
+
 </div>
 
             <footer id="footer">
