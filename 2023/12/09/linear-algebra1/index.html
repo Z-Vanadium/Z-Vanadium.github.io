@@ -254,7 +254,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #ff7d73">线性代数</a>
+                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #03a9f4">线性代数</a>
             </span>
             
         </span>
@@ -297,7 +297,7 @@
 <li>$D_{副对角线三角} &#x3D; (-1)^{\frac{n(n-1)}{2}} a_1a_2…a_n$</li>
 </ul>
 <p>$$\displaystyle\sum_{k&#x3D;1}^na_{ik}A_{jk} &#x3D; \begin{cases}|A|,&amp;\text{if }i &#x3D; j \\ 0,&amp;\text{if }i\ne j \end{cases}\space\space 1 \le i, j \le n(n \gt 1) $$</p>
-<p>即，某一行元素向量乘以<strong>本行代数余子式向量</strong>等于行列式；乘以<strong>其他行代数余子式向量</strong></p>
+<p>即，某一行元素向量乘以<strong>本行代数余子式向量</strong>等于行列式；乘以<strong>其他行代数余子式向量</strong>等于零</p>
 <p><strong>Vandermonde行列式</strong></p>
 <p>$$D_n &#x3D; \begin{vmatrix}1&amp;1&amp;…&amp;1\\x_1&amp;x_2&amp;…&amp;x_n\\x_1^2&amp;x_2^2&amp;…&amp;x_n^2\\ \vdots&amp;\vdots&amp;\space&amp;\vdots\\x_1^{n-1}&amp;x_2^{n-1}&amp;…&amp;x_n^{n-1}\end{vmatrix} &#x3D;\displaystyle\prod_{1\le i\le j \le n}(x_j - x_i) $$<br>$\footnotesize{Proof.逐行相减，展开得递推式}$</p>
 <p><strong>Cramer法则</strong></p>
@@ -402,6 +402,49 @@
 <li>$ \beta _1,\beta _2,…,\beta _s线性无关\hArr A_1,A_2,…,A_s线性无关$</li>
 <li>$ r(\beta _1\beta _2…\beta _s)&#x3D;r(A_1A_2…A_s)$</li>
 <li>坐标的线性关系可以映射到向量的线性关系</li>
+</ul>
+<p>$设\beta _1,\beta _2,…,\beta _s,\beta与\alpha_1,\alpha_2,…,\alpha_t是V的两个向量组，又已知A_1,A_2,…,A_s,Y\in P^t，且A&#x3D;(A_1\ A_2\ …\ A_s)。若\alpha_1,\alpha_2,…,\alpha_t线性无关且(\beta _1\ \beta _2\ …\ \beta _s\ \beta)&#x3D;(\alpha_1\ \alpha_2\ …\ \alpha_t)(A_1\ A_2\ …\ A_s\ Y)$</p>
+<ul>
+<li>$\beta可由\beta _1,\beta _2,…,\beta _s线性表出\hArr 线性方程组AX&#x3D;Y有解$</li>
+<li>$ \beta _1,\beta _2,…,\beta _s线性相关\hArr A_1,A_2,…,A_s线性相关$</li>
+<li>$ \beta _1,\beta _2,…,\beta _s线性无关\hArr A_1,A_2,…,A_s线性无关$</li>
+<li>$ r(\beta _1\beta _2…\beta _s)&#x3D;r(A_1A_2…A_s)&#x3D;r(A)$</li>
+<li>即上述关系可以映射到任意由线性表出对应的两个向量组</li>
+</ul>
+<p>&nbsp;</p>
+<h4 id="第-4-章-n元向量空间"><a href="#第-4-章-n元向量空间" class="headerlink" title="第 4 章 n元向量空间"></a>第 4 章 n元向量空间</h4><p>第 4 章前半部分（4.1~4.7均为第 7 章对应部分的特殊情况，因此可联系复习）</p>
+<p><strong>线性方程组解的结构</strong></p>
+<p>$假定线性方程组的一般形式为：AX&#x3D;b，其中A\in P^{m\times n},b\in P^m,X\in P^n,r(A) &#x3D; r,A的每一列均不等于\theta$</p>
+<p>$若b&#x3D;O，即齐次线性方程组，有$</p>
+<ul>
+<li>$齐次线性方程组的解的线性组合（解空间W_0）仍是解$</li>
+<li>$\dim W_0&#x3D;n-r&#x3D;n-r(A)\le n$</li>
+<li>$W_0的任意一个极大线性无关组，称为基础解系，W_0即可认为是基础解系扩张而成的线性空间$</li>
+<li>$X&#x3D;t_1\eta_1+t_2\eta_2+…+t_{n-r}\eta_{n-r}，其中\eta为求解后得到的每一个列向量，即基础解系$</li>
+<li>秩越大，解空间维数越小，理解为有序的系数矩阵不需要过多的未知数</li>
+</ul>
+<p>$若b\ne O，即非齐次线性方程组，有$</p>
+<ul>
+<li>$称AX&#x3D;O为AX&#x3D;b的导出组，W_0为导出组的解空间，\eta_1,\eta_2,…,\eta_{n-r}为一组基础解系，\eta_0为AX&#x3D;b的任一特解，则X&#x3D;\eta_0+t_1\eta_1+t_2\eta_2+…+t_{n-r}\eta_{n-r}$</li>
+<li>求解非齐次线性方程组时，先求解同型的齐次线性方程组，再加上特解</li>
+</ul>
+<p><strong>欧氏空间</strong></p>
+<p>$内积\stackrel{def}{&#x3D;}(\alpha,\beta)&#x3D;\alpha^T\beta&#x3D;x_1y_1+x_2y_2+…+x_ny_n\in P$</p>
+<ul>
+<li>$若\varepsilon_1,\varepsilon_2,…,\varepsilon_n是欧氏空间R^n的一组基，X，Y分别是\alpha和\beta的坐标，则度量矩阵\stackrel{def}{&#x3D;}M&#x3D;\begin{pmatrix}\varepsilon_1^T\varepsilon_1&amp;\varepsilon_1^T\varepsilon_2&amp;…&amp;\varepsilon_1^T\varepsilon_n\\\varepsilon_2^T\varepsilon_1&amp;\varepsilon_2^T\varepsilon_2&amp;…&amp;\varepsilon_2^T\varepsilon_n\\\vdots&amp;\vdots&amp;\ &amp;\vdots\\\varepsilon_n^T\varepsilon_1&amp;\varepsilon_n^T\varepsilon_2&amp;…&amp;\varepsilon_n^T\varepsilon_n&amp;\end{pmatrix}，则(\alpha,\beta)&#x3D;\alpha^T\beta&#x3D;X^TMY$</li>
+</ul>
+<p>$长度\stackrel{def}{&#x3D;}|\alpha|&#x3D;\sqrt{(\alpha,\alpha)}$</p>
+<ul>
+<li>$Cauthy-Schwaz不等式\ \ |(\alpha,\beta)|\le|\alpha||\beta|，当且仅当\alpha与\beta线性相关时等号成立$</li>
+<li>$&lt;\alpha,\beta&gt;&#x3D;\arccos\frac{(\alpha,\beta)}{|\alpha||\beta|}$</li>
+</ul>
+<p>$Schmidt正交化过程\begin{cases}\beta_1&#x3D;\alpha_1,\\\beta_k&#x3D;\alpha_k-\displaystyle\sum_{j&#x3D;1}^{k-1}\frac{(\alpha_k,\beta_j)}{(\beta_j,\beta_j)}\end{cases}，其中\alpha_i为线性无关向量组$</p>
+<ul>
+<li>$若s&#x3D;n，则\alpha_i为基，\beta_i为正交基，\frac{1}{|\beta_i|}\beta_i为标准正交基$</li>
+</ul>
+<p>$设U\in R^{n\times n}，若U^TU&#x3D;UU^T&#x3D;E，则称U是正交矩阵$</p>
+<ul>
+<li>$U&#x3D;(\alpha_1\ \alpha_2\ …\ \alpha_n)，则\alpha_1\ \alpha_2\ …\ \alpha_t是标准正交基\hArr U是正交矩阵$</li>
 </ul>
 
     </div>

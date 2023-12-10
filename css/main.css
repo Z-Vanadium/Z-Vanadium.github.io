@@ -215,7 +215,7 @@
 
 .my-home-window{
     position:absolute; 
-    height: 80px;
+    height: 72px;
     width: 200px;
     color: #ffffff;
     background-color: #ffffff2b;
@@ -788,10 +788,19 @@ h3,
 h4,
 h5,
 h6 {
-    color: #1e3e3f;
     font-weight: bold;
     margin: 15px 0;
     word-break: keep-all;
+}
+h1,
+h2,
+h3,
+h6 {
+    color: #1e3e3f;
+}
+h5,
+h4{
+    color: #ffa2c4;
 }
 h1 {
     font-size: 30px;
