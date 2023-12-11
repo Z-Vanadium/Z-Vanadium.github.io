@@ -257,7 +257,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
+                <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
             </span>
             
         </span>
@@ -265,7 +265,7 @@
     </div>
     
     <div class="content" v-pre>
-        <h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><p><strong>授课教师：</strong> 俞欢军<br><strong>上课教材：</strong> <del>用不着</del><br><strong>编译环境：</strong> gcc version 13.1.0 (x86_64-win32-seh-rev1, Built by MinGW-Builds project)<br><strong>参考资料：</strong> <a target="_blank" rel="noopener" href="https://note.isshikih.top/cour_note/D1QD_CXiaoCheng/">C小程 琐碎知识点整理</a> | <a target="_blank" rel="noopener" href="https://blog.zhanghai.me/c-exam-notes/">C 语言应试笔记</a> | <a target="_blank" rel="noopener" href="https://blog.yzsun.me/c-traps-and-pitfalls/">《C 陷阱与缺陷》笔记</a></p>
+        <h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><p><strong>授课教师：</strong> 俞欢军<br><strong>上课教材：</strong> <del>用不着</del><br><strong>编译环境：</strong> gcc version 13.1.0 (x86_64-win32-seh-rev1, Built by MinGW-Builds project)<br><strong>参考资料：</strong> <a target="_blank" rel="noopener" href="https://note.isshikih.top/cour_note/D1QD_CXiaoCheng/">C小程 琐碎知识点整理</a> | <a target="_blank" rel="noopener" href="https://blog.zhanghai.me/c-exam-notes/">C 语言应试笔记</a> | <a target="_blank" rel="noopener" href="https://blog.yzsun.me/c-traps-and-pitfalls/">《C 陷阱与缺陷》笔记</a> | <a target="_blank" rel="noopener" href="https://meta.chengxuka.com/#/mooc/outline?_id=39&title=C%25E8%25AF%25AD%25E8%25A8%2580%25E7%25A8%258B%25E5%25BA%258F%25E8%25AE%25BE%25E8%25AE%25A1%25E7%25AC%25AC4%25E7%2589%2588(%25E6%25B5%2599%25E5%25A4%25A7%25E7%2589%2588)%25E4%25BD%2595%25E9%2592%25A6%25E9%2593%25AD%25E9%25A2%259C%25E6%2599%2596%25E8%2591%2597">何钦明PTA答案</a></p>
 <p><strong>P.S.</strong> 感恩学长学姐们的无私分享</p>
 <span id="more"></span>
 <p>&nbsp;</p>
@@ -662,7 +662,7 @@ printf(&quot;%d\n&quot;,f!=0.1);  \\1
 </ol>
 <p>&nbsp;</p>
 <h4 id="1121"><a href="#1121" class="headerlink" title="1121"></a>1121</h4><ol>
-<li>对于以下程序段，则叙述正确的是（ <strong>B</strong> ）。<pre><code class="c">char s[ ]=&quot;china&quot;; 
+<li>对于以下程序段，则叙述正确的是（ <strong>D</strong> ）。<pre><code class="c">char s[ ]=&quot;china&quot;; 
 char *p; 
 p = s;
 
@@ -671,7 +671,7 @@ B.  数组s中的内容和指针变量p中的内容相等
 C.  数组s的长度和p所指向的字符串长度相等
 D.  *p与s[0]相等
 </code></pre>
- <strong>解释：</strong> s是字符数组，p是字符串指针，不一样；内容一样对；长度不等，字符数组包括了’\0’，字符串不包括；*p和s相等</li>
+ <strong>解释：</strong> s是字符数组，p是字符串常量指针，不一样；内容不一样，s是字符串，p只是一个地址；长度不等，字符数组包括了’\0’，字符串不包括；*p和s[0]相等，因为s的首地址赋给了p</li>
 </ol>
 <p>&nbsp;</p>
 <h4 id="1128"><a href="#1128" class="headerlink" title="1128"></a>1128</h4><ol>
