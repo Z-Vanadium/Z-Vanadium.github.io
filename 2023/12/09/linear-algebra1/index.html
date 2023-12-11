@@ -254,7 +254,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #ff7d73">线性代数</a>
+                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #ffa2c4">线性代数</a>
             </span>
             
         </span>
@@ -448,11 +448,62 @@
 <p>$Schmidt正交化过程\begin{cases}\beta_1&#x3D;\alpha_1,\\\beta_k&#x3D;\alpha_k-\displaystyle\sum_{j&#x3D;1}^{k-1}\frac{(\alpha_k,\beta_j)}{(\beta_j,\beta_j)}\end{cases}，其中\alpha_i为线性无关向量组$</p>
 <ul>
 <li>$若s&#x3D;n，则\alpha_i为基，\beta_i为正交基，\frac{1}{|\beta_i|}\beta_i为标准正交基$</li>
+<li>$M可逆\iff\varepsilon_1,\varepsilon_2,…,\varepsilon_n线性无关$</li>
 </ul>
 <p>$设U\in R^{n\times n}，若U^TU&#x3D;UU^T&#x3D;E，则称U是正交矩阵$</p>
 <ul>
-<li>$U&#x3D;(\alpha_1\ \alpha_2\ …\ \alpha_n)，则\alpha_1\ \alpha_2\ …\ \alpha_t是标准正交基\hArr U是正交矩阵$</li>
+<li>$U&#x3D;(\alpha_1\ \alpha_2\ …\ \alpha_n)，则\alpha_1\ \alpha_2\ …\ \alpha_t是标准正交基\hArr U是正交矩阵\Rightarrow U^{-1}&#x3D;U^T$</li>
 </ul>
+<!--
+- $M=E\iff\varepsilon_1,\varepsilon_2,...,\varepsilon_n构成标准正交基\iff\Epsilon^T\Epsilon=E\iff\Epsilon是正交阵\iff\Epsilon^{-1}=\Epsilon^T$
+- - $$
+- $$	
+-->
+
+<!--appending-->
+
+
+<p>&nbsp;</p>
+<h4 id="第-5-章-矩阵的特征值理论与相似对角化"><a href="#第-5-章-矩阵的特征值理论与相似对角化" class="headerlink" title="第 5 章 矩阵的特征值理论与相似对角化"></a>第 5 章 矩阵的特征值理论与相似对角化</h4><p><strong>矩阵的相似</strong><br>$if \ \exist可逆P,s.t.P^{-1}A&#x3D;B，则称AB相似，以下说法等价：$</p>
+<ul>
+<li>$A与对角阵\Lambda&#x3D;(\lambda_i)_{n\times n}&#x3D;\begin{pmatrix}\lambda_1&amp;\ &amp;\ &amp;\ \\\ &amp;\lambda_2&amp;\ &amp;\ \\\ &amp;\ &amp;\ddots&amp;\ \\\ &amp;\ &amp;\ &amp;\lambda_n\end{pmatrix}(\lambda_i\in P)相似&#x2F;A可以对角化$</li>
+<li>$\exist可逆P,s.t.P^{-1}AP&#x3D;\Lambda$</li>
+<li>$\exist n个线性无关的向量组\varepsilon_i,s.t.A(\varepsilon_1,\varepsilon_2,…,\varepsilon_n)&#x3D;,s.t.(\varepsilon_1,\varepsilon_2,…,\varepsilon_n)\Lambda$</li>
+<li>$\exist n个线性无关的向量组\varepsilon_i,s.t.(A\varepsilon_1,A\varepsilon_2,…,A\varepsilon_n)&#x3D;(\lambda_1\varepsilon_1,\lambda_2\varepsilon_2,…,\lambda_n\varepsilon_n)$</li>
+<li>$\exist n个线性无关的向量组\varepsilon_i,s.t.A\varepsilon_i&#x3D;\lambda_i\varepsilon_i,1\le i\le n$</li>
+<li>$A存在n个线性无关的特征向量$</li>
+</ul>
+<p>$A可以对角化的必要条件$</p>
+<ul>
+<li>$A有n个不同的特征值\Rightarrow A可以对角化$</li>
+<li>$r_1+r_2+…+r_s&#x3D;n\Rightarrow A存在n个线性无关的特征向量\iff A可以对角化$</li>
+</ul>
+<p>不是所有的A都可以对角化</p>
+<p><strong>定义及计算</strong></p>
+<p> $对于A\in P^{n\times n},if\ \exist\lambda_0\in P,\xi\ne\theta\in P^n,s.t.A\xi&#x3D;\lambda_0\xi,则称\lambda_0是A在P中的特征值，反过来，称\xi是\lambda_0的特征向量$</p>
+<ul>
+<li>一个特征向量只能属于一个特征值，但是特征值可以属于无穷多个特征向量</li>
+<li>$\lambda_0\in P是A的特征值\iff(\lambda_0 E-A)\xi&#x3D;\theta_{n\times 1},即齐次线性方程组有非零解\iff|\lambda_0E-A|&#x3D;0\iff r(\lambda_0 E-A)&lt;n$</li>
+</ul>
+<p>$称|\lambda E－A|(\lambda\in P)为A特征多项式,记作f_A(\lambda)\backsim f(\lambda),则|\lambda E－A|&#x3D;f(\lambda)&#x3D;0称作特征方程$</p>
+<ul>
+<li>$\lambda_0是A的特征值\iff f(\lambda_0)&#x3D;0$</li>
+<li>$f(\lambda)&#x3D;0的所有根，即是A的所有特征值（重根按重数计，因此我们说A有n个特征值）</li>
+<li>$设A有s个互不相同的特征值，第i个特征值的重数为n_i，则f(\lambda)&#x3D;(\lambda-\lambda_1)^{n_1}(\lambda-\lambda_2)^{n_2}…(\lambda-\lambda_s)^{n_s}$</li>
+</ul>
+<p>$\xi\in P^n是A的属于特征值\lambda_0的特征向量\iff\xi是齐次线性方程组(\lambda_0E－A)X＝O的非零解向量$</p>
+<ul>
+<li>$求出f(\lambda)&#x3D;0的所有互异根\lambda_1,\lambda_2,…,\lambda_s(1\le s\le n)$</li>
+<li>$针对每一个\lambda_i求出线性特征方程的通解X^i&#x3D;k_1\eta_1^i+k_2\eta_2^i+…+k_{n-r_i}\eta_{n-r_i}^i,\ \dim W_{\lambda_i}&#x3D;r_i&#x3D;r(\lambda_iE-A),其中W_{\lambda_i}为\lambda_i的解空间$</li>
+<li>$\xi_i&#x3D;k_1\eta_1^i+k_2\eta_2^i+…+k_{n-r_i}\eta_{n-r_i}^i,\ t_1,t_2,…,t_{n-r_i}\in P且不全为0$</li>
+</ul>
+<p><strong>基本性质</strong></p>
+<p>$A的不同特征值的特征向量线性无关，即A\xi_i&#x3D;\lambda_i\xi_i\Rightarrow{\xi_1,\xi_2,…,\xi_s}线性无关$</p>
+<ul>
+<li>$证明x_1\xi_1+x_2\xi_2+…+x_s\xi_s&#x3D;\theta只有非零解时，技巧：可以左乘A以出现特征方程$</li>
+<li>$推广：所有不同特征值的特征向量组成的向量组线性无关，其子向量组也线性无关$</li>
+</ul>
+<p>$|A|&#x3D;\displaystyle\prod_{i&#x3D;1}^n\lambda_i,\ tr(A)&#x3D;\displaystyle\sum_{i&#x3D;1}^n\lambda_i$</p>
 
     </div>
     
