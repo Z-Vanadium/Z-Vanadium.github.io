@@ -257,7 +257,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="color: #03a9f4">微积分</a>
+                <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="color: #ffa2c4">微积分</a>
             </span>
             
         </span>
@@ -415,7 +415,86 @@
 </ul>
 <p><strong>凹凸性</strong><br>$上凹\iff f^{\prime\prime}\ge0$<br>$下凹\iff f^{\prime\prime}\le0$</p>
 <p><strong>渐近线</strong><br><strong>不要忘记水平&#x2F;垂直渐近线</strong></p>
-<p><strong>曲率</strong><br>$曲率K(x)&#x3D;\displaystyle\frac{|f^{\prime\prime}(x)|}{[1+(f^\prime(x))^2]^{3&#x2F;2}}$<br>$半径&#x3D;\displaystyle\frac{1}{K}$<br>$横坐标\xi&#x3D;x-\displaystyle\frac{f^\prime(x)[1+(f^\prime(x))^2]}{f^{\prime\prime}(x)}$<br>$纵坐标\eta&#x3D;y+\displaystyle\frac{1+(f^\prime(x))^2}{f^{\prime\prime}(x)}$</p>
+<p><strong>曲率</strong><br>$曲率K(x)&#x3D;\displaystyle\frac{|f^{\prime\prime}(x)|}{[1+(f^\prime(x))^2]^{3&#x2F;2}}$<br>$半径R&#x3D;\displaystyle\frac{1}{K}$<br>$横坐标\xi&#x3D;x-\displaystyle\frac{f^\prime(x)[1+(f^\prime(x))^2]}{f^{\prime\prime}(x)}$<br>$纵坐标\eta&#x3D;y+\displaystyle\frac{1+(f^\prime(x))^2}{f^{\prime\prime}(x)}$</p>
+<p>&nbsp;</p>
+<h4 id="第-5-章-不定积分"><a href="#第-5-章-不定积分" class="headerlink" title="第 5 章 不定积分"></a>第 5 章 不定积分</h4><p><strong>基本积分公式</strong></p>
+<ul>
+<li>$\displaystyle\int0dx&#x3D;C$</li>
+<li>$\displaystyle\int x^\alpha dx&#x3D;\frac{x^{\alpha+1}}{\alpha+1}+C(\alpha\ne-1)$</li>
+<li>$\displaystyle\int\frac{1}{x}dx&#x3D;ln|x|+C$</li>
+<li>$\displaystyle\int\alpha^xdx&#x3D;\frac{\alpha^x}{\ln\alpha}+C(\alpha&gt;0,\alpha\ne 1)$</li>
+<li>$\displaystyle\int\cos xdx&#x3D;\sin x+C$</li>
+<li>$\displaystyle\int\sin xdx&#x3D;\cos x+C$</li>
+<li>$\displaystyle\int\sec^2xdx&#x3D;\tan x+C$</li>
+<li>$\displaystyle\int\csc^2xdx&#x3D;\ctg x+C$</li>
+<li>$\displaystyle\int\frac{1}{\sqrt{1-x^2}}dx&#x3D;\arcsin x+C$</li>
+<li>$\displaystyle\int\frac{1}{1+x^2}dx&#x3D;\arctan x+C$</li>
+<li>$\displaystyle\int\sec x\tan xdx&#x3D;\sec x+C$</li>
+<li>$\displaystyle\int\csc x\ctg xdx&#x3D;-\csc x+C$</li>
+</ul>
+<p><strong>常见凑微分公式</strong></p>
+<ul>
+<li>$dx&#x3D;\displaystyle\frac{1}{a}d(ax+b)$</li>
+<li>$e^xdx&#x3D;d(e^x)$</li>
+<li>$\displaystyle\frac{dx}{x}&#x3D;d(\ln x)$</li>
+<li>$\displaystyle xdx&#x3D;\frac{1}{2}d(x^2)&#x3D;\frac{1}{2}d(x^2\pm a^2)&#x3D;-\frac{1}{2}d(a^2-x^2)$</li>
+<li>$\sin xdx&#x3D;-d(\cos x)$</li>
+<li>$\cos xdx&#x3D;d(\sin x)$</li>
+<li>$\sec^2xdx&#x3D;d(\tan x)$</li>
+<li>$\sec x\tan xdx&#x3D;d(\sec x)$</li>
+<li>$\displaystyle\frac{dx}{1+x^2}&#x3D;d(\arctan x)$</li>
+<li>$\displaystyle\frac{dx}{\sqrt{1-x^2}}&#x3D;d(\arcsin x)$</li>
+<li>$\displaystyle\frac{dx}{2\sqrt{x}}&#x3D;d(\sqrt{x})$</li>
+</ul>
+<p><strong>基本积分公式</strong></p>
+<ul>
+<li>$\displaystyle\int\frac{dx}{ax+b}&#x3D;\frac{1}{a}\ln|ax+b|+C$</li>
+<li>$\displaystyle\int\frac{dx}{x^2-a^2}&#x3D;\frac{1}{2a}\ln|\frac{x-a}{x+a}|+C$</li>
+<li>$\displaystyle\int\frac{dx}{x^2+a^2}&#x3D;\frac{1}{a}\arctan\frac{x}{a}+C$</li>
+<li>$\displaystyle\int\frac{dx}{\sqrt{a^2-x^2}}&#x3D;\arcsin\frac{x}{a}+C$</li>
+<li>$\displaystyle\int\tan xdx&#x3D;-\ln|\cos x|+C$</li>
+<li>$\displaystyle\int\ctg xdx&#x3D;\ln|\sin x|+C$</li>
+<li>$\displaystyle\int\sec xdx&#x3D;\ln|\sec x+\tan x|+C$</li>
+<li>$\displaystyle\int\csc xdx&#x3D;-\ln|\csc x+\ctg x|+C$</li>
+<li>$\displaystyle\int\frac{dx}{\sqrt{x^2+a^2}}&#x3D;\ln(x+\sqrt{x^2+a^2})+C$</li>
+<li>$\displaystyle\int\sqrt{a^2-x^2}&#x3D;\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin\frac{x}{a}+C$</li>
+<li>$\displaystyle\int\sqrt{x^2\pm a^2}&#x3D;\frac{x}{2}\sqrt{x^2\pm a^2}+\frac{a^2}{2}\ln(x+\sqrt{x^2\pm a^2})+C$</li>
+<li>$\displaystyle\int\sec^3xdx&#x3D;\frac{1}{2}\sec x\tan x+\frac{1}{2}\ln|\sec x+\tan x|+C$</li>
+</ul>
+<p><strong>常见积分变换 有根号去根号</strong></p>
+<ul>
+<li>$\sqrt{ax+b}&#x3D;u$</li>
+<li>$\sqrt{a^2-x^2},x&#x3D;a\sin u$</li>
+<li>$\sqrt{x^2+a^2},x&#x3D;a\tan u$</li>
+<li>$\sqrt{x^2-a^2},x&#x3D;a\sec u$</li>
+<li>$\sqrt{e^x+1}&#x3D;u$</li>
+<li>$\sqrt{\displaystyle\frac{ax+b}{cx+d}}&#x3D;u$</li>
+<li>$x&#x3D;\displaystyle\frac{1}{u},dx&#x3D;-\frac{1}{u^2}du$</li>
+</ul>
+<p><strong>分部积分法</strong></p>
+<p>$\displaystyle\int uv^\prime dx&#x3D;uv-\int vu^\prime dx$<br>$\displaystyle\int udv&#x3D;uv-\int vdu$</p>
+<ul>
+<li>幂指型<ul>
+<li>$\displaystyle\int xe^{-x}dx&#x3D;-xe^{-x}-e^{-x}+C$</li>
+<li>$\displaystyle\int x^2e^{-2x}dx&#x3D;-\frac{1}{2}x^2e^{-2x}-\frac{1}{2}xe^{-2x}-\frac{1}{4}e^{-2x}+C$</li>
+</ul>
+</li>
+<li>幂三角型<ul>
+<li>$有关\sin^2x,\cos^2x,可利用倍角公式降幂$</li>
+</ul>
+</li>
+</ul>
+<!--
+- $$
+- $$
+
+
+- $\displaystyle\int$
+- $\displaystyle\int$
+- $\displaystyle\int$
+- $\displaystyle\int$
+- 
+-->
 
     </div>
     
