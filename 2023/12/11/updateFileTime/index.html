@@ -3,7 +3,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="utf-8" />
-    <title>微积分知识点公式归档 | Vanadium的小屋</title>
+    <title> | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -238,138 +238,181 @@
 
 <div class="article">
     <div>
-        <h1>微积分知识点公式归档</h1>
+        <h1></h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/10
+            2023/12/11
         </span>
         
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="color: #ffa2c4">微积分</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><p><strong>授课教师：</strong> 陈锦辉<br><strong>上课教材：</strong> 《微积分》（lxj版）</p>
-<span id="more"></span>
+        #!/usr/bin/env node
 
-<p>&nbsp;</p>
-<h4 id="第-0-章-预备知识"><a href="#第-0-章-预备知识" class="headerlink" title="第 0 章 预备知识"></a>第 0 章 预备知识</h4><p><strong>实数可由有理数列逼近</strong></p>
-<p>$\forall a\in R,\exist{q_n}\in Q,s.t.\displaystyle\lim_{n\rightarrow\infty}q_n\rightarrow a$</p>
-<p><strong>De Morgan定律</strong></p>
-<p>$C-(A\cap B)&#x3D;(C-A)\cup(C-B)$<br>$C-(A\cup B)&#x3D;(C-A)\cap(C-B)$</p>
-<p><strong>映射</strong><br>$设f:X\rightarrow Y$</p>
-<ul>
-<li>$\forall x_1,x_2\in X,x_1\ne x_2,s.t.f(x_1)\iff f(x_2)\Rightarrow f为单射&#x2F;一对一映射，但不一定y都可由x映射到$</li>
-<li>$f(X)&#x3D;Y\iff f是满射&#x2F;f是X到Y上的映射，但可能多个x对应一个y$</li>
-<li>$f既是单射又是满射\iff f是双射&#x2F;一一对应的映射$</li>
-</ul>
-<p><strong>函数</strong></p>
-<ul>
-<li>$\arcsin x+\arccos x&#x3D;\displaystyle\frac{\pi}{2}$</li>
-<li>$\arctan x+\arcctg x&#x3D;\displaystyle\frac{\pi}{2}$</li>
-<li>$x&gt;0,\ \arctan x+\arctan\displaystyle\frac{1}{x}&#x3D;\displaystyle\frac{\pi}{2}$</li>
-</ul>
-<p><strong>不等式</strong><br>$H_n\le G_n\le A_n$</p>
-<ul>
-<li>$H_n&#x3D;\displaystyle\frac{n}{\displaystyle\frac{1}{a_1}+\displaystyle\frac{1}{a_2}+…+\displaystyle\frac{1}{a_n}}$</li>
-<li>$G_n&#x3D;\sqrt[n]{a_1a_2…a_n}$</li>
-<li>$A_n&#x3D;\displaystyle\frac{a_1+a_2+…+a_n}{n}$</li>
-</ul>
-<p>&nbsp;</p>
-<h4 id="第-1-章-数列的极限"><a href="#第-1-章-数列的极限" class="headerlink" title="第 1 章 数列的极限"></a>第 1 章 数列的极限</h4><p><strong>收敛的定义</strong><br>$if\ \exist a\in R,s.t.\forall\varepsilon&gt;0,\exist N\in Z_+,while\ n\ge N,s.t.|a_n-a|&lt;\varepsilon\iff\displaystyle\lim_{n\rightarrow\infty}a_n&#x3D;a\iff while\ n\rightarrow\infty,a_n\rightarrow a$</p>
-<p><strong>保号性</strong><br>$if \displaystyle\lim_{n\rightarrow\infty}a_n&#x3D;a&gt;0,s.t.\forall p\in(0,a),\exists N&gt;0,while\ n\ge N,a_n&gt;p&gt;0$</p>
-<ul>
-<li>$if\ while\ n\ge N\in Z_+,a_n\ge 0,and\ a_n\rightarrow a\Rightarrow a\ge 0$</li>
-</ul>
-<p><strong>极限的四则运算</strong></p>
-<ul>
-<li>需要保证两者极限都存在</li>
-<li>只能进行有限次四则运算</li>
-</ul>
-<p><strong>单调有界准则</strong></p>
-<ul>
-<li>$(1+\displaystyle\frac{1}{n})^n&lt;e&lt;(1+\displaystyle\frac{1}{n})^{n+1}$</li>
-<li>$\displaystyle\frac{1}{n+1}&lt;\ln(1+\displaystyle\frac{1}{n})&lt;\displaystyle\frac{1}{n}$</li>
-</ul>
-<p><strong>压缩映像</strong></p>
-<ul>
-<li>$|a_{n+1}-A|&lt;r|a_n-A|,0&lt;r&lt;1,n&gt;N\Rightarrow a_n\rightarrow A$</li>
-<li>$|a_{n+1}-a_n|\le r|a_n-a_{n-1}|,0&lt;r&lt;1,n&gt;N\Rightarrow a_n\rightarrow A\in R$</li>
-</ul>
-<p><strong>Bolzano-Weierstrass定理</strong><br>有界数列一定存在收敛子列</p>
-<p><strong>Causy准则</strong><br>$a_n收敛\iff \forall\varepsilon&gt;0,\exist N,while\ m,n&gt;N,|a_m-a_n|&lt;\varepsilon$</p>
-<ul>
-<li>若n足够大，数列两项之间的差可以任意小，则数列收敛</li>
-</ul>
-<p>&nbsp;</p>
-<h4 id="第-2-章-函数的极限"><a href="#第-2-章-函数的极限" class="headerlink" title="第 2 章 函数的极限"></a>第 2 章 函数的极限</h4><p><strong>收敛的定义</strong></p>
-<p>$f:D\rightarrow R,D\subset R,if\ \exist A\in R,s.t.\forall\varepsilon&gt;0,\exist\delta&gt;0,while\ x\in\mathring{U}(x_0,\delta)\cup D,|f(x)-A|&lt;\varepsilon\iff\displaystyle\lim_{x\rightarrow x_0}f(x)\rightarrow A$</p>
-<p><strong>归结原理</strong></p>
-<ul>
-<li>$f:D\subset R\rightarrow R,\exist\mathring{U}(x_0)\subset D,s.t.\displaystyle\lim_{x\rightarrow x_0}f(x)&#x3D;A\iff\forall {x_n},\displaystyle\lim_{n\rightarrow\infty}x_n&#x3D;x_0,x_n\ne x_0,n&#x3D;1,2,…,{f(x_n)}\rightarrow A$</li>
-<li>归结原理将数列极限的结果引到了函数极限的结果</li>
-<li>函数极限的不存在，可以由<strong>两个收敛到同一个点的不同数列</strong>使对应的<strong>函数值分别收敛到不同的值</strong>来证明</li>
-</ul>
-<p><strong>局部保号性</strong></p>
-<ul>
-<li>$if\ \displaystyle\lim_{x\rightarrow x_0}f(x)&#x3D;A&gt;0,\forall p\in(0,A),\exist\delta&gt;0,\forall x\in\mathring{U}(x_0,\delta),s.t.f(x)&gt;p&gt;0$</li>
-<li>$if\ \displaystyle\lim_{x\rightarrow x_0}f(x)&#x3D;A&lt;0,\forall -p\in(A,0),\exist\delta&gt;0,\forall x\in\mathring{U}(x_0,\delta),s.t.f(x)&lt;-p&lt;0$</li>
-</ul>
-<p><strong>间断点</strong><br>如果在某一点：</p>
-<ul>
-<li>左右极限都存在但在某处不连续：<strong>一类间断点</strong><ul>
-<li>左右极限不相等：<strong>跳跃间断点</strong></li>
-</ul>
-</li>
-<li>极限存在，但极限值不等于函数值或函数值没有定义：<strong>二类间断点</strong></li>
-</ul>
-<p><strong>一致连续性</strong><br>$f:I\rightarrow R,if\ \forall\varepsilon&gt;0,\exist\delta&gt;0,s.t.\forall x_1,x_2\in I,while\ |x_1-x_2|&lt;\delta,|f(x_1)-f(x_2)|&lt;\varepsilon\iff f 在I上是一致连续的$</p>
-<ul>
-<li>若f满足当两点横坐标之间的距离小于某个值之后，函数值的差可以无限小，则f是一致连续的</li>
-</ul>
-<p><strong>常用等价无穷小</strong></p>
-<ul>
-<li>$\sin x\backsim x,\ 1-\cos x\backsim \displaystyle\frac{1}{2}x^2,\ \tan x\backsim x$</li>
-<li>$\ln (x+1)\backsim x$</li>
-<li>$e^x-1\backsim x$</li>
-<li>$(1+x)^\alpha-1\backsim\alpha x$</li>
-<li>$\arcsin x\backsim x,\ \arctan x\backsim x$</li>
-<li><strong>请用Taylor展开</strong></li>
-</ul>
-<p>&nbsp;</p>
-<h4 id="第-3-章-导数与微分"><a href="#第-3-章-导数与微分" class="headerlink" title="第 3 章 导数与微分"></a>第 3 章 导数与微分</h4><p><strong>定义</strong></p>
-<ul>
-<li>$y&#x3D;f(x)在\mathring{U}(x_0)有定义,\displaystyle\lim_{x\rightarrow x_0}\displaystyle\frac{f(x)-f(x_0)}{x-x_0}存 在，则f在x_0处可导$</li>
-<li>$f^{\prime}(x)&#x3D;\displaystyle\lim_{\Delta x\rightarrow 0}\displaystyle\frac{f(x+\Delta x)-f(x)}{\Delta x}$</li>
-</ul>
-<p><strong>常用导数公式</strong></p>
-<ul>
-<li>$(\tan x)^{\prime}&#x3D;\sec^2x$</li>
-<li>$(\ctg x)^{\prime}&#x3D;-\csc^2x$</li>
-<li>$(\sec x)^{\prime}&#x3D;\sec x\tan x$</li>
-<li>$(\csc x)^{\prime}&#x3D;-\csc x\ctg x$</li>
-<li>$(\arcsin x)^{\prime}&#x3D;\displaystyle\frac{1}{\sqrt{1-x^2}}$</li>
-<li>$(\arccos x)^{\prime}&#x3D;-\displaystyle\frac{1}{\sqrt{1-x^2}}$</li>
-<li>$(\arctan x)^{\prime}&#x3D;\displaystyle\frac{1}{1+x^2}$</li>
-<li>$(\arcctg x)^{\prime}&#x3D;-\displaystyle\frac{1}{1+x^2}$</li>
-<li>$\arctan x+\arctan y&#x3D;\arctan\displaystyle\frac{x+y}{1-xy}$</li>
-</ul>
+/*
+
+批量更新修改时间
+
+博客自动更新文章的修改时间
+
+*/
+
+
+
+console.log('脚本开始运行..');
+
+var fs = require("fs"); //请求文件系统
+
+var file = "./txt"; //设置读取和写入的文件，当前目录下的test文件
+
+var RegExp=/(updated:\s*)((\d{2}(([02468][048])|([13579][26]))[\-\/\s]?((((0?[13578])|(1[02]))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\-\/\s]?((0?[1-9])|([1-2][0-9])))))|(\d{2}(([02468][1235679])|([13579][01345789]))[\-\/\s]?((((0?[13578])|(1[02]))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\-\/\s]?((0?[1-9])|(1[0-9])|(2[0-8]))))))(\s((([0-1][0-9])|(2?[0-3]))\:([0-5]?[0-9])((\s)|(\:([0-5]?[0-9])))))/g;
+
+
+
+fs.readdir("./",function(err,files){
+
+	var len=files.length;
+
+	var file=null;
+
+	for(var i=0;i<len;i++){
+
+		file=files[i];
+
+		//console.log("读取文件：",file);
+
+		if(file.indexOf(".md")>-1){
+
+			console.log("正在处理文件：",file);
+
+			writeFileTime(file,fs);
+
+		}
+
+	}
+
+});
+
+
+
+/*
+
+file:读取时间的文件以及写入内容的文件
+
+fs: 文件系统
+
+*/
+
+function writeFileTime(file,fs){
+
+	fs.readFile(file, 'utf8',function(err, data) { //读取文件内容
+
+		if (err) return console.log("读取文件内容错误：",err);
+
+		//console.log("文件"+file+"的内容：",data);
+
+		if(RegExp.test(data)){ //如果匹配到`updated`字段
+
+			fs.stat(file,function(err, stats) { //读取文件信息，创建时间等
+
+				if (err) return console.log("读取文件信息错误：",err);
+
+				var updateds=data.match(RegExp);
+
+				//console.log("updated数组:",updateds);
+
+				if(updateds.length>1) console.log("文件"+file+"匹配到多处update字段");
+
+				var updated=updateds[0].replace("updated: ","").replace(/-/g,"/");  //时间格式化为2018/01/29 21:33:30
+
+				//console.log("updated:",updated);
+
+				if(new Date(stats.mtime).getTime()-new Date(Date.parse(updated))>1000*60*5){ // 只要修改时间和文章内updated时间差大于1000毫秒*60*5=5分钟就触发更新
+
+					var result= data.replace(RegExp,"updated: "+getFormatDate(stats.mtime)); //替换更新时间
+
+					fs.writeFile(file, result, 'utf8',function(err) { //写入新的文件内容
+
+						if (err) return console.log("写文件错误：",err);
+
+						fs.utimes(file,new Date(stats.atime),new Date(stats.mtime),function(err){  //还原访问时间和修改时间
+
+							if (err) return console.log("修改时间失败：",err);
+
+							console.log(file,"成功更新时间");
+
+						});
+
+					});
+
+				}
+
+			});
+
+		}	
+
+	});
+
+}
+
+
+
+/*
+
+ timeStr:时间，格式可为："September 16,2016 14:15:05、
+
+ "September 16,2016"、"2016/09/16 14:15:05"、"2016/09/16"、
+
+ '2014-04-23T18:55:49'和毫秒
+
+ dateSeparator：年、月、日之间的分隔符，默认为"-"，
+
+ timeSeparator：时、分、秒之间的分隔符，默认为":"
+
+ */
+
+function getFormatDate(timeStr, dateSeparator, timeSeparator) {
+
+    dateSeparator = dateSeparator ? dateSeparator : "-";
+
+    timeSeparator = timeSeparator ? timeSeparator : ":";
+
+    var date = new Date(timeStr),
+
+            year = date.getFullYear(),// 获取完整的年份(4位,1970)
+
+            month = date.getMonth(),// 获取月份(0-11,0代表1月,用的时候记得加上1)
+
+            day = date.getDate(),// 获取日(1-31)
+
+            hour = date.getHours(),// 获取小时数(0-23)
+
+            minute = date.getMinutes(),// 获取分钟数(0-59)
+
+            seconds = date.getSeconds(),// 获取秒数(0-59)
+
+            Y = year + dateSeparator,
+
+            M = ((month + 1) > 9 ? (month + 1) : ('0' + (month + 1))) + dateSeparator,
+
+            D = (day > 9 ? day : ('0' + day)) + ' ',
+
+            h = (hour > 9 ? hour : ('0' + hour)) + timeSeparator,
+
+            m = (minute > 9 ? minute : ('0' + minute)) + timeSeparator,
+
+            s = (seconds > 9 ? seconds : ('0' + seconds)),
+
+            formatDate = Y + M + D + h + m + s;
+
+    return formatDate;
+
+}
 
     </div>
     

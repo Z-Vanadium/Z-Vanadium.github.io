@@ -240,11 +240,377 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%85%AC%E5%91%8A/" style="color: #03a9f4">公告</a>
+            <a href="/tags/%E5%85%AC%E5%91%8A/" style="color: #ff7d73">公告</a>
         </span>
         
     </div>
     <a href="/3939/03/09/notice/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/11/updateFileTime/">
+        <h2 class="post-title"></h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/11
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            #!/usr/bin/env node
+
+/*
+
+批量更新修改时间
+
+博客自动更新文章的修改时间
+
+*/
+
+
+
+console.log('脚本开始运行..');
+
+var fs = require("fs"); //请求文件系统
+
+var file = "./txt"; //设置读取和写入的文件，当前目录下的test文件
+
+var RegExp=/(updated:\s*)((\d{2}(([02468][048])|([13579][26]))[\-\/\s]?((((0?[13578])|(1[02]))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\-\/\s]?((0?[1-9])|([1-2][0-9])))))|(\d{2}(([02468][1235679])|([13579][01345789]))[\-\/\s]?((((0?[13578])|(1[02]))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\-\/\s]?((0?[1-9])|(1[0-9])|(2[0-8]))))))(\s((([0-1][0-9])|(2?[0-3]))\:([0-5]?[0-9])((\s)|(\:([0-5]?[0-9])))))/g;
+
+
+
+fs.readdir("./",function(err,files){
+
+	var len=files.length;
+
+	var file=null;
+
+	for(var i=0;i<len;i++){
+
+		file=files[i];
+
+		//console.log("读取文件：",file);
+
+		if(file.indexOf(".md")>-1){
+
+			console.log("正在处理文件：",file);
+
+			writeFileTime(file,fs);
+
+		}
+
+	}
+
+});
+
+
+
+/*
+
+file:读取时间的文件以及写入内容的文件
+
+fs: 文件系统
+
+*/
+
+function writeFileTime(file,fs){
+
+	fs.readFile(file, 'utf8',function(err, data) { //读取文件内容
+
+		if (err) return console.log("读取文件内容错误：",err);
+
+		//console.log("文件"+file+"的内容：",data);
+
+		if(RegExp.test(data)){ //如果匹配到`updated`字段
+
+			fs.stat(file,function(err, stats) { //读取文件信息，创建时间等
+
+				if (err) return console.log("读取文件信息错误：",err);
+
+				var updateds=data.match(RegExp);
+
+				//console.log("updated数组:",updateds);
+
+				if(updateds.length>1) console.log("文件"+file+"匹配到多处update字段");
+
+				var updated=updateds[0].replace("updated: ","").replace(/-/g,"/");  //时间格式化为2018/01/29 21:33:30
+
+				//console.log("updated:",updated);
+
+				if(new Date(stats.mtime).getTime()-new Date(Date.parse(updated))>1000*60*5){ // 只要修改时间和文章内updated时间差大于1000毫秒*60*5=5分钟就触发更新
+
+					var result= data.replace(RegExp,"updated: "+getFormatDate(stats.mtime)); //替换更新时间
+
+					fs.writeFile(file, result, 'utf8',function(err) { //写入新的文件内容
+
+						if (err) return console.log("写文件错误：",err);
+
+						fs.utimes(file,new Date(stats.atime),new Date(stats.mtime),function(err){  //还原访问时间和修改时间
+
+							if (err) return console.log("修改时间失败：",err);
+
+							console.log(file,"成功更新时间");
+
+						});
+
+					});
+
+				}
+
+			});
+
+		}	
+
+	});
+
+}
+
+
+
+/*
+
+ timeStr:时间，格式可为："September 16,2016 14:15:05、
+
+ "September 16,2016"、"2016/09/16 14:15:05"、"2016/09/16"、
+
+ '2014-04-23T18:55:49'和毫秒
+
+ dateSeparator：年、月、日之间的分隔符，默认为"-"，
+
+ timeSeparator：时、分、秒之间的分隔符，默认为":"
+
+ */
+
+function getFormatDate(timeStr, dateSeparator, timeSeparator) {
+
+    dateSeparator = dateSeparator ? dateSeparator : "-";
+
+    timeSeparator = timeSeparator ? timeSeparator : ":";
+
+    var date = new Date(timeStr),
+
+            year = date.getFullYear(),// 获取完整的年份(4位,1970)
+
+            month = date.getMonth(),// 获取月份(0-11,0代表1月,用的时候记得加上1)
+
+            day = date.getDate(),// 获取日(1-31)
+
+            hour = date.getHours(),// 获取小时数(0-23)
+
+            minute = date.getMinutes(),// 获取分钟数(0-59)
+
+            seconds = date.getSeconds(),// 获取秒数(0-59)
+
+            Y = year + dateSeparator,
+
+            M = ((month + 1) > 9 ? (month + 1) : ('0' + (month + 1))) + dateSeparator,
+
+            D = (day > 9 ? day : ('0' + day)) + ' ',
+
+            h = (hour > 9 ? hour : ('0' + hour)) + timeSeparator,
+
+            m = (minute > 9 ? minute : ('0' + minute)) + timeSeparator,
+
+            s = (seconds > 9 ? seconds : ('0' + seconds)),
+
+            formatDate = Y + M + D + h + m + s;
+
+    return formatDate;
+
+}
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/12/11/updateFileTime/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/11/writeupdatetime/">
+        <h2 class="post-title"></h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/11
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            #!/usr/bin/env node
+
+/*
+
+批量添加修改时间
+
+用于bolg初始化修改时间
+
+*/
+
+
+
+console.log('脚本开始运行..');
+
+var fs = require("fs"); //请求文件系统
+
+var file = "./txt"; //设置读取和写入的文件，当前目录下的test文件
+
+var RegExp=/(updated:\s*)((\d{2}(([02468][048])|([13579][26]))[\-\/\s]?((((0?[13578])|(1[02]))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\-\/\s]?((0?[1-9])|([1-2][0-9])))))|(\d{2}(([02468][1235679])|([13579][01345789]))[\-\/\s]?((((0?[13578])|(1[02]))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\-\/\s]?((0?[1-9])|(1[0-9])|(2[0-8]))))))(\s((([0-1][0-9])|(2?[0-3]))\:([0-5]?[0-9])((\s)|(\:([0-5]?[0-9])))))\r/g;
+
+
+
+fs.readdir("./",function(err,files){
+
+	var len=files.length;
+
+	var file=null;
+
+	for(var i=0;i<len;i++){
+
+		file=files[i];
+
+		//console.log("读取文件：",file);
+
+		if(file.indexOf(".md")>-1){
+
+			console.log("正在处理文件：",file);
+
+			writeFileTime(file,fs);
+
+		}
+
+	}
+
+    console.log("运行完毕！");
+
+});
+
+/*
+
+file:读取时间的文件以及写入内容的文件
+
+fs: 文件系统
+
+*/
+
+function writeFileTime(file,fs){
+
+	fs.readFile(file, 'utf8',function(err, data) { //读取文件内容
+
+		if (err) return console.log("读取文件内容错误：",err);
+
+		//console.log("文件"+file+"的内容：",data);
+
+		fs.stat(file,function(err, stats) { //读取文件信息，创建时间等
+
+		   if (err) return console.log("读取文件信息错误：",err);
+
+			//console.log("文件"+file+"的信息：",stats);  //打印文件的信息
+
+			//console.log("创建时间是：",stats.mtime);
+
+			//console.log("文件的创建时间是：",getFormatDate(stats.mtime));
+
+            var result= data.replace(RegExp,""); //替换更新时间
+
+			result = result.replace(/categories:/g, "updated: "+getFormatDate(stats.mtime)+"\r"+"categories:");//data:替换为标准化日期
+
+			//console.log("修改后文件内容为：",result);
+
+			fs.writeFile(file, result, 'utf8',function(err) { //写入新的文件内容
+
+				if (err) return console.log("写文件错误：",err);
+
+			});
+
+		});
+
+	});
+
+}
+
+
+
+/*
+
+ timeStr:时间，格式可为："September 16,2016 14:15:05、
+
+ "September 16,2016"、"2016/09/16 14:15:05"、"2016/09/16"、
+
+ '2014-04-23T18:55:49'和毫秒
+
+ dateSeparator：年、月、日之间的分隔符，默认为"-"，
+
+ timeSeparator：时、分、秒之间的分隔符，默认为":"
+
+ */
+
+function getFormatDate(timeStr, dateSeparator, timeSeparator) {
+
+    dateSeparator = dateSeparator ? dateSeparator : "-";
+
+    timeSeparator = timeSeparator ? timeSeparator : ":";
+
+    var date = new Date(timeStr),
+
+            year = date.getFullYear(),// 获取完整的年份(4位,1970)
+
+            month = date.getMonth(),// 获取月份(0-11,0代表1月,用的时候记得加上1)
+
+            day = date.getDate(),// 获取日(1-31)
+
+            hour = date.getHours(),// 获取小时数(0-23)
+
+            minute = date.getMinutes(),// 获取分钟数(0-59)
+
+            seconds = date.getSeconds(),// 获取秒数(0-59)
+
+            Y = year + dateSeparator,
+
+            M = ((month + 1) > 9 ? (month + 1) : ('0' + (month + 1))) + dateSeparator,
+
+            D = (day > 9 ? day : ('0' + day)) + ' ',
+
+            h = (hour > 9 ? hour : ('0' + hour)) + timeSeparator,
+
+            m = (minute > 9 ? minute : ('0' + minute)) + timeSeparator,
+
+            s = (seconds > 9 ? seconds : ('0' + seconds)),
+
+            formatDate = Y + M + D + h + m + s;
+
+    return formatDate;
+
+}
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2023/12/11/writeupdatetime/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -280,7 +646,7 @@
         
         <span class="tag">
             
-            <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
+            <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
         </span>
         
     </div>
@@ -319,91 +685,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="color: #ff7d73">微积分</a>
+            <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" style="color: #00a596">微积分</a>
         </span>
         
     </div>
     <a href="/2023/12/10/calculus1/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/10/doves-day/">
-        <h2 class="post-title">鸽子的一天</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/10
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h4 id="题目背景："><a href="#题目背景：" class="headerlink" title="题目背景："></a>题目背景：</h4><p>身为一名ZJUer，你早早地感受到了大学的美好，并不懈努力让自己的生活充满“上课”“社团”“开会”“干饭”“志愿者”“兼职”等等事务。然而，逐渐鸽化的你意识到人不是陀螺，不能连轴转！！！</p>
-<p>因此，你立志摸鱼！鸽掉让你过度忙碌的事务！</p>
-<p>但是，EAT和PLAY是你解放天性的大好机会，因而这两项事务不算“忙碌”。并且，吃一顿饭，你的干劲会更足，两个小时的EAT或PLAY能让你多工作一个小时! AMAZING!  </p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/10/doves-day/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/09/linear-algebra1/">
-        <h2 class="post-title">线性代数知识点公式归档</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/9
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><p><strong>授课教师：</strong> 董浙<br><strong>上课教材：</strong> 《线性代数》（hzd版）<br><strong>教辅资料：</strong> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16Z4y1U7oU/?spm_id_from=333.337.search-card.all.click&vd_source=fb60086411a6996e53c3014541e4a3ee">MIT-线性代数</a></p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #ffa2c4">线性代数</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/09/linear-algebra1/" class="go-post">阅读全文</a>
 </div>
 
 
