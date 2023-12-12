@@ -257,7 +257,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
+                <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
             </span>
             
         </span>
@@ -310,6 +310,69 @@ void main()
 <p> 作为习题，请读者分析一下以下声明中，a的类型和a的字节数（64位操作系统）：<code>static char *(*(**a[2][3])())[8];</code></p>
 <hr>
 <p> <strong>key:</strong> a is array of 2 of array of 3 pointer to pointer to function returning pointer to array of 8 pointer to static char.<br> sizeof(a) &#x3D; 48 &#x3D; 2 * 3 * 8</p>
+</li>
+<li><p>关于特殊转义符</p>
+<table>
+<thead>
+<tr>
+<th>转义序列</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\a</td>
+<td>BEL(响铃)</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>BS(退格)</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>FF(水平制表符)</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>LF(换行)</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>CR(回车)</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>HT(制表符)</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>VT(垂直制表符)</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>\</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td>‘</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>“</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>\ddd</td>
+<td>八进制</td>
+</tr>
+<tr>
+<td>\xhh</td>
+<td>十六进制</td>
+</tr>
+</tbody></table>
+<p> 最后两个表示对应进制下用ASCII码表示的字符</p>
 </li>
 </ol>
 <p>&nbsp;</p>
