@@ -257,7 +257,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
+                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
             </span>
             
         </span>
@@ -300,11 +300,11 @@ void main()
 </li>
 <li><p>关于变量声明的解读方法，以<code>int **a[2][3];</code>为例：<br> 采用从a开始，<strong>向右向左</strong>看，组词造句的方法 | <a target="_blank" rel="noopener" href="http://unixwiz.net/techtips/reading-cdecl.html">此处参考</a></p>
 <ul>
-<li>a is … int;</li>
-<li>a is array of 2 … int;</li>
-<li>a is array of 2 of array of 3 … int;</li>
-<li>a is array of 2 of array of 3 pointer(s) to … int;</li>
-<li>a is array of 2 of array of 3 pointer(s) to pointer(s) to int;</li>
+<li>a is … <strong>int</strong>;</li>
+<li>a is <strong>array of 2</strong> … int;</li>
+<li>a is array of 2 of <strong>array of 3</strong> … int;</li>
+<li>a is array of 2 of array of 3 <strong>pointer(s) to</strong> … int;</li>
+<li>a is array of 2 of array of 3 pointer(s) to <strong>pointer(s) to</strong> int;</li>
 <li>a 是一个2*3的数组，每个数组元素都是一个指向整型指针的指针</li>
 </ul>
 <p> 作为习题，请读者分析一下以下声明中，a的类型和a的字节数（64位操作系统）：<code>static char *(*(**a[2][3])())[8];</code></p>
