@@ -257,7 +257,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
+                <a href="/tags/C-C/" style="color: #ff7d73">C/C++</a>
             </span>
             
         </span>
@@ -272,12 +272,12 @@
 <p>&nbsp;</p>
 <h4 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h4><ol>
 <li><p>设有声明：<code>char *s1=&quot;xyz&quot;,*s2=&quot;123&quot;,t1[10],*t2;</code>则能完成字符串 s1 和 s2 的值交换选项有（ <strong>C</strong> ）</p>
-<pre><code>A.  t1=s1;s1=s2;s2=t1;
+<pre><code class="c">A.  t1=s1;s1=s2;s2=t1;
 B.  strcpy(t1,s1);strcpy(s1,s2);strcpy(s2,t1);
 C.  t2=s1;s1=s2;s2=t2;
 D.  strcpy(t2,s1);strcpy(s1,s2);strcpy(s2,t2);
 </code></pre>
-<p> <strong>解释：</strong> 首先要明确题干中变量的类型，s<strong>1，s2以及t2的类型都是字符型指针，而t1的类型是字符数组</strong>（C语言没有字符串类型，题干中的字符串指的应该是抽象的字符串）<br> 然后我们逐个选项观察，A选项试图将s1赋值给t1，这个操作就是不合法的。<strong>在C中数组（不论是什么数组）是不可作为左值进行赋值操作的</strong>，因此A直接pass；<br> B选项使用了string.h库中的strcpy函数，这个函数接受两个字符型指针char*，<strong>把后者连带着’\0’拷贝到前者，从前者的’\0’开始</strong>。但是strcpy要求目标指针（也就是前者）是可变的，而s1是不可变的，因此运行时会在第二句语句报出段错误Segmentation fault；<br> C选项没有问题，C语言虽然不支持字符型指针向字符数组赋值，但是<strong>支持字符型指针向字符型指针赋值</strong>，因此s1（”xyz”的首元素的地址）赋给了t2并完成接下来的交换操作；<br> D选项不合法之处与B类似，不再赘述。<br> 这道题涉及到了很多东西，对C的理解更上一层楼，不失为又新又好。</p>
+<p> <strong>解释：</strong> 首先要明确题干中变量的类型，<strong>s1，s2以及t2的类型都是字符型指针，而t1的类型是字符数组</strong>（C语言没有字符串类型，题干中的字符串指的应该是抽象的字符串）<br> 然后我们逐个选项观察，A选项试图将s1赋值给t1，这个操作就是不合法的。<strong>在C中数组（不论是什么数组）是不可作为左值进行赋值操作的</strong>，因此A直接pass；<br> B选项使用了string.h库中的strcpy函数，这个函数接受两个字符型指针char*，<strong>从前者的’\0’开始，把后者连带着’\0’拷贝到前者</strong>。但是strcpy要求目标指针（也就是前者）是可变的，而s1是不可变的，因此运行时会在第二句语句报出段错误Segmentation fault；<br> C选项没有问题，C语言虽然不支持字符型指针向字符数组赋值，但是<strong>支持字符型指针向字符型指针赋值</strong>，因此s1（”xyz”的首元素的地址）赋给了t2并完成接下来的交换操作；<br> D选项不合法之处与B类似，不再赘述。<br> 这道题涉及到了很多东西，对C的理解更上一层楼，不失为又新又好。</p>
 </li>
 </ol>
 <p>&nbsp;</p>
