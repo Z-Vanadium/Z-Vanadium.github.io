@@ -257,7 +257,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
+                <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
             </span>
             
         </span>
@@ -297,6 +297,19 @@ void main()
 &#125;
 </code></pre>
 <p> <strong>解释：</strong> 行3 首先定义了一个<strong>新的变量类型</strong>AP表示一个大小（注意不是字节）为5的字符型指针。函数defy接受一个字符型指针，重复三次以下操作：<code>p[strlen(p)]=&#39;A&#39;;</code>，这句话的意思是将p所指向的字符串的后导’\0’替换为’A’，最后将p强制类型转换为AP（<strong>即p变成了逻辑上的大小为n*5的二维字符数组</strong>）并+1（意思即是指向下5个字符）。<br> 接下来看主函数部分，定义了字符数组a，初始化为由’\0’分隔的4个4个字符，接下来将a传入defy函数，根据上面的分析我们可以知道a的值被修改为了”FROG<strong>A</strong>SEAL<strong>A</strong>LION<strong>A</strong>LAMB”，接下来p（注意修改p不会影响a，<strong>指针的传参本身也是传值的</strong>）被强转为AP，于是p的逻辑结构变为{“FROG<strong>A</strong>“,”SEAL<strong>A</strong>“,”LION<strong>A</strong>“,”LAMB”}（注意只是逻辑结构，因此<strong>前面三个字符串并没有后导’\0’<strong>）。接下来p+1返回的便是以”SEAL</strong>A</strong>“的’S’的地址为值的一个n*5的二维字符数组。<br> 最后在puts函数里面，返回的defy(a)<strong>被取了第1个字符串即”LIONA”的首地址后又向右移动了两个字符大小的地址</strong>，即指向了’O’，于是puts会打印从’O’到其后的第一个’\0’前的所有字符，即<strong>ONALAMB</strong>。<br> 这道题要求我们十分清楚<strong>每个变量在每个操作后的类型</strong>，搞明白类型后就简单了。</p>
+</li>
+<li><p>关于变量声明的解读方法，以<code>int **a[2][3];</code>为例：<br> 采用从a开始，<strong>向右向左</strong>看，组词造句的方法 | <a target="_blank" rel="noopener" href="http://unixwiz.net/techtips/reading-cdecl.html">此处参考</a></p>
+<ul>
+<li>a is … int;</li>
+<li>a is array of 2 … int;</li>
+<li>a is array of 2 of array of 3 … int;</li>
+<li>a is array of 2 of array of 3 pointer(s) to … int;</li>
+<li>a is array of 2 of array of 3 pointer(s) to pointer(s) to int;</li>
+<li>a 是一个2*3的数组，每个数组元素都是一个指向整型指针的指针</li>
+</ul>
+<p> 作为习题，请读者分析一下以下声明中，a的类型和a的字节数（64位操作系统）：<code>static char *(*(**a[2][3])())[8];</code></p>
+<hr>
+<p> <strong>key:</strong> a is array of 2 of array of 3 pointer to pointer to function returning pointer to array of 8 pointer to static char.<br> sizeof(a) &#x3D; 48 &#x3D; 2 * 3 * 8</p>
 </li>
 </ol>
 <p>&nbsp;</p>
