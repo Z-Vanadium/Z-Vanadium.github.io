@@ -3,7 +3,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="utf-8" />
-    <title>Categories: friendlinks | Vanadium的小屋</title>
+    <title>常见Hexo报错归档 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -36,6 +36,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -162,97 +166,194 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            
+
+<!--card-->
+<div id="home-card-in-post">    
+    <div id="home-card">
+    <div id="card-style" style="max-height: 75vh;">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="description">
+            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+        </div>
         
         
+        <div class="friend-links">
+            <div class="name"><b>Vanadium的友链</b></div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="http://www.foreverhyx.top">PipipiのBlog</a>
+            </div>
+            
+        </div>
         
-        <span>
-            <a href="/categories/%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                信息查询
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                数学公式
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/friendlinks/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                friendlinks
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/categories/%E8%8B%B1%E8%AF%AD%E6%9D%90%E6%96%99/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                英语材料
-            </a>
-        </span>
-        
-        
-    </div>
-    
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/8</div>
-            <a href="/2023/12/08/hexo-userful-command/">
-                <h3>常用Hexo命令归档</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/friendlinks/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        friendlinks
-                    </a>
-                </span>
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #ff7d73">前端</a>
-                    </span>
-                    
-                </span>
-                
+
+        <div class="friend-links">
+            <div class="name"><b>Vanadium常用网址</b></div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://stackedit.io/app#">StackEdit</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome 6</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://md.qikqiak.com/">Markdown-微信公众号</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="http://116.62.147.239:18080/">在线VSCode | 感恩洪神的无私分享</a>
             </div>
         </div>
+
+
+        <!--music player
+        <div class="friend-links">
+            <iframe seamless="seamless" width="300px" id="card" src="//music.163.com/outchain/player?type=2&id=29751583&auto=1&height=66" frameborder="no"></iframe>
+        </div>-->
     </div>
+    
+    
     
 </div>
 
+
+
+    </div>
+</div>
+
+<!--end-->
+
+<div class="article">
+    <div>
+        <h1>常见Hexo报错归档</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+           
+            <!--展示tags-->
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #03a9f4">前端</a>
+            </span>
+            
+        </span>
+        
+    </div>
+      
+        <!--展示page的完整内容-->
+    <div class="content" v-pre>
+        <blockquote>
+<h4 id="记录遇到的的Hexo报错及解决方法"><a href="#记录遇到的的Hexo报错及解决方法" class="headerlink" title="记录遇到的的Hexo报错及解决方法"></a>记录遇到的的Hexo报错及解决方法</h4></blockquote>
+<p>&nbsp;</p>
+<ol>
+<li>hexo deploy之后报错没有权限访问或找不到对应仓库</li>
+</ol>
+<pre><code class="bash">$ hexo d
+...
+Connection reset by 20.205.243.160 port 443
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+Error: Spawn failed
+    at ChildProcess.&lt;anonymous&gt; (D:\Blog\Blog\node_modules\hexo-util\lib\spawn.js:51:21)
+    at ChildProcess.emit (node:events:514:28)
+    at cp.emit (D:\Blog\Blog\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+</code></pre>
+<p><strong>解决方法：</strong> 一般是网络问题，换个proxy或等等吧</p>
+<span id="more"></span>
+
+
+
+    </div>
+
+
+
+
+    
+
+<!--friendlinks-->
+
+
+
+
+<!--end-->
+
+    
+    
+    
+    
+    
+    
+
+
+</div>
+
+<!--
+<div id="card-style">
+<div id="card-div">
+    <div class="avatar">
+        <img src="/images/avatar.jpg" alt="avatar" />
+    </div>
+    <div class="name">Vanadium</div>
+    <div class="description">
+        <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+    </div>
+    
+    
+    <div class="friend-links">
+        <div class="name">Vanadium的友链</div>
+        
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="http://www.foreverhyx.top">PipipiのBlog</a>
+        </div>
+        
+    </div>
+    
+
+    <div class="friend-links">
+        <div class="name">Vanadium常用网址</div>
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+        </div>
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+        </div>            
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+        </div>
+    </div>
+</div>
+</div>
+-->
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -301,6 +402,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 
 
