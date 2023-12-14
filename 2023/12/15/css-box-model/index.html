@@ -3,7 +3,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="utf-8" />
-    <title>最小生成树 | Prim算法与 Kruskal算法 | Vanadium的小屋</title>
+    <title>CSS入门学习杂识 | 盒子模型 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -229,14 +229,14 @@
 
 <div class="article">
     <div>
-        <h1>最小生成树 | Prim算法与 Kruskal算法</h1>
+        <h1>CSS入门学习杂识 | 盒子模型</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/7
+            2023/12/15
         </span>
         
            
@@ -249,7 +249,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #00a596">前端</a>
             </span>
             
         </span>
@@ -258,84 +258,150 @@
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <h1 id="0-什么是最小生成树"><a href="#0-什么是最小生成树" class="headerlink" title="0. 什么是最小生成树"></a>0. 什么是最小生成树</h1><p><strong>最小生成树</strong>（<strong>Minimum Spanning Tree</strong>）这个名词乍一听有点不知所云，但如果我们分拆每一个词，很快就能理解其含义。</p>
-<ul>
-<li><p><strong>树</strong>，顾名思义，这是一棵树。我们知道，树是一类特殊的图，特殊树不存在环，一定是连通的，并且一棵有 N 个节点的树有且仅有 N-1 条边。</p>
-</li>
-<li><p><strong>生成</strong>，这是一个专业术语，意思是这棵树的节点和边都是来自某一个图的，并且树的节点数等于图的节点数。</p>
-</li>
-<li><p><strong>最小</strong>，意思是路径最短，或者根据题目要求，某项或某几项最小。</p>
-</li>
+        <blockquote>
+<p>记录一点CSS学习心得</p>
+</blockquote>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/css3/css3-tutorial.html">RUNOOB-CSS教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44992737/article/details/125217906">CSDN | CSS盒子模型详解</a></li>
 </ul>
-<span id="more"></span> 
-<p>因此，最小生成树问题即可翻译为<strong>从图中选出 N-1 条边使 N 个节点构成一棵树，并且使这棵树满足某一个特定权重最小的条件。</strong></p>
-<h1 id="1-两种算法-归与并"><a href="#1-两种算法-归与并" class="headerlink" title="1. 两种算法 | 归与并"></a>1. 两种算法 | 归与并</h1><p>根据 MST 的定义，我们可以构思出两种解决这个问题的方法，分别是归和并两种方法。<del>（这个名字是作者自己瞎起的）</del></p>
-<p>按照我们所学的知识，和树有关的概念有哪些？<strong>节点</strong>，和<strong>森林</strong>。</p>
-<p>因此，如果我们想要生成一棵最小的树，我们可以考虑<strong>由节点生成</strong>，和<strong>由森林退化</strong>两个角度——也就是归与并。</p>
-<p>当然，我们想到这两点是远不足以获得Turing奖的，因为Prim与Kruskal两个人老早就提出了这两种算法，同时还以自己的名字命好了名。</p>
-<h1 id="2-小树快快长-Prim算法"><a href="#2-小树快快长-Prim算法" class="headerlink" title="2. 小树快快长 | Prim算法"></a>2. 小树快快长 | Prim算法</h1><p>Prim算法是节点生成树。</p>
-<p>首先，从图中任选一个节点S作为MST的根节点。然后，每一次循环都分别从MST的每一个节点出发，寻找一条满足路径最短且不会使MST构成环的边，加入到MST中。当已经寻找到 N-1 条边或找不到满足上述这样条件的边时，循环结束。</p>
-<p>通俗一点就是，Prim算法是先有了一棵MST，然后通过生长的方式把其他节点依次加入进去。</p>
-<p><strong>伪代码</strong>描述如下：</p>
-<pre><code>Prim(S)&#123;
-    new MST;
-    MST.putin(S);
-    while(True)&#123;
-        V = 路径最短且不会使MST构成环;
-        E = 路径最短且不会使MST构成环的边;
-        if( MST.size == N-1 or V == NULL)&#123;
-            break;
-        &#125;
-        MST.putin(V,E);
-    &#125;
-    return MST;
+<span id="more"></span>
+
+<p>&nbsp;</p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>想要高效快捷的学习CSS，你需要：</p>
+<ul>
+<li><strong>VSCode</strong>, with following extensions<ul>
+<li><strong>Color Highlight</strong> | 颜色显示</li>
+<li><strong>Live Server</strong> | html热预览</li>
+</ul>
+</li>
+<li><strong>前置知识</strong><ul>
+<li>熟练的html</li>
+<li>入门的JavaScript</li>
+</ul>
+</li>
+<li><strong>辅助工具&#x2F;网站</strong><ul>
+<li>配色参考</li>
+<li>图片素材</li>
+<li>优秀的榜样网站</li>
+</ul>
+</li>
+<li><strong>信息搜索能力</strong></li>
+<li><strong>一些小创意和小自信</strong></li>
+</ul>
+<p>&nbsp;</p>
+<h4 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h4><p>在任意一个网页按下<kbd>F12</kbd>，就可以打开<strong>开发者工具</strong>，如下图所示，F12可以说是我们最得力的助手（之一）了。</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0001.png?raw=true">
+
+<p>对于学习CSS，我们需要用到的功能不如前端工程师那么多。点击右边第三行第一个图标，我们就可以选取页面上的某一个元素了。</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0002.png?raw=true">
+
+<p>如上图所示，我们选取了一个div属性的元素，其类是.my-home-window，我们可以在右边的源码栏里面看到更详细的信息，比如它的子元素和父元素，它的样式（如果有）以及它的其他可见属性。</p>
+<p>我们可以通过这种方式定位某个元素，再到CSS文件中修改样式，但是这不是这篇文章的重点，重点在于<strong>我们观察网页中被我们选择的元素</strong>，如果我们选择其他元素一一观察，我们会发现：</p>
+<ul>
+<li>元素是矩形的</li>
+<li>矩形的主体是蓝色的</li>
+<li>有些矩形有黄色、橙色、紫色和绿色等颜色的部分，有些没有</li>
+</ul>
+<p>由于CSS的元素都是矩形的，我们给了他一个很形象的名字：<strong>盒子模型（box model）</strong>——网页上的元素以“盒子”的形式，以特定的方式堆叠在一起，形成一定的相互关系。</p>
+<p>盒子模型能解释第一和第二个发现，那第三个发现中的颜色是什么含义？下图是一个<strong>盒子模型的模型</strong>（？好拗口）</p>
+<img src="https://img-blog.csdnimg.cn/2a0e78500977475599756084d93cb610.png">
+
+<ul>
+<li>蓝色部分是盒子的主体，里面是<strong>html元素</strong>（比如p、a、h3、li等等）的内容，大小是100*100（width*height）；</li>
+<li>绿色部分是<strong>内边距padding</strong>，指的是元素内容其<strong>主体部分</strong>边缘的距离，分别有padding-top、padding-left、padding-right和padding-bottom四个方向的子属性，可以类比我们使用Word时的<strong>页边距</strong>概念（如果把盒子比作一页纸的话）；</li>
+<li>黄色部分是<strong>边框border</strong>，指的是元素的边框（废话），这里边框宽度是10；</li>
+<li>橙色部分是<strong>外边距margin</strong>，指的是元素距离其最近的<strong>同级或更高级元素</strong>的距离，类似于padding，margin也有四个方向的子属性。</li>
+</ul>
+<p>此外，还要知道的是，盒子是可以嵌套的，此时我们就有了<strong>子元素</strong>和<strong>父元素</strong>的概念。一般来说，子元素的定位是从父元素<strong>主体部分的左上角</strong>开始的。</p>
+<p>这四个矩形就组成了“盒子”的概念，我们所看到的花里胡哨的的网站归根结底就是由这些花花绿绿的盒子堆叠而成的。（Tips. CSS的全称Cascading Style Sheets指的就是<strong>层叠样式表</strong>）</p>
+<h4 id="DIY"><a href="#DIY" class="headerlink" title="DIY"></a>DIY</h4><p>让我们动手试试吧！</p>
+<ul>
+<li><p>首先在VSCode中，在同一个目录下，新建index.html和main.css并如此摆放（个人习惯，方便对比观察）</p>
+  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0003.png?raw=true">
+</li>
+<li><p>输入如下代码</p>
+<pre><code class="html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;p&gt;
+                    I am text.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;p&gt;
+                    I am text.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="css">body&#123;
+    background-color: #fff;
+&#125;
+
+.container&#123;
+    width: 300px;
+    height: 300px;
+    background-color: aqua;
 &#125;
 </code></pre>
-<p>可以看到，伪代码的叙述是十分简洁易懂的<del>（这是作者基于C&#x2F;Python&#x2F;Java发明的新语言！）</del>，但是我们在实现的时候需要考虑一些至关重要的问题。</p>
-<ul>
-<li><p>Q：我们一定要实现一个MST吗？</p>
+  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0004.png?raw=true">
 </li>
-<li><p>A：当然不需要，在绝大多数问题中，我们只需要一个parent数组来表示某节点的父亲就可以了（同时我们需要一个集合判断某个节点是否属于MST）</p>
+<li><p>然后点击底边任务栏，右数第3个<kbd>Go Live</kbd>，你的网页就可以在127.0.0.1:5000预览了！</p>
+  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0005.png?raw=true">
 </li>
-<li><p>Q：如何实现寻找V和E的操作？</p>
-</li>
-<li><p>A：首先是路径最短，我们可以直接遍历图的每一条边，也可以以最小堆的形式储存图，也可以先对边按权重为关键字排序，这个任君选择；其次是不会使MST构成环，这个也简单，只要该边的终点节点不属于MST即可。</p>
-</li>
-<li><p>Q：一定有MST吗？</p>
-</li>
-<li><p>A：如果题目没有担保，那就不一定，最后可以根据MST.size()的值判断是否得到的是MST。</p>
-</li>
-</ul>
-<h1 id="3-森林会记住一切-Kruskal算法"><a href="#3-森林会记住一切-Kruskal算法" class="headerlink" title="3. 森林会记住一切 | Kruskal算法"></a>3. 森林会记住一切 | Kruskal算法</h1><p>Kruskal算法是森林生成树。</p>
-<p>首先，算法将图中所有节点视作一棵树<del>（孤零零的也很可爱捏）</del>，这样算法就可以简化为考虑树与树连接成MST了。然后，寻找权重最小，且不会产生连通的边加入到MST中，当已经寻找到 N-1 条边或找不到满足上述这样条件的边时，循环结束。</p>
-<p>相对于Prim算法，Kruskal算法更加容易理解。就是用能用的最短边来连接图中的两棵树，最后把所有已有的树连接成一棵MST。</p>
-<p>依然是伪代码，描述如下：</p>
-<pre><code>Kruskal()&#123;
-    new MST;
-    while(True)&#123;
-        E = 路径最短且不会使MST构成环的边;
-        V, W = E的出发节点的终点节点;
-        if( MST.size == N-1 or V == NULL)&#123;
-            break;
-        &#125;
-        MST.putin(E)
-    &#125;
-    return MST;
+<li><p>接下来用main.css添加padding和margin属性，观察预览网页的变化，可以看到，元素之间的距离改变了，接下来请你自己调整，也可以用上方向属性（Tips. px是长度单位<strong>像素</strong>；你甚至可以尝试<strong>负数</strong>margin）</p>
+  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0006.png?raw=true">
+  </li>
+<li><p>你还可以调整元素的border，注意，为了显示你的border，你需要设置border-style属性为<strong>非none</strong>。border属性下有很多子属性，比如颜色、样式、宽度、圆角等等<br>  例如我在main.css写下如下代码（同时删去了.container的background-color属性）</p>
+<pre><code class="css">.container .content&#123;
+    background-color: #eef4ec;
+    border-style: solid;
+    border-color: #39c5bb;
+    border-width: 2px;
+    border-radius: 10px;
+    padding-left: 24px;
 &#125;
 </code></pre>
-<p>可以看到，Kruskal算法与Prim算法是很类似的，当然同样有一些关键问题要回答。</p>
-<ul>
-<li><p>Q1：如何寻找权重最短的边？</p>
-</li>
-<li><p>A1：同上，我们也有三种办法，分别是直接遍历，最小堆，先对边按权重为关键字排序。</p>
-</li>
-<li><p>Q2：如何判断是否会构成环？</p>
-</li>
-<li><p>A2：有且仅有一种情况会构成环，那就是V和W都是某棵树的节点，因此我们只需要判断V和W是不是属于同一棵树即可，实现时我们可以定义root数组，储存每一个节点的根节点，当然，初始化为自己，表示一棵只有一个根节点的树。</p>
-</li>
+<p>  就能得到如下效果</p>
+  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0007.png?raw=true">
+  Tips. **合理**使用border属性，能使你的网页更好看！</li>
 </ul>
-<h1 id="4-算法本质-九九归一"><a href="#4-算法本质-九九归一" class="headerlink" title="4. 算法本质 | 九九归一"></a>4. 算法本质 | 九九归一</h1><p>不管是Prim算法还是Kruskal算法，其本质都是贪心算法。可以证明，每一步贪心最后可以得到最优解。</p>
-<p>具体实现的代码就不给了，<del>主要是作者实在懒得写</del>，而且没有伪代码可读性和移植性强，等到刷题的时候，有机会再贴上来吧^_^</p>
+<p>&nbsp;</p>
+<h4 id="弹性盒子模型"><a href="#弹性盒子模型" class="headerlink" title="弹性盒子模型"></a>弹性盒子模型</h4><p>相较于传统盒子模型，<strong>弹性盒子模型（flex box model）</strong> 是CSS3推出的新玩意儿。能够更加智能的适应手机不同分辨率下的阅读，提高阅读体验。</p>
+<p>想要使用弹性盒子模型，只需在父元素声明display: flex，其子元素就会<strong>自动布局</strong>（默认横向排放，即使是div）</p>
+<p>如果要对弹性容器内的子元素<strong>布局</strong>，我们可以使用flex-direction，他接受四个参数：</p>
+<ul>
+<li>row：左对齐</li>
+<li>row-reverse：右对齐，从右往左排列</li>
+<li>column：纵向排列</li>
+<li>column-reverse：反转纵向，从下往上排列</li>
+</ul>
+<p>设置子元素的<strong>水平对齐方式</strong>，可以使用justify-context属性：</p>
+<ul>
+<li>flex-start：左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center：左右居中</li>
+<li>space-between：左右对齐</li>
+<li>space-around：左右对齐，但是盒子会居中</li>
+</ul>
+<p>设置子元素的<strong>垂直对齐方式</strong>，可以使用align-items属性：</p>
+<ul>
+<li>flex-start：上对齐</li>
+<li>flex-end：下对齐</li>
+<li>center：垂直居中</li>
+</ul>
 
     </div>
 
