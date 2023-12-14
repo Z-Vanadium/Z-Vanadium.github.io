@@ -541,6 +541,9 @@
     margin: auto;
     margin-top: 100px;
     padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 60px;
+
 }
 .article .content {
     margin: 50px 0;
@@ -1075,6 +1078,7 @@ none{
 
 
 .friendlink-wrap{
+    zoom: 0.667;
     margin-top: 14px;
     margin-left: 30px;
     width: 380px;
