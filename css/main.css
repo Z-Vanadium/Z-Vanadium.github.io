@@ -1169,3 +1169,25 @@ none{
     font-weight: 300;
     font-size: large;
 }
+
+
+.github-button{
+    position: relative;
+    top: 70px;
+    left: 120px;
+    height: 25px;
+    zoom: 1.25;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.github-button i{
+    color: #fff;
+    margin-right: 7px;
+}
+.github-button a{
+    display: inline-block;
+    color: #fff;
+    font-weight: 300;
+    font-size: large;
+}
