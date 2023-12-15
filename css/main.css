@@ -1157,6 +1157,7 @@ none{
     zoom: 1.25;
     margin-top: 0;
     padding-top: 0;
+    display: flex;
 }
 
 .friendlinks-button i{
@@ -1164,7 +1165,6 @@ none{
     margin-right: 7px;
 }
 .friendlinks-button a{
-    display: inline-block;
     color: #fff;
     font-weight: 300;
     font-size: large;
