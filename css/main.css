@@ -235,11 +235,16 @@
     text-shadow: 10px;
 }
 
+#home-info{
+    margin: auto;
+}
+
 
 #home-head #home-info .info {
     align-items: center;
     border-radius: 50%;
     display: flex;
+    
     justify-content: center;
     text-align: center;
 }
@@ -271,7 +276,6 @@
     opacity: 0.45;
     transform: rotate(120deg);
 }
-#home-head #home-info,
 #home-posts {
     margin: auto;
 }
@@ -1147,20 +1151,18 @@ none{
     margin-bottom: 40px;
 }
 
-
-
-.friendlinks-button{
-    position: relative;
-    top: 35px;
+.hometags .friendlinks-button{
+    position: fixed;
+    top: 45px;
     left: 120px;
     height: 25px;
     zoom: 1.25;
     margin-top: 0;
     padding-top: 0;
-    display: flex;
 }
 
 .friendlinks-button i{
+    margin-top: 8px;
     color: #fff;
     margin-right: 7px;
 }
@@ -1171,22 +1173,25 @@ none{
 }
 
 
-.github-button{
-    position: relative;
-    top: 70px;
+.hometags .github-button{
+    position: fixed;
+    top: 85px;
     left: 120px;
     height: 25px;
     zoom: 1.25;
     margin-top: 0;
     padding-top: 0;
+    display: flex;
+    float: inline-start;
+    z-index: 1;
 }
 
 .github-button i{
+    margin-top: 5px;
     color: #fff;
-    margin-right: 7px;
+    margin-right: 9px;
 }
 .github-button a{
-    display: inline-block;
     color: #fff;
     font-weight: 300;
     font-size: large;
