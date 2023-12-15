@@ -3,7 +3,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="utf-8" />
-    <title>常见Hexo报错归档 | Vanadium的小屋</title>
+    <title>网站常见异常报错归档 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -229,7 +229,7 @@
 
 <div class="article">
     <div>
-        <h1>常见Hexo报错归档</h1>
+        <h1>网站常见异常报错归档</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -249,7 +249,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #00a596">前端</a>
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #03a9f4">前端</a>
             </span>
             
         </span>
@@ -259,7 +259,7 @@
         <!--展示page的完整内容-->
     <div class="content" v-pre>
         <blockquote>
-<h4 id="记录遇到的Hexo报错及解决方法"><a href="#记录遇到的Hexo报错及解决方法" class="headerlink" title="记录遇到的Hexo报错及解决方法"></a>记录遇到的Hexo报错及解决方法</h4></blockquote>
+<h4 id="记录布洛格建设过程中遇到的异常报错及解决方法"><a href="#记录布洛格建设过程中遇到的异常报错及解决方法" class="headerlink" title="记录布洛格建设过程中遇到的异常报错及解决方法"></a>记录布洛格建设过程中遇到的异常报错及解决方法</h4></blockquote>
 <p>&nbsp;</p>
 <ol>
 <li>hexo deploy之后报错没有权限访问或找不到对应仓库</li>
@@ -281,7 +281,14 @@ Error: Spawn failed
 <p><strong>解决方法：</strong> 一般是网络问题，换个proxy或等等吧</p>
 <span id="more"></span>
 
+<p>&nbsp;</p>
+<ol start="2">
+<li>Awesome Font图标部分缺失, 显示为小方框</li>
+</ol>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0010.png?raw=true">
 
+<p><strong>解决方法:</strong> 网站链接的CDN版本过低. 在Awesome Font官网查询到最新图标版本, 并将<code>\themes\particlex\layout\import.ejs</code>中行3的版本号更改为最新版本即可</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0011.png?raw=true">
 
     </div>
 
