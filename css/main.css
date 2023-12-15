@@ -1117,21 +1117,16 @@ none{
     border-top-color: #dbeceb;
 }
 
-.friendlink-wrap .friendlink-card .content #name{
+#friendlink-card-name{
     margin-left: 10%;
     margin-top: 0%;
     font-size: xx-large;
 }
 
-.friendlink-wrap .friendlink-card .content #discription{
+#friendlink-card-discription{
     margin-left: 3%;
     margin-top: 6%;
     margin-right: 6%;
-}
-
-.friendlink-wrap .friendlink-card .content #discription a{
-    color: #000;
-
 }
 
 
