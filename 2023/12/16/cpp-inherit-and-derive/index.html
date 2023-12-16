@@ -252,12 +252,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #ff7d73">C/C++</a>
+                <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #03a9f4">OOP</a>
+                <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
             </span>
             
         </span>
@@ -281,20 +281,20 @@
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0012.png?raw=true">
 
 <p>&nbsp;</p>
-<h4 id="复合关系"><a href="#复合关系" class="headerlink" title="复合关系"></a>复合关系</h4><p>当两个类都需要包含对方, 但对方都不适合作为自己的派生类时, 可以用符合关系联系这两个类. </p>
+<h4 id="复合关系"><a href="#复合关系" class="headerlink" title="复合关系"></a>复合关系</h4><p>当两个类都需要包含对方, 但对方都不适合作为自己的派生类时, 可以用复合关系联系这两个类. </p>
 <p>例如需求是编写Human类和Dog类, 要求一个Human对象可以是5个Dog对象的主人, 而一个Dog对象只能是一个Human对象的宠物. 此时并不适合把Human当作Dog的派生, 也不适合把Dog当作Human的派生, 我们可以使用<strong>对象指针(数组)</strong> 解决这个需求</p>
-<pre><code class="c++">Class Human;
-Class Dog;  //必须预先声明这两个类
+<pre><code class="c++">class Human;
+class Dog;  //必须预先声明这两个类
 
-Class Huamn&#123;
+class Huamn&#123;
     public:
         Dog* pets[5];   //若不加修饰符, 默认是private
-&#125;
+&#125;;
 
-Class Dog&#123;
+class Dog&#123;
     public:
         Human* master;
-&#125;
+&#125;;
 </code></pre>
 <p>&nbsp;</p>
 <h4 id="覆盖和保护"><a href="#覆盖和保护" class="headerlink" title="覆盖和保护"></a>覆盖和保护</h4><p><strong>一般来说, 基类和派生类不定义同名变量</strong></p>
@@ -314,11 +314,11 @@ class DerivedC : public BaseC&#123;
 &#125;
 
 void Derived::g()&#123;
-    j = 1;  //Error
-    i = 2;  //派生类的i
+    j = 1;          //Error
+    i = 2;          //派生类的i
     BaseC::i = 3;   //基类的i
-    f();    //派生类的f()
-    BaseC::f(); //基类的f()
+    f();            //派生类的f()
+    BaseC::f();     //基类的f()
 &#125;
 </code></pre>
 <p>基类可以声明用修饰符protected声明受保护成员, 下面是不同修饰符修饰的成员的访问范围</p>
@@ -361,7 +361,7 @@ void Derived::g()&#123;
 <li>隐式调用: 省略基类构造函数时, 自动调用基类的默认构造函数</li>
 </ul>
 <p><strong>析构函数</strong></p>
-<p>派生类的析构函数调用时, <strong>先执行基类的析构函数</strong></p>
+<p>派生类的析构函数调用时, <strong>先执行派生类的析构函数</strong></p>
 <p>&nbsp;</p>
 <h4 id="public继承的赋值兼容规则"><a href="#public继承的赋值兼容规则" class="headerlink" title="public继承的赋值兼容规则"></a>public继承的赋值兼容规则</h4><ul>
 <li>派生类对象指针可以直接赋值给基类指针<pre><code class="c++">BaseC* ptrBase = &amp;objDerived

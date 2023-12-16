@@ -252,12 +252,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
+                <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
+                <a href="/tags/OOP/" style="color: #00a596">OOP</a>
             </span>
             
         </span>
@@ -434,7 +434,7 @@ int main()&#123;
 <li><strong>类模板</strong>指的是一个尚未实例化的模板, 被继承时仍然是模板</li>
 <li><strong>模板类</strong>指的是一个已经实例化的类, 本质上与普通的类是一样的</li>
 </ul>
-<p>类模板从<strong>类模板</strong>派生</p>
+<p><strong>类模板从类模板派生</strong></p>
 <pre><code class="c++">template&lt;class T1, class T2&gt;
 class A&#123;
     public:
@@ -461,7 +461,59 @@ int main()&#123;
     C&lt;char&gt; obj2;       //v1~v5: char, char, char, char, char
 &#125;
 </code></pre>
+<p><strong>类模板从模板类派生</strong></p>
+<p><strong>类模板从普通类派生</strong></p>
+<p>当类模板从模板类或普通类派生时, 由这个类模板生成的类均会以这个模板类或普通类为基类</p>
+<pre><code class="c++">template&lt;class T1, class T2&gt;
+class A&#123;
+    public:
+        T1 v1;
+        T2 v2;
+&#125;;
 
+template&lt;class T1, class T2&gt;
+class B:public A&lt;int,char&gt;&#123;
+    public:
+        T1 v3;
+        T2 v4;
+&#125;;
+
+class C&#123;
+    public:
+        int v5;
+&#125;;
+
+template&lt;class T3, class T4&gt;
+class D:public C&#123;
+    public:
+        T3 v6;
+        T4 v7;
+&#125;
+
+
+int main()&#123;
+    B&lt;int,double&gt; obj1; //v1~v4: int, char, int, double
+    D&lt;char,double&gt; obj2;       //v5~v7: int, char, double
+    D&lt;short,float&gt; obj2;       //v5~v7: int, short  , float
+&#125;
+</code></pre>
+<p><strong>普通类从模板类派生</strong></p>
+<p>除语法外, 与普通的类的派生无异</p>
+<pre><code class="c++">template&lt;class T1, class T2&gt;
+class A&#123;
+    public:
+        T1 v1;
+        T2 v2;
+&#125;;
+
+class B:public A&lt;int,char&gt;&#123;
+    public:
+        T1 v3;
+        T2 v4;
+&#125;;
+</code></pre>
+<p>&nbsp;</p>
+<h4 id="模板与友元"><a href="#模板与友元" class="headerlink" title="模板与友元"></a>模板与友元</h4>
     </div>
 
 
