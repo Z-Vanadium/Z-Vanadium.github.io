@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>数据结构杂谈（二）| 如何学习数据结构 | Vanadium的小屋</title>
+    <title>JS学习札记 | 基础语法 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -230,14 +230,14 @@
 
 <div class="article">
     <div>
-        <h1>数据结构杂谈（二）| 如何学习数据结构</h1>
+        <h1>JS学习札记 | 基础语法</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/6
+            2023/12/16
         </span>
         
            
@@ -250,12 +250,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #00a596">碎碎念</a>
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #ff7d73">前端</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
+                <a href="/tags/JavaScript/" style="color: #03a9f4">JavaScript</a>
             </span>
             
         </span>
@@ -264,32 +264,200 @@
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <p>数据结构这一块已经零零碎碎学了一个月了。</p>
-<p>学下来唯一的感觉就是：快。</p>
-<p>这种快一半是教学进度之快，一半是学习速度之快。</p>
-<p>在中国大学MOOC平台上，陈越、何钦明老师的数据结构课程总共分为 12 周，目前进行至第 8 周，但是已经讲到了最小生成树和拓扑排序（虽然这些知识对于洪神来说小菜一碟） <a href="23%E7%BA%A7%E4%BF%A1%E5%AE%89%E5%BE%AE%E4%BF%A1%E7%BE%A4%E7%BE%A4%E4%B8%BB%EF%BC%8C%E5%89%8DOIer%EF%BC%8C%E5%9B%BD%E9%87%91%E5%AE%9E%E5%8A%9B%EF%BC%8C%E5%90%8E%E5%9B%A0%E7%94%9F%E6%B4%BB%E9%80%80%E5%BD%B9%E3%80%82">^洪神</a>   。</p>
-<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/642.png">
+        <blockquote>
+<p>记录一下学习JS的过程</p>
+</blockquote>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>其实想学js很久了, 但是没有一个好的理由, 但是想到三件套是很多前端工具基础, 而js更是基础中的基础(&gt;_&lt;), 这下不得不学了. <strong>JS的语法和C艹很像</strong>, 比如while, for, class的写法, 但是<strong>逻辑却和Python很接近</strong>, 毕竟同为轻量级的解释性脚本语言, 对于自身的定位自然是易于上手和开发. </p>
+<p>因此我认为对于语法知识的掌握速度应该是没什么问题的, 更重要的是要理解js的本质–一门主要<strong>服务于HTML和Web</strong>的语言, 这就要求我们要更多的在实战中练习学到的知识, 更要广泛的尝试项目.</p>
+<h4 id="解释环境"><a href="#解释环境" class="headerlink" title="解释环境"></a>解释环境</h4><p>Node: v20.10.0</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-tutorial.html">RUNOOB JavaScript教程</a></li>
+</ul>
+<span id="more"></span>
 
-<p>简单梳理一下目前为止都讲了些什么吧。</p>
-<p>第 1 周，<strong>数据结构的概念和算法的概念</strong>。</p>
-<p>第 2 周，<strong>线性结构、堆栈和队列</strong>。由于学过C程，数据结构略去了数组和链表，直接介绍了堆栈和队列，但是目前为止这些东西对于高中选课包含技术的同学来说都还是很简单的。</p>
-<p>第 3-5 周，<strong>树</strong>。按照树、二叉树及其遍历、BST、AVL树、堆、Huffman树，最后是并查集的思路展开。</p>
-<p>第 6-8 周，<strong>图</strong>。按照图、图的表示、BFS和DFS、最短路径、最小生成树和拓扑排序展开。这些内容就涉及到了一些经典算法的学习了。</p>
-<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/master/images/643.png">
-
-<p>然而经典算法之所以是经典算法，其原因并不仅仅在于其优秀的问题解决能力，更在于后人一次次地修补优化，这也就导致很多同学（包括我）学习这些算法时，经常觉得“这也太超出常理了吧，怎么想的？”，但是当你仔细研读之后，你会稍稍理解，但还是不忍直呼“妙！”。</p>
-<p>不过，可惜的是，不论你怎么怎么和经典算法产生共鸣，当你上机尝试时，<strong>90% 的概率一行代码都写不出来，99% 的概率程序就是跑不出正确结果，一直WAWAWAWA。</strong></p>
-<p>这种情况尤其频繁地发生在图这一章。</p>
-<p>由于图的抽象性和复杂性，涉及图的算法常常也是抽象且复杂的。例如最短路径中的 Dijstra 算法，初学时你可能很难很难理解基点节点的作用和缘由，以及好奇这个算法<strong>为什么</strong>就能得到单源最短路径。</p>
-<p>当然，在你学的够多（比如达到洪神知识储备的 1%）时，你会明白贪心，你会去搜集这个算法背后数学证明的文献，但是，<strong>你现在学的不够多。</strong></p>
-<p>很多课程有一个劝退点，数据结构也不例外，我肤浅的认为，图就是这门课的劝退点，当然也是一个升华点——理解图的算法原理后，这门课就学透了。</p>
-<p>如何熬过这样一个瓶颈期呢？一个最显然的方法，或者说最高中的方法，就是<strong>刷题</strong>，从模板题开始，一题一题来，别复制粘贴，加个条件，加大数据规模，反正就是多角度的去刷经典题。</p>
-<p>我是有一点点 OI 经历的，虽然菜到不配参加比赛。我短暂的 OI 经历告诉我，想学透一个算法，唯一的办法就是<strong>多写、多刷、多错。</strong></p>
-<p>依旧以 Dijstra 算法为例吧，作为入门级的最短路径算法，他其实有很多很多变形，但是再怎么变，依旧逃不了 BFS 和贪心的本质，但这不是我在哪本书里看来，或是哪节课上听来的，这是<strong>我多年浅薄的和算法打交道的经历让我顿悟的</strong>。</p>
-<p>当然，编程这个领域不好的点就在于你能<strong>太容易</strong>地接触到大佬了，比如<strong>洪神</strong>，因此你很容易陷入自我否定和怀疑，但是请不要过分地怀疑，或者说，请尽早走出怀疑，<strong>所有大佬都是从小白成长而来的。</strong></p>
-<p>不过呢，现在说这些还是有些早。</p>
-<p>而且很大一部分工信的同学也不用修学这么硬核的课程（据我所知，学习数据结构的大概就计科、信安和软工）。</p>
-<p>但是很多东西都是有共性的，听者权当作者博君一笑吧！</p>
+<p>&nbsp;</p>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><p>JS中有6个数据类型</p>
+<ul>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>object</li>
+<li>function</li>
+<li>symbol</li>
+</ul>
+<p>3个对象类型</p>
+<ul>
+<li>Object</li>
+<li>Date</li>
+<li>Array</li>
+</ul>
+<p>和2个不包含任何值的数据类型</p>
+<ul>
+<li>null</li>
+<li>undefined</li>
+</ul>
+<p><strong>typeof可以查看数据类型</strong></p>
+<pre><code class="js">typeof &quot;John&quot;                 // 返回 string 
+typeof 3.14                   // 返回 number
+typeof NaN                    // 返回 number
+typeof false                  // 返回 boolean
+typeof [1,2,3,4]              // 返回 object (Array)
+typeof &#123;name:&#39;John&#39;, age:34&#125;  // 返回 object (Object)
+typeof new Date()             // 返回 object (Date)
+typeof function () &#123;&#125;         // 返回 function
+typeof myCar                  // 返回 undefined (如果 myCar 没有声明)
+typeof null                   // 返回 object
+</code></pre>
+<p><strong>注意:</strong></p>
+<ul>
+<li>NaN 的数据类型是 number</li>
+<li>数组(Array)的数据类型是 object</li>
+<li>日期(Date)的数据类型为 object</li>
+<li>null 的数据类型是 object</li>
+<li>未定义变量的数据类型为 undefined</li>
+</ul>
+<p>&nbsp;</p>
+<h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><p>正则表达式可以借由特定的语法规则, 表示一类字符串的集合</p>
+<p>这里仅给出正则表达式的用法, 关于完整的介绍, 请<a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/16/js-regular-expression/">点击这里</a></p>
+<p><strong>语法</strong></p>
+<p>正则表达式经常用<code>/RegExp/[modifier]</code>定义</p>
+<pre><code class="js">let patt = /world/i
+</code></pre>
+<p><strong>常用方法</strong></p>
+<p>在js中, 正则表达式常用于String的search()和replace()方法</p>
+<ul>
+<li><p>search()方法检索与给定字符串或正则表达式匹配的字串的起始位置, 如果找不到则返回-1</p>
+<pre><code class="js">let s = &quot;hello, WORLD&quot;
+let r = /world/i
+console.log(s.search(r))
+//  输出结果: 7
+//  不区分大小写
+</code></pre>
+</li>
+<li><p>replace()方法可以替换匹配的字符串或正则表达式为给定的字符串, 并返回一个新的字符串</p>
+<pre><code class="js">let s = &quot;hello, WORLD&quot;
+let r = /world/i
+s = s.replace(r,&quot;Vanadium&quot;)
+console.log(s)
+//  输出结果: hello, Vanadium
+</code></pre>
+</li>
+</ul>
+<p><strong>修饰符</strong></p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>i</td>
+<td>不区分大小写</td>
+</tr>
+<tr>
+<td>g</td>
+<td>全局匹配</td>
+</tr>
+<tr>
+<td>m</td>
+<td>多行匹配</td>
+</tr>
+</tbody></table>
+<p><strong>模式</strong></p>
+<ul>
+<li><p>字符范围</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[abc]</td>
+<td>查找字符</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>查找数字</td>
+</tr>
+<tr>
+<td>(x|y|z)</td>
+<td>查找|分隔的字符</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>元字符(转义字符)</p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\d</td>
+<td>匹配数字</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配空白字符</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词边界</td>
+</tr>
+<tr>
+<td>\uxxxx</td>
+<td>匹配十六进制数xxxx匹配的Unicode字符</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>量词</p>
+<table>
+<thead>
+<tr>
+<th>量词</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>n+</td>
+<td>匹配包含一个或多个n的字符串</td>
+</tr>
+<tr>
+<td>n*</td>
+<td>匹配包含零个或多个n的字符串</td>
+</tr>
+<tr>
+<td>n?</td>
+<td>匹配包含零个或一个n的字符串</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><strong>RegExp对象</strong></p>
+<p>在js中, 正则表达式的对象类型是RegExp</p>
+<pre><code class="js">let r = /WORLD/g
+console.log(r.constructor)
+//  输出结果: ƒ RegExp()
+</code></pre>
+<ul>
+<li>test()用于检测某个字符串是否匹配给定的正则表达式<pre><code class="js">let r = /V/i
+let s = &quot;Vanadium&quot;
+let flag = r.test(s)
+console.log(flag)
+//  输出结果: true
+</code></pre>
+</li>
+<li>exec()用于检索所有匹配的结果, 返回一个数组<pre><code class="js">let s = &quot;vanadium, vagrant&quot;;
+let r = /(v)/g;
+console.log(r.exec(s));
+//  输出结果: (2) [&#39;v&#39;, &#39;v&#39;, index: 0, input: &#39;vanadium, vagrant&#39;, groups: undefined]
+</code></pre>
+</li>
+</ul>
 
     </div>
 
