@@ -252,12 +252,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
+                <a href="/tags/C-C/" style="color: #ff7d73">C/C++</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #39c5bb">OOP</a>
+                <a href="/tags/OOP/" style="color: #00a596">OOP</a>
             </span>
             
         </span>
@@ -302,6 +302,77 @@
 <li>自然性 Natural</li>
 </ul>
 <p>正是由于对上述准则的坚持, C艹STL库才能至今仍在跟进维护 <del>, 不像某个友元的概念</del></p>
+<p>&nbsp;</p>
+<h4 id="容器、算法与迭代器"><a href="#容器、算法与迭代器" class="headerlink" title="容器、算法与迭代器"></a>容器、算法与迭代器</h4><p>在STL里面, 我们用<strong>容器container</strong>来描述一个<strong>数据结构</strong>, 或者说是元素集合的储存, 容器为下列操作提供支持：</p>
+<ul>
+<li>增删元素</li>
+<li>通过相关的迭代器读取或更新某个元素</li>
+<li>容器的迭代器脱离于容器的内部结构而存在，但是能完成对容器的特定操作并支持算法的实现</li>
+</ul>
+<p><strong>算法algorithm</strong>对应的就是普遍意义上的算法, 是对容器的操作, 但是算法并不能直接操作容器, 而是<strong>通过定义清晰的迭代器</strong></p>
+<p><strong>迭代器iterator</strong>为容器与算法的交流提供一个<strong>共同单位</strong>, 确保有一个提供清晰的方法得到元素</p>
+<p>&nbsp;</p>
+<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>STL为我们提供了丰富的<strong>容器库Container library</strong>，其中主要包含了三大类，十数种容器模板：</p>
+<ul>
+<li><p><strong>序列容器Sequence container</strong><br>序列容器是抽象于数据按某一个顺序排列的数据结构的容器：</p>
+<ul>
+<li><strong>向量vector</strong>：虽然单词原意是向量，但是人们更愿意称之为<strong>可变数组</strong> ，这是因为相比于数组，vector可以通过成员函数动态的改变自己的长度</li>
+<li><strong>双向队列deque</strong>：一个可以在两端进行增删操作的队列，假如对其两端的操作权限作出限制，可以特化为队列或栈，因此deque相比队列或是栈，更加的灵活，但是一定程度上，也更加臃肿</li>
+<li><strong>数组array</strong>：固定长度的数组</li>
+<li><strong>双向链表list</strong>：相当于迭代器没有随机访问能力的deque</li>
+<li><strong>单向链表forward_list</strong>：单向的链表</li>
+</ul>
+</li>
+<li><p><strong>关联容器Associative container</strong><br>关联容器是抽象于数据没有一个固定排列，而是通过相互之间的关系组织在一起的数据结构的容器，在C艹（以及大多数其他高级语言中）中是用红黑树（一种高效的BST）实现的：</p>
+<ul>
+<li><strong>集合set</strong>：储存的是无重复、无顺序的数据集合，与数学上集合的概念相仿，但不能储存无穷多的元素（显然）</li>
+<li><strong>映射map</strong>：在有些高级语言中，map也被叫做dictionary，map的储存单位是一一对应的键值对，其中键是无序、无重的</li>
+<li><strong>可重集合multiset</strong></li>
+<li><strong>可重映射multimap</strong>：上述容器的可重版本，允许元素的重复</li>
+</ul>
+</li>
+<li><p><strong>无序关联容器Unordered associative container</strong><br>无序关联容器是上述关联容器的无序版，其底层使用hash表而不是红黑树实现：</p>
+<ul>
+<li><strong>unordered_set</strong></li>
+<li><strong>unordered_map</strong></li>
+<li><strong>unordered_multiset</strong></li>
+<li><strong>unordered_multimap</strong></li>
+</ul>
+</li>
+<li><p><strong>适配器Adaptor</strong><br>适配器不是严格意义上的容器，而是对既有容器（包括STL容器和使用者自定义的容器）接口的封装：</p>
+<ul>
+<li><strong>栈stack</strong></li>
+<li><strong>队列queue</strong></li>
+<li><strong>优先队列priority_queue</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>扩展阅读：</strong><br><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/stl/">C艹STL库官方文档 ｜ 容器</a></p>
+<p>&nbsp;</p>
+<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>C++同样为我们提供了丰富的<strong>算法库Algorithm library</strong>，如同前面所说，算法是脱离于容器存在的，但是实现确是通过迭代器操作容器，因此在对算法做介绍之前，我们需要简单讲一下如何获取某个容器的迭代器。</p>
+<pre><code class="c++">auto i = v.begin();
+auto j = v.end();
+</code></pre>
+<p>这两个函数分别可以获取指向容器v开头或结尾的迭代器（是的，你可以将迭代器<strong>粗浅的理解为指针</strong>，一个有自己重载后的++运算符的特殊指针）</p>
+<p>在上面的例子中，使用了一个全新的变量类型声明关键字<strong>auto</strong>，这代表了使用者并不关心i、j的具体变量类型，而是交由编译器自行推导（类似于模板函数参数表的推导）</p>
+<p><strong>find()</strong></p>
+<pre><code class="c++">auto res = find(start, stop, target);
+</code></pre>
+<p>其中res、start、stop的数据类型均为迭代器，target的数据类型为v的元素的数据类型；</p>
+<p>函数的作用是在v（通常是array或vector）中左闭右开区间[start,stop)上寻找值等于target的元素，并返回其迭代器，找不到则返回stop</p>
+<p><strong>count()</strong></p>
+<pre><code class="c++">int cnt = count(start, stop, target);
+</code></pre>
+<p><strong>count_if()</strong></p>
+<pre><code class="c++">int cnt = count_if(start, stop, p);
+</code></pre>
+<p>其中p是一个<strong>谓词</strong> ，可以是函数、函数指针、函数对象（即对<code>()</code>进行重载）或lambda函数。</p>
+<p>这个函数会返回区间上满足谓词p的元素的数量</p>
+<p><strong>for_each()</strong></p>
+<pre><code class="c++">for_each(start, stop, func);
+</code></pre>
+<p>类似于其他高级语言中的map()函数，即对区间上所有的元素调用函数func</p>
+<p><strong>扩展阅读：</strong><br><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/algorithm/">C艹STL库官方文档 ｜ 算法</a></p>
 
     </div>
 
