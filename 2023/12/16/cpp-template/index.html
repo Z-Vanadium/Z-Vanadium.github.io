@@ -252,12 +252,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
+                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #00a596">OOP</a>
+                <a href="/tags/OOP/" style="color: #39c5bb">OOP</a>
             </span>
             
         </span>
@@ -461,8 +461,7 @@ int main()&#123;
     C&lt;char&gt; obj2;       //v1~v5: char, char, char, char, char
 &#125;
 </code></pre>
-<p><strong>类模板从模板类派生</strong></p>
-<p><strong>类模板从普通类派生</strong></p>
+<p><strong>类模板从模板类派生 | 类模板从普通类派生</strong></p>
 <p>当类模板从模板类或普通类派生时, 由这个类模板生成的类均会以这个模板类或普通类为基类</p>
 <pre><code class="c++">template&lt;class T1, class T2&gt;
 class A&#123;
@@ -513,7 +512,45 @@ class B:public A&lt;int,char&gt;&#123;
 &#125;;
 </code></pre>
 <p>&nbsp;</p>
-<h4 id="模板与友元"><a href="#模板与友元" class="headerlink" title="模板与友元"></a>模板与友元</h4>
+<h4 id="模板与友元"><a href="#模板与友元" class="headerlink" title="模板与友元"></a>模板与友元</h4><p><strong>函数、类、类的成员函数作为类模板的友元</strong></p>
+<pre><code class="c++">void func()&#123;&#125;
+
+class A&#123;&#125;;
+
+class B&#123;
+    public:
+        void g()&#123;&#125;
+&#125;
+
+template &lt;class T&gt;
+class C&#123;
+    friend void func();
+    friend class A;
+    friend void B::g();
+&#125;
+//所有由C实例化的类, 均有以上三个友元
+</code></pre>
+<p><strong>函数模板作为类模板的友元</strong></p>
+<pre><code class="c++">template &lt;class T1, class T2&gt;
+class A&#123;
+    public:
+        template &lt;class T1, class T2&gt;
+        friend void func()&#123;&#125;;
+&#125;;
+//所有函数模板的实例化, 都是类模板实例化的友元
+</code></pre>
+<p><strong>类模板作为类模板的友元</strong></p>
+<pre><code class="c++">template &lt;class T1, class T2&gt;
+class A&#123;
+    public:
+        template &lt;class T1, class T2&gt;
+        friend class B&#123;&#125;;
+&#125;;
+//所有B类模板的实例化, 都是A类模板实例化的友元
+</code></pre>
+<p>&nbsp;</p>
+<h4 id="类模板与静态成员变量"><a href="#类模板与静态成员变量" class="headerlink" title="类模板与静态成员变量"></a>类模板与静态成员变量</h4><p>如果类模板中定义了静态成员变量, 则其所有实例化共用一个静态成员变量</p>
+
     </div>
 
 
