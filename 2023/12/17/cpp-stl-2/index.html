@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Windows虚拟机安装Linux软件分享 | Vanadium的小屋</title>
+    <title>C++ | STL II | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -232,24 +232,14 @@
 
 <div class="article">
     <div>
-        <h1>Windows虚拟机安装Linux软件分享</h1>
+        <h1>C++ | STL II</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/15
-        </span>
-           
-            <!--展示categories-->
-        <span class="category">
-            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                软件分享
-            </a>
+            2023/12/17
         </span>
         
            
@@ -262,7 +252,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #ff7d73">Linux</a>
+                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
             </span>
             
         </span>
@@ -272,14 +267,110 @@
         <!--展示page的完整内容-->
     <div class="content" v-pre>
         <blockquote>
-<p>分享一下在Windows上利用VMware安装Ubuntu时用到的软件</p>
+<p>在对STL进行详解之前, 我们先来了解一下<strong>怎么使用</strong>STL吧! 毕竟在算法竞赛和实际应用中, 我们更加关注使用, 而不是关注底层. </p>
 </blockquote>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>遇事不决, 查标准文档</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/">C艹STL库官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/8_stl/">咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象</a></li>
+<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/%E7%90%86%E8%A7%A3%20STL%20-%20%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/">咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象</a></li>
+</ul>
 <span id="more"></span>
 
-<ol>
-<li><a target="_blank" rel="noopener" href="https://www.sixyin.com/4168.html">VMware</a><br>有10.12.15.16四个版本, 我选择了16</li>
-<li><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/ubuntu-releases/">Ubuntu iso</a><br>我选择了ubuntu-23.04-desktop-amd64.iso</li>
-</ol>
+<p>&nbsp;</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="使用STL-以map为例"><a href="#使用STL-以map为例" class="headerlink" title="使用STL | 以map为例"></a>使用STL | 以map为例</h4><p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/map/map/">C艹STL库官方文档 | map</a></p>
+<p>首先我们进入官方文档, 可以看到如下页面</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0015.png?raw=true">
+
+<ul>
+<li><p>请不要使用Chrome自带的翻译插件, <strong>他只会让你更加看不懂</strong>; </p>
+</li>
+<li><p>另, 实在不行可以<strong>去看CSDN等社区</strong>的阉割介绍, 但请注意甄别;</p>
+</li>
+<li><p>又另, 这个世界上<strong>哪有意思准确的中文文档</strong>? <del>即便是国人自己开发的东西, 你说是吧, 尤雨溪?</del></p>
+</li>
+</ul>
+<hr>
+<p>想要使用一个STL, 首先要考虑如何实例化, 因此我们寻找构造函数<code>map::map</code>页面</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0019.png?raw=true">
+
+<p>C艹11为我们贴心的准备了5组构造函数, 而且下面有对应的解释</p>
+<p>其中1最好理解, 构造一个空的map</p>
+<pre><code class="c++">map&lt;char, int&gt; demo1;   //demo1为空
+</code></pre>
+<p>2被称为范围构造, 也就是利用迭代器构造map, 例如通过vector构造map</p>
+<pre><code class="c++">vector&lt;pair&lt;int, string&gt;&gt; v;
+v.push_back(pair&lt;int, string&gt;(1, &quot;a&quot;));
+v.push_back(pair&lt;int, string&gt;(2, &quot;b&quot;));
+v.push_back(pair&lt;int, string&gt;(3, &quot;c&quot;));
+vector&lt;pair&lt;int, string&gt;&gt;::iterator begin = v.begin() + 1;
+vector&lt;pair&lt;int, string&gt;&gt;::iterator end = v.end() -1;
+map&lt;int, string&gt; demo2(begin, end);
+//关于pair会在下文详解
+</code></pre>
+<p>3就是复制构造, 深拷贝一份map到新map</p>
+<pre><code class="c++">map&lt;char, int&gt; demo3_1;
+map&lt;char, int&gt; demo3_2(demo3_1);    //注意类型
+</code></pre>
+<p>4是新玩意儿, 移动构造, 其中&amp;&amp;被称为右值引用, 有空细说</p>
+<p>5是初始化表构造, 类似于我们用<code>int a[3]=&#123;1,2,3&#125;;</code>定义数组, 我们也可以用类似的初始化表定义map</p>
+<pre><code class="c++">map&lt;char, int&gt; demo4=&#123;
+    &#123;&#39;A&#39;,1&#125;,
+    &#123;&#39;B&#39;,2&#125;,
+    &#123;&#39;C&#39;,3&#125;
+&#125;;
+//有点像JSON...不像吗?
+</code></pre>
+<p>在文档的左边一列, 可以找到所有map类里面定义的成员函数, 以<code>map::at</code>为例, 进去之后, 我们直奔第一句话</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0016.png?raw=true">
+
+<p>这句话的意思是<code>map::at</code>返回一个键为<code>k</code>的值的引用;</p>
+<p>再往上看, 上面的绿字提供了<code>map::at</code>的<strong>函数签名</strong>:</p>
+<pre><code class="c++">mapped_type&amp; at (const key_type&amp; k);
+const mapped_type&amp; at (const key_type&amp; k) const;
+</code></pre>
+<p>当然, 下面提供了实例</p>
+<pre><code class="c++">// map::at
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;map&gt;
+
+int main ()
+&#123;
+    std::map&lt;std::string,int&gt; mymap = &#123;
+                &#123; &quot;alpha&quot;, 0 &#125;,
+                &#123; &quot;beta&quot;, 0 &#125;,
+                &#123; &quot;gamma&quot;, 0 &#125; &#125;;
+
+    mymap.at(&quot;alpha&quot;) = 10;
+    mymap.at(&quot;beta&quot;) = 20;
+    mymap.at(&quot;gamma&quot;) = 30;
+
+    for (auto&amp; x: mymap) &#123;
+        std::cout &lt;&lt; x.first &lt;&lt; &quot;: &quot; &lt;&lt; x.second &lt;&lt; &#39;\n&#39;;
+    &#125;
+
+    return 0;
+&#125;
+/*
+输出结果:
+alpha: 10
+beta: 20
+gamma: 30
+*/
+</code></pre>
+<p>由行13-15可以知道, <code>map::at</code>可以用来对某个键值对进行赋值操作;</p>
+<p>行17的写法是C艹11中引入的新的写法, 能更快捷(主要指敲代码时)的遍历某个容器.</p>
+<p>这样, 我们就掌握了STL某个函数的具体用法了, 是不是很方便快捷呐!?</p>
+<p>别急, 对于上面的程序段, 其实还有一个小问题没有回答, 那就是行18的<code>first</code>和<code>second</code>成员变量是哪里来的, 在官方文档map栏目里面并没有这个成员变量, 类比数组的遍历是整型(的引用), 我们猜想, 这两个成员变量是x的, 但是, 我们用<code>auto&amp;</code>自动声明了x的类型, 因此我们不知道x的具体类型.</p>
+<p>这时, 我们可以用VSCode查看类型(这么不专业吗啊喂!)</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0017.png?raw=true">
+
+<p>原来map的遍历, 也就是map中元素的类型, 是pair模板的一个实例化. 继续在文档中搜索pair</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0018.png?raw=true">
+
+<p>果然, <code>pair</code>是一个结构体模板, <code>first</code>和<code>second</code>都是他的成员变量.</p>
+<p>至此, 我们对文档的使用和STL的结构和用法有了更深层次的理解.</p>
 
     </div>
 
