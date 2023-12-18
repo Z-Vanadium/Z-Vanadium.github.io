@@ -262,7 +262,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #39c5bb">线性代数</a>
+                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="color: #ffa2c4">线性代数</a>
             </span>
             
         </span>
@@ -487,11 +487,8 @@
 <li>$\exist n个线性无关的向量组\varepsilon_i,s.t.(A\varepsilon_1,A\varepsilon_2,…,A\varepsilon_n)&#x3D;(\lambda_1\varepsilon_1,\lambda_2\varepsilon_2,…,\lambda_n\varepsilon_n)$</li>
 <li>$\exist n个线性无关的向量组\varepsilon_i,s.t.A\varepsilon_i&#x3D;\lambda_i\varepsilon_i,1\le i\le n$</li>
 <li>$A存在n个线性无关的特征向量$</li>
-</ul>
-<p>$A可以对角化的必要条件$</p>
-<ul>
-<li>$A有n个不同的特征值\Rightarrow A可以对角化$</li>
-<li>$r_1+r_2+…+r_s&#x3D;n\Rightarrow A存在n个线性无关的特征向量\iff A可以对角化$</li>
+<li>$A有n个不同的特征值$</li>
+<li>$r_1+r_2+…+r_s&#x3D;n$</li>
 </ul>
 <p>不是所有的A都可以对角化</p>
 <p><strong>定义及计算</strong></p>
@@ -519,6 +516,53 @@
 <li>$推广：所有不同特征值的特征向量组成的向量组线性无关，其子向量组也线性无关$</li>
 </ul>
 <p>$|A|&#x3D;\displaystyle\prod_{i&#x3D;1}^n\lambda_i,\ tr(A)&#x3D;\displaystyle\sum_{i&#x3D;1}^n\lambda_i$</p>
+<p><strong>矩阵的相似对角化</strong></p>
+<p>$k是A的k重特征值，(\lambda E-A)\xi&#x3D;0,\dim W_\lambda&#x3D;n-r(\lambda E-A)\le k$</p>
+<p>$对于一个不确定是否是可对角化阵，当\lambda是单根的时候，一定满足上述条件，因此无需判断单根；当\lambda是重根的时候，要判断r&#x3D;n$</p>
+<p>$判断是否可以对角化：$</p>
+<ul>
+<li>$求特征值|\lambda E_n-A|&#x3D;0，得到重根和非重根$</li>
+<li>$对于重根\lambda，判断其解空间的维数是否小于等于自己的重数\dim W_\lambda&#x3D;n-(\lambda E-A)\le k$</li>
+</ul>
+<p>$r(A)&#x3D;1\iff A&#x3D;\alpha\beta^T，其中\alpha,\beta是列向量$</p>
+<p><strong>相似理论</strong></p>
+<p>$A有n个特征值\lambda_i$</p>
+<ul>
+<li><p>$f(\lambda)&#x3D;|\lambda E_n-A|&#x3D;…&#x3D;(\lambda-a_{11})(\lambda-a_{22})…(\lambda-a_{nn})&#x3D;\lambda^n-(a_{11}+a_{22}+…+a_{nn}\lambda^{n-1}+…+)(-1)^n|A|$</p>
+</li>
+<li><p>$f(A)&#x3D;(\lambda-\lambda_1)(\lambda-\lambda_2)…(\lambda-\lambda_n)$</p>
+</li>
+</ul>
+<p>Hamiltonn-Cayley定理</p>
+<p>$f(\lambda)&#x3D;|\lambda E_n-A|\Rightarrow f(A)&#x3D;O_{n\times n}$</p>
+<p>$A\xi&#x3D;\lambda\xi\Rightarrow A^k\xi&#x3D;\lambda^k\xi（数学归纳法）$</p>
+<p>$设A的特征值的集合为sp(A)&#x3D;{\lambda_1,\lambda_2,…\lambda_n}$</p>
+<ul>
+<li>${g(\lambda)|\lambda\in g(A)}&#x3D;sp(g(A))$</li>
+</ul>
+<p>$A^{-1}\xi&#x3D;\displaystyle\frac{1}{\lambda}\xi$</p>
+<p>$A,B相似\Rightarrow r(A)&#x3D;r(B),|A|&#x3D;|B|,tr(A)&#x3D;tr(B),|\lambda E-A｜&#x3D;|\lambda E-B|,特征值相同$</p>
+<p>$若A，B可对角化，则A，B相似\iff A，B有相同的特征值$</p>
+<p>$A,B相似\Rightarrow g(A),g(B)相似$</p>
+<p>$已知A，求方阵A^{1000}$</p>
+<ul>
+<li>计算特征值</li>
+<li>验证可对角化</li>
+<li>$求出P,P^{-1}$</li>
+<li>$PA^{1000}P^{-1}&#x3D;\Lambda^{1000}$</li>
+<li>遇事不决，先求对角阵（bushi）</li>
+</ul>
+<p><strong>实对称矩阵</strong></p>
+<p>共轭：将A转置后，对每个元素取共轭</p>
+<p>$实对称矩阵A的特征值都是实数$</p>
+<p>$实对称矩阵属于不同特征值的特征向量正交$</p>
+<p>$求实对称矩阵A的正交阵$</p>
+<ul>
+<li>$|\lambda E-A|&#x3D;0\Rightarrow \lambda_i$</li>
+<li>$验证\lambda_i,(\lambda_iE-A)\xi&#x3D;0,\dim W_i&#x3D;r_i\le k,求出\xi_i$</li>
+<li>$r_i&#x3D;1, \xi_i单位化;r_i&gt;1, Schmidt正交化\Rightarrow\beta_i$</li>
+<li>$U&#x3D;(\beta_1\beta_2…\beta_n)$</li>
+</ul>
 
     </div>
 
