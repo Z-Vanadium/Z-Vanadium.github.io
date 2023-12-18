@@ -252,12 +252,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
+                <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #ffa2c4">OOP</a>
+                <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
             </span>
             
         </span>
@@ -371,6 +371,100 @@ gamma: 30
 
 <p>果然, <code>pair</code>是一个结构体模板, <code>first</code>和<code>second</code>都是他的成员变量.</p>
 <p>至此, 我们对文档的使用和STL的结构和用法有了更深层次的理解.</p>
+<p>&nbsp;</p>
+<h3 id="常用STL随手记"><a href="#常用STL随手记" class="headerlink" title="常用STL随手记"></a>常用STL随手记</h3><h4 id="string类"><a href="#string类" class="headerlink" title="string类"></a>string类</h4><p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/string/string/?kw=string">C艹STL库官方文档 | string类</a></p>
+<pre><code class="c++">#include&lt;string&gt;
+#include&lt;iostream&gt;
+using namespace std;
+
+void print(string str, int begin, int end)&#123;
+    for(int i=begin; i&lt;=end; ++i)    cout&lt;&lt;str.at(i);
+    cout&lt;&lt;endl;
+&#125;
+
+int main()&#123;
+    //初始化
+    string str1;
+    str1 = &quot;Vanadium&quot;;
+    cout&lt;&lt;&quot;str1 = &quot;&lt;&lt;str1&lt;&lt;endl;
+    string str2(6,&#39;6&#39;);
+    cout&lt;&lt;&quot;str2 = &quot;&lt;&lt;str2&lt;&lt;endl;
+    string str3;
+    str3 = &#39;K&#39;;
+    cout&lt;&lt;&quot;str3 = &quot;&lt;&lt;str3&lt;&lt;endl;
+
+    //长度
+    cout&lt;&lt;&quot;length of str1 = &quot;&lt;&lt;str1.length()&lt;&lt;endl;
+
+    //赋值和复制
+    string str4;  str4 = str2;
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4&lt;&lt;endl;
+
+    str4.assign(str1, 2, 4);    //从第2个开始, 复制4个字符
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4&lt;&lt;endl;
+
+    str1[0] = &#39;v&#39;;  //str1.at(0) = &#39;v&#39;
+    cout&lt;&lt;&quot;str1 = &quot;&lt;&lt;str1&lt;&lt;endl;
+
+    //连接
+
+    str1 += str2;
+    cout&lt;&lt;&quot;str1 = &quot;&lt;&lt;str1&lt;&lt;endl;
+
+    str1 = &quot;vanadium&quot;;
+    str1.append(str2, 3, 6);    //从第3个开始, 复制6个字符, 但不会超过原串长度
+    cout&lt;&lt;&quot;str1 = &quot;&lt;&lt;str1&lt;&lt;endl;
+    
+    //比较
+    bool b1 = str1 &lt; str4;
+    cout&lt;&lt;&quot;str1 = &quot;&lt;&lt;str1&lt;&lt;endl;
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4&lt;&lt;endl;
+    cout&lt;&lt;&quot;str1 &lt; str4 = &quot;&lt;&lt;b1&lt;&lt;endl;
+
+    bool b2 = str4.compare(0, 2, str1, 1, 5);   //str4[0:3] &gt; str1[1:6]
+    cout&lt;&lt;&quot;str4[0:3] = &quot;;   print(str4, 0, 2);
+    cout&lt;&lt;&quot;str4[1:6] = &quot;;   print(str1, 1, 5);
+    cout&lt;&lt;&quot;str4.compare(0, 2, str1, 1, 5) = &quot;&lt;&lt;b2&lt;&lt;endl;
+
+    //字串
+    cout&lt;&lt;&quot;str1 = &quot;&lt;&lt;str1&lt;&lt;endl;
+    cout&lt;&lt;&quot;str1[4:11] = &quot;&lt;&lt;str1.substr(4, 6)&lt;&lt;endl; //从第4个开始, 取6个字符
+
+    //交换
+    cout&lt;&lt;&quot;str1 = &quot;&lt;&lt;str1&lt;&lt;endl;
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4&lt;&lt;endl;
+    str1.swap(str4);
+    cout&lt;&lt;&quot;str1 = &quot;&lt;&lt;str1&lt;&lt;endl;
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4&lt;&lt;endl;
+    
+    //查找
+    cout&lt;&lt;&quot;first a in str4 = &quot;&lt;&lt;str4.find(&#39;a&#39;)&lt;&lt;endl;
+    cout&lt;&lt;&quot;last a in str4 = &quot;&lt;&lt;str4.rfind(&#39;a&#39;)&lt;&lt;endl;
+
+    //删除
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4&lt;&lt;endl;
+    str4.erase(3);  //删除3及之后的所有字符
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4&lt;&lt;endl;
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4.length()&lt;&lt;endl;
+    cout&lt;&lt;&quot;str4 = &quot;&lt;&lt;str4.size()&lt;&lt;endl;
+
+    //替换
+    str4 = &quot;Vanadium&#39;s Blog&quot;;
+    cout&lt;&lt;str4&lt;&lt;endl;
+    cout&lt;&lt;str4.replace(11,4,&quot;Cabin&quot;)&lt;&lt;endl;
+    cout&lt;&lt;str4.replace(11,5,&quot;Cabin&quot;,0,3)&lt;&lt;endl;
+
+    //插入
+    str4 = &quot;Vanadium&#39;s Blog&quot;;
+    cout&lt;&lt;str4&lt;&lt;endl;
+    cout&lt;&lt;str4.insert(10,&quot;Wonderful&quot;)&lt;&lt;endl;    
+    str4 = &quot;Vanadium&#39;s Blog&quot;;
+    cout&lt;&lt;str4&lt;&lt;endl;
+    cout&lt;&lt;str4.insert(10,&quot;Wonderful&quot;,0,6)&lt;&lt;endl;
+&#125;
+</code></pre>
+<h4 id="vector类"><a href="#vector类" class="headerlink" title="vector类"></a>vector类</h4><p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/vector/vector/">C艹STL库官方文档 | vector类</a></p>
+<h4 id="pair类"><a href="#pair类" class="headerlink" title="pair类"></a>pair类</h4><p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/utility/pair/">C艹STL库官方文档 | pair类</a></p>
 
     </div>
 
