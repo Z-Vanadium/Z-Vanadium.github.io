@@ -491,10 +491,13 @@
 <li>$r_1+r_2+…+r_s&#x3D;n$</li>
 </ul>
 <p>不是所有的A都可以对角化</p>
+<p>对角阵的来源:</p>
+<p>$当A可以对角化, A有n个线性无关的特征向量, 组成可逆矩阵P&#x3D;(\xi_1\xi_2…\xi_n),\ AP&#x3D;A(\xi_1\xi_2…\xi_n)&#x3D;(\lambda_1\xi_1\ \lambda_2\xi_2…\lambda_n\xi_n)&#x3D;(\xi_1\xi_2…\xi_n)\begin{pmatrix}\lambda_1&amp;\ &amp;\ &amp;\ \\\ &amp;\lambda_2&amp;\ &amp;\ \\\ &amp;\ &amp;\ddots&amp;\ \\\ &amp;\ &amp;\ &amp;\lambda_n\end{pmatrix}&#x3D;P\Lambda\iff P^{-1}AP&#x3D;\Lambda$</p>
 <p><strong>定义及计算</strong></p>
 <p> $对于A\in P^{n\times n},if\ \exist\lambda_0\in P,\xi\ne\theta\in P^n,s.t.A\xi&#x3D;\lambda_0\xi,则称\lambda_0是A在P中的特征值，反过来，称\xi是\lambda_0的特征向量$</p>
 <ul>
 <li>一个特征向量只能属于一个特征值，但是特征值可以属于无穷多个特征向量</li>
+<li>$if\ \lambda&#x3D;0,\ \xi&#x3D;\forall\alpha\in P^{n\times1}$</li>
 <li>$\lambda_0\in P是A的特征值\iff(\lambda_0 E-A)\xi&#x3D;\theta_{n\times 1},即齐次线性方程组有非零解\iff|\lambda_0E-A|&#x3D;0\iff r(\lambda_0 E-A)&lt;n$</li>
 </ul>
 <p>$称|\lambda E－A|(\lambda\in P)为A特征多项式,记作f_A(\lambda)\backsim f(\lambda),则|\lambda E－A|&#x3D;f(\lambda)&#x3D;0称作特征方程$</p>
