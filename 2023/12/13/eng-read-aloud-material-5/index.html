@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>Advance the Rule of Law Under Chinese Socialism | Vanadium的小屋</title>
+    <meta name="author" content="Vanadium" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>VANADIUM的小屋</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive"></i>
+            <span>&ensp;归档</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>&ensp;工具</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+        <a href="/songs">
+            <i class="fa-brands fa-music"></i>
+            <span>&ensp;音乐</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;VANADIUM的小屋</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-screwdriver-wrench fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">工具</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+                <a href="/songs">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-brands fa-music fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">音乐</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <!--card-->
+<div id="home-card-in-post">    
+    <div id="home-card">
+    <div id="card-style" style="max-height: 75vh;">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="description">
+            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+        </div>
+        
+        
+
+        <div class="friend-links">
+            <div class="name"><b>Vanadium常用网址</b></div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://stackedit.io/app#">StackEdit</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome 6</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://md.qikqiak.com/">Markdown-微信公众号</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="http://116.62.147.239:18080/">在线VSCode | 感恩洪神的无私分享</a>
+            </div>
+        </div>
+
+
+        <!--music player
+        <div class="friend-links">
+            <iframe seamless="seamless" width="300px" id="card" src="//music.163.com/outchain/player?type=2&id=29751583&auto=1&height=66" frameborder="no"></iframe>
+        </div>-->
+    </div>
+    
+    
+    
+</div>
+
+
+
+    </div>
+</div>
+
+<!--end-->
+
+<div class="article">
+    <div>
+        <h1>Advance the Rule of Law Under Chinese Socialism</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+           
+            <!--展示tags-->
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%8B%B1%E8%AF%AD/" style="color: #ffa2c4">大学英语</a>
+            </span>
+            
+        </span>
+        
+    </div>
+
+    <span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>
+
+      
+        <!--展示page的完整内容-->
+    <div class="content" v-pre>
+        <p>Since the 18th CPC National Congress in 2012, the Central Committee has made a series of major decisions and worked out a chain of major measures on law-based governance. To further the cause of our Party and state, we have strengthened legislation in key areas and improved our socialist legal system with distinctive Chinese features. Upholding Constitution-based governance, we have amended the Constitution as required by the times, designated the national Constitution Day, and established the institution of pledging allegiance to the Constitution. In addition, the oversight of the implementation of the Constitution has been strengthened. We have advanced law-based government, substantially reduced items for administrative approval, completely ruled out examination and approval for non-administrative licenses, and introduced a power list, a negative list and a responsibility list for governments at various levels, so as to regulate the exercise of executive power and see that law is enforced in a strict, procedure-based, impartial and non-abusive way. We are resolutely carrying forward reform in the domain of rule of law, promoting the adoption of judicial accountability, personnel quota systems and reform measures to establish a criminal litigation system centering on trials. We have abolished the system of reeducation through labor and rectified a batch of cases involving serious miscarriages of justice. Therefore our judicial performance, efficiency and credibility have improved remarkably. We regard our efforts to carry out basic legal education among the people and to encourage them to abide by the law as fundamental tasks of law-based governance. We have carried out a responsibility program in which state law enforcement departments are responsible for strengthening public legal awareness. We have incorporated education on the rule of law into the national education system. As a result, public awareness of the rule of law has been noticeably enhanced. We are raising the competence of those responsible for implementing the rule of law. We are developing a workforce of legal service professionals and strengthening legal education and the training of legal personnel. We have kept our commitment to law-based governance, developing and improving Party rules and regulations, pushing forward the reform of the national supervision system, punishing corruption and crimes in accordance with the law, and exercising full and strict governance over our Party. As a result, remarkable results have been achieved in all those areas.</p>
+<span id="more"></span>
+
+<p>Since the 18th CPC National Congress in 2012, we have put forward new concepts, new thinking and new strategies on law-based governance and defined the guiding philosophy, development path, work plan and key tasks of law-based governance, which can be summarized in the following ten principles:</p>
+<p>First, strengthen the CPC’s leadership role in law-based governance. Leadership by the CPC is the most fundamental guarantee for socialist rule of law. In absolutely no way does the rule of law amount to weakening the leadership of the CPC. Instead, it is meant to strengthen and improve its leadership, constantly enhance its capacity and performance in law-based governance, and bolster its position as the governing party. We must ensure the Party’s leadership over legislation, its guarantee of law enforcement, its support for judicial justice, and its exemplary role in abiding by the law. We must improve the institutions and mechanisms by which our Party plays its leadership role in law-based governance. We must turn the views of our Party into the will and laws of the state through legal procedures, ensure effective implementation of our Party’s policies through the law and ensure that we are on the right track in exercising law-based governance.</p>
+<p>Second, uphold the principle that the people enjoy the principal status in our society. We must develop the rule of law for the people and rely on them, and it must benefit and protect them. We must uphold social equity and justice, which is the goal of the rule of law, and make sure that the people can see that equity and justice are served in every law, every law enforcement action, and every judicial case. In the whole process of our law-based governance we must represent the people’s interests, reflect their wishes, protect their rights and interests, and improve their wellbeing. We must ensure that the people, under the leadership of the CPC, are able to administer state affairs and manage economic, cultural and social affairs through various channels and in various ways as provided by law.</p>
+<p>Third, uphold socialist rule of law with Chinese characteristics. In advancing law-based governance, we must take the right path. We need to bear in mind our own national context and realities and take a path of rule of law best suited to our own specific conditions. Under no circumstance should we imitate the models and practices of other countries or adopt the Western models of “constitutionalism”, “separation of powers”, and “judicial independence”.</p>
+<p>Fourth, develop a system of socialist rule of law with Chinese characteristics. Such a system is a legal manifestation of the Chinese socialist system. We must focus on our goal of building socialist rule of law with Chinese characteristics and work hard to establish a complete system of laws, a highly effective enforcement system, a stringent scrutiny system, effective supporting measures, and a sound system of Party regulations, thereby constantly breaking new ground in law-based governance.</p>
+<p>Fifth, push forward coordinated progress in law-based governance, exercise of state power, and government administration, and promote the integrated development of the rule of law for the country, the government, and society. Comprehensive law-based governance is a great systematic endeavor. Therefore, we must take many factors into consideration, identify priorities, and formulate integrated plans. We must pursue it in a more systematic, holistic and coordinated way. Law-based governance, exercise of state power and government administration form an indivisible whole, the key to which is that the CPC must keep its commitment to law-based governance and that governments at all levels must administer in accordance with the law. A law-based country, government, and society each have their own areas of focus, allowing them to exert a mutually reinforcing effect on one another. A law-based country is the goal of developing the rule of law; a law-based government is the main force in building a law-based country; a law-based society is the foundation for building a law-based country. We must be adept at using institutions and laws to govern our country and improve our capacity for well-conceived, democratic and law-based governance.</p>
+<p>Sixth, govern the country and exercise state power within the framework of the Constitution. In pursuing law-based governance, we must first uphold Constitution-based governance; in pursuing law-based exercise of state power, we must first uphold Constitution-based exercise of state power. The CPC leads the people in enacting and enforcing the Constitution and the law, and it must confine its activities to the areas prescribed by the Constitution and the law. All individuals, organizations and state organs must regard the Constitution and the law as their code of conduct, and exercise powers, enjoy rights, perform duties, and fulfill obligations accordingly. They will not be permitted to enjoy any special privilege that places them above the Constitution and the law, and all acts in violation of the Constitution or the law must be punished.</p>
+<p>Seventh, ensure sound lawmaking, strict law enforcement, impartial administration of justice, and the observance of law by all. To solve the prominent conflicts and problems in devising, enforcing, applying and observing the law, we must resolutely advance reform in the domain of law-based governance. We must focus on the key areas of law-based governance and improve the legislative system and the quality of our legislation. We must promote strict law enforcement, establish an efficient system, improve administrative procedures, and fully implement administrative accountability. We must support the lawful and independent functioning of judicial organs and make better institutional arrangements for the exercise of judicial power in which the division of powers is both complementary and mutually restrictive. We must make greater efforts to raise public legal awareness and create an environment for the rule of law in which all of our people work in accordance with the law, look to the law when running into problems, and rely on the law to resolve problems and conflicts.</p>
+<p>Eighth, properly handle the dialectical relationships concerning law-based governance. In implementing law-based governance, we must correctly deal with the relationships between leadership by the Party and the rule of law, between reform and the rule of law, between the rule of law and the rule of virtue, and between law-based governance and rule-based Party discipline. Socialist rule of law must uphold CPC leadership, while CPC leadership must rely on socialist rule of law. Reform and the rule of law are like the two wings of a bird or the two wheels of a cart. We must promote reform under the rule of law and improve the rule of law in the process of reform. We must integrate the rule of law with the rule of virtue so that they complement and reinforce each other. We must bring into play the complementary roles of law-based governance and rule-based Party discipline, and ensure that the CPC governs the country in accordance with the Constitution and the law, and govern and discipline itself strictly with Party rules and regulations.</p>
+<p>Ninth, develop a contingent of high-caliber legal personnel with moral integrity and professional competence. To advance law-based governance, we must train legal professionals devoted to socialist rule of law and loyal to the Party, the country, the people and the law. We must strengthen education in our ideals and convictions, carry out in-depth education on the core socialist values and the socialist concept of law-based governance, and enable judicial personnel to be more consistent, specialized and professional in their conduct. We must stick to our goal of legal education to foster virtuous specialists who are morally and professionally strong. We must be innovative in training legal talent and cultivate a large number of legal professionals of high caliber and their successors.</p>
+<p>Tenth, make sure that leading officials, though small in number, play a key role in implementing the rule of law. It is leading officials who exercise the ruling power of the Party and the legislative, administrative, supervisory and judicial powers of the state. Therefore, they are key to law-based governance. They must set a good example in upholding the law and treating it with respect, in understanding and having a good mastery of the law, in observing the law and defending the rule of law, and in applying the law and working in accordance with the law. They must strive to become more adept at using law-based thinking and approaches to carry out reform, promote development, resolve problems, and maintain stability. They must provide the example whereby the whole of society upholds, studies, observes and applies the law.</p>
+<p>These new concepts, thinking and strategies are the latest achievements in adapting Marxism to the Chinese context. They provide fundamental principles for us in implementing law-based governance. Thus we must uphold them on a long-term basis and constantly enrich and develop them.</p>
+
+    </div>
+
+
+
+
+    
+
+<!--friendlinks-->
+
+
+
+
+<!--end-->
+
+    
+    
+    
+    
+    
+    
+
+
+</div>
+
+<!--
+<div id="card-style">
+<div id="card-div">
+    <div class="avatar">
+        <img src="/images/avatar.jpg" alt="avatar" />
+    </div>
+    <div class="name">Vanadium</div>
+    <div class="description">
+        <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+    </div>
+    
+    
+
+    <div class="friend-links">
+        <div class="name">Vanadium常用网址</div>
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+        </div>
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+        </div>            
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+        </div>
+    </div>
+</div>
+</div>
+-->
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Vanadium的小屋
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Vanadium
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+
+
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+    <script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("09/26/2023 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已经存活 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+
+
+    <!-- 一言API -->
+    <!-- 现代写法，推荐 -->
+    <script>
+        fetch('https://v1.hitokoto.cn')
+            .then(function (res){
+            return res.json();
+            })
+            .then(function (data) {
+            var hitokoto = document.getElementById('hitokoto');
+            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
+            })
+            .catch(function (err) {
+            console.error(err);
+            })
+        </script>
+
+</body>
+</html>

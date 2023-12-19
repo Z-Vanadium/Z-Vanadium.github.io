@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>堆：堆操作的本质是维护（一） | Vanadium的小屋</title>
+    <meta name="author" content="Vanadium" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>VANADIUM的小屋</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive"></i>
+            <span>&ensp;归档</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>&ensp;工具</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+        <a href="/songs">
+            <i class="fa-brands fa-music"></i>
+            <span>&ensp;音乐</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;VANADIUM的小屋</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-screwdriver-wrench fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">工具</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+                <a href="/songs">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-brands fa-music fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">音乐</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <!--card-->
+<div id="home-card-in-post">    
+    <div id="home-card">
+    <div id="card-style" style="max-height: 75vh;">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="description">
+            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+        </div>
+        
+        
+
+        <div class="friend-links">
+            <div class="name"><b>Vanadium常用网址</b></div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://stackedit.io/app#">StackEdit</a>
+            </div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome 6</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://md.qikqiak.com/">Markdown-微信公众号</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="http://116.62.147.239:18080/">在线VSCode | 感恩洪神的无私分享</a>
+            </div>
+        </div>
+
+
+        <!--music player
+        <div class="friend-links">
+            <iframe seamless="seamless" width="300px" id="card" src="//music.163.com/outchain/player?type=2&id=29751583&auto=1&height=66" frameborder="no"></iframe>
+        </div>-->
+    </div>
+    
+    
+    
+</div>
+
+
+
+    </div>
+</div>
+
+<!--end-->
+
+<div class="article">
+    <div>
+        <h1>堆：堆操作的本质是维护（一）</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/6
+        </span>
+        
+           
+            <!--展示tags-->
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
+            </span>
+            
+        </span>
+        
+    </div>
+
+    <span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>
+
+      
+        <!--展示page的完整内容-->
+    <div class="content" v-pre>
+        <h1 id="0-完全二叉树与堆-堆的储存与实例化"><a href="#0-完全二叉树与堆-堆的储存与实例化" class="headerlink" title="0. 完全二叉树与堆 | 堆的储存与实例化"></a>0. 完全二叉树与堆 | 堆的储存与实例化</h1><p>上回书说到，我们可以用数组版的完全二叉树实现一个<strong>堆</strong>，在C语言中，我们可以<del>方便地（没有封装的类你说什么方便？）</del>用结构体Struct来实现某个ADT（因此建议读者在学习结构体之后再来品读以下文字）。</p>
+<span id="more"></span> 
+<pre><code class="c">#define ElementType int
+#define MAXN 105
+#define ERROR -1
+
+typedef struct MaxHeapRoot* MaxHeap;
+struct MaxHeapRoot
+&#123;
+    ElementType* Array;
+    int MaxSize;    //指向Array中最后一个元素的下标
+&#125;;
+</code></pre>
+<p>其中Array属性储存了一个实现完全二叉树的数组的指针，MaxSize属性储存了数组中最后一个元素的下标。</p>
+<p>由于我们利用的是完全二叉树，我们可以把完全二叉树的知识迁移过来：</p>
+<blockquote>
+<p>在数组储存的完全二叉树中，任一节点 Node[i] 的两个孩子节点满足  Left_Child &#x3D; Node[2*i] 且  Right_Child &#x3D; Node[2*i+1] ，其父亲节点满足 Parent &#x3D;  Node[i&#x2F;2]</p>
+</blockquote>
+<p>这里需要注意的是，下标i是从1而不是0开始的，并且访问父亲&#x2F;儿子时可能会出现越界的情况，这些是我们在实例化的时候要注意的。</p>
+<p>与此同时，由于堆的递归定义得知的，我们可以注意到，一个堆的左右子树也是堆。因此，一个合法的堆，应该满足对于任意i∈ [1, MaxSize] ， Node[i] &gt; Node[2*i] ，Node[i] &gt; Node[2*i+1]。 </p>
+<p>我知道有人不喜欢看公式，那我就用自然语言改写一下：<strong>对于一个合法的大根堆来说，它满足任意一个以i为下标的节点的值，要大于以2<em>i和以2</em>i+1为下标的节点的值。</strong></p>
+<p>接下来我们要考虑实例化的函数了，我们需要做的事情是：（1）分配内存给Array；（2）初始化MaxSize的值；（3）还有……？</p>
+<pre><code class="c">MaxHeap BuildMaxHeap()&#123;
+    MaxHeap MaxH=(MaxHeap)malloc(sizeof(struct MaxHeapRoot));
+    MaxH-&gt;Array=(ElementType*)malloc(sizeof(ElementType)*MAXN);
+    MaxH-&gt;Array[0]=INT_MAX; //初始化哨兵
+    MaxH-&gt;MaxSize=0;
+    return MaxH;
+&#125;
+</code></pre>
+<p>可以看到我在完成了上述前两个步骤之外，还做了一件事：给 Array[0] 赋了一个INT_MAX(代表int类型的最大值2^32-1)，并给了他一个名字：<strong>哨兵</strong>。</p>
+<p>哨兵这个概念你可能之前未曾接触过，不要着急，就当是作者在这里留下的一块小糖<del>，等到时机成熟，自然会甜甜的（？）</del>。</p>
+<p>至此，我们可以通过BuildMaxHeap函数获取一个指针heap指向一个大根堆了，我们实现堆的长征完成了第一步。</p>
+<h1 id="1-模块化思维-维护堆的函数（向上）"><a href="#1-模块化思维-维护堆的函数（向上）" class="headerlink" title="1. 模块化思维 | 维护堆的函数（向上）"></a>1. 模块化思维 | 维护堆的函数（向上）</h1><p>所以……有了一个堆，我们能做什么呢？</p>
+<p>先来点最简单的吧，我们要判断一个堆究竟是空的还是满的。</p>
+<p>这一步的意义在于：我们增删的过程中，一定要考虑堆的空间是否足以支持我们的操作，否则会导致越界，产生奇怪的<del>小</del>错误。</p>
+<pre><code class="c">int IsEmpty(MaxHeap MaxH)&#123;
+    return MaxH-&gt;MaxSize==0? 1:0;
+&#125;
+int IsFull(MaxHeap MaxH)&#123;
+    return MaxH-&gt;MaxSize==MAXN-1? 1:0;
+&#125;
+</code></pre>
+<p>IsEmpty和IsFull的实现实在是太简单了，我们进入下一步吧！</p>
+<p>按照Vanadium的要求，我们要实现的功能是<strong>插入（增加）数据和删除（取出）数据</strong>两个功能。先别急着书写Insert和Delete函数，我们要想想，在我们插入或删除的时候，堆究竟发生了什么变化。</p>
+<p>首先考虑插入一个元素，由于数组的插入只能在末尾进行，因此，我们先将元素Item作为叶子节点放入<strong>最后一个没有两个儿子节点的父节点下面。</strong></p>
+<p>放入之后，与AVL树类似，我们要考虑改变的节点有没有破坏什么。在AVL树里面，改变某个节点会破坏原有的平衡因子；而在堆里面，改变某个节点（可能）会<strong>破坏其以父节点为根的一个堆的合法性。</strong>类似的，我们也要进行<strong>维护。</strong></p>
+<p>由于在插入元素的时候，我们<strong>首先</strong>破坏的是<strong>最下层</strong>的堆的合法性，所以我们需要一个<strong>向上维护</strong>的函数UpShift。</p>
+<p>我们要如何设计一个UpShift函数呢？考虑其实现方式。</p>
+<p>首先我们需要确定UpShift所需要的参数，一个MaxHeap是显然的，由于我们维护某个堆的时候，可能会破坏其父堆的合法性，因此我们要进行递归维护父堆的合法性，所以我们需要一个<strong>参数t</strong>确定我们应该<strong>从何处开始</strong>向上维护。</p>
+<p>综上所述，我们可以这么定义UpShift：</p>
+<pre><code class="c">int UpShift(MaxHeap MaxH, int t)&#123;    
+    /*递归边界 | 判断是否需要继续维护t的父堆*/
+    /*维护t的父堆的代码*/
+    UpShift(MaxH, t/2);
+    return 0;
+&#125;
+</code></pre>
+<p>然而，就Vanadium本人来说，他是特别不喜欢递归调用的，因为递归调用经常会爆栈而且速度慢，所以他会使用While来替代递归调用。</p>
+<p>如果我们考虑while的退出条件，不难想到，当t指向的位置不合法的时候，也就是t&lt;&#x3D;1的时候，就不需要维护了。</p>
+<p>除此以外还有一种情况：如果 Node[t] 的改变没有破坏父堆的合法性，换言之，<strong>父堆仍然满足一个合法堆的条件</strong>——父堆的值依然大于以2*t和以2*t+1为下标的节点的值——那么也就不需要继续维护了。</p>
+<p>下面请看代码。</p>
+<pre><code class="c">int UpShift(MaxHeap MaxH, int t)&#123;  //从t开始，向上调整堆
+    if(t&gt;MaxH-&gt;MaxSize || t&lt;1) return ERROR;
+    int child=t;
+    int parent=child/2;
+    ElementType* array=MaxH-&gt;Array;
+    while(1)&#123;
+        if(array[child]&gt;array[parent])&#123;
+            ElementType temp;
+            temp=array[child];
+            array[child]=array[parent];
+            array[parent]=temp; //交换父子结点
+            child=parent;   parent=child/2; //向上递归
+        &#125;
+        else    break;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p>代码的实现和我们的想法<del>如出一辙</del>有一点点不一样。聪明的你应该发现了，Vanadium貌似没有判断边界条件，也就是我们认可的 “当t指向的位置不合法的时候，也就是t&lt;&#x3D;1的时候，就不需要维护了” 。</p>
+<p>如果Vanadium只是简单的忘记了，那么这段代码肯定会出问题，因为当我维护到child &#x3D; 1 时，接下来我们会判断 parent &#x3D; child&#x2F;2 &#x3D; 0……等等，还记得我们之前对 Array[0] 做了什么么？</p>
+<p>是的，我们给它赋了一个值，一个最大最大的INT值，在这种情况下，以它为根的堆，一定是合法的大根堆，不是么？</p>
+<p>它的存在就相当于一位<strong>哨兵</strong>，所有操作遇到他时候统统要停下来。</p>
+<p>有了UpShift函数，我们就可以保证插入之后，堆依然能保持自己的<del>纯洁性</del>合法性了。</p>
+<p>因此我们可以快速写出Insert函数：</p>
+<pre><code class="c">int Insert(MaxHeap MaxH, ElementType x)&#123;
+    if(IsFull(MaxH))    return ERROR;
+    MaxH-&gt;MaxSize+=1;
+    int child=MaxH-&gt;MaxSize;
+    ElementType* array=MaxH-&gt;Array;
+    array[child]=x; //x入堆
+    return UpShift(MaxH, child);
+&#125;
+</code></pre>
+<h1 id="2-模块化思维-维护堆的函数（向下）"><a href="#2-模块化思维-维护堆的函数（向下）" class="headerlink" title="2. 模块化思维 | 维护堆的函数（向下）"></a>2. 模块化思维 | 维护堆的函数（向下）</h1><p>接下来让我们快马加鞭地写出Delete函数吧！</p>
+<p>由于Vanadium的要求，我们所要取出的值一定是最大值，也就是堆的根，因此取值是很简单的，返回堆的根，也就是Array[1] 的值就可以了；但可惜的是，失去了堆的根，堆还能是堆吗？显然不是了。</p>
+<p>所以，我们需要将堆的<strong>最后一个</strong>叶子上的值赋给堆根，并删除这个叶子，这样，堆至少还是一个完全二叉树<del>，不至于失了自己的根。</del></p>
+<p>同样的，我们要考虑进行维护了。</p>
+<p>与刚才不一样，我们删除某个堆的子节点，堆依旧是合法的，但是当我们把某个值赋给堆的根的时候，堆的合法性就难说了，因此我们现在要做的事情是<strong>维护堆的根</strong>，然后<strong>向下维护</strong>，DownShift。</p>
+<p>考虑向上维护的函数使用了递归，向下维护的函数自然也是需要递归的。然而不同于子节点只有一个父节点，一个父节点通常有两个子节点，但是假如我们把两个子节点一一判断过去，代码就会很冗长马，失去美观。</p>
+<p>这里我们不加证明地给出向下维护的代码。</p>
+<pre><code class="c">int DownShift(MaxHeap MaxH, int t)&#123;  //从t开始，向下调整堆
+    if(t&gt;MaxH-&gt;MaxSize || t&lt;1) return ERROR;    
+    int parent = t;  //parent为待处理节点，child为左孩子
+    int child = 2*parent;
+    int maxsize = MaxH-&gt;MaxSize;
+    ElementType* array=MaxH-&gt;Array;    
+    while(child &lt;= maxsize)&#123;    //当左孩子存在时
+        if(child+1 &lt;= maxsize &amp;&amp; array[child+1] &gt; array[child])&#123;   //当右孩子存在，且大于左孩子
+            ++child;
+        &#125;   //此时child指向parent两个（如果有）子节点中的较大者
+        if(array[child] &gt; array[parent])&#123;   //当较大的孩子大于父节点
+            ElementType temp;
+            temp=array[child];
+            array[child]=array[parent];
+            array[parent]=temp; //交换父子结点
+            parent = child;
+            child = 2*parent;
+        &#125;
+        else    break;
+    &#125;
+&#125;
+</code></pre>
+<p>可以看到，Vanadium使用了一个很取巧的办法同时实现了判断两个子节点的存在性和大小比较。</p>
+<p>首先，对于parent，先取它的左儿子 child &#x3D; 2*parent。如果左儿子就不存在，右儿子一定不存在，此时说明parent是叶子节点，可以直接结束递归；如果左儿子存在，我们直接进行判断右儿子是否存在以及和左儿子的大小比较。</p>
+<p>两个操作在一个if语句中完成后，child会指向左右儿子中较大的一个（如果只有左儿子，自然指向左儿子）。</p>
+<p>最后，再比较这个较大的儿子和父节点，如果父节点大于其中较大的儿子，说明这个堆是合法的，就可以结束递归了；反之则递归维护以较大的儿子作为根的堆。</p>
+<p>上面这个方法可能有些抽象，建议读者多读两遍，自行画图分析一下！</p>
+<p>理解并实现了DownShift函数后，我们就可以很快的给出Delete函数的代码了。</p>
+<pre><code class="c">ElementType Delete(MaxHeap MaxH)&#123;
+    if(IsEmpty(MaxH))    return ERROR;
+    ElementType* array = MaxH-&gt;Array;
+    ElementType res = array[1];
+    array[1]=array[MaxH-&gt;MaxSize];
+    MaxH-&gt;MaxSize-=1;
+    DownShift(MaxH, 1);
+    return res;
+&#125;
+</code></pre>
+<h1 id="3-维护堆可不是我们的终极目标"><a href="#3-维护堆可不是我们的终极目标" class="headerlink" title="3. 维护堆可不是我们的终极目标"></a><del>3. 维护堆可不是我们的终极目标</del></h1><p>不知不觉已经写了3000+字了，其中还有好多是抽象的代码，想必读到这里的人就不多了吧，那就先在这儿打个断点。</p>
+<p>有关<strong>堆的建立、堆排序、霍夫曼编码&#x2F;树、优先队列、动态优先级的优先队列</strong> </p>
+
+    </div>
+
+
+
+
+    
+
+<!--friendlinks-->
+
+
+
+
+<!--end-->
+
+    
+    
+    
+    
+    
+    
+
+
+</div>
+
+<!--
+<div id="card-style">
+<div id="card-div">
+    <div class="avatar">
+        <img src="/images/avatar.jpg" alt="avatar" />
+    </div>
+    <div class="name">Vanadium</div>
+    <div class="description">
+        <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+    </div>
+    
+    
+
+    <div class="friend-links">
+        <div class="name">Vanadium常用网址</div>
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
+        </div>
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
+        </div>            
+        <div class="friend-link">
+            <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+        </div>
+    </div>
+</div>
+</div>
+-->
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Vanadium的小屋
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Vanadium
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+
+
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+    <script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("09/26/2023 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已经存活 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+
+
+    <!-- 一言API -->
+    <!-- 现代写法，推荐 -->
+    <script>
+        fetch('https://v1.hitokoto.cn')
+            .then(function (res){
+            return res.json();
+            })
+            .then(function (data) {
+            var hitokoto = document.getElementById('hitokoto');
+            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
+            })
+            .catch(function (err) {
+            console.error(err);
+            })
+        </script>
+
+</body>
+</html>
