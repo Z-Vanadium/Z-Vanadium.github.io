@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>堆：堆操作的本质是维护（二） | Vanadium的小屋</title>
+    <title>C++ | STL III | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -230,14 +230,14 @@
 
 <div class="article">
     <div>
-        <h1>堆：堆操作的本质是维护（二）</h1>
+        <h1>C++ | STL III</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/6
+            2023/12/20
         </span>
         
            
@@ -250,7 +250,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
+                <a href="/tags/C-C/" style="color: #ff7d73">C/C++</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/OOP/" style="color: #39c5bb">OOP</a>
             </span>
             
         </span>
@@ -258,79 +263,147 @@
 
 
         
+            <span class="category">
+                <span class="icon"><i class="fa-solid fa-newspaper"></i></span>
+                
+                
+                
+                
+                2023/12/21
+
+                
+            </span>
+            
 
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20231221</span></span>--> 
 
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <h1 id="0-择优而取-堆的建立"><a href="#0-择优而取-堆的建立" class="headerlink" title="0. 择优而取 | 堆的建立"></a>0. 择优而取 | 堆的建立</h1><p>在上一篇的结尾，我们留下了一个问题，就是如何<strong>建立</strong>一个堆。</p>
-<p>在建立一个堆之前，我们需要数据。假设我们已经有了N个数据，储存在数组Array里面，接下来我们的任务就是利用Array的数据建立一个堆Heap。</p>
-<p>回忆上一篇文章，我们主要讨论了堆的<strong>插入与删除</strong>。而为了实现这两个操作，我们专门分别设计了两个维护函数，分别是向上和向下维护的函数，而我们建立一个堆的过程，恰好就是一个破坏-维护的过程。</p>
-<span id="more"></span> 
-<p>为什么这么说，首先假定我们有了一个拥有N-1个节点&#x2F;元素的堆Heap，我们要插入一个数据，获得一个N个节点的堆，那我们插入的新数据，不正是<strong>破坏</strong>么，而我们接下来要做的就是<strong>维护</strong>这个被破坏的堆。最后重复这样的操作N次，我们就可以得到一个合法的大堆。</p>
-<p>接下来我们要书写代码了么？</p>
-<p>先等等，我们要知道，维护一个堆是有两种方法的，分别向上和向下维护，那么显而易见的是，建立一个堆应该也有两种方法。</p>
-<p>首先考虑向上维护来建立一个堆。</p>
-<p>如果要向上维护，我们要做的很简单，对于Array里面的每一个数，我们只需要将其插入Heap当中就可以了。</p>
-<p>回顾一下原先的Insert函数代码。</p>
-<pre><code class="c">int Insert(MaxHeap MaxH, ElementType x)&#123;
-    if(IsFull(MaxH))    return ERROR;
-    MaxH-&gt;MaxSize+=1;
-
-    int child=MaxH-&gt;MaxSize;
-    ElementType* array=MaxH-&gt;Array;
-
-    array[child]=x; //x入堆
-    return UpShift(MaxH, child);
-&#125;
-</code></pre>
-<p>我们唯一要做的事情就是遍历数组Array，对其中所有元素都进行一次插入操作，这个堆就建立好了。</p>
-<p>我们考虑其时间复杂度，对于第 i 个数据，我们要进行比较交换的次数为 logi 次，因此时间复杂度为 O(nlogn) ，这个时间复杂度已经很优秀了。</p>
-<p>接下来考虑向下维护。</p>
-<p>如果我们要向下维护一个堆，我们一定要保证这个堆的子堆是合法的堆。如果我们一个数据一个数据插入，我们能保证子堆，也就是最底下的堆是合法的堆吗？</p>
-<p>显然不行。因为我们插入到堆底的数据是任意的，不一定就小于其父堆。</p>
-<p>因此我们考虑从最后一个非叶节点开始，向上维护堆。</p>
-<p>下面给出代码。</p>
-<pre><code class="c">MaxHeap ArrayToMaxHeap(ElementType* array, int N)&#123;  //通过array建立MaxHeap，返回建立的MaxHeap
-    MaxHeap MaxH = BuildMaxHeap();
-    MaxH-&gt;MaxSize = N;
-    int i;
-    for(i=0;i&lt;N;++i)    MaxH-&gt;Array[i+1]=array[i];
-    for(i=N/2;i&gt;=1;--i)    DownShift(MaxH, i);
-    return MaxH;
-&#125;
-</code></pre>
-<p>首先我们建立一个空堆MaxH，大小比Array大1（注意到MaxSize指向的是MaxH下标的最后一个，而<strong>不是</strong>MaxH的大小）。</p>
-<p>接下来我们无视堆的规则，直接将Array存入堆，这样一个堆是一个无序的堆。</p>
-<p>然后我们从堆的 N&#x2F;2 处开始向下维护，（不从N处开始是为了剪枝，因为N&#x2F;2+1 ~ N处的节点都没有子堆），如此维护到根节点，一个堆就建立好了。</p>
-<p>考虑其时间复杂度，可以发现对于数组Array，我们进行了 1 次遍历和 N&#x2F;2 次向下维护，而向上维护的复杂度为 O(logn) ，根据数学知识，我们可以计算得出向下维护建堆的复杂度为 O(N) 。</p>
-<blockquote>
-<p>为什么是logn而不是nlogn？参见<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52347974/article/details/128731177">这篇</a>文章（需要一些数学知识，因此这里Vanadium略去不写）<br>可以看到，向下维护建堆的方法优于向上建堆（插入建堆），因此我们择优而取，<strong>选择向下维护的方法建堆。</strong></p>
+        <blockquote>
+<p>在这一节, 我们将尝试探讨一个沟通了算法与容器的重要概念–迭代器</p>
 </blockquote>
-<h1 id="1-优秀的原地排序算法-堆排序"><a href="#1-优秀的原地排序算法-堆排序" class="headerlink" title="1. 优秀的原地排序算法 | 堆排序"></a>1. 优秀的原地排序算法 | 堆排序</h1><p><del>所以……有了一个堆，我们能做什么呢？</del></p>
-<p>接下来，我们就可以做很多事情了！</p>
-<p>比方说，堆排序。</p>
-<p>排序算法大家应该不陌生，在C程课上，我们学习过冒泡排序、选择排序、交换排序等一系列 O(N2) 排序算法，也有接触过高效的快速排序等排序算法。</p>
-<p>然而在我们有了堆的概念之后，我们是否可以做一个全新的排序算法呢？</p>
-<p>我们知道，堆的特点就是根节点的值永远是最大（小）值，所以我们只需要重复<strong>删除</strong>堆的节点，并把删除的节点依次输出即可。</p>
-<p>所以我们的问题就是，如何<strong>建立</strong>一个堆，巧的是，这个问题刚才我们已经解决过了，就是向下维护建堆。</p>
-<p>我们可以轻松的给出代码。</p>
-<pre><code class="c">void HeapSort(ElementType* array, int N)&#123;   //对array原地进行堆排序
-    MaxHeap MaxH = ArrayToMaxHeap(array, N);
-    int i;
-    for(i=0;i&lt;N;++i)   array[i]=Delete(MaxH);
-    return;
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/">C艹STL库官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/8_stl/">咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象</a></li>
+<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/%E7%90%86%E8%A7%A3%20STL%20-%20%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/">咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象</a></li>
+</ul>
+<span id="more"></span>
+
+<p>&nbsp;</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="从指针到迭代器"><a href="#从指针到迭代器" class="headerlink" title="从指针到迭代器"></a>从指针到迭代器</h4><p><strong>迭代器iterator</strong>这个名词初见可能比较陌生, 因此在前一篇有关STL的文章 <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">C++ | STL I</a> 中, 我使用了指针来类比这个概念. 今天让我们继续从指针重新开始, 来理解迭代器.</p>
+<p>数组是最简单的容器辣!</p>
+<p>让我们考虑实现一个数组容器吧, 也不需要支持特别复杂的算法, 有最简单的增改删查就可以了, 因此我们直接考虑用C艹自带的数组来实现我们的数组, <strong>仿照STL的习惯</strong>, 我们把成员函数作如下命名</p>
+<pre><code class="c++">template &lt;class ItemType, int Size&gt;
+class my_array&#123;
+    private:
+        ItemType array[Size];
+    public:
+        my_array(ItemType initial, int num = Size); //将前num个元素赋初值initial
+        void push_back(ItemType val);   //增加元素val
+        ItemType* find(ItemType val);   //查找元素val
+        ItemType&amp; at(ItemType* target); //用于修改target指向元素,返回数组元素的引用
+        void erase(ItemType val);   //删除元素val,后面的元素前移
+&#125;;
+</code></pre>
+<p>如果没有学习迭代器, 上面的写法已经是一个很优秀的回答了 <del>(因为是Vanadium写的)</del>, 我们主要关注查找函数的实现, 相信聪明的你很快就能做出实现</p>
+<pre><code class="c++">template &lt;class ItemType, int Size&gt;
+ItemType* my_array&lt;ItemType, Size&gt;::find(ItemType val)&#123;
+    int iterator;
+    for(iterator = 0;iterator &lt; Size;++iterator)&#123;
+        if(*(array + iterator) == val)  break;
+    &#125;
+    return (array + iterator);  //未找到则返回末地址的下一位
 &#125;
 </code></pre>
-<p>可以看到，我们在解决了建堆、删除两个操作之后，实现堆排序的算法不要太简单。</p>
-<p>不过有细心的朋友可能会注意到Vanadium所说的“原地排序”，但是代码实现里面根本不是原地排序，因为额外申请了一个Heap的空间。</p>
-<p>实际上这是因为，我们的代码是实例化一个ADT，是需要封装的，如果我们只是应用堆的思想，而不拘泥于堆的格式，我们可以直接利用Array进行排序——毕竟Array和Heap的array明显是一样的。</p>
-<p>具体的代码实现就不书写了。</p>
-<p>HeapSort的时间复杂度也是 O(nlong)，而空间复杂度为 O(1) ，并且效率基本稳定。因此在一些容易MLE（虽然很少）的大量数据的题中，HeapSort会体现出它的优势。</p>
+<p>这个写法已经很完美了, 基本可以满足<strong>需求demand</strong>. 但是, 这是针对我们只有<code>my_array</code>这么一个需求的时候. 当我们需求扩大, 比如STL这样一个十分庞大的需求, 返回一个<code>ItemType*</code>是远不足以满足需求的. 比如我们需要一个<code>my_map</code>, 我们知道<code>map</code>在STL中是用<strong>红黑树red black tree</strong>实现的, 我们就要针对红黑树实现另外一个<code>find</code>函数–因为我们使用了指针的<code>++</code>运算和<code>*</code>解引用运算, 而这样的简单运算是不足以遍历红黑树的, 但是我们重新写一个这样的函数, 而不是选择重载, 就大大的违背了泛型编程的逻辑了. </p>
+<p>最好的解决办法是保留这个弱爆了的遍历函数不动, 我们修改<code>ItemType*</code>为另外一个变量, 它能唯一的指向特定容器的某一个元素, 也能通过重载<code>++</code>运算和<code>*</code>解引用运算的方式实现对任一算法的适配, 定义这个新的变量类型, 用来代替指针的过程就被称为<strong>指针的抽象</strong>, 与此同时, 迭代器产生了.</p>
+<p>假如我们已经拥有了迭代器类型<code>iterator</code>, 我们就可以改写那个<code>find</code>函数了.</p>
+<pre><code class="c++">template &lt;class ItemType, int Size&gt;
+my_array&lt;ItemType, Size&gt;::iterator my_array&lt;ItemType, Size&gt;::find(ItemType val)&#123;
+    my_array&lt;ItemType, Size&gt;::iterator i;
+    for(i = this-&gt;begin();i != this-&gt;end();++i)&#123;
+        if(*i == val)  break;
+    &#125;
+    return i;   //未找到则返回末迭代器的后继
+&#125;
+//Tips: 行5的边界条件使用了`!=`而不是`&lt;`是因为不是所有迭代器都是可以比较大小的
+</code></pre>
+<p>在我们的写法中, 迭代器的定义更像是一个模板类中的类, 事实上也是如此, 以<code>my_array</code>为例, 我们会在类中定义一个类来实现迭代器(略去了影响观感的多余成员函数)</p>
+<pre><code class="c++">template &lt;class ItemType, int Size&gt;
+class my_array&#123;
+    private:
+        ItemType array[Size];
+    public:
+        class iterator;
+        iterator begin()&#123;
+            return iterator(this);
+        &#125;
+        iterator end()&#123;
+            return iterator(this+Size);
+        &#125;
+        iterator find(ItemType val);   //查找元素val
+&#125;;
+
+template &lt;class ItemType, int Size&gt;
+class my_array&lt;ItemType, Size&gt;::iterator&#123;
+    private:
+        ItemType* ptrItem;
+    public:
+        iterator(ItemType _ptrItem)&#123;
+            ptrItem = _ptrItem;
+        &#125;
+
+        iterator&amp; operator++()&#123;
+            ++ptrItem;
+            return *this;
+        &#125;
+
+        bool operator!=(iterator tmp)&#123;
+            return ptrItem != tmp.ptrItem;
+        &#125;
+
+        ItemType&amp; operator*()&#123;
+            return (*ptrItem);
+        &#125;
+&#125;;
+</code></pre>
+<p>经过这样子的改写, 我们的<code>my_array</code>终于能支持迭代器了, 虽然对数组使用迭代器显得有些多余, 但我们的目标可是星辰大海! 况且, 我们目前已经跨出了第一步–从指针到迭代器</p>
+<p>除此以外, 我们的<code>find</code>函数(算法)已经脱离了容器<code>my_array</code>, 这也从另一个侧面说明了STL的迭代器的作用, 沟通算法与容器, 避免算法错误的对不应被操作的容器操作, 以及方便算法的实现和重载</p>
+<p>&nbsp;</p>
+<p><strong>最后一个迭代器</strong></p>
+<p>不论是数组还是抽象的遍历函数, 我们判断终点的方法都是<code>i != this-&gt;end()</code>, 这是由于我们想要程序在越过容器边界之后再进行退出. 之所这么做是有很多考量的, 其中之一就是方便程序的编写.</p>
+<p>&nbsp;</p>
+<h4 id="迭代器的分类"><a href="#迭代器的分类" class="headerlink" title="迭代器的分类"></a>迭代器的分类</h4><p>好的, 编写一个STL的小活动到此结束(当然我们也没有能力编写一个完整的STL, 毕竟一个<code>&lt;array&gt;</code>都有910行代码, 而<code>&lt;algorithm&gt;</code>包含了9948行代码!!!), 接下来我们继续往应用层面讨论迭代器的分类.</p>
+<p>我们知道, 对于不同的容器, STL实现时, 采用了不同的数据结构, 同样的, 迭代器的实现也会使用不同的方法. 一个最简单的例子就是, 你无法对一个<code>set</code>容器使用<code>sort</code>函数, 但是<code>vector</code>却可以.</p>
+<p>我们知道, STL的<code>sort</code>函数主要使用的是快速排序算法 <strong>(不知道就去看文档!)</strong>, 实现快速排序算法的必要条件就是能够以O(1)的代价随机访问元素, 并且能以O(1)的代价计算任意两个元素之间的距离; 用迭代器的语气说, 就是你要对迭代器与整型之间的<code>+=</code>, <code>-=</code>, <code>+</code>, <code>-</code>运算符和迭代器之间的<code>-</code>运算符有定义.</p>
+<p>然而, 由于<code>set</code>的底层是红黑树, 我们并没有办法通过迭代器随机访问, 也没有办法计算距离, 因此<code>sort</code>无法对<code>set</code>使用; 对于<code>vector</code>, 我们知道它的实现其实是数组, 其迭代器的实现是指针, 而且拥有一块连续的内存, 因而可以满足要求.</p>
+<p>让我们拿回上一篇有关STL的文章 <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl-2/">C++ | STL II</a> 的图</p>
+<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0020.png?raw=true">
+
+<p>图源: <a target="_blank" rel="noopener" href="https://github.com/CppCon/CppCon2021/blob/main/Presentations/back_to_basics_classic_stl__bob_steagall__cppcon_2021_1.pdf">Github | PPT | Back to Basics: Classic STL - Bob Steagall - CppCon 2021</a></p>
+<p>先不看表格的前面两行与输入输出有关的特化迭代器, 我们关注后面四个常见的迭代器, 我们从上往下看, 因为下面的迭代器是上面迭代器的加强版本.</p>
+<p><strong>前向迭代器forward iterator</strong></p>
+<p>前向迭代器支持多趟的对容器遍历, 并且在读写后依然指向同一个元素.</p>
+<p>支持的操作: <code>* -&gt; ++ == != =</code></p>
+<p>应用于: forward_list(单向链表), unordered_*(hash维护的单链表)</p>
+<p><strong>双向迭代器bidirectional iterator</strong></p>
+<p>在前者的基础上, 可以双向移动</p>
+<p>额外支持的操作: <code>--</code></p>
+<p>应用于: list(双向链表), set, map, multi*(红黑树)</p>
+<p><strong>随机访问迭代器random access iterator</strong></p>
+<p>在前者的基础上, 可以以O(1)的代价访问任一元素    </p>
+<p>额外支持的操作: <code>[] += -= + - &lt; &gt; &lt;= &gt;=</code></p>
+<p>应用于: deque(多个定长数组)</p>
+<p><strong>连续迭代器contiguous iterator</strong></p>
+<p>(C艹17+)在前者的基础上, 逻辑相邻的元素, 物理也相邻</p>
+<p>额外支持的操作: 无</p>
+<p>应用于: array, vector(数组)</p>
+<p>&nbsp;</p>
+<p><strong>一个容器迭代器的种类决定了他能应用的算法.</strong> </p>
 
     </div>
 
