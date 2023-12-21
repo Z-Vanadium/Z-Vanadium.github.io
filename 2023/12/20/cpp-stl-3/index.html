@@ -250,12 +250,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
+                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #03a9f4">OOP</a>
+                <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
             </span>
             
         </span>
@@ -403,7 +403,107 @@ class my_array&lt;ItemType, Size&gt;::iterator&#123;
 <p>额外支持的操作: 无</p>
 <p>应用于: array, vector(数组)</p>
 <p>&nbsp;</p>
-<p><strong>一个容器迭代器的种类决定了他能应用的算法.</strong> </p>
+<p><strong>一个容器的迭代器的种类决定了他能应用的算法.</strong> 因此, 我们不必机械的记忆适用于某一个或某一类的算法有哪些, 我们只需要思考算法的实现过程, 判断算法需求的迭代器的种类, 即可以更加普遍的方式获知算法的适用的容器. 当然, 比这种方法更加便捷的应当是查询文档–当且仅当无法确认时.  </p>
+<p>&nbsp;</p>
+<h4 id="比较器专栏"><a href="#比较器专栏" class="headerlink" title="比较器专栏"></a>比较器专栏</h4><p>在STL | III的最后, 我们来探讨一下比较器数的原理和用法. 在前一篇有关STL的文章 <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">C++ | STL I</a> 中, 我在最后提了一嘴降序序列如何设置<code>cmp</code>函数, 然而当时我们并没有系统的理解迭代器, 因此编写的<code>cmp</code>函数并不是一个良好的函数.</p>
+<p><strong>匿名函数</strong></p>
+<p>在C艹11+中, 提供了匿名函数(也被称为lambda表达式)以解决我们在使用STL的过程中, 定义了过多仅仅使用了一两次的函数类, 导致编译变慢或代码冗长臃肿的情况. 由于匿名函数可以在使用阈内部定义使用, 我们也将其称作匿名的内联函数.</p>
+<p>匿名函数的语法格式如下:</p>
+<pre><code class="c++">[capture](parameters) -&gt; return TypeName&#123;&#125;
+</code></pre>
+<p>在上面的定义中,</p>
+<ul>
+<li><code>[capture]</code>被称为捕获列表, 用于捕获外部变量</li>
+<li><code>(parameters)</code>被称为参数列表, 相当于普通函数的参数列表, 采用形参传值的方法</li>
+<li><code>-&gt; return TypeName</code>规定了匿名函数的返回值类型, 一般情况下可缺省, 交由编译器推导</li>
+<li><code>&#123;&#125;</code>为函数体, 不要求只能包含一条语句, 也可以是语句块(但是语句过多, 就不适合使用匿名函数了)</li>
+</ul>
+<p>我们直接通过例子来理解匿名函数, 至于更细节的东西, 我们可以放到之后有机会再讲.</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+using namespace std;
+
+int main()&#123;
+    auto my_max = [](int x, int y)&#123; return x&gt;y? x:y; &#125;;
+    cout&lt;&lt;max(3,5)&lt;&lt;endl;
+&#125;   
+</code></pre>
+<p>同样的, 我们也可以在当时的代码中, 使用匿名函数.   </p>
+<pre><code class="c++">//原始代码
+bool cmp(int x, int y)&#123;
+    return !(x&lt;y);
+&#125;
+int main()&#123;
+    int _array[] = &#123;1,4,6,2,4,5&#125;;
+    vector&lt;int&gt; array(_array, _array+6);
+    sort(array.begin(), array.end(), cmp);
+    for(auto i=array.begin();i&lt;array.end();++i)&#123;
+        cout&lt;&lt;*i&lt;&lt;&#39; &#39;;
+    &#125;
+    cout&lt;&lt;endl;
+&#125;
+
+//使用匿名函数
+int main()&#123;
+    int _array[] = &#123;1,4,6,2,4,5&#125;;
+    vector&lt;int&gt; array(_array, _array+6);
+    sort(array.begin(), array.end(), [](int x, int y)&#123; return !(x&lt;y); &#125;);
+    for(auto i=array.begin();i&lt;array.end();++i)&#123;
+        cout&lt;&lt;*i&lt;&lt;&#39; &#39;;
+    &#125;
+    cout&lt;&lt;endl;
+&#125;
+</code></pre>
+<p>可以看到, 假如我们使用生命周期更短的匿名函数, 就可以减少对<code>cmp</code>函数的重载(因为我们不一定只需要一个特殊的cmp函数), 而是可以完全交由匿名函数完成.</p>
+<p>&nbsp;</p>
+<p><strong>比较器的本质</strong></p>
+<p>让我们回到比较器, 回到使用比较器的典型函数<code>sort</code>, 参阅官方标准文档, 我们发现, <code>sort</code>只有两个函数签名</p>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0021.png">
+
+<p>一个是缺省了比较器的版本(这个时候会调用重载后的<code>&lt;</code>运算符完成比较); 另一个就是带有比较器的版本, 但是奇怪的是, 我们可以使用很多种方式为<code>sort</code>传递比较器, 比如下列方法都是可以接受的</p>
+<pre><code class="c++">// sort algorithm example
+#include &lt;iostream&gt;     // std::cout
+#include &lt;algorithm&gt;    // std::sort
+#include &lt;vector&gt;       // std::vector
+
+bool myfunction (int i,int j) &#123; return (i&lt;j); &#125;
+
+struct myclass &#123;
+  bool operator() (int i,int j) &#123; return (i&lt;j);&#125;
+&#125; myobject;
+
+int main () &#123;
+  int myints[] = &#123;32,71,12,45,26,80,53,33&#125;;
+  std::vector&lt;int&gt; myvector (myints, myints+8);               // 32 71 12 45 26 80 53 33
+
+  // using default comparison (operator &lt;):
+  std::sort (myvector.begin(), myvector.begin()+4);           //(12 32 45 71)26 80 53 33
+
+  // using function as comp
+  std::sort (myvector.begin()+4, myvector.end(), myfunction); // 12 32 45 71(26 33 53 80)
+
+  // using object as comp
+  std::sort (myvector.begin(), myvector.end(), myobject);     //(12 26 32 33 45 53 71 80)
+
+  // using lambda as comp
+  std::sort (myvector.begin(), myvector.end(), [](int x, int y)&#123; return !(x&lt;y); &#125;) 
+
+  // print out content:
+  std::cout &lt;&lt; &quot;myvector contains:&quot;;
+  for (std::vector&lt;int&gt;::iterator it=myvector.begin(); it!=myvector.end(); ++it)
+    std::cout &lt;&lt; &#39; &#39; &lt;&lt; *it;
+  std::cout &lt;&lt; &#39;\n&#39;;
+
+  return 0;
+&#125;
+</code></pre>
+<p>然而, 这么多种方法对应的仅有一个重载, 这说明, <strong>这么多实现方法的比较器的类型, 应该是一样的</strong>.</p>
+<p>事实上, 这个相同的类型, 就是<strong>函数对象function object</strong>, 要注意的是, 函数对象中的对象, 与我们OOP中熟知的对象并不相同, 与此同时, 也要清楚<strong>函数并不是对象</strong>–包括结构体, 以及他们的模板和实例化, 他们统统都是一段代码而已. </p>
+<p>具体来说, 函数对象指的, 就是函数指针, 可以转化为函数指针或是重载了<code>()</code>运算符的东西. 因此我们回头看上面的代码, 就可以理解他们分别调用了什么函数对象了</p>
+<ul>
+<li>行20: 函数指针</li>
+<li>行23: 重载后的<code>()</code>运算符</li>
+<li>行26: 可以转化为函数指针</li>
+</ul>
 
     </div>
 
