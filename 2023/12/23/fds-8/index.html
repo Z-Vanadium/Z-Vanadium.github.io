@@ -383,10 +383,290 @@ int spfa( vertex k )&#123;
 <h4 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h4><ul>
 <li><strong>割点</strong>: 如果去掉一个点，剩下的图不再是连通的，则称这个点为割点</li>
 <li><strong>双连通性</strong>: 如果一个无向连通图没有割点, 则我们称之为双连通图</li>
+<li><strong>强连通性</strong>: 如果一个有向连通图没有割点, 则我们称之为强连通图</li>
 <li><strong>双连通分量</strong>: 极大的双连通子图</li>
+<li><strong>强连通分量</strong>: 极大的强连通子图</li>
 </ul>
 <p>&nbsp;</p>
-<h4 id="从DFS开始"><a href="#从DFS开始" class="headerlink" title="从DFS开始"></a>从DFS开始</h4>
+<h4 id="从DFS开始"><a href="#从DFS开始" class="headerlink" title="从DFS开始"></a>从DFS开始</h4><p>考虑一个DFS遍历图的算法, 为方便和理解起见, 我们采用<strong>邻接矩阵</strong>储存这个图.</p>
+<pre><code class="c++">//图的储存, 测试数据及DFS代码
+#include&lt;iostream&gt;
+using namespace std;
+
+class Graph&#123;
+public:
+    Graph(int _N, int _M);
+    void DFS(int S);
+private:
+    int N, M;
+    int matrix[55][55] = &#123;0&#125;;
+    void dfs(int V, bool visited[]);
+&#125;;
+
+Graph::Graph(int _N, int _M)&#123;
+    N=_N;
+    M=_M;
+    for(int i=0;i&lt;M;++i)&#123;
+        int start, end;
+        cin&gt;&gt;start&gt;&gt;end;
+        matrix[start][end] = 1;
+    &#125;
+&#125;
+
+void Graph::DFS(int S)&#123;
+    bool visited[55] = &#123;0&#125;;
+    dfs(S, visited);
+    cout&lt;&lt;endl;
+&#125;
+
+void Graph::dfs(int V, bool visited[])&#123;
+    visited[V] = true;
+    cout&lt;&lt;V&lt;&lt;&#39;#&#39;;
+    for(int W=1;W&lt;=N;++W)&#123;
+        if(matrix[V][W] == 1 &amp;&amp; visited[W] == 0)&#123;
+            dfs(W,visited);
+        &#125;
+    &#125;
+&#125;
+
+int main()&#123;
+    Graph graph(7,9);
+    graph.DFS(1);
+&#125;
+/*
+1 2
+2 3
+2 4
+2 5
+3 4
+4 1
+5 6
+6 3
+6 7
+*/
+</code></pre>
+<p>&nbsp;</p>
+<h4 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h4><p>为了更方便的查找每一个节点的访问顺序, 我们可以引入<strong>时间戳</strong>的概念对<code>DFS</code>函数进行修改, 这样, 越早被访问的节点有着越小的时间戳<code>dfn[V]</code>, 且<strong>不存在任意两个节点有着一样的时间戳</strong></p>
+<pre><code class="c++">class Graph&#123;
+public:
+    Graph(int _N, int _M);
+    void DFS(int S);
+private:
+    int N, M;
+    int matrix[55][55] = &#123;0&#125;;
+    void dfs(int V, bool visited[], int&amp; cur);
+    int dfn[55] = &#123;0&#125;;
+&#125;;
+
+void Graph::DFS(int S)&#123;
+    bool visited[55] = &#123;0&#125;;
+    int cur = 0;
+    dfs(S, visited, cur);
+    cout&lt;&lt;endl;
+&#125;
+
+void Graph::dfs(int V, bool visited[], int&amp; cur)&#123;
+    ++cur;
+    dfn[V] = cur;
+    visited[V] = true;
+    cout&lt;&lt;V&lt;&lt;&#39;#&#39;;
+    for(int W=1;W&lt;=N;++W)&#123;
+        if(matrix[V][W] == 1 &amp;&amp; visited[W] == 0)&#123;
+            dfs(W,visited, cur);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>&nbsp;</p>
+<h4 id="边的分类"><a href="#边的分类" class="headerlink" title="边的分类"></a>边的分类</h4><p>根据DFS过程, 我们可以将边做以下分类</p>
+<ul>
+<li><strong>树边</strong>: DFS搜索树上的边, 用代码解释就是条件判断<code>matrix[V][W] == 1 &amp;&amp; visited[W] == 0</code>为<code>true</code>的边</li>
+<li><strong>后向边</strong>: DFS搜索树上, 子孙节点V指向祖先节点W的边, 虽然我们不能通过代码判断后向边, 但是我们可以证明后向边&lt;V,W&gt;一定满足<code>matrix[V][W]==true &amp;&amp; dfn[V] &gt; dfn[W]</code></li>
+<li><strong>前向边</strong>: 与后向边相对, 指DFS搜索树上, 祖先节点W指向子孙节点V的边, 我们同样不能靠代码判断, 但是对于前向边&lt;W,V&gt;我们也有以下条件表达式<code>matrix[W][V]==true &amp;&amp; dfn[V] &gt; dfn[W]</code></li>
+<li><strong>横向边</strong>: 除去上述三种边以外的边, 我们统称为横向边</li>
+</ul>
+<p>关于这几种边, 我们将代码中的测试数据画成图理解一下</p>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0023.png">
+
+<p>关于横向边, 我们有如下性质(证明请<a target="_blank" rel="noopener" href="https://blog.csdn.net/lockhou/article/details/129877144">移步</a>)</p>
+<ul>
+<li>横向边&lt;V,W&gt;满足<code>dfn[V]&gt;dfn[W]</code></li>
+<li>若有横向边&lt;V,W&gt;, 则不存在路径V-&gt;W</li>
+</ul>
+<p>&nbsp;</p>
+<h4 id="强连通分量"><a href="#强连通分量" class="headerlink" title="强连通分量"></a>强连通分量</h4><p><strong>定理</strong>: 如果存在后向边&lt;V,W&gt;, 则V,W存在于一个强连通分量内</p>
+<p><strong>证明</strong>: 存在后向边&lt;V,W&gt;, 说明W是V的祖先, 则存在路径W-&gt;V, 又存在边&lt;V,W&gt;, 则存在路径V-&gt;W, 于是W-&gt;V-&gt;W构成环, 环一定是强连通分量的子图, 得证</p>
+<p>因此, 我们判断强连通分量的任务就化成了判断后向边的任务. </p>
+<p>注意到后向边和横向边&lt;V,W&gt;均满足<code>dfn[V]&gt;dfn[W]</code>, 所以我们不能依靠这个判断, 我们可以考虑维护一个<strong>搜索栈</strong><code>st</code>–对于后向边&lt;V,W&gt;, 访问V时, 我们可以发现W已经在搜索栈内, 因此&lt;V,W&gt;是后向边; 对于横向边则没有上述性质.</p>
+<p>我们可以借由数组<code>instack[]</code>完成操作</p>
+<pre><code class="c++">void Graph::DFS(int S)&#123;
+    bool visited[55] = &#123;0&#125;;
+    int cur = 0;
+    stack&lt;int&gt; st;
+    bool instack[55] = &#123;false&#125;;
+    dfs(S, visited, cur, st, instack);
+    cout&lt;&lt;endl;
+&#125;
+
+void Graph::dfs(int V, bool visited[], int&amp; cur, stack&lt;int&gt;&amp; st, bool instack[])&#123;
+    ++cur;
+    dfn[V] = cur;
+    st.push(V);
+    instack[V] = true;
+    visited[V] = true;
+    cout&lt;&lt;V&lt;&lt;&#39;#&#39;;
+    for(int W=1;W&lt;=N;++W)&#123;
+        if(matrix[V][W] == 1 &amp;&amp; visited[W] == 0)&#123;
+            dfs(W,visited, cur, st, instack);
+        &#125;
+        else if( matrix[V][W] == 1 &amp;&amp; instack[W] == true )&#123;  //说明&lt;V,W&gt;是后向边
+            ;
+        &#125;
+    &#125;
+    st.pop();
+    instack[V] = false;
+&#125;
+</code></pre>
+<p>&nbsp;</p>
+<h4 id="Tarjin算法"><a href="#Tarjin算法" class="headerlink" title="Tarjin算法"></a>Tarjin算法</h4><p>知道了后向边&lt;V,W&gt;之后, 我们可以做什么呐?</p>
+<p>当然是求强连通分量了!</p>
+<p>根据我们上一小节提出的定理, 我们需要一个方法标注路径V-&gt;W上所有的元素都属一个强连通分量. 对此我们可以引入追溯值数组<code>low[]</code>, 其中<code>low[V]</code>表示含有V的强连通分量第一个被访问的节点的时间戳<code>dfn[V&#39;]</code>.</p>
+<p>对于后向边&lt;V,W&gt;, 显然路径W-&gt;V上任何一个节点T的追溯值<code>low[T]</code>都应该等于<code>dfn[W]</code>(也就是<code>low[W]</code>, 这里推荐前者)</p>
+<p>对于我们给出的测试数据, 更新追溯值之后的图应该是这样的</p>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0024.png">
+
+<blockquote>
+<p>解释: 由于存在后向边&lt;4,1&gt;, 路径1-&gt;2-&gt;3-&gt;4和1-&gt;2-&gt;5-&gt;6-&gt;3-&gt;4-&gt;1上所有节点的追溯值<code>low[i]</code>均为<code>dfn[1]</code>, 而节点7不存在强连通分量, 则他们的追溯值<code>low[i]</code>等于<code>dfn[i]</code></p>
+</blockquote>
+<p>理解了追溯值的概念, 那我们要考虑如何更新追溯值了. 一种方法是我们在发现后向边的时候对搜索栈中符合条件的节点都更新一次追溯值, 这种方法有一定的可行度, 但是既不简洁, 也不美丽. 我们可以在回溯的时候进行一次判断: <strong>假如当前节点的追溯值大于了子节点的追溯值, 则更新为子节点的追溯值</strong></p>
+<p>代码实现如下</p>
+<pre><code class="c++">void Graph::dfs(int V, bool visited[], int&amp; cur, stack&lt;int&gt;&amp; st, bool instack[])&#123;
+    ++cur;
+    dfn[V] = cur;
+    low[V] = cur;
+    st.push(V);
+    instack[V] = true;
+    visited[V] = true;
+    cout&lt;&lt;V&lt;&lt;&#39;#&#39;;
+    for(int W=1;W&lt;=N;++W)&#123;
+        if(matrix[V][W] == 1 &amp;&amp; visited[W] == 0)&#123;
+            dfs(W,visited, cur, st, instack);
+            low[V] = min(low[V], low[W]);
+        &#125;
+        else if( matrix[V][W] == 1 &amp;&amp; instack[W] == true )&#123;  //说明&lt;V,W&gt;是后向边
+            low[V] = min(low[V], dfn[W]);
+        &#125;
+    &#125;
+    st.pop();
+    instack[V] = false;
+&#125;
+</code></pre>
+<p>最后我们考虑标记每一个强连通分量, 我们定义标记数组<code>sign[]</code>, 假如节点V属于第i个强连通分量, 则<code>sign[V] = i</code>.</p>
+<p>做标记的时间点不应该与更新追溯值同时, 我们可以在回溯到强连通分量最先被访问的节点时, 对搜索栈<code>st</code>进行一个出栈标记的操作.</p>
+<p>完成以上所有操作后, 我们就可以将<code>DFS</code>函数改写为<code>Tarjin</code>函数了, 代码实现如下(感恩<a target="_blank" rel="noopener" href="https://www.watertomato.com/">@Watertomato</a>帮忙debug!!!)</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;stack&gt;
+using namespace std;
+
+//采用邻接矩阵的方式储存图
+class Graph&#123;
+public:
+    Graph(int _N, int _M);
+    void Tarjin(int S);
+private:
+    int N, M;
+    int matrix[55][55] = &#123;0&#125;;
+    void dfs(int V, int&amp; cur, stack&lt;int&gt;&amp; st, bool instack[]);
+    int dfn[55] = &#123;0&#125;;  //时间戳
+    int low[55] = &#123;0&#125;;  //追溯值
+    int sign[55] = &#123;0&#125;; //强连通分量序号
+    int cnt = 0;        //强连通分量个数
+    int min(int x, int y)&#123;
+        return x&gt;y? y:x;
+    &#125;;
+&#125;;
+
+//构造函数为初始化矩阵
+Graph::Graph(int _N, int _M)&#123;
+    N=_N;
+    M=_M;
+    for(int i=0;i&lt;M;++i)&#123;
+        int start, end;
+        cin&gt;&gt;start&gt;&gt;end;
+        matrix[start][end] = 1;
+    &#125;
+&#125;
+
+//Tarjin算法函数接口
+void Graph::Tarjin(int S)&#123;
+    int cur = 0;                //时间游标
+    stack&lt;int&gt; st;              //搜索栈, 用于储存搜索路径
+    bool instack[55] = &#123;false&#125;; //记录节点是否已经进入搜索栈
+    dfs(S, cur, st, instack);
+    //这么多参数是因为尽量不开无用的类成员变量
+    //也可以开个子类的, 但是维护者维护着就
+    //出现了这么多参数了, (逃
+    cout&lt;&lt;endl;
+&#125;
+
+void Graph::dfs(int V, int&amp; cur, stack&lt;int&gt;&amp; st, bool instack[])&#123;
+    ++cur;
+    dfn[V] = cur;
+    low[V] = cur;   //最开始追溯值就是时间戳, 如果存在后向边, 才更新追溯值
+    st.push(V);
+    instack[V] = true;
+    cout&lt;&lt;V&lt;&lt;&#39;#&#39;;   //输出访问顺序
+    for(int W=1;W&lt;=N;++W)&#123;
+        if(matrix[V][W] == 1 &amp;&amp; dfn[W] == 0)&#123;   //假如存在路径&lt;V,W&gt;, 且W未被访问(时间戳为0)
+            dfs(W, cur, st, instack);   //深度优先搜索, 假如不存在环, 则子节点的追溯值肯定是更大的
+            low[V] = min(low[V], low[W]);
+            //假如子节点W的追溯值更新了, 说明W是环的一部分
+            //则自己的追溯值更新为子节点的追溯值
+        &#125;
+        else if( matrix[V][W] == 1 &amp;&amp; instack[W] == true )&#123;  //子节点W在搜索栈中, 说明&lt;V,W&gt;是后向边
+            low[V] = min(low[V], low[W]);
+            //更新为当前节点的追溯值为两者中的较小值
+            //不直接取子节点的时间戳的原因是:
+            //可能出现V的追溯值比W更小的情况
+        &#125;
+    &#125;
+
+    //假如当前节点是自己所在的强连通分量的最先被访问的节点
+    if(low[V] == dfn[V])&#123;   
+        ++cnt;
+        //将搜索栈中, 压在当前节点之上的, 属于该强连通分量的节点全部弹出并染色
+        //不用担心染色其他非该强连通分量的节点
+        //因为不是该强连通分量的节点会先形成自己的强连通分量之后, 先全部被弹出
+        do&#123;
+            int tmp = st.top();
+            st.pop();
+            sign[ tmp ] = cnt;
+            instack[ tmp ] = false;
+            cout&lt;&lt;tmp&lt;&lt;&quot; in &quot;&lt;&lt;cnt&lt;&lt;endl;   
+            if( tmp == V )  break;
+        &#125;while(true);
+    &#125;
+&#125;
+
+int main()&#123;
+    Graph graph(7,9);
+    graph.Tarjin(1);
+&#125;
+/*
+1 2
+2 3
+2 4
+2 5
+3 4
+4 1
+5 6
+6 3
+6 7
+*/
+</code></pre>
+<p>&nbsp;</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>略, 太累了写完这个Tarjin算法, 主要是一直被一个蠢蠢的bug卡着&gt;-&lt;</p>
+
     </div>
 
 
