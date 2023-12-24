@@ -494,9 +494,7 @@ void Graph::dfs(int V, bool visited[], int&amp; cur)&#123;
 <li>若有横向边&lt;V,W&gt;, 则不存在路径V-&gt;W</li>
 </ul>
 <p>&nbsp;</p>
-<h4 id="强连通分量"><a href="#强连通分量" class="headerlink" title="强连通分量"></a>强连通分量</h4><p><strong>定理</strong>: 如果存在后向边&lt;V,W&gt;, 则V,W存在于一个强连通分量内</p>
-<p><strong>证明</strong>: 存在后向边&lt;V,W&gt;, 说明W是V的祖先, 则存在路径W-&gt;V, 又存在边&lt;V,W&gt;, 则存在路径V-&gt;W, 于是W-&gt;V-&gt;W构成环, 环一定是强连通分量的子图, 得证</p>
-<p>因此, 我们判断强连通分量的任务就化成了判断后向边的任务. </p>
+<h4 id="强连通分量"><a href="#强连通分量" class="headerlink" title="强连通分量"></a>强连通分量</h4><p>我们判断强连通分量的任务就是判断后向边的任务. </p>
 <p>注意到后向边和横向边&lt;V,W&gt;均满足<code>dfn[V]&gt;dfn[W]</code>, 所以我们不能依靠这个判断, 我们可以考虑维护一个<strong>搜索栈</strong><code>st</code>–对于后向边&lt;V,W&gt;, 访问V时, 我们可以发现W已经在搜索栈内, 因此&lt;V,W&gt;是后向边; 对于横向边则没有上述性质.</p>
 <p>我们可以借由数组<code>instack[]</code>完成操作</p>
 <pre><code class="c++">void Graph::DFS(int S)&#123;
