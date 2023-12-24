@@ -250,7 +250,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
+                <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
             </span>
             
         </span>
@@ -309,14 +309,14 @@
 </ul>
 </li>
 <li>最晚发生时间: 指对于节点V来说, 能不使后继节点W的最晚发生时间延长的最晚时间. 听着可能有点绕, 举个例子, W有前提节点V1和V2, 假设V1和V2有相同的最早发生时间, &lt;V1,W&gt;&#x3D;30, &lt;V2,W&gt;&#x3D;100, 那么, 只要我们在V1节点磨蹭的时间x&lt;&#x3D;70, W都可以在t&#x3D;100的时候发生, 这时我们说V1的最晚发生时间是70. 递推公式可写作<ul>
-<li><code>LHT[V] = LHT[V]</code>(当V为汇点R, 我们认为的最早发生时间就是工期)</li>
+<li><code>LHT[V] = LHT[V]</code>(当V为汇点T, 我们认为其最早发生时间就是工期)</li>
 <li><code>LHT[V] = min&#123; LHT[W] - &lt;V,W&gt; &#125;</code>(当V不是汇点T, 其中W为任意后继节点)</li>
 </ul>
 </li>
 </ul>
 <p>&nbsp;</p>
 <h4 id="边的时间"><a href="#边的时间" class="headerlink" title="边的时间"></a>边的时间</h4><p>知道了任意节点的最早发生时间和最晚发生时间, 我们可以对边的时间要求做出更详细的描述. </p>
-<p>对于&lt;V,W&gt;, 存在松弛时间<code>ST = LHT[W] - EHT[V] -&lt;V,W&gt; </code>. 松弛时间表示能在该边延误的最长时间. 假如存在松弛时间为0的边构成的一条路径, 则该路径是关键路径.</p>
+<p>对于&lt;V,W&gt;, 存在松弛时间<code>ST = LHT[W] - EHT[V] -&lt;V,W&gt; </code>. 松弛时间表示能在该边<strong>延误</strong>的最长时间. 假如存在松弛时间为0的边构成的一条路径, 则该路径是关键路径.</p>
 <p>&nbsp;</p>
 <h4 id="AOV网络"><a href="#AOV网络" class="headerlink" title="AOV网络"></a>AOV网络</h4><p><strong>AOV(activity on vertex)网络</strong>与AOE网络相对, 是将节点作为活动. 对于求解有关AOV网络的问题, 我们一般使用拓扑排序. </p>
 <p><strong>拓扑序</strong>: 如果在AOV网络中, 存在路径V-&gt;W, 则相应的排序中V也在W前面, 则这样的排序结果我们称为拓扑序.</p>
