@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>ロード・エルメロイII世の事件簿 | Vanadium的小屋</title>
+    <title>FDS晓风残月记略 | AOE网络与网络流&amp;&amp;哈希算法 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -230,14 +230,14 @@
 
 <div class="article">
     <div>
-        <h1>ロード・エルメロイII世の事件簿</h1>
+        <h1>FDS晓风残月记略 | AOE网络与网络流&amp;&amp;哈希算法</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/9
+            2023/12/25
         </span>
         
            
@@ -250,7 +250,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
+                <a href="/tags/FDS/" style="color: #00a596">FDS</a>
             </span>
             
         </span>
@@ -258,96 +258,108 @@
 
 
         
+            <span class="category">
+                <span class="icon"><i class="fa-solid fa-newspaper"></i></span>
+                
+                
+                
+                
+                2023/12/25
+
+                
+            </span>
+            
 
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20231225</span></span>--> 
 
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <p>从第四次圣杯战争幸存后，韦伯·维尔维特在试图环球旅行结果遭受到世界的不幸对待：抢劫，暴力冲突······心灰意冷的韦伯决定回到他所熟悉的钟塔成为讲师维生。</p>
-<p>在一次机缘巧合之下，韦伯受Reines·El-Melloi·Archisorte(莱涅丝·埃尔梅罗)所要挟，继任了”Lord·El-Melloi”的称号。但出于对上一代El-Melloi的尊敬与愧疚，他一直自称，并要求他人称呼他为”Lord·El-MelloiⅡ”，并且担任现代魔术科的学部长。</p>
+        <blockquote>
+<p>可能大概是最后一篇自学FDS的笔记了, 解决最后两个问题<br>残月: 古人对十二月的雅称, 在此表示最后几篇文章</p>
+</blockquote>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>大纲</strong></p>
+<ul>
+<li>AOE网络与网络流</li>
+<li>哈希算法</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://note.tonycrane.cc/cs/algorithm/ds/">鹤翔万里的笔记本 | 数据结构基础</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/ZJU-93001?tid=1471218491#/learn/announce">中国大学MOOC | 数据结构</a></li>
+</ul>
 <span id="more"></span>
 
-<p>尽管作为魔术师的韦伯实力二流，但作为讲师，他具有令人瞠目的知识量～～，以及作为侦探，他具有令人瞠目的分析、解体能力，which 令他树敌无数～～。</p>
-<p>当当当～～～当钟塔的下课铃响起，大本钟·伦敦之星$\star$君主·埃尔梅罗Ⅱ世完成了今日的课程，作为现代魔术科的一名学生，今天所需要完成的作业是解密一段卢恩符文串！幸运的是这段卢恩符文串已经用字母谐音表示，并且已经找到了若干个字典字符串辅助翻译。那么只需要进行一一对应，然后翻译就行了。</p>
-<p>来自资历最长的学生——斯芬的tips：</p>
-<ol>
-<li>谐音后的卢恩符文串是由若干个大写字母组成的字符串；</li>
-<li>各字典字符串由一个卢恩符文串的谐音以及一个对应字符表示,且各字典串不为其他字典串的子串。</li>
-</ol>
-<p>努力完成今天的作业吧!未来的魔术之星。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>第一行一个字符串 S，表示作为作业的卢恩咒语原字符串。</p>
-<p>第二行一个整数 n，表示有 n 个字典字符串。</p>
-<p>第三至 2n+2 行, 第 2i+1 行（i&#x3D;1,2,⋯n）为字典字符串 i 的谐音段 $s_i$ ；第 2i+2 行（i&#x3D;1,2,⋯,n ）为字典字符串 i 的对应字符 $ch_i$ 。</p>
-<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>一行一个字符串，表示翻译后的作业答案。</p>
-<h4 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h4><p><strong>输入</strong></p>
-<pre><code>YYSWYSYQYQBYO
-4
-YYSWYS
-@
-YQYQBYO
-w
-MPPPAOWND
-I
-TIHPASN
-P
-</code></pre>
-<p><strong>输出</strong></p>
-<pre><code>@w
-</code></pre>
-<h4 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&amp;提示"></a>说明&amp;提示</h4><p>本题采用ASCII字符集。</p>
-<p>对于100%的数据:∣S∣⩽100,1⩽n⩽30,∣ $s_i$ ∣⩽∣S∣。</p>
-<pre><code>代码长度限制                    100 KB
-时间限制                        1500 ms
-内存限制                        256 MB
-</code></pre>
-<h4 id="解题过程"><a href="#解题过程" class="headerlink" title="解题过程"></a>解题过程</h4><p><del>背景长的一般是水题</del><br>因为题目给的时空限制太宽裕了，因此可以直接暴力AC，可以用双指针的做法，也可以随意模拟，下面给出双指针做法</p>
-<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-
-string input;
-int n;
-typedef struct dictnode_ dictnode;
-struct dictnode_&#123;
-    string key;
-    char val;
-&#125;;
-dictnode dict[35];
-
-bool check(int left, int right)&#123;
-    string tmp = input.substr(left,right-left+1);
-    for(int i=0;i&lt;n;++i)&#123;
-        if(tmp == dict[i].key)&#123;
-            cout&lt;&lt;dict[i].val;
-            return true;
+<p>&nbsp;</p>
+<h3 id="正文-上"><a href="#正文-上" class="headerlink" title="正文-上"></a>正文-上</h3><h4 id="AOE网络"><a href="#AOE网络" class="headerlink" title="AOE网络"></a>AOE网络</h4><p><strong>AOE(activity on edge)网络</strong>是一张有向带权图, 其中有向边代表活动, 权值代表活动持续的时间. </p>
+<p>&nbsp;</p>
+<h4 id="关键路径"><a href="#关键路径" class="headerlink" title="关键路径"></a>关键路径</h4><p>一个AOE网络有且仅有一个入度为0的节点, 我们称之为源点S; 以及一个出度为0的节点, 我们称之为汇点T. 我们将源点的时间戳记作0. </p>
+<p>节点是一个时间概念, 表示两项活动之间的间隔, 这个间隔有长有短; 同时, 当且仅当进入节点的活动全部完成, 离开节点的活动才能开始.</p>
+<p>为了保证工期的按时完成, 我们要保证那些<strong>绝对不能拖延的活动</strong>按时完成, 由这些活动构成的路径, 我们称为<strong>关键路径</strong>.</p>
+<p>&nbsp;</p>
+<h4 id="节点的时间"><a href="#节点的时间" class="headerlink" title="节点的时间"></a>节点的时间</h4><p>对于任何一个节点, 我们存在一个最早发生时间<code>EHT[i]</code>和最晚发生时间<code>LHT[]</code>.</p>
+<ul>
+<li>最早发生时间: 指对于节点V来说, 所有他的前提节点U都完成的时间点. 因为只有所有前提节点U都完成时, 节点V才能发生, 递推公式可写作<ul>
+<li><code>EHT[V] = 0</code>(当V为源点)</li>
+<li><code>EHT[V] = max&#123; EHT[U] + &lt;U,V&gt; &#125;</code>(当V不是源点, 其中U为任意前提节点)</li>
+</ul>
+</li>
+<li>最晚发生时间: 指对于节点V来说, 能不使后继节点W的最晚发生时间延长的最晚时间. 听着可能有点绕, 举个例子, W有前提节点V1和V2, 假设V1和V2有相同的最早发生时间, &lt;V1,W&gt;&#x3D;30, &lt;V2,W&gt;&#x3D;100, 那么, 只要我们在V1节点磨蹭的时间x&lt;&#x3D;70, W都可以在t&#x3D;100的时候发生, 这时我们说V1的最晚发生时间是70. 递推公式可写作<ul>
+<li><code>LHT[V] = LHT[V]</code>(当V为汇点, 我们认为的最早发生时间就是工期)</li>
+<li><code>LHT[V] = min&#123; LHT[W] - &lt;V,W&gt; &#125;</code>(当V不是源点, 其中W为任意后继节点)</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h4 id="边的时间"><a href="#边的时间" class="headerlink" title="边的时间"></a>边的时间</h4><p>知道了任意节点的最早发生时间和最晚发生时间, 我们可以对边的时间要求做出更详细的描述. </p>
+<p>对于&lt;V,W&gt;, 存在松弛时间<code>ST = LHT[W] - EHT[V] -&lt;V,W&gt; </code>. 松弛时间说明了能在该边延误的最长时间. 假如存在松弛时间为0的边构成的一条路径, 则该路径是关键路径.</p>
+<p>&nbsp;</p>
+<h3 id="AOV网络"><a href="#AOV网络" class="headerlink" title="AOV网络"></a>AOV网络</h3><p><strong>AOV(activity on vertex)网络</strong>与AOE网络相对, 是将节点作为活动. 对于求解有关AOV网络的问题, 我们一般使用拓扑排序. </p>
+<p><strong>拓扑序</strong>: 如果在AOV网络中, 存在路径V-&gt;W, 则相应的排序中V也在W前面, 则这样的排序结果我们称为拓扑序.</p>
+<ul>
+<li>一个AOV网络的拓扑序不一定是唯一的.</li>
+<li>一个AOV网络如果有拓扑序, 则一定是一个DAG(有向无环图).</li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><p>拓扑排序的思路就是, 每次取出入度为0的节点(因为入度为0的节点没有了前驱, 一定是能发生的)入队, 并在出队时调整该节点后驱的入度. 伪代码描述如下</p>
+<pre><code>auto toposort(Graph G)&#123;
+    Queue q;
+    Vector v;   //储存排序后的结果, 也可以直接输出拓扑序
+    int cnt = 0;
+    for V:0-&gt;N&#123; //初始将所有入度为0的节点入队
+        if( V.indegree == 0 )&#123;
+            q.push(V);
         &#125;
     &#125;
-    return false;
-&#125;
-
-int main()&#123;
-    cin&gt;&gt;input;
-    cin&gt;&gt;n;
-    for(int i=0;i&lt;n;++i)&#123;
-        cin&gt;&gt;dict[i].key&gt;&gt;dict[i].val;
+    while(q)&#123;
+        V = q.pop();
+        v.push(V);
+        ++cnt;
+        //对所有V的后驱W进行操作
+        for W:0-&gt;N&#123;
+            if( &lt;V,W&gt; == 1 )&#123;
+                --W.indegree;
+                //如果减去这个入度后, W的入度为0, 则入队
+                if( W.indegree == 0 )&#123;
+                    q.push(W);
+                &#125;
+            &#125;
+        &#125;
     &#125;
-    int left, right;
-    left = right = 0;
-    while(input[left] != &#39;\0&#39;)&#123;
-        if(check(left,right))&#123;
-            ++right;
-            left = right;
-        &#125;
-        else&#123;
-            ++right;
-        &#125;
+    if( cnt != N )&#123; //如果只排序了不到N个节点, 说明存在环导致有的节点的入度无法归零
+        return ERROR;
+    &#125;
+    else&#123;
+        return v;
     &#125;
 &#125;
 </code></pre>
-
+<p>&nbsp;</p>
+<h4 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h4>
     </div>
 
 
