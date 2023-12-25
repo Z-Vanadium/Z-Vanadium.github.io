@@ -583,7 +583,7 @@
 <p>$找到一个非退化的线性变换X_{n\times 1}&#x3D;CY_{n\times 1}，使得二次型f\rightarrow d_1y_1^2+d_2y_2^2+…+d_ny_n^2$</p>
 <p>$f&#x3D;X^TAX&#x3D;Y^TC^TACY&#x3D;Y^TDY$</p>
 <ul>
-<li><p>$其中A是一个对称阵,A&#x3D;(a_{ij})<em>{n\times n},a</em>{ji}&#x3D;a_{ij}(j&gt;i)$</p>
+<li><p>$其中A是一个对称阵,A&#x3D;(a_{ij})<em>{n\times n},a</em>{ji}&#x3D;a_{ij}(j&gt;i).$</p>
 </li>
 <li><p>$D是一个对角阵, D&#x3D;(d_{i})_{n\times n}$</p>
 </li>
@@ -604,6 +604,34 @@
 <li>$再按主元法处理y的二次型，得到标准化矩阵Y&#x3D;C_2Z$</li>
 <li>$代入得X&#x3D;(C_1C_2)Z$</li>
 </ul>
+<p>&nbsp;</p>
+<p><strong>对称阵与二次型的转化</strong></p>
+<p>$f&#x3D;X^TAX&#x3D;X^TBX\Rightarrow A&#x3D;B$<br>$f&#x3D;X^TAX为标准型\iff A&#x3D;\Lambda$</p>
+<p>$\forall 对称阵A,\ \exists可逆阵C,\ s.t.C^TAC&#x3D;D$</p>
+<ul>
+<li>$把A复原到二次型f(x_1x_2…x_n)后标准化$</li>
+<li>$标准化矩阵C即是所求矩阵$</li>
+</ul>
+<p>对称阵问题可以转化为二次型问题</p>
+<p>$U为正交阵$</p>
+<ul>
+<li><p>$\forall 实对称矩阵A, \exists U,s.t.U^{-1}AU&#x3D;\Lambda&#x3D;(\lambda_i)_{n\times n}$</p>
+</li>
+<li><p>$\forall 实二次型f, \exists X&#x3D;UY,s.t.f&#x3D;\displaystyle\sum\lambda_iy_i^2，(\lambda_i为特征值)$</p>
+</li>
+</ul>
+<p>因此解决二次型的问题可以使用前几章的方法，只要能用就行</p>
+<p>&nbsp;</p>
+<p><strong>相似，等价和合同</strong></p>
+<p>若A，B：</p>
+<ul>
+<li>$相似：P^{-1}AP&#x3D;B$</li>
+<li>$等价：PAQ&#x3D;B$</li>
+<li>$合同：C^TAC&#x3D;B$</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>规范型</strong></p>
+<p>$f&#x3D;X^TAX,\ X&#x3D;CY&#x3D;\displaystyle\sum_1^r d_iy_i^2,(d_i\ne0)\Rightarrow r&#x3D;r(A)$</p>
 
     </div>
 
