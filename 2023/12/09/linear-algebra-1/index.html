@@ -571,6 +571,39 @@
 <li>$r_i&#x3D;1, \xi_i单位化;r_i&gt;1, Schmidt正交化\Rightarrow\beta_i$</li>
 <li>$U&#x3D;(\beta_1\beta_2…\beta_n)$</li>
 </ul>
+<h4 id="第-6-章-二次型"><a href="#第-6-章-二次型" class="headerlink" title="第 6 章 二次型"></a>第 6 章 二次型</h4><p><strong>定义</strong></p>
+<p>$f(x_1x_2..x_n) &#x3D; a_{11}x_1^2+2a_{12}x_1x_2+2a_{13}x_1x_3+…2a_{nn}x_n^2 &#x3D; \displaystyle\sum_{i&#x3D;1}^na_{ii}x_i^2+2\sum_{1\le i&lt;j\le }a_{ij}x_ix_j$</p>
+<p>称以下操作为线性变换</p>
+<p>$x_i&#x3D;c_{i1}y_1+c_{i2}y_2+…+c_{in}y_n$</p>
+<p>$我们只考虑|C|\ne 0,\ C &#x3D;( c_{ij})_{n\times n}的变换矩阵$</p>
+<p>找到一个线性变换，使得代入原式之后，不存在交叉项，我们称为标准型</p>
+<p>$f&#x3D;d_1y_1^2+d_2y_2^2+…+d_ny_n^2$</p>
+<p>&nbsp;</p>
+<p><strong>二次型的矩阵形式与矩阵的合同</strong></p>
+<p>$找到一个非退化的线性变换X_{n\times 1}&#x3D;CY_{n\times 1}，使得二次型f\rightarrow d_1y_1^2+d_2y_2^2+…+d_ny_n^2$</p>
+<p>$f&#x3D;X^TAX&#x3D;Y^TC^TACY&#x3D;Y^TDY$</p>
+<ul>
+<li><p>$其中A是一个对称阵,A&#x3D;(a_{ij})<em>{n\times n},a</em>{ji}&#x3D;a_{ij}(j&gt;i)$</p>
+</li>
+<li><p>$D是一个对角阵, D&#x3D;(d_{i})_{n\times n}$</p>
+</li>
+<li><p>$\phi :f\rightarrow A是双射$</p>
+</li>
+</ul>
+<p>由于f和A一一对应，这一章所有的结论，都有二次型语言和矩阵语言</p>
+<p>&nbsp;</p>
+<p><strong>配方法</strong></p>
+<p>二次型一定能由非退化线性变换化作标准型</p>
+<p>主元法</p>
+<ul>
+<li>$先将x_1作为主元整理配方，再考虑有平方项的主元$</li>
+</ul>
+<p>没有平方项的做法</p>
+<ul>
+<li>$先构建非退化的线性变换X&#x3D;C_1Y，代入产生平方项（C_1不唯一）$</li>
+<li>$再按主元法处理y的二次型，得到标准化矩阵Y&#x3D;C_2Z$</li>
+<li>$代入得X&#x3D;(C_1C_2)Z$</li>
+</ul>
 
     </div>
 
