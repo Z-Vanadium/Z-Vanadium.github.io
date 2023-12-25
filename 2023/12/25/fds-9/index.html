@@ -250,7 +250,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #ff7d73">FDS</a>
+                <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
             </span>
             
         </span>
@@ -359,7 +359,131 @@
 &#125;
 </code></pre>
 <p>&nbsp;</p>
-<h4 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h4>
+<h4 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h4><p>类似于水流, 我们可以定义网络图中的<strong>流量</strong>.</p>
+<p>对于给定有向图G, 定义唯一的源点S和唯一的汇点T, S和T的定义均和AOV,AOE的定义相似, 不同的是, 网络流中每条边&lt;U,V&gt;均有一个最大容量c(U,V). 我们将上述网络流记作G(V,E,c).</p>
+<p>&nbsp;</p>
+<h4 id="可行流"><a href="#可行流" class="headerlink" title="可行流"></a>可行流</h4><p>对于G(V,E,C), 若给每条边&lt;U,V&gt;给定一个流量f(U,V), 使<code>0&lt;=f(U,V)&lt;=c(U,V)</code>对于任意一条边均为<code>true</code>, 且满足以下条件:</p>
+<ul>
+<li>S的流出量 &#x3D; 网络的流量和 &#x3D; T的汇入量</li>
+<li>对任意节点均有: 汇入量之和 &#x3D; 流出量之和</li>
+</ul>
+<p>对于满足以上条件的f(U,V)的集合, 我们称之为可行流.</p>
+<p>注意: f(U,V)既不能大于c(U,V), 也不能小于0(即出现负流量的情况).</p>
+<p>例如, 对于下列网络流</p>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0025.png">
+
+<p>就有多种可行流, 我们选取其中两种</p>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0026.png">
+
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0027.png">
+
+<p>&nbsp;</p>
+<h4 id="最大流"><a href="#最大流" class="headerlink" title="最大流"></a>最大流</h4><p>在所有可行流中, 我们关注流量最大流–最大流.</p>
+<p>在最大流问题中, 流量f和容量c满足以下条件:</p>
+<ul>
+<li>$f(U,V)\le c(U,V)$</li>
+<li>$f(U,V) &#x3D; -f(V,U)$</li>
+<li>$\displaystyle\sum_{&lt;U,V&gt;\in E}f(U,V) &#x3D; 0,(U\ne S,U\ne T)$</li>
+</ul>
+<p>&nbsp;</p>
+<h4 id="建立残差图"><a href="#建立残差图" class="headerlink" title="建立残差图"></a>建立残差图</h4><p>为了求解最大流, 我们需要建立一个残差图, 用来描述每条边的富余容量.</p>
+<p>$c_f(U,V)&#x3D;\begin{cases}c(U,V) - f(U,V)&amp;,if&lt;U,V&gt;\in E\\ f(V,U)&amp;,elif&lt;V,U&gt;\in E\\0&amp;,else\end{cases}$</p>
+<p>将残差容量,源点S和汇点T组合在一起的新图称为残差图, 记作$G_f(V,E,c_f)$</p>
+<p>&nbsp;</p>
+<h4 id="EK增广路算法"><a href="#EK增广路算法" class="headerlink" title="EK增广路算法"></a>EK增广路算法</h4><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3376">洛谷 | P3376 【模板】网络最大流</a></p>
+<p>在残差图$G_f(V,E,c_f)$中, 路径S-&gt;T即为增广路.</p>
+<p>增广路的流量即是路径上最小残差. </p>
+<p>EK算法即是<strong>利用增广路不断更新最大流量, 直到不存在增广路为止.</strong></p>
+<p>实现思路如下:</p>
+<ol>
+<li>利用BFS寻找并记录一条增广路, 记下增广路的流量(路径上最小边权)</li>
+<li>更新增广路的边权(正向边减去流量, 反向边加上流量)</li>
+<li>重复上述过程, 直到找不到增广路为止</li>
+</ol>
+<p><strong>反向边</strong>: 在BFS的过程中, 我们无法保证能搜索到所有增广路, 因此我们需要一次反悔的机会. 反向边提供了这样的机会. 当正向边的流量增大时, 反向边的流量减少, 反之亦然. 这样, 当我们两次分别从两个方向经过某一条边, 我们增广的值就能相互抵消, 达到重复遍历的效果.</p>
+<p>模板题AC代码如下</p>
+<pre><code class="c++">#include&lt;iostream&gt;
+#include&lt;queue&gt;
+#define ll long long
+const int MAXN = 205;
+const ll MAXLL = 0x7fffffff;
+using namespace std;
+
+class Net&#123;
+public:
+    Net();
+    ll EK();
+    bool bfs();
+    void update(ll&amp; max_flu);
+private:
+    int n,m,S,T;
+    ll net[MAXN][MAXN] = &#123;0&#125;;   //初始化网络图
+    ll flu[MAXN];               //记录最小的流量
+    int pre[MAXN];              //储存回溯路径
+&#125;;
+
+Net::Net()&#123;
+    cin&gt;&gt;n&gt;&gt;m&gt;&gt;S&gt;&gt;T;
+    for(int i=0;i&lt;m;++i)&#123;
+        int u,v,w;
+        cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;
+        net[u][v] += w;     //这里用+=是因为洛谷的数据有重边
+    &#125;
+&#125;
+
+ll Net::EK()&#123;
+    ll max_flu = 0;
+    while( bfs() )&#123;         //一直BFS搜索增广路, 直到不存在增广里
+        update(max_flu);    //每条增广路更新一次最大流
+    &#125;
+    return max_flu;
+&#125;
+
+bool Net::bfs()&#123;
+    bool visited[MAXN]=&#123;false&#125;; //BFS模板
+    queue&lt;int&gt; q;
+    q.push(S);
+    visited[S] = true;
+    flu[S] = MAXLL;
+
+    while( !q.empty() )&#123;
+        int V = q.front();
+        q.pop();
+
+        for(int W=1;W&lt;=n;++W)&#123;
+            if( net[V][W] == 0 || visited[W] == true )&#123;
+                continue;
+            &#125;
+            else&#123;
+                flu[W] = min( flu[V], net[V][W] );  //更新最小流量
+                pre[W] = V;
+                q.push(W);
+                visited[W] = true;
+                if( W == T )    return true;
+            &#125;        
+        &#125;
+    &#125;
+
+    return false;
+&#125;
+
+void Net::update(ll&amp; max_flu)&#123;
+    int cur = T;
+    do&#123;
+        int nxt = pre[cur];
+        net[nxt][cur] -= flu[T];    //反向遍减去流量
+        net[cur][nxt] += flu[T];    //正向边加上流量
+        cur = nxt;
+    &#125;while( cur!= S );
+    max_flu += flu[T];
+&#125;
+
+int main()&#123;
+    Net net;    //实例化解决问题的类
+    cout&lt;&lt;net.EK()&lt;&lt;endl;   //输出EK算法求解的结果
+&#125;
+</code></pre>
+
     </div>
 
 
