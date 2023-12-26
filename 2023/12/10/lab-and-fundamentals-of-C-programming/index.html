@@ -237,7 +237,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
+                <a href="/tags/C-C/" style="color: #ff7d73">C/C++</a>
             </span>
             
         </span>
@@ -251,7 +251,7 @@
                 
                 
                 
-                2023/12/13
+                2023/12/26
 
                 
             </span>
@@ -260,7 +260,7 @@
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20231213</span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20231226</span></span>--> 
 
       
         <!--展示page的完整内容-->
@@ -790,6 +790,91 @@ struct abc s1, s2;
 </code></pre>
  <strong>解释：</strong> <del>查了个答案说是编译出错，但是那个答案少了个分号</del>这个没问题，跑过</li>
 </ol>
+<p>&nbsp;</p>
+<h4 id="1226"><a href="#1226" class="headerlink" title="1226"></a>1226</h4><blockquote>
+<p>文件输入输出，由于没有NOIP经历，因此这是一个我个人基本没涉猎过的领域，做个小笔记</p>
+</blockquote>
+<p>文件类型分类与读取模式分类</p>
+<ul>
+<li>文本文件 - 文本模式</li>
+<li>二进制文件 - 二进制模式</li>
+</ul>
+<p>样例程序</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+
+int main()&#123;
+    FILE *fp = fopen(“temp.txt”, “r”);	//以只读模式打开文本文件
+    //fopen失败则返回NULL，有时我们要做错误预警，这里就省去了
+    char ch;
+    ch = fgetc(fp);	//获取文件第一个字符
+    while(ch!=EOF)&#123;	//EOF表示文件的末尾，值等于-1
+        ch = fgetc(fp);
+        putchar();
+    &#125;
+    if(fclose(fp)!=0)&#123;	//关闭文件fp，成功返回0，失败则返回-1
+        printf(“ERROR\n”);
+    &#125;
+    FILE *in, *out;
+    in = fopen(“temp.in”, “r”);
+    out = fopen(“temp.out”, “w”);	//以覆写模式，即将长度截为0的模式打开
+    int x;
+    fscanf(in, “%d”, &amp;x);
+    fprintf(out, “%d\n”, x);	//在文件in中读取一个数字，写入文件out
+    fclose(in);
+    fclose(out);
+&#125;
+</code></pre>
+<p>键盘，屏幕输入输出也是文件输入输出的一种</p>
+<ul>
+<li>标准输入：<code>stdin</code></li>
+<li>标准输出：<code>stdout</code></li>
+</ul>
+<p><code>fscanf(stdin, “%d”, &amp;x)</code>与<code>scanf(“%d”, &amp;x)</code>等价</p>
+<p><code>fprintf(stdout, “%d\n”, x)</code>与<code>printf(“%d\n”, x)</code>等价</p>
+<p>其他文件读写函数</p>
+<ul>
+<li><code>fgets(s, SIZE, fp)</code>s为存储的字符数组，SIZE为待输入字符串的大小，fp为文件指针</li>
+<li><code>fputs(s, fp)</code>s为待输出的字符指针，fp为文件指针</li>
+<li><code>fseek(fp, nums, ori)</code>fp为文件指针，nums为偏移字节数，ori为起始位置</li>
+<li><code>ftell(fp)</code>返回fp距离文件开始处的字节数</li>
+</ul>
+<p>其他读写模式</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读</td>
+</tr>
+<tr>
+<td>w</td>
+<td>覆写</td>
+</tr>
+<tr>
+<td>a</td>
+<td>追加</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>更新</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>更新并覆写</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>更新并追加</td>
+</tr>
+<tr>
+<td>加个b</td>
+<td>以二进制读写</td>
+</tr>
+</tbody></table>
 
     </div>
 
