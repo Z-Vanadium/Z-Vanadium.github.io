@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>C++ | 模板 | Vanadium的小屋</title>
+    <title>玩游戏大师 | Terraria开荒流程(施工中) | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -217,14 +217,24 @@
 
 <div class="article">
     <div>
-        <h1>C++ | 模板</h1>
+        <h1>玩游戏大师 | Terraria开荒流程(施工中)</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/16
+            2023/12/28
+        </span>
+           
+            <!--展示categories-->
+        <span class="category">
+            <a href="/categories/%E7%8E%A9%E6%B8%B8%E6%88%8F%E5%A4%A7%E5%B8%88/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                玩游戏大师
+            </a>
         </span>
         
            
@@ -237,12 +247,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
+                <a href="/tags/Terraria/" style="color: #ff7d73">Terraria</a>
             </span>
             
         </span>
@@ -256,7 +261,7 @@
                 
                 
                 
-                2023/12/17
+                2023/12/28
 
                 
             </span>
@@ -265,296 +270,18 @@
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20231217</span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20231228</span></span>--> 
 
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在OOP中, 我们经常遇到要用到一些程序片段, 他们实现和完成的功能基本相同, 不同的只是数据类型, 此时我们可以利用<strong>模板template</strong>大大简化程序书写, 提高简洁性和可读性.</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h4><p><i class="fa-regular fa-circle-check"></i> <strong>游戏名称</strong>: Terraria<br><i class="fa-regular fa-circle-check"></i> <strong>开发商</strong>: Re-Logic<br><i class="fa-regular fa-circle-check"></i> <strong>游戏时长</strong>: 150h+(仅Steam)<br><i class="fa-regular fa-circle-check"></i> <strong>游戏水平</strong>: 纯萌新&#x2F;初学者<br><i class="fa-regular fa-circle-check"></i> <strong>游戏版本</strong>: 1.4.4.9 Windows<br><i class="fa-regular fa-circle-check"></i> <strong>Wiki网站</strong>: <a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/Terraria_Wiki">官方中文泰拉瑞亚 Wiki</a></p>
 <span id="more"></span>
 
 <p>&nbsp;</p>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h4><pre><code class="c++">template &lt;class 类型参数...&gt;   //模板声明头
-返回值 函数名(形参表)&#123;
-    函数体
-&#125;
-</code></pre>
-<pre><code class="c++">//定义一个求最大值的函数模板
-template &lt;class T&gt;
-T MaxElement(T array[], int size)&#123;
-    T _max = array[0];
-    for(int i=1;i&lt;size;++i)
-        if(array[i]&gt;_max)
-            _max = array[i];
-    return _max;
-&#125;
-</code></pre>
+<h4 id="食用须知"><a href="#食用须知" class="headerlink" title="食用须知"></a>食用须知</h4><p>这里是Vanadium Terraria开荒流程的流水账记录, 包括但不限于Boss打法,游戏技巧,小吐槽等等.<br><strong>Highlight!!!</strong> 我的游戏水平很菜, 打不过白光, 没法无伤任何一个Boss, 有时会逃课, 写这个流程攻略的目的只有一个–分享游戏(叠甲叠甲叠甲叠甲)</p>
 <p>&nbsp;</p>
-<h4 id="隐式调用"><a href="#隐式调用" class="headerlink" title="隐式调用"></a>隐式调用</h4><p>当我们像使用普通函数一样直接使用模板函数时, 就会进行隐式调用, 编译器会自动为我们匹配合适的重载</p>
-<p>例如, 当我们运行以下测试程序</p>
-<pre><code class="c++">int main()&#123;
-    double a[3]=&#123;1.5, 2.9, 2.1&#125;;
-    cout&lt;&lt;MaxElement(a,3)&lt;&lt;endl;
-
-    int b[4]=&#123;5, 2, 6, 4&#125;;
-    cout&lt;&lt;MaxElement(b,4)&lt;&lt;endl;
-&#125;
-/*输出结果:
-2.9
-6
-*/
-</code></pre>
-<p>在行3和行6中, MaxElement分别被实例化为浮点型和整型函数, 将鼠标悬停在函数上面可以看到</p>
-<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0013.png?raw=true">
-
-<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0014.png?raw=true">
-
-<p>&nbsp;</p>
-<h4 id="显式调用"><a href="#显式调用" class="headerlink" title="显式调用"></a>显式调用</h4><p>此外, 我们也可以在调用时直接声明类型参数</p>
-<pre><code class="c++">int main()&#123;
-    double a[3]=&#123;1.5, 2.9, 2.1&#125;;
-    cout&lt;&lt;MaxElement&lt;int&gt;(a,3)&lt;&lt;endl;   //Error
-&#125;
-</code></pre>
-<p>此时声明了整型的MaxElement就会报错, 因为a是浮点型数组</p>
-<p>&nbsp;</p>
-<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><p>模板函数可以重载, 只要他们的<strong>形参表或类型参数表</strong>不同, 以下重载都是合法的</p>
-<pre><code class="c++">template &lt;class T&gt;
-void func(T x, T y)&#123;
-&#125;
-
-template &lt;class T1, class T2&gt;
-void func(T1 x, T2 y)&#123;
-&#125;
-
-template &lt;class T1, class T2&gt;
-void func(T1 x, T1 y)&#123;
-&#125;
-</code></pre>
-<p>&nbsp;</p>
-<h4 id="重载的匹配顺序"><a href="#重载的匹配顺序" class="headerlink" title="重载的匹配顺序"></a>重载的匹配顺序</h4><p>当存在同名普通函数和模板函数重载时, 编译器的匹配顺序如下</p>
-<ol>
-<li>参数表完全匹配的<strong>普通函数</strong>(指非模板实例化的函数)</li>
-<li>参数表完全匹配的<strong>模板函数</strong></li>
-<li>参数表通过自动类型转换后能够匹配的<strong>普通函数</strong></li>
-<li>报错</li>
-</ol>
-<p><strong>注意:</strong> 编译器不会进行自动类型转换以匹配<strong>隐式调用</strong>的模板函数</p>
-<pre><code class="c++">template &lt;class T&gt;
-void func(T x, T y)&#123;
-    cout&lt;&lt;x&lt;&lt;&#39; &#39;&lt;&lt;y&lt;&lt;endl;
-&#125;
-
-int main()&#123;
-    int x=9;
-    double y=8.1;
-    func(x,y);      //Error
-    func&lt;int&gt;(x,y); //Accepted
-&#125;
-</code></pre>
-<p>&nbsp;</p>
-<h4 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h4><pre><code class="c++">template &lt;class 类型参数...&gt;   //模板声明头
-class 类名&#123;
-    成员
-&#125;;
-
-类模板名&lt;真实类型参数表&gt; 对象名(构造函数参数表);
-</code></pre>
-<pre><code class="c++">//定义一个键值对类
-template &lt;class T1, class T2&gt;
-class JsonNode&#123;
-    public:
-        T1 key;
-        T2 value;
-        JsonNode(T1 _key, T2 _value):key(_key), value(_value)&#123;&#125;;
-        bool operator&lt;(const JsonNode&lt;T1,T2&gt; &amp; tmp) const;
-        bool operator&gt;(const JsonNode&lt;T1,T2&gt; &amp; tmp) const;
-&#125;;
-
-template &lt;class T1, class T2&gt;   //注意这里也要声明是模板函数
-bool JsonNode&lt;T1,T2&gt;::operator&lt;(const JsonNode&lt;T1,T2&gt; &amp; tmp) const&#123;
-    return this-&gt;value &lt; tmp.value;
-&#125;
-
-template &lt;class T1, class T2&gt;   //注意这里也要声明是模板函数
-bool JsonNode&lt;T1,T2&gt;::operator&gt;(const JsonNode&lt;T1,T2&gt; &amp; tmp) const&#123;
-    return !(*this&lt;tmp);
-&#125;
-
-int main()&#123;
-    JsonNode&lt;string,int&gt; A(&quot;Mike&quot;,10);
-    JsonNode&lt;string,int&gt; B(&quot;John&quot;,15);
-    cout&lt;&lt;(A&lt;B)&lt;&lt;endl&lt;&lt;B.key;
-&#125;
-/*
-输出结果:
-1
-John
-*/
-</code></pre>
-<p><strong>注意:</strong> 同一个模板生成的不同类, 例如<code>JsonNode&lt;string,int&gt;</code>和<code>JsonNode&lt;string,double&gt;</code>是不兼容的</p>
-<p>&nbsp;</p>
-<h4 id="非类型参数"><a href="#非类型参数" class="headerlink" title="非类型参数"></a>非类型参数</h4><p>函数模板和类模板的类型参数表都能接受非类型参数(<strong>但要求是类型typename, 而不是类class</strong>), 以下用法是合法(但不常用)的</p>
-<pre><code class="c++">template &lt;class T, int size&gt;
-T MaxElement(T array[])&#123;
-    T _max = array[0];
-    for(int i=1;i&lt;size;++i)
-        if(array[i]&gt;_max)
-            _max = array[i];
-    return _max;
-&#125;
-
-int main()&#123;
-    int array[4] = &#123;2,6,5,9&#125;;
-    cout&lt;&lt;MaxElement&lt;int,4&gt;(array)&lt;&lt;endl;   //这里通过模板生成了只能接受大小为4数组的函数
-&#125;
-</code></pre>
-<p>以及</p>
-<pre><code class="c++">template &lt;class T, int size&gt;
-class Array&#123;
-    private:
-        T array[size]=&#123;0&#125;;
-    public:
-        void Print()&#123;
-            for(int i=0;i&lt;size;++i) cout&lt;&lt;array[i]&lt;&lt;&#39;#&#39;;
-            cout&lt;&lt;endl;
-        &#125;
-&#125;;
-
-int main()&#123;
-    Array&lt;int,10&gt; int_array;
-    int_array.Print();
-&#125;
-</code></pre>
-<p>&nbsp;</p>
-<h4 id="类模板的派生"><a href="#类模板的派生" class="headerlink" title="类模板的派生"></a>类模板的派生</h4><ul>
-<li>类模板从<strong>类模板</strong>派生</li>
-<li>类模板从<strong>模板类</strong>派生</li>
-<li>类模板从普通类派生</li>
-<li>普通类从模板类派生</li>
-</ul>
-<p>注意主语和限定词:</p>
-<ul>
-<li><strong>类模板</strong>指的是一个尚未实例化的模板, 被继承时仍然是模板</li>
-<li><strong>模板类</strong>指的是一个已经实例化的类, 本质上与普通的类是一样的</li>
-</ul>
-<p><strong>类模板从类模板派生</strong></p>
-<pre><code class="c++">template&lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        T1 v1;
-        T2 v2;
-&#125;;
-
-template&lt;class T1, class T2&gt;
-class B:public A&lt;T2,T1&gt;&#123;
-    public:
-        T1 v3;
-        T2 v4;
-&#125;;
-
-template&lt;class T&gt;
-class C:public B&lt;T,T&gt;&#123;
-    public:
-        T v5;
-&#125;;
-
-
-int main()&#123;
-    B&lt;int,double&gt; obj1; //v1~v4: double, int, int, double
-    C&lt;char&gt; obj2;       //v1~v5: char, char, char, char, char
-&#125;
-</code></pre>
-<p><strong>类模板从模板类派生 | 类模板从普通类派生</strong></p>
-<p>当类模板从模板类或普通类派生时, 由这个类模板生成的类均会以这个模板类或普通类为基类</p>
-<pre><code class="c++">template&lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        T1 v1;
-        T2 v2;
-&#125;;
-
-template&lt;class T1, class T2&gt;
-class B:public A&lt;int,char&gt;&#123;
-    public:
-        T1 v3;
-        T2 v4;
-&#125;;
-
-class C&#123;
-    public:
-        int v5;
-&#125;;
-
-template&lt;class T3, class T4&gt;
-class D:public C&#123;
-    public:
-        T3 v6;
-        T4 v7;
-&#125;
-
-
-int main()&#123;
-    B&lt;int,double&gt; obj1; //v1~v4: int, char, int, double
-    D&lt;char,double&gt; obj2;       //v5~v7: int, char, double
-    D&lt;short,float&gt; obj2;       //v5~v7: int, short  , float
-&#125;
-</code></pre>
-<p><strong>普通类从模板类派生</strong></p>
-<p>除语法外, 与普通的类的派生无异</p>
-<pre><code class="c++">template&lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        T1 v1;
-        T2 v2;
-&#125;;
-
-class B:public A&lt;int,char&gt;&#123;
-    public:
-        T1 v3;
-        T2 v4;
-&#125;;
-</code></pre>
-<p>&nbsp;</p>
-<h4 id="模板与友元"><a href="#模板与友元" class="headerlink" title="模板与友元"></a>模板与友元</h4><p><strong>函数、类、类的成员函数作为类模板的友元</strong></p>
-<pre><code class="c++">void func()&#123;&#125;
-
-class A&#123;&#125;;
-
-class B&#123;
-    public:
-        void g()&#123;&#125;
-&#125;
-
-template &lt;class T&gt;
-class C&#123;
-    friend void func();
-    friend class A;
-    friend void B::g();
-&#125;
-//所有由C实例化的类, 均有以上三个友元
-</code></pre>
-<p><strong>函数模板作为类模板的友元</strong></p>
-<pre><code class="c++">template &lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        template &lt;class T1, class T2&gt;
-        friend void func()&#123;&#125;;
-&#125;;
-//所有函数模板的实例化, 都是类模板实例化的友元
-</code></pre>
-<p><strong>类模板作为类模板的友元</strong></p>
-<pre><code class="c++">template &lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        template &lt;class T1, class T2&gt;
-        friend class B&#123;&#125;;
-&#125;;
-//所有B类模板的实例化, 都是A类模板实例化的友元
-</code></pre>
-<p>&nbsp;</p>
-<h4 id="类模板与静态成员变量"><a href="#类模板与静态成员变量" class="headerlink" title="类模板与静态成员变量"></a>类模板与静态成员变量</h4><p>如果类模板中定义了静态成员变量, 则其所有实例化共用一个静态成员变量</p>
-
+<h4 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h4>
     </div>
 
 

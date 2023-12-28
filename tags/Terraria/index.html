@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>文章格式规范 | Vanadium的小屋</title>
+    <title>Tags: Terraria | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -39,10 +39,6 @@
 
 
 <script src="/js/lib/preview.js"></script>
-
-
-
-
 
 
 
@@ -169,228 +165,141 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <!--card-->
-<div id="home-card-in-post">    
-    <div id="home-card">
-    <div id="card-style" style="max-height: 75vh;">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
-        <div class="description">
-            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
-
-        </div>
+            <div id="archives">
+    
+    <div class="categories-tags">
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/categories/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">- 数学公式/笔记页</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>
-        </div>
-
-
-        <!--music player
-        <div class="friend-links">
-            <iframe seamless="seamless" width="300px" id="card" src="//music.163.com/outchain/player?type=2&id=29751583&auto=1&height=66" frameborder="no"></iframe>
-        </div>-->
-    </div>
-    
-    
-    
-</div>
-
-
-    </div>
-</div>
-
-<!--end-->
-
-<div class="article">
-    <div>
-        <h1>文章格式规范</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/28
-        </span>
-           
-            <!--展示categories-->
-        <span class="category">
-            <a href="/categories/%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2/">
+        
+        <span>
+            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="background: #03a9f4">
                 <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                    <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
-                信息查询
+                碎碎念
             </a>
         </span>
         
-           
-            <!--展示tags-->
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #00a596">前端</a>
-            </span>
-            
+        
+        
+        <span>
+            <a href="/tags/FDS/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                FDS
+            </a>
         </span>
         
-
-
         
-            <span class="category">
-                <span class="icon"><i class="fa-solid fa-newspaper"></i></span>
-                
-                
-                
-                
-                2023/12/28
-
-                
-            </span>
-            
-
-
-    </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20231228</span></span>--> 
-
-      
-        <!--展示page的完整内容-->
-    <div class="content" v-pre>
-        <blockquote>
-<p>记录本站文章书写格式规范</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="层次规范"><a href="#层次规范" class="headerlink" title="层次规范"></a>层次规范</h3><h4 id="标题使用"><a href="#标题使用" class="headerlink" title="标题使用"></a>标题使用</h4><p>小标题按层次使用, 从三级标题(也可从二级标题)开始, 依次向下使用</p>
-<p># &#x2F; &lt;h1&gt;: 一级标题, 仅用于文章标题, 颜色#1e3e3f<br>## &#x2F; &lt;h2&gt;: 二级标题, 一般不用, 颜色#1e3e3f<br>### &#x2F; &lt;h3&gt;: 三级标题, 颜色#1e3e3f<br>#### &#x2F; &lt;h4&gt;: 四级标题, 颜色#ffa2c4</p>
-<p>** ** &#x2F; &lt;strong&gt;: 用于四级标题下, 不适合用分点处, 颜色#39c5bb<br>&lt;p&gt;: 正文<br>- &lt;ul&gt;&lt;li&gt;: 四级标题下分点</p>
-<p>&nbsp;</p>
-<h4 id="换行使用"><a href="#换行使用" class="headerlink" title="换行使用"></a>换行使用</h4><p>四级及以上的小标题所引段落之间需使用换行符换行隔断</p>
-<p>&amp;nbsp; 换行符</p>
-<p>&nbsp;</p>
-<h4 id="分割线使用"><a href="#分割线使用" class="headerlink" title="分割线使用"></a>分割线使用</h4><p>-– &#x2F; &lt;hr&gt;: 划分文章层次使用</p>
-<p>&nbsp;</p>
-<h3 id="内容规范"><a href="#内容规范" class="headerlink" title="内容规范"></a>内容规范</h3><h4 id="代码使用"><a href="#代码使用" class="headerlink" title="代码使用"></a>代码使用</h4><p>` &#96; &#x2F; &lt;code&gt;: 代码行, 用于语句,变量,函数等来自或部分来自于程序源码的文字<br>`&#96;&#96; &#96;&#96;&#96; &#x2F; &lt;pre&gt;: 代码块, 用于成段的程序源码, 注意标记语言, 统一使用以下标记符(持续补充)</p>
-<table>
-<thead>
-<tr>
-<th align="left">标记符</th>
-<th align="left">语言</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">c</td>
-<td align="left">C语言</td>
-</tr>
-<tr>
-<td align="left">c++</td>
-<td align="left">C++</td>
-</tr>
-<tr>
-<td align="left">css</td>
-<td align="left">CSS(层叠样式表)</td>
-</tr>
-<tr>
-<td align="left">html</td>
-<td align="left">HTML(超文本标记语言)</td>
-</tr>
-<tr>
-<td align="left">js</td>
-<td align="left">JavaScript</td>
-</tr>
-<tr>
-<td align="left">line</td>
-<td align="left">命令行</td>
-</tr>
-<tr>
-<td align="left">plaintext</td>
-<td align="left">伪代码</td>
-</tr>
-<tr>
-<td align="left">python</td>
-<td align="left">Python</td>
-</tr>
-</tbody></table>
-<p>&nbsp;</p>
-<h4 id="解释引用使用"><a href="#解释引用使用" class="headerlink" title="解释引用使用"></a>解释引用使用</h4><p>&gt; &#x2F; &lt;blockquote&gt;: 用于不影响正文阅读的情况下, 对前文进行解释或引用一段文字</p>
-<p>&nbsp;</p>
-<h4 id="外链使用"><a href="#外链使用" class="headerlink" title="外链使用"></a>外链使用</h4><p>[]() &#x2F; &lt;a&gt;: 链接, 规范格式为[引用来源 | 文献标题], 也可在不影响阅读的情况下, 镶嵌在文章内部, 颜色#66afef</p>
-<p><strong>例如</strong>: <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/c%E8%AF%AD%E8%A8%80/105958?fr=ge_ala">百度百科 | c语言</a></p>
-<p>&nbsp;</p>
-<h4 id="公式使用"><a href="#公式使用" class="headerlink" title="公式使用"></a>公式使用</h4><p>$ $: 出现中文, 一起放入公式行中</p>
-
-    </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
-    
-    
-    
-    
-    
-    
-
-
-</div>
-
-<!--
-<div id="card-style">
-<div id="card-div">
-    <div class="avatar">
-        <img src="/images/avatar.jpg" alt="avatar" />
-    </div>
-    <div class="name">Vanadium</div>
-    <div class="description">
-        <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
-
+        
+        <span>
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                前端
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/C-C/" style="background: #39c5bb">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                C/C++
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/Linux/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Linux
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/JavaScript/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                JavaScript
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/OOP/" style="background: #39c5bb">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                OOP
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/Terraria/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Terraria
+            </a>
+        </span>
+        
+        
+        
+        
     </div>
     
-    
-
-    <div class="friend-links">
-        <div class="name">Vanadium常用网址</div>
-        <div class="friend-link">
-            <a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a>
-        </div>
-        <div class="friend-link">
-            <a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">CSS手册</a>
-        </div>            
-        <div class="friend-link">
-            <a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown手册</a>
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2023/12/28</div>
+            <a href="/2023/12/28/terraria-index/">
+                <h3>玩游戏大师 | Terraria开荒流程(施工中)</h3>
+            </a>
+            <div class="info">
+                
+                <span class="category">
+                    <a href="/categories/%E7%8E%A9%E6%B8%B8%E6%88%8F%E5%A4%A7%E5%B8%88/">
+                        <span class="icon">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </span>
+                        玩游戏大师
+                    </a>
+                </span>
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/Terraria/" style="color: #ff7d73">Terraria</a>
+                    </span>
+                    
+                </span>
+                
+            </div>
         </div>
     </div>
+    
 </div>
-</div>
--->
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -439,12 +348,6 @@
         
     </div>
     <script src="/js/main.js"></script>
-    
-    
-
-
-
-
     
 
 
