@@ -800,10 +800,14 @@ h6 {
     word-break: keep-all;
 }
 h1,
-h2,
-h3,
 h6 {
     color: #1e3e3f;
+}
+h2 {
+    color: #ff7d73;
+}
+h3 {
+    color: #03a9f4;
 }
 h5,
 h4{
