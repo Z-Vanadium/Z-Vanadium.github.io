@@ -1204,3 +1204,14 @@ none{
     font-weight: 300;
     font-size: large;
 }
+
+:root{
+    --waline-theme-color: #39c5bb !important;
+    --waline-active-color: #399dc5 !important;
+    --waline-disable-bgcolor: #39c5bc3d !important;
+}
+
+.wl-os,
+.wl-browser{
+    display: none !important;
+}
