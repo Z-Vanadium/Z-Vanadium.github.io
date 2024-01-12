@@ -160,9 +160,11 @@
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
-<div id="home-card-in-post">    
-    <div id="home-card">
-    <div id="card-style" style="max-height: 75vh;">
+<div class="right-infos">
+
+    <div id="home-card-in-post">    
+        <div id="home-card">
+        <div id="card-style" style="max-height: 75vh;">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
@@ -200,8 +202,15 @@
 </div>
 
 
+        </div>
     </div>
+
+    <div id="toc" class="toc-article">
+        <div class="toc-title">目录</div>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-1-%E7%AB%A0-%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%B1%82%E8%A7%A3"><span class="toc-text">第 1 章 线性方程组的求解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-2-%E7%AB%A0-%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="toc-text">第 2 章 行列式与矩阵的秩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-3-%E7%AB%A0-%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">第 3 章  矩阵的运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-7-%E7%AB%A0-%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4"><span class="toc-text">第 7 章 线性空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-4-%E7%AB%A0-n%E5%85%83%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-text">第 4 章 n元向量空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-8-%E7%AB%A0-%E6%AC%A7%E6%B0%8F%E7%A9%BA%E9%97%B4"><span class="toc-text">第 8 章 欧氏空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-5-%E7%AB%A0-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC%E7%90%86%E8%AE%BA%E4%B8%8E%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="toc-text">第 5 章 矩阵的特征值理论与相似对角化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-6-%E7%AB%A0-%E4%BA%8C%E6%AC%A1%E5%9E%8B"><span class="toc-text">第 6 章 二次型</span></a></li></ol>
+    </div>      
 </div>
+
 
 <!--end-->
 
@@ -803,7 +812,7 @@ $对于n阶实对称矩阵A, 以下说法等价$
         emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
         meta: "nick,mail,link".split(","),
         requiredMeta: "nick".split(","),
-        lang: "jp",
+        lang: "zh-CN",
         wordLimit: 0,
         pageSize: "10",
         login: "force",
@@ -814,6 +823,9 @@ $对于n阶实对称矩阵A, 以下说法等价$
 
     <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
     <script>
+        const locale = {
+            placeholder: "不乖乖评论会被打屁股的哦",
+        };
         Waline.init({
             el: '#waline-container',
             serverURL: "https://waline-vanadiumz.vercel.app",
@@ -822,10 +834,11 @@ $对于n阶实对称矩阵A, 以下说法等价$
             emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
             meta: "nick,mail,link".split(','),
             requiredMeta: "nick".split(','),
-            lang: "jp",
+            lang: "zh-CN",
             wordLimit: parseInt("0"),
             pageSize: "10",
             login: "force",
+            locale,
         });
     </script>
     
@@ -833,23 +846,5 @@ $对于n阶实对称矩阵A, 以下说法等价$
 
 
     
-
-
-    <!-- 一言API -->
-    <!-- 现代写法，推荐 -->
-    <script>
-        fetch('https://v1.hitokoto.cn')
-            .then(function (res){
-            return res.json();
-            })
-            .then(function (data) {
-            var hitokoto = document.getElementById('hitokoto');
-            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
-            })
-            .catch(function (err) {
-            console.error(err);
-            })
-        </script>
-
 </body>
 </html>

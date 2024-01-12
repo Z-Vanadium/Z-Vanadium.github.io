@@ -160,9 +160,11 @@
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
-<div id="home-card-in-post">    
-    <div id="home-card">
-    <div id="card-style" style="max-height: 75vh;">
+<div class="right-infos">
+
+    <div id="home-card-in-post">    
+        <div id="home-card">
+        <div id="card-style" style="max-height: 75vh;">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
@@ -200,8 +202,15 @@
 </div>
 
 
+        </div>
     </div>
+
+    <div id="toc" class="toc-article">
+        <div class="toc-title">目录</div>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MISC"><span class="toc-text">MISC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0919"><span class="toc-text">0919</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0926"><span class="toc-text">0926</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1007"><span class="toc-text">1007</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1010"><span class="toc-text">1010</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1017"><span class="toc-text">1017</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1024%E6%95%B0%E7%BB%84"><span class="toc-text">1024数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1031"><span class="toc-text">1031</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1107"><span class="toc-text">1107</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1114"><span class="toc-text">1114</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%9F%E4%B8%AD%E8%80%83%E8%AF%95"><span class="toc-text">期中考试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1121"><span class="toc-text">1121</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1128"><span class="toc-text">1128</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1226"><span class="toc-text">1226</span></a></li></ol>
+    </div>      
 </div>
+
 
 <!--end-->
 
@@ -227,7 +236,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #ff7d73">C/C++</a>
+                <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
             </span>
             
         </span>
@@ -987,7 +996,7 @@ int main()&#123;
         emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
         meta: "nick,mail,link".split(","),
         requiredMeta: "nick".split(","),
-        lang: "jp",
+        lang: "zh-CN",
         wordLimit: 0,
         pageSize: "10",
         login: "force",
@@ -998,6 +1007,9 @@ int main()&#123;
 
     <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
     <script>
+        const locale = {
+            placeholder: "不乖乖评论会被打屁股的哦",
+        };
         Waline.init({
             el: '#waline-container',
             serverURL: "https://waline-vanadiumz.vercel.app",
@@ -1006,10 +1018,11 @@ int main()&#123;
             emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
             meta: "nick,mail,link".split(','),
             requiredMeta: "nick".split(','),
-            lang: "jp",
+            lang: "zh-CN",
             wordLimit: parseInt("0"),
             pageSize: "10",
             login: "force",
+            locale,
         });
     </script>
     
@@ -1017,23 +1030,5 @@ int main()&#123;
 
 
     
-
-
-    <!-- 一言API -->
-    <!-- 现代写法，推荐 -->
-    <script>
-        fetch('https://v1.hitokoto.cn')
-            .then(function (res){
-            return res.json();
-            })
-            .then(function (data) {
-            var hitokoto = document.getElementById('hitokoto');
-            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
-            })
-            .catch(function (err) {
-            console.error(err);
-            })
-        </script>
-
 </body>
 </html>

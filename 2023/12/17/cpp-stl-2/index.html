@@ -160,9 +160,11 @@
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
-<div id="home-card-in-post">    
-    <div id="home-card">
-    <div id="card-style" style="max-height: 75vh;">
+<div class="right-infos">
+
+    <div id="home-card-in-post">    
+        <div id="home-card">
+        <div id="card-style" style="max-height: 75vh;">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
@@ -200,8 +202,15 @@
 </div>
 
 
+        </div>
     </div>
+
+    <div id="toc" class="toc-article">
+        <div class="toc-title">目录</div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8STL-%E4%BB%A5map%E4%B8%BA%E4%BE%8B"><span class="toc-text">使用STL | 以map为例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8STL%E9%9A%8F%E6%89%8B%E8%AE%B0"><span class="toc-text">常用STL随手记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#string%E7%B1%BB"><span class="toc-text">string类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E4%B8%8E%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-text">容器与迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vector%E7%B1%BB"><span class="toc-text">vector类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pair%E7%B1%BB"><span class="toc-text">pair类</span></a></li></ol></li></ol>
+    </div>      
 </div>
+
 
 <!--end-->
 
@@ -242,7 +251,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #03a9f4">OOP</a>
+                <a href="/tags/OOP/" style="color: #00a596">OOP</a>
             </span>
             
         </span>
@@ -667,7 +676,7 @@ int main()&#123;
         emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
         meta: "nick,mail,link".split(","),
         requiredMeta: "nick".split(","),
-        lang: "jp",
+        lang: "zh-CN",
         wordLimit: 0,
         pageSize: "10",
         login: "force",
@@ -678,6 +687,9 @@ int main()&#123;
 
     <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
     <script>
+        const locale = {
+            placeholder: "不乖乖评论会被打屁股的哦",
+        };
         Waline.init({
             el: '#waline-container',
             serverURL: "https://waline-vanadiumz.vercel.app",
@@ -686,10 +698,11 @@ int main()&#123;
             emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
             meta: "nick,mail,link".split(','),
             requiredMeta: "nick".split(','),
-            lang: "jp",
+            lang: "zh-CN",
             wordLimit: parseInt("0"),
             pageSize: "10",
             login: "force",
+            locale,
         });
     </script>
     
@@ -697,23 +710,5 @@ int main()&#123;
 
 
     
-
-
-    <!-- 一言API -->
-    <!-- 现代写法，推荐 -->
-    <script>
-        fetch('https://v1.hitokoto.cn')
-            .then(function (res){
-            return res.json();
-            })
-            .then(function (data) {
-            var hitokoto = document.getElementById('hitokoto');
-            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
-            })
-            .catch(function (err) {
-            console.error(err);
-            })
-        </script>
-
 </body>
 </html>

@@ -95,6 +95,7 @@
     position: absolute;
     right: 2.5%;
 }
+
 #home-card #card-style {
     background: #e4efee;
     border: none;
@@ -1214,4 +1215,15 @@ none{
 .wl-os,
 .wl-browser{
     display: none !important;
+}
+
+#toc{
+    position: fixed;
+    top: 24%;
+    max-width: 300px;
+    left: 2.5%;
+}
+
+#toc .toc-title{
+    font-size: x-large;
 }

@@ -160,9 +160,11 @@
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
-<div id="home-card-in-post">    
-    <div id="home-card">
-    <div id="card-style" style="max-height: 75vh;">
+<div class="right-infos">
+
+    <div id="home-card-in-post">    
+        <div id="home-card">
+        <div id="card-style" style="max-height: 75vh;">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
@@ -200,8 +202,15 @@
 </div>
 
 
+        </div>
     </div>
+
+    <div id="toc" class="toc-article">
+        <div class="toc-title">目录</div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E5%87%BD%E6%95%B0"><span class="toc-text">虚函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E2%80%93%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8"><span class="toc-text">多态的实现原理–虚函数表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-text">虚析构函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%AF%E8%99%9A%E5%87%BD%E6%95%B0"><span class="toc-text">纯虚函数</span></a></li></ol></li></ol>
+    </div>      
 </div>
+
 
 <!--end-->
 
@@ -237,12 +246,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
+                <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #00a596">OOP</a>
+                <a href="/tags/OOP/" style="color: #ffa2c4">OOP</a>
             </span>
             
         </span>
@@ -516,7 +525,7 @@ pa = new A  //Error
         emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
         meta: "nick,mail,link".split(","),
         requiredMeta: "nick".split(","),
-        lang: "jp",
+        lang: "zh-CN",
         wordLimit: 0,
         pageSize: "10",
         login: "force",
@@ -527,6 +536,9 @@ pa = new A  //Error
 
     <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
     <script>
+        const locale = {
+            placeholder: "不乖乖评论会被打屁股的哦",
+        };
         Waline.init({
             el: '#waline-container',
             serverURL: "https://waline-vanadiumz.vercel.app",
@@ -535,10 +547,11 @@ pa = new A  //Error
             emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
             meta: "nick,mail,link".split(','),
             requiredMeta: "nick".split(','),
-            lang: "jp",
+            lang: "zh-CN",
             wordLimit: parseInt("0"),
             pageSize: "10",
             login: "force",
+            locale,
         });
     </script>
     
@@ -546,23 +559,5 @@ pa = new A  //Error
 
 
     
-
-
-    <!-- 一言API -->
-    <!-- 现代写法，推荐 -->
-    <script>
-        fetch('https://v1.hitokoto.cn')
-            .then(function (res){
-            return res.json();
-            })
-            .then(function (data) {
-            var hitokoto = document.getElementById('hitokoto');
-            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
-            })
-            .catch(function (err) {
-            console.error(err);
-            })
-        </script>
-
 </body>
 </html>

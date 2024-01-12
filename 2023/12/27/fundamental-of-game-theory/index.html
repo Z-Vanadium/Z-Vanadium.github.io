@@ -160,9 +160,11 @@
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
-<div id="home-card-in-post">    
-    <div id="home-card">
-    <div id="card-style" style="max-height: 75vh;">
+<div class="right-infos">
+
+    <div id="home-card-in-post">    
+        <div id="home-card">
+        <div id="card-style" style="max-height: 75vh;">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
@@ -200,8 +202,15 @@
 </div>
 
 
+        </div>
     </div>
+
+    <div id="toc" class="toc-article">
+        <div class="toc-title">目录</div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1"><span class="toc-text">纳什均衡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%BC%88%E6%A8%A1%E5%9E%8B%E6%B1%87%E6%80%BB%E4%B8%8E%E6%95%B4%E7%90%86"><span class="toc-text">博弈模型汇总与整理</span></a></li></ol></li></ol>
+    </div>      
 </div>
+
 
 <!--end-->
 
@@ -412,7 +421,7 @@
         emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
         meta: "nick,mail,link".split(","),
         requiredMeta: "nick".split(","),
-        lang: "jp",
+        lang: "zh-CN",
         wordLimit: 0,
         pageSize: "10",
         login: "force",
@@ -423,6 +432,9 @@
 
     <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
     <script>
+        const locale = {
+            placeholder: "不乖乖评论会被打屁股的哦",
+        };
         Waline.init({
             el: '#waline-container',
             serverURL: "https://waline-vanadiumz.vercel.app",
@@ -431,10 +443,11 @@
             emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
             meta: "nick,mail,link".split(','),
             requiredMeta: "nick".split(','),
-            lang: "jp",
+            lang: "zh-CN",
             wordLimit: parseInt("0"),
             pageSize: "10",
             login: "force",
+            locale,
         });
     </script>
     
@@ -442,23 +455,5 @@
 
 
     
-
-
-    <!-- 一言API -->
-    <!-- 现代写法，推荐 -->
-    <script>
-        fetch('https://v1.hitokoto.cn')
-            .then(function (res){
-            return res.json();
-            })
-            .then(function (data) {
-            var hitokoto = document.getElementById('hitokoto');
-            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
-            })
-            .catch(function (err) {
-            console.error(err);
-            })
-        </script>
-
 </body>
 </html>

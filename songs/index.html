@@ -160,9 +160,11 @@
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
-<div id="home-card-in-post">    
-    <div id="home-card">
-    <div id="card-style" style="max-height: 75vh;">
+<div class="right-infos">
+
+    <div id="home-card-in-post">    
+        <div id="home-card">
+        <div id="card-style" style="max-height: 75vh;">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
@@ -200,8 +202,15 @@
 </div>
 
 
+        </div>
     </div>
+
+    <div id="toc" class="toc-article">
+        <div class="toc-title">目录</div>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%B2%A2%E4%BA%95%E7%BE%8E%E7%A9%BA-%E3%81%AA%E3%81%8D%E3%82%80%E3%81%97%E3%80%82"><span class="toc-text">1. 沢井美空 - なきむし。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-majiko-%E5%90%9B%E3%81%AB%E6%9C%80%E5%BE%8C%E3%81%AE%E5%8F%A3%E3%81%A5%E3%81%91%E3%82%92-Acoustic-Version"><span class="toc-text">2. majiko - 君に最後の口づけを (Acoustic Version) </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-doriko-%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5-letter-song"><span class="toc-text">3. doriko&#x2F;初音未来 - letter song</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-RAM-WIRE-%E5%83%95%E3%82%89%E3%81%AE%E6%89%8B%E3%81%AB%E3%81%AF%E4%BD%95%E3%82%82%E3%81%AA%E3%81%84%E3%81%91%E3%81%A9%E3%80%81"><span class="toc-text">4. RAM WIRE - 僕らの手には何もないけど、</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E3%82%8A%E3%82%8A%E3%81%82-%E5%A4%B1%E6%81%8B%E3%82%BD%E3%83%B3%E3%82%B0%E6%B2%A2%E5%B1%B1%E8%81%B4%E3%81%84%E3%81%A6-%E6%B3%A3%E3%81%84%E3%81%A6%E3%81%B0%E3%81%8B%E3%82%8A%E3%81%AE%E7%A7%81%E3%81%AF%E3%82%82%E3%81%86%E3%80%82"><span class="toc-text">5. りりあ - 失恋ソング沢山聴いて 泣いてばかりの私はもう。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5-%E3%81%97%E3%82%93%E3%81%8B%E3%81%84%E3%81%97%E3%82%87%E3%81%86%E3%81%98%E3%82%87"><span class="toc-text">6. 初音未来 - しんかいしょうじょ</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-building"><span class="toc-text">7. building</span></a></li></ol>
+    </div>      
 </div>
+
 
 <!--end-->
 
@@ -355,7 +364,7 @@
         emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
         meta: "nick,mail,link".split(","),
         requiredMeta: "nick".split(","),
-        lang: "jp",
+        lang: "zh-CN",
         wordLimit: 0,
         pageSize: "10",
         login: "force",
@@ -368,23 +377,5 @@
 
 
     
-
-
-    <!-- 一言API -->
-    <!-- 现代写法，推荐 -->
-    <script>
-        fetch('https://v1.hitokoto.cn')
-            .then(function (res){
-            return res.json();
-            })
-            .then(function (data) {
-            var hitokoto = document.getElementById('hitokoto');
-            hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
-            })
-            .catch(function (err) {
-            console.error(err);
-            })
-        </script>
-
 </body>
 </html>
