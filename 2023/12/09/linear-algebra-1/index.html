@@ -246,7 +246,7 @@
                 
                 
                 
-                2024/01/08
+                2024/01/13
 
                 
             </span>
@@ -255,7 +255,7 @@
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240108</span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240113</span></span>--> 
 
       
         <!--展示page的完整内容-->
@@ -557,6 +557,35 @@
 <li>$r_i&#x3D;1, \xi_i单位化;r_i&gt;1, Schmidt正交化\Rightarrow\beta_i$</li>
 <li>$U&#x3D;(\beta_1\beta_2…\beta_n)$</li>
 </ul>
+<p>&nbsp;</p>
+<p><strong>矩阵的分解</strong></p>
+<ul>
+<li>可逆矩阵的三角分解</li>
+</ul>
+<p>$设A是n阶可逆矩阵，则A可以唯一的分解为A&#x3D;U_1C_{上三角}或A&#x3D;C_{下三角}U_2, 其中U为正交矩阵，C的对角线元素均为正数$</p>
+<p>$证明：对A进行列向量分组，施密特正交化得到A&#x3D;(\eta_i)C, 其中c_{ii}&#x3D;|\beta_i|&gt;0$</p>
+<ul>
+<li>任意矩阵的三角分解</li>
+</ul>
+<p>$设A\in P^{m\times n},则A可以唯一的分解为A&#x3D;(L\ O)U_1,A&#x3D;U_2(R\ O)^T$</p>
+<ul>
+<li>矩阵的满秩分解</li>
+</ul>
+<p>$设A\in P^{m\times n},r(A)&#x3D;r,\exists B\in P^{m\times r},r(B)&#x3D;r,C\in P^{r\times n},r(C)&#x3D;r,s.t.A&#x3D;BC$</p>
+<p>矩阵的满秩分解不唯一。我们一般选取阶梯矩阵主元所在列对应的列向量作为B，选取非零行向量作为C</p>
+<ul>
+<li>矩阵的奇异值分解</li>
+</ul>
+<p>$r(A)&#x3D;r(AA^T)&#x3D;r(A^TA)$</p>
+<p>$AA^T与A^TA均是半正定的对称阵，且特征值\lambda_i&#x3D;\mu_i,奇异值\delta_i&#x3D;\sqrt{\lambda_i}\ge0$</p>
+<p>$设A\in P^{m\times n},r(A)&#x3D;r,\delta_1\ge\delta_2\ge…\ge\delta_r,\exists U_1\in P^{m\times m},U_2\in P^{n\times n},s.t. U_1^TAU_2&#x3D;\Delta$</p>
+<p>$A&#x3D;U_1\Delta U_2^T$</p>
+<ul>
+<li>方阵的极分解</li>
+</ul>
+<p>$设A为n阶可逆方阵，则A可以唯一的分解为A&#x3D;U_1S_1或A&#x3D;S_2U_2, 其中U是正交矩阵，S是正定矩阵$</p>
+<p>若A不可逆，则S为半正定阵</p>
+<p>证明：利用A的奇异值分解</p>
 <p>&nbsp;</p>
 <h4 id="第-6-章-二次型"><a href="#第-6-章-二次型" class="headerlink" title="第 6 章 二次型"></a>第 6 章 二次型</h4><p><strong>定义</strong></p>
 <p>$f(x_1x_2..x_n) &#x3D; a_{11}x_1^2+2a_{12}x_1x_2+2a_{13}x_1x_3+…2a_{nn}x_n^2 &#x3D; \displaystyle\sum_{i&#x3D;1}^na_{ii}x_i^2+2\sum_{1\le i&lt;j\le }a_{ij}x_ix_j$</p>
