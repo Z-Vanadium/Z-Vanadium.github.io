@@ -236,7 +236,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/minecraft/" style="color: #03a9f4">minecraft</a>
+                <a href="/tags/minecraft/" style="color: #39c5bb">minecraft</a>
             </span>
             
         </span>
@@ -310,6 +310,25 @@
     &#125;
 &#125;
 </code></pre>
+<p><strong>pack.png</strong>: 数据包的图标, 缺省为圆石. 图片大小要求为64*64像素.</p>
+<p><strong>data</strong>: 命名空间总文件夹, 存放各命名空间文件夹.</p>
+<p><strong>(命名空间)</strong>: <a target="_blank" rel="noopener" href="https://minecraft.fandom.com/zh/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID">命名空间ID(Namespaced identifier)</a>是用来指明和识别游戏中特定对象而又能避免潜在的歧义和冲突的一种方式.</p>
+<p>命名空间的概念不仅仅在MC里面出现, 在很多编程语言中也占有一席之地, 比如C++就有标准命名空间std等等, 用处是区分不同主体对于同一个标识符产生的歧义.</p>
+<p>例如MC原版和某数据包都用到了标识符apple, 假如没有命名空间, 两个apple标识符就会产生歧义, 但是假如该数据包的命名空间是class, 两个标识符就会被游戏解释为minecraft:apple和class:apple, 从而消除了歧义.</p>
+<p>实际上, 标识符命名空间的缺省值为minecraft. 例如在上述例子中, 我们在游戏中输入指令<code>/give @s apple 1</code>, 会给自己minecraft:apple, 而不是class:apple. </p>
+<p><strong>假如你的数据包并不想对原版的游戏机制产生覆盖, 请使用自己的而不是原版的命名空间.</strong></p>
+<ul>
+<li>命名空间的名字即是该文件夹的名字</li>
+<li>命名空间文件夹内所有标识符的命名空间都是该文件夹的名字</li>
+<li>一个data文件夹下可以有多个命名空间文件夹, 他们彼此之间是独立的 </li>
+<li>命名空间文件夹不允许嵌套</li>
+<li>命名空间只能是英文小写字母, 数字, 下划线, 短横线和点号的组合</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>命名空间内的文件夹</strong>: 存放特定内容, 例如recipes, advancements等等.</p>
+<p>与命名空间不同, 存放特定内容的文件夹是允许嵌套的. 例如以下的写法是合法的<code>./(命名空间)/functions/function_a/main.mcfunction</code>, 这样的写法大大提高了内容的可读性</p>
+<p>与其他文件夹不同的是, tags文件夹内的结构是保留的, 例如blocks, items等等. 我们自定义的标签应当遵循这样的分类方法, 将标签归类到特定的子文件夹中. 类似的, 子文件夹允许嵌套, 例如以下的写法是合法的<code>./(命名空间)/tags/blocks/blocks_b/fragile_block.json</code></p>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0039.png">
 
     </div>
 
