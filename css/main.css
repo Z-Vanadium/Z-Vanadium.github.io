@@ -1217,6 +1217,12 @@ none{
     display: none !important;
 }
 
+.toc{
+    overflow: scroll;
+    max-height: 600px;
+    max-width: 500px;
+}
+
 #toc{
     position: fixed;
     top: 24%;
