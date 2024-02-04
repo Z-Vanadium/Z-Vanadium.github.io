@@ -1217,16 +1217,19 @@ none{
     display: none !important;
 }
 
+.toc-article{
+    width: 350px;
+}
+
 .toc{
     overflow: scroll;
-    max-height: 600px;
-    max-width: 500px;
+    max-height: 500px;
 }
 
 #toc{
     position: fixed;
     top: 24%;
-    max-width: 200px;
+    max-width: 300px;
     left: 2.5%;
 }
 
