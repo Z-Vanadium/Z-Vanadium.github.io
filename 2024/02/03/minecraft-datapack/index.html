@@ -236,7 +236,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/minecraft/" style="color: #ff7d73">minecraft</a>
+                <a href="/tags/minecraft/" style="color: #03a9f4">minecraft</a>
             </span>
             
         </span>
@@ -1200,6 +1200,51 @@ execute is score #is_air ctrl matches 0 run \
         &#125;
     &#125;
 &#125;
+</code></pre>
+<p>&nbsp;</p>
+<p><strong>例2</strong>: 利用进度和函数实现玩家吃下金苹果时, 返还1个苹果, 这个效果有10s的内置冷却时间</p>
+<p>a.json</p>
+<pre><code class="json">&#123;
+    &quot;criteria&quot;: &#123;
+        &quot;eat_golden_apple&quot;:&#123;
+            &quot;trigger&quot;: &quot;consume_item&quot;,
+            &quot;conditions&quot;: &#123;
+                &quot;item&quot;: &#123;
+                    &quot;items&quot;: [
+                        &quot;minecraft:golden_apple&quot;
+                    ]
+                &#125;,
+                &quot;player&quot;: &#123;
+                    &quot;type_specific&quot;: &#123;
+                        &quot;type&quot;: &quot;player&quot;,
+                        &quot;advancements&quot;: &#123;
+                            &quot;class:a&quot;: false
+                        &#125;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;,
+    &quot;display&quot;: &#123;
+        &quot;icon&quot;: &#123;
+            &quot;item&quot;: &quot;minecraft:stone&quot;
+        &#125;,
+        &quot;title&quot;: &quot;&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;announce_to_chat&quot;: false,
+        &quot;show_toast&quot;: false
+    &#125;,
+    &quot;rewards&quot;: &#123;
+        &quot;function&quot;: &quot;class:a&quot;
+    &#125;
+&#125;
+</code></pre>
+<p>a.mcfunction</p>
+<pre><code>give @p minecraft:apple 1
+schedule function class:a_1 10s
+</code></pre>
+<p>a_1.mcfunction</p>
+<pre><code>advancement revoke @p only class:a
 </code></pre>
 
     </div>
