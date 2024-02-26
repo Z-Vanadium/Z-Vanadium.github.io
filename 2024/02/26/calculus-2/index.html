@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Tags: Linux | Vanadium的小屋</title>
+    <title>似水流年 | 微积分II知识点大纲 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -40,6 +40,14 @@
 
 <script src="/js/lib/preview.js"></script>
 
+
+
+
+
+
+<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
 
 
 
@@ -151,196 +159,171 @@
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="archives">
-    
-    <div class="categories-tags">
+            <!--card-->
+<div class="right-infos">
+
+    <div id="home-card-in-post">    
+        <div id="home-card">
+        <div id="card-style" style="max-height: 75vh;">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="description">
+            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
+
+        </div>
         
         
-        
-        <span>
-            <a href="/tags/C-C/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                C/C++
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/OOP/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                OOP
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/CSS/" style="background: #39c5bb">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                CSS
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                碎碎念
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/FDS/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                FDS
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Hexo/" style="background: #39c5bb">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Hexo
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/JavaScript/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                JavaScript
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/minecraft/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                minecraft
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Terraria/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Terraria
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/Linux/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Linux
-            </a>
-        </span>
-        
-        
-        
-        
-        
-        <span>
-            <a href="/tags/AI/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                AI
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/computer/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                computer
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E4%BF%A1%E5%AE%89%E5%8E%9F/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                信安原
-            </a>
-        </span>
-        
-        
-    </div>
-    
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/12/15</div>
-            <a href="/2023/12/15/vmware-ubuntu-iso/">
-                <h3>Windows虚拟机安装Linux软件分享</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E5%AE%9E%E7%94%A8/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        实用
-                    </a>
-                </span>
-                
-                
-                <span class="tags">
-                    <span class="icon">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </span>
-                    
-                    
-                    <span class="tag">
-                        
-                        <a href="/tags/Linux/" style="color: #39c5bb">Linux</a>
-                    </span>
-                    
-                </span>
-                
+
+        <div class="friend-links">
+            <div class="name"><b>文章推荐&快速访问</b></div>
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
+            </div>               
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/categories/%E6%95%B0%E5%AD%A6/">- 数学公式/笔记页</a>
+            </div>            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
             </div>
         </div>
+
+
+        <!--music player
+        <div class="friend-links">
+            <iframe seamless="seamless" width="300px" id="card" src="//music.163.com/outchain/player?type=2&id=29751583&auto=1&height=66" frameborder="no"></iframe>
+        </div>-->
     </div>
+    
+    
     
 </div>
 
+
+        </div>
+    </div>
+
+    <div id="toc" class="toc-article">
+        <div class="toc-title">目录</div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC-11-%E7%AB%A0-%E7%BA%A7%E6%95%B0"><span class="toc-text">第 11 章 级数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A7%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">级数的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E9%A1%B9%E7%BA%A7%E6%95%B0%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7"><span class="toc-text">正项级数的收敛性</span></a></li></ol></li></ol>
+    </div>      
+</div>
+
+
+<!--end-->
+
+<div class="article">
+    <div>
+        <h1>似水流年 | 微积分II知识点大纲</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/2/26
+        </span>
+           
+            <!--展示categories-->
+        <span class="category">
+            <a href="/categories/%E6%95%B0%E5%AD%A6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                数学
+            </a>
+        </span>
+        
+        
+
+
+        
+            <span class="category">
+                <span class="icon"><i class="fa-solid fa-newspaper"></i></span>
+                
+                
+                
+                
+                2024/02/26
+
+                
+            </span>
+            
+
+
+    </div>
+
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240226</span></span>--> 
+
+      
+        <!--展示page的完整内容-->
+    <div class="content" v-pre>
+        <span id="more"></span>
+
+<h3 id="第-11-章-级数"><a href="#第-11-章-级数" class="headerlink" title="第 11 章 级数"></a>第 11 章 级数</h3><h4 id="级数的基本概念"><a href="#级数的基本概念" class="headerlink" title="级数的基本概念"></a>级数的基本概念</h4><p>$数项级数无穷和S&#x3D;\displaystyle\sum_{n&#x3D;1}^\infty u_n$</p>
+<p>$无穷多个有理数相加的和的情况都有可能$</p>
+<p>$收敛\iff\displaystyle\lim_{n\rightarrow\infty}S_n&#x3D;\sum_{n&#x3D;1}^\infty u_n\rightarrow S$</p>
+<p>证明级数收敛性的方法</p>
+<ul>
+<li>定义</li>
+<li>单调收敛准则</li>
+<li>柯西收敛准则</li>
+</ul>
+<p>$几何级数&#x2F;等比级数\displaystyle\sum_{n&#x3D;1}^{\infty}aq^{n-1}&#x3D;S_n$</p>
+<ul>
+<li>$|q|&lt;1:\ S_n\rightarrow\displaystyle\frac{a}{1-q}$</li>
+<li>$q\ge 1:\ S_n\rightarrow\infty$</li>
+<li>$q&lt;-1:\ S_n不存在$</li>
+</ul>
+<p>$p-级数\displaystyle\sum_{n&#x3D;1}^{\infty}\frac{1}{n^p}$</p>
+<p>$引入f(x)&#x3D;\displaystyle\frac{1}{x^p}(x&gt;0),有\sum_{n&#x3D;1}^\infty\frac{1}{(n+1)^p}&#x3D;-1+\sum_{n&#x3D;2}^\infty\frac{1}{n^p}$</p>
+<p><strong>性质1</strong>: $if\ \sum u_n&#x3D;A,\sum v_n&#x3D;B, 则对于\forall\alpha,\beta,\sum(\alpha u_n+\beta v_n)&#x3D;\alpha A+\beta B$</p>
+<p><strong>性质2</strong>: 改变，去掉，增加级数的有限项，不影响级数的收敛性</p>
+<p><strong>性质3</strong>: 若级数收敛，则加法的结合律成立</p>
+<p><strong>性质4</strong>: $\sum u_n收敛\Rightarrow\displaystyle\lim_{n\rightarrow\infty}u_n&#x3D;0$</p>
+<p>&nbsp;</p>
+<h4 id="正项级数的收敛性"><a href="#正项级数的收敛性" class="headerlink" title="正项级数的收敛性"></a>正项级数的收敛性</h4><p>$正项级数:\ u_n\ge 0$</p>
+<ol>
+<li>上界收敛法</li>
+<li>比较判别法<br>$设\sum u_n,\sum v_n正项级数,\ u_n\le Cv_n(C&gt;0)$<ol>
+<li>$\sum v_n收敛\Rightarrow\sum u_n收敛$</li>
+<li>$\sum u_n发散\Rightarrow\sum v_n发散$</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+
+
+
+    
+
+<!--friendlinks-->
+
+
+
+
+<!--end-->
+
+    
+    
+    
+    
+        <!-- 样式文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+        <div id="comment">
+            <div id="waline-container">
+            </div>
+        </div>
+        
+    
+    
+
+
+</div>
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -389,6 +372,52 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://waline-vanadiumz.vercel.app",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "force",
+        
+    });
+</script>
+
+
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <script>
+        const locale = {
+            placeholder: "不乖乖评论会被打屁股的哦",
+        };
+        Waline.init({
+            el: '#waline-container',
+            serverURL: "https://waline-vanadiumz.vercel.app",
+            commentCount: "true",
+            pageview: "false",
+            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
+            meta: "nick,mail,link".split(','),
+            requiredMeta: "nick".split(','),
+            lang: "zh-CN",
+            wordLimit: parseInt("0"),
+            pageSize: "10",
+            login: "force",
+            locale,
+        });
+    </script>
+    
+
+
+
     
 </body>
 </html>
