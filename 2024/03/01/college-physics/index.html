@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>CSS入门学习杂识 | 盒子模型 | Vanadium的小屋</title>
+    <title>college-physics | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -207,7 +207,7 @@
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-text">盒子模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DIY"><span class="toc-text">DIY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-text">弹性盒子模型</span></a></li></ol>
+        
     </div>      
 </div>
 
@@ -216,40 +216,16 @@
 
 <div class="article">
     <div>
-        <h1>CSS入门学习杂识 | 盒子模型</h1>
+        <h1>college-physics</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/15
-        </span>
-           
-            <!--展示categories-->
-        <span class="category">
-            <a href="/categories/%E5%89%8D%E7%AB%AF/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                前端
-            </a>
+            2024/3/1
         </span>
         
-           
-            <!--展示tags-->
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/CSS/" style="color: #00a596">CSS</a>
-            </span>
-            
-        </span>
         
 
 
@@ -260,7 +236,7 @@
                 
                 
                 
-                2023/12/15
+                Fri /Ma/r 
 
                 
             </span>
@@ -269,158 +245,12 @@
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20231215</span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>Fri Mar 01 2024 09:57:00 GMT+0800 (中国标准时间)</span></span>--> 
 
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <blockquote>
-<p>记录一点CSS学习心得</p>
-</blockquote>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/css3/css3-tutorial.html">RUNOOB-CSS教程</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44992737/article/details/125217906">CSDN | CSS盒子模型详解</a></li>
-</ul>
-<span id="more"></span>
-
-<p>&nbsp;</p>
-<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>想要高效快捷的学习CSS，你需要：</p>
-<ul>
-<li><strong>VSCode</strong>, with following extensions<ul>
-<li><strong>Color Highlight</strong> | 颜色显示</li>
-<li><strong>Live Server</strong> | html热预览</li>
-</ul>
-</li>
-<li><strong>前置知识</strong><ul>
-<li>熟练的html</li>
-<li>入门的JavaScript</li>
-</ul>
-</li>
-<li><strong>辅助工具&#x2F;网站</strong><ul>
-<li>配色参考</li>
-<li>图片素材</li>
-<li>优秀的榜样网站</li>
-</ul>
-</li>
-<li><strong>信息搜索能力</strong></li>
-<li><strong>一些小创意和小自信</strong></li>
-</ul>
-<p>&nbsp;</p>
-<h4 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h4><p>在任意一个网页按下<kbd>F12</kbd>，就可以打开<strong>开发者工具</strong>，如下图所示，F12可以说是我们最得力的助手（之一）了。</p>
-<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0001.png?raw=true">
-
-<p>对于学习CSS，我们需要用到的功能不如前端工程师那么多。点击右边第三行第一个图标，我们就可以选取页面上的某一个元素了。</p>
-<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0002.png?raw=true">
-
-<p>如上图所示，我们选取了一个div属性的元素，其类是.my-home-window，我们可以在右边的源码栏里面看到更详细的信息，比如它的子元素和父元素，它的样式（如果有）以及它的其他可见属性。</p>
-<p>我们可以通过这种方式定位某个元素，再到CSS文件中修改样式，但是这不是这篇文章的重点，重点在于<strong>我们观察网页中被我们选择的元素</strong>，如果我们选择其他元素一一观察，我们会发现：</p>
-<ul>
-<li>元素是矩形的</li>
-<li>矩形的主体是蓝色的</li>
-<li>有些矩形有黄色、橙色、紫色和绿色等颜色的部分，有些没有</li>
-</ul>
-<p>由于CSS的元素都是矩形的，我们给了他一个很形象的名字：<strong>盒子模型（box model）</strong>——网页上的元素以“盒子”的形式，以特定的方式堆叠在一起，形成一定的相互关系。</p>
-<p>盒子模型能解释第一和第二个发现，那第三个发现中的颜色是什么含义？下图是一个<strong>盒子模型的模型</strong>（？好拗口）</p>
-<img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0009.png?raw=true">
-
-
-<ul>
-<li>蓝色部分是盒子的主体，里面是<strong>html元素</strong>（比如p、a、h3、li等等）的内容，大小是100*100（width*height）；</li>
-<li>绿色部分是<strong>内边距padding</strong>，指的是元素内容其<strong>主体部分</strong>边缘的距离，分别有padding-top、padding-left、padding-right和padding-bottom四个方向的子属性，可以类比我们使用Word时的<strong>页边距</strong>概念（如果把盒子比作一页纸的话）；</li>
-<li>黄色部分是<strong>边框border</strong>，指的是元素的边框（废话），这里边框宽度是10；</li>
-<li>橙色部分是<strong>外边距margin</strong>，指的是元素距离其最近的<strong>同级或更高级元素</strong>的距离，类似于padding，margin也有四个方向的子属性。</li>
-</ul>
-<p>此外，还要知道的是，盒子是可以嵌套的，此时我们就有了<strong>子元素</strong>和<strong>父元素</strong>的概念。一般来说，子元素的定位是从父元素<strong>主体部分的左上角</strong>开始的。</p>
-<p>这四个矩形就组成了“盒子”的概念，我们所看到的花里胡哨的的网站归根结底就是由这些花花绿绿的盒子堆叠而成的。（Tips. CSS的全称Cascading Style Sheets指的就是<strong>层叠样式表</strong>）</p>
-<p>&nbsp;</p>
-<h4 id="DIY"><a href="#DIY" class="headerlink" title="DIY"></a>DIY</h4><p>让我们动手试试吧！</p>
-<ul>
-<li><p>首先在VSCode中，在同一个目录下，新建index.html和main.css并如此摆放（个人习惯，方便对比观察）</p>
-  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0003.png?raw=true">
-</li>
-<li><p>输入如下代码</p>
-<pre><code class="html">&lt;html&gt;
-    &lt;head&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-
-        &lt;div class=&quot;container&quot;&gt;
-            &lt;div class=&quot;content&quot;&gt;
-                &lt;p&gt;
-                    I am text.
-                &lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class=&quot;container&quot;&gt;
-            &lt;div class=&quot;content&quot;&gt;
-                &lt;p&gt;
-                    I am text.
-                &lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="css">body&#123;
-    background-color: #fff;
-&#125;
-
-.container&#123;
-    width: 300px;
-    height: 300px;
-    background-color: aqua;
-&#125;
-</code></pre>
-  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0004.png?raw=true">
-</li>
-<li><p>然后点击底边任务栏，右数第3个<kbd>Go Live</kbd>，你的网页就可以在127.0.0.1:5500预览了！</p>
-  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0005.png?raw=true">
-</li>
-<li><p>接下来用main.css添加padding和margin属性，观察预览网页的变化，可以看到，元素之间的距离改变了，接下来请你自己调整，也可以用上方向属性（Tips. px是长度单位<strong>像素</strong>；你甚至可以尝试<strong>负数</strong>margin）</p>
-  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0006.png?raw=true">
-  </li>
-<li><p>你还可以调整元素的border，注意，为了显示你的border，你需要设置border-style属性为<strong>非none</strong>。border属性下有很多子属性，比如颜色、样式、宽度、圆角等等<br>  例如我在main.css写下如下代码（同时删去了.container的background-color属性）</p>
-<pre><code class="css">.container .content&#123;
-    background-color: #eef4ec;
-    border-style: solid;
-    border-color: #39c5bb;
-    border-width: 2px;
-    border-radius: 10px;
-    padding-left: 24px;
-&#125;
-</code></pre>
-<p>  就能得到如下效果</p>
-  <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0007.png?raw=true">
-  Tips. **合理**使用border属性，能使你的网页更好看！</li>
-</ul>
-<p>&nbsp;</p>
-<h4 id="弹性盒子模型"><a href="#弹性盒子模型" class="headerlink" title="弹性盒子模型"></a>弹性盒子模型</h4><p>相较于传统盒子模型，<strong>弹性盒子模型（flex box model）</strong> 是CSS3推出的新玩意儿。能够更加智能的适应手机不同分辨率下的阅读，提高阅读体验。</p>
-<p>想要使用弹性盒子模型，只需在父元素声明display: flex，其子元素就会<strong>自动布局</strong>（默认横向排放，即使是div）</p>
-<p>如果要对弹性容器内的子元素<strong>布局</strong>，我们可以使用flex-direction，他接受四个参数：</p>
-<ul>
-<li>row：左对齐</li>
-<li>row-reverse：右对齐，从右往左排列</li>
-<li>column：纵向排列</li>
-<li>column-reverse：反转纵向，从下往上排列</li>
-</ul>
-<p>设置子元素的<strong>水平对齐方式</strong>，可以使用justify-context属性：</p>
-<ul>
-<li>flex-start：左对齐</li>
-<li>flex-end：右对齐</li>
-<li>center：左右居中</li>
-<li>space-between：左右对齐</li>
-<li>space-around：左右对齐，但是盒子会居中</li>
-</ul>
-<p>设置子元素的<strong>垂直对齐方式</strong>，可以使用align-items属性：</p>
-<ul>
-<li>flex-start：上对齐</li>
-<li>flex-end：下对齐</li>
-<li>center：垂直居中</li>
-</ul>
-
+        <span id="more"></span>
     </div>
 
 
