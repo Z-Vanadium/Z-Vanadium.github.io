@@ -246,7 +246,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
+                <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
             </span>
             
         </span>
@@ -260,7 +260,7 @@
                 
                 
                 
-                2024/02/28
+                2024/03/03
 
                 
             </span>
@@ -269,7 +269,7 @@
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240228</span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240303</span></span>--> 
 
       
         <!--展示page的完整内容-->
@@ -292,11 +292,11 @@
 <p>&nbsp;</p>
 <h3 id="Algorithm-Analysis"><a href="#Algorithm-Analysis" class="headerlink" title="Algorithm Analysis"></a>Algorithm Analysis</h3><h4 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h4><p>An algorithm must satisfy</p>
 <ul>
-<li>0 or more input</li>
-<li>at least 1 output</li>
-<li>clear and unambigeous</li>
-<li>finiteness</li>
-<li>effectiveness</li>
+<li><strong>input</strong> 0 or more input</li>
+<li><strong>output</strong> at least 1 output</li>
+<li><strong>definiteness</strong> clear and unambigeous</li>
+<li><strong>finiteness</strong> terminate after finite number of steps</li>
+<li><strong>effectiveness</strong></li>
 </ul>
 <p>&nbsp;</p>
 <h4 id="What-to-analyze"><a href="#What-to-analyze" class="headerlink" title="What to analyze"></a>What to analyze</h4><p><strong>Time complexity</strong></p>
@@ -309,6 +309,38 @@
 <li>$T(N) &#x3D; \Theta(h(N)), T(N)&#x3D; O(h(N))$</li>
 <li>$T(N) &#x3D; o(p(N)),if\ T(N)&#x3D;O(p(N))\ and\ T(N)\ne\Theta(p(N))$</li>
 </ul>
+<p><strong>Eg1</strong> Matrix addition</p>
+<pre><code class="c">void add( int a[][ MAX_SIZE ], int b[][ MAX_SIXE ], int c[][ MAX_SIZE ], int rows, int cols)&#123;
+  int i,j;
+  for( i = 0; i &lt; cols; ++i)&#123;
+    for( j = 0; j &lt; rows; ++j)&#123;
+      c[i][j] = a [i][j] + b[i][j];
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<p>$T(rows,cols)&#x3D;2rows\cdot cols+2rows+1$</p>
+<p>$O(rows,cols)&#x3D;rows\cdot cols$</p>
+<p><strong>Eg2</strong> Summing a list of numbers (iterative)</p>
+<pre><code class="c">float sum( float list[], int n )&#123;
+  float temp_sum = 0; // count = 1
+  int i;  // no add count
+  for( i = 0; i &lt; n; ++i )&#123; // count += 1
+    temp_sum += list[i];  // count += 1
+  &#125;
+  return temp_sum;  // count += 1
+&#125;
+</code></pre>
+<p>$T_{sum}(n)&#x3D;2n+3$</p>
+<p><strong>Eg3</strong> Summing a list of numbers (recursive)</p>
+<pre><code class="c">float sum( float list[], int n )&#123;
+  if( n )&#123; // count = 1
+    return sum( list, n-1 ) + list[n-1];  // count += 1
+  &#125;
+  return 0;  // count += 1
+&#125;
+</code></pre>
+<p>$T_{sum}(n)&#x3D;2n+2$</p>
 <p><strong>Space complexity</strong></p>
 
     </div>
