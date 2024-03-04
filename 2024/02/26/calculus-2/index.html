@@ -207,7 +207,7 @@
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC-11-%E7%AB%A0-%E7%BA%A7%E6%95%B0"><span class="toc-text">第 11 章 级数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A7%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">级数的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E9%A1%B9%E7%BA%A7%E6%95%B0%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7"><span class="toc-text">正项级数的收敛性</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC-11-%E7%AB%A0-%E7%BA%A7%E6%95%B0"><span class="toc-text">第 11 章 级数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A7%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">级数的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E9%A1%B9%E7%BA%A7%E6%95%B0%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7"><span class="toc-text">正项级数的收敛性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E7%BA%A7%E6%95%B0%E6%94%B6%E6%95%9B%E6%80%A7"><span class="toc-text">一般级数收敛性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E6%94%B6%E6%95%9B"><span class="toc-text">绝对收敛</span></a></li></ol>
     </div>      
 </div>
 
@@ -323,6 +323,30 @@
 </ol>
 </li>
 </ol>
+<p>&nbsp;</p>
+<ol start="6">
+<li><del>积分判别法</del><br> $f(x)在[1,+\infty]上递减的非负连续函数,u_n&#x3D;f(n)\Rightarrow\displaystyle\sum u_n与\int_1^{+\infty}f(x)敛散性相同$</li>
+</ol>
+<p>&nbsp;</p>
+<h4 id="一般级数收敛性"><a href="#一般级数收敛性" class="headerlink" title="一般级数收敛性"></a>一般级数收敛性</h4><p><strong>交错级数</strong></p>
+<p>$if\ u_n&gt;0,then\ \sum(-1)^{n-1}u_n为交错级数$</p>
+<p><strong>莱布尼茨定理</strong></p>
+<p>$if\ \sum(-1)^{n-1}u_n:$</p>
+<p>$(1)u_1\ge u_2\ge u_3\ge …;$</p>
+<p>$(2)\lim u_n&#x3D;0,$</p>
+<p>$then\ \sum(-1)^{n-1}u_n收敛, S\le u_1$</p>
+<p>$推论: 误差&#x2F;余项|R_n|&#x3D;|S-S_n|\le u_{n+1}$</p>
+<p><strong>tips</strong> 先连续化，再求导</p>
+<p><strong>Dirichlet判别法</strong></p>
+<p>$if\ {a_n}单调且\lim a_n&#x3D;0,\sum b_n部分有界,then\ \sum a_nb_n收敛$</p>
+<p><strong>Abel判别法</strong></p>
+<p>$if\ {a_n}单调有界,\sum b_n收敛,then\ \sum a_nb_n收敛$</p>
+<h4 id="绝对收敛"><a href="#绝对收敛" class="headerlink" title="绝对收敛"></a>绝对收敛</h4><p>$if\ \sum|u_n|收敛,then\ \sum u_n收敛$</p>
+<p>$设\sum u_n:$</p>
+<ul>
+<li>$if\ \sum|u_n|收敛,then\ \sum u_n绝对收敛$</li>
+<li>$if\ \sum|u_n|发散,\sum u_n收敛,then\ \sum u_n条件收敛$</li>
+</ul>
 
     </div>
 
