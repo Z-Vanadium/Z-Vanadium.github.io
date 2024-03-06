@@ -207,7 +207,7 @@
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#basic-infomation"><span class="toc-text">basic infomation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lecture-01"><span class="toc-text">lecture 01</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Grading-Politics"><span class="toc-text">Grading Politics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Peer-Review"><span class="toc-text">Peer Review</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Algorithm-Analysis"><span class="toc-text">Algorithm Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Algorithm"><span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#What-to-analyze"><span class="toc-text">What to analyze</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#basic-infomation"><span class="toc-text">basic infomation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lecture-01"><span class="toc-text">lecture 01</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Grading-Politics"><span class="toc-text">Grading Politics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Peer-Review"><span class="toc-text">Peer Review</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Algorithm-Analysis"><span class="toc-text">Algorithm Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Algorithm"><span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#What-to-analyze"><span class="toc-text">What to analyze</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conpare-the-Algorithms"><span class="toc-text">Conpare the Algorithms</span></a></li></ol></li></ol>
     </div>      
 </div>
 
@@ -246,7 +246,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
+                <a href="/tags/FDS/" style="color: #00a596">FDS</a>
             </span>
             
         </span>
@@ -260,7 +260,7 @@
                 
                 
                 
-                2024/03/03
+                2024/03/06
 
                 
             </span>
@@ -269,7 +269,7 @@
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240303</span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240306</span></span>--> 
 
       
         <!--展示page的完整内容-->
@@ -342,6 +342,46 @@
 </code></pre>
 <p>$T_{sum}(n)&#x3D;2n+2$</p>
 <p><strong>Space complexity</strong></p>
+<p>&nbsp;</p>
+<h3 id="Conpare-the-Algorithms"><a href="#Conpare-the-Algorithms" class="headerlink" title="Conpare the Algorithms"></a>Conpare the Algorithms</h3><p><strong>Eg</strong> <strong>Max Subsequence Sum Problem</strong>: Given integers $A_1$, $A_2$, …, $A_n$, find the maximum value of sum from $A_i$ to $A_j$</p>
+<ol>
+<li>Algo.1</li>
+</ol>
+<pre><code>for i: n
+  for j: n
+    sum for k: i-&gt;j
+    compare sum
+</code></pre>
+<p>$T(N) &#x3D; O(N^3)$</p>
+<ol start="2">
+<li>Algo.2</li>
+</ol>
+<pre><code>for i: n
+  for j: i-&gt;n
+    sum i-&gt;j
+    compare sum with max_sum
+</code></pre>
+<p>$T(N) &#x3D; O(N^2)$</p>
+<p>Storing to cut off calculatation</p>
+<ol start="3">
+<li>Algo.3 ( Divide &amp; Conquer )</li>
+</ol>
+<pre><code>def MSS( sequnce a[n], int start, int end ):
+  if length &lt;= 1 :  return a[n]
+  left = MSS (a, start, mid)
+  right = MSS (a, mid, end)
+  total = max_sum for mid-&gt;end + max_sum for mid-&gt;start
+  return max( left, right, total )
+</code></pre>
+<p>$T(N)&#x3D;2T(N&#x2F;2)+cN,T(1)&#x3D;O(1)$</p>
+<p>$\Rightarrow T(N) &#x3D; O(N\log N)$</p>
+<ol start="4">
+<li>Algo.4 ( DP )</li>
+</ol>
+<p><strong>state transition equation</strong></p>
+<p>$$maxSum[i] &#x3D; \begin{cases}sequence[i]+maxSum[i-1]&amp;sequnce[i]&gt;0\\0&amp;sequence[i-1]+maxSum[i-1]&lt;0\end{cases}$$</p>
+<p>$$result&#x3D;\mathrm{max}(maxSum)$$</p>
+<p>$T(N) &#x3D; O(N)$</p>
 
     </div>
 
