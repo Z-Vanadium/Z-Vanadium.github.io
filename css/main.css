@@ -771,12 +771,17 @@ strong {
 }
 blockquote {
     background: #d9e8ff6b;
-    border-left: 3px solid #1e3e3f;
-    border-radius: 3px;
+    border-left: 7px solid #1e3e3f5e;
+    border-radius: 5px;
     margin: 15px 0;
     overflow: auto;
-    padding: 0 15px;
+    padding: 0 30px;
 }
+
+blockquote p{
+    opacity: 50%;
+}
+
 body {
     background: #f6f8fa;
     color: #1e3e3f;
@@ -1222,7 +1227,7 @@ none{
 }
 
 .toc{
-    overflow: scroll;
+    overflow-y: scroll;
     max-height: 500px;
 }
 
@@ -1246,4 +1251,33 @@ none{
     border-color: #39c5bc77 ;
     border-width: 1px;
     border-style: solid;
+}
+
+#toc ol li::marker{
+    color: #c7cbd0 !important;
+}
+
+ul li::marker,
+.article ol li::marker{
+    color: #b4bfc2 !important;
+}
+
+.article ul,
+.article ol{
+    border: #E4E4E4;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+}
+
+.wl-login-info {
+    width: 100px !important;
+    margin-top: 20px !important;
+}
+
+.my-home-window{
+    display: none;
 }
