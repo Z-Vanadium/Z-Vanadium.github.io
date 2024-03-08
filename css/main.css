@@ -790,10 +790,14 @@ body {
     width: 100%;
 }
 code {
-    background: #bddcf76b;
+    background: #bddcf71b;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bddcf79c;
     border-radius: 4px;
     line-height: 2.5;
     padding: 4px 8px;
+    opacity: 80%;
 }
 h1,
 h2,
@@ -1236,10 +1240,16 @@ none{
     top: 24%;
     max-width: 300px;
     left: 2.5%;
+    border: #a5c2f579;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
 }
 
 #toc .toc-title{
     font-size: x-large;
+    margin-left: 40px;
+    margin-top: 14px;
 }
 
 .wl-panel{
@@ -1258,10 +1268,12 @@ none{
 }
 
 ul li::marker,
-.article ol li::marker{
+ol li::marker:not(ul ol li::marker){
     color: #b4bfc2 !important;
 }
 
+.post ul,
+.post ol,
 .article ul,
 .article ol{
     border: #E4E4E4;
