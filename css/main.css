@@ -1169,47 +1169,28 @@ none{
     margin-bottom: 40px;
 }
 
-.hometags .friendlinks-button{
-    position: fixed;
-    top: 45px;
-    left: 120px;
-    height: 25px;
-    zoom: 1.25;
-    margin-top: 0;
-    padding-top: 0;
-}
-
-.friendlinks-button i{
-    margin-top: 8px;
-    color: #fff;
-    margin-right: 7px;
-}
-.friendlinks-button a{
-    color: #fff;
-    font-weight: 300;
-    font-size: large;
-}
-
-
-.hometags .github-button{
-    position: fixed;
-    top: 85px;
-    left: 120px;
-    height: 25px;
-    zoom: 1.25;
-    margin-top: 0;
-    padding-top: 0;
+.hometags-button{
     display: flex;
-    float: inline-start;
-    z-index: 1;
+    position: fixed;
+    left: 99px;
+    height: 25px;
+    zoom: 1.3;
+    color: #fff;
 }
 
-.github-button i{
-    margin-top: 5px;
-    color: #fff;
-    margin-right: 9px;
+.hometags-button .my-contain{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.github-button a{
+
+.hometags-buttonn i{
+    min-width: 20px;
+    color: #fff;
+}
+
+.hometags-button a{
     color: #fff;
     font-weight: 300;
     font-size: large;
