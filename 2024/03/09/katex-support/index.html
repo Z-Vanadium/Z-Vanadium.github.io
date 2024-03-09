@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>信息安全原理与数学基础 | Vanadium的小屋</title>
+    <title>KaTex公式渲染相关 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -204,7 +204,7 @@
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lecture-01"><span class="toc-text">lecture 01</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BF%A1%E6%81%AF%EF%BC%9F"><span class="toc-text">什么是信息？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF"><span class="toc-text">信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%89%E5%85%A8%EF%BC%9F"><span class="toc-text">什么是安全？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%AE%9A%E4%B9%89"><span class="toc-text">安全定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3"><span class="toc-text">大数据时代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%A9%BA%E9%97%B4%EF%BC%88Cyberspace%EF%BC%89"><span class="toc-text">信息空间（Cyberspace）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BB%B7%E5%80%BC"><span class="toc-text">信息的价值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lecture-02"><span class="toc-text">Lecture 02</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6-Discrete-Mathematics"><span class="toc-text">离散数学 Discrete Mathematics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%95%B0%E5%AD%A6%E5%8D%B1%E6%9C%BA"><span class="toc-text">三次数学危机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%95%B0%E5%AD%A6%E5%8D%B1%E6%9C%BA"><span class="toc-text">第一次数学危机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%95%B0%E5%AD%A6%E5%8D%B1%E6%9C%BA"><span class="toc-text">第二次数学危机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%95%B0%E5%AD%A6%E5%8D%B1%E6%9C%BA"><span class="toc-text">第三次数学危机</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B2%E7%AA%81"><span class="toc-text">冲突</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E5%88%92%E7%BA%BF%E6%96%9C%E4%BD%93%E4%B8%8E%E4%B8%8B%E6%A0%87%E5%86%B2%E7%AA%81"><span class="toc-text">下划线斜体与下标冲突</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-text">杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E8%B0%83-Accents"><span class="toc-text">强调 &#x2F; Accents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AF%8D%E5%92%8C%E5%AD%97%E7%AC%A6-Letters-Unicode"><span class="toc-text">字母和字符 &#x2F; Letters &amp; Unicode</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D-Greek-Letters"><span class="toc-text">希腊字母 &#x2F; Greek Letters</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B1%80-Layout"><span class="toc-text">布局 &#x2F; Layout</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3-Annotation"><span class="toc-text">注解 &#x2F; Annotation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E5%B8%83%E5%B1%80-Vertical-Layout"><span class="toc-text">垂直布局 &#x2F; Vertical Layout</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%B8%8E%E9%9B%86%E5%90%88%E8%AE%BA-Logic-Set-Theory"><span class="toc-text">逻辑与集合论 &#x2F; Logic &amp; Set Theory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6-Operators"><span class="toc-text">运算符 &#x2F; Operators</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E5%86%99%E8%BF%90%E7%AE%97%E7%AC%A6-Big-Operators"><span class="toc-text">大写运算符 &#x2F; Big Operators</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6-Binary-Operators"><span class="toc-text">二元运算符 Binary Operators</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%BC%8F%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6-Fractions-Binomials"><span class="toc-text">分式与二进制 &#x2F; Fractions &amp; Binomials</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E7%AC%A6-Relations"><span class="toc-text">关系符 &#x2F; Relations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93-Font"><span class="toc-text">字体 &#x2F; Font</span></a></li></ol></li></ol>
     </div>      
 </div>
 
@@ -213,23 +213,23 @@
 
 <div class="article">
     <div>
-        <h1>信息安全原理与数学基础</h1>
+        <h1>KaTex公式渲染相关</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/2/26
+            2024/3/9
         </span>
            
             <!--展示categories-->
         <span class="category">
-            <a href="/categories/%E7%AC%94%E8%AE%B0/">
+            <a href="/categories/%E5%AE%9E%E7%94%A8/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                笔记
+                实用
             </a>
         </span>
         
@@ -243,7 +243,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #39c5bb">数学</a>
+                <a href="/tags/Hexo/" style="color: #39c5bb">Hexo</a>
             </span>
             
         </span>
@@ -257,7 +257,7 @@
                 
                 
                 
-                2024/03/04
+                2024/03/10
 
                 
             </span>
@@ -266,83 +266,118 @@
 
     </div>
 
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240304</span></span>--> 
+    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span>20240310</span></span>--> 
 
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><p><i class="fa-regular fa-circle-check"></i> <strong>授课教师</strong>：zbs</p>
+        <blockquote>
+<p>由于 Hexo 主题 ParticleX 对 Markdown 的渲染和 KaTex 对 Tex 公式之间很容易产生冲突, 这里记录一些冲突的处理办法<br>同时, 记录一些可能用到的或” 书到用时方恨少 “的 Tex 公式</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>Hexo 版本</strong>: 6.3.0<br><strong>Hexo 主题</strong>: ParticleX</p>
 <span id="more"></span>
 
 <p>&nbsp;</p>
-<h2 id="lecture-01"><a href="#lecture-01" class="headerlink" title="lecture 01"></a>lecture 01</h2><h3 id="什么是信息？"><a href="#什么是信息？" class="headerlink" title="什么是信息？"></a>什么是信息？</h3><h4 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h4><ul>
-<li><p>广义：Information is data endowed with relavance and purpose.</p>
-</li>
-<li><p>狭义：信息的本质是有序度。——Shannon</p>
-</li>
-</ul>
-<p>信息量：对某件事情可供选择的多少的量度</p>
-<p>香农信息量：$\log_2N$</p>
+<h2 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h2><h3 id="下划线斜体与下标冲突"><a href="#下划线斜体与下标冲突" class="headerlink" title="下划线斜体与下标冲突"></a>下划线斜体与下标冲突</h3><p>当使用<code>_</code>表示下标的时候, 如果下标使用了<code>&#123;&#125;</code>扩起并使用了 2 个及以上的下划线, 就有可能使下划线被解释为斜体, 导致公式无法正常渲染</p>
+<p><strong>解决方法</strong>: 使用 0 长度空格<code>\kern</code>替代<code>&#123;&#125;</code></p>
+<p><strong>实例</strong></p>
+<pre><code class="md">$(100101.01)_2=2^5+2^2+2^0+2^&#123;-2&#125;=(37.25)_1\kern&#123;&#125;_0$
+</code></pre>
+<p>$(100101.01)_2&#x3D;2^5+2^2+2^0+2^{-2}&#x3D;(37.25)_1\kern{}_0$</p>
 <p>&nbsp;</p>
-<h3 id="什么是安全？"><a href="#什么是安全？" class="headerlink" title="什么是安全？"></a>什么是安全？</h3><h4 id="安全定义"><a href="#安全定义" class="headerlink" title="安全定义"></a>安全定义</h4><ol>
-<li>第一步：针对谁？<ul>
-<li>谁是敌手（adversary）？</li>
-</ul>
-</li>
-<li>第二步：敌手的目标<ul>
-<li>敌手想要达到什么目标</li>
-</ul>
-</li>
-<li>第三步：限制敌手的能力<ul>
-<li>敌手可以做什么？不可以做什么？</li>
-<li>敌手可以调用的资源</li>
-</ul>
-</li>
-<li>第四步：如何认定敌手获胜？如何认定系统被破解？<ul>
-<li>敌手挑战的时间</li>
-<li>敌手达成目标的概率</li>
-</ul>
-</li>
-</ol>
-<p>如果没有敌手可以在规定的时间内攻破该系统，那么说系统是安全的</p>
-<p><strong>假如有人让你帮忙测试某系统是否安全，请反问ta：什么是安全？</strong></p>
-<p><strong>你直播干的过别人黑丝吗？？？</strong></p>
-<p>&nbsp;</p>
-<h3 id="大数据时代"><a href="#大数据时代" class="headerlink" title="大数据时代"></a>大数据时代</h3><ul>
-<li>人类进入信息化社会时代</li>
-<li>挑战</li>
-</ul>
-<p>&nbsp;</p>
-<h3 id="信息空间（Cyberspace）"><a href="#信息空间（Cyberspace）" class="headerlink" title="信息空间（Cyberspace）"></a>信息空间（Cyberspace）</h3><p>信息空间中的对抗与威胁</p>
-<p>Cyber Warfare</p>
-<p>Cyber Army</p>
-<p>&nbsp;</p>
-<h3 id="信息的价值"><a href="#信息的价值" class="headerlink" title="信息的价值"></a>信息的价值</h3><p>&nbsp;</p>
-<h2 id="Lecture-02"><a href="#Lecture-02" class="headerlink" title="Lecture 02"></a>Lecture 02</h2><h3 id="离散数学-Discrete-Mathematics"><a href="#离散数学-Discrete-Mathematics" class="headerlink" title="离散数学 Discrete Mathematics"></a>离散数学 Discrete Mathematics</h3><p>研究“离散结构”的数学</p>
-<p>数学起源于人们对计量的需要：计数&#x2F;测量问题</p>
-<p>&nbsp;</p>
-<h3 id="三次数学危机"><a href="#三次数学危机" class="headerlink" title="三次数学危机"></a>三次数学危机</h3><h4 id="第一次数学危机"><a href="#第一次数学危机" class="headerlink" title="第一次数学危机"></a>第一次数学危机</h4><blockquote>
-<p>毕达哥拉斯痛苦的证明$\sqrt{2}$不是有理数！！！</p>
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><blockquote>
+<p>摘自 <a target="_blank" rel="noopener" href="https://katex.org/docs/supported">KaTex Support</a></p>
 </blockquote>
-<p>存在不能用单位长度测量的线段，几何的地位开始超过了代数</p>
-<blockquote>
-<p>公开这件事的希帕苏斯被扔进了爱琴海</p>
-</blockquote>
+<h3 id="强调-Accents"><a href="#强调-Accents" class="headerlink" title="强调 &#x2F; Accents"></a>强调 &#x2F; Accents</h3><p>一把儿</p>
+<pre><code class="md">$\bar&#123;y&#125;$
+</code></pre>
+<p>$\bar{y}$</p>
+<p>向量</p>
+<pre><code class="md">$\vec&#123;F&#125;;\overleftarrow&#123;AB&#125;;\overrightarrow&#123;CD&#125;$
+</code></pre>
+<p>$\vec{F};\overleftarrow{AB};\overrightarrow{CD}$</p>
 <p>&nbsp;</p>
-<h4 id="第二次数学危机"><a href="#第二次数学危机" class="headerlink" title="第二次数学危机"></a>第二次数学危机</h4><p><strong>危机的潜伏</strong> 芝诺的乌龟</p>
-<blockquote>
-<p>阿喀琉斯：龟子，没有你我可怎么活啊（追逐状）</p>
-</blockquote>
-<p>无穷小$\ne$很小很小</p>
-<p>数理逻辑和集合论出现，数学开始具备了严格的形式化基础</p>
+<h3 id="字母和字符-Letters-Unicode"><a href="#字母和字符-Letters-Unicode" class="headerlink" title="字母和字符 &#x2F; Letters &amp; Unicode"></a>字母和字符 &#x2F; Letters &amp; Unicode</h3><h4 id="希腊字母-Greek-Letters"><a href="#希腊字母-Greek-Letters" class="headerlink" title="希腊字母 &#x2F; Greek Letters"></a>希腊字母 &#x2F; Greek Letters</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/240310.bmp">
+
 <p>&nbsp;</p>
-<h4 id="第三次数学危机"><a href="#第三次数学危机" class="headerlink" title="第三次数学危机"></a>第三次数学危机</h4><p><strong>罗素Russell悖论</strong> 动摇了数学的根基</p>
-<ul>
-<li>提出公理化集合论来对朴素集合论进行限制</li>
-</ul>
-<blockquote>
-<p>牢霍：放弃对“万有理论”对追求</p>
-</blockquote>
+<h3 id="布局-Layout"><a href="#布局-Layout" class="headerlink" title="布局 &#x2F; Layout"></a>布局 &#x2F; Layout</h3><h4 id="注解-Annotation"><a href="#注解-Annotation" class="headerlink" title="注解 &#x2F; Annotation"></a>注解 &#x2F; Annotation</h4><p>划去</p>
+<pre><code class="md">$\cancel&#123;A&#125;$
+</code></pre>
+<p>$\cancel{A}$</p>
+<h4 id="垂直布局-Vertical-Layout"><a href="#垂直布局-Vertical-Layout" class="headerlink" title="垂直布局 &#x2F; Vertical Layout"></a>垂直布局 &#x2F; Vertical Layout</h4><p>叠加</p>
+<pre><code class="md">$\overset&#123;!&#125;&#123;=&#125;;    \underset&#123;o&#125;&#123;=&#125;$
+</code></pre>
+<p>$\overset{!}{&#x3D;};\underset{o}{&#x3D;}$</p>
+<p>&nbsp;</p>
+<h3 id="逻辑与集合论-Logic-Set-Theory"><a href="#逻辑与集合论-Logic-Set-Theory" class="headerlink" title="逻辑与集合论 &#x2F; Logic &amp; Set Theory"></a>逻辑与集合论 &#x2F; Logic &amp; Set Theory</h3><p>任意, 存在, 不存在</p>
+<pre><code class="md">$\forall;\exists;\nexists$
+</code></pre>
+<p>$\forall;\exists;\nexists$</p>
+<p>属于, 不属于</p>
+<pre><code class="md">$\in;\notin$
+</code></pre>
+<p>$\in;\notin$</p>
+<p>补集, 子集, 空集</p>
+<pre><code class="md">$\complement;\subset;\supset;\empty;\varnothing$
+</code></pre>
+<p>$\complement;\subset;\supset;\empty;\varnothing$</p>
+<p>与, 或, 非</p>
+<pre><code class="md">$\land;\lor;\lnot$
+</code></pre>
+<p>$\land;\lor;\lnot$</p>
+<p>因为, 所以</p>
+<pre><code class="md">$\because;\therefore$
+</code></pre>
+<p>$\because;\therefore$</p>
+<p>集合</p>
+<pre><code class="md">$\set&#123;a,b,c&#125;;\bigcap;\bigcup$
+</code></pre>
+<p>$\set{a,b,c};\bigcap;\bigcup$</p>
+<p>&nbsp;</p>
+<h3 id="运算符-Operators"><a href="#运算符-Operators" class="headerlink" title="运算符 &#x2F; Operators"></a>运算符 &#x2F; Operators</h3><h4 id="大写运算符-Big-Operators"><a href="#大写运算符-Big-Operators" class="headerlink" title="大写运算符 &#x2F; Big Operators"></a>大写运算符 &#x2F; Big Operators</h4><p>微积分</p>
+<pre><code class="md">$\int;\iint;\iiint;\oint;\oiint;\prod$
+</code></pre>
+<p>$\int;\iint;\iiint;\oint;\oiint;\prod$</p>
+<p>&nbsp;</p>
+<h4 id="二元运算符-Binary-Operators"><a href="#二元运算符-Binary-Operators" class="headerlink" title="二元运算符 Binary Operators"></a>二元运算符 Binary Operators</h4><p>正负</p>
+<pre><code class="md">$\pm$
+</code></pre>
+<p>$\pm$</p>
+<p>&nbsp;</p>
+<h4 id="分式与二进制-Fractions-Binomials"><a href="#分式与二进制-Fractions-Binomials" class="headerlink" title="分式与二进制 &#x2F; Fractions &amp; Binomials"></a>分式与二进制 &#x2F; Fractions &amp; Binomials</h4><p>组合数</p>
+<pre><code class="md">$\dbinom&#123;n&#125;&#123;k&#125;$
+</code></pre>
+<p>$\dbinom{n}{k}$</p>
+<p>&nbsp;</p>
+<h3 id="关系符-Relations"><a href="#关系符-Relations" class="headerlink" title="关系符 &#x2F; Relations"></a>关系符 &#x2F; Relations</h3><p>约等于, 等价</p>
+<pre><code class="md">$\approx;\sim$
+</code></pre>
+<p>$\approx;\sim$</p>
+<p>&nbsp;</p>
+<h3 id="字体-Font"><a href="#字体-Font" class="headerlink" title="字体 &#x2F; Font"></a>字体 &#x2F; Font</h3><p>正体</p>
+<pre><code class="md">$\mathrm&#123;Ab0&#125;$
+</code></pre>
+<p>$\mathrm{Ab0}$</p>
+<p>斜体</p>
+<pre><code class="md">\mathit&#123;Ab0&#125;
+</code></pre>
+<p>$\mathit{Ab0}$</p>
+<p>粗体</p>
+<pre><code class="md">$\bold&#123;Ab0&#125;$
+</code></pre>
+<p>$\bold{Ab0}$</p>
+<p>粗斜体</p>
+<pre><code class="md">$\bm&#123;Ab0&#125;$
+</code></pre>
+<p>$\bm{Ab0}$</p>
+<p>黑板粗体</p>
+<pre><code class="md">$\Bbb&#123;AB&#125;$
+</code></pre>
+<p>$\Bbb{AB}$</p>
+<p>花体</p>
+<pre><code class="md">$\mathscr&#123;AB&#125;$
+</code></pre>
+<p>$\mathscr{AB}$</p>
 
     </div>
 
