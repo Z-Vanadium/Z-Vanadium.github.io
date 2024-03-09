@@ -367,6 +367,18 @@ ZJU~~赛博保安~~信息安全专业本科大一在读
     setInterval("createtime()",250);
     </script>
 
+
+    <div style="margin: 15px;">
+        <span id="ip">IP获取中...</span>
+    </div>
+    <script>
+        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
+            .then(response => response.json())
+                .then(data => {
+                    var sentence = document.getElementById("ip")
+                    sentence.innerText = data.val;
+                })
+    </script>
 </footer>
 
         </div>

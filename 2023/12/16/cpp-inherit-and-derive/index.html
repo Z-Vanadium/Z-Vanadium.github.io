@@ -244,7 +244,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #00a596">OOP</a>
+                <a href="/tags/OOP/" style="color: #39c5bb">OOP</a>
             </span>
             
         </span>
@@ -457,6 +457,18 @@ DerivedC* ptrDerived = (DerivedC*)ptrBase
     setInterval("createtime()",250);
     </script>
 
+
+    <div style="margin: 15px;">
+        <span id="ip">IP获取中...</span>
+    </div>
+    <script>
+        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
+            .then(response => response.json())
+                .then(data => {
+                    var sentence = document.getElementById("ip")
+                    sentence.innerText = data.val;
+                })
+    </script>
 </footer>
 
         </div>

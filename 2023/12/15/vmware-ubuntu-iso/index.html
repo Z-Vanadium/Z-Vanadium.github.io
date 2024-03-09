@@ -249,7 +249,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #ffa2c4">Linux</a>
+                <a href="/tags/Linux/" style="color: #00a596">Linux</a>
             </span>
             
         </span>
@@ -353,6 +353,18 @@
     setInterval("createtime()",250);
     </script>
 
+
+    <div style="margin: 15px;">
+        <span id="ip">IP获取中...</span>
+    </div>
+    <script>
+        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
+            .then(response => response.json())
+                .then(data => {
+                    var sentence = document.getElementById("ip")
+                    sentence.innerText = data.val;
+                })
+    </script>
 </footer>
 
         </div>

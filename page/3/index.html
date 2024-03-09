@@ -264,7 +264,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ff7d73">数学</a>
+            <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ffa2c4">数学</a>
         </span>
         
     </div>
@@ -364,7 +364,7 @@
         
         <span class="tag">
             
-            <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
+            <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
         </span>
         
     </div>
@@ -593,7 +593,7 @@
         
         <span class="tag">
             
-            <a href="/tags/C-C/" style="color: #39c5bb">C/C++</a>
+            <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
         </span>
         
         <span class="tag">
@@ -713,6 +713,18 @@
     setInterval("createtime()",250);
     </script>
 
+
+    <div style="margin: 15px;">
+        <span id="ip">IP获取中...</span>
+    </div>
+    <script>
+        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
+            .then(response => response.json())
+                .then(data => {
+                    var sentence = document.getElementById("ip")
+                    sentence.innerText = data.val;
+                })
+    </script>
 </footer>
 
         </div>

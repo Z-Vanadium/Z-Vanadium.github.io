@@ -239,12 +239,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #ff7d73">Hexo</a>
+                <a href="/tags/Hexo/" style="color: #39c5bb">Hexo</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #ffa2c4">前端</a>
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #03a9f4">前端</a>
             </span>
             
         </span>
@@ -474,6 +474,18 @@ print(ls_f)
     setInterval("createtime()",250);
     </script>
 
+
+    <div style="margin: 15px;">
+        <span id="ip">IP获取中...</span>
+    </div>
+    <script>
+        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
+            .then(response => response.json())
+                .then(data => {
+                    var sentence = document.getElementById("ip")
+                    sentence.innerText = data.val;
+                })
+    </script>
 </footer>
 
         </div>

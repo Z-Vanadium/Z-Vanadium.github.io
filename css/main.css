@@ -779,6 +779,7 @@ strong {
 }
 blockquote {
     background: #d9e8ff6b;
+    /* background: linear-gradient(#d9e8ff6b,#00000000); */
     border-left: 7px solid #1e3e3f5e;
     border-radius: 5px;
     margin: 15px 0;
@@ -816,6 +817,8 @@ h6 {
     margin: 15px 0;
     word-break: keep-all;
 }
+
+/* text color & underline */
 h1 {
     color: #334B49;
 }
@@ -834,6 +837,26 @@ h5 {
 h6 {
     color: #1e3e3f;
 }
+
+.content > h2{
+    text-decoration: underline #f787d591 2px;
+    text-underline-offset: 12px;
+}
+
+.content > h3::before{
+    content: "# ";
+    font-size: 24px;
+    color: #e89ae388;
+    font-weight: lighter;
+}
+
+.content > h4::before{
+    content: "> ";
+    font-size: 24px;
+    color: #8ca2ce88;
+    font-weight: lighter;
+}
+
 h1 {
     font-size: 30px;
 }
