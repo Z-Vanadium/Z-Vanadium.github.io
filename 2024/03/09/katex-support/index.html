@@ -240,7 +240,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #ffa2c4">Hexo</a>
+                <a href="/tags/Hexo/" style="color: #03a9f4">Hexo</a>
             </span>
             
         </span>
@@ -269,7 +269,7 @@
         <!--展示page的完整内容-->
     <div class="content" v-pre>
         <blockquote>
-<p>由于 Hexo 主题 ParticleX 对 Markdown 的渲染和 KaTex 对 Tex 公式的解释之间很容易产生冲突, 这里记录一些冲突的处理办法<br>同时, 记录一些可能用到的或” 书到用时方恨少 “的 Tex 公式</p>
+<p>由于 Hexo 主题 ParticleX 对 Markdown 的渲染和 KaTex 对 Tex 公式的解释之间很容易产生冲突, 这里记录一些冲突的处理办法<br>同时, 记录一些可能用到的或” 书到用时方恨少 “的 Tex 公式<br>关于 KaTex 公式的书写规范, <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/28/docu-standard-format/#%E5%85%AC%E5%BC%8F%E4%BD%BF%E7%94%A8">可另见</a></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>Hexo 版本</strong>: 6.3.0<br><strong>Hexo 主题</strong>: ParticleX</p>
 <span id="more"></span>
@@ -301,6 +301,11 @@
 <pre><code class="md">$\cancel&#123;A&#125;$
 </code></pre>
 <p>$\cancel{A}$</p>
+<p>行尾注 (需要单行公式)</p>
+<pre><code class="md">$$\tag&#123;1&#125; x+y^&#123;2x&#125;$$
+$$\tag*&#123;2&#125; x+y^&#123;2x&#125;$$
+</code></pre>
+<p>$$\tag{1} x+y^{2x}$$<br>$$\tag*{2} x+y^{2x}$$</p>
 <h4 id="垂直布局-Vertical-Layout"><a href="#垂直布局-Vertical-Layout" class="headerlink" title="垂直布局 &#x2F; Vertical Layout"></a>垂直布局 &#x2F; Vertical Layout</h4><p>叠加</p>
 <pre><code class="md">$\overset&#123;!&#125;&#123;=&#125;;\underset&#123;o&#125;&#123;=&#125;$
 </code></pre>
