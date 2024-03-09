@@ -75,6 +75,10 @@
     margin: auto;
     width: 900px;
 }
+
+
+/* foot time counter */
+
 #footer #timeDate {
     color: #5c6b72;
     margin: auto;
@@ -85,9 +89,44 @@
     margin: auto;
     width: 900px;
 }
+/* end */
+
 #footer #footer-wrap div {
     margin: 15px;
 }
+
+
+/* home buttons */
+
+.hometags-button{
+    display: flex;
+    position: fixed;
+    left: 99px;
+    height: 25px;
+    zoom: 1.3;
+    color: #fff;
+}
+
+.hometags-button .my-contain{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hometags-buttonn i{
+    min-width: 20px;
+    color: #fff;
+}
+
+.hometags-button a{
+    color: #fff;
+    font-weight: 300;
+    font-size: large;
+}
+
+/* end */
+
 #home-card {
     width: 300px;
 }
@@ -104,32 +143,6 @@
     display: flex;
     flex-direction: column;
     max-height: 100vh;
-    justify-content: center;
-    overflow: auto;
-    position: sticky;
-    text-align: center;
-    top: 10vh;
-    width: 300px;
-}
-
-.music-player{
-    height: 13vh;
-    width: 250px;
-}
-
-.music-player #card{
-    display: flex;
-}
-
-#home-card #music-style {
-    background: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #d9d9d980;
-    display: flex;
-    margin-top: auto;
-    flex-direction: column;
-    max-height: 150vh;
     justify-content: center;
     overflow: auto;
     position: sticky;
@@ -391,10 +404,6 @@
     margin: auto;
     padding: 20px;
 }
-#home-posts-wrap #home-card #music-wrap{
-    top: 10vh;
-    margin-top: 10vh;
-}
 #home-posts-wrap,
 #archives,
 .article,
@@ -548,7 +557,6 @@
     padding: 20px;
     background-color: #f9fafb;
     border-radius: 60px;
-
 }
 .article .content {
     margin: 50px 0;
@@ -777,11 +785,10 @@ blockquote {
     overflow: auto;
     padding: 0 30px;
 }
-
-blockquote p{
+blockquote p,
+del{
     opacity: 50%;
 }
-
 body {
     background: #f6f8fa;
     color: #1e3e3f;
@@ -1077,9 +1084,39 @@ ol li {
     }
 }
 
+/* waline */
+
+:root{
+    --waline-theme-color: #39c5bb !important;
+    --waline-active-color: #399dc5 !important;
+    --waline-disable-bgcolor: #39c5bc3d !important;
+}
+
+.wl-os,
+.wl-browser{
+    display: none !important;
+}
+
+.wl-login-info {
+    width: 100px !important;
+    margin-top: 20px !important;
+}
+
+.wl-panel{
+    background-color: #39c5bc09 !important;
+}
+
+#waline-container{
+    border-radius: 7px;
+    border-color: #39c5bc77 ;
+    border-width: 1px;
+    border-style: solid;
+}
 
 
+/* end */
 
+/*
 none{
     background-color: #39c5bc10;
     overflow: hidden;
@@ -1096,15 +1133,16 @@ none{
     border-radius: 10px;
     display: flex;
 }
+*/
 
-
+/* friendlink card in page links */
 
 .friendlink-wrap{
-    zoom: 0.667;
+    padding: 0;
     margin-top: 14px;
     margin-left: 30px;
-    width: 380px;
-    height: 444px;
+    width: 200px;
+    height: 220px;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
@@ -1112,100 +1150,77 @@ none{
 }
 
 .friendlink-wrap .friendlink-card{
-    padding: 4%;
+    padding: 0;
     background-color: rgba(255, 255, 255, 0.805);
-    width: 100%;
+    width: 90%;
     height: 90%;
     border-radius: 13px;
     border-style: solid;
     border-color: #39c5bc35;
-    border-width: 3px;
+    border-width: 1px;
+}
+
+.friendlink-wrap .friendlink-card .avatar a{
+    position: relative;
 }
 
 .friendlink-wrap .friendlink-card .avatar img{
-    margin-top: 5%;
-    margin-left: 6%;
-    max-width: 52%;
+    margin: auto;
+    height: 100px;
+    top: 10px;
     border-radius: 50%;
-    border-style: solid;
-    border-color: #39c5bc35;
-    border-width: 3px;
 }
 
 .friendlink-wrap .friendlink-card .content{
-    margin-top: 10%;
-    border-top-style: solid;
-    border-top-width: 2px;
-    border-top-color: #dbeceb;
+    margin-top: 0;
 }
 
-.friendlink-wrap .friendlink-card .content h4{
-    font-size: 2em;
+/*
+.friendlink-wrap .friendlink-card .content h5{
 }
 
 .friendlink-wrap .friendlink-card .content p{
-    font-size: 1.5em;
+}
+*/
+
+.friendlink-wrap .friendlink-card .content .friendlink-card-discription,
+.friendlink-wrap .friendlink-card .content .friendlink-card-name{
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    max-width: 100%;
 }
 
-#friendlink-card-name{
-    margin-left: 10%;
-    margin-top: 0%;
+.friendlink-wrap .friendlink-card .content .friendlink-card-name{
+    margin-top: 10px;
+    width: 100%;
+    font-size: 20px;
+    height: 30px;
+    text-underline-offset: 10px;
+    padding-bottom: 10px;
+    text-decoration: underline wavy #39c5bb;
 }
 
 
-#friendlink-card-discription{
-    margin-left: 3%;
+.friendlink-wrap .friendlink-card .content .friendlink-card-discription{
+    width: 100%;
     margin-top: 6%;
-    margin-right: 6%;
+    font-size: 14px;
+    height: 25px;
 }
-
-
-
-
-
 
 .friendlinks-title{
     font-size: xx-large;
     margin-bottom: 40px;
 }
 
-.hometags-button{
-    display: flex;
-    position: fixed;
-    left: 99px;
-    height: 25px;
-    zoom: 1.3;
-    color: #fff;
-}
+/* end */
 
-.hometags-button .my-contain{
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.hometags-buttonn i{
-    min-width: 20px;
-    color: #fff;
-}
 
-.hometags-button a{
-    color: #fff;
-    font-weight: 300;
-    font-size: large;
-}
-
-:root{
-    --waline-theme-color: #39c5bb !important;
-    --waline-active-color: #399dc5 !important;
-    --waline-disable-bgcolor: #39c5bc3d !important;
-}
-
-.wl-os,
-.wl-browser{
-    display: none !important;
-}
+/* toc */
 
 .toc-article{
     width: 350px;
@@ -1233,20 +1248,14 @@ none{
     margin-top: 14px;
 }
 
-.wl-panel{
-    background-color: #39c5bc09 !important;
-}
-
-#waline-container{
-    border-radius: 7px;
-    border-color: #39c5bc77 ;
-    border-width: 1px;
-    border-style: solid;
-}
-
 #toc ol li::marker{
     color: #c7cbd0 !important;
 }
+
+/* end */
+
+
+/* ul & ol */
 
 ul li::marker,
 ol li::marker:not(ul ol li::marker){
@@ -1266,11 +1275,11 @@ ol li::marker:not(ul ol li::marker){
     padding-bottom: 15px;
 }
 
-.wl-login-info {
-    width: 100px !important;
-    margin-top: 20px !important;
-}
+/* end */
 
+
+/* MISC */
 .my-home-window{
     display: none;
 }
+/* end */
