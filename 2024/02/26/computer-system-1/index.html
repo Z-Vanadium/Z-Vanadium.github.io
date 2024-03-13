@@ -240,7 +240,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/computer/" style="color: #ff7d73">computer</a>
+                <a href="/tags/computer/" style="color: #00a596">computer</a>
             </span>
             
         </span>
@@ -407,7 +407,7 @@ borrow: 借位
 </blockquote>
 <p>When turn the component number to the true number, $E&#x3D;exp-bias$</p>
 <p>&nbsp;</p>
-<h4 id="5-1-5-Normalized-Encoding"><a href="#5-1-5-Normalized-Encoding" class="headerlink" title="5.1.5 Normalized Encoding"></a>5.1.5 Normalized Encoding</h4><p>Value: $15213.0_1\kern_0&#x3D;1.1101101101101_2\times2^{13}$</p>
+<h4 id="5-1-5-Normalized-Encoding"><a href="#5-1-5-Normalized-Encoding" class="headerlink" title="5.1.5 Normalized Encoding"></a>5.1.5 Normalized Encoding</h4><p>Value: $15213.0_1\kern{}_0&#x3D;1.1101101101101_2\times2^{13}$</p>
 <p>Significand</p>
 <ul>
 <li>M &#x3D; $1.1101101101101_2$</li>
@@ -426,10 +426,19 @@ borrow: 借位
 <p>&nbsp;</p>
 <h4 id="5-1-6-Denormalized-Values-Encoding"><a href="#5-1-6-Denormalized-Values-Encoding" class="headerlink" title="5.1.6 Denormalized Values &amp; Encoding"></a>5.1.6 Denormalized Values &amp; Encoding</h4><p>In normalized value range, number lower than $1.0\times 2^{-126}$ is missing and undefined</p>
 <p>In denormalized value range, numbers in than such range definates different meanings</p>
-<p>Additionly, M in denormalized values will be regarded as $0.100…_2$ but not $1.100…_2$, and meanwhile the Exp is $000…0_2$ which means $\times2(^{-(n-2)})_1\kern_0$</p>
+<p>Additionly, M in denormalized values will be regarded as $0.100…_2$ but not $1.100…_2$, and meanwhile the Exp is $000…0_2$ which means $\times2(^{-(n-2)})_1\kern{}_0$</p>
+<blockquote>
+<p>normalized value cannot represent ZERO without denormalized version</p>
+</blockquote>
 <ul>
-<li>$exp &#x3D; 111…1; frac &#x3D; 000…0$: INF (infinity)</li>
-<li>$exp &#x3D; 111…1; frac \ne 000…0$: NaN (Not-a-Number)</li>
+<li><p>$exp &#x3D; 000…0; frac &#x3D; 000…0$: Zero</p>
+</li>
+<li><p>$exp &#x3D; 000…0; frac \ne 000…0$: Numbers close to zero</p>
+</li>
+<li><p>$exp &#x3D; 111…1; frac &#x3D; 000…0$: INF (infinity)</p>
+</li>
+<li><p>$exp &#x3D; 111…1; frac \ne 000…0$: NaN (Not-a-Number)</p>
+</li>
 </ul>
 <p>&nbsp;</p>
 <h4 id="5-1-7-Special-Properties"><a href="#5-1-7-Special-Properties" class="headerlink" title="5.1.7 Special Properties"></a>5.1.7 Special Properties</h4><ul>
