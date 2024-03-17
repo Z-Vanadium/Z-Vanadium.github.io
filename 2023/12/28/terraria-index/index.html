@@ -70,6 +70,16 @@
     };
 </script>
 
+<script>
+    function BackToTop(){
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    };
+</script>
+
 
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
@@ -271,7 +281,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Terraria/" style="color: #ffa2c4">Terraria</a>
+                <a href="/tags/Terraria/" style="color: #ff7d73">Terraria</a>
             </span>
             
         </span>
@@ -430,6 +440,7 @@
     
 
     <div id="read-percent">0</div>
+    <button id="back-to-top" onclick="BackToTop()">^</button>
 </div>
             <footer id="footer">
     <div id="footer-wrap">

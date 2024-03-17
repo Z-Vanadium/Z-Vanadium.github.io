@@ -70,6 +70,16 @@
     };
 </script>
 
+<script>
+    function BackToTop(){
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    };
+</script>
+
 
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
@@ -271,7 +281,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #ffa2c4">Hexo</a>
+                <a href="/tags/Hexo/" style="color: #00a596">Hexo</a>
             </span>
             
         </span>
@@ -431,6 +441,7 @@ $$\tag*&#123;2&#125; x+y^&#123;2x&#125;$$
     
 
     <div id="read-percent">0</div>
+    <button id="back-to-top" onclick="BackToTop()">^</button>
 </div>
             <footer id="footer">
     <div id="footer-wrap">

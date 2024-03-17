@@ -133,6 +133,7 @@
 #home-card-in-post{
     position: absolute;
     right: 2.5%;
+    z-index: 2;
 }
 
 #home-card #card-style {
@@ -1293,6 +1294,24 @@ none{
     box-shadow: 0 0 3px #000;
 }
 
+#back-to-top{
+    display: flex;
+    color: #486a6bc1;
+    font-size: large;
+    font-weight: lighter;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 17%;
+    bottom: 43%;
+    z-index: 1;
+    border: #b9b9b985 0.5px solid;
+    border-radius: 50%;
+    box-shadow: 0 0 3px #000;
+}
+
 /* end */
 
 
@@ -1327,29 +1346,115 @@ ol li::marker:not(ul ol li::marker){
 
 /* markdown-it-container */
 
+.tips,
+.success,
+.warning,
+.danger{
+    border-radius: 5px;
+    margin: 15px 0;
+    overflow: auto;
+    padding: 0 30px;
+}
+
+
+.tips strong,
+.success strong,
+.warning strong,
+.danger strong{
+    color: #000;
+    font-weight: bold;
+}
+
 .tips {
-    padding-left: 10px;
     background-color: rgba(52,152,219,.3);
-    border-left: 4px solid rgb(52,152,219);
+    border-left: 7px solid rgb(52,152,219);
     color: darken(rgb(52,152,219),20%);
 }
+
+.tips::before{
+    content: "TIPs";
+    position: relative;
+    top: 10px;
+    left: -15px;
+    font-size: x-large;
+    color: rgb(52,152,219);
+    text-decoration: underline rgba(52,152,219,.3) 7px;
+}
+
 .success {
-    padding-left: 10px;
     background-color: rgba(46,204,113,.3);
-    border-left: 4px solid rgb(46,204,113);
+    border-left: 7px solid rgb(46,204,113);
     color: darken(rgb(46,204,113),20%);
 }
+
+.success::before{
+    content: "SUCCESS";
+    position: relative;
+    top: 10px;
+    left: -15px;
+    font-size: x-large;
+    color: rgb(46,204,113);
+    text-decoration: underline rgba(46,204,113,.3) 7px;
+}
+
 .warning {
-    padding-left: 10px;
     background-color: rgba(241,196,15,.3);
-    border-left: 4px solid rgb(241,196,15);
+    border-left: 7px solid rgb(241,196,15);
     color: darken(rgb(241,196,15),20%);
 }
+
+.warning::before{
+    content: "WARNING";
+    position: relative;
+    top: 10px;
+    left: -15px;
+    font-size: x-large;
+    color: rgb(241,196,15);
+    text-decoration: underline rgba(241,196,15,.3) 7px;
+}
+
 .danger {
-    padding-left: 10px;
     background-color: rgba(231,76,60,.3);
-    border-left: 4px solid rgb(231,76,60);
+    border-left: 7px solid rgb(231,76,60);
     color: darken(rgb(231,76,60),20%);
 }
 
+.danger::before{
+    content: "DANGER";
+    position: relative;
+    top: 10px;
+    left: -15px;
+    font-size: x-large;
+    color: rgb(231,76,60);
+    text-decoration: underline rgba(231,76,60,.3) 7px;
+}
+
 /* end */
+
+/* new tags */
+
+details{
+    /* border: #616161 1px solid; */
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 12px 0 #0000001a;
+}
+
+details > *:not(details > summary){
+    margin-left: 15px;
+}
+
+summary{
+    background: #f0f0f0;
+    padding-left: 15px;
+    min-height: 50px;
+    padding-top: 20px;
+    font-size: larger;
+}
+
+/* end */
+
+html{
+    background-image: linear-gradient();
+}
