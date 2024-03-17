@@ -46,6 +46,23 @@
 
 <link rel="stylesheet" href="/css/main.css" />
 
+<!-- post read percent calculate and update -->
+<script>
+    function getScrollPercent() {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = window.innerHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        return scrollPercent;
+        }
+    window.onscroll = function() {
+        const scrollPercent = getScrollPercent();
+        const scrollPercentageElement = document.getElementById("read-percent");
+        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
+    };
+</script>
+
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <div id="layout">
@@ -172,7 +189,7 @@
         
         
         <span>
-            <a href="/tags/C-C/" style="background: #00a596">
+            <a href="/tags/C-C/" style="background: #39c5bb">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -183,7 +200,7 @@
         
         
         <span>
-            <a href="/tags/OOP/" style="background: #39c5bb">
+            <a href="/tags/OOP/" style="background: #ffa2c4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -194,7 +211,7 @@
         
         
         <span>
-            <a href="/tags/CSS/" style="background: #03a9f4">
+            <a href="/tags/CSS/" style="background: #39c5bb">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -216,7 +233,7 @@
         
         
         <span>
-            <a href="/tags/FDS/" style="background: #39c5bb">
+            <a href="/tags/FDS/" style="background: #03a9f4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -227,7 +244,7 @@
         
         
         <span>
-            <a href="/tags/Hexo/" style="background: #03a9f4">
+            <a href="/tags/Hexo/" style="background: #ffa2c4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -238,7 +255,7 @@
         
         
         <span>
-            <a href="/tags/JavaScript/" style="background: #ff7d73">
+            <a href="/tags/JavaScript/" style="background: #39c5bb">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -249,7 +266,7 @@
         
         
         <span>
-            <a href="/tags/minecraft/" style="background: #ffa2c4">
+            <a href="/tags/minecraft/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -271,7 +288,7 @@
         
         
         <span>
-            <a href="/tags/Linux/" style="background: #39c5bb">
+            <a href="/tags/Linux/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -282,7 +299,7 @@
         
         
         <span>
-            <a href="/tags/AI/" style="background: #00a596">
+            <a href="/tags/AI/" style="background: #03a9f4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -293,7 +310,7 @@
         
         
         <span>
-            <a href="/tags/computer/" style="background: #39c5bb">
+            <a href="/tags/computer/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -355,7 +372,7 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #00a596">数学</a>
+                        <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #03a9f4">数学</a>
                     </span>
                     
                 </span>
@@ -391,7 +408,7 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #00a596">数学</a>
+                        <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ffa2c4">数学</a>
                     </span>
                     
                 </span>
@@ -418,7 +435,7 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ff7d73">数学</a>
+                        <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #00a596">数学</a>
                     </span>
                     
                 </span>
@@ -445,7 +462,7 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ff7d73">数学</a>
+                        <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ffa2c4">数学</a>
                     </span>
                     
                 </span>

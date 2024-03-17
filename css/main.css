@@ -1275,6 +1275,24 @@ none{
     color: #c7cbd0 !important;
 }
 
+#read-percent{
+    display: flex;
+    color: #486a6bc1;
+    font-size: large;
+    font-weight: lighter;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 17%;
+    bottom: 50%;
+    z-index: -1;
+    border: #b9b9b985 0.5px solid;
+    border-radius: 50%;
+    box-shadow: 0 0 3px #000;
+}
+
 /* end */
 
 

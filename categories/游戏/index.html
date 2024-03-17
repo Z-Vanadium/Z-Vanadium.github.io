@@ -46,6 +46,23 @@
 
 <link rel="stylesheet" href="/css/main.css" />
 
+<!-- post read percent calculate and update -->
+<script>
+    function getScrollPercent() {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = window.innerHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        return scrollPercent;
+        }
+    window.onscroll = function() {
+        const scrollPercent = getScrollPercent();
+        const scrollPercentageElement = document.getElementById("read-percent");
+        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
+    };
+</script>
+
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <div id="layout">
@@ -172,7 +189,7 @@
         
         
         <span>
-            <a href="/categories/%E6%96%87%E6%A1%A3/" style="background: #ff7d73">
+            <a href="/categories/%E6%96%87%E6%A1%A3/" style="background: #ffa2c4">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -183,7 +200,7 @@
         
         
         <span>
-            <a href="/categories/%E5%AE%9E%E7%94%A8/" style="background: #03a9f4">
+            <a href="/categories/%E5%AE%9E%E7%94%A8/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -207,7 +224,7 @@
         
         
         <span>
-            <a href="/categories/%E7%AC%94%E8%AE%B0/" style="background: #ffa2c4">
+            <a href="/categories/%E7%AC%94%E8%AE%B0/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -245,7 +262,7 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/minecraft/" style="color: #ffa2c4">minecraft</a>
+                        <a href="/tags/minecraft/" style="color: #39c5bb">minecraft</a>
                     </span>
                     
                 </span>
@@ -281,7 +298,7 @@
                     
                     <span class="tag">
                         
-                        <a href="/tags/Terraria/" style="color: #03a9f4">Terraria</a>
+                        <a href="/tags/Terraria/" style="color: #00a596">Terraria</a>
                     </span>
                     
                 </span>

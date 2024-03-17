@@ -46,6 +46,23 @@
 
 <link rel="stylesheet" href="/css/main.css" />
 
+<!-- post read percent calculate and update -->
+<script>
+    function getScrollPercent() {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = window.innerHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        return scrollPercent;
+        }
+    window.onscroll = function() {
+        const scrollPercent = getScrollPercent();
+        const scrollPercentageElement = document.getElementById("read-percent");
+        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
+    };
+</script>
+
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <div id="layout">
@@ -172,7 +189,7 @@
         
         
         <span>
-            <a href="/tags/C-C/" style="background: #ff7d73">
+            <a href="/tags/C-C/" style="background: #ffa2c4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -183,7 +200,7 @@
         
         
         <span>
-            <a href="/tags/OOP/" style="background: #03a9f4">
+            <a href="/tags/OOP/" style="background: #39c5bb">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -194,7 +211,7 @@
         
         
         <span>
-            <a href="/tags/CSS/" style="background: #39c5bb">
+            <a href="/tags/CSS/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -238,7 +255,7 @@
         
         
         <span>
-            <a href="/tags/JavaScript/" style="background: #00a596">
+            <a href="/tags/JavaScript/" style="background: #39c5bb">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -260,7 +277,7 @@
         
         
         <span>
-            <a href="/tags/Terraria/" style="background: #00a596">
+            <a href="/tags/Terraria/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -271,7 +288,7 @@
         
         
         <span>
-            <a href="/tags/Linux/" style="background: #39c5bb">
+            <a href="/tags/Linux/" style="background: #ffa2c4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -282,7 +299,7 @@
         
         
         <span>
-            <a href="/tags/AI/" style="background: #03a9f4">
+            <a href="/tags/AI/" style="background: #ff7d73">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -293,7 +310,7 @@
         
         
         <span>
-            <a href="/tags/computer/" style="background: #ffa2c4">
+            <a href="/tags/computer/" style="background: #03a9f4">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -304,7 +321,7 @@
         
         
         <span>
-            <a href="/tags/%E6%95%B0%E5%AD%A6/" style="background: #03a9f4">
+            <a href="/tags/%E6%95%B0%E5%AD%A6/" style="background: #39c5bb">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>
@@ -315,7 +332,7 @@
         
         
         <span>
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="background: #ffa2c4">
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="background: #00a596">
                 <span class="icon">
                     <i class="fa-solid fa-tags fa-fw"></i>
                 </span>

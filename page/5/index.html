@@ -48,6 +48,23 @@
 
 <link rel="stylesheet" href="/css/main.css" />
 
+<!-- post read percent calculate and update -->
+<script>
+    function getScrollPercent() {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = window.innerHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        return scrollPercent;
+        }
+    window.onscroll = function() {
+        const scrollPercent = getScrollPercent();
+        const scrollPercentageElement = document.getElementById("read-percent");
+        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
+    };
+</script>
+
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <div id="layout">
@@ -277,12 +294,12 @@ Error: Spawn failed
         
         <span class="tag">
             
-            <a href="/tags/Hexo/" style="color: #ff7d73">Hexo</a>
+            <a href="/tags/Hexo/" style="color: #ffa2c4">Hexo</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #00a596">前端</a>
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #ff7d73">前端</a>
         </span>
         
     </div>
@@ -363,7 +380,7 @@ Error: Spawn failed
         
         <span class="tag">
             
-            <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
+            <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
         </span>
         
     </div>
@@ -405,7 +422,7 @@ Error: Spawn failed
         
         <span class="tag">
             
-            <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #00a596">数学</a>
+            <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ff7d73">数学</a>
         </span>
         
     </div>
@@ -490,12 +507,12 @@ Error: Spawn failed
         
         <span class="tag">
             
-            <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
+            <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #ff7d73">碎碎念</a>
+            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #00a596">碎碎念</a>
         </span>
         
     </div>
@@ -553,12 +570,12 @@ Error: Spawn failed
         
         <span class="tag">
             
-            <a href="/tags/Hexo/" style="color: #ff7d73">Hexo</a>
+            <a href="/tags/Hexo/" style="color: #39c5bb">Hexo</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #03a9f4">前端</a>
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #00a596">前端</a>
         </span>
         
     </div>

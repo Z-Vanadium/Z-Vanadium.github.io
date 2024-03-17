@@ -48,6 +48,23 @@
 
 <link rel="stylesheet" href="/css/main.css" />
 
+<!-- post read percent calculate and update -->
+<script>
+    function getScrollPercent() {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = window.innerHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        return scrollPercent;
+        }
+    window.onscroll = function() {
+        const scrollPercent = getScrollPercent();
+        const scrollPercentageElement = document.getElementById("read-percent");
+        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
+    };
+</script>
+
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <div id="layout">
@@ -269,7 +286,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #ff7d73">数学</a>
+            <a href="/tags/%E6%95%B0%E5%AD%A6/" style="color: #03a9f4">数学</a>
         </span>
         
     </div>
@@ -317,7 +334,7 @@
         
         <span class="tag">
             
-            <a href="/tags/computer/" style="color: #03a9f4">computer</a>
+            <a href="/tags/computer/" style="color: #39c5bb">computer</a>
         </span>
         
     </div>
@@ -356,7 +373,7 @@
         
         <span class="tag">
             
-            <a href="/tags/AI/" style="color: #ffa2c4">AI</a>
+            <a href="/tags/AI/" style="color: #03a9f4">AI</a>
         </span>
         
     </div>
@@ -408,7 +425,7 @@
         
         <span class="tag">
             
-            <a href="/tags/minecraft/" style="color: #ff7d73">minecraft</a>
+            <a href="/tags/minecraft/" style="color: #39c5bb">minecraft</a>
         </span>
         
     </div>
@@ -447,7 +464,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #ffa2c4">碎碎念</a>
+            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #39c5bb">碎碎念</a>
         </span>
         
     </div>
@@ -495,7 +512,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Terraria/" style="color: #00a596">Terraria</a>
+            <a href="/tags/Terraria/" style="color: #ffa2c4">Terraria</a>
         </span>
         
     </div>
