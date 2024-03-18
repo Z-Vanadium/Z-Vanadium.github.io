@@ -1322,10 +1322,10 @@ ol li::marker:not(ul ol li::marker){
     color: #b4bfc2 !important;
 }
 
-.post ul,
-.post ol,
-.article ul,
-.article ol{
+.post > ul,
+.post > ol,
+.article > ul,
+.article > ol{
     border: #E4E4E4;
     border-width: 1px;
     border-style: solid;
