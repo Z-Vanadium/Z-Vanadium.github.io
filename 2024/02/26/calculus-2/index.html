@@ -323,7 +323,7 @@
 <p>柯西收敛准则</p>
 </li>
 </ul>
-<p>$几何级数/等比级数\displaystyle\sum_{n=1}<sup>{\infty}aq</sup>{n-1}=S_n$</p>
+<p>$几何级数/等比级数\displaystyle\sum_{n=1}^{\infty}aq^{n-1}=S_n$</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>$|q|&lt;1:\ S_n\rightarrow\displaystyle\frac{a}{1-q}$</p>
@@ -335,8 +335,8 @@
 <p>$q&lt;-1:\ S_n不存在$</p>
 </li>
 </ul>
-<p>$p-级数\displaystyle\sum_{n=1}<sup>{\infty}\frac{1}{n</sup>p}$</p>
-<p>$引入f(x)=\displaystyle\frac{1}{x<sup>p}(x&gt;0),有\sum_{n=1}</sup>\infty\frac{1}{(n+1)<sup>p}=-1+\sum_{n=2}</sup>\infty\frac{1}{n^p}$</p>
+<p>$p-级数\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$</p>
+<p>$引入f(x)=\displaystyle\frac{1}{x^p}(x&gt;0),有\sum_{n=1}^\infty\frac{1}{(n+1)^p}=-1+\sum_{n=2}^\infty\frac{1}{n^p}$</p>
 <ol>
 <li class="lvl-3">
 <p><strong>性质1</strong>: $如果\sum u_n=A,\sum v_n=B, 则对于\forall\alpha,\beta,\sum(\alpha u_n+\beta v_n)=\alpha A+\beta B$</p>
@@ -364,7 +364,7 @@ $设\sum u_n,\sum v_n正项级数,\ u_n\le Cv_n(C&gt;0)$</p>
 <ol>
 <li class="lvl-7">$\sum v_n收敛\Rightarrow\sum u_n收敛$</li>
 <li class="lvl-7">$\sum u_n发散\Rightarrow\sum v_n发散$<br>
-$n&gt;e<sup>{e</sup>{e^2}},\ln \ln \ln n&gt;n$</li>
+$n&gt;e^{e^{e^2}},\ln \ln \ln n&gt;n$</li>
 </ol>
 </li>
 <li class="lvl-3">
@@ -399,7 +399,7 @@ $正项级数\sum u_n,\lim\displaystyle\sqrt[n]{u_n}=\gamma(or +\infty)$</p>
 </ol>
 </li>
 <li class="lvl-3">
-<p><sub>积分判别法</sub><br>
+<p>~积分判别法~<br>
 $f(x)在[1,+\infty]上递减的非负连续函数,u_n=f(n)\Rightarrow\displaystyle\sum u_n与\int_1^{+\infty}f(x)敛散性相同$</p>
 </li>
 </ol>
@@ -432,14 +432,14 @@ $f(x)在[1,+\infty]上递减的非负连续函数,u_n=f(n)\Rightarrow\displaysty
 </ul>
 <p> </p>
 <h3 id="幂级数的收敛性和运算">幂级数的收敛性和运算</h3>
-<p>$幂级数\sum_{n=0}<sup>{+\infty}a_nx</sup>n = a_0 + a_1x + a_2x^2+…+ a_nx^n + …$</p>
+<p>$幂级数\sum_{n=0}^{+\infty}a_nx^n = a_0 + a_1x + a_2x^2+…+ a_nx^n + …$</p>
 <h4 id="Abel-定理">Abel 定理</h4>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>$若\ \sum a_nx^n在x=x_0收敛,则对\forall x:|x|\gt x_0,\sum a_nx^n绝对收敛;$</p>
 </li>
 <li class="lvl-2">
-<p>$若\ \sum a_nx^n在x=x_0收敛,则对\forall x:|x|\lt x_0,\sum a_nx^n绝对收敛 $</p>
+<p>$若\ \sum a_nx^n在x=x_0收敛,则对\forall x:|x|\lt x_0,\sum a_nx^n绝对收敛$</p>
 </li>
 </ul>
 <ol>
@@ -456,7 +456,7 @@ $f(x)在[1,+\infty]上递减的非负连续函数,u_n=f(n)\Rightarrow\displaysty
 <p> </p>
 <h4 id="柯西-阿达马定理">柯西-阿达马定理</h4>
 <p>$级数\sum a_nx^n,若\lim\displaystyle\frac{|a_n|}{|a_{n+1}|}=R,或\lim\frac{1}{\sqrt{|a_n|}}=R,则R为收敛半径$</p>
-<p><strong>tip</strong> $|x-x_0|\lt R^\star 绝对收敛\Rightarrow 收敛半径 R\ge R<sup>\star;附加上条件|x-x_0|&gt;R</sup>\star 发散\Rightarrow 收敛半径R=R^\star$</p>
+<p><strong>tip</strong> $|x-x_0|\lt R^\star 绝对收敛\Rightarrow 收敛半径 R\ge R^\star;附加上条件|x-x_0|&gt;R^\star 发散\Rightarrow 收敛半径R=R^\star$</p>
 <p> </p>
 <p><strong>引理</strong></p>
 <p>$若幂级数\sum a_nx^n收敛半径为R$</p>
@@ -504,7 +504,7 @@ $f(x)在[1,+\infty]上递减的非负连续函数,u_n=f(n)\Rightarrow\displaysty
 <p> </p>
 <h3 id="函数展成幂级数">函数展成幂级数</h3>
 <h4 id="泰勒级数">泰勒级数</h4>
-<p>$\lim\displaystyle\frac{|x|<sup>{n+1}}{(n+1)!}\le\lim\frac{([x]+1)</sup>{n+1}}{(n+1)!}=0$</p>
+<p>$\lim\displaystyle\frac{|x|^{n+1}}{(n+1)!}\le\lim\frac{([x]+1)^{n+1}}{(n+1)!}=0$</p>
 <p>若泰勒展开的拉格朗日余项趋向于 0, 则原函数等于泰勒级数</p>
 <p> </p>
 <h4 id="基本初等函数的幂级数展开">基本初等函数的幂级数展开</h4>
@@ -517,7 +517,7 @@ $f(x)在[1,+\infty]上递减的非负连续函数,u_n=f(n)\Rightarrow\displaysty
 <p>写出对应的泰勒级数 $\displaystyle\sum\frac{f^{(n)}(x_0)}{n!}$，求出收敛区间 $|x-x_0|&lt;R$</p>
 </li>
 <li class="lvl-3">
-<p>验证 $\displaystyle\lim R_n(x)=\lim\frac{f<sup>{(n+1)}(\xi)}{(n+1)!}(x-x_0)</sup>{n+1}=0$ ，其中 $\xi\in(x_0,x),|x-x_0|&lt;R$</p>
+<p>验证 $\displaystyle\lim R_n(x)=\lim\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}=0$ ，其中 $\xi\in(x_0,x),|x-x_0|&lt;R$</p>
 </li>
 <li class="lvl-3">
 <p>验证收敛端点</p>
@@ -526,8 +526,8 @@ $f(x)在[1,+\infty]上递减的非负连续函数,u_n=f(n)\Rightarrow\displaysty
 <p>$\displaystyle\sum_{n=0}^\infty x^n=\frac{1}{1-x},|x|&lt;1$</p>
 <h4 id="其他展开方法">其他展开方法</h4>
 <p>间接求</p>
-<p>$\arctan x=\displaystyle\sum_{n=0}<sup>{+\infty}(-1)</sup>n\frac{x^{2n+1}}{2n+1},x\in[-1,1]$</p>
-<p>$\displaystyle\frac{1}{\sqrt{1+x}}=1+\sum_{n=1}^\infty (-1)<sup>n\frac{(2n-1)!!}{(2n)!!}x</sup>n$</p>
+<p>$\arctan x=\displaystyle\sum_{n=0}^{+\infty}(-1)^n\frac{x^{2n+1}}{2n+1},x\in[-1,1]$</p>
+<p>$\displaystyle\frac{1}{\sqrt{1+x}}=1+\sum_{n=1}^\infty (-1)^n\frac{(2n-1)!!}{(2n)!!}x^n$</p>
 <p>$\displaystyle\frac{1}{2\sqrt{n}}&lt;\frac{(2n-1)!!}{(2n)!!}&lt;\frac{1}{\sqrt{n}}$</p>
 <p> </p>
 <h3 id="傅里叶展开">傅里叶展开</h3>
@@ -582,7 +582,7 @@ $f(x)在[1,+\infty]上递减的非负连续函数,u_n=f(n)\Rightarrow\displaysty
 <p> </p>
 <h4 id="帕塞瓦尔等式">帕塞瓦尔等式</h4>
 <p>若 $f(x)$ 可积且平方可积，左式的级数收敛</p>
-<p>$$\displaystyle\frac{a_0<sup>2}{2}+\sum_{n=1}</sup>\infty(a_n<sup>2+b_n</sup>2)=\frac{1}{l}\int_{-l}<sup>lf</sup>2(x)\mathrm{d}x$$</p>
+<p>$$\displaystyle\frac{a_0^2}{2}+\sum_{n=1}^\infty(a_n^2+b_n^2)=\frac{1}{l}\int_{-l}^lf^2(x)\mathrm{d}x$$</p>
 <p> </p>
 <p>区间 $[0,l]$ 上</p>
 <blockquote>

@@ -877,9 +877,18 @@ h6 {
     font-size: 15px;
 }
 hr {
-    border-style: dashed none none;
-    border-width: 1.5px;
+    border: dashed 2px #8fb1eb;
+    border-width: 2px;
 }
+/*
+hr::before{
+    content: "X";
+    position: absolute;
+    line-height: 1;
+    z-index: 1;
+    font-size: 20px;
+}
+*/
 img,
 video,
 audio,
@@ -1354,6 +1363,7 @@ ol li::marker:not(ul ol li::marker){
     margin: 15px 0;
     overflow: auto;
     padding: 0 30px;
+    opacity: .667;
 }
 
 
