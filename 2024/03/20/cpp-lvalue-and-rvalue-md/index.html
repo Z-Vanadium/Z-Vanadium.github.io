@@ -288,13 +288,16 @@
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <ul>
-<li></li>
-</ul>
+        <blockquote>
+<p>这是 <a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rX4y1C72X/?spm_id_from=333.1007.top_right_bar_window_history.content.click">C++
+网课</a>学习笔记</p>
+</blockquote>
 <span id="more"></span>
 <!--
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/FILENAME.XXX">
 -->
+<p> </p>
 <h3 id="左值和右值">1 左值和右值</h3>
 <h4 id="引入">1.1 引入</h4>
 <p>考虑这样一段代码</p>
@@ -350,8 +353,15 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#c
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">// 1</span></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">// 3</span></span></code></pre></div>
 <p>实际上, 在 C++ 中, 我们严格区分了可以赋值的表达式与不可赋值的表达式,
-也就是说, 一个表达式有如下两个属性: - type - value category - lvalue:
-表征一个具体的对象 / 一块确定的内存 - rvalue: 不与对象关联</p>
+也就是说, 一个表达式有如下两个属性:</p>
+<ul>
+<li>type</li>
+<li>value category
+<ul>
+<li>lvalue: 表征一个具体的对象 / 一块确定的内存</li>
+<li>rvalue: 不与对象关联</li>
+</ul></li>
+</ul>
 <p>当然, 要区分的是, 这个 value category 所表示的是表达式的值的性质,
 而不是值的性质</p>
 <p> </p>
