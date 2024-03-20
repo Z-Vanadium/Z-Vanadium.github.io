@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>cpp-lvalue-and-rvalue.md | Vanadium的小屋</title>
+    <title>C++ | 右值引用 &amp; 移动语义 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -242,7 +242,7 @@
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC"><span class="toc-text">1 左值和右值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%BC%95%E5%85%A5"><span class="toc-text">1.1 引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%80%BC%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.2 表达式的值的类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E5%B7%A6%E5%8F%B3%E5%80%BC%E7%9A%84%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8"><span class="toc-text">1.3 左右值的内存使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E5%B7%A6%E5%80%BC"><span class="toc-text">1.4 左值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%8F%B3%E5%80%BC"><span class="toc-text">1.5 右值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BA%AF%E5%8F%B3%E5%80%BC%E5%92%8C%E5%B0%86%E4%BA%A1%E5%80%BC"><span class="toc-text">2 纯右值和将亡值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%BC%95%E5%85%A5"><span class="toc-text">2.1 引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E7%BA%AF%E5%8F%B3%E5%80%BC%E5%92%8C%E5%B0%86%E4%BA%A1%E5%80%BC"><span class="toc-text">2.2 纯右值和将亡值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-text">3</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC"><span class="toc-text">1 左值和右值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-text">1.1 引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%80%BC%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.2 表达式的值的类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E5%8F%B3%E5%80%BC%E7%9A%84%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8"><span class="toc-text">1.3 左右值的内存使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E5%80%BC"><span class="toc-text">1.4 左值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%B3%E5%80%BC"><span class="toc-text">1.5 右值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%AF%E5%8F%B3%E5%80%BC%E5%92%8C%E5%B0%86%E4%BA%A1%E5%80%BC"><span class="toc-text">2 纯右值和将亡值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E5%85%A5-1"><span class="toc-text">2.1 引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%AF%E5%8F%B3%E5%80%BC%E5%92%8C%E5%B0%86%E4%BA%A1%E5%80%BC-1"><span class="toc-text">2.2 纯右值和将亡值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#section"><span class="toc-text">3</span></a></li></ol>
     </div>      
 </div>
 
@@ -251,7 +251,7 @@
 
 <div class="article">
     <div>
-        <h1>cpp-lvalue-and-rvalue.md</h1>
+        <h1>C++ | 右值引用 &amp; 移动语义</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -271,7 +271,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
+                <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
             </span>
             
         </span>
@@ -288,227 +288,181 @@
       
         <!--展示page的完整内容-->
     <div class="content" v-pre>
-        <ul class="lvl-0">
-<li class="lvl-2">
-</li>
+        <ul>
+<li></li>
 </ul>
 <span id="more"></span>
 <!--
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/FILENAME.XXX">
 -->
-<h3 id="1-左值和右值">1 左值和右值</h3>
-<h4 id="1-1-引入">1.1 引入</h4>
+<h3 id="左值和右值">1 左值和右值</h3>
+<h4 id="引入">1.1 引入</h4>
 <p>考虑这样一段代码</p>
-<pre><code class="c++">    int n;
-    n = 1;
-    1 = n;
-</code></pre>
-<p>对于这段代码, 我们不难理解这是错误, 但是当我们思考错误的原因, 可以发现这并不简单</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> n<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span> <span class="op">=</span> n<span class="op">;</span></span></code></pre></div>
+<p>对于这段代码, 我们不难理解这是错误, 但是当我们思考错误的原因,
+可以发现这并不简单</p>
 <div class="tips">
-<p>为什么 <code>1 = n;</code> 会报错而 <code>n = 1;</code> 却是合法的呢?</p>
+<p>为什么 <code>1 = n;</code> 会报错而 <code>n = 1;</code>
+却是合法的呢?</p>
 </div>
-<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0055.bmp">
-<p>观察编译器给出的报错提示 <code>表达式必须是可修改的左值</code>, 一个全新的概念出现了–左值(lvalue)</p>
+<p><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0055.bmp"></p>
+<p>观察编译器给出的报错提示 <code>表达式必须是可修改的左值</code>,
+一个全新的概念出现了--左值(lvalue)</p>
 <p> </p>
-<h4 id="1-2-表达式的值的类型">1.2 表达式的值的类型</h4>
-<p>与 <code>1 = n;</code> 类似的语句还有很多, 例如 <code>int foo(); foo() = 3;</code>, <code>int m; m + 3 = 4;</code> 等等, 这些语句的出现似乎在提示我们一个很简单的道理, 一个你的 C 语言启蒙老师大概率和你讲过的话:</p>
+<h4 id="表达式的值的类型">1.2 表达式的值的类型</h4>
+<p>与 <code>1 = n;</code> 类似的语句还有很多, 例如
+<code>int foo(); foo() = 3;</code>, <code>int m; m + 3 = 4;</code> 等等,
+这些语句的出现似乎在提示我们一个很简单的道理, 一个你的 C
+语言启蒙老师大概率和你讲过的话:</p>
 <blockquote>
 <p>C 语言里面的表达式不是方程</p>
 </blockquote>
 <p>正因如此, 我们就能理解下面这句话了</p>
 <p>即便变量类型相同, 依然存在某些表达式是不能被赋值的</p>
 <p>那么那些无法赋值的表达式到底有什么特征呢?</p>
-<p>很简单, <code>n</code> 表征一个对象, 在物理意义上表征着内存中的某一块; 而 <code>1</code> 不表征一个实在的对象, 也就是说, 他表征着一个不与对象关联的值, 也就是字面量</p>
-<p>回到形如 <code>foo() = 3;</code>, <code>m + 3 = 4;</code> 的语句, 套用我们刚才的分析, 可以发现, 不论是 <code>foo()</code> 还是 <code>m + 3</code>, 他们这个表达式所返回的值都是<strong>临时的</strong>, 不表征任何一个对象, 不关联任何一片内存, 因此尝试对其赋值的操作是不合法的</p>
-<p>由此, 假如我们改变 <code>foo()</code> 的定义, 让他返回一个不临时的变量, 是不是就可以对其赋值呢?</p>
+<p>很简单, <code>n</code> 表征一个对象,
+在物理意义上表征着内存中的某一块; 而 <code>1</code>
+不表征一个实在的对象, 也就是说, 他表征着一个不与对象关联的值,
+也就是字面量</p>
+<p>回到形如 <code>foo() = 3;</code>, <code>m + 3 = 4;</code> 的语句,
+套用我们刚才的分析, 可以发现, 不论是 <code>foo()</code> 还是
+<code>m + 3</code>, 他们这个表达式所返回的值都是<strong>临时的</strong>,
+不表征任何一个对象, 不关联任何一片内存,
+因此尝试对其赋值的操作是不合法的</p>
+<p>由此, 假如我们改变 <code>foo()</code> 的定义,
+让他返回一个不临时的变量, 是不是就可以对其赋值呢?</p>
 <p>答案是肯定的, 请看如下实例</p>
-<pre><code class="c++">int n;
-int &amp;foo()&#123; // foo() 的返回值是 int&amp;, 这是一个引用, 因此是表征某一块确定的内存地址的
-    return n;
-&#125;
-int main()&#123;
-    n = 1;
-    std::cout&lt;&lt;n&lt;&lt;std::endl;
-    foo() = 3;  // 这样的操作是合法的
-    std::cout&lt;&lt;n&lt;&lt;std::endl;
-&#125;
-// output:
-// 1
-// 3
-</code></pre>
-<p>实际上, 在 C++ 中, 我们严格区分了可以赋值的表达式与不可赋值的表达式, 也就是说, 一个表达式有如下两个属性:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>type</p>
-</li>
-<li class="lvl-2">
-<p>value category</p>
-<ul class="lvl-2">
-<li class="lvl-4">lvalue: 表征一个具体的对象 / 一块确定的内存</li>
-<li class="lvl-4">rvalue: 不与对象关联</li>
-</ul>
-</li>
-</ul>
-<p>当然, 要区分的是, 这个 value category 所表示的是表达式的值的性质, 而不是值的性质</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> <span class="op">&amp;</span>foo<span class="op">()&#123;</span> <span class="co">// foo() 的返回值是 int&amp;, 这是一个引用, 因此是表征某一块确定的内存地址的</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()&#123;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>cout<span class="op">&lt;&lt;</span>n<span class="op">&lt;&lt;</span><span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    foo<span class="op">()</span> <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>  <span class="co">// 这样的操作是合法的</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>cout<span class="op">&lt;&lt;</span>n<span class="op">&lt;&lt;</span><span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">// output:</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">// 1</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">// 3</span></span></code></pre></div>
+<p>实际上, 在 C++ 中, 我们严格区分了可以赋值的表达式与不可赋值的表达式,
+也就是说, 一个表达式有如下两个属性: - type - value category - lvalue:
+表征一个具体的对象 / 一块确定的内存 - rvalue: 不与对象关联</p>
+<p>当然, 要区分的是, 这个 value category 所表示的是表达式的值的性质,
+而不是值的性质</p>
 <p> </p>
-<h4 id="1-3-左右值的内存使用">1.3 左右值的内存使用</h4>
-<p>那为什么我们一定要引入左值和右值的概念呢? 实际上如果我们从汇编的角度来看, 可以发现假如我们只有左值(当然不能只有右值, 因为你也不想你的语言无法赋值吧), 我们就要为每一个表达式都分配一个寄存器进行内存操作, 这大大提高了 C 语言向汇编编译的复杂度, 对效率是极其不利的</p>
-<p>不过我们也<strong>不能绝对</strong>的说右值就不能占用内存, 有的时候, 右值也是可以占用内存的</p>
-<p>与之类似的是, 左值表征了一个对象, 从概念上来说左值一定要占用内存, 但是有趣的是, 有的编译器会对一些比较简单的情况做出优化, 这时候左值就不占用内存了</p>
+<h4 id="左右值的内存使用">1.3 左右值的内存使用</h4>
+<p>那为什么我们一定要引入左值和右值的概念呢?
+实际上如果我们从汇编的角度来看,
+可以发现假如我们只有左值(当然不能只有右值,
+因为你也不想你的语言无法赋值吧),
+我们就要为每一个表达式都分配一个寄存器进行内存操作, 这大大提高了 C
+语言向汇编编译的复杂度, 对效率是极其不利的</p>
+<p>不过我们也<strong>不能绝对</strong>的说右值就不能占用内存, 有的时候,
+右值也是可以占用内存的</p>
+<p>与之类似的是, 左值表征了一个对象, 从概念上来说左值一定要占用内存,
+但是有趣的是, 有的编译器会对一些比较简单的情况做出优化,
+这时候左值就不占用内存了</p>
 <p>例如</p>
-<pre><code class="c++">int foo()&#123;
-    int n = 1;
-    return n + 1;
-&#125;
-
-</code></pre>
-<pre><code class="assembly">foo():
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> foo<span class="op">()&#123;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> n <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span></code></pre></div>
+<pre class="assembly"><code>foo():
     mov eax, 2
-    ret
-</code></pre>
+    ret</code></pre>
 <p>这样的优化一般只发生在我们注意不到的前提下</p>
 <div class="tips">
 <p>请忘记这一点, 让我们暂时记住左值一定占用内存</p>
 </div>
 <p> </p>
-<h4 id="1-4-左值">1.4 左值</h4>
-<p>lvalue 表征一个具体的对象 / 一块确定的内存, 支持取地址 <code>&amp;</code> 和初始化引用操作</p>
+<h4 id="左值">1.4 左值</h4>
+<p>lvalue 表征一个具体的对象 / 一块确定的内存, 支持取地址
+<code>&amp;</code> 和初始化引用操作</p>
 <div class="warning">
 <p>不是所有的左值都支持赋值</p>
 </div>
-<p>例如 <code>const char name[] = &quot;Vanadium&quot;; name = &quot;Vagrant&quot;;</code> 就是非法的, 之所以 <code>name</code> 不能被赋值, 不是因为他是特殊的左值, 而是因为他是 const value 常量</p>
-<p>那左值具体包含什么呢?</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>任何有名字的表达式一定是左值 (枚举除外)</p>
-</li>
-<li class="lvl-2">
-<p>内置的 <code>++a</code>, <code>a = b</code>, <code>a += b</code>,(他们的返回都是对变量的引用) <code>*p</code>, <code>p-&gt;m</code>(他们一定占用内存) 是左值</p>
-</li>
-<li class="lvl-2">
-<p>如果 <code>a[n]</code> 的操作数之一的佐治数组或指针</p>
-</li>
-<li class="lvl-2">
-<p>对左值结构体作成员访问</p>
-</li>
-<li class="lvl-2">
-<p>强制类型转换为引用</p>
-</li>
-<li class="lvl-2">
-<p>字符串字面量(const char[N])</p>
-</li>
-</ul>
+<p>例如 <code>const char name[] = "Vanadium"; name = "Vagrant";</code>
+就是非法的, 之所以 <code>name</code> 不能被赋值, 不是因为他是特殊的左值,
+而是因为他是 const value 常量</p>
+<p>那左值具体包含什么呢? - 任何有名字的表达式一定是左值 (枚举除外) -
+内置的 <code>++a</code>, <code>a = b</code>,
+<code>a += b</code>,(他们的返回都是对变量的引用) <code>*p</code>,
+<code>p-&gt;m</code>(他们一定占用内存) 是左值 - 如果 <code>a[n]</code>
+的操作数之一的佐治数组或指针 - 对左值结构体作成员访问 -
+强制类型转换为引用 - 字符串字面量(const char[N])</p>
 <div class="tips">
 <p>其他字面量都是右值</p>
 </div>
 <p>当左值放在赋值表达式的右边时, 则会发生左值向右值的隐式类型转换</p>
-<h4 id="1-5-右值">1.5 右值</h4>
+<h4 id="右值">1.5 右值</h4>
 <p>rvalue 并不表征一个对象, 非左值的表达式即是右值</p>
-<p>右值表达式经常</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>用来计算内置运算符的一个操作数</p>
-<ul class="lvl-2">
-<li class="lvl-4">例如 <code>1 + 2 + 3</code> 中, 1 和 2 是右值, 1 + 2 也是右值</li>
-</ul>
-</li>
-<li class="lvl-2">
-<p>初始化一个对象</p>
-<ul class="lvl-2">
-<li class="lvl-4">例如 <code>int i = 1 + 2;</code>, <code>int f(int); f(2);</code></li>
-</ul>
-</li>
-</ul>
-<p>右值的举例</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>枚举数和除了字符串字面量以外的字面量</p>
-</li>
-<li class="lvl-2">
-<p>内置的 <code>a++</code>, <code>a + b</code>, <code>a || b</code>, <code>a &lt; b</code>, <code>&amp;a</code>等</p>
-</li>
-<li class="lvl-2">
-<p>this</p>
-</li>
-<li class="lvl-2">
-<p>lambda匿名函数</p>
-</li>
-</ul>
+<p>右值表达式经常 - 用来计算内置运算符的一个操作数 - 例如
+<code>1 + 2 + 3</code> 中, 1 和 2 是右值, 1 + 2 也是右值 -
+初始化一个对象 - 例如 <code>int i = 1 + 2;</code>,
+<code>int f(int); f(2);</code></p>
+<p>右值的举例 - 枚举数和除了字符串字面量以外的字面量 - 内置的
+<code>a++</code>, <code>a + b</code>, <code>a || b</code>,
+<code>a &lt; b</code>, <code>&amp;a</code>等 - this - lambda匿名函数</p>
 <p> </p>
-<h3 id="2-纯右值和将亡值">2 纯右值和将亡值</h3>
-<h4 id="2-1-引入">2.1 引入</h4>
+<h3 id="纯右值和将亡值">2 纯右值和将亡值</h3>
+<h4 id="引入-1">2.1 引入</h4>
 <p>对于 C++ 来说, 类和结构会对简单的左值和右值的区分造成困惑</p>
 <p>考虑代码:</p>
-<pre><code class="c++">typedef struct&#123;
-    int x, y, z;
-&#125;Foo;
-
-Foo Func()&#123;
-    Foo ret;
-    ret.x = 1, ret.y = 2, ret.z = 3;
-    return ret;
-&#125;
-
-int main()&#123;
-    int tmp = Func().y;
-    std::cout&lt;&lt;tmp&lt;&lt;std::endl;
-&#125;
-// output:
-// 2
-</code></pre>
-<p>根据我们在上一章节的讨论, <code>Func()</code>的返回值应该是一个右值, 他不表征一块具体的内存, 但是他又必须表征一块内存, 才能通过 <code>.</code> 访问字段 <code>y</code></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">struct</span><span class="op">&#123;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x<span class="op">,</span> y<span class="op">,</span> z<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span>Foo<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Foo Func<span class="op">()&#123;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    Foo ret<span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    ret<span class="op">.</span>x <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> ret<span class="op">.</span>y <span class="op">=</span> <span class="dv">2</span><span class="op">,</span> ret<span class="op">.</span>z <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ret<span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()&#123;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> tmp <span class="op">=</span> Func<span class="op">().</span>y<span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>cout<span class="op">&lt;&lt;</span>tmp<span class="op">&lt;&lt;</span><span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">// output:</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">// 2</span></span></code></pre></div>
+<p>根据我们在上一章节的讨论, <code>Func()</code>的返回值应该是一个右值,
+他不表征一块具体的内存, 但是他又必须表征一块内存, 才能通过
+<code>.</code> 访问字段 <code>y</code></p>
 <p>这样矛盾的表达式就带来了困惑</p>
 <p>再考虑代码</p>
-<pre><code class="c++">const int &amp; cr = 1;
-</code></pre>
-<p>我们知道, 1 是一个右值, 执行上述赋值语句, 会创建一个临时变量以匹配左值的类型, 那么这个临时变量又从何而来?</p>
-<p>+++<br>
-当一个右值需要继续使用时, 它的生命周期会被自动延长, 相比于正常的右值, 这是一种既是临时的, 又占用内存的奇怪的右值<br>
-+++</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">const</span> <span class="dt">int</span> <span class="op">&amp;</span> cr <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span></code></pre></div>
+<p>我们知道, 1 是一个右值, 执行上述赋值语句,
+会创建一个临时变量以匹配左值的类型, 那么这个临时变量又从何而来?</p>
+<p>+++ 当一个右值需要继续使用时, 它的生命周期会被自动延长,
+相比于正常的右值, 这是一种既是临时的, 又占用内存的奇怪的右值 +++</p>
 <p> </p>
-<h4 id="2-2-纯右值和将亡值">2.2 纯右值和将亡值</h4>
+<h4 id="纯右值和将亡值-1">2.2 纯右值和将亡值</h4>
 <p>为了区分不同的右值, 我们引入纯右值 prvalue 和将亡值 xvalue</p>
-<p>右值</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>纯右值</p>
-</li>
-<li class="lvl-2">
-<p>将亡值</p>
-</li>
-</ul>
+<p>右值 - 纯右值 - 将亡值</p>
 <p>纯右值和将亡值都是临时的, 但是将亡值在生命周期内, 会占用内存</p>
 <p>有了分辨的手段, 我们可以深入研究右值</p>
-<p>纯右值通常用来完成</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>计算内置运算符的一个操作数</p>
-</li>
-<li class="lvl-2">
-<p>初始化一个对象</p>
-<ul class="lvl-2">
-<li class="lvl-4"><code>int i = 1;</code></li>
-<li class="lvl-4"><code>Foo Func(); Foo f = Func();</code> 拷贝省略 copy elision</li>
-<li class="lvl-4"><code>const int &amp; r = 1;</code> 纯右值向将亡值的隐式类型转换 / 临时物化 temporary materialization</li>
-</ul>
-</li>
-</ul>
+<p>纯右值通常用来完成 - 计算内置运算符的一个操作数 - 初始化一个对象 -
+<code>int i = 1;</code> - <code>Foo Func(); Foo f = Func();</code>
+拷贝省略 copy elision - <code>const int &amp; r = 1;</code>
+纯右值向将亡值的隐式类型转换 / 临时物化 temporary materialization</p>
 <p>拷贝省略和临时物化先做省略</p>
-<p>同时我们可以从是否占用内存的角度, 将表达式分为占用内存的 glvalue(= lvalue + xvalue) 和不占内存的 prvalue 两种</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>expression = glvalue + rvalue</p>
-</li>
-<li class="lvl-2">
-<p>glvalue = lvalue + xvalue</p>
-</li>
-<li class="lvl-2">
-<p>rvalue = xvalue + prvalue</p>
-</li>
+<p>同时我们可以从是否占用内存的角度, 将表达式分为占用内存的 glvalue(=
+lvalue + xvalue) 和不占内存的 prvalue 两种</p>
+<ul>
+<li>expression = glvalue + rvalue</li>
+<li>glvalue = lvalue + xvalue</li>
+<li>rvalue = xvalue + prvalue</li>
 </ul>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>property</th>
 <th>左值</th>
 <th>将亡值</th>
@@ -516,19 +470,19 @@ int main()&#123;
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>取地址</td>
 <td>T</td>
 <td>F</td>
 <td>T</td>
 </tr>
-<tr>
+<tr class="even">
 <td>被赋值</td>
 <td>T(如果可修改)</td>
 <td>F</td>
 <td>F</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>初始化引用</td>
 <td>T</td>
 <td>仅const&amp;</td>
@@ -537,10 +491,12 @@ int main()&#123;
 </tbody>
 </table>
 <div class="tips">
-<p>理论上将亡值占有内存的时候是可以取地址的, 然而它的生命周期实在是太短了, 指向它的指针最后还是指向一个未知的内存, 所以在 C++ 中, 这种操作是非法的</p>
+<p>理论上将亡值占有内存的时候是可以取地址的,
+然而它的生命周期实在是太短了, 指向它的指针最后还是指向一个未知的内存,
+所以在 C++ 中, 这种操作是非法的</p>
 </div>
 <p> </p>
-<h3 id="3">3</h3>
+<h3 id="section">3</h3>
 
     </div>
 
