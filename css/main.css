@@ -774,7 +774,7 @@ video,
 }
 b,
 strong {
-    color: #39c5bb;
+    color: #39c5bc;
     font-weight: bold;
     line-height: 2.5;
 }
@@ -847,7 +847,7 @@ h6 {
 .content > h3::before{
     content: "# ";
     font-size: 24px;
-    color: #e89ae388;
+    color: #567EBF;
     font-weight: lighter;
 }
 
@@ -1331,17 +1331,26 @@ ol li::marker:not(ul ol li::marker){
     color: #b4bfc2 !important;
 }
 
+/*
 .content > ul,
 .content > ol,
 .article > ul,
 .article > ol{
     border: #E4E4E4;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     border-radius: 10px;
     padding-top: 10px;
     padding-right: 20px;
     padding-bottom: 15px;
+}
+*/
+
+.content > ul,
+.content > ol,
+.article > ul,
+.article > ol{
+    border-left: #e4e4e4 solid 2px;
 }
 
 /* end */
@@ -1376,8 +1385,9 @@ ol li::marker:not(ul ol li::marker){
 }
 
 .tips {
-    background-color: rgba(52,152,219,.3);
+    border: solid 1px rgb(52,152,219);
     border-left: 7px solid rgb(52,152,219);
+    border-top: 4px solid rgb(52,152,219);
     color: darken(rgb(52,152,219),20%);
 }
 
@@ -1388,12 +1398,12 @@ ol li::marker:not(ul ol li::marker){
     left: -15px;
     font-size: x-large;
     color: rgb(52,152,219);
-    text-decoration: underline rgba(52,152,219,.3) 7px;
 }
 
-.success {
-    background-color: rgba(46,204,113,.3);
+.success {    
+    border: solid 1px rgb(46,204,113);
     border-left: 7px solid rgb(46,204,113);
+    border-top: 4px solid rgb(46,204,113);
     color: darken(rgb(46,204,113),20%);
 }
 
@@ -1404,12 +1414,12 @@ ol li::marker:not(ul ol li::marker){
     left: -15px;
     font-size: x-large;
     color: rgb(46,204,113);
-    text-decoration: underline rgba(46,204,113,.3) 7px;
 }
 
 .warning {
-    background-color: rgba(241,196,15,.3);
+    border: solid 1px rgb(241,196,15);
     border-left: 7px solid rgb(241,196,15);
+    border-top: 4px solid rgb(241,196,15);
     color: darken(rgb(241,196,15),20%);
 }
 
@@ -1420,12 +1430,12 @@ ol li::marker:not(ul ol li::marker){
     left: -15px;
     font-size: x-large;
     color: rgb(241,196,15);
-    text-decoration: underline rgba(241,196,15,.3) 7px;
-}
+}   
 
 .danger {
-    background-color: rgba(231,76,60,.3);
+    border: solid 1px rgb(231,76,60);
     border-left: 7px solid rgb(231,76,60);
+    border-top: 4px solid rgb(231,76,60);
     color: darken(rgb(231,76,60),20%);
 }
 
@@ -1436,7 +1446,6 @@ ol li::marker:not(ul ol li::marker){
     left: -15px;
     font-size: x-large;
     color: rgb(231,76,60);
-    text-decoration: underline rgba(231,76,60,.3) 7px;
 }
 
 /* end */
