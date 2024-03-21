@@ -1304,7 +1304,7 @@ none{
 }
 
 #back-to-top{
-    display:;
+    display: flex;
     color: #486a6bc1;
     font-size: large;
     font-weight: lighter;
