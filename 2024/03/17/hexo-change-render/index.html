@@ -271,7 +271,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #03a9f4">Hexo</a>
+                <a href="/tags/Hexo/" style="color: #00a596">Hexo</a>
             </span>
             
             <span class="tag">
@@ -304,11 +304,11 @@
 <h2 id="1-安装步骤">1 安装步骤</h2>
 <h3 id="1-1-卸载原有的渲染器">1.1 卸载原有的渲染器</h3>
 <p>进入 Hexo 根目录, 也就是包含了 <code>package.json</code> 和 <code>package-lock.json</code> 两个配置文件的路径, 运行以下命令卸载默认的渲染器</p>
-<pre><code class="language-bash">npm uni hexo-renderer-marked --save
+<pre><code class="bash">npm uni hexo-renderer-marked --save
 </code></pre>
 <h3 id="1-2-安装新的渲染器">1.2 安装新的渲染器</h3>
 <p>运行以下命令安装新的渲染器</p>
-<pre><code class="language-bash">npm i hexo-renderer-markdown-it --save
+<pre><code class="bash">npm i hexo-renderer-markdown-it --save
 </code></pre>
 <h3 id="1-3-修改配置文件">1.3 修改配置文件</h3>
 <p>将以下文本追写到 Hexo 的配置文件 <code>_config.yml</code> 后面</p>
@@ -357,7 +357,7 @@
 </code></pre>
 <p>具体每一项的意思可以参考原项目: <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-markdown-it">https://github.com/hexojs/hexo-renderer-markdown-it</a></p>
 <h3 id="1-4-安装其他插件">1.4 安装其他插件</h3>
-<pre><code class="language-bash">npm i markdown-it-checkbox
+<pre><code class="bash">npm i markdown-it-checkbox
 npm i markdown-it-imsize
 npm i markdown-it-expandable
 </code></pre>
@@ -369,36 +369,36 @@ npm i markdown-it-expandable
 <ol>
 <li class="lvl-3">
 <p>下标</p>
-<pre><code class="language-md">H~2~O
+<pre><code class="md">H~2~O
 </code></pre>
-<p>H<sub>2</sub>O</p>
+<p>H~2~O</p>
 </li>
 <li class="lvl-3">
 <p>上标</p>
-<pre><code class="language-md">X^2^
+<pre><code class="md">X^2^
 </code></pre>
-<p>X<sup>2</sup></p>
+<p>X^2^</p>
 <blockquote>
 <p>Katex 失业了一点点, 但不多</p>
 </blockquote>
 </li>
 <li class="lvl-3">
 <p>复选框</p>
-<pre><code class="language-md">未选：- [ ]
+<pre><code class="md">未选：- [ ]
 选中：- [x]
 </code></pre>
-<p><input type="checkbox" id="checkbox1"><label for="checkbox1">未选</label><br>
-<input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">选中</label></p>
+<p><input type="checkbox" id="checkbox3"><label for="checkbox3">未选</label><br>
+<input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">选中</label></p>
 </li>
 <li class="lvl-3">
 <p>高亮</p>
-<pre><code class="language-md">==高亮==
+<pre><code class="md">==高亮==
 </code></pre>
 <p><mark>高亮</mark></p>
 </li>
 </ol>
 <h3 id="2-2-展开-折叠内容">2.2 展开/折叠内容</h3>
-<pre><code class="language-md">+++ 总结
+<pre><code class="md">+++ 总结
 不要总结
 +++
 </code></pre>
@@ -406,7 +406,7 @@ npm i markdown-it-expandable
 <summary><span class="pre-summary">&nbsp;</span>总结</summary><p>不要 <strong>总结</strong></p>
 </details>
 <h3 id="2-3-自定义容器">2.3 自定义容器</h3>
-<pre><code class="language-md">::: tips
+<pre><code class="md">::: tips
 **提示**
 这是一个提示
 :::
@@ -427,7 +427,7 @@ npm i markdown-it-expandable
 :::
 </code></pre>
 <p>同时修改 CSS 文件, 追加以下内容</p>
-<pre><code class="language-css">.tips &#123;
+<pre><code class="css">.tips &#123;
     padding-left: 10px;
     background-color: rgba(52,152,219,.3);
     border-left: 4px solid rgb(52,152,219);
