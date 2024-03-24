@@ -779,15 +779,34 @@ strong {
     line-height: 2.5;
 }
 blockquote {
-    background: #d9e8ff6b;
+    /* background: #d9e8ff38; */
     /* background: linear-gradient(#d9e8ff6b,#00000000); */
-    border-left: 7px solid #1e3e3f5e;
+    /* border-left: 7px solid #1e3e3f5e; */
     border-radius: 5px;
     margin: 15px 0;
-    overflow: auto;
-    padding: 0 30px;
+    overflow: visible;
+    padding: 5px 70px;
+    opacity: 75%;
 }
-blockquote p,
+blockquote::before,
+blockquote::after{
+    opacity: 80%;
+    font-size: 4rem;
+    font-weight: lighter;
+    position: absolute;
+}
+blockquote::before{
+    content: "『";
+    content: "「";
+    left: -12px;
+    top: -12px;
+}
+blockquote::after{
+    /* content: "」";
+    content: "』"; */
+    right: -4px;
+    bottom: -20px;
+}
 del{
     opacity: 50%;
 }
@@ -1296,7 +1315,7 @@ none{
     align-items: center;
     position: fixed;
     right: 7%;
-    bottom: 15%;
+    bottom: 11%;
     z-index: 1;
     border: #b9b9b985 0.5px solid;
     border-radius: 50%;
@@ -1474,6 +1493,85 @@ summary{
 
 /* end */
 
+/* VSCode style - c++ ver */
+/*
 html{
     background-image: linear-gradient();
 }
+
+.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_ {
+    color: #4F95D2;
+}
+
+.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_ {
+    color: #D7D5A3;
+}
+
+.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable {
+    color: #B2C995;
+}
+
+.hljs-meta .hljs-string,.hljs-regexp,.hljs-string {
+    color: #C39178;
+}
+
+.hljs-built_in,.hljs-symbol {
+    color: #D7D5A3;
+}
+
+.hljs-code,.hljs-comment,.hljs-formula {
+    color: #6A9949;
+}
+
+.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag {
+    color: #22863a;
+}
+
+.hljs-subst {
+    color: #24292e;
+}
+
+.hljs-section {
+    color: #005cc5;
+    font-weight: 700;
+}
+
+.hljs-bullet {
+    color: #735c0f;
+}
+
+.hljs-emphasis {
+    color: #24292e;
+    font-style: italic;
+}
+
+.hljs-strong {
+    color: #24292e;
+    font-weight: 700;
+}
+
+.hljs-addition {
+    color: #22863a;
+    background-color: #f0fff4;
+}
+
+.hljs-deletion {
+    color: #b31d28;
+    background-color: #ffeef0
+}
+
+.language {
+    background: linear-gradient(to right, #2c5a82 0%, #3b7692 100%);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 1px 1px 0.75rem #23527b4d;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    left: 30px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 0;
+}
+*/
+/********************************************/
+
