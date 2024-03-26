@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,43 +160,27 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
@@ -245,8 +190,6 @@
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Infomation"><span class="toc-text">Basic Infomation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-0-Introduction"><span class="toc-text">Chapter 0 Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Grading-Politics"><span class="toc-text">1.1 Grading Politics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Peer-Review"><span class="toc-text">1.2 Peer Review</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-1-Algorithm-Analysis"><span class="toc-text">Chapter 1 Algorithm Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Algorithm"><span class="toc-text">1.1 Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-What-to-analyze"><span class="toc-text">1.2 What to analyze</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-Time-complexity"><span class="toc-text">1.2.1 Time complexity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-Space-complexity"><span class="toc-text">1.2.2 Space complexity</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Compare-the-Algorithms"><span class="toc-text">1.3 Compare the Algorithms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Logarithms-in-the-Runing-Time"><span class="toc-text">1.4 Logarithms in the Runing Time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Checking-Your-Analysis"><span class="toc-text">1.5 Checking Your Analysis</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-2-Linear-Table"><span class="toc-text">Chapter 2 Linear Table</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Abstract-Data-Type-ADT"><span class="toc-text">2.1 Abstract Data Type &#x2F; ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-Characteratics-of-ADT"><span class="toc-text">2.1.1 Characteratics of ADT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-List"><span class="toc-text">2.2 List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-ADT"><span class="toc-text">2.2.1 ADT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-Array-Implementation"><span class="toc-text">2.2.2 Array Implementation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-Linked-List-Implementation"><span class="toc-text">2.2.3 Linked List Implementation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Doubly-Linked-Circular-Lists"><span class="toc-text">2.3 Doubly Linked Circular Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-Applications"><span class="toc-text">2.3.1 Applications</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-The-Stack-ADT"><span class="toc-text">2.4 The Stack ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-ADT"><span class="toc-text">2.4.1 ADT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-Implementations"><span class="toc-text">2.4.2 Implementations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-Application"><span class="toc-text">2.4.3 Application</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-The-Queue-ADT"><span class="toc-text">2.5 The Queue ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-1-ADT"><span class="toc-text">2.5.1 ADT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-2-Implementations"><span class="toc-text">2.5.2 Implementations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-3-Circular-Queue"><span class="toc-text">2.5.3 Circular Queue</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-3-Tree"><span class="toc-text">Chapter 3 Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Preliminary"><span class="toc-text">3.1 Preliminary</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-Terminology"><span class="toc-text">3.1.1 Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-Implementation"><span class="toc-text">3.1.2 Implementation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Binary-Tree"><span class="toc-text">3.2 Binary Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-Expression-Trees"><span class="toc-text">3.2.1 Expression Trees</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-Tree-Traversals"><span class="toc-text">3.2.2 Tree Traversals</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-Threaded-Binary-Tree"><span class="toc-text">3.2.3 Threaded Binary Tree</span></a></li></ol></li></ol></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -260,8 +203,7 @@
             </span>
             2024/2/28
         </span>
-           
-            <!--展示categories-->
+        
         <span class="category">
             <a href="/categories/%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
@@ -271,8 +213,7 @@
             </a>
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -281,22 +222,13 @@
             
             <span class="tag">
                 
-                <a href="/tags/FDS/" style="color: #39c5bb">FDS</a>
+                <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
             </span>
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <h2 id="Basic-Infomation">Basic Infomation</h2>
 <p><i class="fa-regular fa-circle-check"></i> <strong>Teachers</strong>: yzq<br>
@@ -371,7 +303,7 @@ $N$ : the input size
 </li>
 </ul>
 <p>[Eg1] <strong>Matrix addition</strong></p>
-<pre><code class="c">void add( int a[][ MAX_SIZE ], int b[][ MAX_SIXE ], int c[][ MAX_SIZE ], int rows, int cols)&#123;
+<pre><code class="language-c">void add( int a[][ MAX_SIZE ], int b[][ MAX_SIXE ], int c[][ MAX_SIZE ], int rows, int cols)&#123;
   int i,j;
   for( i = 0; i &lt; cols; ++i)&#123;
     for( j = 0; j &lt; rows; ++j)&#123;
@@ -383,7 +315,7 @@ $N$ : the input size
 <p>$T(rows,cols)=2rows\cdot cols+2rows+1$</p>
 <p>$O(rows,cols)=rows\cdot cols$</p>
 <p>[Eg2] <strong>Summing a list of numbers</strong> (iterative)</p>
-<pre><code class="c">float sum( float list[], int n )&#123;
+<pre><code class="language-c">float sum( float list[], int n )&#123;
   float temp_sum = 0; // count = 1
   int i;  // no add count
   for( i = 0; i &lt; n; ++i )&#123; // count += 1
@@ -394,7 +326,7 @@ $N$ : the input size
 </code></pre>
 <p>$T_{sum}(n)=2n+3$</p>
 <p>[Eg3] <strong>Summing a list of numbers</strong> (recursive)</p>
-<pre><code class="c">float sum( float list[], int n )&#123;
+<pre><code class="language-c">float sum( float list[], int n )&#123;
   if( n )&#123; // count = 1
     return sum( list, n-1 ) + list[n-1];  // count += 1
   &#125;
@@ -507,7 +439,7 @@ $N$ : the input size
 <h4 id="2-2-3-Linked-List-Implementation">2.2.3 Linked List Implementation</h4>
 <p><code>LinkedListNode = &#123; ptrToNextNode, item_i &#125;</code></p>
 <p>[Eg]</p>
-<pre><code class="c">typedef struct listNode *listPtr;
+<pre><code class="language-c">typedef struct listNode *listPtr;
 typedef struct listNode &#123;
   ElemType data;
   listPtr next;
@@ -520,18 +452,18 @@ headNode.next = None;
 <p><strong>tip</strong> Use Dummy Head Node to cut off extra codes!!<br>
 dummy: fake</p>
 <p><strong>Insert</strong></p>
-<pre><code class="c">tmp-&gt;next = node-&gt;next;
+<pre><code class="language-c">tmp-&gt;next = node-&gt;next;
 node-&gt;next = tmp;
 </code></pre>
 <p><strong>Delete</strong></p>
-<pre><code class="c">curNode-&gt;next = node-&gt;next;
+<pre><code class="language-c">curNode-&gt;next = node-&gt;next;
 free(node);
 </code></pre>
 <p><strong>tip</strong> Remember to free the trash node to save memory</p>
 <p> </p>
 <h3 id="2-3-Doubly-Linked-Circular-Lists">2.3 Doubly Linked Circular Lists</h3>
 <p>[Eg]</p>
-<pre><code class="c">typedef struct listNode *listPtr;
+<pre><code class="language-c">typedef struct listNode *listPtr;
 typedef struct listNode &#123;
   ElemType data;
   listPtr pre, next;
@@ -569,18 +501,18 @@ headNode.next = head; // here is difference
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>Push</p>
-<pre><code class="c">Tmp -&gt; Next = S -&gt; Next;
+<pre><code class="language-c">Tmp -&gt; Next = S -&gt; Next;
 S -&gt; Next = Tmp;
 </code></pre>
 </li>
 <li class="lvl-2">
 <p>Top</p>
-<pre><code class="c">return S -&gt; Next -&gt; Element;
+<pre><code class="language-c">return S -&gt; Next -&gt; Element;
 </code></pre>
 </li>
 <li class="lvl-2">
 <p>Pop</p>
-<pre><code class="c">Ret = S -&gt; Next;
+<pre><code class="language-c">Ret = S -&gt; Next;
 S -&gt; Next = S -&gt; Next -&gt; Next;
 free(Ret);
 </code></pre>
@@ -590,7 +522,7 @@ free(Ret);
 <p>To keep an another recycle bin stack can reduce the expense of regular malloc() and free().</p>
 </blockquote>
 <p>Array Implementation</p>
-<pre><code class="c">struct StackRecord&#123;
+<pre><code class="language-c">struct StackRecord&#123;
 	int capacity;
 	int topOfStack;	// -1 for empty stack
 	ElementType *array;
@@ -640,7 +572,7 @@ free(Ret);
 <h4 id="2-5-1-ADT">2.5.1 ADT</h4>
 <h4 id="2-5-2-Implementations">2.5.2 Implementations</h4>
 <p>Array Implementation of Queues</p>
-<pre><code class="c">struct QueueRecord&#123;
+<pre><code class="language-c">struct QueueRecord&#123;
   int capacity;
   int front;
   int rear;
@@ -660,7 +592,7 @@ free(Ret);
 <p>a distinguishd node $r$, called the <strong>root</strong></p>
 </li>
 <li class="lvl-3">
-<p>zero or more nonempty <strong>(sub)trees</strong> T~1~, T~2~, …, each of whose roots are connected by a directed <strong>edge</strong> from $r$</p>
+<p>zero or more nonempty <strong>(sub)trees</strong> T<sub>1</sub>, T<sub>2</sub>, …, each of whose roots are connected by a directed <strong>edge</strong> from $r$</p>
 </li>
 </ol>
 <div class="tips">
@@ -687,16 +619,16 @@ free(Ret);
 <p>Leaf: a node with degree 0</p>
 </li>
 <li class="lvl-2">
-<p>Path from n~1~ to n~k~: (unique)</p>
+<p>Path from n<sub>1</sub> to n<sub>k</sub>: (unique)</p>
 </li>
 <li class="lvl-2">
 <p>Length of path: number of <strong>edges</strong> on the path</p>
 </li>
 <li class="lvl-2">
-<p>Depth of n~i~: depth of root is 0</p>
+<p>Depth of n<sub>i</sub>: depth of root is 0</p>
 </li>
 <li class="lvl-2">
-<p>Height of n~i~: height of leaves is 0</p>
+<p>Height of n<sub>i</sub>: height of leaves is 0</p>
 </li>
 <li class="lvl-2">
 <p>Height / Depth of tree: height of root  / depth of deepest leaf</p>
@@ -729,7 +661,7 @@ free(Ret);
 <p> </p>
 <h3 id="3-2-Binary-Tree">3.2 Binary Tree</h3>
 <p>Degree &lt;= 2</p>
-<pre><code class="c">typedef struct TreeNode *Tree;
+<pre><code class="language-c">typedef struct TreeNode *Tree;
 struct TreeNode&#123;
 	ElemType element;
 	Tree left, right;
@@ -745,7 +677,7 @@ struct TreeNode&#123;
 </blockquote>
 <p>T(N) = O(N)</p>
 <p><strong>Preorder Traversal</strong></p>
-<pre><code class="c">void Preorder(Tree tree)&#123;
+<pre><code class="language-c">void Preorder(Tree tree)&#123;
 	if(tree)&#123;
 		Visit(tree);
 		Preorder(tree-&gt;left);
@@ -754,7 +686,7 @@ struct TreeNode&#123;
 &#125;
 </code></pre>
 <p><strong>Postorder Traversal</strong></p>
-<pre><code class="c">void Postorder(Tree tree)&#123;
+<pre><code class="language-c">void Postorder(Tree tree)&#123;
 	if(tree)&#123;
 		Postorder(tree-&gt;left);
 		Postorder(tree-&gt;right);
@@ -763,7 +695,7 @@ struct TreeNode&#123;
 &#125;
 </code></pre>
 <p><strong>Levelorder Traversal</strong></p>
-<pre><code class="c">void Levelorder(Tree tree)&#123;
+<pre><code class="language-c">void Levelorder(Tree tree)&#123;
 	Queue que;
 	que.push(tree);
 	while(!que.empty())&#123;
@@ -774,7 +706,7 @@ struct TreeNode&#123;
 &#125;
 </code></pre>
 <p><strong>Inorder Traversal</strong></p>
-<pre><code class="c">void Inorder(Tree tree)&#123;
+<pre><code class="language-c">void Inorder(Tree tree)&#123;
 	if(tree)&#123;
 		Inorder(tree-&gt;left);
 		Visit(tree);
@@ -782,7 +714,7 @@ struct TreeNode&#123;
 	&#125;
 &#125;
 </code></pre>
-<pre><code class="c">void InorderIterative(Tree tree)&#123;
+<pre><code class="language-c">void InorderIterative(Tree tree)&#123;
 	Stack st;
 	while(1)&#123;
 		while(tree)&#123;
@@ -803,7 +735,7 @@ struct TreeNode&#123;
 <p>[Eg1] Directory listing in a hierarchical file index</p>
 <p>[Eg2] Calculatiing the size of a directory</p>
 <p>In Linux, we could</p>
-<pre><code class="bash">$ tree
+<pre><code class="language-bash">$ tree
 </code></pre>
 <p> </p>
 <h4 id="3-2-3-Threaded-Binary-Tree">3.2.3 Threaded Binary Tree</h4>
@@ -821,7 +753,7 @@ struct TreeNode&#123;
 <p>Rule 3: Dummy-head node is needed, pointers of node ordered first or last in inorder traversal pointing to NULL should point to the dummy-head node</p>
 </li>
 </ul>
-<pre><code class="c">typedef struct ThreadedTreeNode *ThreadedTree;
+<pre><code class="language-c">typedef struct ThreadedTreeNode *ThreadedTree;
 struct ThreadedTreeNode&#123;
 	ElemType Element;
 	// if left/right represents a thread, then assign it with TRUE
@@ -831,36 +763,15 @@ struct ThreadedTreeNode&#123;
 </code></pre>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -877,7 +788,6 @@ struct ThreadedTreeNode&#123;
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -897,20 +807,7 @@ struct ThreadedTreeNode&#123;
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -924,46 +821,6 @@ struct ThreadedTreeNode&#123;
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

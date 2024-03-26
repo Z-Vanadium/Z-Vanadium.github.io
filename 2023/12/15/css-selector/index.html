@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,54 +160,36 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">基础选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">id选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">class类选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">标签选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%81%94%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">内联选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%A4%84%E7%90%86"><span class="toc-text">冲突处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">常用选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E4%BB%A3"><span class="toc-text">后代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA"><span class="toc-text">清空</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%80%89%E6%8B%A9%E5%99%A8-%E6%88%91%E8%A7%89%E5%BE%97%E6%9C%89%E7%94%A8%E7%9A%84"><span class="toc-text">其他选择器(我觉得有用的)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#X-link-X-visited"><span class="toc-text">X:link &amp; X:visited</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-Y"><span class="toc-text">X + Y</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-Y-1"><span class="toc-text">X &gt; Y</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-Y-2"><span class="toc-text">X ~ Y</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-checked"><span class="toc-text">X:checked</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-after-X-before"><span class="toc-text">X::after &amp; X::before</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-hover"><span class="toc-text">X:hover</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-not-Y"><span class="toc-text">X:not(Y)</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">基础选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">id选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">class类选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">标签选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%81%94%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">内联选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%A4%84%E7%90%86"><span class="toc-text">冲突处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">常用选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E4%BB%A3"><span class="toc-text">后代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA"><span class="toc-text">清空</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%80%89%E6%8B%A9%E5%99%A8-%E6%88%91%E8%A7%89%E5%BE%97%E6%9C%89%E7%94%A8%E7%9A%84"><span class="toc-text">其他选择器(我觉得有用的)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#X-link-X-visited"><span class="toc-text">X:link &amp; X:visited</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-Y"><span class="toc-text">X + Y</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-Y-2"><span class="toc-text">X &gt; Y</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-Y-3"><span class="toc-text">X ~ Y</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-checked"><span class="toc-text">X:checked</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-after-X-before"><span class="toc-text">X::after &amp; X::before</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-hover"><span class="toc-text">X:hover</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-not-Y"><span class="toc-text">X:not(Y)</span></a></li></ol></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -261,8 +204,7 @@
             2023/12/15
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -271,7 +213,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/CSS/" style="color: #00a596">CSS</a>
+                <a href="/tags/CSS/" style="color: #ffa2c4">CSS</a>
             </span>
             
             <span class="tag">
@@ -281,155 +223,191 @@
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <blockquote>
 <p>记录一点CSS学习心得</p>
 </blockquote>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">RUNOOB-CSS教程</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/css/css-selector.html">W3C-CSS教程</a></li>
+<h3 id="参考资料">参考资料</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">RUNOOB-CSS教程</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/css/css-selector.html">W3C-CSS教程</a></p>
+</li>
 </ul>
 <span id="more"></span>
-
-<p>&nbsp;</p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>想要高效快捷的学习CSS，你需要：</p>
-<ul>
-<li><strong>VSCode</strong>, with following extensions<ul>
-<li><strong>Color Highlight</strong> | 颜色显示</li>
-<li><strong>Live Server</strong> | html热预览</li>
+<p> </p>
+<h3 id="前言">前言</h3>
+<p>想要高效快捷的学习CSS，你需要：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>VSCode</strong>, with following extensions</p>
+<ul class="lvl-2">
+<li class="lvl-4"><strong>Color Highlight</strong> | 颜色显示</li>
+<li class="lvl-4"><strong>Live Server</strong> | html热预览</li>
 </ul>
 </li>
-<li><strong>前置知识</strong><ul>
-<li>熟练的html</li>
-<li>入门的JavaScript</li>
+<li class="lvl-2">
+<p><strong>前置知识</strong></p>
+<ul class="lvl-2">
+<li class="lvl-4">熟练的html</li>
+<li class="lvl-4">入门的JavaScript</li>
 </ul>
 </li>
-<li><strong>辅助工具&#x2F;网站</strong><ul>
-<li>配色参考</li>
-<li>图片素材</li>
-<li>优秀的榜样网站</li>
+<li class="lvl-2">
+<p><strong>辅助工具/网站</strong></p>
+<ul class="lvl-2">
+<li class="lvl-4">配色参考</li>
+<li class="lvl-4">图片素材</li>
+<li class="lvl-4">优秀的榜样网站</li>
 </ul>
 </li>
-<li><strong>信息搜索能力</strong></li>
-<li><strong>一些小创意和小自信</strong></li>
+<li class="lvl-2">
+<p><strong>信息搜索能力</strong></p>
+</li>
+<li class="lvl-2">
+<p><strong>一些小创意和小自信</strong></p>
+</li>
 </ul>
-<p>&nbsp;</p>
-<h4 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h4><p><strong>选择器(selector)</strong> 是CSS与HTML文档交流的桥梁, 是设置CSS样式必需的工具. 选择器的用法难度<strong>方差特别大</strong>, 用的高级的选择器不亚于使用JS, 而用的随意的选择器也非常适合入门者使用</p>
+<p> </p>
+<h4 id="选择器">选择器</h4>
+<p><strong>选择器(selector)</strong> 是CSS与HTML文档交流的桥梁, 是设置CSS样式必需的工具. 选择器的用法难度<strong>方差特别大</strong>, 用的高级的选择器不亚于使用JS, 而用的随意的选择器也非常适合入门者使用</p>
 <p>如果你要在CSS中使用选择器, 你需要为HTML元素设置id和class</p>
-<pre><code class="html">&lt;div id=&quot;div_1&quot; class=&quot;container&quot;&gt;...&lt;/div&gt;
+<pre><code class="language-html">&lt;div id=&quot;div_1&quot; class=&quot;container&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>&nbsp;</p>
+<p> </p>
 <hr>
-<h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><p>id选择器可以选择有特定id的HTML元素, 在CSS中用<code>#</code>定义, 使用语法如下</p>
-<pre><code class="css">#div_1&#123;
+<h3 id="基础选择器">基础选择器</h3>
+<h4 id="id选择器">id选择器</h4>
+<p>id选择器可以选择有特定id的HTML元素, 在CSS中用<code>#</code>定义, 使用语法如下</p>
+<pre><code class="language-css">#div_1&#123;
     background-color: red;
 &#125;
 </code></pre>
 <p><strong>注意:</strong> 在同一个HTML文档中, 不允许id的重复; 同时, id不允许以数字开头</p>
-<p>&nbsp;</p>
-<h4 id="class类选择器"><a href="#class类选择器" class="headerlink" title="class类选择器"></a>class类选择器</h4><p>class类选择器能选择一类带有相同class的HTML元素, 在CSS中用<code>.</code>定义</p>
-<pre><code class="css">.container&#123;
+<p> </p>
+<h4 id="class类选择器">class类选择器</h4>
+<p>class类选择器能选择一类带有相同class的HTML元素, 在CSS中用<code>.</code>定义</p>
+<pre><code class="language-css">.container&#123;
     background-color: red;
 &#125;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h4><p>标签选择器能选择所有这类标签的HTML元素, 例如我想选取body标签下, 所有h1标签的HTML元素</p>
-<pre><code class="css">h1&#123;
+<p> </p>
+<h4 id="标签选择器">标签选择器</h4>
+<p>标签选择器能选择所有这类标签的HTML元素, 例如我想选取body标签下, 所有h1标签的HTML元素</p>
+<pre><code class="language-css">h1&#123;
     color: blue;
 &#125;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="内联选择器"><a href="#内联选择器" class="headerlink" title="内联选择器"></a>内联选择器</h4><p>内敛选择器即是直接在HTML标签内的代码</p>
-<pre><code class="html">&lt;h4 style=&quot;border: solid;&quot;&gt;Text&lt;/h4&gt;
+<p> </p>
+<h4 id="内联选择器">内联选择器</h4>
+<p>内敛选择器即是直接在HTML标签内的代码</p>
+<pre><code class="language-html">&lt;h4 style=&quot;border: solid;&quot;&gt;Text&lt;/h4&gt;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="冲突处理"><a href="#冲突处理" class="headerlink" title="冲突处理"></a>冲突处理</h4><p>当CSS选择器发生冲突, 例如同时对一个属性做出修饰时, <strong>优先级</strong>遵循以下规律</p>
-<ul>
-<li>内联 &gt; id &gt; 类 &gt; 标签</li>
+<p> </p>
+<h4 id="冲突处理">冲突处理</h4>
+<p>当CSS选择器发生冲突, 例如同时对一个属性做出修饰时, <strong>优先级</strong>遵循以下规律</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>内联 &gt; id &gt; 类 &gt; 标签</p>
+</li>
 </ul>
 <p>因此, 当你修改了选择器的某个属性, 但是发现没有任何变化, 你可以<strong>检查其优先级更高的选择器</strong>有没有对这个属性做过修饰</p>
-<p>&nbsp;</p>
+<p> </p>
 <hr>
-<h3 id="常用选择器"><a href="#常用选择器" class="headerlink" title="常用选择器"></a>常用选择器</h3><h4 id="后代"><a href="#后代" class="headerlink" title="后代"></a>后代</h4><p>回忆我们在盒子理论一文中提到的, HTML的盒子支持多层嵌套, 为了能更加精准的定位到嵌套层数更深的子元素, CSS的选择器支持后代, 即可以通过类似于树的方式, 一层一层搜索到层数比较深的节点</p>
-<pre><code class="css">&#123;parent&#125; &#123;child&#125;&#123;
+<h3 id="常用选择器">常用选择器</h3>
+<h4 id="后代">后代</h4>
+<p>回忆我们在盒子理论一文中提到的, HTML的盒子支持多层嵌套, 为了能更加精准的定位到嵌套层数更深的子元素, CSS的选择器支持后代, 即可以通过类似于树的方式, 一层一层搜索到层数比较深的节点</p>
+<pre><code class="language-css">&#123;parent&#125; &#123;child&#125;&#123;
     ...
 &#125;
 其中&#123;&#125;代表某种选择器
 </code></pre>
 <p>比如我们想选择<code>.container</code>下的<code>.content</code>类的元素, 但是不想选择到其他<code>.content</code>类的元素, 我们可以这样</p>
-<pre><code class="css">.container .content&#123;
+<pre><code class="language-css">.container .content&#123;
     ...
 &#125;
 </code></pre>
 <p>注意: 在使用后代选择器时, 由于<strong>CSS会对整个HTML文档向上做出匹配</strong>, 其开销是特别大的, 因此我们有要注意一些特别的点, 以提高CSS选择器的性能</p>
-<ul>
-<li>避免限制id选择器<pre><code class="css">不推荐
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>避免限制id选择器</p>
+<pre><code class="language-css">不推荐
 .container #input&#123;...&#125;
 推荐
 #input&#123;...&#125;
 </code></pre>
-<strong>原因:</strong> 在HTML文档中, id是唯一的, 因此不需要做出特别限制; 做出限制之后, 反而会让CSS向上进行无意义的匹配, 徒增开销</li>
-<li>避免多层后代<pre><code class="css">不推荐
+<p><strong>原因:</strong> 在HTML文档中, id是唯一的, 因此不需要做出特别限制; 做出限制之后, 反而会让CSS向上进行无意义的匹配, 徒增开销</p>
+</li>
+<li class="lvl-2">
+<p>避免多层后代</p>
+<pre><code class="language-css">不推荐
 .card #container div li a p&#123;...&#125;
 推荐(为p添加一个类)
 .p-in-card&#123;...&#125;
 </code></pre>
-<strong>原因:</strong> 同上, 多层匹配会增加很大的开销</li>
+<p><strong>原因:</strong> 同上, 多层匹配会增加很大的开销</p>
+</li>
 </ul>
-<p>&nbsp;</p>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>CSS提供了属性选择器, 可以根据元素的属性名和属性值选择特定的元素</p>
-<pre><code class="html">&lt;input type=&quot;text&quot;&gt;
+<p> </p>
+<h4 id="属性">属性</h4>
+<p>CSS提供了属性选择器, 可以根据元素的属性名和属性值选择特定的元素</p>
+<pre><code class="language-html">&lt;input type=&quot;text&quot;&gt;
 &lt;input type=&quot;password&quot;&gt;
 </code></pre>
-<pre><code class="css">input[type=&quot;text&quot;]&#123;
+<pre><code class="language-css">input[type=&quot;text&quot;]&#123;
     border: solid;
 &#125;
 </code></pre>
 <p>上面这个例子就使用了属性选择器, 专一地选择了前者而不是两者都选</p>
 <p>此外, 属性选择器支持正则表达式, 因此你只需要用一部分内容就能匹配整个内容(多用于链接的匹配)</p>
-<ul>
-<li><strong>X[href^&#x3D;”start”]:</strong> 表示选择href属性以start开头的元素X </li>
-<li><strong>X[href$&#x3D;”end”]:</strong> 表示选择href属性以end结尾的元素X</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>X[href^=“start”]:</strong> 表示选择href属性以start开头的元素X</p>
+</li>
+<li class="lvl-2">
+<p><strong>X[href$=“end”]:</strong> 表示选择href属性以end结尾的元素X</p>
+</li>
 </ul>
-<p>&nbsp;</p>
-<h4 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h4><p>清空选择器可以选择某个父元素下的所有子元素</p>
-<pre><code class="css">* &#123;
+<p> </p>
+<h4 id="清空">清空</h4>
+<p>清空选择器可以选择某个父元素下的所有子元素</p>
+<pre><code class="language-css">* &#123;
     margin: 0;
     padding: 0;
 &#125;
 </code></pre>
 <p>上述例子就能使整个HTML文档的所有元素的内外边距修饰为0, 同理, 我们也可以选择某个父元素下的子元素</p>
-<pre><code class="css">.container * &#123;
+<pre><code class="language-css">.container * &#123;
     margin: 0;
     padding: 0;
 &#125;
 </code></pre>
 <p><strong>注意:</strong> 尽量不要使用清空选择器, 因为它的负担实在是太大了()</p>
 <hr>
-<p>&nbsp;  </p>
-<h3 id="其他选择器-我觉得有用的"><a href="#其他选择器-我觉得有用的" class="headerlink" title="其他选择器(我觉得有用的)"></a>其他选择器(我觉得有用的)</h3><p>在介绍其他选择器之前, 我们介绍一个强大的概念: <strong>伪类Pseudo-classes</strong>和<strong>伪元素Pseudo-element</strong></p>
+<p> </p>
+<h3 id="其他选择器-我觉得有用的">其他选择器(我觉得有用的)</h3>
+<p>在介绍其他选择器之前, 我们介绍一个强大的概念: <strong>伪类Pseudo-classes</strong>和<strong>伪元素Pseudo-element</strong></p>
 <p>伪类是CSS中, 用来添加一些特殊效果的选择器, 之所以叫他伪类, 是因为伪类是不出现在HTML文档中的, 它是基于文档之外的抽象概念</p>
 <p>一般来说, 伪类使用如下的语法<code>selector:pseudo-classes</code>, 而伪元素使用如下的语法<code>selector::pseudo-element</code></p>
 <p>伪类和伪元素的使用可以<strong>使你的HTML页面活起来</strong>, 有时能起到不亚于JS的作用</p>
 <hr>
-<h4 id="X-link-X-visited"><a href="#X-link-X-visited" class="headerlink" title="X:link &amp; X:visited"></a>X:link &amp; X:visited</h4><p>使用前者选择<strong>未被访问</strong>的链接, 后者选择<strong>被访问过</strong>的链接</p>
-<h4 id="X-Y"><a href="#X-Y" class="headerlink" title="X + Y"></a>X + Y</h4><p>相邻选择器, 选择X的<strong>直接后继</strong>元素Y(指某个元素后面的第一个层级相同的元素)</p>
-<h4 id="X-Y-1"><a href="#X-Y-1" class="headerlink" title="X &gt; Y"></a>X &gt; Y</h4><p>子节点组合选择器, 选择X的<strong>直接子元素</strong>Y</p>
-<h4 id="X-Y-2"><a href="#X-Y-2" class="headerlink" title="X ~ Y"></a>X ~ Y</h4><p>兄弟节点组合选择器, 选择X<strong>后面所有层级相同</strong>的元素Y(可以有间断)</p>
-<h4 id="X-checked"><a href="#X-checked" class="headerlink" title="X:checked"></a>X:checked</h4><p>选择X元素的, <strong>被选中的单选框和复选框</strong></p>
-<h4 id="X-after-X-before"><a href="#X-after-X-before" class="headerlink" title="X::after &amp; X::before"></a>X::after &amp; X::before</h4><p>在X元素的后面或前面<strong>生成一些内容</strong></p>
-<pre><code class="css">.clearfix:after &#123;
+<h4 id="X-link-X-visited">X:link &amp; X:visited</h4>
+<p>使用前者选择<strong>未被访问</strong>的链接, 后者选择<strong>被访问过</strong>的链接</p>
+<h4 id="X-Y">X + Y</h4>
+<p>相邻选择器, 选择X的<strong>直接后继</strong>元素Y(指某个元素后面的第一个层级相同的元素)</p>
+<h4 id="X-Y-2">X &gt; Y</h4>
+<p>子节点组合选择器, 选择X的<strong>直接子元素</strong>Y</p>
+<h4 id="X-Y-3">X ~ Y</h4>
+<p>兄弟节点组合选择器, 选择X<strong>后面所有层级相同</strong>的元素Y(可以有间断)</p>
+<h4 id="X-checked">X:checked</h4>
+<p>选择X元素的, <strong>被选中的单选框和复选框</strong></p>
+<h4 id="X-after-X-before">X::after &amp; X::before</h4>
+<p>在X元素的后面或前面<strong>生成一些内容</strong></p>
+<pre><code class="language-css">.clearfix:after &#123;
     content: &quot;&quot;;
     display: block;
     clear: both;
@@ -444,40 +422,21 @@
 &#125;
 </code></pre>
 <p>上述代码会<strong>在目标标签后补上一段空白后将其清除</strong>, 可以用于<code>overflow:hidden</code>不起作用的情况</p>
-<h4 id="X-hover"><a href="#X-hover" class="headerlink" title="X:hover"></a>X:hover</h4><p>选择<strong>鼠标悬停着</strong>的X元素</p>
-<h4 id="X-not-Y"><a href="#X-not-Y" class="headerlink" title="X:not(Y)"></a>X:not(Y)</h4><p>选择<strong>除了Y元素以外</strong>的所有X元素</p>
+<h4 id="X-hover">X:hover</h4>
+<p>选择<strong>鼠标悬停着</strong>的X元素</p>
+<h4 id="X-not-Y">X:not(Y)</h4>
+<p>选择<strong>除了Y元素以外</strong>的所有X元素</p>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -494,7 +453,6 @@
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -514,20 +472,7 @@
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -541,46 +486,6 @@
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

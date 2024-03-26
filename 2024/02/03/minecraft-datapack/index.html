@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,54 +160,36 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-text">绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-text">什么是数据包?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-text">数据包的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">数据包的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E6%8C%87%E4%BB%A4"><span class="toc-text">数据包指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E4%B8%8ENBT%E6%A0%BC%E5%BC%8F"><span class="toc-text">JSON文件格式与NBT格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">JSON文件格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NBT%E7%AE%80%E4%BB%8B"><span class="toc-text">NBT简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%E5%92%8C%E6%A0%87%E7%AD%BE%E6%96%87%E4%BB%B6"><span class="toc-text">文件路径和标签文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="toc-text">路径引用格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-text">标签文件类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">标签文件格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95%E5%92%8C%E8%B0%83%E7%94%A8"><span class="toc-text">函数的语法和调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E6%96%B9"><span class="toc-text">配方</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E7%82%89%E9%85%8D%E6%96%B9"><span class="toc-text">高炉配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%90%A5%E7%81%AB%E9%85%8D%E6%96%B9"><span class="toc-text">营火配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8F%B0%E6%9C%89%E5%BA%8F%E9%85%8D%E6%96%B9"><span class="toc-text">工作台有序配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8F%B0%E6%97%A0%E5%BA%8F%E9%85%8D%E6%96%B9"><span class="toc-text">工作台无序配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%86%94%E7%82%89%E9%85%8D%E6%96%B9"><span class="toc-text">熔炉配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%BB%E9%80%A0%E5%8F%B0%E9%85%8D%E6%96%B9"><span class="toc-text">锻造台配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%9F%E7%86%8F%E7%82%89%E9%85%8D%E6%96%B9"><span class="toc-text">烟熏炉配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E7%9F%B3%E6%9C%BA%E9%85%8D%E6%96%B9"><span class="toc-text">切石机配方</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8"><span class="toc-text">战利品表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E5%8F%AF%E4%BB%A5%E6%8E%A7%E5%88%B6%E4%BB%80%E4%B9%88"><span class="toc-text">战利品表可以控制什么?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E5%87%BD%E6%95%B0-%E7%89%A9%E5%93%81%E4%BF%AE%E9%A5%B0%E5%99%A8"><span class="toc-text">战利品表函数&#x2F;物品修饰器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E8%B0%93%E8%AF%8D"><span class="toc-text">战利品表谓词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-text">战利品表的格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84%E7%BB%84%E7%BB%87%E4%B8%8E%E6%8E%89%E8%90%BD%E7%89%A9%E7%9A%84%E5%8F%AF%E8%83%BD%E6%80%A7%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">战利品表的结构组织与掉落物的可能性的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6"><span class="toc-text">进度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="toc-text">进度的检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6%E7%9A%84%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">进度的文件格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%BA%A6%E7%9A%84%E8%A1%A5%E5%85%85"><span class="toc-text">关于进度的补充</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98"><span class="toc-text">数据包开发实战</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87-1"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%89%A9%E5%93%81"><span class="toc-text">创建新物品</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-text">绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-text">什么是数据包?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-text">数据包的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">数据包的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E6%8C%87%E4%BB%A4"><span class="toc-text">数据包指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E4%B8%8ENBT%E6%A0%BC%E5%BC%8F"><span class="toc-text">JSON文件格式与NBT格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">JSON文件格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NBT%E7%AE%80%E4%BB%8B"><span class="toc-text">NBT简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%E5%92%8C%E6%A0%87%E7%AD%BE%E6%96%87%E4%BB%B6"><span class="toc-text">文件路径和标签文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="toc-text">路径引用格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-text">标签文件类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">标签文件格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95%E5%92%8C%E8%B0%83%E7%94%A8"><span class="toc-text">函数的语法和调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E6%96%B9"><span class="toc-text">配方</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E7%82%89%E9%85%8D%E6%96%B9"><span class="toc-text">高炉配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%90%A5%E7%81%AB%E9%85%8D%E6%96%B9"><span class="toc-text">营火配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8F%B0%E6%9C%89%E5%BA%8F%E9%85%8D%E6%96%B9"><span class="toc-text">工作台有序配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8F%B0%E6%97%A0%E5%BA%8F%E9%85%8D%E6%96%B9"><span class="toc-text">工作台无序配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%86%94%E7%82%89%E9%85%8D%E6%96%B9"><span class="toc-text">熔炉配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%BB%E9%80%A0%E5%8F%B0%E9%85%8D%E6%96%B9"><span class="toc-text">锻造台配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%9F%E7%86%8F%E7%82%89%E9%85%8D%E6%96%B9"><span class="toc-text">烟熏炉配方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E7%9F%B3%E6%9C%BA%E9%85%8D%E6%96%B9"><span class="toc-text">切石机配方</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8"><span class="toc-text">战利品表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E5%8F%AF%E4%BB%A5%E6%8E%A7%E5%88%B6%E4%BB%80%E4%B9%88"><span class="toc-text">战利品表可以控制什么?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E5%87%BD%E6%95%B0-%E7%89%A9%E5%93%81%E4%BF%AE%E9%A5%B0%E5%99%A8"><span class="toc-text">战利品表函数&#x2F;物品修饰器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E8%B0%93%E8%AF%8D"><span class="toc-text">战利品表谓词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-text">战利品表的格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84%E7%BB%84%E7%BB%87%E4%B8%8E%E6%8E%89%E8%90%BD%E7%89%A9%E7%9A%84%E5%8F%AF%E8%83%BD%E6%80%A7%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">战利品表的结构组织与掉落物的可能性的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6"><span class="toc-text">进度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="toc-text">进度的检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6%E7%9A%84%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">进度的文件格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%BA%A6%E7%9A%84%E8%A1%A5%E5%85%85"><span class="toc-text">关于进度的补充</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98"><span class="toc-text">数据包开发实战</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87-2"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%89%A9%E5%93%81"><span class="toc-text">创建新物品</span></a></li></ol></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -260,8 +203,7 @@
             </span>
             2024/2/3
         </span>
-           
-            <!--展示categories-->
+        
         <span class="category">
             <a href="/categories/%E6%B8%B8%E6%88%8F/">
                 <span class="icon">
@@ -271,8 +213,7 @@
             </a>
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -286,59 +227,67 @@
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <blockquote>
-<p>数据包、指令什么的…它并不是区分普通玩家和开发者的东西，恰恰相反，<br>所有人都能参与到mc的开发中，毕竟mc很大一部分就是由玩家的创造性构建的。<br>怀着这样的目的，我想让我知道的，也让你们知道。 ——小业</p>
+<p>数据包、指令什么的…它并不是区分普通玩家和开发者的东西，恰恰相反，所有人都能参与到mc的开发中，毕竟mc很大一部分就是由玩家的创造性构建的。怀着这样的目的，我想让我知道的，也让你们知道。 ——小业</p>
 </blockquote>
-<p>&nbsp;</p>
-<h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><p><i class="fa-regular fa-circle-check"></i> <strong>开发平台</strong>: Windows 10<br><i class="fa-regular fa-circle-check"></i> <strong>MC启动器</strong>: PCL2<br><i class="fa-regular fa-circle-check"></i> <strong>MC版本</strong>: Java版</p>
+<p> </p>
+<h3 id="基本信息">基本信息</h3>
+<p><i class="fa-regular fa-circle-check"></i> <strong>开发平台</strong>: Windows 10<br>
+<i class="fa-regular fa-circle-check"></i> <strong>MC启动器</strong>: PCL2<br>
+<i class="fa-regular fa-circle-check"></i> <strong>MC版本</strong>: Java版</p>
 <span id="more"></span>
-
-<p>&nbsp;</p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jS4y1j77W/?spm_id_from=333.337.search-card.all.click&vd_source=fb60086411a6996e53c3014541e4a3ee">我的世界数据包入门教学系列</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.sandclocks.cn/dataPack/recipes">可视化数据包制作网站(仅支持部分配方&amp;成就)</a></li>
-<li><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E5%8C%85">MCwiki - 数据包</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhangshenxing.gitee.io/vanillamodtutorial/">ruhuasiyu 的原版模组入门教程页面</a></li>
+<p> </p>
+<h3 id="参考资料">参考资料</h3>
+<ol>
+<li class="lvl-3">
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jS4y1j77W/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fb60086411a6996e53c3014541e4a3ee">我的世界数据包入门教学系列</a></p>
+</li>
+<li class="lvl-3">
+<p><a target="_blank" rel="noopener" href="https://www.sandclocks.cn/dataPack/recipes">可视化数据包制作网站(仅支持部分配方&amp;成就)</a></p>
+</li>
+<li class="lvl-3">
+<p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E5%8C%85">MCwiki - 数据包</a></p>
+</li>
+<li class="lvl-3">
+<p><a target="_blank" rel="noopener" href="https://zhangshenxing.gitee.io/vanillamodtutorial/">ruhuasiyu 的原版模组入门教程页面</a></p>
+</li>
 </ol>
-<p>&nbsp;</p>
-<h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h3><h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><ol>
-<li>下载并安装VS Code(推荐使用VS Code进行开发)</li>
-<li>由于MC数据包的语法并不能被VS Code识别, 因此我们需要安装VS Code的插件: Data-pack Helper Plus(DHP大憨批!)和language-mcfunction</li>
+<p> </p>
+<h3 id="绪论">绪论</h3>
+<h4 id="前期准备">前期准备</h4>
+<ol>
+<li class="lvl-3">
+<p>下载并安装VS Code(推荐使用VS Code进行开发)</p>
+</li>
+<li class="lvl-3">
+<p>由于MC数据包的语法并不能被VS Code识别, 因此我们需要安装VS Code的插件: Data-pack Helper Plus(DHP大憨批!)和language-mcfunction</p>
+</li>
 </ol>
-<p>&nbsp;</p>
-<h4 id="什么是数据包"><a href="#什么是数据包" class="headerlink" title="什么是数据包?"></a>什么是数据包?</h4><p>根据MCwiki的介绍, <strong>数据包(Data Pack)</strong> 是MC官方为玩家进一步定制其Minecraft体验提供的一种新方式</p>
+<p> </p>
+<h4 id="什么是数据包">什么是数据包?</h4>
+<p>根据MCwiki的介绍, <strong>数据包(Data Pack)</strong> 是MC官方为玩家进一步定制其Minecraft体验提供的一种新方式</p>
 <p>数据包可用于在<strong>不进行任何代码修改</strong>的前提下, 覆盖或添加新的<a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%BF%9B%E5%BA%A6">进度</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%B4%E5%BA%A6">维度</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/Java%E7%89%88%E5%87%BD%E6%95%B0">函数</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8">战利品表</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8%E8%B0%93%E8%AF%8D">谓词</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E9%85%8D%E6%96%B9">配方</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%93%E6%9E%84">结构</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%A0%87%E7%AD%BE">标签</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B/JSON%E6%A0%BC%E5%BC%8F">伤害类型</a>, <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%96%E7%95%8C%E7%94%9F%E6%88%90">自定义世界生成</a>和<a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%94%9F%E7%89%A9%E7%BE%A4%E7%B3%BB">生物群系</a></p>
 <p>数据包的内容组织是十分模块化的, 相同的内容必然出现在相同的地方, 因此, 制作数据包的过程可以理解为不断往一个新建的数据包里面添加新内容的过程</p>
-<p>&nbsp;</p>
-<h4 id="数据包的位置"><a href="#数据包的位置" class="headerlink" title="数据包的位置"></a>数据包的位置</h4><p>与mod不同, 数据包并不和游戏绑定, 只和安装了该数据包的存档绑定, 在PCL2中打开某个版本MC的版本设置界面, 点击版本文件夹, 即可进入对应版本的MC的文件目录</p>
+<p> </p>
+<h4 id="数据包的位置">数据包的位置</h4>
+<p>与mod不同, 数据包并不和游戏绑定, 只和安装了该数据包的存档绑定, 在PCL2中打开某个版本MC的版本设置界面, 点击版本文件夹, 即可进入对应版本的MC的文件目录</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0036.png">
-
 <p>在资源管理器中进入<code>[version_name]/saves/[world_name]/datapacks/</code>, 即可进入某个存档的数据包储存目录:</p>
 <p>这个目录即是我们使用数据包的目录.</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0037.png">
-
-<p>那么对于游戏原版来说, 也有一个类似于”数据包”的文件, 储存着原版的配方, 战利品表等数据, 这个文件可以在<code>[version_name]/[version_name].jar/data/minecraft(命名空间)</code>中找到, 这是我们初学数据包制作时需要参考的一个重要样本</p>
-<p>&nbsp;</p>
-<h4 id="数据包的结构"><a href="#数据包的结构" class="headerlink" title="数据包的结构"></a>数据包的结构</h4><p>对于一个完整的数据包, 通常包含以下的结构.</p>
+<p>那么对于游戏原版来说, 也有一个类似于&quot;数据包&quot;的文件, 储存着原版的配方, 战利品表等数据, 这个文件可以在<code>[version_name]/[version_name].jar/data/minecraft(命名空间)</code>中找到, 这是我们初学数据包制作时需要参考的一个重要样本</p>
+<p> </p>
+<h4 id="数据包的结构">数据包的结构</h4>
+<p>对于一个完整的数据包, 通常包含以下的结构.</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0038.png">
-
-<p><strong>(数据包名字)</strong>: 数据包文件的名字, 是计算机区分不同文件的标识, <strong>与游戏实现无关</strong>. 换言之, 数据包名字可以是任意的, 相对更重要的是下面的”命名空间”</p>
+<p><strong>(数据包名字)</strong>: 数据包文件的名字, 是计算机区分不同文件的标识, <strong>与游戏实现无关</strong>. 换言之, 数据包名字可以是任意的, 相对更重要的是下面的&quot;命名空间&quot;</p>
 <p><strong>pack.mcmeta</strong>: 数据包的识别文件, 一个数据包<strong>一定</strong>要有这个文件. 文件内容格式是固定的, 照抄即可</p>
 <p>其中特定版本号对应的<code>pack_format</code>的值可以在<a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E5%8C%85#%E6%95%B0%E6%8D%AE%E5%8C%85%E7%89%88%E6%9C%AC">MC wiki</a>中查询</p>
 <p>PS: MC游戏在实现数据包时根本不会检查数据包的语法是否符合给定版本号, 因此即使随便填一个数字<strong>也不影响</strong>数据包的实际表现</p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;pack&quot;: &#123;
         &quot;pack_format&quot;: 10,
         &quot;description&quot;: &quot;The default data for Minecraft&quot;
@@ -350,51 +299,73 @@
 <p><strong>(命名空间)</strong>: <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID">命名空间ID(Namespaced identifier)</a>是用来指明和识别游戏中特定对象而又能避免潜在的歧义和冲突的一种方式</p>
 <p>命名空间的概念不仅仅在MC里面出现, 在很多编程语言中也占有一席之地, 比如C++就有标准命名空间std等等, 用处是区分不同主体对于同一个标识符产生的歧义</p>
 <p>例如MC原版和某数据包都用到了标识符apple, 假如没有命名空间, 两个apple标识符就会产生歧义, 但是假如该数据包的命名空间是class, 两个标识符就会被游戏解释为minecraft:apple和class:apple, 从而消除了歧义</p>
-<p>实际上, 标识符命名空间的缺省值为minecraft. 例如在上述例子中, 我们在游戏中输入指令<code>/give @s apple 1</code>, 会给自己minecraft:apple, 而不是class:apple. </p>
+<p>实际上, 标识符命名空间的缺省值为minecraft. 例如在上述例子中, 我们在游戏中输入指令<code>/give @s apple 1</code>, 会给自己minecraft:apple, 而不是class:apple.</p>
 <p><strong>假如你的数据包并不想对原版的游戏机制产生覆盖, 请使用自己的而不是原版的命名空间.</strong></p>
-<ul>
-<li>命名空间的名字即是该文件夹的名字</li>
-<li>命名空间文件夹内所有标识符的命名空间都是该文件夹的名字</li>
-<li>一个data文件夹下可以有多个命名空间文件夹, 他们彼此之间是独立的 </li>
-<li>命名空间文件夹不允许嵌套</li>
-<li>命名空间只能是英文小写字母, 数字, 下划线, 短横线和点号的组合</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>命名空间的名字即是该文件夹的名字</p>
+</li>
+<li class="lvl-2">
+<p>命名空间文件夹内所有标识符的命名空间都是该文件夹的名字</p>
+</li>
+<li class="lvl-2">
+<p>一个data文件夹下可以有多个命名空间文件夹, 他们彼此之间是独立的</p>
+</li>
+<li class="lvl-2">
+<p>命名空间文件夹不允许嵌套</p>
+</li>
+<li class="lvl-2">
+<p>命名空间只能是英文小写字母, 数字, 下划线, 短横线和点号的组合</p>
+</li>
 </ul>
 <p><strong>命名空间内的文件夹</strong>: 存放特定内容, 例如recipes, advancements等等</p>
 <p>与命名空间不同, 存放特定内容的文件夹是允许嵌套的. 例如以下的写法是合法的<code>./(命名空间)/functions/function_a/main.mcfunction</code>, 这样的写法大大提高了内容的可读性</p>
 <p>与其他文件夹不同的是, tags文件夹内的结构是保留的, 例如blocks, items等等. 我们自定义的标签应当遵循这样的分类方法, 将标签归类到特定的子文件夹中. 类似的, 子文件夹允许嵌套, 例如以下的写法是合法的<code>./(命名空间)/tags/blocks/blocks_b/fragile_block.json</code></p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0039.png">
-
-<p>&nbsp;</p>
+<p> </p>
 <p><strong>命名空间冲突处理</strong></p>
 <p>假如两个数据包各自的data文件夹中含有名字相同的命名空间文件夹时, 游戏会按照以下机制处理冲突:</p>
 <ol>
-<li>按照一定次序依次加载数据包</li>
-<li>如果两个文件的路径完全相同(包括路径和文件名), 后加载的会覆盖先加载的</li>
+<li class="lvl-3">
+<p>按照一定次序依次加载数据包</p>
+</li>
+<li class="lvl-3">
+<p>如果两个文件的路径完全相同(包括路径和文件名), 后加载的会覆盖先加载的</p>
+</li>
 </ol>
 <p>利用上述机制, 我们可以用自己的数据包来覆盖原版数据包(因为加载时, 原版数据包一定是先于其他所有数据包记载的)</p>
-<p>&nbsp;</p>
-<h4 id="数据包指令"><a href="#数据包指令" class="headerlink" title="数据包指令"></a>数据包指令</h4><p><strong>&#x2F;reload 指令</strong></p>
+<p> </p>
+<h4 id="数据包指令">数据包指令</h4>
+<p><strong>/reload 指令</strong></p>
 <p><code>/reload</code>会重新读取<code>./datapacks</code>内的全部数据包, 一般用于调试或增删数据包后更新数据包状态</p>
-<p><strong>&#x2F;datapack 指令</strong></p>
+<p><strong>/datapack 指令</strong></p>
 <p><code>/datapack</code>控制数据包的加载和卸载</p>
 <ol>
-<li><code>/datapack disable &lt;name&gt;</code>卸载某个数据包(并不是删除)</li>
-<li><code>/datapack list [available|enabled]</code>列出[生效的|失效的]数据包</li>
-<li><code>/datapack enable &lt;name&gt;</code>加载某个数据包</li>
+<li class="lvl-3">
+<p><code>/datapack disable &lt;name&gt;</code>卸载某个数据包(并不是删除)</p>
+</li>
+<li class="lvl-3">
+<p><code>/datapack list [available|enabled]</code>列出[生效的|失效的]数据包</p>
+</li>
+<li class="lvl-3">
+<p><code>/datapack enable &lt;name&gt;</code>加载某个数据包</p>
+</li>
 </ol>
-<p>&nbsp;</p>
-<h3 id="JSON文件格式与NBT格式"><a href="#JSON文件格式与NBT格式" class="headerlink" title="JSON文件格式与NBT格式"></a>JSON文件格式与NBT格式</h3><h4 id="JSON文件格式"><a href="#JSON文件格式" class="headerlink" title="JSON文件格式"></a>JSON文件格式</h4><p>JSON是存储和交换文本信息的语法, 被广泛的运用在MC的数据包编写中</p>
+<p> </p>
+<h3 id="JSON文件格式与NBT格式">JSON文件格式与NBT格式</h3>
+<h4 id="JSON文件格式">JSON文件格式</h4>
+<p>JSON是存储和交换文本信息的语法, 被广泛的运用在MC的数据包编写中</p>
 <p><strong>JSON的结构</strong></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/json/json-syntax.html">JSON</a>包含对象(由大括号<code>&#123;&#125;</code>保存)和数组(由中括号<code>[]</code>保存)两种结构, 其中对象是无序的, 数组是有序的. 对象的元素只能是空<code>null</code>或键值对<code>key: value</code>的有限组合, 数组的元素只能是空<code>null</code>或字符串(由双引号<code>&quot;&quot;</code>括起来), 数值, 布尔值(<code>true</code>或是<code>false</code>), 对象和数组的有限组合. 例如下列都是合法的JSON文件(注意: 一个合法的JSON文件一定是数组或是对象)</p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
 &#125;
 </code></pre>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;name&quot;: &quot;Vanadium&quot;,
     &quot;age&quot;: 18
 &#125;
 </code></pre>
-<pre><code class="json">[
+<pre><code class="language-json">[
     &#123;
         &quot;id&quot;: &quot;minecraft:apple&quot;,
         &quot;count&quot;: 64
@@ -408,12 +379,15 @@
     ]
 ]
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="NBT简介"><a href="#NBT简介" class="headerlink" title="NBT简介"></a>NBT简介</h4><p><strong><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%95%99%E7%A8%8B/NBT%E4%B8%8EJSON">NBT</a><strong>（</strong>二进制命名标签</strong>, <strong>N</strong>amed <strong>B</strong>inary <strong>T</strong>ags）格式是一种由众多的标签所组成的树状数据结构. 在Minecraft中, 其被广泛用于向<strong>存档文件</strong>中存储数据</p>
-<p>NBT本质上是按照一定的结构存储的数据。通常NBT本身是一个<strong>复合标签（compound）</strong>, 它类似于一个Lua的表（table）、JSON的对象（object）或Python的字典（dict）. 一个复合标签有多个<strong>标签（tag, 或者称为字段）</strong>, 每个标签都包含<strong>键（key, 也成为标签名称）</strong>和<strong>值（value）</strong></p>
+<p> </p>
+<h4 id="NBT简介">NBT简介</h4>
+<p><strong><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%95%99%E7%A8%8B/NBT%E4%B8%8EJSON">NBT</a></strong>（<strong>二进制命名标签</strong>, <strong>N</strong>amed <strong>B</strong>inary <strong>T</strong>ags）格式是一种由众多的标签所组成的树状数据结构. 在Minecraft中, 其被广泛用于向<strong>存档文件</strong>中存储数据</p>
+<p>NBT本质上是按照一定的结构存储的数据。通常NBT本身是一个<strong>复合标签（compound）</strong>, 它类似于一个Lua的表（table）、JSON的对象（object）或Python的字典（dict）. 一个复合标签有多个<strong>标签（tag, 或者称为字段）</strong>, 每个标签都包含<strong>键（key, 也成为标签名称）<strong>和</strong>值（value）</strong></p>
 <p><strong>NBT的值</strong></p>
-<ul>
-<li>数字: 一般用后缀表示其储存类型, 一般可以省略</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数字: 一般用后缀表示其储存类型, 一般可以省略</p>
+</li>
 </ul>
 <table>
 <thead>
@@ -424,7 +398,8 @@
 <th>举例</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>字节型byte</td>
 <td>b</td>
 <td>1</td>
@@ -437,7 +412,7 @@
 <td>32767s</td>
 </tr>
 <tr>
-<td>整型integer&#x2F;int</td>
+<td>整型integer/int</td>
 <td>-</td>
 <td>4</td>
 <td>2147483647</td>
@@ -460,11 +435,18 @@
 <td>8</td>
 <td>3.5d</td>
 </tr>
-</tbody></table>
-<ul>
-<li>字符串: 可以用<code>&quot;&quot;</code>或<code>&#39;&#39;</code>括起来, 如果字符串不包括标点符号, 可以省略引号. 但是为了和JSON保持一致, <strong>建议</strong>统一用<code>&quot;&quot;</code>括起来</li>
-<li>列表</li>
-<li>复合标签</li>
+</tbody>
+</table>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>字符串: 可以用<code>&quot;&quot;</code>或<code>''</code>括起来, 如果字符串不包括标点符号, 可以省略引号. 但是为了和JSON保持一致, <strong>建议</strong>统一用<code>&quot;&quot;</code>括起来</p>
+</li>
+<li class="lvl-2">
+<p>列表</p>
+</li>
+<li class="lvl-2">
+<p>复合标签</p>
+</li>
 </ul>
 <p><strong>复合标签</strong></p>
 <p>类似于JSON的对象, 用大括号<code>&#123;&#125;</code>括起来, 内部包含零个或若干个<strong>键值对</strong>, 键通常是字符串, 值可以是数字, 字符串, 列表或另一个复合标签</p>
@@ -472,7 +454,6 @@
 <p>类似于JSON的数组, 用中括号<code>[]</code>括起来, 内部包含零个或若干个<strong>值</strong>, 值可以是数字, 字符串, 复合标签或另一个列表</p>
 <p>实体的NBT标签格式可以在wiki中查询得到, 以<a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E5%83%B5%E5%B0%B8#%E5%AE%9E%E4%BD%93%E6%95%B0%E6%8D%AE">僵尸</a>为例, 我们可以写出其NBT:</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0040.png">
-
 <pre><code>&#123;
     CanBreakDoors: 1b,
     DrownedConversionTime: -1,
@@ -484,13 +465,25 @@
 <pre><code>/summon minecraft:zombie ~ ~ ~ &#123;CanBreakDoors: 1b, DrownedConversionTime: -1,InWaterTime: -1, IsBaby: true&#125;
 </code></pre>
 <p>要注意的是, 输入指令的时候是不允许换行的, 因此我们只能把NBT写成一坨()</p>
-<p>&nbsp;</p>
-<h3 id="文件路径和标签文件"><a href="#文件路径和标签文件" class="headerlink" title="文件路径和标签文件"></a>文件路径和标签文件</h3><h4 id="路径引用格式"><a href="#路径引用格式" class="headerlink" title="路径引用格式"></a>路径引用格式</h4><ol>
-<li>指明&lt;命名空间&gt;</li>
-<li>写出路径(用<code>/</code>分隔路径层级)</li>
-<li>末尾是文件名字, 不包含后缀</li>
-<li>路径省略</li>
-<li>如果是标签, 在最前面加上<code>#</code></li>
+<p> </p>
+<h3 id="文件路径和标签文件">文件路径和标签文件</h3>
+<h4 id="路径引用格式">路径引用格式</h4>
+<ol>
+<li class="lvl-3">
+<p>指明&lt;命名空间&gt;</p>
+</li>
+<li class="lvl-3">
+<p>写出路径(用<code>/</code>分隔路径层级)</p>
+</li>
+<li class="lvl-3">
+<p>末尾是文件名字, 不包含后缀</p>
+</li>
+<li class="lvl-3">
+<p>路径省略</p>
+</li>
+<li class="lvl-3">
+<p>如果是标签, 在最前面加上<code>#</code></p>
+</li>
 </ol>
 <p>例如以下引用是合法的</p>
 <pre><code>#引用了原版铁砧anvil的配方anvil.json
@@ -512,17 +505,23 @@ minecraft:stone_axe.json
 #未省略路径
 #minecraft:tags/items/slabs
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="标签文件类型"><a href="#标签文件类型" class="headerlink" title="标签文件类型"></a>标签文件类型</h4><p>标签文件包含方块标签, 物品标签, 实体类型标签和函数标签</p>
+<p> </p>
+<h4 id="标签文件类型">标签文件类型</h4>
+<p>标签文件包含方块标签, 物品标签, 实体类型标签和函数标签</p>
 <p>不同类型的标签文件表示不同类型的游戏元素</p>
 <p>在函数标签<code>.../(命名空间)/tags/functions/</code>内, 有两个特殊的标签</p>
-<ul>
-<li><code>tick</code>标签内的函数会在每个tick执行一次</li>
-<li><code>load</code>标签内的函数会在数据包加载的时候执行一次</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>tick</code>标签内的函数会在每个tick执行一次</p>
+</li>
+<li class="lvl-2">
+<p><code>load</code>标签内的函数会在数据包加载的时候执行一次</p>
+</li>
 </ul>
-<p>&nbsp;</p>
-<h4 id="标签文件格式"><a href="#标签文件格式" class="headerlink" title="标签文件格式"></a>标签文件格式</h4><p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%A0%87%E7%AD%BE#JSON%E6%A0%BC%E5%BC%8F">标签文件格式</a>可以表示为</p>
-<pre><code class="json">&#123;
+<p> </p>
+<h4 id="标签文件格式">标签文件格式</h4>
+<p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%A0%87%E7%AD%BE#JSON%E6%A0%BC%E5%BC%8F">标签文件格式</a>可以表示为</p>
+<pre><code class="language-json">&#123;
     &quot;replace&quot;: false,
     &quot;values&quot;: [
         &quot;minecraft:stone&quot;,
@@ -535,25 +534,39 @@ minecraft:stone_axe.json
 &#125;
 </code></pre>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0041.png">
-
-<p>&nbsp;</p>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><strong>函数（Function）</strong> 是一个可包含多行命令的数据包文件. 作为一个文本文件, 函数可以很容易地进行修改, 并且在执行大量命令时更不容易像命令方块一样造成延迟.</p>
-<p>&nbsp;</p>
-<h4 id="函数的语法和调用"><a href="#函数的语法和调用" class="headerlink" title="函数的语法和调用"></a>函数的语法和调用</h4><p>函数与指令很相似, 但是函数文件不以<code>/</code>开头, 可以直接书写. 函数的注释以<code>#</code>开头, 并且仅允许单行注释. 在函数行末使用<code>\</code>会使下一行承接到该行函数后, 以达到分行书写的目的.</p>
+<p> </p>
+<h3 id="函数">函数</h3>
+<p><strong>函数（Function）</strong> 是一个可包含多行命令的数据包文件. 作为一个文本文件, 函数可以很容易地进行修改, 并且在执行大量命令时更不容易像命令方块一样造成延迟.</p>
+<p> </p>
+<h4 id="函数的语法和调用">函数的语法和调用</h4>
+<p>函数与指令很相似, 但是函数文件不以<code>/</code>开头, 可以直接书写. 函数的注释以<code>#</code>开头, 并且仅允许单行注释. 在函数行末使用<code>\</code>会使下一行承接到该行函数后, 以达到分行书写的目的.</p>
 <p>以<code>&lt;命名空间&gt;:函数名</code>和<code>#&lt;命名空间&gt;:函数标签名</code>调用一个和一系列函数</p>
-<ul>
-<li>命令调用: <code>/function</code>命令可以调用函数</li>
-<li>进度调用: 达成某个进度时, 可以调用函数作为奖励. 此时函数的执行者是玩家</li>
-<li>函数调用: 函数可以嵌套调用其他函数, 也可以递归调用自身(但是一个tick最多执行32767条命令)</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>命令调用: <code>/function</code>命令可以调用函数</p>
+</li>
+<li class="lvl-2">
+<p>进度调用: 达成某个进度时, 可以调用函数作为奖励. 此时函数的执行者是玩家</p>
+</li>
+<li class="lvl-2">
+<p>函数调用: 函数可以嵌套调用其他函数, 也可以递归调用自身(但是一个tick最多执行32767条命令)</p>
+</li>
 </ul>
 <p>函数会在一个tick内执行所有命令, 执行命令的执行者会继承父函数的执行者, 例如:</p>
-<ul>
-<li>在聊天栏输入指令, 此时执行者是玩家</li>
-<li>其他情况, 执行者是游戏核心</li>
-<li>用<code>/execute</code>命令可以更改该命令的执行者</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在聊天栏输入指令, 此时执行者是玩家</p>
+</li>
+<li class="lvl-2">
+<p>其他情况, 执行者是游戏核心</p>
+</li>
+<li class="lvl-2">
+<p>用<code>/execute</code>命令可以更改该命令的执行者</p>
+</li>
 </ul>
-<p>&nbsp;</p>
-<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p><strong><code>load</code>标签</strong></p>
+<p> </p>
+<h4 id="实例">实例</h4>
+<p><strong><code>load</code>标签</strong></p>
 <p><code>load</code>标签会在数据包加载的时候执行一次(注意: 此时玩家并未加入世界, 因此无法通过命令寻找到玩家), <strong>适用于数据包的前置操作</strong></p>
 <p>例如写一个躲猫猫数据包, 规则要求永远都是黑夜, 我们可以这样书写:</p>
 <p>load.json</p>
@@ -571,26 +584,40 @@ gamerule doDaylightCycle false
 #设置黑夜
 time set night
 </code></pre>
-<p>&nbsp;</p>
+<p> </p>
 <p><strong>函数的执行者</strong></p>
 <p>当数据包直接调用函数时, 执行者是游戏核心</p>
-<ul>
-<li>位置: 世界出生点(可以用<code>/setworldspawn</code>更改)</li>
-<li>实体: 无</li>
-<li>维度: 主世界</li>
-<li>朝向: +X</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>位置: 世界出生点(可以用<code>/setworldspawn</code>更改)</p>
+</li>
+<li class="lvl-2">
+<p>实体: 无</p>
+</li>
+<li class="lvl-2">
+<p>维度: 主世界</p>
+</li>
+<li class="lvl-2">
+<p>朝向: +X</p>
+</li>
 </ul>
 <p>当玩家调用函数时, 执行者是玩家</p>
-<ul>
-<li>位置&#x2F;维度&#x2F;朝向: 同玩家</li>
-<li>实体: 玩家</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>位置/维度/朝向: 同玩家</p>
+</li>
+<li class="lvl-2">
+<p>实体: 玩家</p>
+</li>
 </ul>
 <p>用<code>/execute</code>命令可以更改该命令的执行者(未更改的属性会继承)</p>
 <p>例如玩家想要在自身上面10格调用函数: <code>/execute positioned ~ ~10 ~ run function &lt;函数&gt;</code></p>
-<p>&nbsp;</p>
+<p> </p>
 <p><strong>设置函数计划</strong></p>
 <p><code>/schedule function &lt;函数&gt; &lt;时间&gt; [append|replace]</code></p>
-<p>时间: 正整数+单位(t: tick, s: 秒, d: 游戏日)<br>append: 独立计划<br>replace: 覆盖之前的计划</p>
+<p>时间: 正整数+单位(t: tick, s: 秒, d: 游戏日)<br>
+append: 独立计划<br>
+replace: 覆盖之前的计划</p>
 <p><code>/schedule clear &lt;函数&gt;</code></p>
 <p>清除函数的计划</p>
 <p><strong>注意: 计划函数的执行者是游戏核心, 与创建计划者无关</strong></p>
@@ -600,7 +627,7 @@ time set night
 
 schedule function class:give_golden_apple 50t append
 </code></pre>
-<p>&nbsp;</p>
+<p> </p>
 <p><strong>循环结构和选择结构的实现</strong></p>
 <p><strong>例1</strong>: 执行函数<code>class:test</code>1000次</p>
 <p>test_loop.mcfunction</p>
@@ -640,46 +667,66 @@ execute is score #is_air ctrl matches 1 run \
 execute is score #is_air ctrl matches 0 run \
     setblock ~ ~ ~ minecraft:ancient_debris
 </code></pre>
-<p>&nbsp;</p>
-<h3 id="配方"><a href="#配方" class="headerlink" title="配方"></a>配方</h3><p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E9%85%8D%E6%96%B9">配方（Recipes）</a>是一种引导新玩家游玩Minecraft的方式，通过帮助玩家了解合成、烧炼以及其他的方块和物品转化方式来使玩家熟悉游戏</p>
+<p> </p>
+<h3 id="配方">配方</h3>
+<p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E9%85%8D%E6%96%B9">配方（Recipes）</a>是一种引导新玩家游玩Minecraft的方式，通过帮助玩家了解合成、烧炼以及其他的方块和物品转化方式来使玩家熟悉游戏</p>
 <p>配方由数据包配置，从其中读取数据. 所有的合成、烧炼、冶炼、营火烹饪、烟熏、锻造和切石配方都使用这个系统</p>
-<p>常规配方无法更改NBT, 同理所有涉及修改&#x2F;保留NBT的配方都无法被数据包修改</p>
-<h4 id="高炉配方"><a href="#高炉配方" class="headerlink" title="高炉配方"></a>高炉配方</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0042.png">
-
-<h4 id="营火配方"><a href="#营火配方" class="headerlink" title="营火配方"></a>营火配方</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0043.png">
-
-<h4 id="工作台有序配方"><a href="#工作台有序配方" class="headerlink" title="工作台有序配方"></a>工作台有序配方</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0044.png">
-
-<h4 id="工作台无序配方"><a href="#工作台无序配方" class="headerlink" title="工作台无序配方"></a>工作台无序配方</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0045.png">
-
-<h4 id="熔炉配方"><a href="#熔炉配方" class="headerlink" title="熔炉配方"></a>熔炉配方</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0046.png">
-
-<h4 id="锻造台配方"><a href="#锻造台配方" class="headerlink" title="锻造台配方"></a>锻造台配方</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0047.png">
-
-<h4 id="烟熏炉配方"><a href="#烟熏炉配方" class="headerlink" title="烟熏炉配方"></a>烟熏炉配方</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0048.png">
-
-<h4 id="切石机配方"><a href="#切石机配方" class="headerlink" title="切石机配方"></a>切石机配方</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0049.png">
-
-<p>&nbsp;</p>
-<h3 id="战利品表"><a href="#战利品表" class="headerlink" title="战利品表"></a>战利品表</h3><p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8">战利品表（Loot table）</a>是一种技术性JSON表，用于决定各个情况下生成什么物品，比如自然生成的容器的内容物、破坏方块时的掉落物、杀死实体时的掉落物、钓鱼时可以钓上的物品、猪灵的以物易物</p>
-<p>&nbsp;</p>
-<h4 id="战利品表可以控制什么"><a href="#战利品表可以控制什么" class="headerlink" title="战利品表可以控制什么?"></a>战利品表可以控制什么?</h4><ol>
-<li>实体死亡后的掉落物(不包括经验球)</li>
-<li>方块破坏后的掉落物</li>
-<li>自然生成的容器(箱子, 箱子矿车等等)内的物品</li>
-<li>钓鱼钓到的物品</li>
-<li>猫, 村民(村庄英雄)的赠予</li>
-<li>和猪灵的以物易物</li>
-<li>达成进度的奖励</li>
+<p>常规配方无法更改NBT, 同理所有涉及修改/保留NBT的配方都无法被数据包修改</p>
+<h4 id="高炉配方">高炉配方</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0042.png">
+<h4 id="营火配方">营火配方</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0043.png">
+<h4 id="工作台有序配方">工作台有序配方</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0044.png">
+<h4 id="工作台无序配方">工作台无序配方</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0045.png">
+<h4 id="熔炉配方">熔炉配方</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0046.png">
+<h4 id="锻造台配方">锻造台配方</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0047.png">
+<h4 id="烟熏炉配方">烟熏炉配方</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0048.png">
+<h4 id="切石机配方">切石机配方</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0049.png">
+<p> </p>
+<h3 id="战利品表">战利品表</h3>
+<p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8">战利品表（Loot table）</a>是一种技术性JSON表，用于决定各个情况下生成什么物品，比如自然生成的容器的内容物、破坏方块时的掉落物、杀死实体时的掉落物、钓鱼时可以钓上的物品、猪灵的以物易物</p>
+<p> </p>
+<h4 id="战利品表可以控制什么">战利品表可以控制什么?</h4>
+<ol>
+<li class="lvl-3">
+<p>实体死亡后的掉落物(不包括经验球)</p>
+</li>
+<li class="lvl-3">
+<p>方块破坏后的掉落物</p>
+</li>
+<li class="lvl-3">
+<p>自然生成的容器(箱子, 箱子矿车等等)内的物品</p>
+</li>
+<li class="lvl-3">
+<p>钓鱼钓到的物品</p>
+</li>
+<li class="lvl-3">
+<p>猫, 村民(村庄英雄)的赠予</p>
+</li>
+<li class="lvl-3">
+<p>和猪灵的以物易物</p>
+</li>
+<li class="lvl-3">
+<p>达成进度的奖励</p>
+</li>
 </ol>
-<p>&nbsp;</p>
-<h4 id="战利品表函数-物品修饰器"><a href="#战利品表函数-物品修饰器" class="headerlink" title="战利品表函数&#x2F;物品修饰器"></a>战利品表函数&#x2F;物品修饰器</h4><p>战利品表函数与之前提到的函数完全不同. 战利品表函数也称物品修饰器, 用于控制物品的个数, 附魔, NBT等等属性</p>
+<p> </p>
+<h4 id="战利品表函数-物品修饰器">战利品表函数/物品修饰器</h4>
+<p>战利品表函数与之前提到的函数完全不同. 战利品表函数也称物品修饰器, 用于控制物品的个数, 附魔, NBT等等属性</p>
 <p>存在多个战利品表函数时, 游戏会从上到下依次使用战利品表函数</p>
-<p>&nbsp;</p>
-<h4 id="战利品表谓词"><a href="#战利品表谓词" class="headerlink" title="战利品表谓词"></a>战利品表谓词</h4><p>战利品表谓词是战利品表函数执行的前提条件. 当且仅当条件被满足时, 物品才会依照战利品表函数掉落或生成</p>
+<p> </p>
+<h4 id="战利品表谓词">战利品表谓词</h4>
+<p>战利品表谓词是战利品表函数执行的前提条件. 当且仅当条件被满足时, 物品才会依照战利品表函数掉落或生成</p>
 <p>例如燃烧状态的羊会掉落熟羊肉, 反之则不会</p>
-<p>&nbsp;</p>
-<h4 id="战利品表的格式"><a href="#战利品表的格式" class="headerlink" title="战利品表的格式"></a>战利品表的格式</h4><pre><code class="json">&#123;
+<p> </p>
+<h4 id="战利品表的格式">战利品表的格式</h4>
+<pre><code class="language-json">&#123;
     &quot;type&quot;: &quot;&lt;战利品表类型&gt;&quot;,
     &quot;functions&quot;: [
         &#123;
@@ -725,27 +772,50 @@ execute is score #is_air ctrl matches 0 run \
     ]
 &#125;
 </code></pre>
-<p><strong>type</strong>: <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%B1%BB%E5%9E%8B">战利品表类型</a>表示该战利品表的适用范围. 加载数据包时, 游戏会检查该战利品表的语法是否与类型对应<br><strong>functions</strong>: 对<strong>该</strong>战利品表或随机池内所有物品应用的战利品表函数列表<br><strong>conditions</strong>: 对<strong>以下</strong>战利品表函数或者是<strong>该</strong>随机池应用的谓词列表, 当且仅当所有谓词均通过, 才应用这个战利品表函数或者是该随机池<br><strong>pools</strong>: 随机池列表, 里面每一个对象都是一个<strong>独立的</strong>随机池. 例如骷髅死亡会掉落骨头和箭, 两者掉落与否是彼此独立的, 因此骨头和箭会分别写在两个随机池里面(即两个对象)<br><strong>rolls</strong>: 该随机池的抽奖次数<br><strong>bonus_rolls</strong>: 该随机池, 每1点幸运值能额外提供的抽奖次数<br><strong>entries</strong>: 该随机池能产生的物品的列表. 当该随机池被通过时, 从该列表中按照权重随机抽出<strong>最多一项</strong>物品作为战利品. 例如挖掘钻石矿, 会根据使用工具的品质分别掉落null, 钻石和钻石矿, 此时后两个物品应当位于同一个<code>entries</code>中<br><strong>weight</strong>: 该项的权重, 被抽到的概率为<code>该项的权重/总权重</code><br><strong>quality</strong>: 每1点幸运值能额外提供的权重<br><strong>type</strong>: <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8#%E6%A0%87%E7%AD%BE">项的类型</a>, 根据项的类型的不同, 接下来的参数会有不一样</p>
-<p>&nbsp;</p>
-<h4 id="战利品表的结构组织与掉落物的可能性的关系"><a href="#战利品表的结构组织与掉落物的可能性的关系" class="headerlink" title="战利品表的结构组织与掉落物的可能性的关系"></a>战利品表的结构组织与掉落物的可能性的关系</h4><p>假设挖掘方块会掉落A, B或什么都不掉落</p>
-<ul>
-<li>A与B没有关系, 放在不同的随机池内</li>
-<li>A与B有关系, 放在同一个随机池内<ul>
-<li>没有先后逻辑顺序, 放在同一个<code>entries</code>里面</li>
-<li>存在先后逻辑顺序, 利用<code>alternative</code>嵌套</li>
+<p><strong>type</strong>: <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%B1%BB%E5%9E%8B">战利品表类型</a>表示该战利品表的适用范围. 加载数据包时, 游戏会检查该战利品表的语法是否与类型对应<br>
+<strong>functions</strong>: 对<strong>该</strong>战利品表或随机池内所有物品应用的战利品表函数列表<br>
+<strong>conditions</strong>: 对<strong>以下</strong>战利品表函数或者是<strong>该</strong>随机池应用的谓词列表, 当且仅当所有谓词均通过, 才应用这个战利品表函数或者是该随机池<br>
+<strong>pools</strong>: 随机池列表, 里面每一个对象都是一个<strong>独立的</strong>随机池. 例如骷髅死亡会掉落骨头和箭, 两者掉落与否是彼此独立的, 因此骨头和箭会分别写在两个随机池里面(即两个对象)<br>
+<strong>rolls</strong>: 该随机池的抽奖次数<br>
+<strong>bonus_rolls</strong>: 该随机池, 每1点幸运值能额外提供的抽奖次数<br>
+<strong>entries</strong>: 该随机池能产生的物品的列表. 当该随机池被通过时, 从该列表中按照权重随机抽出<strong>最多一项</strong>物品作为战利品. 例如挖掘钻石矿, 会根据使用工具的品质分别掉落null, 钻石和钻石矿, 此时后两个物品应当位于同一个<code>entries</code>中<br>
+<strong>weight</strong>: 该项的权重, 被抽到的概率为<code>该项的权重/总权重</code><br>
+<strong>quality</strong>: 每1点幸运值能额外提供的权重<br>
+<strong>type</strong>: <a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E6%88%98%E5%88%A9%E5%93%81%E8%A1%A8#%E6%A0%87%E7%AD%BE">项的类型</a>, 根据项的类型的不同, 接下来的参数会有不一样</p>
+<p> </p>
+<h4 id="战利品表的结构组织与掉落物的可能性的关系">战利品表的结构组织与掉落物的可能性的关系</h4>
+<p>假设挖掘方块会掉落A, B或什么都不掉落</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>A与B没有关系, 放在不同的随机池内</p>
+</li>
+<li class="lvl-2">
+<p>A与B有关系, 放在同一个随机池内</p>
+<ul class="lvl-2">
+<li class="lvl-6">没有先后逻辑顺序, 放在同一个<code>entries</code>里面</li>
+<li class="lvl-6">存在先后逻辑顺序, 利用<code>alternative</code>嵌套</li>
 </ul>
 </li>
 </ul>
 <p>除此之外</p>
-<ul>
-<li>在<code>alternative</code>内, <code>weight</code>没有意义</li>
-<li>生成<code>empty</code>也算成功 </li>
-<li>允许有限次嵌套</li>
-<li>可以利用<code>group</code>分组使用战利品表函数</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在<code>alternative</code>内, <code>weight</code>没有意义</p>
+</li>
+<li class="lvl-2">
+<p>生成<code>empty</code>也算成功</p>
+</li>
+<li class="lvl-2">
+<p>允许有限次嵌套</p>
+</li>
+<li class="lvl-2">
+<p>可以利用<code>group</code>分组使用战利品表函数</p>
+</li>
 </ul>
-<p>&nbsp;</p>
-<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><p><strong>例1</strong>: 写一个战利品表, 实现: 产生1个钻石或1个金锭或1个绿宝石, 概率比为1:1:2</p>
-<pre><code class="json">&#123;
+<p> </p>
+<h4 id="实例-2">实例</h4>
+<p><strong>例1</strong>: 写一个战利品表, 实现: 产生1个钻石或1个金锭或1个绿宝石, 概率比为1:1:2</p>
+<pre><code class="language-json">&#123;
     &quot;type&quot;: &quot;minecraft:generic&quot;,
     &quot;pools&quot;: [
         &#123;
@@ -771,7 +841,7 @@ execute is score #is_air ctrl matches 0 run \
     ]
 &#125;
 </code></pre>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;type&quot;: &quot;minecraft:generic&quot;,
     &quot;pools&quot;: [
         &#123;
@@ -802,9 +872,9 @@ execute is score #is_air ctrl matches 0 run \
     ]
 &#125;
 </code></pre>
-<p>&nbsp;</p>
+<p> </p>
 <p><strong>例2</strong>: 写一个战利品表: 如果玩家主手手中拿的<strong>不是</strong>钻石镐, 则生成1个钻石镐, 否则不生产任何物品</p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;type&quot;: &quot;minecraft:generic&quot;,
     &quot;pools&quot;: [
         &#123;
@@ -837,22 +907,28 @@ execute is score #is_air ctrl matches 0 run \
     ]
 &#125;
 </code></pre>
-<p>&nbsp;</p>
+<p> </p>
 <p><strong>例3</strong>: 写一个僵尸死亡时的<strong>实体战利品表</strong>, 满足以下需求:</p>
 <ol>
-<li>僵尸被玩家杀死时:<ol>
-<li>如果玩家主手拿着僵尸头颅, 则<strong>固定</strong>掉落1个钻石</li>
-<li>当<code>1</code>失败, 有0.05的概率掉落1个钻石, 每多1级抢夺, 增加0.01掉落概率和1掉落数量, 掉落数量最多不超过3</li>
-<li>如果没有掉落钻石, 掉落1个腐肉</li>
+<li class="lvl-3">
+<p>僵尸被玩家杀死时:</p>
+<ol>
+<li class="lvl-6">如果玩家主手拿着僵尸头颅, 则<strong>固定</strong>掉落1个钻石</li>
+<li class="lvl-6">当<code>1</code>失败, 有0.05的概率掉落1个钻石, 每多1级抢夺, 增加0.01掉落概率和1掉落数量, 掉落数量最多不超过3</li>
+<li class="lvl-6">如果没有掉落钻石, 掉落1个腐肉</li>
 </ol>
 </li>
-<li>如果不是玩家杀死的, 则掉落1~3个鸡蛋, <strong>概率均匀分布</strong></li>
-<li>此外, 还有独立的0.5概率掉落1个土豆<ol>
-<li>如果掉落了土豆, 并且僵尸处于燃烧状态, 则<strong>改为</strong>掉落1个烤土豆</li>
+<li class="lvl-3">
+<p>如果不是玩家杀死的, 则掉落1~3个鸡蛋, <strong>概率均匀分布</strong></p>
+</li>
+<li class="lvl-3">
+<p>此外, 还有独立的0.5概率掉落1个土豆</p>
+<ol>
+<li class="lvl-6">如果掉落了土豆, 并且僵尸处于燃烧状态, 则<strong>改为</strong>掉落1个烤土豆</li>
 </ol>
 </li>
 </ol>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;type&quot;: &quot;minecraft:entity&quot;,
     &quot;pools&quot;: [
         &#123;
@@ -968,11 +1044,13 @@ execute is score #is_air ctrl matches 0 run \
     ]
 &#125;
 </code></pre>
-<p>&nbsp;</p>
-<h3 id="进度"><a href="#进度" class="headerlink" title="进度"></a>进度</h3><p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%BF%9B%E5%BA%A6">进度（Advancements）</a>是一种用来逐步引导新手玩家融入Minecraft，并给玩家提供挑战的系统</p>
+<p> </p>
+<h3 id="进度">进度</h3>
+<p><a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%BF%9B%E5%BA%A6">进度（Advancements）</a>是一种用来逐步引导新手玩家融入Minecraft，并给玩家提供挑战的系统</p>
 <p>在<a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%BF%9B%E5%BA%A6/JSON%E6%A0%BC%E5%BC%8F">数据包领域</a>, 进度常常用来代替配方等无法自定义NBT的手段获得NBT物品, 同时也可以对一些函数难以判断的事件做出判定</p>
-<p>&nbsp;</p>
-<h4 id="进度的检测"><a href="#进度的检测" class="headerlink" title="进度的检测"></a>进度的检测</h4><p>进度的检测依赖于<a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%BF%9B%E5%BA%A6/JSON%E6%A0%BC%E5%BC%8F#%E8%A7%A6%E5%8F%91%E5%99%A8%E5%88%97%E8%A1%A8">进度触发器</a>, 不同于函数的检测, 函数只能检测某个tick或某段tick的状态, 而进度可以检测任意时刻的状态</p>
+<p> </p>
+<h4 id="进度的检测">进度的检测</h4>
+<p>进度的检测依赖于<a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E8%BF%9B%E5%BA%A6/JSON%E6%A0%BC%E5%BC%8F#%E8%A7%A6%E5%8F%91%E5%99%A8%E5%88%97%E8%A1%A8">进度触发器</a>, 不同于函数的检测, 函数只能检测某个tick或某段tick的状态, 而进度可以检测任意时刻的状态</p>
 <p>下面给出了一些函数和进度的常见检测范围</p>
 <table>
 <thead>
@@ -982,7 +1060,8 @@ execute is score #is_air ctrl matches 0 run \
 <th>进度</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>玩家记分板的分数</td>
 <td>T</td>
 <td>T</td>
@@ -1017,13 +1096,13 @@ execute is score #is_air ctrl matches 0 run \
 <td>F</td>
 <td>F</td>
 </tr>
-</tbody></table>
-<p>&nbsp;</p>
-<h4 id="进度的文件格式"><a href="#进度的文件格式" class="headerlink" title="进度的文件格式"></a>进度的文件格式</h4><img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0050.png">
-
+</tbody>
+</table>
+<p> </p>
+<h4 id="进度的文件格式">进度的文件格式</h4>
+<img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0050.png">
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0051.png">
-
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;criteria&quot;:&#123;
         &quot;&lt;自定义准则&gt;&quot;: &#123;
             &quot;trigger&quot;: &quot;&lt;触发器命名空间ID&gt;&quot;,
@@ -1061,16 +1140,26 @@ execute is score #is_air ctrl matches 0 run \
     &#125;
 &#125;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="关于进度的补充"><a href="#关于进度的补充" class="headerlink" title="关于进度的补充"></a>关于进度的补充</h4><ul>
-<li>完成进度时, 只有玩家可以作为奖励函数的执行者, 而其他进度相关的的其他实体不可以</li>
-<li>实现重复完成进度, 可以在奖励函数中用<code>/advancemants</code>命令剥夺该进度</li>
+<p> </p>
+<h4 id="关于进度的补充">关于进度的补充</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>完成进度时, 只有玩家可以作为奖励函数的执行者, 而其他进度相关的的其他实体不可以</p>
+</li>
+<li class="lvl-2">
+<p>实现重复完成进度, 可以在奖励函数中用<code>/advancemants</code>命令剥夺该进度</p>
+</li>
 </ul>
-<p>&nbsp;</p>
-<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><p><strong>例1</strong>: 编写一系列进度A, B和C, 满足:</p>
-<ul>
-<li>新建选项卡, 层次关系为<code>A-&gt;B, A-&gt;C</code></li>
-<li>选项卡背景是绿宝石矿贴图, 路径为<code>.../assets/minecraft/textures/block/emerald_ore.png</code></li>
+<p> </p>
+<h4 id="实例-3">实例</h4>
+<p><strong>例1</strong>: 编写一系列进度A, B和C, 满足:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>新建选项卡, 层次关系为<code>A-&gt;B, A-&gt;C</code></p>
+</li>
+<li class="lvl-2">
+<p>选项卡背景是绿宝石矿贴图, 路径为<code>.../assets/minecraft/textures/block/emerald_ore.png</code></p>
+</li>
 </ul>
 <p>A, B, C满足:</p>
 <table>
@@ -1085,7 +1174,8 @@ execute is score #is_air ctrl matches 0 run \
 <th>前提</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>A</td>
 <td>绿宝石物品</td>
 <td>普通</td>
@@ -1112,9 +1202,10 @@ execute is score #is_air ctrl matches 0 run \
 <td>当村民之间相互丢物品时, 玩家抢走物品</td>
 <td>同时完成A和B</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>a.json</p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;display&quot;:&#123;
         &quot;icon&quot;: &#123;
             &quot;item&quot;: &quot;minecraft:emerald&quot;
@@ -1171,7 +1262,7 @@ execute is score #is_air ctrl matches 0 run \
 &#125;
 </code></pre>
 <p>b.json</p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;criteria&quot;: &#123;
         &quot;give_food&quot;: &#123;
             &quot;trigger&quot;: &quot;minecraft:thrown_item_picked_up_by_entity&quot;,
@@ -1203,7 +1294,7 @@ execute is score #is_air ctrl matches 0 run \
 &#125;
 </code></pre>
 <p>c.json</p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;display&quot;: &#123;
         &quot;icon&quot;: &#123;
             &quot;item&quot;: &quot;minecraft:wooden_sword&quot;,
@@ -1235,10 +1326,10 @@ execute is score #is_air ctrl matches 0 run \
     &#125;
 &#125;
 </code></pre>
-<p>&nbsp;</p>
+<p> </p>
 <p><strong>例2</strong>: 利用进度和函数实现玩家吃下金苹果时, 返还1个苹果, 这个效果有10s的内置冷却时间</p>
 <p>a.json</p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;criteria&quot;: &#123;
         &quot;eat_golden_apple&quot;:&#123;
             &quot;trigger&quot;: &quot;consume_item&quot;,
@@ -1280,15 +1371,18 @@ schedule function class:a_1 10s
 <p>a_1.mcfunction</p>
 <pre><code>advancement revoke @p only class:a
 </code></pre>
-<p>&nbsp;</p>
-<h3 id="数据包开发实战"><a href="#数据包开发实战" class="headerlink" title="数据包开发实战"></a>数据包开发实战</h3><h4 id="前期准备-1"><a href="#前期准备-1" class="headerlink" title="前期准备"></a>前期准备</h4><p>创建数据包加载成功提示函数</p>
+<p> </p>
+<h3 id="数据包开发实战">数据包开发实战</h3>
+<h4 id="前期准备-2">前期准备</h4>
+<p>创建数据包加载成功提示函数</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0052.png">
-
-<p>&nbsp;</p>
-<h4 id="创建新物品"><a href="#创建新物品" class="headerlink" title="创建新物品"></a>创建新物品</h4><p><strong>汉堡</strong><br>配方: 2面包+1牛排<br>效果: 食用后恢复24饥饿值(熟鳕鱼: 5), 获得力量I效果, 持续60s</p>
+<p> </p>
+<h4 id="创建新物品">创建新物品</h4>
+<p><strong>汉堡</strong><br>
+配方: 2面包+1牛排效果: 食用后恢复24饥饿值(熟鳕鱼: 5), 获得力量I效果, 持续60s</p>
 <p>战利品表创建</p>
 <p><code>...\mfood\loot_tables\hamburger.json</code></p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;type&quot;: &quot;generic&quot;,
     &quot;pools&quot;: [
         &#123;
@@ -1300,7 +1394,7 @@ schedule function class:a_1 10s
                     &quot;functions&quot;: [
                         &#123;
                             &quot;function&quot;: &quot;set_nbt&quot;,
-                            &quot;tag&quot;: &quot;&#123;display:&#123;Name:&#39;&#123;\&quot;text\&quot;:\&quot;汉堡\&quot;&#125;&#39;&#125;,id:&#39;mfood:hamburger&#39;,CustomModelData:11450001&#125;&quot;
+                            &quot;tag&quot;: &quot;&#123;display:&#123;Name:'&#123;\&quot;text\&quot;:\&quot;汉堡\&quot;&#125;'&#125;,id:'mfood:hamburger',CustomModelData:11450001&#125;&quot;
                         &#125;
                     ]
                 &#125;
@@ -1311,7 +1405,7 @@ schedule function class:a_1 10s
 </code></pre>
 <p>纹理创建(资源包部分)</p>
 <p><code>...\minecraft\models\item\cooked_cod.json</code></p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;parent&quot;: &quot;minecraft:item/generated&quot;,
     &quot;textures&quot;: &#123;
       &quot;layer0&quot;: &quot;minecraft:item/cooked_cod&quot;
@@ -1327,7 +1421,7 @@ schedule function class:a_1 10s
   &#125;
 </code></pre>
 <p><code>...\mfood\models\item\hamburger.json</code></p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;parent&quot;: &quot;minecraft:item/generated&quot;,
     &quot;textures&quot;: &#123;
       &quot;layer0&quot;: &quot;mfood:item/hamburger&quot;
@@ -1337,13 +1431,13 @@ schedule function class:a_1 10s
 <p><code>...\mfood\textures\item\hamburger.png</code></p>
 <p>食用效果</p>
 <p><code>...\mfood\advancements\hamburger.json</code></p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;criteria&quot;: &#123;
         &quot;comsume_hamburger&quot;: &#123;
             &quot;trigger&quot;: &quot;minecraft:consume_item&quot;,
             &quot;conditions&quot;: &#123;
                 &quot;item&quot;: &#123;
-                    &quot;nbt&quot;: &quot;&#123;id:&#39;mfood:hamburger&#39;&#125;&quot;
+                    &quot;nbt&quot;: &quot;&#123;id:'mfood:hamburger'&#125;&quot;
                 &#125;
             &#125;
         &#125;
@@ -1360,7 +1454,7 @@ advancement revoke @s only mfood:hamburger
 </code></pre>
 <p>地板合成</p>
 <p><code>...\minecraft\tags\functions\tick.json</code></p>
-<pre><code class="json">&#123;
+<pre><code class="language-json">&#123;
     &quot;replace&quot;: false,
     &quot;values&quot;: [
         &quot;mfood:tick&quot;
@@ -1380,36 +1474,15 @@ kill @s
 </code></pre>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -1426,7 +1499,6 @@ kill @s
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -1446,20 +1518,7 @@ kill @s
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -1473,46 +1532,6 @@ kill @s
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,74 +160,36 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#basic-infomation"><span class="toc-text">Basic Infomation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#index"><span class="toc-text">Index</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-01-introduction"><span class="toc-text">Chapter 01 Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#course-objective"><span class="toc-text">1.1 Course Objective</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prerequisites"><span class="toc-text">1.2 Prerequisites</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#class-grading"><span class="toc-text">1.3 Class Grading</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-02-binary-number-representation"><span class="toc-text">Chapter 02 Binary
-Number Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#data-represantation"><span class="toc-text">2.1 Data represantation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#carry-counting-system"><span class="toc-text">2.1.1 Carry Counting System</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arithmetic-operators"><span class="toc-text">2.2 Arithmetic Operators</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-03-representation-of-numeric-data"><span class="toc-text">Chapter 03
-Representation of Numeric Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#integer"><span class="toc-text">3.1 Integer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#encoding-methods-of-integers"><span class="toc-text">3.2 Encoding Methods of
-Integers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#original-code"><span class="toc-text">3.2.1 Original code</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#complement-code-important"><span class="toc-text">3.2.2 Complement code ( IMPORTANT
-)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#inverse-code"><span class="toc-text">3.2.3 Inverse code</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#frameshift-code-more-used-in-float-numbers"><span class="toc-text">3.2.4 Frameshift
-code ( more used in float numbers )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#representation-of-integers"><span class="toc-text">3.3 Representation of Integers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#bit-level-operation-in-c"><span class="toc-text">3.3.1 Bit-Level Operation in C</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multiplication"><span class="toc-text">3.3.2 Multiplication</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-04"><span class="toc-text">Chapter 04</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#binary-logical-gates"><span class="toc-text">4.1 Binary Logical &amp; Gates</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#three-basic-logical-operations"><span class="toc-text">4.1.1 Three basic logical
-operations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#how-to-model-logic-functions"><span class="toc-text">4.1.2 How to Model Logic
-Functions?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#logic-gates"><span class="toc-text">4.1.3 Logic Gates</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transistors"><span class="toc-text">4.2 Transistors</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#developing"><span class="toc-text">4.2.1 Developing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#integrated-circuit-transistors"><span class="toc-text">4.2.2 Integrated Circuit &amp;
-Transistors</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#transistor-function"><span class="toc-text">4.2.3 Transistor Function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#implementation-of-logic-gates-with-transisitors"><span class="toc-text">4.2.4
-Implementation of Logic Gates with Transisitors</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-05-floating-point-number-representation-non-numeric-data"><span class="toc-text">Chapter
-05 Floating-Point Number Representation &amp; Non-Numeric Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ieee-standard-754"><span class="toc-text">5.1 IEEE Standard 754</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#precision"><span class="toc-text">5.1.1 Precision</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#exponent-frameshift-code"><span class="toc-text">5.1.2 Exponent (Frameshift Code)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#normalized-encoding"><span class="toc-text">5.1.3 Normalized Encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#denormalized-values-encoding"><span class="toc-text">5.1.4 Denormalized Values &amp;
-Encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#special-properties"><span class="toc-text">5.1.5 Special Properties</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fp-operations"><span class="toc-text">5.2 FP Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rounding"><span class="toc-text">5.2.1 Rounding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fp-addition"><span class="toc-text">5.2.2 FP Addition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fp-mulitiplication"><span class="toc-text">5.2.3 FP Mulitiplication</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#non-numeric-data"><span class="toc-text">5.3 Non-Numeric Data</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#logical-value"><span class="toc-text">5.3.1 Logical Value</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#alphanumeric-code"><span class="toc-text">5.3.2 Alphanumeric Code</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data-width-storage"><span class="toc-text">5.4 Data Width &amp; Storage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-06"><span class="toc-text">Chapter 06</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-07"><span class="toc-text">Chapter 07</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#boolean-algebra"><span class="toc-text">7.1 Boolean Algebra</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#axioms"><span class="toc-text">7.1.1 Axioms</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theorems-13-variables"><span class="toc-text">7.1.2 Theorems: 1~3 Variables</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theorems-n-variables"><span class="toc-text">7.1.3 Theorems: n Variables</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#power-of-duality"><span class="toc-text">7.1.4 Power of Duality</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#logical-functions"><span class="toc-text">7.2 Logical Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#representation-of-logic-functions"><span class="toc-text">7.2.1 Representation of Logic
-Functions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#coplementation-of-functions"><span class="toc-text">7.2.2 Coplementation of
-Functions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#canonical-standard-form"><span class="toc-text">7.2.3 Canonical &amp; Standard
-Form</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-08"><span class="toc-text">Chapter 08</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#simplification-of-logic-functions"><span class="toc-text">8.1 Simplification of Logic
-Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#n-variable-karnaugh-map"><span class="toc-text">8.1.1 N-Variable Karnaugh Map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k-map-definations"><span class="toc-text">8.1.2 K-Map Definations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#selection-rule-example-with-dont-cares"><span class="toc-text">8.1.3 Selection Rule
-Example with Don’t Cares</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bubble-pushing"><span class="toc-text">8.2 Bubble Pushing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#example"><span class="toc-text">8.2.1 Example</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chapter-09-combination-logic"><span class="toc-text">Chapter 09 Combination Logic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#introduction-to-verilog-hdl"><span class="toc-text">9.1 Introduction to Verilog
-HDL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#what-is-hdl-hardware-description-language"><span class="toc-text">9.1.1 What is HDL
-(Hardware Description Language)?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#modeling-methods"><span class="toc-text">9.1.2 Modeling Methods</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#combination-logic-circuit"><span class="toc-text">9.2 Combination Logic Circuit</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#combination-vs.-sequential-circuits"><span class="toc-text">9.2.1 Combination vs.
-Sequential Circuits</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#characteristics"><span class="toc-text">9.2.2 Characteristics</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#design-choice"><span class="toc-text">9.2.3 Design Choice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#some-classic-basic-designs"><span class="toc-text">9.2.4 Some Classic &#x2F; Basic
-Designs</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Infomation"><span class="toc-text">Basic Infomation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Index"><span class="toc-text">Index</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-01-Introduction"><span class="toc-text">Chapter 01 Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Course-Objective"><span class="toc-text">1.1 Course Objective</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Prerequisites"><span class="toc-text">1.2 Prerequisites</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Class-Grading"><span class="toc-text">1.3 Class Grading</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-02-Binary-Number-Representation"><span class="toc-text">Chapter 02 Binary Number Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Data-represantation"><span class="toc-text">2.1 Data represantation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-Carry-Counting-System"><span class="toc-text">2.1.1 Carry Counting System</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Arithmetic-Operators"><span class="toc-text">2.2 Arithmetic Operators</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-03-Representation-of-Numeric-Data"><span class="toc-text">Chapter 03 Representation of Numeric Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Integer"><span class="toc-text">3.1 Integer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Encoding-Methods-of-Integers"><span class="toc-text">3.2 Encoding Methods of Integers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-Original-code"><span class="toc-text">3.2.1 Original code</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-Complement-code-IMPORTANT"><span class="toc-text">3.2.2 Complement code ( IMPORTANT )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-Inverse-code"><span class="toc-text">3.2.3 Inverse code</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-Frameshift-code-more-used-in-float-numbers"><span class="toc-text">3.2.4 Frameshift code ( more used in float numbers )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Representation-of-Integers"><span class="toc-text">3.3 Representation of Integers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-Bit-Level-Operation-in-C"><span class="toc-text">3.3.1 Bit-Level Operation in C</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-Multiplication"><span class="toc-text">3.3.2 Multiplication</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-04"><span class="toc-text">Chapter 04</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Binary-Logical-Gates"><span class="toc-text">4.1 Binary Logical &amp; Gates</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-Three-basic-logical-operations"><span class="toc-text">4.1.1 Three basic logical operations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-How-to-Model-Logic-Functions"><span class="toc-text">4.1.2 How to Model Logic Functions?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-Logic-Gates"><span class="toc-text">4.1.3 Logic Gates</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Transistors"><span class="toc-text">4.2 Transistors</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-Developing"><span class="toc-text">4.2.1 Developing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-Integrated-Circuit-Transistors"><span class="toc-text">4.2.2 Integrated Circuit &amp; Transistors</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-Transistor-Function"><span class="toc-text">4.2.3 Transistor Function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-4-Implementation-of-Logic-Gates-with-Transisitors"><span class="toc-text">4.2.4 Implementation of Logic Gates with Transisitors</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-05-Floating-Point-Number-Representation-Non-Numeric-Data"><span class="toc-text">Chapter 05 Floating-Point Number Representation &amp; Non-Numeric Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-IEEE-Standard-754"><span class="toc-text">5.1 IEEE Standard 754</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-1-Precision"><span class="toc-text">5.1.1 Precision</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-2-Exponent-Frameshift-Code"><span class="toc-text">5.1.2 Exponent (Frameshift Code)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-3-Normalized-Encoding"><span class="toc-text">5.1.3 Normalized Encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-4-Denormalized-Values-Encoding"><span class="toc-text">5.1.4 Denormalized Values &amp; Encoding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-5-Special-Properties"><span class="toc-text">5.1.5 Special Properties</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-FP-Operations"><span class="toc-text">5.2 FP Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-1-Rounding"><span class="toc-text">5.2.1 Rounding</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-2-FP-Addition"><span class="toc-text">5.2.2 FP Addition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-3-FP-Mulitiplication"><span class="toc-text">5.2.3 FP Mulitiplication</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-Non-Numeric-Data"><span class="toc-text">5.3 Non-Numeric Data</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-1-Logical-Value"><span class="toc-text">5.3.1 Logical Value</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-2-Alphanumeric-Code"><span class="toc-text">5.3.2 Alphanumeric Code</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-Data-Width-Storage"><span class="toc-text">5.4 Data Width &amp; Storage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-06"><span class="toc-text">Chapter 06</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-07"><span class="toc-text">Chapter 07</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-Boolean-Algebra"><span class="toc-text">7.1 Boolean Algebra</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-1-Axioms"><span class="toc-text">7.1.1 Axioms</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-2-Theorems-1-3-Variables"><span class="toc-text">7.1.2 Theorems: 1~3 Variables</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-3-Theorems-n-Variables"><span class="toc-text">7.1.3 Theorems: n Variables</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-4-Power-of-Duality"><span class="toc-text">7.1.4 Power of Duality</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-Logical-Functions"><span class="toc-text">7.2 Logical Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-1-Representation-of-Logic-Functions"><span class="toc-text">7.2.1 Representation of Logic Functions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-2-Coplementation-of-Functions"><span class="toc-text">7.2.2 Coplementation of Functions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-3-Canonical-Standard-Form"><span class="toc-text">7.2.3 Canonical &amp; Standard Form</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-08"><span class="toc-text">Chapter 08</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-Simplification-of-Logic-Functions"><span class="toc-text">8.1 Simplification of Logic Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-1-N-Variable-Karnaugh-Map"><span class="toc-text">8.1.1 N-Variable Karnaugh Map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-2-K-Map-Definations"><span class="toc-text">8.1.2 K-Map Definations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-3-Selection-Rule-Example-with-Don%E2%80%99t-Cares"><span class="toc-text">8.1.3 Selection Rule Example with Don’t Cares</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-Bubble-Pushing"><span class="toc-text">8.2 Bubble Pushing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-1-Example"><span class="toc-text">8.2.1 Example</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-09-Combination-Logic"><span class="toc-text">Chapter 09 Combination Logic</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-Introduction-to-Verilog-HDL"><span class="toc-text">9.1 Introduction to Verilog HDL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-1-What-is-HDL-Hardware-Description-Language"><span class="toc-text">9.1.1 What is HDL (Hardware Description Language)?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-2-Modeling-Methods"><span class="toc-text">9.1.2 Modeling Methods</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-Combination-Logic-Circuit"><span class="toc-text">9.2 Combination Logic Circuit</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-1-Combination-vs-Sequential-Circuits"><span class="toc-text">9.2.1 Combination vs. Sequential Circuits</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-2-Characteristics"><span class="toc-text">9.2.2 Characteristics</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-3-Design-Choice"><span class="toc-text">9.2.3 Design Choice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-4-Some-Classic-Basic-Designs"><span class="toc-text">9.2.4 Some Classic &#x2F; Basic Designs</span></a></li></ol></li></ol></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -280,8 +203,7 @@ Designs</span></a></li></ol></li></ol></li></ol>
             </span>
             2024/2/26
         </span>
-           
-            <!--展示categories-->
+        
         <span class="category">
             <a href="/categories/%E7%AC%94%E8%AE%B0/">
                 <span class="icon">
@@ -291,8 +213,7 @@ Designs</span></a></li></ol></li></ol></li></ol>
             </a>
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -306,46 +227,33 @@ Designs</span></a></li></ol></li></ol></li></ol>
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
-        <h2 id="basic-infomation">Basic Infomation</h2>
-<p><i class="fa-regular fa-circle-check"></i> <strong>Teachers</strong>:
-wht, ll <i class="fa-regular fa-circle-check"></i> <strong>Lab
-Docs</strong>: <a
-target="_blank" rel="noopener" href="https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/">浙江大学24年春夏系统贯通一实验</a>(
-ZJU intranet required )</p>
+        <h2 id="Basic-Infomation">Basic Infomation</h2>
+<p><i class="fa-regular fa-circle-check"></i> <strong>Teachers</strong>: wht, ll<br>
+<i class="fa-regular fa-circle-check"></i> <strong>Lab Docs</strong>: <a target="_blank" rel="noopener" href="https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/">浙江大学24年春夏系统贯通一实验</a>( ZJU intranet required )</p>
 <div class="warning">
-<p>Because of some reasons, Chapter 04 should change position with
-Chapter 05</p>
+<p>Because of some reasons, Chapter 04 should change position with Chapter 05</p>
 </div>
-<h3 id="index">Index</h3>
+<h3 id="Index">Index</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Tittle</th>
 <th>Chap(s)</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Introduction</td>
 <td>01</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Binary Representation</td>
 <td>02, 03, 05</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Digital Logic</td>
 <td>04, 06, 07, 08</td>
 </tr>
@@ -353,126 +261,146 @@ Chapter 05</p>
 </table>
 <span id="more"></span>
 <p> </p>
-<h2 id="chapter-01-introduction">Chapter 01 Introduction</h2>
-<p>System-I includes <strong>Computer Organizations</strong>,
-RTL(Register Transfer Level) and <strong>DLC(Digital Logic
-Circuit)</strong> in Hardware module.</p>
+<h2 id="Chapter-01-Introduction">Chapter 01 Introduction</h2>
+<p>System-I includes <strong>Computer Organizations</strong>, RTL(Register Transfer Level) and <strong>DLC(Digital Logic Circuit)</strong> in Hardware module.</p>
 <p> </p>
-<h3 id="course-objective">1.1 Course Objective</h3>
-<ul>
-<li>Understand the HW / SW interface
-<ul>
-<li>How a processor works</li>
-<li>How a computer is organized</li>
-</ul></li>
-<li>Establish a foundation for building applications
-<ul>
-<li>How to write a <strong>good</strong> program</li>
-<li>How to understand where the world is going</li>
-</ul></li>
-<li>Understand technology (past, present, future)</li>
+<h3 id="1-1-Course-Objective">1.1 Course Objective</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Understand the HW / SW interface</p>
+<ul class="lvl-2">
+<li class="lvl-6">How a processor works</li>
+<li class="lvl-6">How a computer is organized</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Establish a foundation for building applications</p>
+<ul class="lvl-2">
+<li class="lvl-6">How to write a <strong>good</strong> program</li>
+<li class="lvl-6">How to understand where the world is going</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Understand technology (past, present, future)</p>
+</li>
 </ul>
 <p> </p>
-<h3 id="prerequisites">1.2 Prerequisites</h3>
+<h3 id="1-2-Prerequisites">1.2 Prerequisites</h3>
 <p>C (necessary) &amp; assembly (optional) programming language</p>
 <p> </p>
-<h3 id="class-grading">1.3 Class Grading</h3>
-<ul>
-<li>Class participation - 5%</li>
-<li>Homework Assignment - 10%
-<ul>
-<li>TBD</li>
-</ul></li>
-<li>Projects - 55%
-<ul>
-<li>Including bonus - 10%</li>
-</ul></li>
-<li>Final Exam - 30%</li>
+<h3 id="1-3-Class-Grading">1.3 Class Grading</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Class participation - 5%</p>
+</li>
+<li class="lvl-2">
+<p>Homework Assignment - 10%</p>
+<ul class="lvl-2">
+<li class="lvl-6">TBD</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Projects - 55%</p>
+<ul class="lvl-2">
+<li class="lvl-6">Including bonus - 10%</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Final Exam - 30%</p>
+</li>
 </ul>
 <p> </p>
-<h2 id="chapter-02-binary-number-representation">Chapter 02 Binary
-Number Representation</h2>
-<h3 id="data-represantation">2.1 Data represantation</h3>
-<h4 id="carry-counting-system">2.1.1 Carry Counting System</h4>
-<p>radix: <span class="math inline">\(r\)</span></p>
-<p>digit: <span
-class="math inline">\(A_{n-1}A_{n-2}...A_1A_0.A_{-1}A_{-2}...A_{-m+1}A_{-m}\)</span></p>
-<p><span
-class="math inline">\((100101.01)_2=2^5+2^2+2^0+2^{-2}=(37.25)_1\kern{}_0\)</span></p>
-<h3 id="arithmetic-operators">2.2 Arithmetic Operators</h3>
-<ol type="1">
-<li>Addition</li>
-<li>Subtraction</li>
-<li>Multiplication</li>
-<li>Division</li>
+<h2 id="Chapter-02-Binary-Number-Representation">Chapter 02 Binary Number Representation</h2>
+<h3 id="2-1-Data-represantation">2.1 Data represantation</h3>
+<h4 id="2-1-1-Carry-Counting-System">2.1.1 Carry Counting System</h4>
+<p>radix: $r$</p>
+<p>digit: $A_{n-1}A_{n-2}…A_1A_0.A_{-1}A_{-2}…A_{-m+1}A_{-m}$</p>
+<p>$(100101.01)_2=2<sup>5+2</sup>2+2<sup>0+2</sup>{-2}=(37.25)_1\kern{}_0$</p>
+<h3 id="2-2-Arithmetic-Operators">2.2 Arithmetic Operators</h3>
+<ol>
+<li class="lvl-3">
+<p>Addition</p>
+</li>
+<li class="lvl-3">
+<p>Subtraction</p>
+</li>
+<li class="lvl-3">
+<p>Multiplication</p>
+</li>
+<li class="lvl-3">
+<p>Division</p>
+</li>
 </ol>
 <p> </p>
-<h2 id="chapter-03-representation-of-numeric-data">Chapter 03
-Representation of Numeric Data</h2>
-<h3 id="integer">3.1 Integer</h3>
-<p>Focus on binary number with N Bits ( called <span
-class="math inline">\({X_T}\)</span> )</p>
-<p><span class="math display">\[X_T=X_{n-1}X_{n-2}…X_1X_0\]</span></p>
-<h3 id="encoding-methods-of-integers">3.2 Encoding Methods of
-Integers</h3>
-<h4 id="original-code">3.2.1 Original code</h4>
-<p>use <span class="math inline">\(X_{n-1}\)</span> as signature</p>
+<h2 id="Chapter-03-Representation-of-Numeric-Data">Chapter 03 Representation of Numeric Data</h2>
+<h3 id="3-1-Integer">3.1 Integer</h3>
+<p>Focus on binary number with N Bits ( called ${X_T}$ )</p>
+<p>$$X_T=X_{n-1}X_{n-2}…X_1X_0$$</p>
+<h3 id="3-2-Encoding-Methods-of-Integers">3.2 Encoding Methods of Integers</h3>
+<h4 id="3-2-1-Original-code">3.2.1 Original code</h4>
+<p>use $X_{n-1}$ as signature</p>
 <p>0 owns two representations — +0 &amp; -0</p>
-<h4 id="complement-code-important">3.2.2 Complement code ( IMPORTANT
-)</h4>
+<h4 id="3-2-2-Complement-code-IMPORTANT">3.2.2 Complement code ( IMPORTANT )</h4>
 <p><strong>Eg</strong> in 12 o’clock</p>
-<p><span class="math inline">\(10 - 4 = 6\)</span></p>
-<p><span class="math inline">\(10 + 8 = 18 \equiv 6 ( \mathrm{mod}\ 12
-)\)</span></p>
-<p><strong>Definition</strong> <span class="math inline">\(\forall X_T:
-[X_T]_C=M+X_T(\mathrm{mod}\  M)\)</span></p>
-<p><strong>The Conversion from Complement code to true
-value</strong>:</p>
-<ul>
-<li>If the sign bit is 0 / the number is positive: The value part does
-not need to be changed</li>
-<li>Else the sign bit is 1 / the number is negative: Invert the bits of
-value part, and add 1 to the result</li>
+<p>$10 - 4 = 6$</p>
+<p>$10 + 8 = 18 \equiv 6 ( \mathrm{mod}\ 12 )$</p>
+<p><strong>Definition</strong> $\forall X_T: [X_T]_C=M+X_T(\mathrm{mod}\  M)$</p>
+<p><strong>The Conversion from Complement code to true value</strong>:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>If the sign bit is 0 / the number  is positive:<br>
+The value part does not need to be changed</p>
+</li>
+<li class="lvl-2">
+<p>Else the sign bit is 1 / the number is negative:<br>
+Invert the bits of value part, and add 1 to the result</p>
+</li>
 </ul>
-<p><strong>From <span class="math inline">\([X_T]_C\)</span> to <span
-class="math inline">\([-X_T]_C\)</span></strong>: Invert
-<strong>every</strong> bits, and add 1 to to the result</p>
+<p><strong>From $[X_T]_C$ to $[-X_T]_C$</strong>:<br>
+Invert <strong>every</strong> bits, and add 1 to to the result</p>
 <p><strong>Advantages ( compared with sign-magnitude )</strong>:</p>
-<ul>
-<li>No +0 or -0 anymore</li>
-<li>Hardware simplicity</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>No +0 or -0 anymore</p>
+</li>
+<li class="lvl-2">
+<p>Hardware simplicity</p>
+</li>
 </ul>
-<h4 id="inverse-code">3.2.3 Inverse code</h4>
+<h4 id="3-2-3-Inverse-code">3.2.3 Inverse code</h4>
 <blockquote>
 <p>Complexity and uselessness in modern computer</p>
 </blockquote>
-<p><strong>Difference with the complement code</strong> Just invert, no
-add</p>
-<p><span class="math inline">\(-1\rightarrow -0\rightarrow+0\rightarrow
-1\)</span></p>
-<h4 id="frameshift-code-more-used-in-float-numbers">3.2.4 Frameshift
-code ( more used in float numbers )</h4>
+<p><strong>Difference with the complement code</strong> Just invert, no add</p>
+<p>$-1\rightarrow -0\rightarrow+0\rightarrow 1$</p>
+<h4 id="3-2-4-Frameshift-code-more-used-in-float-numbers">3.2.4 Frameshift code ( more used in float numbers )</h4>
 <p>TBD</p>
 <p> </p>
-<h3 id="representation-of-integers">3.3 Representation of Integers</h3>
-<h4 id="bit-level-operation-in-c">3.3.1 Bit-Level Operation in C</h4>
+<h3 id="3-3-Representation-of-Integers">3.3 Representation of Integers</h3>
+<h4 id="3-3-1-Bit-Level-Operation-in-C">3.3.1 Bit-Level Operation in C</h4>
 <p><strong>Bit Operations</strong> &amp; | ~ ^ are available in C</p>
 <p><strong>Shifting Operations</strong></p>
-<ul>
-<li><strong>Left shift</strong> <code>x &lt;&lt; y</code> Fill with 0 on
-right</li>
-<li><strong>Right shift</strong> <code>x &gt;&gt; y</code> Fill with 0
-on left ( Logical shift ) Fill with 0 if positive or 1 if negative (
-Arithmetic shift )</li>
-<li><strong>Undefined Behaviour</strong> Shift amount &lt; 0 or &gt;=
-word size</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>Left shift</strong> <code>x &lt;&lt; y</code><br>
+Fill with 0 on right</p>
+</li>
+<li class="lvl-2">
+<p><strong>Right shift</strong> <code>x &gt;&gt; y</code><br>
+Fill with 0 on left ( Logical shift )<br>
+Fill with 0 if positive or 1 if negative ( Arithmetic shift )</p>
+</li>
+<li class="lvl-2">
+<p><strong>Undefined Behaviour</strong><br>
+Shift amount &lt; 0 or &gt;= word size</p>
+</li>
 </ul>
 <p> </p>
-<h3 id="multiplication">3.3.2 Multiplication</h3>
+<h3 id="3-3-2-Multiplication">3.3.2 Multiplication</h3>
 <blockquote>
 <p>竖式累加的时候用第一位的数字补足每个乘出来的中间数字成一个相同长度的数字，乘数的符号位乘以被乘数时需要取反后加一</p>
 </blockquote>
-<p><img src="https://www.imageoss.com/images/2024/03/21/0053adc9c48da9594347.png" alt="0053" border="0"></p>
+<img src="https://www.imageoss.com/images/2024/03/21/0053adc9c48da9594347.png" alt="0053" border="0">
 <!-- 
 
 &nbsp;
@@ -487,377 +415,416 @@ borrow: 借位
 
  -->
 <p> </p>
-<h2 id="chapter-04">Chapter 04</h2>
-<h3 id="binary-logical-gates">4.1 Binary Logical &amp; Gates</h3>
-<h4 id="three-basic-logical-operations">4.1.1 Three basic logical
-operations</h4>
-<ul>
-<li>AND <span class="math inline">\(\cdot\)</span></li>
-<li>OR <span class="math inline">\(+\)</span></li>
-<li>NOT <span class="math inline">\(^\prime\ \mathrm{or}\
-\space\bar{}\)</span></li>
+<h2 id="Chapter-04">Chapter 04</h2>
+<h3 id="4-1-Binary-Logical-Gates">4.1 Binary Logical &amp; Gates</h3>
+<h4 id="4-1-1-Three-basic-logical-operations">4.1.1 Three basic logical operations</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>AND $\cdot$</p>
+</li>
+<li class="lvl-2">
+<p>OR $+$</p>
+</li>
+<li class="lvl-2">
+<p>NOT $^\prime\ \mathrm{or}\ \space\bar{}$</p>
+</li>
 </ul>
 <p> </p>
-<h4 id="how-to-model-logic-functions">4.1.2 How to Model Logic
-Functions?</h4>
-<ul>
-<li>Using Switches</li>
+<h4 id="4-1-2-How-to-Model-Logic-Functions">4.1.2 How to Model Logic Functions?</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Using Switches</p>
+</li>
 </ul>
 <p> </p>
-<h4 id="logic-gates">4.1.3 Logic Gates</h4>
-<ul>
-<li>Perform logic functions NOT, AND, OR, NAND, NOR, ...</li>
-<li>Single-input NOT gate, buffer</li>
-<li>Two-input AND, OR, XOR, NAND, NOR, XNOR</li>
-<li>Multiple-input NOR3, AND4, ...</li>
+<h4 id="4-1-3-Logic-Gates">4.1.3 Logic Gates</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Perform logic functions<br>
+NOT, AND, OR, NAND, NOR, …</p>
+</li>
+<li class="lvl-2">
+<p>Single-input<br>
+NOT gate, buffer</p>
+</li>
+<li class="lvl-2">
+<p>Two-input<br>
+AND, OR, XOR, NAND, NOR, XNOR</p>
+</li>
+<li class="lvl-2">
+<p>Multiple-input<br>
+NOR3, AND4, …</p>
+</li>
 </ul>
-<p><strong>NOT</strong> <span
-class="math inline">\(Y=\overline{A}\)</span></p>
-<p><strong>BUF</strong> <span class="math inline">\(Y=A\)</span></p>
-<p><strong>AND</strong> <span class="math inline">\(Y=AB\)</span>
-(straight on the input edge)</p>
-<p><strong>OR</strong> <span class="math inline">\(Y=A+B\)</span> (curly
-on the input edge)</p>
-<p><strong>XOR</strong> <span class="math inline">\(Y=A\oplus B\)</span>
-( double curly edges )</p>
-<p><strong>NXOR</strong> <span class="math inline">\(Y=\overline{
-A\oplus B}\)</span></p>
-<p><strong>NAND</strong> <span
-class="math inline">\(Y=\overline{AB}\)</span></p>
-<p><strong>NOR</strong> <span
-class="math inline">\(Y=\overline{A+B}\)</span></p>
+<p><strong>NOT</strong> $Y=\overline{A}$</p>
+<p><strong>BUF</strong> $Y=A$</p>
+<p><strong>AND</strong> $Y=AB$ (straight on the input edge)</p>
+<p><strong>OR</strong> $Y=A+B$ (curly on the input edge)</p>
+<p><strong>XOR</strong> $Y=A\oplus B$ ( double curly edges )</p>
+<p><strong>NXOR</strong> $Y=\overline{ A\oplus B}$</p>
+<p><strong>NAND</strong> $Y=\overline{AB}$</p>
+<p><strong>NOR</strong> $Y=\overline{A+B}$</p>
 <p> </p>
-<h3 id="transistors">4.2 Transistors</h3>
-<h4 id="developing">4.2.1 Developing</h4>
-<p>Relays <span class="math inline">\(\rightarrow\)</span> Vacuum Cude
-<span class="math inline">\(\rightarrow\)</span> Transistor</p>
-<ul>
-<li>Tinier &amp; Faster</li>
-<li>More Integration</li>
-<li>Less Consumption</li>
+<h3 id="4-2-Transistors">4.2 Transistors</h3>
+<h4 id="4-2-1-Developing">4.2.1 Developing</h4>
+<p>Relays $\rightarrow$ Vacuum Cude $\rightarrow$ Transistor</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Tinier &amp; Faster</p>
+</li>
+<li class="lvl-2">
+<p>More Integration</p>
+</li>
+<li class="lvl-2">
+<p>Less Consumption</p>
+</li>
 </ul>
 <blockquote>
 <p>Nvidia’s employees are all gone at 4 p.m.</p>
 </blockquote>
 <p> </p>
-<h4 id="integrated-circuit-transistors">4.2.2 Integrated Circuit &amp;
-Transistors</h4>
-<ul>
-<li>Integrated Circuit IC
-<ul>
-<li>Transisitor-Transisitor Logic TTL</li>
-<li>CMOS</li>
-</ul></li>
+<h4 id="4-2-2-Integrated-Circuit-Transistors">4.2.2 Integrated Circuit &amp; Transistors</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Integrated Circuit IC</p>
+<ul class="lvl-2">
+<li class="lvl-4">Transisitor-Transisitor Logic TTL</li>
+<li class="lvl-4">CMOS</li>
 </ul>
-<h4 id="transistor-function">4.2.3 Transistor Function</h4>
-<h4 id="implementation-of-logic-gates-with-transisitors">4.2.4
-Implementation of Logic Gates with Transisitors</h4>
-<p> </p>
-<h2
-id="chapter-05-floating-point-number-representation-non-numeric-data">Chapter
-05 Floating-Point Number Representation &amp; Non-Numeric Data</h2>
-<h3 id="ieee-standard-754">5.1 IEEE Standard 754</h3>
-<p><strong>Numerical Form</strong>: <span
-class="math inline">\(\mathrm{(-1)^sM\cdot2^E}\)</span></p>
-<ul>
-<li>Sign bit s determines positive or negative</li>
-<li>M is in range [1.0, 2.0)</li>
-<li>Exponent E weights value by power 2</li>
+</li>
 </ul>
+<h4 id="4-2-3-Transistor-Function">4.2.3 Transistor Function</h4>
+<h4 id="4-2-4-Implementation-of-Logic-Gates-with-Transisitors">4.2.4 Implementation of Logic Gates with Transisitors</h4>
 <p> </p>
-<h4 id="precision">5.1.1 Precision</h4>
-<ul>
-<li>Single precision 32 bits: s=1; exp = 8; frac = 23</li>
-<li>Double precision 64 bits: s = 1; exp = 11; frac = 52</li>
-<li>Extended precison 80 bits (Intel only)</li>
+<h2 id="Chapter-05-Floating-Point-Number-Representation-Non-Numeric-Data">Chapter 05 Floating-Point Number Representation &amp; Non-Numeric Data</h2>
+<h3 id="5-1-IEEE-Standard-754">5.1 IEEE Standard 754</h3>
+<p><strong>Numerical Form</strong>: $\mathrm{(-1)<sup>sM\cdot2</sup>E}$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Sign bit s determines positive or negative</p>
+</li>
+<li class="lvl-2">
+<p>M is in range [1.0, 2.0)</p>
+</li>
+<li class="lvl-2">
+<p>Exponent E weights value by power 2</p>
+</li>
 </ul>
 <p> </p>
-<h4 id="exponent-frameshift-code">5.1.2 Exponent (Frameshift Code)</h4>
-<p>Before calculation, times each number by <span
-class="math inline">\(2^{n-2}\)</span> (or frameshift by <span
-class="math inline">\((n-2)\)</span> bits), and divide the same number
-after calculation</p>
+<h4 id="5-1-1-Precision">5.1.1 Precision</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Single precision 32 bits: s=1; exp = 8; frac = 23</p>
+</li>
+<li class="lvl-2">
+<p>Double precision 64 bits: s = 1; exp = 11; frac = 52</p>
+</li>
+<li class="lvl-2">
+<p>Extended precison 80 bits (Intel only)</p>
+</li>
+</ul>
+<p> </p>
+<h4 id="5-1-2-Exponent-Frameshift-Code">5.1.2 Exponent (Frameshift Code)</h4>
+<p>Before calculation, times each number by $2^{n-2}$ (or frameshift by $(n-2)$ bits), and divide the same number after calculation</p>
 <blockquote>
 <p>the goal is to escape from the case of “deviding zero” and etc.</p>
 </blockquote>
-<p>When turn the component number to the true number, <span
-class="math inline">\(E=exp-bias\)</span></p>
+<p>When turn the component number to the true number, $E=exp-bias$</p>
 <p> </p>
-<h4 id="normalized-encoding">5.1.3 Normalized Encoding</h4>
-<p>Value: <span
-class="math inline">\(15213.0_1\kern{}_0=1.1101101101101_2\times2^{13}\)</span></p>
-<p>Significand - M = <span
-class="math inline">\(1.1101101101101_2\)</span> - frac = <span
-class="math inline">\(1101101101101000…0_2\)</span></p>
-<p>Exponent - E = <span class="math inline">\(13\)</span> - Bias = <span
-class="math inline">\(127(=2^{8-1})\)</span> - Exp = <span
-class="math inline">\(140\)</span> = <span
-class="math inline">\(10001100_2\)</span></p>
-<p>Result - <span class="math inline">\(0 | 10001100 |
-1101101101101000...0\)</span></p>
-<p> </p>
-<h4 id="denormalized-values-encoding">5.1.4 Denormalized Values &amp;
-Encoding</h4>
-<p>In normalized value range, number lower than <span
-class="math inline">\(1.0\times 2^{-126}\)</span> is missing and
-undefined</p>
-<p>In denormalized value range, numbers in than such range definates
-different meanings</p>
-<p>Additionly, M in denormalized values will be regarded as <span
-class="math inline">\(0.100…_2\)</span> but not <span
-class="math inline">\(1.100…_2\)</span>, and meanwhile the Exp is <span
-class="math inline">\(000…0_2\)</span> which means <span
-class="math inline">\(\times2(^{-(n-2)})_1\kern{}_0\)</span></p>
-<blockquote>
-<p>normalized value cannot represent ZERO without denormalized
-version</p>
-</blockquote>
-<ol type="1">
-<li><span class="math inline">\(exp = 000…0; frac = 000…0\)</span>:
-Zero</li>
-<li><span class="math inline">\(exp = 000…0; frac \ne 000…0\)</span>:
-Numbers close to zero</li>
-<li><span class="math inline">\(exp = 111…1; frac = 000…0\)</span>: INF
-(infinity)</li>
-<li><span class="math inline">\(exp = 111…1; frac \ne 000…0\)</span>:
-NaN (Not-a-Number)</li>
-</ol>
-<blockquote>
-<p>1 &amp; 2 show denormalized values whie 3 &amp; 4 show another two
-special values</p>
-</blockquote>
-<p><img src="https://www.imageoss.com/images/2024/03/21/0054ed908fc85d7edc28.png" alt="0054" border="0"></p>
-<p> </p>
-<h4 id="special-properties">5.1.5 Special Properties</h4>
-<ul>
-<li>FP Zero same as Integer Zero</li>
-<li>Can (Almost) Use Unsigned Integer Comparison
-<ul>
-<li>Must consider <span class="math inline">\(0 = -0\)</span></li>
-<li>Must first compare sign bits</li>
-<li>NaNs problematic</li>
-</ul></li>
+<h4 id="5-1-3-Normalized-Encoding">5.1.3 Normalized Encoding</h4>
+<p>Value: $15213.0_1\kern{}_0=1.1101101101101_2\times2^{13}$</p>
+<p>Significand</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>M = $1.1101101101101_2$</p>
+</li>
+<li class="lvl-2">
+<p>frac = $1101101101101000…0_2$</p>
+</li>
+</ul>
+<p>Exponent</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>E = $13$</p>
+</li>
+<li class="lvl-2">
+<p>Bias = $127(=2^{8-1})$</p>
+</li>
+<li class="lvl-2">
+<p>Exp = $140$ = $10001100_2$</p>
+</li>
+</ul>
+<p>Result</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$0 | 10001100 | 1101101101101000…0$</p>
+</li>
 </ul>
 <p> </p>
-<h3 id="fp-operations">5.2 FP Operations</h3>
-<h4 id="rounding">5.2.1 Rounding</h4>
-<p>Rounding Modes - Towards zero - Round down / floor() - Round up /
-ceil() - Nearest Even (default)</p>
+<h4 id="5-1-4-Denormalized-Values-Encoding">5.1.4 Denormalized Values &amp; Encoding</h4>
+<p>In normalized value range, number lower than $1.0\times 2^{-126}$ is missing and undefined</p>
+<p>In denormalized value range, numbers in than such range definates different meanings</p>
+<p>Additionly, M in denormalized values will be regarded as $0.100…_2$ but not $1.100…_2$, and meanwhile the Exp is $000…0_2$ which means $\times2(^{-(n-2)})_1\kern{}_0$</p>
+<blockquote>
+<p>normalized value cannot represent ZERO without denormalized version</p>
+</blockquote>
+<ol>
+<li class="lvl-3">
+<p>$exp = 000…0; frac = 000…0$: Zero</p>
+</li>
+<li class="lvl-3">
+<p>$exp = 000…0; frac \ne 000…0$: Numbers close to zero</p>
+</li>
+<li class="lvl-3">
+<p>$exp = 111…1; frac = 000…0$: INF (infinity)</p>
+</li>
+<li class="lvl-3">
+<p>$exp = 111…1; frac \ne 000…0$: NaN (Not-a-Number)</p>
+</li>
+</ol>
+<blockquote>
+<p>1 &amp; 2 show denormalized values whie 3 &amp; 4 show another two special values</p>
+</blockquote>
+<img src="https://www.imageoss.com/images/2024/03/21/0054ed908fc85d7edc28.png" alt="0054" border="0">
 <p> </p>
-<h4 id="fp-addition">5.2.2 FP Addition</h4>
+<h4 id="5-1-5-Special-Properties">5.1.5 Special Properties</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>FP Zero same as Integer Zero</p>
+</li>
+<li class="lvl-2">
+<p>Can (Almost) Use Unsigned Integer Comparison</p>
+<ul class="lvl-2">
+<li class="lvl-6">Must consider $0 = -0$</li>
+<li class="lvl-6">Must first compare sign bits</li>
+<li class="lvl-6">NaNs problematic</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<h3 id="5-2-FP-Operations">5.2 FP Operations</h3>
+<h4 id="5-2-1-Rounding">5.2.1 Rounding</h4>
+<p>Rounding Modes</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Towards zero</p>
+</li>
+<li class="lvl-2">
+<p>Round down / floor()</p>
+</li>
+<li class="lvl-2">
+<p>Round up / ceil()</p>
+</li>
+<li class="lvl-2">
+<p>Nearest Even (default)</p>
+</li>
+</ul>
+<p> </p>
+<h4 id="5-2-2-FP-Addition">5.2.2 FP Addition</h4>
 <p>turn the smaller M to the bigger one, and shift the E</p>
 <blockquote>
 <p>FP addition is NOT associative compared with Abelian Group</p>
 </blockquote>
 <p> </p>
-<h4 id="fp-mulitiplication">5.2.3 FP Mulitiplication</h4>
+<h4 id="5-2-3-FP-Mulitiplication">5.2.3 FP Mulitiplication</h4>
 <blockquote>
 <p>easy</p>
 </blockquote>
-<p>M = M1 * M2 E = E1 + E2</p>
+<p>M = M1 * M2<br>
+E = E1 + E2</p>
 <blockquote>
-<p>FP mulitiplication is NOT associative or distributed over additions
-compared with Abelian Group</p>
+<p>FP mulitiplication is NOT associative or distributed over additions compared with Abelian Group</p>
 </blockquote>
 <p> </p>
-<h3 id="non-numeric-data">5.3 Non-Numeric Data</h3>
-<h4 id="logical-value">5.3.1 Logical Value</h4>
-<h4 id="alphanumeric-code">5.3.2 Alphanumeric Code</h4>
-<ul>
-<li>ASCII : 7bit per char</li>
-<li>Unicode : 2Byte per char</li>
-<li>Chinese Character
-<ul>
-<li>Input Code</li>
-<li>Internal Code</li>
-<li>Font Code</li>
-</ul></li>
+<h3 id="5-3-Non-Numeric-Data">5.3 Non-Numeric Data</h3>
+<h4 id="5-3-1-Logical-Value">5.3.1 Logical Value</h4>
+<h4 id="5-3-2-Alphanumeric-Code">5.3.2 Alphanumeric Code</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>ASCII : 7bit per char</p>
+</li>
+<li class="lvl-2">
+<p>Unicode : 2Byte per char</p>
+</li>
+<li class="lvl-2">
+<p>Chinese Character</p>
+<ul class="lvl-2">
+<li class="lvl-4">Input Code</li>
+<li class="lvl-4">Internal Code</li>
+<li class="lvl-4">Font Code</li>
+</ul>
+</li>
 </ul>
 <p> </p>
-<h3 id="data-width-storage">5.4 Data Width &amp; Storage</h3>
+<h3 id="5-4-Data-Width-Storage">5.4 Data Width &amp; Storage</h3>
 <p> </p>
-<h2 id="chapter-06">Chapter 06</h2>
+<h2 id="Chapter-06">Chapter 06</h2>
 <div class="warning">
 <p>TBD</p>
 </div>
 <p> </p>
-<h2 id="chapter-07">Chapter 07</h2>
-<h3 id="boolean-algebra">7.1 Boolean Algebra</h3>
-<h4 id="axioms">7.1.1 Axioms</h4>
-<ul>
-<li><span class="math inline">\(X\cdot Y\)</span></li>
-<li><span class="math inline">\(X+Y\)</span></li>
-<li><span class="math inline">\(\overline{X}\)</span></li>
+<h2 id="Chapter-07">Chapter 07</h2>
+<h3 id="7-1-Boolean-Algebra">7.1 Boolean Algebra</h3>
+<h4 id="7-1-1-Axioms">7.1.1 Axioms</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$X\cdot Y$</p>
+</li>
+<li class="lvl-2">
+<p>$X+Y$</p>
+</li>
+<li class="lvl-2">
+<p>$\overline{X}$</p>
+</li>
 </ul>
-<h4 id="theorems-13-variables">7.1.2 Theorems: 1~3 Variables</h4>
+<h4 id="7-1-2-Theorems-1-3-Variables">7.1.2 Theorems: 1~3 Variables</h4>
 <div class="tips">
-<p>See also <a
-target="_blank" rel="noopener" href="https://z-vanadium.github.io/2024/02/26/info-security-principles/#lecture-04">here</a></p>
+<p>See also <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2024/02/26/info-security-principles/#lecture-04">here</a></p>
 </div>
-<h4 id="theorems-n-variables">7.1.3 Theorems: n Variables</h4>
+<h4 id="7-1-3-Theorems-n-Variables">7.1.3 Theorems: n Variables</h4>
 <p>De Morgans’s Theorem</p>
-<p><span
-class="math display">\[\overline{F(X_1,X_2,…+X_n)}=F(\overline{X_1},\overline{X_2},…,\overline{X_n}),(+\
-\mathrm{or}\ \cdot)\]</span></p>
+<p>$$\overline{F(X_1,X_2,…+X_n)}=F(\overline{X_1},\overline{X_2},…,\overline{X_n}),(+\ \mathrm{or}\ \cdot)$$</p>
 <p>Shannon’s Theorem</p>
-<p><span class="math display">\[F(X_1,X_2,…,X_n)=X_1\cdot
-F(1,X_2,…,X_n)+\overline{X_1}\cdot F(0,X_2,…,X_n)\]</span></p>
-<p><span
-class="math display">\[F(X_1,X_2,…,X_n)=[X_1+F(0,X_2,…,X_n)]\cdot[\overline{X_1}+F(1,X_2,…,X_n)]\]</span></p>
-<h4 id="power-of-duality">7.1.4 Power of Duality</h4>
+<p>$$F(X_1,X_2,…,X_n)=X_1\cdot F(1,X_2,…,X_n)+\overline{X_1}\cdot F(0,X_2,…,X_n)$$</p>
+<p>$$F(X_1,X_2,…,X_n)=[X_1+F(0,X_2,…,X_n)]\cdot[\overline{X_1}+F(1,X_2,…,X_n)]$$</p>
+<h4 id="7-1-4-Power-of-Duality">7.1.4 Power of Duality</h4>
 <blockquote>
 <p>If a formula is valid, its dual version is valid as well.</p>
 </blockquote>
 <p> </p>
-<h3 id="logical-functions">7.2 Logical Functions</h3>
-<h4 id="representation-of-logic-functions">7.2.1 Representation of Logic
-Functions</h4>
-<ul>
-<li>Truth Table</li>
-<li>Waveform</li>
-<li>Boolean Expressions</li>
+<h3 id="7-2-Logical-Functions">7.2 Logical Functions</h3>
+<h4 id="7-2-1-Representation-of-Logic-Functions">7.2.1 Representation of Logic Functions</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Truth Table</p>
+</li>
+<li class="lvl-2">
+<p>Waveform</p>
+</li>
+<li class="lvl-2">
+<p>Boolean Expressions</p>
+</li>
 </ul>
-<h4 id="coplementation-of-functions">7.2.2 Coplementation of
-Functions</h4>
-<ul>
-<li><span class="math inline">\(+\iff\cdot\)</span></li>
-<li><span class="math inline">\(0\iff1\)</span></li>
-<li>Maintain the calculation order</li>
+<h4 id="7-2-2-Coplementation-of-Functions">7.2.2 Coplementation of Functions</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$+\iff\cdot$</p>
+</li>
+<li class="lvl-2">
+<p>$0\iff1$</p>
+</li>
+<li class="lvl-2">
+<p>Maintain the calculation order</p>
+</li>
 </ul>
-<h4 id="canonical-standard-form">7.2.3 Canonical &amp; Standard
-Form</h4>
-<p>See also <a
-target="_blank" rel="noopener" href="https://z-vanadium.github.io/2024/02/26/info-security-principles/#%E4%B8%BB%E8%8C%83%E5%BC%8F">here</a></p>
-<p><span
-class="math inline">\(f(x,y,z)=\sum(1,2,4,6)=\prod(0,3,5,7)\)</span></p>
+<h4 id="7-2-3-Canonical-Standard-Form">7.2.3 Canonical &amp; Standard Form</h4>
+<p>See also <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2024/02/26/info-security-principles/#%E4%B8%BB%E8%8C%83%E5%BC%8F">here</a></p>
+<p>$f(x,y,z)=\sum(1,2,4,6)=\prod(0,3,5,7)$</p>
 <div class="tips">
-<p><span class="math inline">\(\sum(1,2,4,6)\)</span> 代表最小项
-minterms 列表 <span class="math inline">\(\prod(0,3,5,7)\)</span>
-代表最大项 maxterms 列表</p>
-<p>一个n变量逻辑函数的最小项列表编号集合约最大项列表编号集合的并集为n位编号全集{0,
-1, …, 2n-1}，两者交集为空，是互补关系。
-所以可以互相转换，只需对编码集合求补即可</p>
+<p>$\sum(1,2,4,6)$ 代表最小项 minterms 列表<br>
+$\prod(0,3,5,7)$ 代表最大项 maxterms 列表</p>
+<p>一个n变量逻辑函数的最小项列表编号集合约最大项列表编号集合的并集为n位编号全集{0, 1, …, 2n-1}，两者交集为空，是互补关系。所以可以互相转换，只需对编码集合求补即可</p>
 </div>
 <p><a target="_blank" rel="noopener" href="https://www.imageoss.com/image/vvcaoo"><img src="https://www.imageoss.com/images/2024/03/23/00563a6f7dce7d578ab1.png" alt="00563a6f7dce7d578ab1.png" border="0"></a></p>
 <div class="success">
-<p>作为一个例子, 我们可以把最小项理解为当二进制数 <span
-class="math inline">\(\overline{xyz}\)</span> 取 <span
-class="math inline">\(m\)</span> 时, <span
-class="math inline">\(f(x,y,z)\)</span> 取真;</p>
-<p>同理, 最大项就是当二进制数 <span
-class="math inline">\(\overline{xyz}\)</span> 取 <span
-class="math inline">\(M\)</span> 时, <span
-class="math inline">\(f(x,y,z)\)</span> 取假;</p>
+<p>作为一个例子, 我们可以把最小项理解为当二进制数 $\overline{xyz}$ 取 $m$ 时, $f(x,y,z)$ 取真;</p>
+<p>同理, 最大项就是当二进制数 $\overline{xyz}$ 取 $M$ 时, $f(x,y,z)$ 取假;</p>
 </div>
 <p> </p>
-<h2 id="chapter-08">Chapter 08</h2>
-<h3 id="simplification-of-logic-functions">8.1 Simplification of Logic
-Functions</h3>
-<h4 id="n-variable-karnaugh-map">8.1.1 N-Variable Karnaugh Map</h4>
+<h2 id="Chapter-08">Chapter 08</h2>
+<h3 id="8-1-Simplification-of-Logic-Functions">8.1 Simplification of Logic Functions</h3>
+<h4 id="8-1-1-N-Variable-Karnaugh-Map">8.1.1 N-Variable Karnaugh Map</h4>
 <p>[Eg] 2-variables, 3-variables &amp; 4 variables</p>
 <p><a target="_blank" rel="noopener" href="https://www.imageoss.com/image/vvcyv9"><img src="https://www.imageoss.com/images/2024/03/23/0057bdf80e23f698cea1.png" alt="0057bdf80e23f698cea1.png" border="0"></a></p>
 <blockquote>
 <p>每一行/列之间自由一个参数发生变化，01 不会和 10 相邻</p>
 </blockquote>
 <div class="tips">
-<p>化简卡诺图时，每个圈圈只会包括 <span
-class="math inline">\(2^n\)</span> 种情况，目的是最小化参数量</p>
+<p>化简卡诺图时，每个圈圈只会包括 $2^n$ 种情况，目的是最小化参数量</p>
 </div>
 <p> </p>
-<h4 id="k-map-definations">8.1.2 K-Map Definations</h4>
-<ol type="1">
-<li>Implicant</li>
-<li>Prime implicant</li>
-<li>Essential prime implicant</li>
+<h4 id="8-1-2-K-Map-Definations">8.1.2 K-Map Definations</h4>
+<ol>
+<li class="lvl-3">
+<p>Implicant</p>
+</li>
+<li class="lvl-3">
+<p>Prime implicant</p>
+</li>
+<li class="lvl-3">
+<p>Essential prime implicant</p>
+</li>
 </ol>
 <blockquote>
 <p>no need to follow them strictly (scaping</p>
 </blockquote>
 <p> </p>
-<h4 id="selection-rule-example-with-dont-cares">8.1.3 Selection Rule
-Example with Don’t Cares</h4>
+<h4 id="8-1-3-Selection-Rule-Example-with-Don’t-Cares">8.1.3 Selection Rule Example with Don’t Cares</h4>
 <p>x could be regarded as both 0 &amp; 1</p>
 <blockquote>
 <p>x 是可 0 可 1的</p>
 </blockquote>
 <p> </p>
-<h3 id="bubble-pushing">8.2 Bubble Pushing</h3>
+<h3 id="8-2-Bubble-Pushing">8.2 Bubble Pushing</h3>
 <blockquote>
 <p>a funny method to simplify the logical graph</p>
 </blockquote>
 <p>pushing bubbles (NOT GATE) back &amp; forward</p>
-<h4 id="example">8.2.1 Example</h4>
+<h4 id="8-2-1-Example">8.2.1 Example</h4>
 <p><a target="_blank" rel="noopener" href="https://www.imageoss.com/image/vvcmWC"><img src="https://www.imageoss.com/images/2024/03/23/0058e2b734d2d70bc1b8.png" alt="0058e2b734d2d70bc1b8.png" border="0"></a></p>
 <p> </p>
-<h2 id="chapter-09-combination-logic">Chapter 09 Combination Logic</h2>
-<h3 id="introduction-to-verilog-hdl">9.1 Introduction to Verilog
-HDL</h3>
-<h4 id="what-is-hdl-hardware-description-language">9.1.1 What is HDL
-(Hardware Description Language)?</h4>
+<h2 id="Chapter-09-Combination-Logic">Chapter 09 Combination Logic</h2>
+<h3 id="9-1-Introduction-to-Verilog-HDL">9.1 Introduction to Verilog HDL</h3>
+<h4 id="9-1-1-What-is-HDL-Hardware-Description-Language">9.1.1 What is HDL (Hardware Description Language)?</h4>
 <p>VHDL, Verilog, SystemC, SystemVerilog, C/C++, …</p>
-<p>Logical design with HDL -&gt; Simulation -&gt; Synthesis -&gt;
-Phyiscal design-&gt; Final steps</p>
+<p>Logical design with HDL -&gt; Simulation -&gt; Synthesis -&gt; Phyiscal design-&gt; Final steps</p>
 <blockquote>
-<p>C++ 学过吗？（没有）Java 学过吗？（没有）Python
-学过吗？（没有）ok…</p>
+<p>C++ 学过吗？（没有）Java 学过吗？（没有）Python 学过吗？（没有）ok…</p>
 </blockquote>
-<h4 id="modeling-methods">9.1.2 Modeling Methods</h4>
-<h3 id="combination-logic-circuit">9.2 Combination Logic Circuit</h3>
+<h4 id="9-1-2-Modeling-Methods">9.1.2 Modeling Methods</h4>
+<h3 id="9-2-Combination-Logic-Circuit">9.2 Combination Logic Circuit</h3>
 <blockquote>
 <p>A Type of Digital Logic Circuit</p>
 </blockquote>
-<ul>
-<li><span class="math inline">\(m\)</span> inputs</li>
-<li><span class="math inline">\(n\)</span> outputs</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$m$ inputs</p>
+</li>
+<li class="lvl-2">
+<p>$n$ outputs</p>
+</li>
 </ul>
-<h4 id="combination-vs.-sequential-circuits">9.2.1 Combination vs.
-Sequential Circuits</h4>
+<h4 id="9-2-1-Combination-vs-Sequential-Circuits">9.2.1 Combination vs. Sequential Circuits</h4>
 <p>[Figure TBD]</p>
-<h4 id="characteristics">9.2.2 Characteristics</h4>
-<ul>
-<li>Each element is a comb. circuit</li>
-<li>A node cannot be the output of 2 element</li>
-<li>Loop is banned</li>
+<h4 id="9-2-2-Characteristics">9.2.2 Characteristics</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Each element is a comb. circuit</p>
+</li>
+<li class="lvl-2">
+<p>A node cannot be the output of 2 element</p>
+</li>
+<li class="lvl-2">
+<p>Loop is banned</p>
+</li>
 </ul>
 <p> </p>
-<h4 id="design-choice">9.2.3 Design Choice</h4>
-<h4 id="some-classic-basic-designs">9.2.4 Some Classic / Basic
-Designs</h4>
+<h4 id="9-2-3-Design-Choice">9.2.3 Design Choice</h4>
+<h4 id="9-2-4-Some-Classic-Basic-Designs">9.2.4 Some Classic / Basic Designs</h4>
 <p>Encoder &amp; Decoder</p>
 <p>Multiplexer &amp; Demultiplexer</p>
 <p>Half adder &amp; full adder</p>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -874,7 +841,6 @@ Designs</h4>
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -894,20 +860,7 @@ Designs</h4>
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -921,46 +874,6 @@ Designs</h4>
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

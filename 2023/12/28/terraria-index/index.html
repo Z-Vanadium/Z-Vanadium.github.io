@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,43 +160,27 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
@@ -245,8 +190,6 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9F%E7%94%A8%E9%A1%BB%E7%9F%A5"><span class="toc-text">食用须知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E7%BB%84"><span class="toc-text">模组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8C%AA%E9%B2%A8%E9%AA%97%E4%BC%A4"><span class="toc-text">猪鲨骗伤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E5%9C%B0%E7%9B%B8%E5%85%B3"><span class="toc-text">基地相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AB%E4%BA%BA%E8%B1%AA%E5%8D%8E%E5%88%AB%E5%A2%85"><span class="toc-text">八人豪华别墅</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B7%E6%80%AA%E6%9C%BA%E5%88%B6-NPC%E7%94%9F%E6%88%90%E6%9C%BA%E5%88%B6"><span class="toc-text">刷怪机制(NPC生成机制)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%80%9F%E5%BA%A6"><span class="toc-text">生成速度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E4%BD%8D%E7%BD%AE"><span class="toc-text">生成位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%B1%BB%E5%9E%8B"><span class="toc-text">生成类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%9C%98%E8%9B%9B%E5%88%B7%E6%80%AA%E5%9C%BA"><span class="toc-text">蜘蛛刷怪场</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">建造方法</span></a></li></ol></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -260,8 +203,7 @@
             </span>
             2023/12/28
         </span>
-           
-            <!--展示categories-->
+        
         <span class="category">
             <a href="/categories/%E6%B8%B8%E6%88%8F/">
                 <span class="icon">
@@ -271,8 +213,7 @@
             </a>
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -281,28 +222,26 @@
             
             <span class="tag">
                 
-                <a href="/tags/Terraria/" style="color: #ff7d73">Terraria</a>
+                <a href="/tags/Terraria/" style="color: #00a596">Terraria</a>
             </span>
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
-        <h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><p><i class="fa-regular fa-circle-check"></i> <strong>游戏名称</strong>: Terraria<br><i class="fa-regular fa-circle-check"></i> <strong>开发商</strong>: Re-Logic<br><i class="fa-regular fa-circle-check"></i> <strong>游戏时长</strong>: 200+h  (仅Steam)<br><i class="fa-regular fa-circle-check"></i> <strong>游戏水平</strong>: 纯萌新&#x2F;初学者<br><i class="fa-regular fa-circle-check"></i> <strong>游戏版本</strong>: 1.4.4.9 Windows<br><i class="fa-regular fa-circle-check"></i> <strong>Wiki网站</strong>: <a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/Terraria_Wiki">官方中文泰拉瑞亚 Wiki</a></p>
+        <h3 id="基本信息">基本信息</h3>
+<p><i class="fa-regular fa-circle-check"></i> <strong>游戏名称</strong>: Terraria<br>
+<i class="fa-regular fa-circle-check"></i> <strong>开发商</strong>: Re-Logic<br>
+<i class="fa-regular fa-circle-check"></i> <strong>游戏时长</strong>: 200+h  (仅Steam)<br>
+<i class="fa-regular fa-circle-check"></i> <strong>游戏水平</strong>: 纯萌新/初学者<br>
+<i class="fa-regular fa-circle-check"></i> <strong>游戏版本</strong>: 1.4.4.9 Windows<br>
+<i class="fa-regular fa-circle-check"></i> <strong>Wiki网站</strong>: <a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/Terraria_Wiki">官方中文泰拉瑞亚 Wiki</a></p>
 <span id="more"></span>
-
-<p>&nbsp;</p>
-<h3 id="食用须知"><a href="#食用须知" class="headerlink" title="食用须知"></a>食用须知</h3><p>这里是Vanadium Terraria开荒流程的流水账记录, 包括但不限于Boss打法,游戏技巧,小吐槽等等.<br><strong>Highlight!!!</strong> 我的游戏水平很菜, 打不过白光, 没玩过天顶, 没法无伤任何一个Boss, 有时会逃课, 写这个流程攻略的目的只有一个–分享游戏心得(叠甲叠甲叠甲叠甲)</p>
+<p> </p>
+<h3 id="食用须知">食用须知</h3>
+<p>这里是Vanadium Terraria开荒流程的流水账记录, 包括但不限于Boss打法,游戏技巧,小吐槽等等.<br>
+<strong>Highlight!!!</strong> 我的游戏水平很菜, 打不过白光, 没玩过天顶, 没法无伤任何一个Boss, 有时会逃课, 写这个流程攻略的目的只有一个–分享游戏心得(叠甲叠甲叠甲叠甲)</p>
 <!-- &nbsp;
 
 #### 大纲
@@ -321,127 +260,162 @@
 - 石巨人前
 - 教徒前
 - 月总前 -->
-
-<p>&nbsp;</p>
-<h3 id="模组"><a href="#模组" class="headerlink" title="模组"></a>模组</h3><p><strong>P佬的个人汉化</strong></p>
-<p>官中的翻译一言难尽…什么”克劳德””斯派克””萨菲”, 我严重怀疑relogic的翻译项目是外包给临时工的(bushi).</p>
+<p> </p>
+<h3 id="模组">模组</h3>
+<p><strong>P佬的个人汉化</strong></p>
+<p>官中的翻译一言难尽…什么&quot;克劳德&quot;“斯派克”“萨菲”, 我严重怀疑relogic的翻译项目是外包给临时工的(bushi).</p>
 <p>我个人比较推荐P佬的汉化, 主要是集合了很多物品的信息, 免去了我玩一半儿查wiki的动作, 对游戏流畅度和沉浸式体验很有好处.</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0028.png">
-
 <p><strong>辅助模组</strong></p>
-<p>其他辅助模组就各凭喜好使用吧, 我对Terraria各种玩法(包括但不限于骗伤,逃课,单机模式开挂等等)一向的看法就是: <strong>你已经花了42块钱买这个游戏, 凭什么还要听别人教你玩游戏?</strong> 只要你不要跳脸输出别人(打Boss还要这么麻烦? 我骗伤&#x2F;逃课&#x2F;天顶秒了), 你想怎么玩就怎么玩, 这和这篇流程的本意是一样的, 只是分享这么一个玩法, 不存在任何的说教.</p>
+<p>其他辅助模组就各凭喜好使用吧, 我对Terraria各种玩法(包括但不限于骗伤,逃课,单机模式开挂等等)一向的看法就是: <strong>你已经花了42块钱买这个游戏, 凭什么还要听别人教你玩游戏?</strong> 只要你不要跳脸输出别人(打Boss还要这么麻烦? 我骗伤/逃课/天顶秒了), 你想怎么玩就怎么玩, 这和这篇流程的本意是一样的, 只是分享这么一个玩法, 不存在任何的说教.</p>
 <p>加载模组要用到TML, 有了本体可以免费下载, 这个流程不用其他辅助模组, 只用游戏本体</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0029.png">
-
-<p>&nbsp;</p>
-<h3 id="猪鲨骗伤"><a href="#猪鲨骗伤" class="headerlink" title="猪鲨骗伤"></a>猪鲨骗伤</h3><p>骗伤(骷髅雕像)的时候, 轴对不上, 被泡泡滋死: <strong>项链没用, 该对不上的轴还是对不上, 猪鲨吐泡泡的时候无脑克盾补轴即可</strong></p>
+<p> </p>
+<h3 id="猪鲨骗伤">猪鲨骗伤</h3>
+<p>骗伤(骷髅雕像)的时候, 轴对不上, 被泡泡滋死: <strong>项链没用, 该对不上的轴还是对不上, 猪鲨吐泡泡的时候无脑克盾补轴即可</strong></p>
 <p>不得不说这个方法是真的好用</p>
-<p>&nbsp;</p>
-<h3 id="基地相关"><a href="#基地相关" class="headerlink" title="基地相关"></a>基地相关</h3><h4 id="八人豪华别墅"><a href="#八人豪华别墅" class="headerlink" title="八人豪华别墅"></a>八人豪华别墅</h4><p>建造注意点</p>
-<ul>
-<li>最中间的平台墙高度为<strong>13格</strong>(不包括顶端的”5”字)</li>
-<li>底部绳索距离地面不超过<strong>12格</strong></li>
+<p> </p>
+<h3 id="基地相关">基地相关</h3>
+<h4 id="八人豪华别墅">八人豪华别墅</h4>
+<p>建造注意点</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>最中间的平台墙高度为<strong>13格</strong>(不包括顶端的&quot;5&quot;字)</p>
+</li>
+<li class="lvl-2">
+<p>底部绳索距离地面不超过<strong>12格</strong></p>
+</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1t841147vv/?spm_id_from=333.337.search-card.all.click&vd_source=fb60086411a6996e53c3014541e4a3ee">原视频</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1t841147vv/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fb60086411a6996e53c3014541e4a3ee">原视频</a></p>
 <p>开荒图</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0030.png">
-
 <p>效果图</p>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0031.png">
-
-<p>&nbsp;</p>
-<h3 id="刷怪机制-NPC生成机制"><a href="#刷怪机制-NPC生成机制" class="headerlink" title="刷怪机制(NPC生成机制)"></a>刷怪机制(NPC生成机制)</h3><h4 id="生成速度"><a href="#生成速度" class="headerlink" title="生成速度"></a>生成速度</h4><p><strong>影响因素</strong></p>
-<ul>
-<li>环境(生物群系&#x2F;事件)</li>
-<li>Buff(战争药水&#x2F;水蜡烛&#x2F;和平蜡烛等)</li>
-<li>城镇NPC</li>
+<p> </p>
+<h3 id="刷怪机制-NPC生成机制">刷怪机制(NPC生成机制)</h3>
+<h4 id="生成速度">生成速度</h4>
+<p><strong>影响因素</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>环境(生物群系/事件)</p>
+</li>
+<li class="lvl-2">
+<p>Buff(战争药水/水蜡烛/和平蜡烛等)</p>
+</li>
+<li class="lvl-2">
+<p>城镇NPC</p>
+</li>
 </ul>
 <p><strong>提高生成速度方法</strong></p>
-<p>在刷怪场范围内放置1500+的<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B2%99%E5%9D%97">沙块</a>&#x2F;<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E7%A1%AC%E5%8C%96%E6%B2%99%E5%9D%97">硬化沙块</a>或<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B2%99%E5%B2%A9%E5%9D%97">沙岩块</a>, 同时在人物挂机点背后放置<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B2%99%E5%B2%A9%E5%A2%99">沙岩墙</a>使得环境判定为<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E5%9C%B0%E4%B8%8B%E6%B2%99%E6%BC%A0">地下沙漠</a>, 获得更高的刷怪速度(同时可能生成地下沙漠的怪物!!)</p>
-<h4 id="生成位置"><a href="#生成位置" class="headerlink" title="生成位置"></a>生成位置</h4><p>可以利用火把自动光标放置简单记作(任务站在第0个火把处), 第7~9.5个火把之间的区域为刷怪区域</p>
+<p>在刷怪场范围内放置1500+的<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B2%99%E5%9D%97">沙块</a>/<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E7%A1%AC%E5%8C%96%E6%B2%99%E5%9D%97">硬化沙块</a>或<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B2%99%E5%B2%A9%E5%9D%97">沙岩块</a>, 同时在人物挂机点背后放置<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B2%99%E5%B2%A9%E5%A2%99">沙岩墙</a>使得环境判定为<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E5%9C%B0%E4%B8%8B%E6%B2%99%E6%BC%A0">地下沙漠</a>, 获得更高的刷怪速度(同时可能生成地下沙漠的怪物!!)</p>
+<h4 id="生成位置">生成位置</h4>
+<p>可以利用火把自动光标放置简单记作(任务站在第0个火把处), 第7~9.5个火把之间的区域为刷怪区域</p>
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/Terraria_Spawn_Area.png?raw=true">
-
-<h4 id="生成类型"><a href="#生成类型" class="headerlink" title="生成类型"></a>生成类型</h4><p>敌人的生成类型取决于很多因素, 包括但不限于:</p>
-<ul>
-<li>一天中的时段</li>
-<li>天气（例如，<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%84%A4%E6%80%92%E9%9B%A8%E4%BA%91%E6%80%AA">愤怒雨云怪</a>和<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E5%86%B0%E9%9B%AA%E5%B7%A8%E4%BA%BA">冰雪巨人</a>要求是雨&#x2F;暴雪）</li>
-<li>深度</li>
-<li>东西方距离（海洋敌怪、火星探测器、哥布林侦察兵等）</li>
-<li>玩家的当前生物群系（腐化、流星、丛林等，对于大多数特定于生物群系的<strong>飞行敌怪</strong>）</li>
-<li>敌怪生成时所在的图格（丛林草、黑檀石、大理石等，对于大多数特定于生物群系的<strong>地面敌怪</strong>）</li>
-<li>玩家背后的墙（丛林蜥蜴砖墙、地牢砖墙等）</li>
-<li>敌怪的生成位置背后的墙（地牢砖墙的变体种类）</li>
-<li>特定事件（血月、日食、入侵事件、等等）</li>
-<li>随机性</li>
+<h4 id="生成类型">生成类型</h4>
+<p>敌人的生成类型取决于很多因素, 包括但不限于:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>一天中的时段</p>
+</li>
+<li class="lvl-2">
+<p>天气（例如，<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%84%A4%E6%80%92%E9%9B%A8%E4%BA%91%E6%80%AA">愤怒雨云怪</a>和<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E5%86%B0%E9%9B%AA%E5%B7%A8%E4%BA%BA">冰雪巨人</a>要求是雨/暴雪）</p>
+</li>
+<li class="lvl-2">
+<p>深度</p>
+</li>
+<li class="lvl-2">
+<p>东西方距离（海洋敌怪、火星探测器、哥布林侦察兵等）</p>
+</li>
+<li class="lvl-2">
+<p>玩家的当前生物群系（腐化、流星、丛林等，对于大多数特定于生物群系的<strong>飞行敌怪</strong>）</p>
+</li>
+<li class="lvl-2">
+<p>敌怪生成时所在的图格（丛林草、黑檀石、大理石等，对于大多数特定于生物群系的<strong>地面敌怪</strong>）</p>
+</li>
+<li class="lvl-2">
+<p>玩家背后的墙（丛林蜥蜴砖墙、地牢砖墙等）</p>
+</li>
+<li class="lvl-2">
+<p>敌怪的生成位置背后的墙（地牢砖墙的变体种类）</p>
+</li>
+<li class="lvl-2">
+<p>特定事件（血月、日食、入侵事件、等等）</p>
+</li>
+<li class="lvl-2">
+<p>随机性</p>
+</li>
 </ul>
-<p>对于某类特定怪物的刷怪场, 可以查阅资料&#x2F;实验&#x2F;查阅代码得出刷怪条件</p>
+<p>对于某类特定怪物的刷怪场, 可以查阅资料/实验/查阅代码得出刷怪条件</p>
 <p><strong><a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B7%B7%E6%B2%8C%E7%B2%BE">混沌精</a></strong></p>
 <ol>
-<li>洞穴层</li>
-<li>珍珠石块&#x2F;珍珠沙块&#x2F;粉冰雪块上面(无需神圣环境)</li>
-<li>玩家不在安全墙前, 附近没有居住的NPC, 玩家处于移动状态(均可用<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%9A%97%E5%BD%B1%E8%9C%A1%E7%83%9B">暗影蜡烛</a>消除)</li>
+<li class="lvl-3">
+<p>洞穴层</p>
+</li>
+<li class="lvl-3">
+<p>珍珠石块/珍珠沙块/粉冰雪块上面(无需神圣环境)</p>
+</li>
+<li class="lvl-3">
+<p>玩家不在安全墙前, 附近没有居住的NPC, 玩家处于移动状态(均可用<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%9A%97%E5%BD%B1%E8%9C%A1%E7%83%9B">暗影蜡烛</a>消除)</p>
+</li>
 </ol>
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><ol>
-<li>Terraria Wiki编者．NPC 生成[G&#x2F;OL]．Terraria Wiki，，2023年09月12日15:40［2024年01月28日］．<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/index.php?title=NPC_%E7%94%9F%E6%88%90&oldid=198648%EF%BC%8E">https://terraria.wiki.gg/zh/index.php?title=NPC_%E7%94%9F%E6%88%90&amp;oldid=198648．</a></li>
-</ol>
-<p>&nbsp;</p>
-<h3 id="蜘蛛刷怪场"><a href="#蜘蛛刷怪场" class="headerlink" title="蜘蛛刷怪场"></a>蜘蛛刷怪场</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Nt4y1c7iu/?spm_id_from=333.999.0.0&vd_source=fb60086411a6996e53c3014541e4a3ee">【泰拉瑞亚】牙牙学语的杂谈：9、微光版本的蜘蛛墙</a></p>
-<h4 id="建造方法"><a href="#建造方法" class="headerlink" title="建造方法"></a>建造方法</h4><p><strong>海岸版本</strong></p>
+<h4 id="参考文献">参考文献</h4>
 <ol>
-<li>对海洋沙滩进行改造(神圣化&#x2F;邪恶化), 使得海岸可以判定为沙漠环境(非必需, 提高刷怪率用)</li>
-<li>海岸边延伸出去, 利用智能光标放置火把, 在第7~10个火把处(刷怪范围)铺设<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E8%9C%98%E8%9B%9B%E5%A2%99">危险蜘蛛墙</a></li>
+<li class="lvl-3">
+<p>Terraria Wiki编者．NPC 生成[G/OL]．Terraria Wiki，，2023年09月12日15:40［2024年01月28日］．<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/index.php?title=NPC_%E7%94%9F%E6%88%90&amp;oldid=198648%EF%BC%8E">https://terraria.wiki.gg/zh/index.php?title=NPC_生成&amp;oldid=198648．</a></p>
+</li>
+</ol>
+<p> </p>
+<h3 id="蜘蛛刷怪场">蜘蛛刷怪场</h3>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Nt4y1c7iu/?spm_id_from=333.999.0.0&amp;vd_source=fb60086411a6996e53c3014541e4a3ee">【泰拉瑞亚】牙牙学语的杂谈：9、微光版本的蜘蛛墙</a></p>
+<h4 id="建造方法">建造方法</h4>
+<p><strong>海岸版本</strong></p>
+<ol>
+<li class="lvl-3">
+<p>对海洋沙滩进行改造(神圣化/邪恶化), 使得海岸可以判定为沙漠环境(非必需, 提高刷怪率用)</p>
+</li>
+<li class="lvl-3">
+<p>海岸边延伸出去, 利用智能光标放置火把, 在第7~10个火把处(刷怪范围)铺设<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E8%9C%98%E8%9B%9B%E5%A2%99">危险蜘蛛墙</a></p>
+</li>
 </ol>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0032.png">
-
 <ol start="3">
-<li>在铺设蜘蛛墙的物块上防止两格高的任意人造墙, 防止蜘蛛遇光消失</li>
-<li>在第3~4个火把处建设卡怪槽(注意使用<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B3%A1%E6%B3%A1">泡泡</a>建造卡怪槽, 避免无法吸引到蜘蛛仇恨)</li>
+<li class="lvl-3">
+<p>在铺设蜘蛛墙的物块上防止两格高的任意人造墙, 防止蜘蛛遇光消失</p>
+</li>
+<li class="lvl-3">
+<p>在第3~4个火把处建设卡怪槽(注意使用<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B3%A1%E6%B3%A1">泡泡</a>建造卡怪槽, 避免无法吸引到蜘蛛仇恨)</p>
+</li>
 </ol>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0033.png">
-
 <ol start="5">
-<li>人物站立在第0个火把处挂机, 在人物背后放置<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B2%99%E5%B2%A9%E5%A2%99">砂岩墙</a>可以欺骗判定至地下沙漠, 提高1~2倍刷怪率</li>
+<li class="lvl-3">
+<p>人物站立在第0个火把处挂机, 在人物背后放置<a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/%E6%B2%99%E5%B2%A9%E5%A2%99">砂岩墙</a>可以欺骗判定至地下沙漠, 提高1~2倍刷怪率</p>
+</li>
 </ol>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0034.png">
-
 <p><strong>地狱版本</strong></p>
 <ol>
-<li>用岩浆覆盖两个屏幕范围内的可刷怪点</li>
-<li>人工放置1500个以上的神圣沙块&#x2F;邪恶沙块或200个以上的神圣&#x2F;邪恶物块构建刷魂环境(非必需)</li>
-<li>按照海岸版本建造刷怪场, 卡怪槽可改为简单的, 且不用铺设人工背景墙</li>
+<li class="lvl-3">
+<p>用岩浆覆盖两个屏幕范围内的可刷怪点</p>
+</li>
+<li class="lvl-3">
+<p>人工放置1500个以上的神圣沙块/邪恶沙块或200个以上的神圣/邪恶物块构建刷魂环境(非必需)</p>
+</li>
+<li class="lvl-3">
+<p>按照海岸版本建造刷怪场, 卡怪槽可改为简单的, 且不用铺设人工背景墙</p>
+</li>
 </ol>
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/0035.png">
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -458,7 +432,6 @@
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -478,20 +451,7 @@
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -505,46 +465,6 @@
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,43 +160,27 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
@@ -245,8 +190,6 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF"><span class="toc-text">函数模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-text">隐式调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-text">显式调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD"><span class="toc-text">重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%B9%E9%85%8D%E9%A1%BA%E5%BA%8F"><span class="toc-text">重载的匹配顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF"><span class="toc-text">类模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="toc-text">非类型参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%B4%BE%E7%94%9F"><span class="toc-text">类模板的派生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%8F%8B%E5%85%83"><span class="toc-text">模板与友元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%8E%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-text">类模板与静态成员变量</span></a></li></ol></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -261,8 +204,7 @@
             2023/12/16
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -276,33 +218,26 @@
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #ffa2c4">OOP</a>
+                <a href="/tags/OOP/" style="color: #00a596">OOP</a>
             </span>
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在OOP中, 我们经常遇到要用到一些程序片段, 他们实现和完成的功能基本相同, 不同的只是数据类型, 此时我们可以利用<strong>模板template</strong>大大简化程序书写, 提高简洁性和可读性.</p>
+        <h3 id="前言">前言</h3>
+<p>在OOP中, 我们经常遇到要用到一些程序片段, 他们实现和完成的功能基本相同, 不同的只是数据类型, 此时我们可以利用<strong>模板template</strong>大大简化程序书写, 提高简洁性和可读性.</p>
 <span id="more"></span>
-
-<p>&nbsp;</p>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h4><pre><code class="c++">template &lt;class 类型参数...&gt;   //模板声明头
+<p> </p>
+<h3 id="正文">正文</h3>
+<h4 id="函数模板">函数模板</h4>
+<pre><code class="language-c++">template &lt;class 类型参数...&gt;   //模板声明头
 返回值 函数名(形参表)&#123;
     函数体
 &#125;
 </code></pre>
-<pre><code class="c++">//定义一个求最大值的函数模板
+<pre><code class="language-c++">//定义一个求最大值的函数模板
 template &lt;class T&gt;
 T MaxElement(T array[], int size)&#123;
     T _max = array[0];
@@ -312,10 +247,11 @@ T MaxElement(T array[], int size)&#123;
     return _max;
 &#125;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="隐式调用"><a href="#隐式调用" class="headerlink" title="隐式调用"></a>隐式调用</h4><p>当我们像使用普通函数一样直接使用模板函数时, 就会进行隐式调用, 编译器会自动为我们匹配合适的重载</p>
+<p> </p>
+<h4 id="隐式调用">隐式调用</h4>
+<p>当我们像使用普通函数一样直接使用模板函数时, 就会进行隐式调用, 编译器会自动为我们匹配合适的重载</p>
 <p>例如, 当我们运行以下测试程序</p>
-<pre><code class="c++">int main()&#123;
+<pre><code class="language-c++">int main()&#123;
     double a[3]=&#123;1.5, 2.9, 2.1&#125;;
     cout&lt;&lt;MaxElement(a,3)&lt;&lt;endl;
 
@@ -329,20 +265,20 @@ T MaxElement(T array[], int size)&#123;
 </code></pre>
 <p>在行3和行6中, MaxElement分别被实例化为浮点型和整型函数, 将鼠标悬停在函数上面可以看到</p>
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0013.png?raw=true">
-
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0014.png?raw=true">
-
-<p>&nbsp;</p>
-<h4 id="显式调用"><a href="#显式调用" class="headerlink" title="显式调用"></a>显式调用</h4><p>此外, 我们也可以在调用时直接声明类型参数</p>
-<pre><code class="c++">int main()&#123;
+<p> </p>
+<h4 id="显式调用">显式调用</h4>
+<p>此外, 我们也可以在调用时直接声明类型参数</p>
+<pre><code class="language-c++">int main()&#123;
     double a[3]=&#123;1.5, 2.9, 2.1&#125;;
     cout&lt;&lt;MaxElement&lt;int&gt;(a,3)&lt;&lt;endl;   //Error
 &#125;
 </code></pre>
 <p>此时声明了整型的MaxElement就会报错, 因为a是浮点型数组</p>
-<p>&nbsp;</p>
-<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><p>模板函数可以重载, 只要他们的<strong>形参表或类型参数表</strong>不同, 以下重载都是合法的</p>
-<pre><code class="c++">template &lt;class T&gt;
+<p> </p>
+<h4 id="重载">重载</h4>
+<p>模板函数可以重载, 只要他们的<strong>形参表或类型参数表</strong>不同, 以下重载都是合法的</p>
+<pre><code class="language-c++">template &lt;class T&gt;
 void func(T x, T y)&#123;
 &#125;
 
@@ -354,18 +290,27 @@ template &lt;class T1, class T2&gt;
 void func(T1 x, T1 y)&#123;
 &#125;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="重载的匹配顺序"><a href="#重载的匹配顺序" class="headerlink" title="重载的匹配顺序"></a>重载的匹配顺序</h4><p>当存在同名普通函数和模板函数重载时, 编译器的匹配顺序如下</p>
+<p> </p>
+<h4 id="重载的匹配顺序">重载的匹配顺序</h4>
+<p>当存在同名普通函数和模板函数重载时, 编译器的匹配顺序如下</p>
 <ol>
-<li>参数表完全匹配的<strong>普通函数</strong>(指非模板实例化的函数)</li>
-<li>参数表完全匹配的<strong>模板函数</strong></li>
-<li>参数表通过自动类型转换后能够匹配的<strong>普通函数</strong></li>
-<li>报错</li>
+<li class="lvl-3">
+<p>参数表完全匹配的<strong>普通函数</strong>(指非模板实例化的函数)</p>
+</li>
+<li class="lvl-3">
+<p>参数表完全匹配的<strong>模板函数</strong></p>
+</li>
+<li class="lvl-3">
+<p>参数表通过自动类型转换后能够匹配的<strong>普通函数</strong></p>
+</li>
+<li class="lvl-3">
+<p>报错</p>
+</li>
 </ol>
 <p><strong>注意:</strong> 编译器不会进行自动类型转换以匹配<strong>隐式调用</strong>的模板函数</p>
-<pre><code class="c++">template &lt;class T&gt;
+<pre><code class="language-c++">template &lt;class T&gt;
 void func(T x, T y)&#123;
-    cout&lt;&lt;x&lt;&lt;&#39; &#39;&lt;&lt;y&lt;&lt;endl;
+    cout&lt;&lt;x&lt;&lt;' '&lt;&lt;y&lt;&lt;endl;
 &#125;
 
 int main()&#123;
@@ -375,15 +320,16 @@ int main()&#123;
     func&lt;int&gt;(x,y); //Accepted
 &#125;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h4><pre><code class="c++">template &lt;class 类型参数...&gt;   //模板声明头
+<p> </p>
+<h4 id="类模板">类模板</h4>
+<pre><code class="language-c++">template &lt;class 类型参数...&gt;   //模板声明头
 class 类名&#123;
     成员
 &#125;;
 
 类模板名&lt;真实类型参数表&gt; 对象名(构造函数参数表);
 </code></pre>
-<pre><code class="c++">//定义一个键值对类
+<pre><code class="language-c++">//定义一个键值对类
 template &lt;class T1, class T2&gt;
 class JsonNode&#123;
     public:
@@ -416,9 +362,10 @@ John
 */
 </code></pre>
 <p><strong>注意:</strong> 同一个模板生成的不同类, 例如<code>JsonNode&lt;string,int&gt;</code>和<code>JsonNode&lt;string,double&gt;</code>是不兼容的</p>
-<p>&nbsp;</p>
-<h4 id="非类型参数"><a href="#非类型参数" class="headerlink" title="非类型参数"></a>非类型参数</h4><p>函数模板和类模板的类型参数表都能接受非类型参数(<strong>但要求是类型typename, 而不是类class</strong>), 以下用法是合法(但不常用)的</p>
-<pre><code class="c++">template &lt;class T, int size&gt;
+<p> </p>
+<h4 id="非类型参数">非类型参数</h4>
+<p>函数模板和类模板的类型参数表都能接受非类型参数(<strong>但要求是类型typename, 而不是类class</strong>), 以下用法是合法(但不常用)的</p>
+<pre><code class="language-c++">template &lt;class T, int size&gt;
 T MaxElement(T array[])&#123;
     T _max = array[0];
     for(int i=1;i&lt;size;++i)
@@ -433,13 +380,13 @@ int main()&#123;
 &#125;
 </code></pre>
 <p>以及</p>
-<pre><code class="c++">template &lt;class T, int size&gt;
+<pre><code class="language-c++">template &lt;class T, int size&gt;
 class Array&#123;
     private:
         T array[size]=&#123;0&#125;;
     public:
         void Print()&#123;
-            for(int i=0;i&lt;size;++i) cout&lt;&lt;array[i]&lt;&lt;&#39;#&#39;;
+            for(int i=0;i&lt;size;++i) cout&lt;&lt;array[i]&lt;&lt;'#';
             cout&lt;&lt;endl;
         &#125;
 &#125;;
@@ -449,20 +396,33 @@ int main()&#123;
     int_array.Print();
 &#125;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="类模板的派生"><a href="#类模板的派生" class="headerlink" title="类模板的派生"></a>类模板的派生</h4><ul>
-<li>类模板从<strong>类模板</strong>派生</li>
-<li>类模板从<strong>模板类</strong>派生</li>
-<li>类模板从普通类派生</li>
-<li>普通类从模板类派生</li>
+<p> </p>
+<h4 id="类模板的派生">类模板的派生</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>类模板从<strong>类模板</strong>派生</p>
+</li>
+<li class="lvl-2">
+<p>类模板从<strong>模板类</strong>派生</p>
+</li>
+<li class="lvl-2">
+<p>类模板从普通类派生</p>
+</li>
+<li class="lvl-2">
+<p>普通类从模板类派生</p>
+</li>
 </ul>
 <p>注意主语和限定词:</p>
-<ul>
-<li><strong>类模板</strong>指的是一个尚未实例化的模板, 被继承时仍然是模板</li>
-<li><strong>模板类</strong>指的是一个已经实例化的类, 本质上与普通的类是一样的</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>类模板</strong>指的是一个尚未实例化的模板, 被继承时仍然是模板</p>
+</li>
+<li class="lvl-2">
+<p><strong>模板类</strong>指的是一个已经实例化的类, 本质上与普通的类是一样的</p>
+</li>
 </ul>
 <p><strong>类模板从类模板派生</strong></p>
-<pre><code class="c++">template&lt;class T1, class T2&gt;
+<pre><code class="language-c++">template&lt;class T1, class T2&gt;
 class A&#123;
     public:
         T1 v1;
@@ -490,7 +450,7 @@ int main()&#123;
 </code></pre>
 <p><strong>类模板从模板类派生 | 类模板从普通类派生</strong></p>
 <p>当类模板从模板类或普通类派生时, 由这个类模板生成的类均会以这个模板类或普通类为基类</p>
-<pre><code class="c++">template&lt;class T1, class T2&gt;
+<pre><code class="language-c++">template&lt;class T1, class T2&gt;
 class A&#123;
     public:
         T1 v1;
@@ -525,7 +485,7 @@ int main()&#123;
 </code></pre>
 <p><strong>普通类从模板类派生</strong></p>
 <p>除语法外, 与普通的类的派生无异</p>
-<pre><code class="c++">template&lt;class T1, class T2&gt;
+<pre><code class="language-c++">template&lt;class T1, class T2&gt;
 class A&#123;
     public:
         T1 v1;
@@ -538,9 +498,10 @@ class B:public A&lt;int,char&gt;&#123;
         T2 v4;
 &#125;;
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="模板与友元"><a href="#模板与友元" class="headerlink" title="模板与友元"></a>模板与友元</h4><p><strong>函数、类、类的成员函数作为类模板的友元</strong></p>
-<pre><code class="c++">void func()&#123;&#125;
+<p> </p>
+<h4 id="模板与友元">模板与友元</h4>
+<p><strong>函数、类、类的成员函数作为类模板的友元</strong></p>
+<pre><code class="language-c++">void func()&#123;&#125;
 
 class A&#123;&#125;;
 
@@ -558,7 +519,7 @@ class C&#123;
 //所有由C实例化的类, 均有以上三个友元
 </code></pre>
 <p><strong>函数模板作为类模板的友元</strong></p>
-<pre><code class="c++">template &lt;class T1, class T2&gt;
+<pre><code class="language-c++">template &lt;class T1, class T2&gt;
 class A&#123;
     public:
         template &lt;class T1, class T2&gt;
@@ -567,7 +528,7 @@ class A&#123;
 //所有函数模板的实例化, 都是类模板实例化的友元
 </code></pre>
 <p><strong>类模板作为类模板的友元</strong></p>
-<pre><code class="c++">template &lt;class T1, class T2&gt;
+<pre><code class="language-c++">template &lt;class T1, class T2&gt;
 class A&#123;
     public:
         template &lt;class T1, class T2&gt;
@@ -575,40 +536,20 @@ class A&#123;
 &#125;;
 //所有B类模板的实例化, 都是A类模板实例化的友元
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="类模板与静态成员变量"><a href="#类模板与静态成员变量" class="headerlink" title="类模板与静态成员变量"></a>类模板与静态成员变量</h4><p>如果类模板中定义了静态成员变量, 则其所有实例化共用一个静态成员变量</p>
+<p> </p>
+<h4 id="类模板与静态成员变量">类模板与静态成员变量</h4>
+<p>如果类模板中定义了静态成员变量, 则其所有实例化共用一个静态成员变量</p>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -625,7 +566,6 @@ class A&#123;
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -645,20 +585,7 @@ class A&#123;
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -672,46 +599,6 @@ class A&#123;
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

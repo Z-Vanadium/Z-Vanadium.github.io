@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,54 +160,36 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="toc-text">1 引入: 为什么我们需要智能指针</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80"><span class="toc-text">1.1 问题一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C"><span class="toc-text">1.2 问题二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%8C%85%E5%90%AB%E4%BA%86%E5%A4%AA%E5%A4%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">1.3 指针包含了太多信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-text">2 垃圾回收</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8F%AF%E8%BE%BE%E6%80%A7"><span class="toc-text">2.1 对象的可达性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E6%94%B6%E5%A4%9A%E5%B0%91%E5%86%85%E5%AD%98"><span class="toc-text">2.2 回收多少内存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stdunique_ptr"><span class="toc-text">3 std::unique_ptr</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">3.1 实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stdmake_unique"><span class="toc-text">3.2 std::make_unique()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.3 数组类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%9D%83%E8%BD%AC%E7%A7%BB"><span class="toc-text">3.4 所有权转移</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stdshared_ptr"><span class="toc-text">4 std::shared_ptr</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-text">4.1 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stdmake_shared"><span class="toc-text">4.2 std::make_shared()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%9D%83%E8%BD%AC%E7%A7%BB-1"><span class="toc-text">4.3 所有权转移</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BC%95%E5%85%A5-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="toc-text">1 引入: 为什么我们需要智能指针</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E9%97%AE%E9%A2%98%E4%B8%80"><span class="toc-text">1.1 问题一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E9%97%AE%E9%A2%98%E4%BA%8C"><span class="toc-text">1.2 问题二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E6%8C%87%E9%92%88%E5%8C%85%E5%90%AB%E4%BA%86%E5%A4%AA%E5%A4%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">1.3 指针包含了太多信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-text">2 垃圾回收</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8F%AF%E8%BE%BE%E6%80%A7"><span class="toc-text">2.1 对象的可达性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%9B%9E%E6%94%B6%E5%A4%9A%E5%B0%91%E5%86%85%E5%AD%98"><span class="toc-text">2.2 回收多少内存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-std-unique-ptr"><span class="toc-text">3 std::unique_ptr</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">3.1 实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-std-make-unique"><span class="toc-text">3.2 std::make_unique()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.3 数组类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E6%89%80%E6%9C%89%E6%9D%83%E8%BD%AC%E7%A7%BB"><span class="toc-text">3.4 所有权转移</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-std-shared-ptr"><span class="toc-text">4 std::shared_ptr</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E6%8E%A5%E5%8F%A3"><span class="toc-text">4.1 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-std-make-shared"><span class="toc-text">4.2 std::make_shared()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%89%80%E6%9C%89%E6%9D%83%E8%BD%AC%E7%A7%BB"><span class="toc-text">4.3 所有权转移</span></a></li></ol></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -261,8 +204,7 @@
             2024/3/24
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -276,462 +218,412 @@
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <blockquote>
-<p>这是 <a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1SN411y7qk/?spm_id_from=333.788&amp;vd_source=fb60086411a6996e53c3014541e4a3ee">C++
-网课</a>学习笔记</p>
-<p>建议先阅读上一节 <code>右值引用 &amp; 移动语义</code>
-或对内容有一定了解后再来阅读本篇笔记</p>
+<p>这是 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1SN411y7qk/?spm_id_from=333.788&amp;vd_source=fb60086411a6996e53c3014541e4a3ee">C++ 网课</a>学习笔记</p>
+<p>建议先阅读上一节 <code>右值引用 &amp; 移动语义</code> 或对内容有一定了解后再来阅读本篇笔记</p>
 </blockquote>
 <span id="more"></span>
 <!--
 <img src="https://raw.githubusercontent.com/Z-Vanadium/Z-Vanadium.github.io/main/ImageHost/Illustrations/FILENAME.XXX">
 -->
 <p> </p>
-<h3 id="引入-为什么我们需要智能指针">1 引入: 为什么我们需要智能指针</h3>
-<h4 id="问题一">1.1 问题一</h4>
+<h3 id="1-引入-为什么我们需要智能指针">1 引入: 为什么我们需要智能指针</h3>
+<h4 id="1-1-问题一">1.1 问题一</h4>
 <p>观察以下代码</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> science<span class="op">(</span><span class="dt">double</span><span class="op">*</span> data<span class="op">,</span> <span class="dt">int</span> N<span class="op">)</span> <span class="op">&#123;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span><span class="op">*</span> temp <span class="op">=</span> <span class="kw">new</span> <span class="dt">double</span><span class="op">[</span>N<span class="op">*</span><span class="dv">2</span><span class="op">];</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    do_setup<span class="op">(</span>data<span class="op">,</span> temp<span class="op">,</span> N<span class="op">);</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(!</span>needed<span class="op">(</span>data<span class="op">,</span> temp<span class="op">,</span> N<span class="op">))</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    calculate<span class="op">(</span>data<span class="op">,</span> temp<span class="op">,</span> N<span class="op">);</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span><span class="op">[]</span> temp<span class="op">;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span></code></pre></div>
-<p>不难理解, 函数 <code>science()</code> 接受两个参数, 一个表示数组
-<code>data</code> 的首元素地址, 一个表示数组的长度</p>
-<p>这说明了一个数组类型包含了三个信息: 数组元素类型, 首元素地址和长度;
-然而当我们把数组作为指针传入时, 我们却丧失了长度这个信息,
-只能用一个额外的 <code>N</code> 储存这个信息</p>
-<p>回到函数体本身, 这个函数实现的功能很简单, 假如 <code>needed()</code>
-为真, 则对 <code>data</code> 调用 <code>calculate()</code>.
-但是这个函数却有一个很大很大的缺陷, 假如 <code>needed()</code> 为假,
-我们 new 出来的 <code>temp</code> 指针所指向的地址的内容就无法被释放,
-成为垃圾了</p>
+<pre><code class="language-c++">void science(double* data, int N) &#123;
+    double* temp = new double[N*2];
+    do_setup(data, temp, N);
+    if (!needed(data, temp, N))
+        return;
+    calculate(data, temp, N);
+    delete[] temp;
+&#125;
+</code></pre>
+<p>不难理解, 函数 <code>science()</code> 接受两个参数, 一个表示数组 <code>data</code> 的首元素地址, 一个表示数组的长度</p>
+<p>这说明了一个数组类型包含了三个信息: 数组元素类型, 首元素地址和长度; 然而当我们把数组作为指针传入时, 我们却丧失了长度这个信息, 只能用一个额外的 <code>N</code> 储存这个信息</p>
+<p>回到函数体本身, 这个函数实现的功能很简单, 假如 <code>needed()</code> 为真, 则对 <code>data</code> 调用 <code>calculate()</code>. 但是这个函数却有一个很大很大的缺陷, 假如 <code>needed()</code> 为假, 我们 new 出来的 <code>temp</code> 指针所指向的地址的内容就无法被释放, 成为垃圾了</p>
 <div class="tips">
-<p>这是传统指针遇到的第一个问题,
-我们无法通过指针类型判断一个指针应该在什么时候被释放</p>
+<p>这是传统指针遇到的第一个问题, 我们无法通过指针类型判断一个指针应该在什么时候被释放</p>
 </div>
 <p> </p>
-<h4 id="问题二">1.2 问题二</h4>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span><span class="op">*</span> science<span class="op">(</span><span class="dt">float</span><span class="op">*</span> x<span class="op">,</span> <span class="dt">float</span><span class="op">*</span> y<span class="op">,</span> <span class="dt">int</span> N<span class="op">)</span> <span class="op">&#123;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span><span class="op">*</span> z <span class="op">=</span> <span class="kw">new</span> <span class="dt">float</span><span class="op">[</span>N<span class="op">];</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    saxpy<span class="op">(</span><span class="fl">2.5</span><span class="op">,</span> x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span> N<span class="op">);</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span><span class="op">[]</span> x<span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span><span class="op">[]</span> y<span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z<span class="op">;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span></code></pre></div>
-<p>这个函数也不难理解, 我们通过 x 和 y 计算出了 z, 同时 x 和 y
-在函数内部就被释放了, 而 z 被保留, 这些东西都需要用户自己清楚,
-很可能导致 UB</p>
+<h4 id="1-2-问题二">1.2 问题二</h4>
+<pre><code class="language-c++">float* science(float* x, float* y, int N) &#123;
+    float* z = new float[N];
+    saxpy(2.5, x, y, z, N);
+    delete[] x;
+    delete[] y;
+    return z;
+&#125;
+</code></pre>
+<p>这个函数也不难理解, 我们通过 x 和 y 计算出了 z, 同时 x 和 y 在函数内部就被释放了, 而 z 被保留, 这些东西都需要用户自己清楚, 很可能导致 UB</p>
 <div class="tips">
-<p>这是传统指针遇到的第二个问题, 传统指针是用户不友好的,
-很多信息你只能在代码层面解读, 而无法从接口层告知</p>
+<p>这是传统指针遇到的第二个问题, 传统指针是用户不友好的, 很多信息你只能在代码层面解读, 而无法从接口层告知</p>
 </div>
 <p> </p>
-<h4 id="指针包含了太多信息">1.3 指针包含了太多信息</h4>
-<ol type="1">
-<li><p>对于单个对象或数组</p>
-<ul>
-<li>单个对象: 我们使用 new 和 delete, 不支持 ++, -- 或 []</li>
-<li>数组: 我们使用 new[] 和 delete[], 支持 ++, -- 或 []</li>
+<h4 id="1-3-指针包含了太多信息">1.3 指针包含了太多信息</h4>
+<ol>
+<li class="lvl-3">
+<p>对于单个对象或数组</p>
+<ul class="lvl-2">
+<li class="lvl-5">单个对象: 我们使用 new 和 delete, 不支持 ++, – 或 []</li>
+<li class="lvl-5">数组: 我们使用 new[] 和 delete[], 支持 ++, – 或 []</li>
 </ul>
-<p>::: tips 然而不管指向什么东西的指针, 他们都长一个样: <code>T*</code>,
-但是我们却需要根据其指向对象的类型的不同使用不同的操作, 这显然是不友好的
-:::</p></li>
-<li><p>所有权</p>
-<ul>
-<li>所有者必须在使用完成后及时释放内存</li>
-<li>非所有者无权释放内存</li>
+<div class="tips">
+<p>然而不管指向什么东西的指针, 他们都长一个样: <code>T*</code>, 但是我们却需要根据其指向对象的类型的不同使用不同的操作, 这显然是不友好的</p>
+</div>
+</li>
+<li class="lvl-3">
+<p>所有权</p>
+<ul class="lvl-2">
+<li class="lvl-5">所有者必须在使用完成后及时释放内存</li>
+<li class="lvl-5">非所有者无权释放内存</li>
 </ul>
 <blockquote>
 <p>防止没有释放导致浪费或重复释放导致出错</p>
-</blockquote></li>
-<li><p>是否可以为空</p></li>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p>是否可以为空</p>
+</li>
 </ol>
-<p>+++ Summary 正是因为指针包括了很多很多无法简单被类型描述的特征,
-这些特征又是刚需的, 所以我们需求一种 <strong>智能</strong> 的指针 -
-他知道使用 <code>delete</code> / <code>delete[]</code> -
-生命周期结束后自动销毁 - 是否可以为空指针 +++</p>
+<details open>
+<summary><span class="pre-summary">&nbsp;</span>Summary</summary><p>正是因为指针包括了很多很多无法简单被类型描述的特征, 这些特征又是刚需的, 所以我们需求一种 <strong>智能</strong> 的指针</p>
+<ul class="lvl-1">
+<li class="lvl-2">他知道使用 <code>delete</code> / <code>delete[]</code></li>
+<li class="lvl-2">生命周期结束后自动销毁</li>
+<li class="lvl-2">是否可以为空指针</li>
+</ul>
+</details>
 <div class="success">
-<p>其实, STL 容器就包含了这种 <strong>智能</strong> ,
-我们只负责调用某个容器, 如 <code>string</code>,
-而并不关心它什么时候销毁, 或者是否可以为空和销毁方式</p>
+<p>其实, STL 容器就包含了这种 <strong>智能</strong> , 我们只负责调用某个容器, 如 <code>string</code>, 而并不关心它什么时候销毁, 或者是否可以为空和销毁方式</p>
 </div>
 <p> </p>
-<h3 id="垃圾回收">2 垃圾回收</h3>
+<h3 id="2-垃圾回收">2 垃圾回收</h3>
 <blockquote>
 <p>回收不可达的对象</p>
 </blockquote>
-<h4 id="对象的可达性">2.1 对象的可达性</h4>
+<h4 id="2-1-对象的可达性">2.1 对象的可达性</h4>
 <p>首先第一个问题就是, 如何判断一个对象的可达性?</p>
-<ul>
-<li>维护一个 reference counting, 每有一个指针指向这个对象, 就 ++, 否则就
---</li>
-<li>周期运行 mark-and-sweep (from root set), 每次运行的时候,
-通过递归的方式标记有哪些内存是可访问的, 回收其他所有不可达的内存</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>维护一个 reference counting, 每有一个指针指向这个对象, 就 ++, 否则就 –</p>
+</li>
+<li class="lvl-2">
+<p>周期运行 mark-and-sweep (from root set), 每次运行的时候, 通过递归的方式标记有哪些内存是可访问的, 回收其他所有不可达的内存</p>
+</li>
 </ul>
 <p> </p>
-<h4 id="回收多少内存">2.2 回收多少内存</h4>
+<h4 id="2-2-回收多少内存">2.2 回收多少内存</h4>
 <p>第二个问题是, 回收多少内存空间</p>
 <div class="warning">
 <p>C++ 并不是一个类型安全的语言</p>
 </div>
-<ul>
-<li>例如一个 <code>void*</code> 类型指针指向某个地址, 当我们回收它时,
-我们并不知道具体要回收多少内存</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>例如一个 <code>void*</code> 类型指针指向某个地址, 当我们回收它时, 我们并不知道具体要回收多少内存</p>
+</li>
 </ul>
 <p> </p>
-<h3 id="stdunique_ptr">3 std::unique_ptr</h3>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include</span><span class="im">&lt;memory&gt;</span></span></code></pre></div>
-<p><code>unique_ptr</code> 假设自己是对象唯一的所有者(由用户保证),
-这样就能保证 unique_ptr 在析构的时候可以直接释放, 不用考虑其他指针</p>
+<h3 id="3-std-unique-ptr">3 std::unique_ptr</h3>
+<pre><code class="language-c++">#include&lt;memory&gt;
+</code></pre>
+<p><code>unique_ptr</code> 假设自己是对象唯一的所有者(由用户保证), 这样就能保证 unique_ptr 在析构的时候可以直接释放, 不用考虑其他指针</p>
 <div class="tips">
 <p>正因如此, <code>unique_ptr</code> 无法被拷贝, 只能移动</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>unique_ptr<span class="op">&lt;</span>T<span class="op">&gt;</span> p<span class="op">(</span><span class="kw">new</span> T<span class="op">(</span><span class="co">/* some parameters */</span><span class="op">)),</span> q<span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p<span class="op">-&gt;</span>member<span class="op">();</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="bu">std::</span>move<span class="op">(</span>p<span class="op">);</span>   <span class="co">// legal behaviour</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> p<span class="op">;</span>              <span class="co">// illegal behaviour</span></span></code></pre></div>
+<pre><code class="language-c++">std::unique_ptr&lt;T&gt; p(new T(/* some parameters */)), q;
+p-&gt;member();
+q = std::move(p);   // legal behaviour
+q = p;              // illegal behaviour
+</code></pre>
 </div>
 <p>举个栗子</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>WidgetBase<span class="op">*</span> create_widget<span class="op">(</span>InputType<span class="op">);</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyClass <span class="op">&#123;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>unique_ptr<span class="op">&lt;</span>WidgetBase<span class="op">&gt;</span> owner<span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    MyClass<span class="op">(</span>InputType inputs<span class="op">)</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span> owner<span class="op">(</span>create_widget<span class="op">(</span>inputs<span class="op">))</span> <span class="op">&#123;</span> <span class="op">&#125;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">~</span>MyClass<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ... member functions that use owner-&gt; ...</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;;</span></span></code></pre></div>
-<p>在这个代码段里面, 我们定义了一个 <code>MyClass</code> 类,
-拥有一个私有成员 <code>owner</code>, 类型是 <code>unique_ptr</code></p>
-<p>MyClass 的构造函数利用了一个返回值为 <code>WidgetBase*</code>
-类型的辅助函数 <code>create_widget()</code>, 为 <code>owner</code>
-提供具体的构造实现</p>
-<p>值得注意的是, 在析构函数里面, 我们只用
-<code>~MyClass() = default;</code>, 而无需自己做内存释放,
-这是因为一旦自己的生命周期结束, 作为 <code>unique_ptr</code> 的成员变量
-<code>owner</code> 就会自己消亡, 递归的 <code>delete</code> /
-<code>delete[]</code> 属于 <code>owner</code> 的内存</p>
+<pre><code class="language-c++">WidgetBase* create_widget(InputType);
+ 
+class MyClass &#123;
+    std::unique_ptr&lt;WidgetBase&gt; owner;
+public:
+    MyClass(InputType inputs)
+        : owner(create_widget(inputs)) &#123; &#125;
+    ~MyClass() = default;
+    // ... member functions that use owner-&gt; ...
+&#125;;
+</code></pre>
+<p>在这个代码段里面, 我们定义了一个 <code>MyClass</code> 类, 拥有一个私有成员 <code>owner</code>, 类型是 <code>unique_ptr</code></p>
+<p>MyClass 的构造函数利用了一个返回值为 <code>WidgetBase*</code> 类型的辅助函数 <code>create_widget()</code>, 为 <code>owner</code> 提供具体的构造实现</p>
+<p>值得注意的是, 在析构函数里面, 我们只用 <code>~MyClass() = default;</code>, 而无需自己做内存释放, 这是因为一旦自己的生命周期结束, 作为 <code>unique_ptr</code> 的成员变量 <code>owner</code> 就会自己消亡, 递归的 <code>delete</code> / <code>delete[]</code> 属于 <code>owner</code> 的内存</p>
 <div class="warning">
-<p>因为 <code>unique_ptr</code> 的不可拷贝的特点, <code>MyClass</code>
-将无法拥有拷贝构造函数</p>
+<p>因为 <code>unique_ptr</code> 的不可拷贝的特点, <code>MyClass</code> 将无法拥有拷贝构造函数</p>
 </div>
 <p> </p>
-<h4 id="实现思路">3.1 实现思路</h4>
+<h4 id="3-1-实现思路">3.1 实现思路</h4>
 <p>成员类型</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> unique_ptr <span class="op">&#123;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">using</span> <span class="dt">element_type</span> <span class="op">=</span> T<span class="op">;</span> <span class="co">// 指向对象的类型</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">using</span> pointer <span class="op">=</span> T<span class="op">*;</span>     <span class="co">// 本身的指针类型</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;;</span></span></code></pre></div>
+<pre><code class="language-c++">template &lt;typename T&gt;
+struct unique_ptr &#123;
+    // ...
+    using element_type = T; // 指向对象的类型
+    using pointer = T*;     // 本身的指针类型
+    // ...
+&#125;;
+</code></pre>
 <p>构造与析构</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> unique_ptr <span class="op">&#123;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    T<span class="op">*</span> ptr<span class="op">;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    unique_ptr<span class="op">()</span> <span class="kw">noexcept</span> <span class="op">:</span> ptr<span class="op">(</span><span class="kw">nullptr</span><span class="op">)</span> <span class="op">&#123;</span> <span class="op">&#125;</span>    <span class="co">// 说明 unique_ptr 是可为空的</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">explicit</span> unique_ptr<span class="op">(</span>T<span class="op">*</span> p<span class="op">)</span> <span class="kw">noexcept</span> <span class="op">:</span> ptr<span class="op">(</span>p<span class="op">)</span> <span class="op">&#123;</span> <span class="op">&#125;</span> <span class="co">// 假如接受了一个 T*, 则利用 T* 去构造 ptr</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">~</span>unique_ptr<span class="op">()</span> <span class="kw">noexcept</span> <span class="op">&#123;</span> <span class="kw">delete</span> ptr<span class="op">;</span> <span class="op">&#125;</span>  <span class="co">// 析构函数</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;;</span></span></code></pre></div>
+<pre><code class="language-c++">template &lt;typename T&gt;
+class unique_ptr &#123;
+    T* ptr;
+public:
+    unique_ptr() noexcept : ptr(nullptr) &#123; &#125;    // 说明 unique_ptr 是可为空的
+    explicit unique_ptr(T* p) noexcept : ptr(p) &#123; &#125; // 假如接受了一个 T*, 则利用 T* 去构造 ptr
+    ~unique_ptr() noexcept &#123; delete ptr; &#125;  // 析构函数
+    // ...
+&#125;;
+</code></pre>
 <p>移动构造与移动赋值</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span> <span class="kw">struct</span> unique_ptr <span class="op">&#123;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    unique_ptr<span class="op">(</span>unique_ptr <span class="at">const</span><span class="op">&amp;)</span> <span class="op">=</span> <span class="kw">delete</span><span class="op">;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    unique_ptr<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">=(</span>unique_ptr <span class="at">const</span><span class="op">&amp;)</span> <span class="op">=</span> <span class="kw">delete</span><span class="op">;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 拷贝构造和拷贝赋值均被删除了</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    unique_ptr<span class="op">(</span>unique_ptr<span class="op">&amp;&amp;</span> o<span class="op">)</span> <span class="kw">noexcept</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">:</span> ptr<span class="op">(</span><span class="bu">std::</span>exchange<span class="op">(</span>o<span class="op">.</span>ptr<span class="op">,</span> <span class="kw">nullptr</span><span class="op">))</span> <span class="op">&#123;</span> <span class="op">&#125;</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 移动构造就是交换接收到的 unique_ptr&amp;&amp; 和目标的 ptr</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    unique_ptr<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">=(</span>unique_ptr<span class="op">&amp;&amp;</span> o<span class="op">)</span> <span class="kw">noexcept</span> <span class="op">&#123;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">delete</span> ptr<span class="op">;</span>         <span class="co">// 回收被赋值指针的 ptr</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        ptr <span class="op">=</span> o<span class="op">.</span>ptr<span class="op">;</span>        <span class="co">// 做交换</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        o<span class="op">.</span>ptr <span class="op">=</span> <span class="kw">nullptr</span><span class="op">;</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">*</span><span class="kw">this</span><span class="op">;</span>       <span class="co">// 返回本身的引用</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">&#125;</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;;</span></span></code></pre></div>
+<pre><code class="language-c++">template &lt;typename T&gt; struct unique_ptr &#123;
+    // ...
+    unique_ptr(unique_ptr const&amp;) = delete;
+    unique_ptr&amp; operator=(unique_ptr const&amp;) = delete;
+    // 拷贝构造和拷贝赋值均被删除了
+ 
+    unique_ptr(unique_ptr&amp;&amp; o) noexcept
+        : ptr(std::exchange(o.ptr, nullptr)) &#123; &#125;
+    // 移动构造就是交换接收到的 unique_ptr&amp;&amp; 和目标的 ptr
+    unique_ptr&amp; operator=(unique_ptr&amp;&amp; o) noexcept &#123;
+        delete ptr;         // 回收被赋值指针的 ptr
+        ptr = o.ptr;        // 做交换
+        o.ptr = nullptr;
+        return *this;       // 返回本身的引用
+    &#125;
+    // ...
+&#125;;
+</code></pre>
 <p>重载运算符</p>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> unique_ptr <span class="op">&#123;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    T<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">*()</span> <span class="at">const</span> <span class="kw">noexcept</span> <span class="op">&#123;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">*</span>ptr<span class="op">;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">&#125;</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    T<span class="op">*</span> <span class="kw">operator</span><span class="op">-&gt;()</span> <span class="at">const</span> <span class="kw">noexcept</span> <span class="op">&#123;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> ptr<span class="op">;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">&#125;</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">&#125;;</span></span></code></pre></div>
+<pre><code class="language-c++">template &lt;typename T&gt;
+struct unique_ptr &#123;
+    // ...
+    T&amp; operator*() const noexcept &#123;
+        return *ptr;
+    &#125;
+    T* operator-&gt;() const noexcept &#123;
+        return ptr;
+    &#125;
+    // ...
+    &#125;;
+</code></pre>
 <p>其他成员函数</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span> <span class="kw">struct</span> unique_ptr <span class="op">&#123;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 释放 ptr, 并返回一个指向 ptr 指向的对象的指针 old</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    T<span class="op">*</span> release<span class="op">()</span> <span class="kw">noexcept</span> <span class="op">&#123;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        T<span class="op">*</span> old <span class="op">=</span> ptr<span class="op">;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        ptr <span class="op">=</span> <span class="kw">nullptr</span><span class="op">;</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> old<span class="op">;</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">&#125;</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 重置 ptr 为 p</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> reset<span class="op">(</span>T<span class="op">*</span> p <span class="op">=</span> <span class="kw">nullptr</span><span class="op">)</span> <span class="kw">noexcept</span> <span class="op">&#123;</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">delete</span> ptr<span class="op">;</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        ptr <span class="op">=</span> p<span class="op">;</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">&#125;</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 获得指针 ptr</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    T<span class="op">*</span> get<span class="op">()</span> <span class="at">const</span> <span class="kw">noexcept</span> <span class="op">&#123;</span> </span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> ptr<span class="op">;</span> </span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">&#125;</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 判断是否为空指针</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">explicit</span> <span class="kw">operator</span> <span class="dt">bool</span><span class="op">()</span> <span class="at">const</span> <span class="kw">noexcept</span> <span class="op">&#123;</span></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> ptr <span class="op">!=</span> <span class="kw">nullptr</span><span class="op">;</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">&#125;</span></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;;</span></span></code></pre></div>
-<p>+++ Summary 实际上, unique_ptr 就是它的成员 ptr 的一个包装,
-通过特定的基本函数和运算符重载使他具有一定的特性--智能 +++</p>
+<pre><code class="language-c++">template &lt;typename T&gt; struct unique_ptr &#123;
+    // 释放 ptr, 并返回一个指向 ptr 指向的对象的指针 old
+    T* release() noexcept &#123;
+        T* old = ptr;
+        ptr = nullptr;
+        return old;
+    &#125;
+    // 重置 ptr 为 p
+    void reset(T* p = nullptr) noexcept &#123;
+        delete ptr;
+        ptr = p;
+    &#125;
+    // 获得指针 ptr
+    T* get() const noexcept &#123; 
+        return ptr; 
+    &#125;
+    // 判断是否为空指针
+    explicit operator bool() const noexcept &#123;
+        return ptr != nullptr;
+    &#125;
+&#125;;
+</code></pre>
+<details open>
+<summary><span class="pre-summary">&nbsp;</span>Summary</summary><p>实际上, unique_ptr 就是它的成员 ptr 的一个包装, 通过特定的基本函数和运算符重载使他具有一定的特性–智能</p>
+</details>
 <p> </p>
-<h4 id="stdmake_unique">3.2 std::make_unique()</h4>
+<h4 id="3-2-std-make-unique">3.2 std::make_unique()</h4>
 <p>回顾之前的一段实例代码</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>unique_ptr<span class="op">&lt;</span>T<span class="op">&gt;</span> p<span class="op">(</span><span class="kw">new</span> T<span class="op">(</span><span class="co">/* some parameters */</span><span class="op">)),</span> q<span class="op">;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p<span class="op">-&gt;</span>member<span class="op">();</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="bu">std::</span>move<span class="op">(</span>p<span class="op">);</span>   <span class="co">// legal behaviour</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> p<span class="op">;</span>              <span class="co">// illegal behaviour</span></span></code></pre></div>
+<pre><code class="language-c++">std::unique_ptr&lt;T&gt; p(new T(/* some parameters */)), q;
+p-&gt;member();
+q = std::move(p);   // legal behaviour
+q = p;              // illegal behaviour
+</code></pre>
 <div class="danger">
-<p>我们发现一个很别扭的事情: 有 <code>new</code>, 却没有
-<code>delete</code></p>
+<p>我们发现一个很别扭的事情: 有 <code>new</code>, 却没有 <code>delete</code></p>
 </div>
-<p>这种不美观的事情 C++ 是不愿意看到的, 因此 C++11 引入了
-<code>make_unique()</code> 函数把
-<code>std::unique_ptr&lt;T&gt; p(new T(/* some parameters */)), q;</code>
-改写为:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> p <span class="op">=</span> <span class="bu">std::</span>make_unique<span class="op">&lt;</span>T<span class="op">&gt;(</span><span class="co">/* some parameters */</span><span class="op">);</span></span></code></pre></div>
+<p>这种不美观的事情 C++ 是不愿意看到的, 因此 C++11 引入了 <code>make_unique()</code> 函数把 <code>std::unique_ptr&lt;T&gt; p(new T(/* some parameters */)), q;</code> 改写为:</p>
+<pre><code class="language-c++">auto p = std::make_unique&lt;T&gt;(/* some parameters */);
+</code></pre>
 <div class="tips">
 <p>NO MORE RAW NEW!!!</p>
 </div>
 <p><code>make_unique</code> 内部实现如下:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">,</span> <span class="kw">typename</span><span class="op">...</span> Args<span class="op">&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>unique_ptr<span class="op">&lt;</span>T<span class="op">&gt;</span> make_unique<span class="op">(</span>Args<span class="op">&amp;&amp;...</span> args<span class="op">);</span></span></code></pre></div>
+<pre><code class="language-c++">template &lt;typename T, typename... Args&gt;
+unique_ptr&lt;T&gt; make_unique(Args&amp;&amp;... args);
+</code></pre>
 <blockquote>
 <p>类似于完美转发</p>
 </blockquote>
 <p> </p>
-<h4 id="数组类型">3.3 数组类型</h4>
-<p>事实上, <code>std::unique_ptr</code> 也为数组类型做出了偏特化
-<code>std::unique_otr&lt;T[]&gt;</code></p>
-<ul>
-<li>在析构函数中, 默认使用 <code>delete[]</code>, 而不是
-<code>delete</code></li>
-<li>提供了 <code>operator[]</code></li>
+<h4 id="3-3-数组类型">3.3 数组类型</h4>
+<p>事实上, <code>std::unique_ptr</code> 也为数组类型做出了偏特化 <code>std::unique_otr&lt;T[]&gt;</code></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在析构函数中, 默认使用 <code>delete[]</code>, 而不是 <code>delete</code></p>
+</li>
+<li class="lvl-2">
+<p>提供了 <code>operator[]</code></p>
+</li>
 </ul>
 <p>同时, <code>std::make_unique</code> 也为数组类型做了偏特化</p>
-<ul>
-<li>接受的参数是数组大小而非构造函数参数</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>接受的参数是数组大小而非构造函数参数</p>
+</li>
 </ul>
 <p>有了这么多工具, 我们就可以对</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> science<span class="op">(</span><span class="dt">double</span><span class="op">*</span> data<span class="op">,</span> <span class="dt">int</span> N<span class="op">)</span> <span class="op">&#123;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span><span class="op">*</span> temp <span class="op">=</span> <span class="kw">new</span> <span class="dt">double</span><span class="op">[</span>N<span class="op">*</span><span class="dv">2</span><span class="op">];</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    do_setup<span class="op">(</span>data<span class="op">,</span> temp<span class="op">,</span> N<span class="op">);</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(!</span>needed<span class="op">(</span>data<span class="op">,</span> temp<span class="op">,</span> N<span class="op">))</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    calculate<span class="op">(</span>data<span class="op">,</span> temp<span class="op">,</span> N<span class="op">);</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span><span class="op">[]</span> temp<span class="op">;</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span></code></pre></div>
+<pre><code class="language-c++">void science(double* data, int N) &#123;
+    double* temp = new double[N*2];
+    do_setup(data, temp, N);
+    if (!needed(data, temp, N))
+        return;
+    calculate(data, temp, N);
+    delete[] temp;
+&#125;
+</code></pre>
 <p>进行升级了:</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> science<span class="op">(</span><span class="dt">double</span><span class="op">*</span> data<span class="op">,</span> <span class="dt">int</span> N<span class="op">)</span> <span class="op">&#123;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> temp <span class="op">=</span> <span class="bu">std::</span>make_unique<span class="op">&lt;</span><span class="dt">double</span><span class="op">[]&gt;(</span>N <span class="op">*</span> <span class="dv">2</span><span class="op">);</span>  <span class="co">// duoble[] 说明这是一个 double 类型的数组指针</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 利用 temp.get() 代替原来的 temp, 不改变 do_setup 的接口</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    do_setup<span class="op">(</span>data<span class="op">,</span> temp<span class="op">.</span>get<span class="op">(),</span> N<span class="op">);</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(!</span>needed<span class="op">(</span>data<span class="op">,</span> temp<span class="op">.</span>get<span class="op">(),</span> N<span class="op">))</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span><span class="op">;</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    calculate<span class="op">(</span>data<span class="op">,</span> temp<span class="op">.</span>get<span class="op">(),</span> N<span class="op">);</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 不论是如何退出函数, temp 都会被正常析构</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span></code></pre></div>
+<pre><code class="language-c++">void science(double* data, int N) &#123;
+    auto temp = std::make_unique&lt;double[]&gt;(N * 2);  // duoble[] 说明这是一个 double 类型的数组指针
+
+    // 利用 temp.get() 代替原来的 temp, 不改变 do_setup 的接口
+    do_setup(data, temp.get(), N);
+    if (!needed(data, temp.get(), N))
+        return;
+    calculate(data, temp.get(), N);
+    // 不论是如何退出函数, temp 都会被正常析构
+&#125;
+</code></pre>
 <p> </p>
-<h4 id="所有权转移">3.4 所有权转移</h4>
-<p>由于 <code>unique_ptr</code> 的所有权是 unique 的, 所以,
-我们可以通过上一节中学习的移动构造或移动赋值函数完成所有权的转移</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">auto</span> a <span class="op">=</span> <span class="bu">std::</span>make_unique<span class="op">&lt;</span>T<span class="op">&gt;();</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>unique_ptr<span class="op">&lt;</span>T<span class="op">&gt;</span> b<span class="op">&#123;</span> <span class="bu">std::</span>move<span class="op">(</span>a<span class="op">)</span> <span class="op">&#125;;</span>   <span class="co">// 利用移动语义</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">std::</span>move<span class="op">(</span>b<span class="op">);</span></span></code></pre></div>
+<h4 id="3-4-所有权转移">3.4 所有权转移</h4>
+<p>由于 <code>unique_ptr</code> 的所有权是 unique 的, 所以, 我们可以通过上一节中学习的移动构造或移动赋值函数完成所有权的转移</p>
+<pre><code class="language-c++">auto a = std::make_unique&lt;T&gt;();
+// ...
+std::unique_ptr&lt;T&gt; b&#123; std::move(a) &#125;;   // 利用移动语义
+// ...
+a = std::move(b);
+</code></pre>
 <p>回到之前被诟病的代码:</p>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span><span class="op">*</span> science<span class="op">(</span><span class="dt">float</span><span class="op">*</span> x<span class="op">,</span> <span class="dt">float</span><span class="op">*</span> y<span class="op">,</span> <span class="dt">int</span> N<span class="op">)</span> <span class="op">&#123;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span><span class="op">*</span> z <span class="op">=</span> <span class="kw">new</span> <span class="dt">float</span><span class="op">[</span>N<span class="op">];</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    saxpy<span class="op">(</span><span class="fl">2.5</span><span class="op">,</span> x<span class="op">,</span> y<span class="op">,</span> z<span class="op">,</span> N<span class="op">);</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span><span class="op">[]</span> x<span class="op">;</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span><span class="op">[]</span> y<span class="op">;</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z<span class="op">;</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span></code></pre></div>
-<p>我们之前认为其无法清晰的向用户表达信息的转移和变化, 但是智能指针可以,
-升级如下:</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>unique_ptr<span class="op">&lt;</span><span class="dt">float</span><span class="op">[]&gt;</span> science<span class="op">(</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>unique_ptr<span class="op">&lt;</span><span class="dt">float</span><span class="op">[]&gt;</span> x<span class="op">,</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>unique_ptr<span class="op">&lt;</span><span class="dt">float</span><span class="op">[]&gt;</span> y<span class="op">,</span> <span class="dt">int</span> N<span class="op">)</span> <span class="op">&#123;</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> z <span class="op">=</span> <span class="bu">std::</span>make_unique<span class="op">&lt;</span><span class="dt">float</span><span class="op">[]&gt;(</span>N<span class="op">);</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    saxpy<span class="op">(</span><span class="fl">2.5</span><span class="op">,</span> x<span class="op">.</span>get<span class="op">(),</span> y<span class="op">.</span>get<span class="op">(),</span> z<span class="op">.</span>get<span class="op">(),</span> N<span class="op">);</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z<span class="op">;</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()&#123;</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">auto</span> result <span class="op">=</span> science<span class="op">(</span><span class="bu">std::</span>move<span class="op">(</span>upx<span class="op">),</span> <span class="bu">std::</span>move<span class="op">(</span>upy<span class="op">),</span> N<span class="op">);</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;</span></span></code></pre></div>
-<p>这样, 在用户调用这个函数的时候, 就能清晰的知道, <code>upx</code> 和
-<code>upy</code> 作为参数, 只能用右值引用的方式赋予,
-用户一下就明白这个所有权实际上交接给了函数内部</p>
+<pre><code class="language-c++">float* science(float* x, float* y, int N) &#123;
+    float* z = new float[N];
+    saxpy(2.5, x, y, z, N);
+    delete[] x;
+    delete[] y;
+    return z;
+&#125;
+</code></pre>
+<p>我们之前认为其无法清晰的向用户表达信息的转移和变化, 但是智能指针可以, 升级如下:</p>
+<pre><code class="language-c++">std::unique_ptr&lt;float[]&gt; science(
+        std::unique_ptr&lt;float[]&gt; x,
+        std::unique_ptr&lt;float[]&gt; y, int N) &#123;
+    auto z = std::make_unique&lt;float[]&gt;(N);
+    saxpy(2.5, x.get(), y.get(), z.get(), N);
+    return z;
+&#125;
+
+int main()&#123;
+    // ...
+    auto result = science(std::move(upx), std::move(upy), N);
+    // ...
+&#125;
+</code></pre>
+<p>这样, 在用户调用这个函数的时候, 就能清晰的知道, <code>upx</code> 和 <code>upy</code> 作为参数, 只能用右值引用的方式赋予, 用户一下就明白这个所有权实际上交接给了函数内部</p>
 <div class="tips">
-<p>需要给一个函数传递所有权时或需要从一个函数返回所有权时，按值传递
-<code>unique_ptr</code></p>
+<p>需要给一个函数传递所有权时或需要从一个函数返回所有权时，按值传递 <code>unique_ptr</code></p>
 </div>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>unique_ptr<span class="op">&lt;</span>widget<span class="op">&gt;</span> factory<span class="op">();</span>               <span class="co">// 返回所有权</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> sink<span class="op">(</span> unique_ptr<span class="op">&lt;</span>widget<span class="op">&gt;</span> <span class="op">);</span>            <span class="co">// 交付所有权</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> reseat<span class="op">(</span> unique_ptr<span class="op">&lt;</span>widget<span class="op">&gt;&amp;</span> <span class="op">);</span>         <span class="co">// 可能要 reset ptr</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> thinko<span class="op">(</span> <span class="at">const</span> unique_ptr<span class="op">&lt;</span>widget<span class="op">&gt;&amp;</span> <span class="op">);</span>   <span class="co">// 一般不使用</span></span></code></pre></div>
+<pre><code class="language-c++">unique_ptr&lt;widget&gt; factory();               // 返回所有权
+void sink( unique_ptr&lt;widget&gt; );            // 交付所有权
+void reseat( unique_ptr&lt;widget&gt;&amp; );         // 可能要 reset ptr
+void thinko( const unique_ptr&lt;widget&gt;&amp; );   // 一般不使用
+</code></pre>
 <div class="warning">
-<p>不是所有地方都要用智能指针的, 在不涉及所有权转移的地方,
-可以继续使用指针和引用</p>
+<p>不是所有地方都要用智能指针的, 在不涉及所有权转移的地方, 可以继续使用指针和引用</p>
 </div>
 <p> </p>
-<h3 id="stdshared_ptr">4 std::shared_ptr</h3>
+<h3 id="4-std-shared-ptr">4 std::shared_ptr</h3>
 <blockquote>
 <p>顾名思义, 这是可以共享的 <code>unique_ptr</code></p>
 </blockquote>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include</span><span class="im">&lt;memory&gt;</span></span></code></pre></div>
-<p><code>shared_ptr</code> 是对象的所有者(但不唯一),
-当且仅当指向该对象的最后一个 <code>shared_ptr</code> 不再指向它时,
-对象被释放</p>
+<pre><code class="language-c++">#include&lt;memory&gt;
+</code></pre>
+<p><code>shared_ptr</code> 是对象的所有者(但不唯一), 当且仅当指向该对象的最后一个 <code>shared_ptr</code> 不再指向它时, 对象被释放</p>
 <div class="tips">
 <p>可以被拷贝!</p>
 </div>
 <p> </p>
-<h4 id="接口">4.1 接口</h4>
+<h4 id="4-1-接口">4.1 接口</h4>
 <blockquote>
 <p>具体实现比较麻烦, 略去不讲</p>
 </blockquote>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> shared_ptr <span class="op">&#123;</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    shared_ptr<span class="op">()</span> <span class="kw">noexcept</span><span class="op">;</span>      <span class="co">// Creates empty shared_ptr</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">explicit</span> shared_ptr<span class="op">(</span>T<span class="op">*);</span>    <span class="co">// Starts managing an object</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">~</span>shared_ptr<span class="op">()</span> <span class="kw">noexcept</span><span class="op">;</span>     <span class="co">// Decrements count, and ...</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                                <span class="co">// Cleanup if count == 0</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;;</span></span></code></pre></div>
+<pre><code class="language-c++">template &lt;typename T&gt;
+struct shared_ptr &#123;
+    // ...
+    shared_ptr() noexcept;      // Creates empty shared_ptr
+    explicit shared_ptr(T*);    // Starts managing an object
+    ~shared_ptr() noexcept;     // Decrements count, and ...
+                                // Cleanup if count == 0
+    // ...
+&#125;;
+</code></pre>
 <p>拷贝构造和移动构造</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> shared_ptr <span class="op">&#123;</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    shared_ptr<span class="op">(</span>shared_ptr <span class="at">const</span><span class="op">&amp;)</span> <span class="kw">noexcept</span><span class="op">;</span>     <span class="co">// copy ptrs, count++</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    shared_ptr<span class="op">(</span>shared_ptr<span class="op">&amp;&amp;)</span> <span class="kw">noexcept</span><span class="op">;</span>          <span class="co">// transfer ownership</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    shared_ptr<span class="op">(</span>unique_ptr<span class="op">&lt;</span>T<span class="op">&gt;&amp;&amp;);</span>                <span class="co">// transfer ownership</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// origin count will decrease, possibly cleanup:</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    shared_ptr<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">=(</span>shared_ptr <span class="at">const</span><span class="op">&amp;)</span> <span class="kw">noexcept</span><span class="op">;</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    shared_ptr<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">=(</span>shared_ptr<span class="op">&amp;&amp;)</span> <span class="kw">noexcept</span><span class="op">;</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    shared_ptr<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">=(</span>unique_ptr<span class="op">&lt;</span>T<span class="op">&gt;&amp;&amp;);</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;;</span></span></code></pre></div>
+<pre><code class="language-c++">template &lt;typename T&gt;
+struct shared_ptr &#123;
+    // ...
+    shared_ptr(shared_ptr const&amp;) noexcept;     // copy ptrs, count++
+    shared_ptr(shared_ptr&amp;&amp;) noexcept;          // transfer ownership
+    shared_ptr(unique_ptr&lt;T&gt;&amp;&amp;);                // transfer ownership
+    
+    // origin count will decrease, possibly cleanup:
+    shared_ptr&amp; operator=(shared_ptr const&amp;) noexcept;
+    shared_ptr&amp; operator=(shared_ptr&amp;&amp;) noexcept;
+    shared_ptr&amp; operator=(unique_ptr&lt;T&gt;&amp;&amp;);
+    // ...
+&#125;;
+</code></pre>
 <p>其他成员函数</p>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">&gt;</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> shared_ptr <span class="op">&#123;</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    T<span class="op">&amp;</span> <span class="kw">operator</span><span class="op">*()</span> <span class="at">const</span> <span class="kw">noexcept</span><span class="op">;</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    T<span class="op">*</span> <span class="kw">operator</span><span class="op">-&gt;()</span> <span class="at">const</span> <span class="kw">noexcept</span><span class="op">;</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> reset<span class="op">(</span>T<span class="op">*);</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    T<span class="op">*</span> get<span class="op">()</span> <span class="at">const</span> <span class="kw">noexcept</span><span class="op">;</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">long</span> use_count<span class="op">()</span> <span class="at">const</span> <span class="kw">noexcept</span><span class="op">;</span>    <span class="co">// 获取管理的对象被指向数</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">explicit</span> <span class="kw">operator</span> <span class="dt">bool</span><span class="op">()</span> <span class="at">const</span> <span class="kw">noexcept</span><span class="op">;</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="op">&#125;;</span></span></code></pre></div>
+<pre><code class="language-c++">template &lt;typename T&gt;
+struct shared_ptr &#123;
+// ...
+    T&amp; operator*() const noexcept;
+    T* operator-&gt;() const noexcept;
+
+    void reset(T*);
+    T* get() const noexcept;
+    long use_count() const noexcept;    // 获取管理的对象被指向数
+    explicit operator bool() const noexcept;
+// ...
+&#125;;
+</code></pre>
 <p> </p>
-<h4 id="stdmake_shared">4.2 std::make_shared()</h4>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">typename</span> T<span class="op">,</span> <span class="kw">typename</span><span class="op">...</span> Args<span class="op">&gt;</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>shared_ptr<span class="op">&lt;</span>T<span class="op">&gt;</span> make_shared<span class="op">(</span>Args<span class="op">&amp;&amp;...</span> args<span class="op">);</span></span></code></pre></div>
-<p>减少一次内存申请, 一次性申请 <code>T</code> 和 <code>count</code>
-的内存空间</p>
+<h4 id="4-2-std-make-shared">4.2 std::make_shared()</h4>
+<pre><code class="language-c++">template &lt;typename T, typename... Args&gt;
+shared_ptr&lt;T&gt; make_shared(Args&amp;&amp;... args);
+</code></pre>
+<p>减少一次内存申请, 一次性申请 <code>T</code> 和 <code>count</code> 的内存空间</p>
 <p> </p>
-<h4 id="所有权转移-1">4.3 所有权转移</h4>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>shared_ptr<span class="op">&lt;</span>widget<span class="op">&gt;</span> factory<span class="op">();</span>               <span class="co">// source + shared ownership </span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> share<span class="op">(</span> shared_ptr<span class="op">&lt;</span>widget<span class="op">&gt;</span> <span class="op">);</span>           <span class="co">// share: &quot;will&quot; retain refcount</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> reseat<span class="op">(</span> shared_ptr<span class="op">&lt;</span>widget<span class="op">&gt;&amp;</span> <span class="op">);</span>         <span class="co">// &quot;will&quot; or &quot;might&quot; reseat ptr</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> may_share<span class="op">(</span> <span class="at">const</span> shared_ptr<span class="op">&lt;</span>widget<span class="op">&gt;&amp;</span> <span class="op">);</span><span class="co">// &quot;might&quot; retain refcount</span></span></code></pre></div>
+<h4 id="4-3-所有权转移">4.3 所有权转移</h4>
+<pre><code class="language-c++">shared_ptr&lt;widget&gt; factory();               // source + shared ownership 
+void share( shared_ptr&lt;widget&gt; );           // share: &quot;will&quot; retain refcount
+void reseat( shared_ptr&lt;widget&gt;&amp; );         // &quot;will&quot; or &quot;might&quot; reseat ptr
+void may_share( const shared_ptr&lt;widget&gt;&amp; );// &quot;might&quot; retain refcount
+</code></pre>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -748,7 +640,6 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="#
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -768,20 +659,7 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="#
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -795,46 +673,6 @@ class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="#
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

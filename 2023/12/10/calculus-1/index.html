@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,55 +160,36 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-0-%E7%AB%A0-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-text">第 0 章 预备知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-1-%E7%AB%A0-%E6%95%B0%E5%88%97%E7%9A%84%E6%9E%81%E9%99%90"><span class="toc-text">第 1 章 数列的极限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-2-%E7%AB%A0-%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90"><span class="toc-text">第 2 章 函数的极限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-3-%E7%AB%A0-%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86"><span class="toc-text">第 3 章 导数与微分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-4-%E7%AB%A0-%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%8F%8A%E5%AF%BC%E6%95%B0%E5%BA%94%E7%94%A8"><span class="toc-text">第 4 章
-微分中值定理及导数应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-5-%E7%AB%A0-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="toc-text">第 5 章 不定积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-6-%E7%AB%A0-%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="toc-text">第 6 章 定积分</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-0-%E7%AB%A0-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-text">第 0 章 预备知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-1-%E7%AB%A0-%E6%95%B0%E5%88%97%E7%9A%84%E6%9E%81%E9%99%90"><span class="toc-text">第 1 章 数列的极限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-2-%E7%AB%A0-%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E9%99%90"><span class="toc-text">第 2 章 函数的极限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-3-%E7%AB%A0-%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86"><span class="toc-text">第 3 章 导数与微分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-4-%E7%AB%A0-%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%8F%8A%E5%AF%BC%E6%95%B0%E5%BA%94%E7%94%A8"><span class="toc-text">第 4 章 微分中值定理及导数应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-5-%E7%AB%A0-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="toc-text">第 5 章 不定积分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC-6-%E7%AB%A0-%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="toc-text">第 6 章 定积分</span></a></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -262,8 +204,7 @@
             2023/12/10
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -277,500 +218,692 @@
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <blockquote>
 <p>微积分好难</p>
 </blockquote>
 <h4 id="基本信息">基本信息</h4>
-<p><i class="fa-regular fa-circle-check"></i>
-<strong>授课教师：</strong> cjh
-<i class="fa-regular fa-circle-check"></i> <strong>上课教材：</strong>
-《微积分》（lxj版）</p>
+<p><i class="fa-regular fa-circle-check"></i> <strong>授课教师：</strong> cjh<br>
+<i class="fa-regular fa-circle-check"></i> <strong>上课教材：</strong> 《微积分》（lxj版）</p>
 <span id="more"></span>
 <p> </p>
 <h4 id="第-0-章-预备知识">第 0 章 预备知识</h4>
 <p><strong>实数可由有理数列逼近</strong></p>
-<p><span class="math inline">\(\forall a\in R,\exist\{q_n\}\in
-Q,s.t.\displaystyle\lim_{n\rightarrow\infty}q_n\rightarrow
-a\)</span></p>
+<p>$\forall a\in R,\exist{q_n}\in Q,s.t.\displaystyle\lim_{n\rightarrow\infty}q_n\rightarrow a$</p>
 <p><strong>De Morgan定律</strong></p>
-<p><span class="math inline">\(C-(A\cap B)=(C-A)\cup(C-B)\)</span> <span
-class="math inline">\(C-(A\cup B)=(C-A)\cap(C-B)\)</span></p>
-<p><strong>映射</strong> <span class="math inline">\(设f:X\rightarrow
-Y\)</span> - <span class="math inline">\(\forall x_1,x_2\in X,x_1\ne
-x_2,s.t.f(x_1)\iff f(x_2)\Rightarrow
-f为单射/一对一映射，但不一定y都可由x映射到\)</span> - <span
-class="math inline">\(f(X)=Y\iff
-f是满射/f是X到Y上的映射，但可能多个x对应一个y\)</span> - <span
-class="math inline">\(f既是单射又是满射\iff
-f是双射/一一对应的映射\)</span></p>
-<p><strong>函数</strong> - <span class="math inline">\(\arcsin x+\arccos
-x=\displaystyle\frac{\pi}{2}\)</span> - <span
-class="math inline">\(\arctan x+\arcctg
-x=\displaystyle\frac{\pi}{2}\)</span> - <span
-class="math inline">\(x&gt;0,\ \arctan
-x+\arctan\displaystyle\frac{1}{x}=\displaystyle\frac{\pi}{2}\)</span></p>
-<p><strong>不等式</strong> <span class="math inline">\(H_n\le G_n\le
-A_n\)</span> - <span
-class="math inline">\(H_n=\displaystyle\frac{n}{\displaystyle\frac{1}{a_1}+\displaystyle\frac{1}{a_2}+...+\displaystyle\frac{1}{a_n}}\)</span>
-- <span class="math inline">\(G_n=\sqrt[n]{a_1a_2...a_n}\)</span> -
-<span
-class="math inline">\(A_n=\displaystyle\frac{a_1+a_2+...+a_n}{n}\)</span></p>
+<p>$C-(A\cap B)=(C-A)\cup(C-B)$<br>
+$C-(A\cup B)=(C-A)\cap(C-B)$</p>
+<p><strong>映射</strong><br>
+$设f:X\rightarrow Y$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$\forall x_1,x_2\in X,x_1\ne x_2,s.t.f(x_1)\iff f(x_2)\Rightarrow f为单射/一对一映射，但不一定y都可由x映射到$</p>
+</li>
+<li class="lvl-2">
+<p>$f(X)=Y\iff f是满射/f是X到Y上的映射，但可能多个x对应一个y$</p>
+</li>
+<li class="lvl-2">
+<p>$f既是单射又是满射\iff f是双射/一一对应的映射$</p>
+</li>
+</ul>
+<p><strong>函数</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$\arcsin x+\arccos x=\displaystyle\frac{\pi}{2}$</p>
+</li>
+<li class="lvl-2">
+<p>$\arctan x+\arcctg x=\displaystyle\frac{\pi}{2}$</p>
+</li>
+<li class="lvl-2">
+<p>$x&gt;0,\ \arctan x+\arctan\displaystyle\frac{1}{x}=\displaystyle\frac{\pi}{2}$</p>
+</li>
+</ul>
+<p><strong>不等式</strong><br>
+$H_n\le G_n\le A_n$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$H_n=\displaystyle\frac{n}{\displaystyle\frac{1}{a_1}+\displaystyle\frac{1}{a_2}+…+\displaystyle\frac{1}{a_n}}$</p>
+</li>
+<li class="lvl-2">
+<p>$G_n=\sqrt[n]{a_1a_2…a_n}$</p>
+</li>
+<li class="lvl-2">
+<p>$A_n=\displaystyle\frac{a_1+a_2+…+a_n}{n}$</p>
+</li>
+</ul>
 <p> </p>
 <h4 id="第-1-章-数列的极限">第 1 章 数列的极限</h4>
-<p><strong>收敛的定义</strong> <span class="math inline">\(if\ \exist
-a\in R,s.t.\forall\varepsilon&gt;0,\exist N\in Z_+,while\ n\ge
-N,s.t.|a_n-a|&lt;\varepsilon\iff\displaystyle\lim_{n\rightarrow\infty}a_n=a\iff
-while\ n\rightarrow\infty,a_n\rightarrow a\)</span></p>
-<p><strong>保号性</strong> <span class="math inline">\(if
-\displaystyle\lim_{n\rightarrow\infty}a_n=a&gt;0,s.t.\forall
-p\in(0,a),\exists N&gt;0,while\ n\ge N,a_n&gt;p&gt;0\)</span> - <span
-class="math inline">\(if\ while\ n\ge N\in Z_+,a_n\ge 0,and\
-a_n\rightarrow a\Rightarrow a\ge 0\)</span></p>
-<p><strong>极限的四则运算</strong> - 需要保证两者极限都存在 -
-只能进行有限次四则运算</p>
-<p><strong>单调有界准则</strong> - <span
-class="math inline">\((1+\displaystyle\frac{1}{n})^n&lt;e&lt;(1+\displaystyle\frac{1}{n})^{n+1}\)</span>
-- <span
-class="math inline">\(\displaystyle\frac{1}{n+1}&lt;\ln(1+\displaystyle\frac{1}{n})&lt;\displaystyle\frac{1}{n}\)</span></p>
-<p><strong>压缩映像</strong> - <span
-class="math inline">\(|a_{n+1}-A|&lt;r|a_n-A|,0&lt;r&lt;1,n&gt;N\Rightarrow
-a_n\rightarrow A\)</span> - <span class="math inline">\(|a_{n+1}-a_n|\le
-r|a_n-a_{n-1}|,0&lt;r&lt;1,n&gt;N\Rightarrow a_n\rightarrow A\in
-R\)</span></p>
-<p><strong>Bolzano-Weierstrass定理</strong> 有界数列一定存在收敛子列</p>
-<p><strong>Causy准则</strong> <span class="math inline">\(a_n收敛\iff
-\forall\varepsilon&gt;0,\exist N,while\
-m,n&gt;N,|a_m-a_n|&lt;\varepsilon\)</span> -
-若n足够大，数列两项之间的差可以任意小，则数列收敛</p>
+<p><strong>收敛的定义</strong><br>
+$if\ \exist a\in R,s.t.\forall\varepsilon&gt;0,\exist N\in Z_+,while\ n\ge N,s.t.|a_n-a|&lt;\varepsilon\iff\displaystyle\lim_{n\rightarrow\infty}a_n=a\iff while\ n\rightarrow\infty,a_n\rightarrow a$</p>
+<p><strong>保号性</strong><br>
+$if \displaystyle\lim_{n\rightarrow\infty}a_n=a&gt;0,s.t.\forall p\in(0,a),\exists N&gt;0,while\ n\ge N,a_n&gt;p&gt;0$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$if\ while\ n\ge N\in Z_+,a_n\ge 0,and\ a_n\rightarrow a\Rightarrow a\ge 0$</p>
+</li>
+</ul>
+<p><strong>极限的四则运算</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>需要保证两者极限都存在</p>
+</li>
+<li class="lvl-2">
+<p>只能进行有限次四则运算</p>
+</li>
+</ul>
+<p><strong>单调有界准则</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$(1+\displaystyle\frac{1}{n})<sup>n&lt;e&lt;(1+\displaystyle\frac{1}{n})</sup>{n+1}$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\frac{1}{n+1}&lt;\ln(1+\displaystyle\frac{1}{n})&lt;\displaystyle\frac{1}{n}$</p>
+</li>
+</ul>
+<p><strong>压缩映像</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$|a_{n+1}-A|&lt;r|a_n-A|,0&lt;r&lt;1,n&gt;N\Rightarrow a_n\rightarrow A$</p>
+</li>
+<li class="lvl-2">
+<p>$|a_{n+1}-a_n|\le r|a_n-a_{n-1}|,0&lt;r&lt;1,n&gt;N\Rightarrow a_n\rightarrow A\in R$</p>
+</li>
+</ul>
+<p><strong>Bolzano-Weierstrass定理</strong><br>
+有界数列一定存在收敛子列</p>
+<p><strong>Causy准则</strong><br>
+$a_n收敛\iff \forall\varepsilon&gt;0,\exist N,while\ m,n&gt;N,|a_m-a_n|&lt;\varepsilon$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>若n足够大，数列两项之间的差可以任意小，则数列收敛</p>
+</li>
+</ul>
 <p> </p>
 <h4 id="第-2-章-函数的极限">第 2 章 函数的极限</h4>
 <p><strong>收敛的定义</strong></p>
-<p><span class="math inline">\(f:D\rightarrow R,D\subset R,if\ \exist
-A\in R,s.t.\forall\varepsilon&gt;0,\exist\delta&gt;0,while\
-x\in\mathring{U}(x_0,\delta)\cup
-D,|f(x)-A|&lt;\varepsilon\iff\displaystyle\lim_{x\rightarrow
-x_0}f(x)\rightarrow A\)</span></p>
-<p><strong>归结原理</strong> - <span class="math inline">\(f:D\subset
-R\rightarrow R,\exist\mathring{U}(x_0)\subset
-D,s.t.\displaystyle\lim_{x\rightarrow x_0}f(x)=A\iff\forall
-\{x_n\},\displaystyle\lim_{n\rightarrow\infty}x_n=x_0,x_n\ne
-x_0,n=1,2,...,\{f(x_n)\}\rightarrow A\)</span> -
-归结原理将数列极限的结果引到了函数极限的结果 -
-函数极限的不存在，可以由<strong>两个收敛到同一个点的不同数列</strong>使对应的<strong>函数值分别收敛到不同的值</strong>来证明</p>
-<p><strong>局部保号性</strong> - <span class="math inline">\(if\
-\displaystyle\lim_{x\rightarrow x_0}f(x)=A&gt;0,\forall
-p\in(0,A),\exist\delta&gt;0,\forall
-x\in\mathring{U}(x_0,\delta),s.t.f(x)&gt;p&gt;0\)</span> - <span
-class="math inline">\(if\ \displaystyle\lim_{x\rightarrow
-x_0}f(x)=A&lt;0,\forall -p\in(A,0),\exist\delta&gt;0,\forall
-x\in\mathring{U}(x_0,\delta),s.t.f(x)&lt;-p&lt;0\)</span></p>
-<p><strong>间断点</strong> 如果在某一点： -
-左右极限都存在但在某处不连续：<strong>一类间断点</strong> -
-左右极限不相等：<strong>跳跃间断点</strong> -
-极限存在，但极限值不等于函数值或函数值没有定义：<strong>二类间断点</strong></p>
-<p><strong>一致连续性</strong> <span
-class="math inline">\(f:I\rightarrow R,if\
-\forall\varepsilon&gt;0,\exist\delta&gt;0,s.t.\forall x_1,x_2\in
-I,while\ |x_1-x_2|&lt;\delta,|f(x_1)-f(x_2)|&lt;\varepsilon\iff f
-在I上是一致连续的\)</span> -
-若f满足当两点横坐标之间的距离小于某个值之后，函数值的差可以无限小，则f是一致连续的</p>
-<p><strong>常用等价无穷小</strong> - <span class="math inline">\(\sin
-x\backsim x,\ 1-\cos x\backsim \displaystyle\frac{1}{2}x^2,\ \tan
-x\backsim x\)</span> - <span class="math inline">\(\ln (x+1)\backsim
-x\)</span> - <span class="math inline">\(e^x-1\backsim x\)</span> -
-<span class="math inline">\((1+x)^\alpha-1\backsim\alpha x\)</span> -
-<span class="math inline">\(\arcsin x\backsim x,\ \arctan x\backsim
-x\)</span> - <strong>请用Taylor展开</strong></p>
+<p>$f:D\rightarrow R,D\subset R,if\ \exist A\in R,s.t.\forall\varepsilon&gt;0,\exist\delta&gt;0,while\ x\in\mathring{U}(x_0,\delta)\cup D,|f(x)-A|&lt;\varepsilon\iff\displaystyle\lim_{x\rightarrow x_0}f(x)\rightarrow A$</p>
+<p><strong>归结原理</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$f:D\subset R\rightarrow R,\exist\mathring{U}(x_0)\subset D,s.t.\displaystyle\lim_{x\rightarrow x_0}f(x)=A\iff\forall {x_n},\displaystyle\lim_{n\rightarrow\infty}x_n=x_0,x_n\ne x_0,n=1,2,…,{f(x_n)}\rightarrow A$</p>
+</li>
+<li class="lvl-2">
+<p>归结原理将数列极限的结果引到了函数极限的结果</p>
+</li>
+<li class="lvl-2">
+<p>函数极限的不存在，可以由<strong>两个收敛到同一个点的不同数列</strong>使对应的<strong>函数值分别收敛到不同的值</strong>来证明</p>
+</li>
+</ul>
+<p><strong>局部保号性</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$if\ \displaystyle\lim_{x\rightarrow x_0}f(x)=A&gt;0,\forall p\in(0,A),\exist\delta&gt;0,\forall x\in\mathring{U}(x_0,\delta),s.t.f(x)&gt;p&gt;0$</p>
+</li>
+<li class="lvl-2">
+<p>$if\ \displaystyle\lim_{x\rightarrow x_0}f(x)=A&lt;0,\forall -p\in(A,0),\exist\delta&gt;0,\forall x\in\mathring{U}(x_0,\delta),s.t.f(x)&lt;-p&lt;0$</p>
+</li>
+</ul>
+<p><strong>间断点</strong><br>
+如果在某一点：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>左右极限都存在但在某处不连续：<strong>一类间断点</strong></p>
+<ul class="lvl-2">
+<li class="lvl-4">左右极限不相等：<strong>跳跃间断点</strong></li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>极限存在，但极限值不等于函数值或函数值没有定义：<strong>二类间断点</strong></p>
+</li>
+</ul>
+<p><strong>一致连续性</strong><br>
+$f:I\rightarrow R,if\ \forall\varepsilon&gt;0,\exist\delta&gt;0,s.t.\forall x_1,x_2\in I,while\ |x_1-x_2|&lt;\delta,|f(x_1)-f(x_2)|&lt;\varepsilon\iff f 在I上是一致连续的$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>若f满足当两点横坐标之间的距离小于某个值之后，函数值的差可以无限小，则f是一致连续的</p>
+</li>
+</ul>
+<p><strong>常用等价无穷小</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$\sin x\backsim x,\ 1-\cos x\backsim \displaystyle\frac{1}{2}x^2,\ \tan x\backsim x$</p>
+</li>
+<li class="lvl-2">
+<p>$\ln (x+1)\backsim x$</p>
+</li>
+<li class="lvl-2">
+<p>$e^x-1\backsim x$</p>
+</li>
+<li class="lvl-2">
+<p>$(1+x)^\alpha-1\backsim\alpha x$</p>
+</li>
+<li class="lvl-2">
+<p>$\arcsin x\backsim x,\ \arctan x\backsim x$</p>
+</li>
+<li class="lvl-2">
+<p><strong>请用Taylor展开</strong></p>
+</li>
+</ul>
 <p> </p>
 <h4 id="第-3-章-导数与微分">第 3 章 导数与微分</h4>
-<p><strong>定义</strong> - <span
-class="math inline">\(y=f(x)在\mathring{U}(x_0)有定义,\displaystyle\lim_{x\rightarrow
-x_0}\displaystyle\frac{f(x)-f(x_0)}{x-x_0}存 在，则f在x_0处可导\)</span>
-- <span class="math inline">\(f^{\prime}(x)=\displaystyle\lim_{\Delta
-x\rightarrow 0}\displaystyle\frac{f(x+\Delta x)-f(x)}{\Delta
-x}\)</span></p>
-<p><strong>常用导数公式</strong> - <span class="math inline">\((\tan
-x)^{\prime}=\sec^2x\)</span> - <span class="math inline">\((\ctg
-x)^{\prime}=-\csc^2x\)</span> - <span class="math inline">\((\sec
-x)^{\prime}=\sec x\tan x\)</span> - <span class="math inline">\((\csc
-x)^{\prime}=-\csc x\ctg x\)</span> - <span
-class="math inline">\((\arcsin
-x)^{\prime}=\displaystyle\frac{1}{\sqrt{1-x^2}}\)</span> - <span
-class="math inline">\((\arccos
-x)^{\prime}=-\displaystyle\frac{1}{\sqrt{1-x^2}}\)</span> - <span
-class="math inline">\((\arctan
-x)^{\prime}=\displaystyle\frac{1}{1+x^2}\)</span> - <span
-class="math inline">\((\arcctg
-x)^{\prime}=-\displaystyle\frac{1}{1+x^2}\)</span> - <span
-class="math inline">\(\arctan x+\arctan
-y=\arctan\displaystyle\frac{x+y}{1-xy}\)</span></p>
+<p><strong>定义</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$y=f(x)在\mathring{U}(x_0)有定义,\displaystyle\lim_{x\rightarrow x_0}\displaystyle\frac{f(x)-f(x_0)}{x-x_0}存 在，则f在x_0处可导$</p>
+</li>
+<li class="lvl-2">
+<p>$f^{\prime}(x)=\displaystyle\lim_{\Delta x\rightarrow 0}\displaystyle\frac{f(x+\Delta x)-f(x)}{\Delta x}$</p>
+</li>
+</ul>
+<p><strong>常用导数公式</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$(\tan x)<sup>{\prime}=\sec</sup>2x$</p>
+</li>
+<li class="lvl-2">
+<p>$(\ctg x)<sup>{\prime}=-\csc</sup>2x$</p>
+</li>
+<li class="lvl-2">
+<p>$(\sec x)^{\prime}=\sec x\tan x$</p>
+</li>
+<li class="lvl-2">
+<p>$(\csc x)^{\prime}=-\csc x\ctg x$</p>
+</li>
+<li class="lvl-2">
+<p>$(\arcsin x)<sup>{\prime}=\displaystyle\frac{1}{\sqrt{1-x</sup>2}}$</p>
+</li>
+<li class="lvl-2">
+<p>$(\arccos x)<sup>{\prime}=-\displaystyle\frac{1}{\sqrt{1-x</sup>2}}$</p>
+</li>
+<li class="lvl-2">
+<p>$(\arctan x)<sup>{\prime}=\displaystyle\frac{1}{1+x</sup>2}$</p>
+</li>
+<li class="lvl-2">
+<p>$(\arcctg x)<sup>{\prime}=-\displaystyle\frac{1}{1+x</sup>2}$</p>
+</li>
+<li class="lvl-2">
+<p>$\arctan x+\arctan y=\arctan\displaystyle\frac{x+y}{1-xy}$</p>
+</li>
+</ul>
 <p><strong>高阶导数</strong></p>
-<p><span class="math inline">\(若f^{(n)}(x)在x_0处存在\Rightarrow
-f^{(n-1)}(x)在x_0处连续，在\mathring{U}(x_0)有定义\)</span> - <span
-class="math inline">\(f(x)=\sin x,\
-f^{(n)}=\sin(x+\displaystyle\frac{n\pi}{2})\)</span> - <span
-class="math inline">\(f(x)=\cos x,\
-f^{(n)}=\cos(x+\displaystyle\frac{n\pi}{2})\)</span></p>
-<p><span
-class="math inline">\((uv)^{(n)}=\displaystyle\sum_{k=0}^n\begin{pmatrix}n\\\\
-k\end{pmatrix}u^{n-k}v^{(k)}\)</span></p>
+<p>$若f^{(n)}(x)在x_0处存在\Rightarrow f^{(n-1)}(x)在x_0处连续，在\mathring{U}(x_0)有定义$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$f(x)=\sin x,\ f^{(n)}=\sin(x+\displaystyle\frac{n\pi}{2})$</p>
+</li>
+<li class="lvl-2">
+<p>$f(x)=\cos x,\ f^{(n)}=\cos(x+\displaystyle\frac{n\pi}{2})$</p>
+</li>
+</ul>
+<p>$(uv)<sup>{(n)}=\displaystyle\sum_{k=0}</sup>n\begin{pmatrix}n\\ k\end{pmatrix}u<sup>{n-k}v</sup>{(k)}$</p>
 <p><strong>微分</strong></p>
-<p><span class="math inline">\(f在x_0处可微\iff
-f在x_0处可导\)</span></p>
-<p><span
-class="math inline">\(y=f(g(x)),dy=f^\prime(g(x))g^\prime(x)dx=f^\prime(u)du,u=g(x)\)</span></p>
+<p>$f在x_0处可微\iff f在x_0处可导$</p>
+<p>$y=f(g(x)),dy=f<sup>\prime(g(x))g</sup>\prime(x)dx=f^\prime(u)du,u=g(x)$</p>
 <p> </p>
-<h4 id="第-4-章-微分中值定理及导数应用">第 4 章
-微分中值定理及导数应用</h4>
-<ul>
-<li><span
-class="math inline">\(费马定理：设x_0是f的极值点且f在x_0处可微\Rightarrow
-f^\prime(x_0)=0\)</span></li>
-<li><span
-class="math inline">\(罗尔定理：如果f满足在[a,b]连续，在(a,b)可导，f(a)=f(b)\Rightarrow至少存在一个\xi\in(a,b),s.t.f^\prime(\xi)=0\)</span></li>
-<li><span
-class="math inline">\(拉格朗日中值定理：如果f满足在[a,b]连续，在(a,b)可导\Rightarrow至少存在一个\xi\in(a,b),s.t.f^\prime(\xi)=\displaystyle\frac{f(b)-f(a)}{b-a}or\
-f(b)-f(a)=f^\prime(\xi)(b-a)\)</span></li>
-<li><span
-class="math inline">\(柯西中值定理：如果f,g满足在[a,b]连续，在(a,b)可导,且g^\prime在(a,b)内不存在零点\Rightarrow至少存在一个\xi\in(a,b),s.t.\displaystyle\frac{f(b)-f(a)}{g(b)-g(a)}=\displaystyle\frac{f^\prime(\xi)}{g^\prime(\xi)}\)</span></li>
+<h4 id="第-4-章-微分中值定理及导数应用">第 4 章 微分中值定理及导数应用</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$费马定理：设x_0是f的极值点且f在x_0处可微\Rightarrow f^\prime(x_0)=0$</p>
+</li>
+<li class="lvl-2">
+<p>$罗尔定理：如果f满足在[a,b]连续，在(a,b)可导，f(a)=f(b)\Rightarrow至少存在一个\xi\in(a,b),s.t.f^\prime(\xi)=0$</p>
+</li>
+<li class="lvl-2">
+<p>$拉格朗日中值定理：如果f满足在[a,b]连续，在(a,b)可导\Rightarrow至少存在一个\xi\in(a,b),s.t.f<sup>\prime(\xi)=\displaystyle\frac{f(b)-f(a)}{b-a}or f(b)-f(a)=f</sup>\prime(\xi)(b-a)$</p>
+</li>
+<li class="lvl-2">
+<p>$柯西中值定理：如果f,g满足在[a,b]连续，在(a,b)可导,且g<sup>\prime在(a,b)内不存在零点\Rightarrow至少存在一个\xi\in(a,b),s.t.\displaystyle\frac{f(b)-f(a)}{g(b)-g(a)}=\displaystyle\frac{f</sup>\prime(\xi)}{g^\prime(\xi)}$</p>
+</li>
 </ul>
 <p><strong>洛必达法则</strong></p>
-<p><span
-class="math inline">\(f,g在x_0某去心邻域\mathring{U}(x_0)内可导，且g^\prime\ne
-0,如果\displaystyle\lim_{x\rightarrow
-x_0}f(x)=\displaystyle\lim_{x\rightarrow
-x_0}g(x)=0,\displaystyle\lim_{x\rightarrow
-x_0}\displaystyle\frac{f^\prime(x)}{g^\prime(x)}=A/\infty\Rightarrow\displaystyle\lim_{x\rightarrow
-x_0}\displaystyle\frac{f(x)}{g(x)}=\displaystyle\lim_{x\rightarrow
-x_0}\displaystyle\frac{f^\prime(x)}{g^\prime(x)}=A\)</span> - <span
-class="math inline">\(可用的不定式：\displaystyle\frac{0}{0},\displaystyle\frac{*}{\infty}\)</span></p>
+<p>$f,g在x_0某去心邻域\mathring{U}(x_0)内可导，且g^\prime\ne 0,如果\displaystyle\lim_{x\rightarrow x_0}f(x)=\displaystyle\lim_{x\rightarrow x_0}g(x)=0,\displaystyle\lim_{x\rightarrow x_0}\displaystyle\frac{f<sup>\prime(x)}{g</sup>\prime(x)}=A/\infty\Rightarrow\displaystyle\lim_{x\rightarrow x_0}\displaystyle\frac{f(x)}{g(x)}=\displaystyle\lim_{x\rightarrow x_0}\displaystyle\frac{f<sup>\prime(x)}{g</sup>\prime(x)}=A$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$可用的不定式：\displaystyle\frac{0}{0},\displaystyle\frac{*}{\infty}$</p>
+</li>
+</ul>
 <p><strong>泰勒定理</strong></p>
-<p><span
-class="math inline">\(设f在x_0处n阶可导：f(x)=T_n(x)+R_n(x)\)</span> -
-<span class="math inline">\(泰勒多项式T_n(x) =
-f(x_0)+f^\prime(x_0)(x-x_0)+\displaystyle\frac{f^{\prime\prime}(x_0)}{2!}(x-x_0)^2+...+\displaystyle\frac{f^{n}(x_0)}{n!}(x-x_0)^n\)</span>
-- <span class="math inline">\(泰勒余项R_n(x)有多种表达式\)</span> -
-<span class="math inline">\(皮亚诺余项P_n(x)=o((x-x_n)^n)\)</span> -
-<span
-class="math inline">\(拉格朗日余项L_n(x)=\displaystyle\frac{f^{n+1}(\xi)}{(n+1)!}(x-x_0)^{n+1},\xi=x_0+\theta(x-x_0)\in(a,b),\theta\in(0,1)\)</span></p>
-<p>常用x=0处的带皮亚诺余项的泰勒公式 - <span
-class="math inline">\(e^x=1+x+\displaystyle\frac{x^2}{2!}+...+\displaystyle\frac{x^n}{n!}+o(x^n)\)</span>
-- <span class="math inline">\(\sin
-x=x-\displaystyle\frac{x^3}{3!}+\displaystyle\frac{x^5}{5!}-...+(-1)^{n+1}\displaystyle\frac{x^{2n-1}}{(2n-1)!}+o(x^{2n})\)</span>
-- <span class="math inline">\(\cos
-x=1-\displaystyle\frac{x^2}{2!}+\displaystyle\frac{x^4}{4!}-...+(-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!}+o(x^{2n+1})\)</span>
-- <span class="math inline">\(\tan
-x=x+\displaystyle\frac{x^3}{3}+\displaystyle\frac{2x^5}{15}+o(x^5),proof:\sin
-x=\cos x\tan x对应系数法\)</span> - <span class="math inline">\(\arcsin
-x=x+\displaystyle\frac{1}{6}x^3+\displaystyle\frac{3}{40}x^5+o(x^5)\)</span>
-- <span class="math inline">\(\arccos
-x=x-\displaystyle\frac{1}{3}x^3+\displaystyle\frac{1}{5}x^5-\displaystyle\frac{1}{7}x^7+o(x^7)\)</span>
-- <span
-class="math inline">\(\ln(1+x)=x-\displaystyle\frac{x^2}{2}+\displaystyle\frac{x^3}{3}-...+(-1)^{n-1}\displaystyle\frac{x^n}{n}+o(x^n)\)</span>
-- <span class="math inline">\((1+x)^\alpha=1+\alpha
-x+\displaystyle\frac{\alpha(\alpha-1)}{2!}x^2+...+\displaystyle\frac{\alpha(\alpha-1)...(\alpha-n+1)}{n!}x^n+o(x^n)\)</span></p>
-<p><strong>凹凸性</strong> <span class="math inline">\(上凹\iff
-f^{\prime\prime}\ge0\)</span> <span class="math inline">\(下凹\iff
-f^{\prime\prime}\le0\)</span></p>
-<p><strong>渐近线</strong> <strong>不要忘记水平/垂直渐近线</strong></p>
-<p><strong>曲率</strong> <span
-class="math inline">\(曲率K(x)=\displaystyle\frac{|f^{\prime\prime}(x)|}{[1+(f^\prime(x))^2]^{3/2}}\)</span>
-<span class="math inline">\(半径R=\displaystyle\frac{1}{K}\)</span>
-<span
-class="math inline">\(横坐标\xi=x-\displaystyle\frac{f^\prime(x)[1+(f^\prime(x))^2]}{f^{\prime\prime}(x)}\)</span>
-<span
-class="math inline">\(纵坐标\eta=y+\displaystyle\frac{1+(f^\prime(x))^2}{f^{\prime\prime}(x)}\)</span></p>
+<p>$设f在x_0处n阶可导：f(x)=T_n(x)+R_n(x)$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$泰勒多项式T_n(x) = f(x_0)+f<sup>\prime(x_0)(x-x_0)+\displaystyle\frac{f</sup>{\prime\prime}(x_0)}{2!}(x-x_0)<sup>2+…+\displaystyle\frac{f</sup>{n}(x_0)}{n!}(x-x_0)^n$</p>
+</li>
+<li class="lvl-2">
+<p>$泰勒余项R_n(x)有多种表达式$</p>
+<ul class="lvl-2">
+<li class="lvl-4">$皮亚诺余项P_n(x)=o((x-x_n)^n)$</li>
+<li class="lvl-4">$拉格朗日余项L_n(x)=\displaystyle\frac{f<sup>{n+1}(\xi)}{(n+1)!}(x-x_0)</sup>{n+1},\xi=x_0+\theta(x-x_0)\in(a,b),\theta\in(0,1)$</li>
+</ul>
+</li>
+</ul>
+<p>常用x=0处的带皮亚诺余项的泰勒公式</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$e<sup>x=1+x+\displaystyle\frac{x</sup>2}{2!}+…+\displaystyle\frac{x<sup>n}{n!}+o(x</sup>n)$</p>
+</li>
+<li class="lvl-2">
+<p>$\sin x=x-\displaystyle\frac{x<sup>3}{3!}+\displaystyle\frac{x</sup>5}{5!}-…+(-1)<sup>{n+1}\displaystyle\frac{x</sup>{2n-1}}{(2n-1)!}+o(x^{2n})$</p>
+</li>
+<li class="lvl-2">
+<p>$\cos x=1-\displaystyle\frac{x<sup>2}{2!}+\displaystyle\frac{x</sup>4}{4!}-…+(-1)<sup>{n}\displaystyle\frac{x</sup>{2n}}{(2n)!}+o(x^{2n+1})$</p>
+</li>
+<li class="lvl-2">
+<p>$\tan x=x+\displaystyle\frac{x<sup>3}{3}+\displaystyle\frac{2x</sup>5}{15}+o(x^5),proof:\sin x=\cos x\tan x对应系数法$</p>
+</li>
+<li class="lvl-2">
+<p>$\arcsin x=x+\displaystyle\frac{1}{6}x<sup>3+\displaystyle\frac{3}{40}x</sup>5+o(x^5)$</p>
+</li>
+<li class="lvl-2">
+<p>$\arccos x=x-\displaystyle\frac{1}{3}x<sup>3+\displaystyle\frac{1}{5}x</sup>5-\displaystyle\frac{1}{7}x<sup>7+o(x</sup>7)$</p>
+</li>
+<li class="lvl-2">
+<p>$\ln(1+x)=x-\displaystyle\frac{x<sup>2}{2}+\displaystyle\frac{x</sup>3}{3}-…+(-1)<sup>{n-1}\displaystyle\frac{x</sup>n}{n}+o(x^n)$</p>
+</li>
+<li class="lvl-2">
+<p>$(1+x)^\alpha=1+\alpha x+\displaystyle\frac{\alpha(\alpha-1)}{2!}x<sup>2+…+\displaystyle\frac{\alpha(\alpha-1)…(\alpha-n+1)}{n!}x</sup>n+o(x^n)$</p>
+</li>
+</ul>
+<p><strong>凹凸性</strong><br>
+$上凹\iff f^{\prime\prime}\ge0$<br>
+$下凹\iff f^{\prime\prime}\le0$</p>
+<p><strong>渐近线</strong><br>
+<strong>不要忘记水平/垂直渐近线</strong></p>
+<p><strong>曲率</strong><br>
+$曲率K(x)=\displaystyle\frac{|f<sup>{\prime\prime}(x)|}{[1+(f</sup>\prime(x))<sup>2]</sup>{3/2}}$<br>
+$半径R=\displaystyle\frac{1}{K}$<br>
+$横坐标\xi=x-\displaystyle\frac{f<sup>\prime(x)[1+(f</sup>\prime(x))<sup>2]}{f</sup>{\prime\prime}(x)}$<br>
+$纵坐标\eta=y+\displaystyle\frac{1+(f<sup>\prime(x))</sup>2}{f^{\prime\prime}(x)}$</p>
 <p> </p>
 <h4 id="第-5-章-不定积分">第 5 章 不定积分</h4>
-<p><strong>基本积分公式</strong> - <span
-class="math inline">\(\displaystyle\int0dx=C\)</span> - <span
-class="math inline">\(\displaystyle\int x^\alpha
-dx=\frac{x^{\alpha+1}}{\alpha+1}+C(\alpha\ne-1)\)</span> - <span
-class="math inline">\(\displaystyle\int\frac{1}{x}dx=ln|x|+C\)</span> -
-<span
-class="math inline">\(\displaystyle\int\alpha^xdx=\frac{\alpha^x}{\ln\alpha}+C(\alpha&gt;0,\alpha\ne
-1)\)</span> - <span class="math inline">\(\displaystyle\int\cos xdx=\sin
-x+C\)</span> - <span class="math inline">\(\displaystyle\int\sin
-xdx=\cos x+C\)</span> - <span
-class="math inline">\(\displaystyle\int\sec^2xdx=\tan x+C\)</span> -
-<span class="math inline">\(\displaystyle\int\csc^2xdx=\ctg x+C\)</span>
-- <span
-class="math inline">\(\displaystyle\int\frac{1}{\sqrt{1-x^2}}dx=\arcsin
-x+C\)</span> - <span
-class="math inline">\(\displaystyle\int\frac{1}{1+x^2}dx=\arctan
-x+C\)</span> - <span class="math inline">\(\displaystyle\int\sec x\tan
-xdx=\sec x+C\)</span> - <span
-class="math inline">\(\displaystyle\int\csc x\ctg xdx=-\csc
-x+C\)</span></p>
-<p><strong>常见凑微分公式</strong> - <span
-class="math inline">\(dx=\displaystyle\frac{1}{a}d(ax+b)\)</span> -
-<span class="math inline">\(e^xdx=d(e^x)\)</span> - <span
-class="math inline">\(\displaystyle\frac{dx}{x}=d(\ln x)\)</span> -
-<span class="math inline">\(\displaystyle
-xdx=\frac{1}{2}d(x^2)=\frac{1}{2}d(x^2\pm
-a^2)=-\frac{1}{2}d(a^2-x^2)\)</span> - <span class="math inline">\(\sin
-xdx=-d(\cos x)\)</span> - <span class="math inline">\(\cos xdx=d(\sin
-x)\)</span> - <span class="math inline">\(\sec^2xdx=d(\tan x)\)</span> -
-<span class="math inline">\(\sec x\tan xdx=d(\sec x)\)</span> - <span
-class="math inline">\(\displaystyle\frac{dx}{1+x^2}=d(\arctan
-x)\)</span> - <span
-class="math inline">\(\displaystyle\frac{dx}{\sqrt{1-x^2}}=d(\arcsin
-x)\)</span> - <span
-class="math inline">\(\displaystyle\frac{dx}{2\sqrt{x}}=d(\sqrt{x})\)</span></p>
-<p><strong>基本积分公式</strong> - <span
-class="math inline">\(\displaystyle\int\frac{dx}{ax+b}=\frac{1}{a}\ln|ax+b|+C\)</span>
-- <span
-class="math inline">\(\displaystyle\int\frac{dx}{x^2-a^2}=\frac{1}{2a}\ln|\frac{x-a}{x+a}|+C\)</span>
-- <span
-class="math inline">\(\displaystyle\int\frac{dx}{x^2+a^2}=\frac{1}{a}\arctan\frac{x}{a}+C\)</span>
-- <span
-class="math inline">\(\displaystyle\int\frac{dx}{\sqrt{a^2-x^2}}=\arcsin\frac{x}{a}+C\)</span>
-- <span class="math inline">\(\displaystyle\int\tan xdx=-\ln|\cos
-x|+C\)</span> - <span class="math inline">\(\displaystyle\int\ctg
-xdx=\ln|\sin x|+C\)</span> - <span
-class="math inline">\(\displaystyle\int\sec xdx=\ln|\sec x+\tan
-x|+C\)</span> - <span class="math inline">\(\displaystyle\int\csc
-xdx=-\ln|\csc x+\ctg x|+C\)</span> - <span
-class="math inline">\(\displaystyle\int\frac{dx}{\sqrt{x^2+a^2}}=\ln(x+\sqrt{x^2+a^2})+C\)</span>
-- <span
-class="math inline">\(\displaystyle\int\sqrt{a^2-x^2}=\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin\frac{x}{a}+C\)</span>
-- <span class="math inline">\(\displaystyle\int\sqrt{x^2\pm
-a^2}=\frac{x}{2}\sqrt{x^2\pm a^2}+\frac{a^2}{2}\ln(x+\sqrt{x^2\pm
-a^2})+C\)</span> - <span
-class="math inline">\(\displaystyle\int\sec^3xdx=\frac{1}{2}\sec x\tan
-x+\frac{1}{2}\ln|\sec x+\tan x|+C\)</span></p>
-<p><strong>常见积分变换 有根号去根号</strong> - <span
-class="math inline">\(\sqrt{ax+b}=u\)</span> - <span
-class="math inline">\(\sqrt{a^2-x^2},x=a\sin u\)</span> - <span
-class="math inline">\(\sqrt{x^2+a^2},x=a\tan u\)</span> - <span
-class="math inline">\(\sqrt{x^2-a^2},x=a\sec u\)</span> - <span
-class="math inline">\(\sqrt{e^x+1}=u\)</span> - <span
-class="math inline">\(\sqrt{\displaystyle\frac{ax+b}{cx+d}}=u\)</span> -
-<span
-class="math inline">\(x=\displaystyle\frac{1}{u},dx=-\frac{1}{u^2}du\)</span></p>
+<p><strong>基本积分公式</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$\displaystyle\int0dx=C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int x^\alpha dx=\frac{x^{\alpha+1}}{\alpha+1}+C(\alpha\ne-1)$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{1}{x}dx=ln|x|+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\alpha<sup>xdx=\frac{\alpha</sup>x}{\ln\alpha}+C(\alpha&gt;0,\alpha\ne 1)$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\cos xdx=\sin x+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\sin xdx=\cos x+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\sec^2xdx=\tan x+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\csc^2xdx=\ctg x+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{1}{\sqrt{1-x^2}}dx=\arcsin x+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{1}{1+x^2}dx=\arctan x+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\sec x\tan xdx=\sec x+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\csc x\ctg xdx=-\csc x+C$</p>
+</li>
+</ul>
+<p><strong>常见凑微分公式</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$dx=\displaystyle\frac{1}{a}d(ax+b)$</p>
+</li>
+<li class="lvl-2">
+<p>$e<sup>xdx=d(e</sup>x)$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\frac{dx}{x}=d(\ln x)$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle xdx=\frac{1}{2}d(x<sup>2)=\frac{1}{2}d(x</sup>2\pm a<sup>2)=-\frac{1}{2}d(a</sup>2-x^2)$</p>
+</li>
+<li class="lvl-2">
+<p>$\sin xdx=-d(\cos x)$</p>
+</li>
+<li class="lvl-2">
+<p>$\cos xdx=d(\sin x)$</p>
+</li>
+<li class="lvl-2">
+<p>$\sec^2xdx=d(\tan x)$</p>
+</li>
+<li class="lvl-2">
+<p>$\sec x\tan xdx=d(\sec x)$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\frac{dx}{1+x^2}=d(\arctan x)$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\frac{dx}{\sqrt{1-x^2}}=d(\arcsin x)$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\frac{dx}{2\sqrt{x}}=d(\sqrt{x})$</p>
+</li>
+</ul>
+<p><strong>基本积分公式</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{dx}{ax+b}=\frac{1}{a}\ln|ax+b|+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{dx}{x<sup>2-a</sup>2}=\frac{1}{2a}\ln|\frac{x-a}{x+a}|+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{dx}{x<sup>2+a</sup>2}=\frac{1}{a}\arctan\frac{x}{a}+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{dx}{\sqrt{a<sup>2-x</sup>2}}=\arcsin\frac{x}{a}+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\tan xdx=-\ln|\cos x|+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\ctg xdx=\ln|\sin x|+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\sec xdx=\ln|\sec x+\tan x|+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\csc xdx=-\ln|\csc x+\ctg x|+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{dx}{\sqrt{x<sup>2+a</sup>2}}=\ln(x+\sqrt{x<sup>2+a</sup>2})+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\sqrt{a<sup>2-x</sup>2}=\frac{x}{2}\sqrt{a<sup>2-x</sup>2}+\frac{a^2}{2}\arcsin\frac{x}{a}+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\sqrt{x^2\pm a<sup>2}=\frac{x}{2}\sqrt{x</sup>2\pm a<sup>2}+\frac{a</sup>2}{2}\ln(x+\sqrt{x^2\pm a^2})+C$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\sec^3xdx=\frac{1}{2}\sec x\tan x+\frac{1}{2}\ln|\sec x+\tan x|+C$</p>
+</li>
+</ul>
+<p><strong>常见积分变换 有根号去根号</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$\sqrt{ax+b}=u$</p>
+</li>
+<li class="lvl-2">
+<p>$\sqrt{a<sup>2-x</sup>2},x=a\sin u$</p>
+</li>
+<li class="lvl-2">
+<p>$\sqrt{x<sup>2+a</sup>2},x=a\tan u$</p>
+</li>
+<li class="lvl-2">
+<p>$\sqrt{x<sup>2-a</sup>2},x=a\sec u$</p>
+</li>
+<li class="lvl-2">
+<p>$\sqrt{e^x+1}=u$</p>
+</li>
+<li class="lvl-2">
+<p>$\sqrt{\displaystyle\frac{ax+b}{cx+d}}=u$</p>
+</li>
+<li class="lvl-2">
+<p>$x=\displaystyle\frac{1}{u},dx=-\frac{1}{u^2}du$</p>
+</li>
+</ul>
 <p><strong>分部积分法</strong></p>
-<p><span class="math inline">\(\displaystyle\int uv^\prime dx=uv-\int
-vu^\prime dx\)</span> <span class="math inline">\(\displaystyle\int
-udv=uv-\int vdu\)</span> - 幂指型 - <span
-class="math inline">\(\displaystyle\int
-xe^{-x}dx=-xe^{-x}-e^{-x}+C\)</span> - <span
-class="math inline">\(\displaystyle\int
-x^2e^{-2x}dx=-\frac{1}{2}x^2e^{-2x}-\frac{1}{2}xe^{-2x}-\frac{1}{4}e^{-2x}+C\)</span>
-- 幂三角型 - <span
-class="math inline">\(有关\sin^2x,\cos^2x,可利用倍角公式降幂\)</span></p>
-<p><strong>有理分式函数</strong> <span
-class="math inline">\(R(x)=\displaystyle\frac{P_n(x)}{Q_m(x)},Q_m=q_0(x-a_1)^{k_1}...(x-a_t)^{k_t}(x^2+p_1x+q_1)^{l_1}...(x^2+p_sx+q_s)^{l_s},R(x)=...=\varepsilon_1\int\frac{dx}{x-a}+\varepsilon_2\int\frac{dx}{(x-a)^n}+\varepsilon_3\int\frac{dx}{x^2+a^2}+\varepsilon_4\int\frac{dx}{(x^2+a^2)^n}(n\ge2,a&gt;0,a为分母的根，n即为1～重根数)\)</span>
-- <span
-class="math inline">\(I_n=\displaystyle\int\frac{dx}{(x^2+a^2)^n}=\frac{1}{2(n-1)a^2}\cdot\frac{x}{(x^2+a^2)^{n-1}}+\frac{2n-3}{2(n-1)a^2}I_{n-1}\)</span>
-- <span class="math inline">\(I_1=\displaystyle\frac{1}{a}\arctan
-x\frac{x}{a}+C\)</span></p>
-<p><strong>三角有理分式函数</strong> - <span
-class="math inline">\(万能公式\begin{cases}\sin2x\\\\\cos2x\end{cases}\Rightarrow\tan
-x,令u=\tan\displaystyle\frac{x}{2},底裤方法\)</span></p>
-<p><strong>misc</strong> - <span
-class="math inline">\(\displaystyle\int\frac{1-\ln x}{(x-\ln
-x)^2}dx=\frac{x}{x-\ln x}+C\)</span> - <span
-class="math inline">\(I=\displaystyle\int\frac{dx}{1+x^4},J=\displaystyle\int\frac{x^2}{1+x^4}dx\)</span>
-- <span
-class="math inline">\(I+J=\displaystyle\int\frac{1+x^2}{1+x^4}dx=...\)</span>
-- <span class="math inline">\(I-J=...\)</span> - <span
-class="math inline">\(\displaystyle\int\frac{dx}{\sin(x+a)\cos(x+b)}=\frac{1}{\cos(a-b)}\int\frac{\cos((x+a)-(x+b))}{\sin(x+a)\cos(x+b)}dx=...,(a\ne
-b)\)</span></p>
+<p>$\displaystyle\int uv^\prime dx=uv-\int vu^\prime dx$<br>
+$\displaystyle\int udv=uv-\int vdu$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>幂指型</p>
+<ul class="lvl-2">
+<li class="lvl-4">$\displaystyle\int xe<sup>{-x}dx=-xe</sup>{-x}-e^{-x}+C$</li>
+<li class="lvl-4">$\displaystyle\int x<sup>2e</sup>{-2x}dx=-\frac{1}{2}x<sup>2e</sup>{-2x}-\frac{1}{2}xe<sup>{-2x}-\frac{1}{4}e</sup>{-2x}+C$</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>幂三角型</p>
+<ul class="lvl-2">
+<li class="lvl-4">$有关\sin<sup>2x,\cos</sup>2x,可利用倍角公式降幂$</li>
+</ul>
+</li>
+</ul>
+<p><strong>有理分式函数</strong><br>
+$R(x)=\displaystyle\frac{P_n(x)}{Q_m(x)},Q_m=q_0(x-a_1)<sup>{k_1}…(x-a_t)</sup>{k_t}(x<sup>2+p_1x+q_1)</sup>{l_1}…(x<sup>2+p_sx+q_s)</sup>{l_s},R(x)=…=\varepsilon_1\int\frac{dx}{x-a}+\varepsilon_2\int\frac{dx}{(x-a)<sup>n}+\varepsilon_3\int\frac{dx}{x</sup>2+a<sup>2}+\varepsilon_4\int\frac{dx}{(x</sup>2+a<sup>2)</sup>n}(n\ge2,a&gt;0,a为分母的根，n即为1～重根数)$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$I_n=\displaystyle\int\frac{dx}{(x<sup>2+a</sup>2)<sup>n}=\frac{1}{2(n-1)a</sup>2}\cdot\frac{x}{(x<sup>2+a</sup>2)<sup>{n-1}}+\frac{2n-3}{2(n-1)a</sup>2}I_{n-1}$</p>
+</li>
+<li class="lvl-2">
+<p>$I_1=\displaystyle\frac{1}{a}\arctan x\frac{x}{a}+C$</p>
+</li>
+</ul>
+<p><strong>三角有理分式函数</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$万能公式\begin{cases}\sin2x\\\cos2x\end{cases}\Rightarrow\tan x,令u=\tan\displaystyle\frac{x}{2},底裤方法$</p>
+</li>
+</ul>
+<p><strong>misc</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{1-\ln x}{(x-\ln x)^2}dx=\frac{x}{x-\ln x}+C$</p>
+</li>
+<li class="lvl-2">
+<p>$I=\displaystyle\int\frac{dx}{1+x<sup>4},J=\displaystyle\int\frac{x</sup>2}{1+x^4}dx$</p>
+<ul class="lvl-2">
+<li class="lvl-6">$I+J=\displaystyle\int\frac{1+x<sup>2}{1+x</sup>4}dx=…$</li>
+<li class="lvl-6">$I-J=…$</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle\int\frac{dx}{\sin(x+a)\cos(x+b)}=\frac{1}{\cos(a-b)}\int\frac{\cos((x+a)-(x+b))}{\sin(x+a)\cos(x+b)}dx=…,(a\ne b)$</p>
+</li>
+</ul>
 <p><strong>隐函数的不定积分</strong></p>
-<ul>
-<li><span class="math inline">\(齐次变换，把y表示为x的函数\)</span></li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$齐次变换，把y表示为x的函数$</p>
+</li>
 </ul>
 <p> </p>
 <h4 id="第-6-章-定积分">第 6 章 定积分</h4>
-<p><span class="math inline">\(范数\lambda=||T||,\
-\lambda=\displaystyle\max_{1\le i\le n}\{x_i\},\
-T=\{x_i\}(x_i为对曲边梯形的分割)\)</span> <span
-class="math inline">\(黎曼和\displaystyle\sum_{i=1}^nf(\xi_i)\Delta
-x_i\)</span> <span
-class="math inline">\(黎曼积分\displaystyle\int_a^bf(x)dx=\lim_{\lambda\rightarrow0^+}\displaystyle\sum_{i=1}^nf(\xi_i)\Delta
-x_i\)</span></p>
-<p><strong>定积分定义</strong> <span
-class="math inline">\(f(x)为[a,b]上的有界函数\)</span> - 分割 <span
-class="math inline">\(任意插入n-1个分点a=x_0&lt;x_1&lt;...&lt;x_{n-1}&lt;x_n=b,\
-定义T,\ \lambda\)</span> - 取点 <span
-class="math inline">\(任取介点\xi_i\in[x_{i-1},x_i]\)</span> - 作和
-<span
-class="math inline">\(黎曼和\displaystyle\sum_{i=1}^nf(\xi_i)\Delta
-x_i\overset{def}=S(f,T,\xi)\)</span> - 求极限 <span
-class="math inline">\(若\displaystyle\lim_{\lambda\rightarrow0^+}\displaystyle\sum_{i=1}^nf(\xi_i)\Delta
-x_i存在，则f在区间内可积\)</span></p>
-<p><strong>几何意义</strong> <span
-class="math inline">\(\displaystyle\int_0^a\sqrt{a^2-x^2}dx=\frac{\pi}{4}a^2,\
-(a&gt;0),\ 四分之一圆的面积\)</span></p>
-<p><strong>性质</strong> 不定积分的可积与定积分的可积意义不同 -
-闭区间，连续一定可积 - 闭区间，有界且只有有限个间断点，可积 -
-闭区间，单调一定可积</p>
-<p>f(x)在[a,b]内可积 - <span
-class="math inline">\(f(x)\ge0\Rightarrow\displaystyle\int_a^bf(x)dx\ge0\)</span>
-- <span
-class="math inline">\(|\displaystyle\int_a^bf(x)dx|\le\int_a^b|f(x)|dx\)</span>
-- <span class="math inline">\(m\le f(x)\le M,\
-m(b-a)\le\displaystyle\int_a^bf(x)dx\le M(b-a)\)</span></p>
-<p><span
-class="math inline">\(f(x)在[a,b]上连续\Rightarrow\exist\xi\in(a,b),s.t.\displaystyle\int_a^bf(x)dx=f(\xi)(b-a)\)</span></p>
-<p><strong>定积分中值定理</strong></p>
-<p><span
-class="math inline">\(设f(x)在[a,b]连续，则\exists\xi\in(a,b),s.t.\displaystyle\int_a^bf(x)dx=f(\xi)(b-a)\)</span>
-- 存在矩形面积等于曲边梯形 - <span class="math inline">\(\displaystyle
-f(\xi)=\lim_{\lambda\rightarrow0}\sum^n_{i=1}f(\xi_i)(\frac{\Delta
-x_i}{b-a})\)</span> - <span class="math inline">\(\displaystyle
-f(x),g(x)在[a,b]连续，且g(x)不变号,
-\exists\xi\in(a,b),s.t.\int_a^bf(x)g(x)dx=f(\xi)\int_a^bg(x)d(x)\)</span></p>
-<p><strong>变限函数的导数</strong></p>
-<p><span class="math inline">\(\displaystyle
-f(x)在[a,b]连续，F(x)=\int_a^xf(t)dt在[a,b]可导,F^\prime(x)=f(x)\)</span></p>
-<ul>
-<li>连续函数一定有原函数</li>
-<li>被积函数不含自变量x</li>
+<p>$范数\lambda=||T||,\ \lambda=\displaystyle\max_{1\le i\le n}{x_i},\ T={x_i}(x_i为对曲边梯形的分割)$<br>
+$黎曼和\displaystyle\sum_{i=1}^nf(\xi_i)\Delta x_i$<br>
+$黎曼积分\displaystyle\int_a<sup>bf(x)dx=\lim_{\lambda\rightarrow0</sup>+}\displaystyle\sum_{i=1}^nf(\xi_i)\Delta x_i$</p>
+<p><strong>定积分定义</strong><br>
+$f(x)为[a,b]上的有界函数$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>分割<br>
+$任意插入n-1个分点a=x_0&lt;x_1&lt;…&lt;x_{n-1}&lt;x_n=b,\ 定义T,\ \lambda$</p>
+</li>
+<li class="lvl-2">
+<p>取点<br>
+$任取介点\xi_i\in[x_{i-1},x_i]$</p>
+</li>
+<li class="lvl-2">
+<p>作和<br>
+$黎曼和\displaystyle\sum_{i=1}^nf(\xi_i)\Delta x_i\overset{def}=S(f,T,\xi)$</p>
+</li>
+<li class="lvl-2">
+<p>求极限<br>
+$若\displaystyle\lim_{\lambda\rightarrow0<sup>+}\displaystyle\sum_{i=1}</sup>nf(\xi_i)\Delta x_i存在，则f在区间内可积$</p>
+</li>
 </ul>
-<p><span
-class="math inline">\(\displaystyle\frac{d}{dx}\int_{\phi_1(x)}^{\phi_2(x)}f(t)dt=\int_{\phi_1(x)}^{a}f(t)dt+\int_{a}^{\phi_2(x)}f(t)dt=...\)</span></p>
-<p><strong>定积分中值定理</strong></p>
-<p><span
-class="math inline">\(设f(x)在[a,b]连续，则\exists\xi\in(a,b),s.t.\displaystyle\int_a^bf(x)dx=f(\xi)(b-a)\)</span>
-- 存在矩形面积等于曲边梯形 - <span class="math inline">\(\displaystyle
-f(\xi)=\lim_{\lambda\rightarrow0}\sum^n_{i=1}f(\xi_i)(\frac{\Delta
-x_i}{b-a})\)</span> - <span class="math inline">\(\displaystyle
-f(x),g(x)在[a,b]连续，且g(x)不变号,
-\exists\xi\in(a,b),s.t.\int_a^bf(x)g(x)dx=f(\xi)\int_a^bg(x)d(x)\)</span></p>
-<p><strong>变限函数的导数</strong></p>
-<p><span class="math inline">\(\displaystyle
-f(x)在[a,b]连续，F(x)=\int_a^xf(t)dt在[a,b]可导,F^\prime(x)=f(x)\)</span></p>
-<ul>
-<li>连续函数一定有原函数</li>
-<li>被积函数不含自变量x</li>
+<p><strong>几何意义</strong><br>
+$\displaystyle\int_0<sup>a\sqrt{a</sup>2-x<sup>2}dx=\frac{\pi}{4}a</sup>2,\ (a&gt;0),\ 四分之一圆的面积$</p>
+<p><strong>性质</strong><br>
+不定积分的可积与定积分的可积意义不同</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>闭区间，连续一定可积</p>
+</li>
+<li class="lvl-2">
+<p>闭区间，有界且只有有限个间断点，可积</p>
+</li>
+<li class="lvl-2">
+<p>闭区间，单调一定可积</p>
+</li>
 </ul>
-<p><span
-class="math inline">\(\displaystyle\frac{d}{dx}\int_{\phi_1(x)}^{\phi_2(x)}f(t)dt=\int_{\phi_1(x)}^{a}f(t)dt+\int_{a}^{\phi_2(x)}f(t)dt=...\)</span></p>
+<p>f(x)在[a,b]内可积</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$f(x)\ge0\Rightarrow\displaystyle\int_a^bf(x)dx\ge0$</p>
+</li>
+<li class="lvl-2">
+<p>$|\displaystyle\int_a<sup>bf(x)dx|\le\int_a</sup>b|f(x)|dx$</p>
+</li>
+<li class="lvl-2">
+<p>$m\le f(x)\le M,\ m(b-a)\le\displaystyle\int_a^bf(x)dx\le M(b-a)$</p>
+</li>
+</ul>
+<p>$f(x)在[a,b]上连续\Rightarrow\exist\xi\in(a,b),s.t.\displaystyle\int_a^bf(x)dx=f(\xi)(b-a)$</p>
+<p><strong>定积分中值定理</strong></p>
+<p>$设f(x)在[a,b]连续，则\exists\xi\in(a,b),s.t.\displaystyle\int_a^bf(x)dx=f(\xi)(b-a)$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>存在矩形面积等于曲边梯形</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle f(\xi)=\lim_{\lambda\rightarrow0}\sum^n_{i=1}f(\xi_i)(\frac{\Delta x_i}{b-a})$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle f(x),g(x)在[a,b]连续，且g(x)不变号, \exists\xi\in(a,b),s.t.\int_a<sup>bf(x)g(x)dx=f(\xi)\int_a</sup>bg(x)d(x)$</p>
+</li>
+</ul>
+<p><strong>变限函数的导数</strong></p>
+<p>$\displaystyle f(x)在[a,b]连续，F(x)=\int_a<sup>xf(t)dt在[a,b]可导,F</sup>\prime(x)=f(x)$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>连续函数一定有原函数</p>
+</li>
+<li class="lvl-2">
+<p>被积函数不含自变量x</p>
+</li>
+</ul>
+<p>$\displaystyle\frac{d}{dx}\int_{\phi_1(x)}<sup>{\phi_2(x)}f(t)dt=\int_{\phi_1(x)}</sup>{a}f(t)dt+\int_{a}^{\phi_2(x)}f(t)dt=…$</p>
+<p><strong>定积分中值定理</strong></p>
+<p>$设f(x)在[a,b]连续，则\exists\xi\in(a,b),s.t.\displaystyle\int_a^bf(x)dx=f(\xi)(b-a)$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>存在矩形面积等于曲边梯形</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle f(\xi)=\lim_{\lambda\rightarrow0}\sum^n_{i=1}f(\xi_i)(\frac{\Delta x_i}{b-a})$</p>
+</li>
+<li class="lvl-2">
+<p>$\displaystyle f(x),g(x)在[a,b]连续，且g(x)不变号, \exists\xi\in(a,b),s.t.\int_a<sup>bf(x)g(x)dx=f(\xi)\int_a</sup>bg(x)d(x)$</p>
+</li>
+</ul>
+<p><strong>变限函数的导数</strong></p>
+<p>$\displaystyle f(x)在[a,b]连续，F(x)=\int_a<sup>xf(t)dt在[a,b]可导,F</sup>\prime(x)=f(x)$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>连续函数一定有原函数</p>
+</li>
+<li class="lvl-2">
+<p>被积函数不含自变量x</p>
+</li>
+</ul>
+<p>$\displaystyle\frac{d}{dx}\int_{\phi_1(x)}<sup>{\phi_2(x)}f(t)dt=\int_{\phi_1(x)}</sup>{a}f(t)dt+\int_{a}^{\phi_2(x)}f(t)dt=…$</p>
 <p><strong>微积分学基本公式｜Newton-Leibniz公式</strong></p>
-<p><span
-class="math inline">\(\displaystyle\int_a^bf(x)dx=F(x)|_a^b=F(b)-F(a)\)</span></p>
+<p>$\displaystyle\int_a<sup>bf(x)dx=F(x)|_a</sup>b=F(b)-F(a)$</p>
 <p><strong>定积分的换元积分</strong></p>
-<p><span
-class="math inline">\(\displaystyle\int_a^bf(x)dx=\int_\alpha^\beta
-f(\phi(t))\cdot\phi^\prime(t)dt=F(\phi(t))|_\alpha^\beta,\
-\phi(\alpha)=a,\phi(\beta)=b\)</span> - 换元要换限 - 无需反代<span
-class="math inline">\(t=\phi^{-1}(x)\)</span></p>
+<p>$\displaystyle\int_a<sup>bf(x)dx=\int_\alpha</sup>\beta f(\phi(t))\cdot\phi<sup>\prime(t)dt=F(\phi(t))|_\alpha</sup>\beta,\ \phi(\alpha)=a,\phi(\beta)=b$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>换元要换限</p>
+</li>
+<li class="lvl-2">
+<p>无需反代$t=\phi^{-1}(x)$</p>
+</li>
+</ul>
 <p><strong>对称区间定积分</strong></p>
-<p><span
-class="math inline">\(x:[a,b],记u=\displaystyle\frac{a+b}{2}-x:\)</span></p>
-<p><span
-class="math inline">\(\displaystyle\int_{-a}^{a}f(x)dx=\int_{-a}^0f(-x)dx+\int_0^af(x)dx=\begin{cases}2\displaystyle\int_0^af(x)dx,f(x)为偶函数\\\\0,f(x)为奇函数\end{cases}\)</span></p>
+<p>$x:[a,b],记u=\displaystyle\frac{a+b}{2}-x:$</p>
+<p>$\displaystyle\int_{-a}<sup>{a}f(x)dx=\int_{-a}</sup>0f(-x)dx+\int_0<sup>af(x)dx=\begin{cases}2\displaystyle\int_0</sup>af(x)dx,f(x)为偶函数\\0,f(x)为奇函数\end{cases}$</p>
 <p><strong>周期函数的积分</strong></p>
-<p><span class="math inline">\(若f(x)为周期为T的周期函数,\
-\displaystyle\int_0^{T}f(x)dx=\displaystyle\int_a^{a+T}f(x)dx为定值\)</span></p>
+<p>$若f(x)为周期为T的周期函数,\ \displaystyle\int_0<sup>{T}f(x)dx=\displaystyle\int_a</sup>{a+T}f(x)dx为定值$</p>
 <p><strong>分部定积分</strong></p>
-<p><span
-class="math inline">\(\displaystyle\int_a^budv=(uv)\mid_a^b-\int_a^bvdu\)</span></p>
+<p>$\displaystyle\int_a<sup>budv=(uv)\mid_a</sup>b-\int_a^bvdu$</p>
 <p><strong>定积分不等式</strong></p>
 <p>可积函数组成线性空间，柯西不等式</p>
-<p><span
-class="math inline">\(f,g在[a,b]上连续,\displaystyle(\int_a^bf(x)g(x)dx)^2\le\int_a^bf^2(x)dx\cdot\int_a^bg^2(x)dx\)</span></p>
-<p><strong>反常积分</strong> - 无限区间上的定积分 -
-有限区间上无限函数的定积分</p>
-<p><span
-class="math inline">\(\displaystyle\int_a^{+\infty}f(x)dx=\lim_{b\rightarrow+\infty}\int_a^bf(x)dx=J\)</span></p>
-<p><span
-class="math inline">\(\displaystyle\int_{-\infty}^{+\infty}f(x)dx=\int_a^{+\infty}f(x)dx+\int_{-\infty}^a
-f(x)dx\)</span></p>
-<p><strong>p-积分</strong></p>
-<p><span
-class="math inline">\(\displaystyle\int_1^{+\infty}\frac{dx}{x^p}dx=\begin{cases}\displaystyle\frac{1}{p-1}&amp;,p&gt;1\\\\+\infty&amp;,p\le1\end{cases}\)</span></p>
-<p><strong>瑕积分</strong></p>
-<p><span
-class="math inline">\(\displaystyle\int_a^bf(x)dx=\lim_{\varepsilon\rightarrow0^+}\int_{a+\varepsilon}^bf(x)dx\)</span></p>
-<p><strong>伽马函数</strong></p>
-<p><span
-class="math inline">\(\displaystyle\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}dx.(s&gt;0)\)</span></p>
-<ul>
-<li><p><span class="math inline">\(\Gamma(s+1)=s\Gamma(s)\)</span></p>
-<ul>
-<li><span
-class="math inline">\(\Gamma(n+1)=n\Gamma(n)=...=n!\Gamma(1)=n!\)</span></li>
-</ul></li>
-<li><p><span
-class="math inline">\(\Gamma(\displaystyle\frac{1}{2})=\sqrt{\pi}\)</span></p></li>
+<p>$f,g在[a,b]上连续,\displaystyle(\int_a<sup>bf(x)g(x)dx)</sup>2\le\int_a<sup>bf</sup>2(x)dx\cdot\int_a<sup>bg</sup>2(x)dx$</p>
+<p><strong>反常积分</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>无限区间上的定积分</p>
+</li>
+<li class="lvl-2">
+<p>有限区间上无限函数的定积分</p>
+</li>
 </ul>
-<p><span class="math inline">\(Poisson积分/正态分布曲线积分:
-\displaystyle\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}e^{\displaystyle-\frac{x^2}{2}}dx=1\)</span></p>
-<p><span class="math inline">\(余元公式:
-\Gamma(s)\Gamma(1-s)=\displaystyle\frac{\pi}{\sin(\pi
-s)}.(0&lt;s&lt;1)\)</span></p>
+<p>$\displaystyle\int_a<sup>{+\infty}f(x)dx=\lim_{b\rightarrow+\infty}\int_a</sup>bf(x)dx=J$</p>
+<p>$\displaystyle\int_{-\infty}<sup>{+\infty}f(x)dx=\int_a</sup>{+\infty}f(x)dx+\int_{-\infty}^a f(x)dx$</p>
+<p><strong>p-积分</strong></p>
+<p>$\displaystyle\int_1<sup>{+\infty}\frac{dx}{x</sup>p}dx=\begin{cases}\displaystyle\frac{1}{p-1}&amp;,p&gt;1\\+\infty&amp;,p\le1\end{cases}$</p>
+<p><strong>瑕积分</strong></p>
+<p>$\displaystyle\int_a<sup>bf(x)dx=\lim_{\varepsilon\rightarrow0</sup>+}\int_{a+\varepsilon}^bf(x)dx$</p>
+<p><strong>伽马函数</strong></p>
+<p>$\displaystyle\Gamma(s)=\int_0<sup>{+\infty}x</sup>{s-1}e^{-x}dx.(s&gt;0)$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$\Gamma(s+1)=s\Gamma(s)$</p>
+<ul class="lvl-2">
+<li class="lvl-4">$\Gamma(n+1)=n\Gamma(n)=…=n!\Gamma(1)=n!$</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>$\Gamma(\displaystyle\frac{1}{2})=\sqrt{\pi}$</p>
+</li>
+</ul>
+<p>$Poisson积分/正态分布曲线积分: \displaystyle\frac{1}{\sqrt{2\pi}}\int_{-\infty}<sup>{+\infty}e</sup>{\displaystyle-\frac{x^2}{2}}dx=1$</p>
+<p>$余元公式: \Gamma(s)\Gamma(1-s)=\displaystyle\frac{\pi}{\sin(\pi s)}.(0&lt;s&lt;1)$</p>
 <p><strong>旋转体的体积</strong></p>
-<p><span
-class="math inline">\(y=f(x),x=a,x=b围成的曲边梯形D\)</span></p>
-<ul>
-<li><span
-class="math inline">\(V_x=\pi\displaystyle\int_a^bf^2(x)\mathrm{d}x\)</span></li>
-<li><span class="math inline">\(V_y=2\pi\displaystyle\int_a^b|x\cdot
-f(x)|\mathrm{d}x\)</span></li>
+<p>$y=f(x),x=a,x=b围成的曲边梯形D$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$V_x=\pi\displaystyle\int_a<sup>bf</sup>2(x)\mathrm{d}x$</p>
+</li>
+<li class="lvl-2">
+<p>$V_y=2\pi\displaystyle\int_a^b|x\cdot f(x)|\mathrm{d}x$</p>
+</li>
 </ul>
 <p><strong>平面曲线的弧长</strong></p>
-<p><span
-class="math inline">\(s=\displaystyle\int_\alpha^\beta\sqrt{[x^\prime(t)]^2+[y^\prime(t)]^2}\mathrm{d}t\)</span></p>
-<ul>
-<li><span class="math inline">\(C:y=f(x)\Rightarrow
-s=\displaystyle\int_a^b\sqrt{1+[f^\prime(x)]^2}\mathrm{d}x\)</span></li>
-<li><span class="math inline">\(C:r=r(\theta)\Rightarrow
-s=\displaystyle\int_\alpha^\beta\sqrt{[r^\prime(\theta)]^2+[r(\theta)]^2}\mathrm{d}\theta\)</span></li>
+<p>$s=\displaystyle\int_\alpha<sup>\beta\sqrt{[x</sup>\prime(t)]<sup>2+[y</sup>\prime(t)]^2}\mathrm{d}t$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$C:y=f(x)\Rightarrow s=\displaystyle\int_a<sup>b\sqrt{1+[f</sup>\prime(x)]^2}\mathrm{d}x$</p>
+</li>
+<li class="lvl-2">
+<p>$C:r=r(\theta)\Rightarrow s=\displaystyle\int_\alpha<sup>\beta\sqrt{[r</sup>\prime(\theta)]<sup>2+[r(\theta)]</sup>2}\mathrm{d}\theta$</p>
+</li>
 </ul>
 <p><strong>旋转体的侧面积</strong></p>
-<p><span
-class="math inline">\(S=2\pi\displaystyle\int_\alpha^\beta|y(t)|\mathrm{d}s=2\pi\displaystyle\int_\alpha^\beta|y(t)|\sqrt{[x^\prime(t)]^2+[y^\prime(t)]^2}\mathrm{d}t\)</span>
-- <span
-class="math inline">\(S=2\pi\displaystyle\int_a^b|f(x)|\sqrt{1+[f^\prime(x)]^2}\mathrm{d}x\)</span></p>
+<p>$S=2\pi\displaystyle\int_\alpha<sup>\beta|y(t)|\mathrm{d}s=2\pi\displaystyle\int_\alpha</sup>\beta|y(t)|\sqrt{[x<sup>\prime(t)]</sup>2+[y<sup>\prime(t)]</sup>2}\mathrm{d}t$</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$S=2\pi\displaystyle\int_a<sup>b|f(x)|\sqrt{1+[f</sup>\prime(x)]^2}\mathrm{d}x$</p>
+</li>
+</ul>
 <p><strong>Wallis公式</strong></p>
-<p><span
-class="math inline">\(\displaystyle\int_0^\frac{\pi}{2}\mathrm{sin}^mx\mathrm{d}x=\begin{cases}\displaystyle\frac{(m-1)!!}{m!!}&amp;,m=2k-1\\\\\displaystyle\frac{(m-1)!!}{m!!}\cdot\frac{\pi}{2}&amp;,m=2k\end{cases}\)</span></p>
+<p>$\displaystyle\int_0<sup>\frac{\pi}{2}\mathrm{sin}</sup>mx\mathrm{d}x=\begin{cases}\displaystyle\frac{(m-1)!!}{m!!}&amp;,m=2k-1\\\displaystyle\frac{(m-1)!!}{m!!}\cdot\frac{\pi}{2}&amp;,m=2k\end{cases}$</p>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -787,7 +920,6 @@ class="math inline">\(\displaystyle\int_0^\frac{\pi}{2}\mathrm{sin}^mx\mathrm{d}
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -807,20 +939,7 @@ class="math inline">\(\displaystyle\int_0^\frac{\pi}{2}\mathrm{sin}^mx\mathrm{d}
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -834,46 +953,6 @@ class="math inline">\(\displaystyle\int_0^\frac{\pi}{2}\mathrm{sin}^mx\mathrm{d}
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

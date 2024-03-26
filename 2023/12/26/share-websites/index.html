@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,43 +160,27 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
@@ -245,8 +190,6 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MISC"><span class="toc-text">MISC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3"><span class="toc-text">运维相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%9F%A5%E8%AF%A2"><span class="toc-text">文档查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E7%BC%96%E8%BE%91"><span class="toc-text">文字编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91"><span class="toc-text">图片编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">云服务器</span></a></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -260,8 +203,7 @@
             </span>
             2023/12/26
         </span>
-           
-            <!--展示categories-->
+        
         <span class="category">
             <a href="/categories/%E5%AE%9E%E7%94%A8/">
                 <span class="icon">
@@ -272,82 +214,57 @@
         </span>
         
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <blockquote>
-<p>随缘收集一些有用的网站, 随缘更新<br>碧梧桐锁深深院，谁料得两情，何日教谴绻？</p>
+<p>随缘收集一些有用的网站, 随缘更新碧梧桐锁深深院，谁料得两情，何日教谴绻？</p>
 </blockquote>
 <span id="more"></span>
-
-<p>&nbsp;</p>
-<h3 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h3><p>正则表达式可视化 <a target="_blank" rel="noopener" href="https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24">Regulex</a></p>
+<p> </p>
+<h3 id="MISC">MISC</h3>
+<p>正则表达式可视化 <a target="_blank" rel="noopener" href="https://jex.im/regulex/#!flags=&amp;re=%5E(a%7Cb)*%3F%24">Regulex</a></p>
 <p>日式传统颜色 <a target="_blank" rel="noopener" href="https://nipponcolors.com/">Nippon Colors</a></p>
 <p>渐变色联想网站 <a target="_blank" rel="noopener" href="https://mycolor.space/">Colorspace</a></p>
 <p>音频文件解锁网站 <a target="_blank" rel="noopener" href="https://music-unlock.lehinet.com/">unlock-music</a></p>
-<p>&nbsp;</p>
-<h3 id="运维相关"><a href="#运维相关" class="headerlink" title="运维相关"></a>运维相关</h3><p><a target="_blank" rel="noopener" href="https://md.qikqiak.com/">Markdown-&gt;微信公众号</a></p>
+<p> </p>
+<h3 id="运维相关">运维相关</h3>
+<p><a target="_blank" rel="noopener" href="https://md.qikqiak.com/">Markdown-&gt;微信公众号</a></p>
 <p>免费图标网站 <a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome 6</a></p>
-<p>&nbsp;</p>
-<h3 id="文档查询"><a href="#文档查询" class="headerlink" title="文档查询"></a>文档查询</h3><p><a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a></p>
+<p> </p>
+<h3 id="文档查询">文档查询</h3>
+<p><a target="_blank" rel="noopener" href="https://katex.org/docs/supported#math-operators">KateX手册</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">Runoob | CSS手册</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Runoob | Markdown手册</a></p>
 <p>Emoji模糊搜索查询 <a target="_blank" rel="noopener" href="https://www.emojiall.com/zh-hans/categories/A">EmojiAll</a></p>
 <p><a target="_blank" rel="noopener" href="https://liam.page/2014/09/08/latex-introduction/">Latex简明文档</a></p>
-<p>&nbsp;</p>
-<h3 id="文字编辑"><a href="#文字编辑" class="headerlink" title="文字编辑"></a>文字编辑</h3><p>在线Markdown编辑器, 支持热刷新 <a target="_blank" rel="noopener" href="https://stackedit.io/app#">StackEdit</a></p>
+<p> </p>
+<h3 id="文字编辑">文字编辑</h3>
+<p>在线Markdown编辑器, 支持热刷新 <a target="_blank" rel="noopener" href="https://stackedit.io/app#">StackEdit</a></p>
 <p>在线笔记网站 <a target="_blank" rel="noopener" href="https://www.notion.so/">Notion</a></p>
 <p>在线Latex编辑器 <a target="_blank" rel="noopener" href="https://www.slager.link/#/Project">Slager</a></p>
-<p>&nbsp;</p>
-<h3 id="图片编辑"><a href="#图片编辑" class="headerlink" title="图片编辑"></a>图片编辑</h3><p>在线手绘绘图网站 <a target="_blank" rel="noopener" href="https://excalidraw.com/">Excalidraw</a></p>
+<p> </p>
+<h3 id="图片编辑">图片编辑</h3>
+<p>在线手绘绘图网站 <a target="_blank" rel="noopener" href="https://excalidraw.com/">Excalidraw</a></p>
 <p>在线矢量绘图网站 <a target="_blank" rel="noopener" href="https://app.diagrams.net/">Diagrams</a></p>
 <p>在线图论绘图网站 <a target="_blank" rel="noopener" href="https://csacademy.com/app/graph_editor/">Graph Editor</a></p>
 <p>在线坐标轴绘图网站 <a target="_blank" rel="noopener" href="https://csacademy.com/app/geometry_widget/">Geometry Widget</a></p>
-<p>&nbsp;</p>
-<h3 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h3><p><a target="_blank" rel="noopener" href="https://app.vmiss.com/clientarea.php">VMISS</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.anclouds.com/">AnClouds</a></p>
+<p> </p>
+<h3 id="云服务器">云服务器</h3>
+<p><a target="_blank" rel="noopener" href="https://app.vmiss.com/clientarea.php">VMISS</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.anclouds.com">AnClouds</a></p>
 <p><a target="_blank" rel="noopener" href="https://app.rainyun.com/dashboard">雨云</a></p>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -364,7 +281,6 @@
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -384,20 +300,7 @@
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -411,46 +314,6 @@
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

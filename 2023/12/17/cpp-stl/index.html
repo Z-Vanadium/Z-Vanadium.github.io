@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,43 +160,27 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
@@ -245,8 +190,6 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81STL"><span class="toc-text">为什么要STL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-text">容器、算法与迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8"><span class="toc-text">容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-text">算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E4%BF%AE%E6%94%B9%E5%BA%8F%E5%88%97%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">不修改序列的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%BA%8F%E5%88%97%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">修改序列的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">排序操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C-%E5%AF%B9%E4%BA%8E%E6%9C%89%E5%BA%8F%E5%BA%8F%E5%88%97"><span class="toc-text">二分查找操作(对于有序序列)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="toc-text">其他操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cmp%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-text">cmp函数参数</span></a></li></ol></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -261,8 +204,7 @@
             2023/12/17
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -276,206 +218,248 @@
             
             <span class="tag">
                 
-                <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
+                <a href="/tags/OOP/" style="color: #03a9f4">OOP</a>
             </span>
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <blockquote>
-<p>终于他喵的写到STL了淦, 前置的乱七八糟的东西太多了, 没错我说的就是你, <strong>友元</strong>!<br>我打算先从STL的用法开始, 学习到STL的底层, STL系列也会写的更为详细, 因为<strong>他真的, 很重要</strong></p>
+<p>终于他喵的写到STL了淦, 前置的乱七八糟的东西太多了, 没错我说的就是你, <strong>友元</strong>!<br>
+我打算先从STL的用法开始, 学习到STL的底层, STL系列也会写的更为详细, 因为<strong>他真的, 很重要</strong></p>
 </blockquote>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>STL(Standard Template Library)</strong> 源自于C艹第一个标准化版本C艹98(不是CC98哦), 它提供了强大的<strong>容器库(Containers library)</strong> 和<strong>算法库(Algorithm library)</strong> 以供使用者直接调用, 其背后体现了<strong>泛型编程(Generic programming)</strong> 的思想; 即使你像我一样对上面的一堆名词不甚了解, 也可以很好的利用它所提供的常见的<strong>数据结构和算法</strong>解决很多问题. </p>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/7_template/">咸鱼暄的代码空间 | 模板 (I) - 基本知识与 STL 使用</a></li>
-<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/8_stl/">咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象</a></li>
-<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/%E7%90%86%E8%A7%A3%20STL%20-%20%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/">咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=tXUXl_RzkAk">YouTube | Back to Basics: Classic STL - Bob Steagall - CppCon 2021</a></li>
+<h3 id="前言">前言</h3>
+<p><strong>STL(Standard Template Library)</strong> 源自于C艹第一个标准化版本C艹98(不是CC98哦), 它提供了强大的<strong>容器库(Containers library)</strong> 和<strong>算法库(Algorithm library)</strong> 以供使用者直接调用, 其背后体现了<strong>泛型编程(Generic programming)</strong> 的思想; 即使你像我一样对上面的一堆名词不甚了解, 也可以很好的利用它所提供的常见的<strong>数据结构和算法</strong>解决很多问题.</p>
+<h4 id="参考资料">参考资料</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/7_template/">咸鱼暄的代码空间 | 模板 (I) - 基本知识与 STL 使用</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/8_stl/">咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/%E7%90%86%E8%A7%A3%20STL%20-%20%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/">咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象</a></p>
+</li>
+<li class="lvl-2">
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=tXUXl_RzkAk">YouTube | Back to Basics: Classic STL - Bob Steagall - CppCon 2021</a></p>
+</li>
 </ul>
 <span id="more"></span>
-
-<p>&nbsp;</p>
-<h3 id="为什么要STL"><a href="#为什么要STL" class="headerlink" title="为什么要STL"></a>为什么要STL</h3><p>在我<a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/06/fds1/">数据结构杂谈（一）</a>这篇文章中, 我曾经提到, ADT的出现, 是为了处理更加普遍的情况, 而算法正是基于ADT实现的. 在这里, 我想用更加学术的语言重制这句话.</p>
+<p> </p>
+<h3 id="为什么要STL">为什么要STL</h3>
+<p>在我<a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/06/fds1/">数据结构杂谈（一）</a>这篇文章中, 我曾经提到, ADT的出现, 是为了处理更加普遍的情况, 而算法正是基于ADT实现的. 在这里, 我想用更加学术的语言重制这句话.</p>
 <p>解释数据结构与算法, 就要从<strong>数据</strong>这个概念本身开始, 在那一片文章中, 我曾经将胡图图一家人看作是一个数据结构, 把胡图图, 张小丽等人看作是数据, 如果我们再深挖下去, 思考一个人是否还有其他从属于他自己的属性. 答案显然是肯定的. 胡图图是张小丽的儿子, 这个关系就可以视作一个<strong>元素</strong>, 同样, 胡图图的生理数据, 比如他的三根头发, 也是一个元素. 因此我们可以说:</p>
-<ul>
-<li><p>数据几乎总是 <em><strong>元素</strong></em> 的 <em><strong>集合</strong></em> | Data is almost always <em><strong>collections</strong></em> of <em><strong>elements</strong></em>.</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数据几乎总是 <em><strong>元素</strong></em> 的 <em><strong>集合</strong></em> | Data is almost always <em><strong>collections</strong></em> of <em><strong>elements</strong></em>.</p>
 </li>
-<li><p>每种集合有一定的 <em><strong>表现形式</strong></em> | Each collection of elements has some <em><strong>representation</strong></em>.</p>
+<li class="lvl-2">
+<p>每种集合有一定的 <em><strong>表现形式</strong></em> | Each collection of elements has some <em><strong>representation</strong></em>.</p>
 </li>
 </ul>
 <p>而针对特定表现形式的数据结构, 也就是集合的表现形式的特定操作, 就是算法:</p>
-<ul>
-<li>有很多处理方法(<em><strong>算法</strong></em>) | There are many kinds of progressing(<em><strong>algorithms</strong></em>)</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>有很多处理方法(<em><strong>算法</strong></em>) | There are many kinds of progressing(<em><strong>algorithms</strong></em>)</p>
+</li>
 </ul>
 <p>然而在我们的宇宙中, 即便是一个问题空间中, 数据结构的数量总是一个非常巨大的数字N, 假如数据结构两两之间需要进行数据交换, 我们就要设计C(N,2)种算法, 这个数字不是我们能轻易接受的.</p>
 <p>为了解决以上问题, C艹引入了泛型编程的概念, 可以通俗的理解为模板, 来解决程序段复用性的问题, 而STL正是其中一个最具典型性的代表–C标准委员会提供了一组库, 以供使用者复用这个库里面的代码.</p>
 <p>STL库最初的设计准则, 即是:</p>
-<ul>
-<li>综合性 Comprehensive</li>
-<li>可扩展性 Extensible</li>
-<li>高效性 Efficient</li>
-<li>自然性 Natural</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>综合性 Comprehensive</p>
+</li>
+<li class="lvl-2">
+<p>可扩展性 Extensible</p>
+</li>
+<li class="lvl-2">
+<p>高效性 Efficient</p>
+</li>
+<li class="lvl-2">
+<p>自然性 Natural</p>
+</li>
 </ul>
-<p>正是由于对上述准则的坚持, C艹STL库才能至今仍在跟进维护 <del>, 不像某个友元的概念</del></p>
-<p>&nbsp;</p>
-<h4 id="容器、算法与迭代器"><a href="#容器、算法与迭代器" class="headerlink" title="容器、算法与迭代器"></a>容器、算法与迭代器</h4><p>在STL里面, 我们用<strong>容器container</strong>来描述一个<strong>数据结构</strong>, 或者说是元素集合的储存, 容器为下列操作提供支持：</p>
-<ul>
-<li>增删元素</li>
-<li>通过相关的迭代器读取或更新某个元素</li>
-<li>容器的迭代器脱离于容器的内部结构而存在，但是能完成对容器的特定操作并支持算法的实现</li>
+<p>正是由于对上述准则的坚持, C艹STL库才能至今仍在跟进维护 <s>, 不像某个友元的概念</s></p>
+<p> </p>
+<h4 id="容器、算法与迭代器">容器、算法与迭代器</h4>
+<p>在STL里面, 我们用<strong>容器container</strong>来描述一个<strong>数据结构</strong>, 或者说是元素集合的储存, 容器为下列操作提供支持：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>增删元素</p>
+</li>
+<li class="lvl-2">
+<p>通过相关的迭代器读取或更新某个元素</p>
+</li>
+<li class="lvl-2">
+<p>容器的迭代器脱离于容器的内部结构而存在，但是能完成对容器的特定操作并支持算法的实现</p>
+</li>
 </ul>
 <p><strong>算法algorithm</strong>对应的就是普遍意义上的算法, 是对容器的操作, 但是算法并不能直接操作容器, 而是<strong>通过定义清晰的迭代器</strong></p>
 <p><strong>迭代器iterator</strong>为容器与算法的交流提供一个<strong>共同单位</strong>, 确保有一个提供清晰的方法得到元素</p>
-<p>&nbsp;</p>
-<h4 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h4><p>STL为我们提供了丰富的<strong>容器库Container library</strong>，其中主要包含了三大类，十数种容器模板：</p>
-<ul>
-<li><p><strong>序列容器Sequence container</strong><br>序列容器是抽象于数据按某一个顺序排列的数据结构的容器：</p>
-<ul>
-<li><strong>向量vector</strong>：虽然单词原意是向量，但是人们更愿意称之为<strong>可变数组</strong> ，这是因为相比于数组，vector可以通过成员函数动态的改变自己的长度</li>
-<li><strong>双向队列deque</strong>：一个可以在两端进行增删操作的队列，假如对其两端的操作权限作出限制，可以特化为队列或栈，因此deque相比队列或是栈，更加的灵活，但是一定程度上，也更加臃肿</li>
-<li><strong>数组array</strong>：固定长度的数组</li>
-<li><strong>双向链表list</strong>：相当于迭代器没有随机访问能力的deque</li>
-<li><strong>单向链表forward_list</strong>：单向的链表</li>
+<p> </p>
+<h4 id="容器">容器</h4>
+<p>STL为我们提供了丰富的<strong>容器库Container library</strong>，其中主要包含了三大类，十数种容器模板：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>序列容器Sequence container</strong><br>
+序列容器是抽象于数据按某一个顺序排列的数据结构的容器：</p>
+<ul class="lvl-2">
+<li class="lvl-6"><strong>向量vector</strong>：虽然单词原意是向量，但是人们更愿意称之为<strong>可变数组</strong> ，这是因为相比于数组，vector可以通过成员函数动态的改变自己的长度</li>
+<li class="lvl-6"><strong>双向队列deque</strong>：一个可以在两端进行增删操作的队列，假如对其两端的操作权限作出限制，可以特化为队列或栈，因此deque相比队列或是栈，更加的灵活，但是一定程度上，也更加臃肿</li>
+<li class="lvl-6"><strong>数组array</strong>：固定长度的数组</li>
+<li class="lvl-6"><strong>双向链表list</strong>：相当于迭代器没有随机访问能力的deque</li>
+<li class="lvl-6"><strong>单向链表forward_list</strong>：单向的链表</li>
 </ul>
 </li>
-<li><p><strong>关联容器Associative container</strong><br>关联容器是抽象于数据没有一个固定排列，而是通过相互之间的关系组织在一起的数据结构的容器，在C艹（以及大多数其他高级语言中）中是用红黑树（一种高效的BST）实现的：</p>
-<ul>
-<li><strong>集合set</strong>：储存的是无重复、无顺序的数据集合，与数学上集合的概念相仿，但不能储存无穷多的元素（显然）</li>
-<li><strong>映射map</strong>：在有些高级语言中，map也被叫做dictionary，map的储存单位是一一对应的键值对，其中键是无序、无重的</li>
-<li><strong>可重集合multiset</strong></li>
-<li><strong>可重映射multimap</strong>：上述容器的可重版本，允许元素的重复</li>
+<li class="lvl-2">
+<p><strong>关联容器Associative container</strong><br>
+关联容器是抽象于数据没有一个固定排列，而是通过相互之间的关系组织在一起的数据结构的容器，在C艹（以及大多数其他高级语言中）中是用红黑树（一种高效的BST）实现的：</p>
+<ul class="lvl-2">
+<li class="lvl-6"><strong>集合set</strong>：储存的是无重复、无顺序的数据集合，与数学上集合的概念相仿，但不能储存无穷多的元素（显然）</li>
+<li class="lvl-6"><strong>映射map</strong>：在有些高级语言中，map也被叫做dictionary，map的储存单位是一一对应的键值对，其中键是无序、无重的</li>
+<li class="lvl-6"><strong>可重集合multiset</strong></li>
+<li class="lvl-6"><strong>可重映射multimap</strong>：上述容器的可重版本，允许元素的重复</li>
 </ul>
 </li>
-<li><p><strong>无序关联容器Unordered associative container</strong><br>无序关联容器是上述关联容器的无序版，其底层使用hash表而不是红黑树实现：</p>
-<ul>
-<li><strong>unordered_set</strong></li>
-<li><strong>unordered_map</strong></li>
-<li><strong>unordered_multiset</strong></li>
-<li><strong>unordered_multimap</strong></li>
+<li class="lvl-2">
+<p><strong>无序关联容器Unordered associative container</strong><br>
+无序关联容器是上述关联容器的无序版，其底层使用hash表而不是红黑树实现：</p>
+<ul class="lvl-2">
+<li class="lvl-6"><strong>unordered_set</strong></li>
+<li class="lvl-6"><strong>unordered_map</strong></li>
+<li class="lvl-6"><strong>unordered_multiset</strong></li>
+<li class="lvl-6"><strong>unordered_multimap</strong></li>
 </ul>
 </li>
-<li><p><strong>适配器Adaptor</strong><br>适配器不是严格意义上的容器，而是对既有容器（包括STL容器和使用者自定义的容器）接口的封装：</p>
-<ul>
-<li><strong>栈stack</strong></li>
-<li><strong>队列queue</strong></li>
-<li><strong>优先队列priority_queue</strong></li>
+<li class="lvl-2">
+<p><strong>适配器Adaptor</strong><br>
+适配器不是严格意义上的容器，而是对既有容器（包括STL容器和使用者自定义的容器）接口的封装：</p>
+<ul class="lvl-2">
+<li class="lvl-6"><strong>栈stack</strong></li>
+<li class="lvl-6"><strong>队列queue</strong></li>
+<li class="lvl-6"><strong>优先队列priority_queue</strong></li>
 </ul>
 </li>
 </ul>
-<p><strong>扩展阅读：</strong><br><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/stl/">C艹STL库官方文档 ｜ 容器</a></p>
-<p>&nbsp;</p>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>C++同样为我们提供了丰富的<strong>算法库Algorithm library</strong>，如同前面所说，算法是脱离于容器存在的，但是实现确是通过迭代器操作容器，因此在对算法做介绍之前，我们需要简单讲一下如何获取某个容器的迭代器。</p>
-<pre><code class="c++">auto i = v.begin();
+<p><strong>扩展阅读：</strong><br>
+<a target="_blank" rel="noopener" href="https://cplusplus.com/reference/stl/">C艹STL库官方文档 ｜ 容器</a></p>
+<p> </p>
+<h4 id="算法">算法</h4>
+<p>C++同样为我们提供了丰富的<strong>算法库Algorithm library</strong>，如同前面所说，算法是脱离于容器存在的，但是实现确是通过迭代器操作容器，因此在对算法做介绍之前，我们需要简单讲一下如何获取某个容器的迭代器。</p>
+<pre><code class="language-c++">auto i = v.begin();
 auto j = v.end();
 </code></pre>
 <p>这两个函数分别可以获取指向容器v开头或结尾的迭代器（是的，你可以将迭代器<strong>粗浅的理解为指针</strong>，一个有自己重载后的++运算符的特殊指针）</p>
 <p>在上面的例子中，使用了一个全新的变量类型声明关键字<strong>auto</strong>，这代表了使用者并不关心i、j的具体变量类型，而是交由编译器自行推导（类似于模板函数参数表的推导）</p>
-<p>&nbsp;</p>
-<h4 id="不修改序列的操作"><a href="#不修改序列的操作" class="headerlink" title="不修改序列的操作"></a>不修改序列的操作</h4><p><strong>find()</strong></p>
-<pre><code class="c++">auto res = find(start, stop, target);
+<p> </p>
+<h4 id="不修改序列的操作">不修改序列的操作</h4>
+<p><strong>find()</strong></p>
+<pre><code class="language-c++">auto res = find(start, stop, target);
 </code></pre>
 <p>其中res、start、stop的数据类型均为迭代器，target的数据类型为v的元素的数据类型；</p>
 <p>函数的作用是在v（通常是array或vector）中左闭右开区间[start,stop)上寻找值等于target的元素，并返回其迭代器，找不到则返回stop</p>
 <p><strong>count()</strong></p>
-<pre><code class="c++">int cnt = count(start, stop, target);
+<pre><code class="language-c++">int cnt = count(start, stop, target);
 </code></pre>
 <p><strong>count_if()</strong></p>
-<pre><code class="c++">int cnt = count_if(start, stop, p);
+<pre><code class="language-c++">int cnt = count_if(start, stop, p);
 </code></pre>
 <p>其中p是一个<strong>谓词</strong> ，可以是函数、函数指针、函数对象（即对<code>()</code>进行重载）或lambda函数。</p>
 <p>这个函数会返回区间上满足谓词p的元素的数量</p>
 <p><strong>for_each()</strong></p>
-<pre><code class="c++">for_each(start, stop, func);
+<pre><code class="language-c++">for_each(start, stop, func);
 </code></pre>
 <p>类似于其他高级语言中的map()函数，即对区间上所有的元素调用函数func</p>
-<p>&nbsp;</p>
-<h4 id="修改序列的操作"><a href="#修改序列的操作" class="headerlink" title="修改序列的操作"></a>修改序列的操作</h4><p><strong>reverse()</strong></p>
-<pre><code class="c++">reverse(start, stop);
+<p> </p>
+<h4 id="修改序列的操作">修改序列的操作</h4>
+<p><strong>reverse()</strong></p>
+<pre><code class="language-c++">reverse(start, stop);
 </code></pre>
 <p><strong>fill()</strong></p>
-<pre><code class="c++">fill(start, stop, value);
+<pre><code class="language-c++">fill(start, stop, value);
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="排序操作"><a href="#排序操作" class="headerlink" title="排序操作"></a>排序操作</h4><p><strong>sort</strong></p>
-<pre><code class="c++">sort(strat, end);       //重载&lt;运算符后
+<p> </p>
+<h4 id="排序操作">排序操作</h4>
+<p><strong>sort</strong></p>
+<pre><code class="language-c++">sort(strat, end);       //重载&lt;运算符后
 sort(start, end, cmp);  //用cmp()函数或对象作为比较依据
 </code></pre>
 <p><strong>stable_sort</strong></p>
-<pre><code class="c++">stable_sort(strat, end);        //重载&lt;运算符后
+<pre><code class="language-c++">stable_sort(strat, end);        //重载&lt;运算符后
 stable_sort(start, end, cmp);   //用cmp()函数或对象作为比较依据
 </code></pre>
 <p>与<code>sort()</code>不同的是, <code>stable_sort()</code>是稳定的排序</p>
 <p><strong>partial_sort</strong></p>
-<pre><code class="c++">partial_sort(start, middle, end);       //重载&lt;运算符后
+<pre><code class="language-c++">partial_sort(start, middle, end);       //重载&lt;运算符后
 partial_sort(start, middle, end, cmp);  //用cmp()函数或对象作为比较依据
 </code></pre>
 <p>重新排序, (默认)把<strong>最小</strong>的一部分元素按<strong>升序</strong>置于区间[start,middle)中</p>
-<p>&nbsp;</p>
-<h4 id="二分查找操作-对于有序序列"><a href="#二分查找操作-对于有序序列" class="headerlink" title="二分查找操作(对于有序序列)"></a>二分查找操作(对于有序序列)</h4><p><strong>binary_search</strong></p>
-<pre><code class="c++">bool res = binary_search(start, stop, target, cmp);
+<p> </p>
+<h4 id="二分查找操作-对于有序序列">二分查找操作(对于有序序列)</h4>
+<p><strong>binary_search</strong></p>
+<pre><code class="language-c++">bool res = binary_search(start, stop, target, cmp);
 </code></pre>
 <p><strong>lower_bound</strong></p>
-<pre><code class="c++">auto lower = lower_bound(start, stop, target, cmp);
+<pre><code class="language-c++">auto lower = lower_bound(start, stop, target, cmp);
 </code></pre>
 <p>(默认)返回区间内大于target的第一个元素的迭代器</p>
 <p><strong>upper_bound</strong></p>
-<pre><code class="c++">auto upper = upper_bound(start, stop, target, cmp);
+<pre><code class="language-c++">auto upper = upper_bound(start, stop, target, cmp);
 </code></pre>
 <p>(默认)返回区间内不小于target的第一个元素的迭代器</p>
-<p>&nbsp;</p>
-<h4 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h4><p><strong>集合操作(对于有序序列)</strong></p>
-<pre><code class="c++">includes(start1, stop1, strat2, stop2, cmp);    //返回序列1是否包含了序列2
+<p> </p>
+<h4 id="其他操作">其他操作</h4>
+<p><strong>集合操作(对于有序序列)</strong></p>
+<pre><code class="language-c++">includes(start1, stop1, strat2, stop2, cmp);    //返回序列1是否包含了序列2
 set_difference(start1, stop1, strat2, stop2, res, cmp); //求序列1和序列2的差集, 结果储存在迭代器res里
 set_intersection(start1, stop1, strat2, stop2, res, cmp);   //求序列1和序列2的交集, 结果储存在迭代器res里
 set_symmetric_difference(start1, stop1, strat2, stop2, res, cmp);   //求序列1和序列2的并集与交集的差集, 结果储存在迭代器res里
 set_union(start1, stop1, strat2, stop2, res, cmp);   //求序列1和序列2的并集, 结果储存在迭代器res里
 </code></pre>
 <p><strong>大小比较操作</strong></p>
-<pre><code class="c++">auto maxn = max(a, b, cmp);
+<pre><code class="language-c++">auto maxn = max(a, b, cmp);
 auto maxn = max(&#123;a, b, c, d&#125;);
 auto maxn = max_element(start, stop, cmp);  //返回第一个最大值的迭代器
 </code></pre>
 <p><strong>堆操作</strong></p>
-<pre><code class="c++">make_heap(start, stop, cmp);
+<pre><code class="language-c++">make_heap(start, stop, cmp);
 pop_heap(v.begin(), v.end(), cmp);  auto top = v.back();
 v.push_back(value); push_heap(v.begin(), v.end());
 </code></pre>
 <p><strong>比较操作</strong></p>
-<pre><code class="c++">bool res = equal(start1, stop1, start2);    //判断两个对象是否相等
+<pre><code class="language-c++">bool res = equal(start1, stop1, start2);    //判断两个对象是否相等
 bool res = lexicographical_compare(start1, stop1, start2, stop2);    //按照字典序判断对象1是否大于对象2
 </code></pre>
-<p>&nbsp;</p>
-<h4 id="cmp函数参数"><a href="#cmp函数参数" class="headerlink" title="cmp函数参数"></a>cmp函数参数</h4><p>上文中所有带<code>cmp</code>参数的函数, 都可以省略之, 编译器会自动用<code>&lt;</code>或重载后的<code>&lt;</code>来替代之.</p>
+<p> </p>
+<h4 id="cmp函数参数">cmp函数参数</h4>
+<p>上文中所有带<code>cmp</code>参数的函数, 都可以省略之, 编译器会自动用<code>&lt;</code>或重载后的<code>&lt;</code>来替代之.</p>
 <p>在函数实现时:</p>
-<ul>
-<li><code>x &gt; y</code>等价于<code>!(x &lt; y)</code>或<code>!cmp(x,y)</code></li>
-<li><code>x != y</code>等价于<code>!(x &lt; y) &amp;&amp; !(y &lt; x)</code>或<code>!cmp(x,y) &amp;&amp; !cmp(y,x)</code></li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>x &gt; y</code>等价于<code>!(x &lt; y)</code>或<code>!cmp(x,y)</code></p>
+</li>
+<li class="lvl-2">
+<p><code>x != y</code>等价于<code>!(x &lt; y) &amp;&amp; !(y &lt; x)</code>或<code>!cmp(x,y) &amp;&amp; !cmp(y,x)</code></p>
+</li>
 </ul>
 <p>因此, 当你想按照降序排列某个序列时, 请使用</p>
-<pre><code class="c++">bool cmp(int x, int y)&#123;
+<pre><code class="language-c++">bool cmp(int x, int y)&#123;
     return !(x&lt;y);
 &#125;
 int main()&#123;
     int _array[] = &#123;1,4,6,2,4,5&#125;;
     vector&lt;int&gt; array(_array, _array+6);
     for(auto i=array.begin();i&lt;array.end();++i)&#123;
-        cout&lt;&lt;*i&lt;&lt;&#39; &#39;;
+        cout&lt;&lt;*i&lt;&lt;' ';
     &#125;
     cout&lt;&lt;endl;
     sort(array.begin(), array.end(), cmp);
     for(auto i=array.begin();i&lt;array.end();++i)&#123;
-        cout&lt;&lt;*i&lt;&lt;&#39; &#39;;
+        cout&lt;&lt;*i&lt;&lt;' ';
     &#125;
     cout&lt;&lt;endl;
 &#125;
@@ -489,36 +473,15 @@ int main()&#123;
 <p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/algorithm/">C艹STL库官方文档 ｜ 算法</a></p>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -535,7 +498,6 @@ int main()&#123;
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -555,20 +517,7 @@ int main()&#123;
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -582,46 +531,6 @@ int main()&#123;
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

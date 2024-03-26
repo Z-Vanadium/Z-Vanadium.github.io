@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,43 +160,27 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
@@ -245,8 +190,6 @@
         <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84Hexo%E5%91%BD%E4%BB%A4-%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-text">记录一些常用的Hexo命令&#x2F;配置方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%83%A8%E7%BD%B2%E7%9B%B8%E5%85%B3"><span class="toc-text">1. 部署相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%96%B0%E5%BB%BA%E7%9B%B8%E5%85%B3"><span class="toc-text">2. 新建相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%86%99%E4%BD%9C%E7%9B%B8%E5%85%B3"><span class="toc-text">3. 写作相关</span></a></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -261,8 +204,7 @@
             2023/12/8
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -271,84 +213,71 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #03a9f4">Hexo</a>
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #03a9f4">前端</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #ffa2c4">前端</a>
+                <a href="/tags/Hexo/" style="color: #ff7d73">Hexo</a>
             </span>
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <blockquote>
-<h4 id="记录一些常用的Hexo命令-配置方法"><a href="#记录一些常用的Hexo命令-配置方法" class="headerlink" title="记录一些常用的Hexo命令&#x2F;配置方法"></a>记录一些常用的Hexo命令&#x2F;配置方法</h4></blockquote>
+<h4 id="记录一些常用的Hexo命令-配置方法">记录一些常用的Hexo命令/配置方法</h4>
+</blockquote>
 <br>
-
-<h4 id="1-部署相关"><a href="#1-部署相关" class="headerlink" title="1. 部署相关"></a>1. 部署相关</h4><p><strong>summary</strong></p>
+<h4 id="1-部署相关">1. 部署相关</h4>
+<p><strong>summary</strong></p>
 <p>撰写前</p>
-<pre><code class="line">hexo g -w
+<pre><code class="language-line">hexo g -w
 </code></pre>
 <p>撰写后</p>
 <pre><code>hexo d &amp;&amp; hexo s
 </code></pre>
-<p>调整CSS&#x2F;ejs文档（F5自动更新）</p>
+<p>调整CSS/ejs文档（F5自动更新）</p>
 <pre><code>hexo s
 </code></pre>
 <hr>
 <br>
-
 <p>将本地仓库生成展示页并且配置到GitHub（需要提前建立ssh链接）</p>
-<pre><code class="line">hexo c &amp;&amp; hexo g &amp;&amp; hexo d
+<pre><code class="language-line">hexo c &amp;&amp; hexo g &amp;&amp; hexo d
 </code></pre>
 <span id="more"></span>
-
 <br>
-
 <p>检查ssh链接</p>
-<pre><code class="line">ssh -T -v git@github.com
+<pre><code class="language-line">ssh -T -v git@github.com
 </code></pre>
 <br>
-
-<p>在本地仓库生成展示页并且配置到本地服务器<a href="localhost:4000">localhost:4000</a><br>一般用于预览</p>
-<pre><code class="line">hexo c &amp;&amp; hexo g &amp;&amp; hexo s
+<p>在本地仓库生成展示页并且配置到本地服务器<a href="localhost:4000">localhost:4000</a><br>
+一般用于预览</p>
+<pre><code class="language-line">hexo c &amp;&amp; hexo g &amp;&amp; hexo s
 </code></pre>
 <br>
-
 <p>修改端口</p>
-<pre><code class="line">hexo server -p [port]
+<pre><code class="language-line">hexo server -p [port]
 </code></pre>
 <br>
-
 <p>修改IP</p>
-<pre><code class="line">hexo server -i [IP]
+<pre><code class="language-line">hexo server -i [IP]
 </code></pre>
 <br>
-
 <p>监视文件变化并动态生成展示页面</p>
-<pre><code class="line">hexo generate --watch
+<pre><code class="language-line">hexo generate --watch
 hexo g -w
 </code></pre>
 <br>
-
-<h4 id="2-新建相关"><a href="#2-新建相关" class="headerlink" title="2. 新建相关"></a>2. 新建相关</h4><br>
-
-<p>新建文章&#x2F;页面</p>
-<pre><code class="line">hexo new [layout] [file_name]
+<h4 id="2-新建相关">2. 新建相关</h4>
+<br>
+<p>新建文章/页面</p>
+<pre><code class="language-line">hexo new [layout] [file_name]
 </code></pre>
-<p><b>布局layout:</b><br>默认值为post<br>可选值</p>
+<p><b>布局layout:</b><br>
+默认值为post<br>
+可选值</p>
 <table>
 <thead>
 <tr>
@@ -356,9 +285,10 @@ hexo g -w
 <th>path</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>post</td>
-<td>source&#x2F;_posts</td>
+<td>source/_posts</td>
 </tr>
 <tr>
 <td>page</td>
@@ -366,26 +296,25 @@ hexo g -w
 </tr>
 <tr>
 <td>draft</td>
-<td>source&#x2F;-drafts</td>
+<td>source/-drafts</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <br>
-
 <p>将草稿转为文章</p>
-<pre><code class="line">hexo publish [layout] [file_name]
+<pre><code class="language-line">hexo publish [layout] [file_name]
 </code></pre>
 <br>
-
 <p>使用模板新建</p>
-<pre><code class="line">hexo new [scaffold] [file_name]
+<pre><code class="language-line">hexo new [scaffold] [file_name]
 </code></pre>
-<p>此时Hexo会尝试在<b>&#x2F;scaffold</b>文件夹中寻找<b>scaffold.md</b>，并根据其内容新建文章</p>
+<p>此时Hexo会尝试在<b>/scaffold</b>文件夹中寻找<b>scaffold.md</b>，并根据其内容新建文章</p>
 <br>
-
-<h4 id="3-写作相关"><a href="#3-写作相关" class="headerlink" title="3. 写作相关"></a>3. 写作相关</h4><br>
-
-<p>使用<code>&lt;--! more --&gt;</code>以分隔文章的摘要以及正文<br>或者在<b>Front-matter</b>中设置<b>description</b>字段<br>eg.</p>
-<pre><code class="markdown">...
+<h4 id="3-写作相关">3. 写作相关</h4>
+<br>
+<p>使用<code>&lt;--! more --&gt;</code>以分隔文章的摘要以及正文或者在<b>Front-matter</b>中设置<b>description</b>字段<br>
+eg.</p>
+<pre><code class="language-markdown">...
 description: |
     [markdown]
     [markdown]
@@ -393,73 +322,50 @@ description: |
 </code></pre>
 <p>注意：<b>|</b> 和<b>缩进</b>是格式的一部分，不能省略</p>
 <br>
-
-<p>图片援引<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43401552/article/details/104805466">参考文章</a></p>
-<p><b>本地引用</b><br>在<b>&#x2F;source</b>里新建文件夹<b>images</b>，将图片统一放到<b>&#x2F;source&#x2F;images</b>中</p>
-<pre><code class="markdown">![](images/image_name.png)
+<p>图片援引<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43401552/article/details/104805466">参考文章</a></p>
+<p><b>本地引用</b>在<b>/source</b>里新建文件夹<b>images</b>，将图片统一放到<b>/source/images</b>中</p>
+<pre><code class="language-markdown">![](images/image_name.png)
 </code></pre>
-<p><b>网络引用</b><br>需要图床</p>
-<pre><code class="markdown">![image_name](image_link)
+<p><b>网络引用</b>需要图床</p>
+<pre><code class="language-markdown">![image_name](image_link)
 &lt;!-- following is useful by using html tags, too --&gt;
 &lt;img src=&quot;image_link&quot;&gt;
 &lt;!-- pay attention to write SRC, not SCR --&gt;
 </code></pre>
-<p><b>内部引用</b><br>将图片编码后储存在md文件后，直接调用</p>
-<pre><code class="markdown">![avatar][base64str]
+<p><b>内部引用</b>将图片编码后储存在md文件后，直接调用</p>
+<pre><code class="language-markdown">![avatar][base64str]
 [base64str]:data:image/png;base64,decoded_image_by_base64
 </code></pre>
-<p>base64编码方式 | 利用python脚本 &nbsp;<del>三体人语言就是NB</del></p>
-<pre><code class="python">import base64
+<p>base64编码方式 | 利用python脚本  <s>三体人语言就是NB</s></p>
+<pre><code class="language-python">import base64
 #base64 to image
-bs=&#39;iVBORw0KGgoAAAANSUhEUg....&#39; # 太长了省略
+bs='iVBORw0KGgoAAAANSUhEUg....' # 太长了省略
 imgdata=base64.b64decode(bs)
-file=open(&#39;2.jpg&#39;,&#39;wb&#39;)
+file=open('2.jpg','wb')
 file.write(imgdata)
 file.close()
 
 #image to base64
-f=open(&#39;723.png&#39;,&#39;rb&#39;) #二进制方式打开
+f=open('723.png','rb') #二进制方式打开
 ls_f=base64.b64encode(f.read()) #读取文件内容，转换为base64编码
 f.close()
 print(ls_f)
 </code></pre>
 <br>
-
 <p>空格打法</p>
-<pre><code class="markdown">&amp;nbsp; &lt;!--行内使用代表空格，单行使用代表换行，等价于&lt;br&gt;--&gt;
+<pre><code class="language-markdown">&amp;nbsp; &lt;!--行内使用代表空格，单行使用代表换行，等价于&lt;br&gt;--&gt;
 </code></pre>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -476,7 +382,6 @@ print(ls_f)
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -496,20 +401,7 @@ print(ls_f)
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -523,46 +415,6 @@ print(ls_f)
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

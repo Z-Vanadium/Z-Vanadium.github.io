@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,43 +160,27 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
@@ -245,8 +190,6 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC"><span class="toc-text">1 左值和右值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%BC%95%E5%85%A5"><span class="toc-text">1.1 引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%80%BC%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.2 表达式的值的类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E5%B7%A6%E5%8F%B3%E5%80%BC%E7%9A%84%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8"><span class="toc-text">1.3 左右值的内存使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E5%B7%A6%E5%80%BC"><span class="toc-text">1.4 左值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%8F%B3%E5%80%BC"><span class="toc-text">1.5 右值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BA%AF%E5%8F%B3%E5%80%BC%E5%92%8C%E5%B0%86%E4%BA%A1%E5%80%BC"><span class="toc-text">2 纯右值和将亡值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%BC%95%E5%85%A5"><span class="toc-text">2.1 引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E7%BA%AF%E5%8F%B3%E5%80%BC%E5%92%8C%E5%B0%86%E4%BA%A1%E5%80%BC"><span class="toc-text">2.2 纯右值和将亡值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89"><span class="toc-text">3 移动语义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89%E5%BC%95%E5%85%A5"><span class="toc-text">3.1 移动语义引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8"><span class="toc-text">3.2 右值引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-std-move-%E5%AE%9E%E7%8E%B0%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89"><span class="toc-text">3.3 std::move 实现移动语义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E5%B7%A6%E5%80%BC"><span class="toc-text">3.4 右值引用本身就是左值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E5%BC%95%E7%94%A8%E9%99%90%E5%AE%9A%E7%AC%A6"><span class="toc-text">3.5 引用限定符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%A7%BB%E5%8A%A8%E6%9E%84%E9%80%A0%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E7%A7%BB%E5%8A%A8%E8%B5%8B%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">4 移动构造运算符与移动赋值函数</span></a></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -261,8 +204,7 @@
             2024/3/20
         </span>
         
-           
-            <!--展示tags-->
+        
         <span class="tags">
             <span class="icon">
                 <i class="fa-solid fa-tags fa-fw"></i>
@@ -276,17 +218,8 @@
             
         </span>
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
         <blockquote>
 <p>这是 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rX4y1C72X/?spm_id_from=333.1007.top_right_bar_window_history.content.click">C++ 网课</a>学习笔记</p>
@@ -299,7 +232,7 @@
 <h3 id="1-左值和右值">1 左值和右值</h3>
 <h4 id="1-1-引入">1.1 引入</h4>
 <p>考虑这样一段代码</p>
-<pre><code class="c++">    int n;
+<pre><code class="language-c++">    int n;
     n = 1;
     1 = n;
 </code></pre>
@@ -323,7 +256,7 @@
 <p>回到形如 <code>foo() = 3;</code>, <code>m + 3 = 4;</code> 的语句, 套用我们刚才的分析, 可以发现, 不论是 <code>foo()</code> 还是 <code>m + 3</code>, 他们这个表达式所返回的值都是<strong>临时的</strong>, 不表征任何一个对象, 不关联任何一片内存, 因此尝试对其赋值的操作是不合法的</p>
 <p>由此, 假如我们改变 <code>foo()</code> 的定义, 让他返回一个不临时的变量, 是不是就可以对其赋值呢?</p>
 <p>答案是肯定的, 请看如下实例</p>
-<pre><code class="c++">int n;
+<pre><code class="language-c++">int n;
 int &amp;foo()&#123; // foo() 的返回值是 int&amp;, 这是一个引用, 因此是表征某一块确定的内存地址的
     return n;
 &#125;
@@ -357,13 +290,13 @@ int main()&#123;
 <p>不过我们也<strong>不能绝对</strong>的说右值就不能占用内存, 有的时候, 右值也是可以占用内存的</p>
 <p>与之类似的是, 左值表征了一个对象, 从概念上来说左值一定要占用内存, 但是有趣的是, 有的编译器会对一些比较简单的情况做出优化, 这时候左值就不占用内存了</p>
 <p>例如</p>
-<pre><code class="c++">int foo()&#123;
+<pre><code class="language-c++">int foo()&#123;
     int n = 1;
     return n + 1;
 &#125;
 
 </code></pre>
-<pre><code class="assembly">foo():
+<pre><code class="language-assembly">foo():
     mov eax, 2
     ret
 </code></pre>
@@ -440,7 +373,7 @@ int main()&#123;
 <h4 id="2-1-引入">2.1 引入</h4>
 <p>对于 C++ 来说, 类和结构会对简单的左值和右值的区分造成困惑</p>
 <p>考虑代码:</p>
-<pre><code class="c++">typedef struct&#123;
+<pre><code class="language-c++">typedef struct&#123;
     int x, y, z;
 &#125;Foo;
 
@@ -460,7 +393,7 @@ int main()&#123;
 <p>根据我们在上一章节的讨论, <code>Func()</code>的返回值应该是一个右值, 他不表征一块具体的内存, 但是他又必须表征一块内存, 才能通过 <code>.</code> 访问字段 <code>y</code></p>
 <p>这样矛盾的表达式就带来了困惑</p>
 <p>再考虑代码</p>
-<pre><code class="c++">const int &amp; cr = 1;
+<pre><code class="language-c++">const int &amp; cr = 1;
 </code></pre>
 <p>我们知道, 1 是一个右值, 执行上述赋值语句, 会创建一个临时变量以匹配左值的类型, 那么这个临时变量又从何而来?</p>
 <details open>
@@ -546,7 +479,7 @@ int main()&#123;
 <p><strong>有些时候</strong>, 通过类来构造类并不会额外申请一块内存来复制构造, 会直接交换两个类的指针, 这样的构造方法, 我们称为移动语义 moving semantics</p>
 <p>这样的构造方法, 可以节省内存的开销(学 C 人的执着可能就是这样了吧)</p>
 <p>如下代码(省略多余代码)</p>
-<pre><code class="c++">template&lt;typename T&gt;
+<pre><code class="language-c++">template&lt;typename T&gt;
 class Container&#123;
 private:
     int data, size, capa;
@@ -563,7 +496,7 @@ Container&lt;T&gt;&amp; Container&lt;T&gt;::operator=(/* some type */ rhs)&#123;
 &#125;
 </code></pre>
 <p>假设 a 表征内存块 memory_1, 当我们执行</p>
-<pre><code class="c++">    Container&lt;int&gt; a;
+<pre><code class="language-c++">    Container&lt;int&gt; a;
     a = Container&lt;int&gt;();
 </code></pre>
 <p>时, 实际上发生的是构造函数 <code>Container&lt;int&gt;()</code> 返回了一个临时对象 c, 表征内存块 memory_2;</p>
@@ -588,7 +521,7 @@ Container&lt;T&gt;&amp; Container&lt;T&gt;::operator=(/* some type */ rhs)&#123;
 <p>为了解决问题, C++11 引入了右值引用 rvalue reference</p>
 <p>对于类型 X, 称 X&amp;&amp; 为右值引用; 与此对应的 X&amp; 被改称为左值引用</p>
 <p>那么之前的函数可以写作</p>
-<pre><code class="c++">template&lt;typename T&gt;
+<pre><code class="language-c++">template&lt;typename T&gt;
 Container&lt;T&gt;&amp; Container&lt;T&gt;::operator=(Container&lt;T&gt;&amp;&amp; rhs)&#123;
     std::swap(data, rhs.data);
     std::swap(size, rhs.size);
@@ -597,13 +530,13 @@ Container&lt;T&gt;&amp; Container&lt;T&gt;::operator=(Container&lt;T&gt;&amp;&am
 &#125;
 </code></pre>
 <p>右值引用只能绑定右值, 举例</p>
-<pre><code class="c++">int z = 1;
+<pre><code class="language-c++">int z = 1;
 int&amp;&amp; y = z;    // ERROR
 int&amp;&amp; x = 1;    // OK
 </code></pre>
 <p>左值引用和右值引用在能做什么事情方面没有区别, 区别是什么值可以绑定给这个引用</p>
 <p>移动语义实现移动构造函数</p>
-<pre><code class="c++">template&lt;typename T&gt;
+<pre><code class="language-c++">template&lt;typename T&gt;
 Container&lt;T&gt;::Container(Container&lt;T&gt;&amp;&amp; rhs) : data(rhs.data), size(rhs.size), capa(rhs.capa)&#123;
     rhs.data = nullptr; // 防止悬垂指针
 &#125;
@@ -612,7 +545,7 @@ Container&lt;T&gt;::Container(Container&lt;T&gt;&amp;&amp; rhs) : data(rhs.data)
 <p>所谓临时, 其实就是指资源是否可以复用</p>
 <p>lvalue 不可复用, prvalue 需要物化后才能复用, xvalue 是可以复用的</p>
 <p>同理, 我们可以用移动语义优化交换函数</p>
-<pre><code class="c++">template&lt;class T&gt;
+<pre><code class="language-c++">template&lt;class T&gt;
 void swap(T&amp; a, T&amp; b)&#123;
     T tmp((T&amp;&amp;)(a));
     a = (T&amp;&amp;)(b);
@@ -621,7 +554,7 @@ void swap(T&amp; a, T&amp; b)&#123;
 </code></pre>
 <p>这样的写法通过强制类型转换把 a, b, tmp 的类型都转化为右值引用, 避免了编译器误解我们想要通过移动语义优化操作的本意</p>
 <p>上述写法还可以优化</p>
-<pre><code class="c++">template&lt;class T&gt;
+<pre><code class="language-c++">template&lt;class T&gt;
 void swap(T&amp; a, T&amp; b)&#123;
     T tmp(static_cast&lt;T&amp;&amp;&gt;(a));
     a = static_cast&lt;T&amp;&amp;&gt;(b);
@@ -632,7 +565,7 @@ void swap(T&amp; a, T&amp; b)&#123;
 <p> </p>
 <h4 id="3-3-std-move-实现移动语义">3.3 std::move 实现移动语义</h4>
 <p>为了便于表达意图, C++11 引入了 <code>std::move</code> 来将参数转化为右值</p>
-<pre><code class="c++">template&lt;class T&gt;
+<pre><code class="language-c++">template&lt;class T&gt;
 void swap(T&amp; a, T&amp; b)&#123;
     T tmp(std::move(a));
     a = std::move(b);
@@ -640,7 +573,7 @@ void swap(T&amp; a, T&amp; b)&#123;
 &#125;
 </code></pre>
 <p>编写测试程序如下</p>
-<pre><code class="c++">struct Foo&#123;
+<pre><code class="language-c++">struct Foo&#123;
     Foo()&#123;&#125;
     Foo(const Foo&amp;)&#123;
         std::cout&lt;&lt;&quot;copy construct&quot;&lt;&lt;std::endl;
@@ -679,7 +612,7 @@ move assign
 <p> </p>
 <h4 id="3-4-右值引用本身就是左值">3.4 右值引用本身就是左值</h4>
 <p>运行程序</p>
-<pre><code class="c++">void foo(int&amp;&amp; x)&#123;
+<pre><code class="language-c++">void foo(int&amp;&amp; x)&#123;
     std::cout&lt;&lt;&quot;int&amp;&amp;: &quot;&lt;&lt;x&lt;&lt;std::endl;
 &#125;
 
@@ -726,7 +659,7 @@ int&amp;: 2
 <p>那么 C++ 为什么要这么设计呢?</p>
 <p>回到移动语义之初, 当我们书写 <code>x = foo();</code> 这样的语句的时候, 我们是明确知道使用移动语义而不是拷贝构造更优秀且不会出错的, 但如果我们将右值引用视作右值</p>
 <p>考虑函数</p>
-<pre><code class="c++">template&lt;typename T&gt;
+<pre><code class="language-c++">template&lt;typename T&gt;
 void foo(Container&lt;T&gt;&amp;&amp; x)&#123;
     Container&lt;T&gt; y = x;
     // ...
@@ -737,7 +670,7 @@ void foo(Container&lt;T&gt;&amp;&amp; x)&#123;
 <p> </p>
 <h4 id="3-5-引用限定符">3.5 引用限定符</h4>
 <p>C++11 中引入了引用限定符对非静态成员函数做修饰, 用来根据调用者的值的类型来选择调用不同的重载</p>
-<pre><code class="c++">struct S&#123;
+<pre><code class="language-c++">struct S&#123;
     void f()&amp;;  // 限定为左值引用
     void f()&amp;&amp;; // 限定为右值引用
 &#125;;
@@ -772,36 +705,15 @@ void foo(Container&lt;T&gt;&amp;&amp; x)&#123;
 </div>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -818,7 +730,6 @@ void foo(Container&lt;T&gt;&amp;&amp; x)&#123;
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -838,20 +749,7 @@ void foo(Container&lt;T&gt;&amp;&amp; x)&#123;
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -865,46 +763,6 @@ void foo(Container&lt;T&gt;&amp;&amp; x)&#123;
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 

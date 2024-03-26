@@ -9,12 +9,9 @@
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://cdn.staticfile.org" />
-<script src="https://cdn.staticfile.org/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.5.1/css/all.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.loli.net" />
 <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
 <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
@@ -23,19 +20,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
-
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://cdn.staticfile.org/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.13.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -45,50 +37,19 @@
 
 
 
-<script src="https://cdn.staticfile.org/waline/2.15.8/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline.min.css" />
-<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.15.8/waline-meta.min.css" />
-
 
 
 
 <link rel="stylesheet" href="/css/main.css" />
 
-<!-- post read percent calculate and update -->
-<script>
-    function getScrollPercent() {
-        const scrollHeight = document.documentElement.scrollHeight;
-        const clientHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-        return scrollPercent;
-        }
-    window.onscroll = function() {
-        const scrollPercent = getScrollPercent();
-        const scrollPercentageElement = document.getElementById("read-percent");
-        scrollPercentageElement.textContent = scrollPercent.toFixed(0);
-    };
-</script>
-
-<script>
-    function BackToTop(){
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    };
-</script>
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 <body>
     <div id="layout">
         <transition name="fade">
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 | PC端阅读体验最佳</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -100,32 +61,32 @@
         </a>
         
         <a href="/">
-            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house fa-fw"></i>
             <span>&ensp;主页</span>
         </a>
         
         <a href="/about">
-            <i class="fa-solid fa-id-card"></i>
+            <i class="fa-solid fa-id-card fa-fw"></i>
             <span>&ensp;关于</span>
         </a>
         
         <a href="/archives">
-            <i class="fa-solid fa-box-archive"></i>
+            <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;归档</span>
         </a>
         
         <a href="/categories">
-            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-solid fa-bookmark fa-fw"></i>
             <span>&ensp;分类</span>
         </a>
         
         <a href="/tags">
-            <i class="fa-solid fa-tags"></i>
+            <i class="fa-solid fa-tags fa-fw"></i>
             <span>&ensp;标签</span>
         </a>
         
         <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-note-sticky fa-fw"></i>
             <span>&ensp;笔记</span>
         </a>
         
@@ -199,57 +160,36 @@
 <transition name="fade">
     <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
 </transition>
+
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <!--card-->
 <div class="right-infos">
 
     <div id="home-card-in-post">    
         <div id="home-card">
-        <div id="card-style" style="max-height: 75vh;">
+        <div id="card-style">
     <div id="card-div">
         <div class="avatar">
             <img src="/images/avatar.jpg" alt="avatar" />
         </div>
-        <div class="name" style="font-size:x-large;"><b>Vanadium</b></div>
+        <div class="name">Vanadium</div>
         <div class="description">
             <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
 
         </div>
         
         
-
-        <div class="friend-links">
-            <div class="name"><b>文章推荐&快速访问</b></div>
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/26/share-websites/">- 软件/网站搜集分享页</a>
-            </div>               
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/17/cpp-stl/">- [文章] C++ | STL I~III</a>
-            </div>            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/apps">APPs</a>
-            </div>
-        </div>
     </div>
-    
-    
-    
 </div>
-
 
         </div>
     </div>
 
     <div id="toc" class="toc-article">
         <div class="toc-title">目录</div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%BF%81%E7%A7%BB"><span class="toc-text">博客图片迁移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E5%B1%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E7%89%88%E4%B8%8A%E7%BA%BFd"><span class="toc-text">
-小屋评论系统测试版上线:D</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9D%E5%90%84%E4%BD%8D%E5%85%83%E6%97%A6%E5%BF%AB%E4%B9%90-%E5%BF%AB%E4%B9%90%E5%85%83%E6%97%A6"><span class="toc-text">
-祝各位元旦快乐, 快乐元旦!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2%E5%B7%B2%E7%BB%8F%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95%E7%82%B9%E5%87%BB%E5%B7%A6%E4%B8%8A%E8%A7%92%E6%88%96%E8%80%85%E8%BF%99%E9%87%8C%E8%AE%BF%E9%97%AE"><span class="toc-text">友链页面已经建设完毕，点击左上角或者这里访问!!!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A2%E8%BF%8E%E5%8F%82%E8%A7%82vanadium%E7%9A%84%E5%B0%8F%E5%B1%8B"><span class="toc-text">欢迎参观Vanadium的小屋!!!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hello-world."><span class="toc-text">Hello,
-world.</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%82%E6%97%B6%E5%85%B3%E9%97%AD%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">暂时关闭评论系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%BF%81%E7%A7%BB"><span class="toc-text">博客图片迁移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i-class-fa-regular-fa-circle-check-i-%E5%B0%8F%E5%B1%8B%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E7%89%88%E4%B8%8A%E7%BA%BF-D"><span class="toc-text"> 小屋评论系统测试版上线:D</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i-class-fa-regular-fa-circle-check-i-%E7%A5%9D%E5%90%84%E4%BD%8D%E5%85%83%E6%97%A6%E5%BF%AB%E4%B9%90-%E5%BF%AB%E4%B9%90%E5%85%83%E6%97%A6"><span class="toc-text"> 祝各位元旦快乐, 快乐元旦!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i-class-fa-regular-fa-circle-check-i-%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2%E5%B7%B2%E7%BB%8F%E5%BB%BA%E8%AE%BE%E5%AE%8C%E6%AF%95%EF%BC%8C%E7%82%B9%E5%87%BB%E5%B7%A6%E4%B8%8A%E8%A7%92%E6%88%96%E8%80%85%E8%BF%99%E9%87%8C%E8%AE%BF%E9%97%AE"><span class="toc-text">友链页面已经建设完毕，点击左上角或者这里访问!!!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i-class-fa-regular-fa-circle-check-i-%E6%AC%A2%E8%BF%8E%E5%8F%82%E8%A7%82Vanadium%E7%9A%84%E5%B0%8F%E5%B1%8B"><span class="toc-text">欢迎参观Vanadium的小屋!!!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i-class-fa-regular-fa-circle-check-i-Hello-world"><span class="toc-text">Hello, world.</span></a></li></ol>
     </div>      
 </div>
-
-
 <!--end-->
 
 <div class="article">
@@ -265,108 +205,72 @@ world.</span></a></li></ol>
         </span>
         
         
-
-
-        
-
-
     </div>
-
-    <!--<span class="date"><b>最后更新时间,请注意时效性!  </b><span></span></span>--> 
-
-      
-        <!--展示page的完整内容-->
+    
     <div class="content" v-pre>
-        <h3 id="博客图片迁移">博客图片迁移</h3>
-<p>由于之前拿 Github 做图床, 访问时的速度受到极大限制,
-现准备逐渐迁移图片到 <a
-target="_blank" rel="noopener" href="https://www.imageoss.com/">ImageOss</a></p>
-<p>2024/03/21 by Vanadium</p>
+        <h3 id="暂时关闭评论系统">暂时关闭评论系统</h3>
+<p>由于博客代码重构, 评论系统暂时关闭, 如有联系需要请参考 <strong>关于</strong></p>
+<p>2024/03/25 by Vanadium</p>
 <span id="more"></span>
-<hr />
+<h3 id="博客图片迁移">博客图片迁移</h3>
+<p>由于之前拿 Github 做图床, 访问时的速度受到极大限制, 现准备逐渐迁移图片到 <a target="_blank" rel="noopener" href="https://www.imageoss.com/">ImageOss</a></p>
+<p>2024/03/21 by Vanadium</p>
+<hr>
 <p> </p>
-<h3
-id="小屋评论系统测试版上线d"><i class="fa-regular fa-circle-check"></i>
-小屋评论系统测试版上线:D</h3>
-<p><i class="fa-regular fa-circle-check"></i>评论系统基于Waline,
-部署在leancloud(国际版), 有什么问题都和我没关系(才怪啊喂)
-<i class="fa-regular fa-circle-check"></i>测试版的评论系统有以下特性: -
-需要登录(建议使用: github) - 显示ip, 浏览器, 操作系统(后期可能隐藏) -
-评论框样式不符合小屋整体风格(烤柿粥后必改, 目前没空QwQ)</p>
-<p><i class="fa-regular fa-circle-check"></i>此外就没有什么好说的啦,
-评论区可以自♂由讨论<del>当然我也可以自♂由删评</del>(拽)</p>
+<h3 id="i-class-fa-regular-fa-circle-check-i-小屋评论系统测试版上线-D"><i class="fa-regular fa-circle-check"></i> 小屋评论系统测试版上线:D</h3>
+<p><i class="fa-regular fa-circle-check"></i>评论系统基于Waline, 部署在leancloud(国际版), 有什么问题都和我没关系(才怪啊喂)<br>
+<i class="fa-regular fa-circle-check"></i>测试版的评论系统有以下特性:</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>需要登录(建议使用: github)</p>
+</li>
+<li class="lvl-2">
+<p>显示ip, 浏览器, 操作系统(后期可能隐藏)</p>
+</li>
+<li class="lvl-2">
+<p>评论框样式不符合小屋整体风格(烤柿粥后必改, 目前没空QwQ)</p>
+</li>
+</ul>
+<p><i class="fa-regular fa-circle-check"></i>此外就没有什么好说的啦, 评论区可以自♂由讨论<s>当然我也可以自♂由删评</s>(拽)</p>
 <p>2024/01/10 by Vanadium</p>
 <p> </p>
-<hr />
-<h3
-id="祝各位元旦快乐-快乐元旦"><i class="fa-regular fa-circle-check"></i>
-祝各位元旦快乐, 快乐元旦!</h3>
+<hr>
+<h3 id="i-class-fa-regular-fa-circle-check-i-祝各位元旦快乐-快乐元旦"><i class="fa-regular fa-circle-check"></i> 祝各位元旦快乐, 快乐元旦!</h3>
 <blockquote>
-<p>东风夜放花千树。更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。
-蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。
-[宋]辛弃疾<青玉案 元夕></p>
+<p>东风夜放花千树。更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。<br>
+[宋]辛弃疾&lt;青玉案 元夕&gt;</p>
 </blockquote>
 <p>2023/12/29 by Vanadium</p>
 <p> </p>
-<hr />
-<h3
-id="友链页面已经建设完毕点击左上角或者这里访问"><i class="fa-regular fa-circle-check"></i>友链页面已经建设完毕，点击左上角或者<a
-target="_blank" rel="noopener" href="https://z-vanadium.github.io/friendlinks/">这里</a>访问!!!</h3>
-<p><i class="fa-regular fa-circle-check"></i>友链页面是由Vanadium自己作词、作曲、编舞的<strong>原创界面</strong>
-<i class="fa-regular fa-circle-check"></i>因此可以更高自由度地支持DIY！
-<i class="fa-regular fa-circle-check"></i>速速与我<strong>交换友链</strong>，如果你觉得有必要在你的Blog中分享Vanadium的小屋！
+<hr>
+<h3 id="i-class-fa-regular-fa-circle-check-i-友链页面已经建设完毕，点击左上角或者这里访问"><i class="fa-regular fa-circle-check"></i>友链页面已经建设完毕，点击左上角或者<a target="_blank" rel="noopener" href="https://z-vanadium.github.io/friendlinks/">这里</a>访问!!!</h3>
+<p><i class="fa-regular fa-circle-check"></i>友链页面是由Vanadium自己作词、作曲、编舞的<strong>原创界面</strong><br>
+<i class="fa-regular fa-circle-check"></i>因此可以更高自由度地支持DIY！<i class="fa-regular fa-circle-check"></i>速速与我<strong>交换友链</strong>，如果你觉得有必要在你的Blog中分享Vanadium的小屋！<br>
 2023/12/14 by Vanadium</p>
 <p> </p>
-<hr />
-<h3
-id="欢迎参观vanadium的小屋"><i class="fa-regular fa-circle-check"></i>欢迎参观<strong>Vanadium的小屋</strong>!!!</h3>
-<p><i class="fa-regular fa-circle-check"></i>这里是一个<strong>学习性质</strong>的布洛格
-<i class="fa-regular fa-circle-check"></i>呆呆的<strong>Vanadium</strong>会在这里学习布洛格的开发，也会分享自己的学习笔记
-<i class="fa-regular fa-circle-check"></i>希望在这里你能玩的开心，更多秘密就请你自己探索吧嘿嘿
+<hr>
+<h3 id="i-class-fa-regular-fa-circle-check-i-欢迎参观Vanadium的小屋"><i class="fa-regular fa-circle-check"></i>欢迎参观<strong>Vanadium的小屋</strong>!!!</h3>
+<p><i class="fa-regular fa-circle-check"></i>这里是一个<strong>学习性质</strong>的布洛格<i class="fa-regular fa-circle-check"></i>呆呆的<strong>Vanadium</strong>会在这里学习布洛格的开发，也会分享自己的学习笔记<i class="fa-regular fa-circle-check"></i>希望在这里你能玩的开心，更多秘密就请你自己探索吧嘿嘿<br>
 2023/12/8 by Vanadium</p>
 <p> </p>
-<hr />
-<h3 id="hello-world."><i class="fa-regular fa-circle-check"></i>Hello,
-world.</h3>
+<hr>
+<h3 id="i-class-fa-regular-fa-circle-check-i-Hello-world"><i class="fa-regular fa-circle-check"></i>Hello, world.</h3>
 <p><i class="fa-regular fa-circle-check"></i>其实这个Blog在今年(2023)九月份就具有雏形了，只是没有时间精力打理，现在利用Git+Hexo可以方便地修改辣</p>
-<p><i class="fa-regular fa-circle-check"></i>近期打算
-打算先把公众号“Vanadium的小屋”里面有价值的文章搬运过来，顺便熟悉一下md的语法和这个主题的特性</p>
-<p><i class="fa-regular fa-circle-check"></i>长期发展
-一边可以同步更新一下公众号文章，一边可以当作笔记Blog用 2023/9/26 by
-Vanadium</p>
-<hr />
+<p><i class="fa-regular fa-circle-check"></i>近期打算打算先把公众号“Vanadium的小屋”里面有价值的文章搬运过来，顺便熟悉一下md的语法和这个主题的特性</p>
+<p><i class="fa-regular fa-circle-check"></i>长期发展一边可以同步更新一下公众号文章，一边可以当作笔记Blog用<br>
+2023/9/26 by Vanadium</p>
+<hr>
 
     </div>
-
-
-
-
-    
-
-<!--friendlinks-->
-
-
-
-
-<!--end-->
-
     
     
     
     
-        <!-- 样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container">
-            </div>
-        </div>
-        
     
     
-
-    <div id="read-percent">0</div>
-    <button id="back-to-top" onclick="BackToTop()">^</button>
+    
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -383,7 +287,6 @@ Vanadium</p>
         </div>
         
     </div>
-
 
     <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
     <script>
@@ -403,20 +306,7 @@ Vanadium</p>
     setInterval("createtime()",250);
     </script>
 
-
-    <div style="margin: 15px;">
-        <span id="ip">IP获取中...</span>
-    </div>
-    <script>
-        fetch("https://v.foreverhyx.top/ip-api?usr=Vanadium")
-            .then(response => response.json())
-                .then(data => {
-                    var sentence = document.getElementById("ip")
-                    sentence.innerText = data.val;
-                })
-    </script>
 </footer>
-
         </div>
         
         <transition name="fade">
@@ -430,46 +320,6 @@ Vanadium</p>
     
     
 
-
-<script>
-    Waline.init({
-        el: "#waline-container",
-        serverURL: "https://waline-vanadiumz.vercel.app",
-        commentCount: true,
-        pageview: false,
-        emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(","),
-        meta: "nick,mail,link".split(","),
-        requiredMeta: "nick".split(","),
-        lang: "zh-CN",
-        wordLimit: 0,
-        pageSize: "10",
-        login: "force",
-        
-    });
-</script>
-
-
-    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-    <script>
-        const locale = {
-            placeholder: "不乖乖评论会被打屁股的哦",
-        };
-        Waline.init({
-            el: '#waline-container',
-            serverURL: "https://waline-vanadiumz.vercel.app",
-            commentCount: "true",
-            pageview: "false",
-            emoji: "https://unpkg.com/@waline/emojis@1.2.0/weibo,https://unpkg.com/@waline/emojis@1.2.0/alus,https://unpkg.com/@waline/emojis@1.2.0/bilibili,https://unpkg.com/@waline/emojis@1.2.0/qq,https://unpkg.com/@waline/emojis@1.2.0/tieba,https://unpkg.com/@waline/emojis@1.2.0/tw-emoji".split(','),
-            meta: "nick,mail,link".split(','),
-            requiredMeta: "nick".split(','),
-            lang: "zh-CN",
-            wordLimit: parseInt("0"),
-            pageSize: "10",
-            login: "force",
-            locale,
-        });
-    </script>
-    
 
 
 
