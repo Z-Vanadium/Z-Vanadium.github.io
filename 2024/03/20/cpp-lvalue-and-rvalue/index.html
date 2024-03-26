@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>C++ | 右值引用 &amp; 移动语义 | Vanadium的小屋</title>
+    <title>cpp | 右值引用 &amp; 移动语义 | Vanadium的小屋</title>
     <meta name="author" content="Vanadium" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -24,7 +24,7 @@
 <script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link
     rel="stylesheet"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
 />
 <script src="/js/lib/highlight.js"></script>
 
@@ -199,7 +199,7 @@
 
 <div class="article">
     <div>
-        <h1>C++ | 右值引用 &amp; 移动语义</h1>
+        <h1>cpp | 右值引用 &amp; 移动语义</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -218,7 +218,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/C-C/" style="color: #00a596">C/C++</a>
+                <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
             </span>
             
         </span>
@@ -227,7 +227,7 @@
     
     <div class="content" v-pre>
         <blockquote>
-<p>这是 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rX4y1C72X/?spm_id_from=333.1007.top_right_bar_window_history.content.click">C++ 网课</a>学习笔记</p>
+<p>这是 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rX4y1C72X/?spm_id_from=333.1007.top_right_bar_window_history.content.click">cpp 网课</a>学习笔记</p>
 </blockquote>
 <span id="more"></span>
 <!--
@@ -237,7 +237,7 @@
 <h3 id="1-左值和右值">1 左值和右值</h3>
 <h4 id="1-1-引入">1.1 引入</h4>
 <p>考虑这样一段代码</p>
-<pre><code class="language-c++">    int n;
+<pre><code class="language-C++">    int n;
     n = 1;
     1 = n;
 </code></pre>
@@ -261,7 +261,7 @@
 <p>回到形如 <code>foo() = 3;</code>, <code>m + 3 = 4;</code> 的语句, 套用我们刚才的分析, 可以发现, 不论是 <code>foo()</code> 还是 <code>m + 3</code>, 他们这个表达式所返回的值都是<strong>临时的</strong>, 不表征任何一个对象, 不关联任何一片内存, 因此尝试对其赋值的操作是不合法的</p>
 <p>由此, 假如我们改变 <code>foo()</code> 的定义, 让他返回一个不临时的变量, 是不是就可以对其赋值呢?</p>
 <p>答案是肯定的, 请看如下实例</p>
-<pre><code class="language-c++">int n;
+<pre><code class="language-C++">int n;
 int &amp;foo()&#123; // foo() 的返回值是 int&amp;, 这是一个引用, 因此是表征某一块确定的内存地址的
     return n;
 &#125;
@@ -295,7 +295,7 @@ int main()&#123;
 <p>不过我们也<strong>不能绝对</strong>的说右值就不能占用内存, 有的时候, 右值也是可以占用内存的</p>
 <p>与之类似的是, 左值表征了一个对象, 从概念上来说左值一定要占用内存, 但是有趣的是, 有的编译器会对一些比较简单的情况做出优化, 这时候左值就不占用内存了</p>
 <p>例如</p>
-<pre><code class="language-c++">int foo()&#123;
+<pre><code class="language-C++">int foo()&#123;
     int n = 1;
     return n + 1;
 &#125;
@@ -378,7 +378,7 @@ int main()&#123;
 <h4 id="2-1-引入">2.1 引入</h4>
 <p>对于 C++ 来说, 类和结构会对简单的左值和右值的区分造成困惑</p>
 <p>考虑代码:</p>
-<pre><code class="language-c++">typedef struct&#123;
+<pre><code class="language-C++">typedef struct&#123;
     int x, y, z;
 &#125;Foo;
 
@@ -398,7 +398,7 @@ int main()&#123;
 <p>根据我们在上一章节的讨论, <code>Func()</code>的返回值应该是一个右值, 他不表征一块具体的内存, 但是他又必须表征一块内存, 才能通过 <code>.</code> 访问字段 <code>y</code></p>
 <p>这样矛盾的表达式就带来了困惑</p>
 <p>再考虑代码</p>
-<pre><code class="language-c++">const int &amp; cr = 1;
+<pre><code class="language-C++">const int &amp; cr = 1;
 </code></pre>
 <p>我们知道, 1 是一个右值, 执行上述赋值语句, 会创建一个临时变量以匹配左值的类型, 那么这个临时变量又从何而来?</p>
 <details open>
@@ -484,7 +484,7 @@ int main()&#123;
 <p><strong>有些时候</strong>, 通过类来构造类并不会额外申请一块内存来复制构造, 会直接交换两个类的指针, 这样的构造方法, 我们称为移动语义 moving semantics</p>
 <p>这样的构造方法, 可以节省内存的开销(学 C 人的执着可能就是这样了吧)</p>
 <p>如下代码(省略多余代码)</p>
-<pre><code class="language-c++">template&lt;typename T&gt;
+<pre><code class="language-C++">template&lt;typename T&gt;
 class Container&#123;
 private:
     int data, size, capa;
@@ -501,7 +501,7 @@ Container&lt;T&gt;&amp; Container&lt;T&gt;::operator=(/* some type */ rhs)&#123;
 &#125;
 </code></pre>
 <p>假设 a 表征内存块 memory_1, 当我们执行</p>
-<pre><code class="language-c++">    Container&lt;int&gt; a;
+<pre><code class="language-C++">    Container&lt;int&gt; a;
     a = Container&lt;int&gt;();
 </code></pre>
 <p>时, 实际上发生的是构造函数 <code>Container&lt;int&gt;()</code> 返回了一个临时对象 c, 表征内存块 memory_2;</p>
@@ -526,7 +526,7 @@ Container&lt;T&gt;&amp; Container&lt;T&gt;::operator=(/* some type */ rhs)&#123;
 <p>为了解决问题, C++11 引入了右值引用 rvalue reference</p>
 <p>对于类型 X, 称 X&amp;&amp; 为右值引用; 与此对应的 X&amp; 被改称为左值引用</p>
 <p>那么之前的函数可以写作</p>
-<pre><code class="language-c++">template&lt;typename T&gt;
+<pre><code class="language-C++">template&lt;typename T&gt;
 Container&lt;T&gt;&amp; Container&lt;T&gt;::operator=(Container&lt;T&gt;&amp;&amp; rhs)&#123;
     std::swap(data, rhs.data);
     std::swap(size, rhs.size);
@@ -535,13 +535,13 @@ Container&lt;T&gt;&amp; Container&lt;T&gt;::operator=(Container&lt;T&gt;&amp;&am
 &#125;
 </code></pre>
 <p>右值引用只能绑定右值, 举例</p>
-<pre><code class="language-c++">int z = 1;
+<pre><code class="language-C++">int z = 1;
 int&amp;&amp; y = z;    // ERROR
 int&amp;&amp; x = 1;    // OK
 </code></pre>
 <p>左值引用和右值引用在能做什么事情方面没有区别, 区别是什么值可以绑定给这个引用</p>
 <p>移动语义实现移动构造函数</p>
-<pre><code class="language-c++">template&lt;typename T&gt;
+<pre><code class="language-C++">template&lt;typename T&gt;
 Container&lt;T&gt;::Container(Container&lt;T&gt;&amp;&amp; rhs) : data(rhs.data), size(rhs.size), capa(rhs.capa)&#123;
     rhs.data = nullptr; // 防止悬垂指针
 &#125;
@@ -550,7 +550,7 @@ Container&lt;T&gt;::Container(Container&lt;T&gt;&amp;&amp; rhs) : data(rhs.data)
 <p>所谓临时, 其实就是指资源是否可以复用</p>
 <p>lvalue 不可复用, prvalue 需要物化后才能复用, xvalue 是可以复用的</p>
 <p>同理, 我们可以用移动语义优化交换函数</p>
-<pre><code class="language-c++">template&lt;class T&gt;
+<pre><code class="language-C++">template&lt;class T&gt;
 void swap(T&amp; a, T&amp; b)&#123;
     T tmp((T&amp;&amp;)(a));
     a = (T&amp;&amp;)(b);
@@ -559,7 +559,7 @@ void swap(T&amp; a, T&amp; b)&#123;
 </code></pre>
 <p>这样的写法通过强制类型转换把 a, b, tmp 的类型都转化为右值引用, 避免了编译器误解我们想要通过移动语义优化操作的本意</p>
 <p>上述写法还可以优化</p>
-<pre><code class="language-c++">template&lt;class T&gt;
+<pre><code class="language-C++">template&lt;class T&gt;
 void swap(T&amp; a, T&amp; b)&#123;
     T tmp(static_cast&lt;T&amp;&amp;&gt;(a));
     a = static_cast&lt;T&amp;&amp;&gt;(b);
@@ -570,7 +570,7 @@ void swap(T&amp; a, T&amp; b)&#123;
 <p> </p>
 <h4 id="3-3-std-move-实现移动语义">3.3 std::move 实现移动语义</h4>
 <p>为了便于表达意图, C++11 引入了 <code>std::move</code> 来将参数转化为右值</p>
-<pre><code class="language-c++">template&lt;class T&gt;
+<pre><code class="language-C++">template&lt;class T&gt;
 void swap(T&amp; a, T&amp; b)&#123;
     T tmp(std::move(a));
     a = std::move(b);
@@ -578,7 +578,7 @@ void swap(T&amp; a, T&amp; b)&#123;
 &#125;
 </code></pre>
 <p>编写测试程序如下</p>
-<pre><code class="language-c++">struct Foo&#123;
+<pre><code class="language-C++">struct Foo&#123;
     Foo()&#123;&#125;
     Foo(const Foo&amp;)&#123;
         std::cout&lt;&lt;&quot;copy construct&quot;&lt;&lt;std::endl;
@@ -617,7 +617,7 @@ move assign
 <p> </p>
 <h4 id="3-4-右值引用本身就是左值">3.4 右值引用本身就是左值</h4>
 <p>运行程序</p>
-<pre><code class="language-c++">void foo(int&amp;&amp; x)&#123;
+<pre><code class="language-C++">void foo(int&amp;&amp; x)&#123;
     std::cout&lt;&lt;&quot;int&amp;&amp;: &quot;&lt;&lt;x&lt;&lt;std::endl;
 &#125;
 
@@ -664,7 +664,7 @@ int&amp;: 2
 <p>那么 C++ 为什么要这么设计呢?</p>
 <p>回到移动语义之初, 当我们书写 <code>x = foo();</code> 这样的语句的时候, 我们是明确知道使用移动语义而不是拷贝构造更优秀且不会出错的, 但如果我们将右值引用视作右值</p>
 <p>考虑函数</p>
-<pre><code class="language-c++">template&lt;typename T&gt;
+<pre><code class="language-C++">template&lt;typename T&gt;
 void foo(Container&lt;T&gt;&amp;&amp; x)&#123;
     Container&lt;T&gt; y = x;
     // ...
@@ -675,7 +675,7 @@ void foo(Container&lt;T&gt;&amp;&amp; x)&#123;
 <p> </p>
 <h4 id="3-5-引用限定符">3.5 引用限定符</h4>
 <p>C++11 中引入了引用限定符对非静态成员函数做修饰, 用来根据调用者的值的类型来选择调用不同的重载</p>
-<pre><code class="language-c++">struct S&#123;
+<pre><code class="language-C++">struct S&#123;
     void f()&amp;;  // 限定为左值引用
     void f()&amp;&amp;; // 限定为右值引用
 &#125;;

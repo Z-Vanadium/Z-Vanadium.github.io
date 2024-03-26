@@ -482,6 +482,7 @@
     padding: 20px;
 }
 .article .content {
+    background-color: var(--body-bg-color);
     margin: 50px 0;
 }
 .article .info .date {
@@ -554,7 +555,7 @@ body::-webkit-scrollbar-track {
     margin-right: 5px;
 }
 .input {
-    background: #f6f8fa;
+    background: var(--body-bg-color);
     border: 1px solid #d0d7de;
     border-radius: 50px;
     box-sizing: border-box;
@@ -696,6 +697,7 @@ video,
 }
 b,
 strong {
+    color: var(--strong-color);
     font-weight: bold;
     line-height: 2.5;
 }
@@ -706,9 +708,10 @@ blockquote {
     margin: 15px 0;
     overflow: auto;
     padding: 0 15px;
+    opacity: 0.8;
 }
 body {
-    background: #f6f8fa;
+    background: var(--body-bg-color);
     color: #1e3e3f;
     font: 500 14px Lexend, "Noto Sans SC", sans-serif;
     overflow-x: hidden;
@@ -726,7 +729,6 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--h2-color);
     font-weight: bold;
     margin: 15px 0;
     word-break: keep-all;
@@ -753,6 +755,34 @@ hr {
     border-style: dashed none none;
     border-width: 1.5px;
 }
+.content h1{
+    color: var(--h1-color);
+}
+.content h2{
+    color: var(--h2-color);
+    text-decoration: underline solid 14px #ed6ea139;
+    text-underline-offset: -4px;
+}
+.content h2::before{
+    content: "@ ";
+    color: var(--h2-color);
+}
+.content h3{
+    color: var(--h3-color);
+}
+.content h3::before{
+    content: "# ";
+    color: var(--h3-color);
+    font-weight: lighter;
+}
+.content h4{
+    color: var(--h4-color);
+}
+.content h4::before{
+    content: "> ";
+    color: var(--h4-color);
+    font-weight: lighter;
+}
 img,
 video,
 audio,
@@ -773,12 +803,12 @@ ol {
     margin: 15px 0;
 }
 pre {
-    border: 1px solid #ebeef5;
-    border-radius: 15px;
-    box-shadow: 0 2px 12px 0 #0000001a;
-    margin: 25px 0;
+    /* border: 1px solid #ebeef5; */
+    /* border-radius: 15px; */
+    /* box-shadow: 0 2px 12px 0 #0000001a; */
+    /* margin: 25px 0; */
     overflow: hidden;
-    white-space: normal;
+    /* white-space: normal; */
 }
 pre,
 code,
@@ -996,8 +1026,15 @@ ol li {
     --language-color: #ed6ea0;
     --language-color-2: #ec8c69;
     --language-box-shadow-color: #ed6ea14d;
-    --h2-color: #1e3e3f;
+    --h1-color: #1e3e3f;
+    --h2-color: #ed6ea0;
+    --h3-color: #0081a5;
+    --h4-color: #1e3e3f;
+    --strong-color: #00BCD4;
     --mark-bg-color: #fff13360;
+    --body-bg-color: #f6f8fa;
+    --white: #fff;
+    --black: #000;
 }
 
 /* foot time counter */
@@ -1122,3 +1159,135 @@ ol li {
 }
 
 /* end */
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em
+}
+
+code.hljs {
+    padding: 3px 5px
+}
+
+/**********************************************/
+
+
+/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/
+
+figure{
+    background-color: var(--white);
+    overflow: hidden;
+    /* border: solid var(--box-shadow-color); */
+    box-shadow: 1px 1px 0.75rem var(--box-shadow-color);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+figure::before{
+    content: attr(class);
+    position: relative;
+    left: -65px;
+    width: 100px;
+}
+
+figure table,
+figure table tbody,
+tr{
+    width: 100%; 
+}
+
+tr .code,
+tr .gutter{
+    line-height: 2;
+}
+
+.gutter{
+    width: 5%;
+    background: var(--white) !important;
+}
+
+.gutter pre{
+    padding-right: 20px;
+    border-right: solid var(--box-shadow-color);
+}
+
+.code{
+    background: var(--white) !important;
+}
+
+.hljs {
+    color: #24292e;
+    background: #fff
+}
+
+.doctag,.keyword,.meta .keyword,.template-tag,.template-variable,.type,.variable.language_ {
+    color: #d73a49
+}
+
+.title,.title.class_,.title.class_.inherited__,.title.function_ {
+    color: #6f42c1
+}
+
+.attr,.attribute,.literal,.meta,.number,.operator,.selector-attr,.selector-class,.selector-id,.variable {
+    color: #005cc5
+}
+
+.meta .string,.regexp,.string {
+    color: #032f62
+}
+
+.built_in,.symbol {
+    color: #e36209
+}
+
+.code,.comment,.formula {
+    color: #6a737d
+}
+
+.name,.quote,.selector-pseudo,.selector-tag {
+    color: #22863a
+}
+
+.subst {
+    color: #24292e
+}
+
+.section {
+    color: #005cc5;
+    font-weight: 700
+}
+
+.bullet {
+    color: #735c0f
+}
+
+.emphasis {
+    color: #24292e;
+    font-style: italic
+}
+
+.strong {
+    color: #24292e;
+    font-weight: 700
+}
+
+.addition {
+    color: #22863a;
+    background-color: #f0fff4
+}
+
+.deletion {
+    color: #b31d28;
+    background-color: #ffeef0
+}
+
+/********************************************/
