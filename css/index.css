@@ -6305,6 +6305,24 @@ blockquote.pullquote.right {
 .read-mode #article-container .note .note-icon {
   color: var(--font-color);
 }
+#article-container h2 {
+  font-size: 32px;
+}
+#article-container h3 {
+  font-size: 28px;
+}
+#article-container h4 {
+  font-size: 24px;
+}
+#article-container p,
+#article-container strong,
+#article-container code,
+#article-container li {
+  font-size: 20px;
+}
+#article-container img {
+  border-radius: 10px;
+}
 .search-dialog {
   position: fixed;
   top: 10%;
