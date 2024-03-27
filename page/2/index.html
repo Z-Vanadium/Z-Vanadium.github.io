@@ -1,792 +1,442 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Vanadium的小屋">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Vanadium的小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg">
+<meta property="article:author" content="Vanadium">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="shortcut icon" href="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="canonical" href="http://example.com/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vanadium的小屋',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-03-27 13:02:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="utf-8" />
-    <title>Vanadium的小屋</title>
-    <meta name="author" content="Vanadium" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://s4.zstatic.net" />
-<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.loli.net" />
-<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
-<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
-<script> const mixins = {}; </script>
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://www.imageoss.com/images/2024/03/27/background86e3a6ceb1c5d968.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Vanadium的小屋"><img class="site-icon" src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"/><span class="site-name">Vanadium的小屋</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Vanadium的小屋</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/02/26/calculus-2/" title="似水流年 | 微积分II知识点大纲">似水流年 | 微积分II知识点大纲</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-26T07:40:08.000Z" title="发表于 2024-02-26 15:40:08">2024-02-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">
+微积分好难
+
+基本信息
+ 授课教师： bwh
+ 上课教材： 《微积分》（sdk版）常见积分公式
+
+ 
+第 11 章 级数
+级数的基本概念
+$数项级数无穷和S=\displaystyle\sum_{n=1}^\infty u_n$
+$无穷多个有理数相加的和的情况都有可能$
+$收敛\iff\displaystyle\lim_{n\rightarrow\infty}S_n=\sum_{n=1}^\infty u_n\rightarrow S$
+证明级数收敛性的方法
 
 
-<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
+定义
 
 
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
+单调收敛准则
 
 
-<script src="/js/lib/preview.js"></script>
+柯西收敛准则
+
+
+$几何级数/等比级数\displaystyle\sum_{n=1}{\infty}aq{n-1}=S_n$
+
+
+$|q|&lt;1:\ S_n\rightarrow\displaystyle\frac{a}{1-q}$
+
+
+$q\ge 1:\ S_n\rightarrow\infty$
+
+
+$q&lt;-1:\ S_n不存在$
+
+
+$p-级数\displaystyle\sum_{n=1}{\infty}\frac{1}{np}$
+$引入f(x)=\displaystyle\fra ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/02/24/touchpad-not-working/" title="笔记本触摸板失灵 &amp; 问题解决">笔记本触摸板失灵 &amp; 问题解决</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-24T14:58:42.000Z" title="发表于 2024-02-24 22:58:42">2024-02-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a></span></div><div class="content">记录一次触摸板突然失灵的解决方法
+
+设备型号: 联想Legion Y9000P IRX8
+系统版本: Windows 11 专业版
+ 
+问题发现: 正常使用过程中, 触摸板突然失灵, 既不能滑动移动鼠标指针, 也不能点击
+尝试解决:
+
+
+打开设置-蓝牙和其他设备-触摸板, 发现触控板开关选项消失, 仅有选择触控板灵敏度的选项
+
+
+尝试Fn+F10, 成功打开/关闭触摸板, 但是问题没有得到解决
+
+
+尝试在设备管理器更新鼠标驱动, 依然没有解决
+
+
+尝试关机-重启连招, 还是没有解决
+
+
+解决方法: 长按电源键 3s, 强制重启了设备, 问题得到解决
+故障原因: (猜测) 触摸板驱动因为某种原因崩溃
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/02/15/gpt-sovits/" title="拿来吧你, 声音">拿来吧你, 声音</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-15T07:48:38.000Z" title="发表于 2024-02-15 15:48:38">2024-02-15</time></span></div><div class="content">摘要
+简介: 使用 GPT-SoVITS 项目克隆声音
+环境: Windows 11 / 13th i9-13900HX / RTX4060 / Python 3.11.4
+原项目: https://github.com/RVC-Boss/GPT-SoVITS
+
+ 
+步骤
+下载安装
+对于 Windows 10 及以上的用户, 建议通过整合包的形式安装.
+PS. 请合理使用魔法上网
+下载后解压至D:\GPT-SoVITS\GPT-SoVITS-beta
+ 
+启动!
+运行...\go-webui.bat, 在端口 9874 打开 Web UI
+PS. 第一次启动可能会等待一段时间以进行环境配置
+ 
+准备训练源
+准备一段中文音频, 时长在 1~2 分钟为宜, 音频质量尽可能高
+如果音频自带难以去除的背景声, 可以在0a-UVR5人声伴奏分离&amp;去混响去延迟工具中勾选是否开启UVR5-WebUI以进行人声伴奏分离 / 去混响 / 去延迟. 勾选后等待一段时间, 会自动在端口 9873 打开新的页面
+去除背景声的音频文件默认保存在...\output\uvr5_opt\目录下
+注意: 转换 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/02/03/minecraft-datapack/" title="玩游戏大师 | MC数据包开发攻略">玩游戏大师 | MC数据包开发攻略</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-03T14:41:16.000Z" title="发表于 2024-02-03 22:41:16">2024-02-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">
+数据包、指令什么的…它并不是区分普通玩家和开发者的东西，恰恰相反，所有人都能参与到mc的开发中，毕竟mc很大一部分就是由玩家的创造性构建的。怀着这样的目的，我想让我知道的，也让你们知道。 ——小业
+
+ 
+基本信息
+ 开发平台: Windows 10
+ MC启动器: PCL2
+ MC版本: Java版
+
+ 
+参考资料
+
+
+我的世界数据包入门教学系列
+
+
+可视化数据包制作网站(仅支持部分配方&amp;成就)
+
+
+MCwiki - 数据包
+
+
+ruhuasiyu 的原版模组入门教程页面
+
+
+ 
+绪论
+前期准备
+
+
+下载并安装VS Code(推荐使用VS Code进行开发)
+
+
+由于MC数据包的语法并不能被VS Code识别, 因此我们需要安装VS Code的插件: Data-pack Helper Plus(DHP大憨批!)和language-mcfunction
+
+
+ 
+什么是数据包?
+根据MCwiki的介绍, 数据包(Data Pack) 是MC官方为玩家进一步定制其Minecraft体验提供的一种新方式
+数据包可用于在不进行任何代码修改的前提下, 覆盖或添加新的进度, 维度, 函数, ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/01/16/night-talk-around-the-fire-1/" title="围炉夜话 | 教育已经把我们培养成了成绩的奴隶">围炉夜话 | 教育已经把我们培养成了成绩的奴隶</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-01-16T13:13:53.000Z" title="发表于 2024-01-16 21:13:53">2024-01-16</time></span></div><div class="content">前几日在水 98 的时候偶然在一篇讨论绩点的帖子下面，看到了这个回复：“义务教育已经把我们培养成了成绩的奴隶。”当时我毫不犹豫地给了他一个赞，这样看似玩笑的一句调侃，实际上已经狠狠打在挣扎在内卷漩涡中每一个呐喊着的灵魂上了。
+
+上回在紫金港附近一家球厅打台球，和一位很年轻的陪练小哥聊起来，他问我是不是浙大的学生，我说是大一的，他笑了笑说我也就比他小一岁。我打量起他来，摆球击杆的手法无不比我这个门外汉专业无数，料得他早已在这球厅工作了不短时间。当地陪练工资可能在 2000 元左右不等，想起这个，庸俗如我不禁暗自耻笑起自己的 2000 元还是从家里要的。一瞬间，我脑补了小哥高中辍学，沉迷台球之后靠这个赚点烟钱的剧情。同样是这个年纪我无权评价他人的人生选择，但我会反思自己的选择。
+能来到浙江大学的学生没有一个不是幸运的，但并不是所有人都是一直幸运的。中国的教育制度试图通过应试教育选拔出一批综合实力很强的学生进入高等学府学习深造，我们暂且不评价高考和K12教育荒谬的本质，我们继续聊回应试的天才——或者说是成绩的奴隶。假如学业成绩已经不能再将人与人之间隔出一道可悲的厚障壁，那我们只能拓宽赛道，并 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/28/terraria-index/" title="玩游戏大师 | Terraria开荒杂记(施工中)">玩游戏大师 | Terraria开荒杂记(施工中)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-28T07:46:00.000Z" title="发表于 2023-12-28 15:46:00">2023-12-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">基本信息
+ 游戏名称: Terraria
+ 开发商: Re-Logic
+ 游戏时长: 200+h  (仅Steam)
+ 游戏水平: 纯萌新/初学者
+ 游戏版本: 1.4.4.9 Windows
+ Wiki网站: 官方中文泰拉瑞亚 Wiki
+
+ 
+食用须知
+这里是Vanadium Terraria开荒流程的流水账记录, 包括但不限于Boss打法,游戏技巧,小吐槽等等.
+Highlight!!! 我的游戏水平很菜, 打不过白光, 没玩过天顶, 没法无伤任何一个Boss, 有时会逃课, 写这个流程攻略的目的只有一个–分享游戏心得(叠甲叠甲叠甲叠甲)
+
+ 
+模组
+P佬的个人汉化
+官中的翻译一言难尽…什么&quot;克劳德&quot;“斯派克”“萨菲”, 我严重怀疑relogic的翻译项目是外包给临时工的(bushi).
+我个人比较推荐P佬的汉化, 主要是集合了很多物品的信息, 免去了我玩一半儿查wiki的动作, 对游戏流畅度和沉浸式体验很有好处.
+
+辅助模组
+其他辅助模组就各凭喜好使用吧, 我对Terraria各种玩法(包括但不限于骗伤,逃课,单机模式开挂等等)一向的看法就是: 你已经花了42 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/28/docu-standard-format/" title="文章格式规范">文章格式规范</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-27T16:53:10.000Z" title="发表于 2023-12-28 00:53:10">2023-12-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%96%87%E6%A1%A3/">文档</a></span></div><div class="content">
+记录本站文章书写格式规范
+
+
+层次规范
+标题使用
+小标题按层次使用, 从三级标题(也可从二级标题)开始, 依次向下使用
+# / &lt;h1&gt;: 一级标题, 仅用于文章标题
+## / &lt;h2&gt;: 二级标题, 一般不用
+### / &lt;h3&gt;: 三级标题
+#### / &lt;h4&gt;: 四级标题
+** ** / &lt;strong&gt;: 用于四级标题下, 不适合用分点处
+&lt;p&gt;: 正文
+- &lt;ul&gt;&lt;li&gt;: 四级标题下分点
+
+
+分层级要求的笔记, 使用&quot; Lecture d - d.d - d.d.d &quot;的格式组织, 分别使用 2, 3, 4 级标题
+
+
+对于有高分层级要求的笔记, 使用&quot; Lecture dd - d - d.d - d.d.d &quot;的格式组织, 分别使用 1, 2, 3, 4 级标题, 即每个 Lecture 中均包含一份或多份独立的笔记
+
+
+英文书写笔记时, 章节标题应该遵循英文大小写书写规范
+
+
+ 
+换行使用
+四级及以上的小标题所引段落之间需使用换 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/26/share-websites/" title="晨光夕忆 | 杂七杂八工具网站分享">晨光夕忆 | 杂七杂八工具网站分享</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-25T16:14:47.000Z" title="发表于 2023-12-26 00:14:47">2023-12-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a></span></div><div class="content">
+随缘收集一些有用的网站, 随缘更新碧梧桐锁深深院，谁料得两情，何日教谴绻？
+
+
+ 
+MISC
+正则表达式可视化 Regulex
+日式传统颜色 Nippon Colors
+渐变色联想网站 Colorspace
+音频文件解锁网站 unlock-music
+ 
+运维相关
+Markdown-&gt;微信公众号
+免费图标网站 Font Awesome 6
+ 
+文档查询
+KateX手册
+Runoob | CSS手册
+Runoob | Markdown手册
+Emoji模糊搜索查询 EmojiAll
+Latex简明文档
+ 
+文字编辑
+在线Markdown编辑器, 支持热刷新 StackEdit
+在线笔记网站 Notion
+在线Latex编辑器 Slager
+ 
+图片编辑
+在线手绘绘图网站 Excalidraw
+在线矢量绘图网站 Diagrams
+在线图论绘图网站 Graph Editor
+在线坐标轴绘图网站 Geometry Widget
+ 
+云服务器
+VMISS
+AnClouds
+雨云
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/25/fds-9/" title="FDS晓风残月记略 | AOE网络与网络流&amp;&amp;哈希算法">FDS晓风残月记略 | AOE网络与网络流&amp;&amp;哈希算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-24T16:08:09.000Z" title="发表于 2023-12-25 00:08:09">2023-12-25</time></span></div><div class="content">
+可能大概是最后一篇自学FDS的笔记了, 解决最后两个问题残月: 古人对十二月的雅称, 在此表示最后几篇文章
+
+前言
+大纲
+
+
+AOE网络与网络流
+
+
+哈希算法
+
+
+ 
+参考资料
+
+
+鹤翔万里的笔记本 | 数据结构基础
+
+
+中国大学MOOC | 数据结构
 
 
 
+ 
+正文-上
+AOE网络
+AOE(activity on edge)网络是一张有向带权图, 其中有向边代表活动, 权值代表活动持续的时间.
+ 
+关键路径
+一个AOE网络有且仅有一个入度为0的节点, 我们称之为源点S; 以及一个出度为0的节点, 我们称之为汇点T. 我们将源点的时间戳记作0.
+节点是一个时间概念, 表示两项活动之间的间隔, 这个间隔有长有短. 对于任意一个节点(S,T除外), 当且仅当进入节点的活动全部完成, 离开节点的活动才能开始.
+为了保证工期的按时完成, 我们要保证那些绝对不能拖延的活动按时完成, 由这些活动构成的路径, 我们称为关键路径.
+ 
+节点的时间
+对于任何一个节点, 我们存在一个最早发生时间EHT[]和最晚发生时间LHT[].
 
 
-<script src="/js/lib/home.js"></script>
+最早发生时间: 指对于节点V来说, 所有他的前提节点U都完成的时间点 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/23/fds-8/" title="FDS晓风残月记略 | 带负权边最短路径&amp;&amp;双连通性">FDS晓风残月记略 | 带负权边最短路径&amp;&amp;双连通性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-23T15:51:17.000Z" title="发表于 2023-12-23 23:51:17">2023-12-23</time></span></div><div class="content">
+作为FDS的收尾, 补充几个主要是和图有关的算法残月: 古人对十二月的雅称, 在此表示最后几篇文章
 
-<link rel="stylesheet" href="/css/main.css" />
+前言
+大纲
 
-<meta name="generator" content="Hexo 7.1.1"></head>
-<body>
-    <div id="layout">
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
-                </div>
+
+带负权边最短路径 | Bellman-ford算法与SPFA算法
+
+
+双连通性 | Tarjan算法
+
+
+AOE网络与网络流
+
+
+哈希算法
+
+
+ 
+参考资料
+
+
+鹤翔万里的笔记本 | 数据结构基础
+
+
+中国大学MOOC | 数据结构
+
+
+
+ 
+正文-上
+在求解有关最小路径问题的时候, 我们常用的算法是Dijsktra算法和Floyd算法, 这两种算法虽好, 但是对于带负权边图却无能为力. 对于带负权边图的最小路径问题, 我们一般采用Bellman-ford算法及其优化版本SPFA算法.
+ 
+Bellman-ford算法
+与Dijsktra算法的不同
+与采用贪心算法进行松弛操作的Dijsktra算法不同, Bellman-ford算法直接对所有边进行松弛, 这在导致其时间复杂度增加至$O(|V||E|)$的同时, 拥有了能处理带负权边图和检测负权回路的能力.
+ 
+伪代码描述
+相比于使用了贪心算法的Dijsktra算法, Bellman-ford算法的实现思路更加大开大合 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
             </div>
-        </transition>
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>VANADIUM的小屋</span>
-        </a>
-        
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;主页</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;关于</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;归档</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;分类</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;标签</span>
-        </a>
-        
-        <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky fa-fw"></i>
-            <span>&ensp;笔记</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;VANADIUM的小屋</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
-                
-                <a href="/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
-                    </div>
-                </a>
-                
-                <a href="/about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
-                    </div>
-                </a>
-                
-                <a href="/archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
-                    </div>
-                </a>
-                
-                <a href="/categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
-                    </div>
-                </a>
-                
-                <a href="/tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
-                    </div>
-                </a>
-                
-                <a href="/categories/%E7%AC%94%E8%AE%B0/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-note-sticky fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">笔记</div>
-                    </div>
-                </a>
-                
-            </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Vanadium的小屋</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
-    </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2024/02/26/calculus-2/">
-        <h2 class="post-title">似水流年 | 微积分II知识点大纲</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%AC%94%E8%AE%B0/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                笔记
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/2/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>微积分好难</p>
-</blockquote>
-<h2 id="基本信息">基本信息</h2>
-<p><i class="fa-regular fa-circle-check"></i> <strong>授课教师</strong>： bwh<br>
-<i class="fa-regular fa-circle-check"></i> <strong>上课教材</strong>： 《微积分》（sdk版）<a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/10/calculus-1/#%E7%AC%AC-5-%E7%AB%A0-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86">常见积分公式</a></p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%95%B0%E7%90%86/" style="color: #03a9f4">数理</a>
-        </span>
-        
-    </div>
-    <a href="/2024/02/26/calculus-2/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/02/24/touchpad-not-working/">
-        <h2 class="post-title">笔记本触摸板失灵 &amp; 问题解决</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E5%AE%9E%E7%94%A8/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                实用
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/2/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>记录一次触摸板突然失灵的解决方法</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/computer/" style="color: #03a9f4">computer</a>
-        </span>
-        
-    </div>
-    <a href="/2024/02/24/touchpad-not-working/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/02/15/gpt-sovits/">
-        <h2 class="post-title">拿来吧你, 声音</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/2/15
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="摘要">摘要</h3>
-<p><strong>简介</strong>: 使用 GPT-SoVITS 项目克隆声音<br>
-<strong>环境</strong>: Windows 11 / 13th i9-13900HX / RTX4060 / Python 3.11.4<br>
-<strong>原项目</strong>: <a target="_blank" rel="noopener" href="https://github.com/RVC-Boss/GPT-SoVITS">https://github.com/RVC-Boss/GPT-SoVITS</a></p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/AI/" style="color: #ff7d73">AI</a>
-        </span>
-        
-    </div>
-    <a href="/2024/02/15/gpt-sovits/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/02/03/minecraft-datapack/">
-        <h2 class="post-title">玩游戏大师 | MC数据包开发攻略</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/2/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>数据包、指令什么的…它并不是区分普通玩家和开发者的东西，恰恰相反，所有人都能参与到mc的开发中，毕竟mc很大一部分就是由玩家的创造性构建的。怀着这样的目的，我想让我知道的，也让你们知道。 ——小业</p>
-</blockquote>
-<p> </p>
-<h3 id="基本信息">基本信息</h3>
-<p><i class="fa-regular fa-circle-check"></i> <strong>开发平台</strong>: Windows 10<br>
-<i class="fa-regular fa-circle-check"></i> <strong>MC启动器</strong>: PCL2<br>
-<i class="fa-regular fa-circle-check"></i> <strong>MC版本</strong>: Java版</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/minecraft/" style="color: #00a596">minecraft</a>
-        </span>
-        
-    </div>
-    <a href="/2024/02/03/minecraft-datapack/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/01/16/night-talk-around-the-fire-1/">
-        <h2 class="post-title">围炉夜话 | 教育已经把我们培养成了成绩的奴隶</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/1/16
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>前几日在水 98 的时候偶然在一篇讨论绩点的帖子下面，看到了这个回复：“义务教育已经把我们培养成了成绩的奴隶。”当时我毫不犹豫地给了他一个赞，这样看似玩笑的一句调侃，实际上已经狠狠打在挣扎在内卷漩涡中每一个呐喊着的灵魂上了。</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #00bcd4">碎碎念</a>
-        </span>
-        
-    </div>
-    <a href="/2024/01/16/night-talk-around-the-fire-1/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/28/terraria-index/">
-        <h2 class="post-title">玩游戏大师 | Terraria开荒杂记(施工中)</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="基本信息">基本信息</h3>
-<p><i class="fa-regular fa-circle-check"></i> <strong>游戏名称</strong>: Terraria<br>
-<i class="fa-regular fa-circle-check"></i> <strong>开发商</strong>: Re-Logic<br>
-<i class="fa-regular fa-circle-check"></i> <strong>游戏时长</strong>: 200+h  (仅Steam)<br>
-<i class="fa-regular fa-circle-check"></i> <strong>游戏水平</strong>: 纯萌新/初学者<br>
-<i class="fa-regular fa-circle-check"></i> <strong>游戏版本</strong>: 1.4.4.9 Windows<br>
-<i class="fa-regular fa-circle-check"></i> <strong>Wiki网站</strong>: <a target="_blank" rel="noopener" href="https://terraria.wiki.gg/zh/wiki/Terraria_Wiki">官方中文泰拉瑞亚 Wiki</a></p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Terraria/" style="color: #03a9f4">Terraria</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/28/terraria-index/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/28/docu-standard-format/">
-        <h2 class="post-title">文章格式规范</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%96%87%E6%A1%A3/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                文档
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>记录本站文章书写格式规范</p>
-</blockquote>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="color: #ff7d73">碎碎念</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/28/docu-standard-format/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/26/share-websites/">
-        <h2 class="post-title">晨光夕忆 | 杂七杂八工具网站分享</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E5%AE%9E%E7%94%A8/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                实用
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>随缘收集一些有用的网站, 随缘更新碧梧桐锁深深院，谁料得两情，何日教谴绻？</p>
-</blockquote>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/26/share-websites/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/25/fds-9/">
-        <h2 class="post-title">FDS晓风残月记略 | AOE网络与网络流&amp;&amp;哈希算法</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/25
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>可能大概是最后一篇自学FDS的笔记了, 解决最后两个问题残月: 古人对十二月的雅称, 在此表示最后几篇文章</p>
-</blockquote>
-<h3 id="前言">前言</h3>
-<p><strong>大纲</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>AOE网络与网络流</p>
-</li>
-<li class="lvl-2">
-<p>哈希算法</p>
-</li>
-</ul>
-<p> </p>
-<p><strong>参考资料</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://note.tonycrane.cc/cs/algorithm/ds/">鹤翔万里的笔记本 | 数据结构基础</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/ZJU-93001?tid=1471218491#/learn/announce">中国大学MOOC | 数据结构</a></p>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/25/fds-9/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/23/fds-8/">
-        <h2 class="post-title">FDS晓风残月记略 | 带负权边最短路径&amp;&amp;双连通性</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/23
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>作为FDS的收尾, 补充几个主要是和图有关的算法残月: 古人对十二月的雅称, 在此表示最后几篇文章</p>
-</blockquote>
-<h3 id="前言">前言</h3>
-<p><strong>大纲</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>带负权边最短路径 | Bellman-ford算法与SPFA算法</p>
-</li>
-<li class="lvl-2">
-<p>双连通性 | Tarjan算法</p>
-</li>
-<li class="lvl-2">
-<p>AOE网络与网络流</p>
-</li>
-<li class="lvl-2">
-<p>哈希算法</p>
-</li>
-</ul>
-<p> </p>
-<p><strong>参考资料</strong></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://note.tonycrane.cc/cs/algorithm/ds/">鹤翔万里的笔记本 | 数据结构基础</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/ZJU-93001?tid=1471218491#/learn/announce">中国大学MOOC | 数据结构</a></p>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/FDS/" style="color: #ffa2c4">FDS</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/23/fds-8/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    
-    <a class="page-num" href="/">
-        <i class="fa-solid fa-caret-left fa-fw"></i>
-    </a>
-    <a class="page-num" href="/">1</a>
-    <span class="page-omit">...</span>
-    
-    <span class="current">2</span>
-    
-    <a class="page-num" href="/page/3">3</a>
-    
-    
-    <a class="page-num" href="/page/4">4</a>
-    
-    
-    
-    <a class="page-num" href="/page/3/">
-        <i class="fa-solid fa-caret-right fa-fw"></i>
-    </a>
-    
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Vanadium</div>
-        <div class="description">
-            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
-
-        </div>
-        
-        
-    </div>
-</div>
-
-    </div>
-    
-</div>
-
-            <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2024 Vanadium的小屋
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;Vanadium
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
-        
-    </div>
-
-    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-    <script>
-        var now = new Date(); 
-        function createtime() { 
-            var grt= new Date("09/26/2023 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
-            now.setTime(now.getTime()+250); 
-            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-            document.getElementById("timeDate").innerHTML = "本站已经存活 "+dnum+" 天 "; 
-            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-        } 
-    setInterval("createtime()",250);
-    </script>
-
-</footer>
-        </div>
-        
-        <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
-            </div>
-        </transition>
-        
-    </div>
-    <script src="/js/main.js"></script>
-    
-</body>
-</html>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/"><span class="card-category-list-name">实用</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%96%87%E6%A1%A3/"><span class="card-category-list-name">文档</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">5</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/FDS/" style="font-size: 1.23em; color: #999ea6">FDS</a> <a href="/tags/%E6%95%B0%E7%90%86/" style="font-size: 1.37em; color: #99a4b2">数理</a> <a href="/tags/CSS/" style="font-size: 1.23em; color: #999ea6">CSS</a> <a href="/tags/Hexo/" style="font-size: 1.3em; color: #99a1ac">Hexo</a> <a href="/tags/computer/" style="font-size: 1.17em; color: #999c9f">computer</a> <a href="/tags/Terraria/" style="font-size: 1.1em; color: #999">Terraria</a> <a href="/tags/OOP/" style="font-size: 1.43em; color: #99a6b9">OOP</a> <a href="/tags/JavaScript/" style="font-size: 1.1em; color: #999">JavaScript</a> <a href="/tags/Linux/" style="font-size: 1.1em; color: #999">Linux</a> <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 1.23em; color: #999ea6">碎碎念</a> <a href="/tags/minecraft/" style="font-size: 1.1em; color: #999">minecraft</a> <a href="/tags/C-C/" style="font-size: 1.5em; color: #99a9bf">C/C++</a> <a href="/tags/AI/" style="font-size: 1.1em; color: #999">AI</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.43em; color: #99a6b9">前端</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/3939/03/"><span class="card-archive-list-date">三月 3939</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">23</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">39</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-03-27T05:02:08.138Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

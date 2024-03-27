@@ -1,772 +1,534 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Vanadium的小屋">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Vanadium的小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg">
+<meta property="article:author" content="Vanadium">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="shortcut icon" href="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vanadium的小屋',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-03-27 13:02:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="utf-8" />
-    <title>Vanadium的小屋</title>
-    <meta name="author" content="Vanadium" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://s4.zstatic.net" />
-<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.loli.net" />
-<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
-<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
-<script> const mixins = {}; </script>
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://www.imageoss.com/images/2024/03/27/background86e3a6ceb1c5d968.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Vanadium的小屋"><img class="site-icon" src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"/><span class="site-name">Vanadium的小屋</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Vanadium的小屋</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></span></div><div class="content">暂时关闭评论系统
+由于博客代码重构, 评论系统暂时关闭, 如有联系需要请参考 关于
+2024/03/25 by Vanadium
+
+博客图片迁移
+由于之前拿 Github 做图床, 访问时的速度受到极大限制, 现准备逐渐迁移图片到 ImageOss
+2024/03/21 by Vanadium
+
+ 
+ 小屋评论系统测试版上线:D
+评论系统基于Waline, 部署在leancloud(国际版), 有什么问题都和我没关系(才怪啊喂)
+测试版的评论系统有以下特性:
 
 
-<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
+需要登录(建议使用: github)
 
 
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
+显示ip, 浏览器, 操作系统(后期可能隐藏)
 
 
-<script src="/js/lib/preview.js"></script>
+评论框样式不符合小屋整体风格(烤柿粥后必改, 目前没空QwQ)
+
+
+此外就没有什么好说的啦, 评论区可以自♂由讨论当然我也可以自♂由删评(拽)
+2024/01/10 by Vanadium
+ 
+
+ 祝各位元旦快乐, 快乐元旦!
+
+东风夜放花千树。更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。
+[宋]辛弃疾&lt;青玉案 元夕&gt;
+
+2 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></span></div><div class="content">
+这是 C++ 网课学习笔记
+建议先阅读上一节 右值引用 &amp; 移动语义 或对内容有一定了解后再来阅读本篇笔记
+
+
+
+ 
+1 引入: 为什么我们需要智能指针
+1.1 问题一
+观察以下代码
+void science(double* data, int N) &#123;
+    double* temp = new double[N*2];
+    do_setup(data, temp, N);
+    if (!needed(data, temp, N))
+        return;
+    calculate(data, temp, N);
+    delete[] temp;
+&#125;
+
+不难理解, 函数 science() 接受两个参数, 一个表示数组 data 的首元素地址, 一个表示数组的长度
+这说明了一个数组类型包含了三个信息: 数组元素类型, 首元素地址和长度; 然而当我们把数组作为指针传入时, 我们却丧失了长度这个信息, 只能用一个额外的 N 储存这个信息
+回到函数体本身, 这个函数实现的功能很简单, 假如 needed() 为真, 则对 data 调用 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></span></div><div class="content">
+这是 cpp 网课学习笔记
+
+
+
+ 
+1 左值和右值
+1.1 引入
+考虑这样一段代码
+    int n;
+    n = 1;
+    1 = n;
+
+对于这段代码, 我们不难理解这是错误, 但是当我们思考错误的原因, 可以发现这并不简单
+
+为什么 1 = n; 会报错而 n = 1; 却是合法的呢?
+
+
+
+观察编译器给出的报错提示 表达式必须是可修改的左值, 一个全新的概念出现了–左值(lvalue)
+ 
+1.2 表达式的值的类型
+与 1 = n; 类似的语句还有很多, 例如 int foo(); foo() = 3;, int m; m + 3 = 4; 等等, 这些语句的出现似乎在提示我们一个很简单的道理, 一个你的 C 语言启蒙老师大概率和你讲过的话:
+
+C 语言里面的表达式不是方程
+
+正因如此, 我们就能理解下面这句话了
+即便变量类型相同, 依然存在某些表达式是不能被赋值的
+那么那些无法赋值的表达式到底有什么特征呢?
+很简单, n 表征一个对象, 在物理意义上表征着内存中的某一块; 而 1 不表征一个实在的对象, 也就是说, 他表征着一个不与对象关联的值, 也就是字面量
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></span></div><div class="content">
+折腾了一个小时, 给 Hexo 修改了渲染器
+
+
+
+ 
+1 安装步骤
+1.1 卸载原有的渲染器
+进入 Hexo 根目录, 也就是包含了 package.json 和 package-lock.json 两个配置文件的路径, 运行以下命令卸载默认的渲染器
+npm uni hexo-renderer-marked --save
+
+1.2 安装新的渲染器
+运行以下命令安装新的渲染器
+npm i hexo-renderer-markdown-it --save
+
+1.3 修改配置文件
+将以下文本追写到 Hexo 的配置文件 _config.yml 后面
+markdown:
+  preset: &quot;default&quot;
+  render:
+    html: true
+    xhtmlOut: false
+    langPrefix: &quot;language-&quot;
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: &quot;“”‘’&quot;
+  enable_rules ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a></span></div><div class="content">
+由于 Hexo 主题 ParticleX 对 Markdown 的渲染和 KaTex 对 Tex 公式的解释之间很容易产生冲突, 这里记录一些冲突的处理办法
+同时, 记录一些可能用到的或&quot; 书到用时方恨少 &quot;的 Tex 公式
+关于 KaTex 公式的书写规范, 可另见
+
+ 前言
+Hexo 版本: 6.3.0
+Hexo 主题: ParticleX
+
+ 
+ 冲突
+ 下划线斜体与下标冲突
+当使用_表示下标的时候, 如果下标使用了&#123;&#125;扩起并使用了 2 个及以上的下划线, 就有可能使下划线被解释为斜体, 导致公式无法正常渲染
+解决方法: 使用 0 长度空格\kern替代&#123;&#125;
+实例
+$(100101.01)_2=2^5+2^2+2^0+2^&#123;-2&#125;=(37.25)_1\kern&#123;&#125;_0$
+(100101.01)2=25+22+20+2−2=(37.25)10(100101.01)_2=2^5+2^2+2^0+2^{-2}=(37.25)_1\kern{}_0(100101.01)2​=25+22+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/03/08/css-application/" title="CSS进阶实战 | 一些实例">CSS进阶实战 | 一些实例</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-08T13:53:36.000Z" title="发表于 2024-03-08 21:53:36">2024-03-08</time></span></div><div class="content">
+记录一点CSS学习心得
+
+参考资料
+
+
+RUNOOB-CSS教程
+
+
+W3C-CSS教程
+
+
+
+ 
+前言
+想要高效快捷的学习CSS，你需要：
+
+
+VSCode, with following extensions
+
+Color Highlight | 颜色显示
+Live Server | html热预览
+
+
+
+前置知识
+
+熟练的html
+入门的JavaScript
+
+
+
+辅助工具/网站
+
+配色参考
+图片素材
+优秀的榜样网站
+
+
+
+信息搜索能力
+
+
+一些小创意和小自信
+
+
+tip: 阅读本文之前, 最好对选择器有一定的了解, 或先阅读上一篇文章
+ 
+首字母大大大大写
+利用伪类:first-letter, 我们可以单独对第 1 个字符设置属性
+实例代码
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;style&gt;
+            p:first-letter&#123;
+                 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/03/01/college-physics/" title="大学物理(乙)I">大学物理(乙)I</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-01T01:57:00.000Z" title="发表于 2024-03-01 09:57:00">2024-03-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">基本信息
+ 授课教师: sc, wz
+
+ 
+Lecture 01 质点运动学
+1 质点，参考系
+1.1 质点
+1.1.1 质点
+只有质量，没有形状和体积的理想物体
+ 
+1.2 参考系和坐标系
+1.2.1 参考系
+描述物体运动时，被选作的静止的物体
+1.2.2 坐标系
+
+
+$直角坐标系(x,y,z)$
+
+
+$球坐标系(R,\theta,\varphi)$
+
+
+$柱坐标系(R,\varphi,z)$
+
+
+ 
+1.3 运动方程
+$x=x(t),y=y(t),z=z(t)$
+1.3.1 轨迹方程
+$f(x,y,z)=0$
+ 
+2 位移 速度 加速度
+2.1 位矢
+$\bm{r}=x\bm{l}+y\bm{j}+z\bm{k}$
+$r=|\bm{r}|=\sqrt{x2+y2+z^2}$
+$\cos\alpha=x/r$
+$\cos\beta=y/r$
+$\cos\gamma=z/r$
+ 
+2.2 矢量的加法和乘法
+2.2.1 点乘
+$\bm{a}\cdot\bm{b}=a\times b\times\cos\theta$
+2.2.2 叉乘
+ 
+2.3 位移
+$\Delta\bm{r}=\bm{ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/02/28/fds/" title="数据结构基础">数据结构基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-28T14:07:12.000Z" title="发表于 2024-02-28 22:07:12">2024-02-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">Basic Infomation
+ Teachers: yzq
+ See Also: Foreverhyx’s FDS notes
+
+ 
+Chapter 0 Introduction
+
+Courseware and homework: https://pintia.cn/
+
+1.1 Grading Politics
+Lecture Grade - 35%
+
+
+Homework - 10%
+
+
+Quiz - 10%
+
+
+Mid-Term Exam - 15%
+
+
+Laboratory Grade 25% (normal) / 30% (hard)
+bonus - 4%
+Final Exam - 40%
+ 
+1.2 Peer Review
+Grade = G(TA) * 50% + G(PR) * 50%
+ 
+Chapter 1 Algorithm Analysis
+1.1 Algorithm
+An algorithm must satisfy
+
+
+input 0 or more input
+
+
+output at least 1 output
+
+
+definiteness clear a ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/02/26/computer-system-1/" title="计算机系统I">计算机系统I</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-26T07:55:29.000Z" title="发表于 2024-02-26 15:55:29">2024-02-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">Basic Infomation
+ Teachers: wht, ll
+ Lab Docs: 浙江大学24年春夏系统贯通一实验( ZJU intranet required )
+
+Because of some reasons, Chapter 04 should change position with Chapter 05
+
+Index
+
+
+
+Tittle
+Chap(s)
 
 
 
 
+Introduction
+01
 
-<script src="/js/lib/home.js"></script>
 
-<link rel="stylesheet" href="/css/main.css" />
+Binary Representation
+02, 03, 05
 
-<meta name="generator" content="Hexo 7.1.1"></head>
-<body>
-    <div id="layout">
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
-                </div>
+
+Digital Logic
+04, 06, 07, 08
+
+
+
+
+ 
+Chapter 01 Introduction
+System-I includes Computer Organizations, RTL(Register Transfer Level) and DLC(Digital Logic Circuit) in Hardware module.
+ 
+1.1 Course Objective
+
+
+Understand the HW / SW interface
+
+How a process ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2024/02/26/info-security-principles/" title="信息安全原理与数学基础">信息安全原理与数学基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-02-26T07:44:29.000Z" title="发表于 2024-02-26 15:44:29">2024-02-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">基本信息
+ 授课教师：zbs
+
+ 
+Lecture 01
+什么是信息？
+信息
+
+
+广义：Information is data endowed with relavance and purpose.
+
+
+狭义：信息的本质是有序度。——Shannon
+
+
+信息量：对某件事情可供选择的多少的量度
+香农信息量：$\log_2N$
+ 
+什么是安全？
+安全定义
+
+
+第一步：针对谁？
+
+谁是敌手（adversary）？
+
+
+
+第二步：敌手的目标
+
+敌手想要达到什么目标
+
+
+
+第三步：限制敌手的能力
+
+敌手可以做什么？不可以做什么？
+敌手可以调用的资源
+
+
+
+第四步：如何认定敌手获胜？如何认定系统被破解？
+
+敌手挑战的时间
+敌手达成目标的概率
+
+
+
+如果没有敌手可以在规定的时间内攻破该系统，那么说系统是安全的
+假如有人让你帮忙测试某系统是否安全，请反问ta：什么是安全？
+你直播干的过别人黑丝吗？？？
+ 
+大数据时代
+
+
+人类进入信息化社会时代
+
+
+挑战
+
+
+ 
+信息空间（Cyberspace）
+信息空间中的对抗与威胁
+Cyber Warfare
+Cyber Army
+ 
+信息的价值
+ 
+Lectur ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
             </div>
-        </transition>
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>VANADIUM的小屋</span>
-        </a>
-        
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;主页</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;关于</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;归档</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;分类</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;标签</span>
-        </a>
-        
-        <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky fa-fw"></i>
-            <span>&ensp;笔记</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;VANADIUM的小屋</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
-                
-                <a href="/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
-                    </div>
-                </a>
-                
-                <a href="/about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
-                    </div>
-                </a>
-                
-                <a href="/archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
-                    </div>
-                </a>
-                
-                <a href="/categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
-                    </div>
-                </a>
-                
-                <a href="/tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
-                    </div>
-                </a>
-                
-                <a href="/categories/%E7%AC%94%E8%AE%B0/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-note-sticky fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">笔记</div>
-                    </div>
-                </a>
-                
-            </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Vanadium的小屋</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
-    </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/3939/03/09/bulletin-board/">
-        <h2 class="post-title">Vanadium的小屋御用公告板</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            3939/3/9
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="暂时关闭评论系统">暂时关闭评论系统</h3>
-<p>由于博客代码重构, 评论系统暂时关闭, 如有联系需要请参考 <strong>关于</strong></p>
-<p>2024/03/25 by Vanadium</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/3939/03/09/bulletin-board/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/03/24/cpp-smart-pointer/">
-        <h2 class="post-title">C++ | 智能指针</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/3/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>这是 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1SN411y7qk/?spm_id_from=333.788&amp;vd_source=fb60086411a6996e53c3014541e4a3ee">C++ 网课</a>学习笔记</p>
-<p>建议先阅读上一节 <code>右值引用 &amp; 移动语义</code> 或对内容有一定了解后再来阅读本篇笔记</p>
-</blockquote>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #00bcd4">C/C++</a>
-        </span>
-        
-    </div>
-    <a href="/2024/03/24/cpp-smart-pointer/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/03/20/cpp-lvalue-and-rvalue/">
-        <h2 class="post-title">cpp | 右值引用 &amp; 移动语义</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/3/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>这是 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rX4y1C72X/?spm_id_from=333.1007.top_right_bar_window_history.content.click">cpp 网课</a>学习笔记</p>
-</blockquote>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #ff7d73">C/C++</a>
-        </span>
-        
-    </div>
-    <a href="/2024/03/20/cpp-lvalue-and-rvalue/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/03/17/hexo-change-render/">
-        <h2 class="post-title">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/3/17
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>折腾了一个小时, 给 Hexo 修改了渲染器</p>
-</blockquote>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #03a9f4">前端</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Hexo/" style="color: #00bcd4">Hexo</a>
-        </span>
-        
-    </div>
-    <a href="/2024/03/17/hexo-change-render/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/03/09/katex-support/">
-        <h2 class="post-title">KaTex公式渲染相关</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E5%AE%9E%E7%94%A8/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                实用
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/3/9
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>由于 Hexo 主题 ParticleX 对 Markdown 的渲染和 KaTex 对 Tex 公式的解释之间很容易产生冲突, 这里记录一些冲突的处理办法同时, 记录一些可能用到的或&quot; 书到用时方恨少 &quot;的 Tex 公式关于 KaTex 公式的书写规范, <a target="_blank" rel="noopener" href="https://z-vanadium.github.io/2023/12/28/docu-standard-format/#%E5%85%AC%E5%BC%8F%E4%BD%BF%E7%94%A8">可另见</a></p>
-</blockquote>
-<h2 id="前言">前言</h2>
-<p><strong>Hexo 版本</strong>: 6.3.0<br>
-<strong>Hexo 主题</strong>: ParticleX</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Hexo/" style="color: #00bcd4">Hexo</a>
-        </span>
-        
-    </div>
-    <a href="/2024/03/09/katex-support/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/03/08/css-application/">
-        <h2 class="post-title">CSS进阶实战 | 一些实例</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/3/8
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>记录一点CSS学习心得</p>
-</blockquote>
-<h3 id="参考资料">参考资料</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">RUNOOB-CSS教程</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/css/css-selector.html">W3C-CSS教程</a></p>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/CSS/" style="color: #ff7d73">CSS</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #03a9f4">前端</a>
-        </span>
-        
-    </div>
-    <a href="/2024/03/08/css-application/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/03/01/college-physics/">
-        <h2 class="post-title">大学物理(乙)I</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%AC%94%E8%AE%B0/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                笔记
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/3/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1>基本信息</h1>
-<p><i class="fa-regular fa-circle-check"></i> <strong>授课教师</strong>: sc, wz</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%95%B0%E7%90%86/" style="color: #03a9f4">数理</a>
-        </span>
-        
-    </div>
-    <a href="/2024/03/01/college-physics/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/02/28/fds/">
-        <h2 class="post-title">数据结构基础</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%AC%94%E8%AE%B0/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                笔记
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/2/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="Basic-Infomation">Basic Infomation</h2>
-<p><i class="fa-regular fa-circle-check"></i> <strong>Teachers</strong>: yzq<br>
-<i class="fa-regular fa-circle-check"></i> <strong>See Also</strong>: <a target="_blank" rel="noopener" href="https://www.foreverhyx.top/2024/03/06/fundamental-of-data-structure-note/">Foreverhyx’s FDS notes</a></p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/FDS/" style="color: #03a9f4">FDS</a>
-        </span>
-        
-    </div>
-    <a href="/2024/02/28/fds/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/02/26/computer-system-1/">
-        <h2 class="post-title">计算机系统I</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%AC%94%E8%AE%B0/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                笔记
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/2/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="Basic-Infomation">Basic Infomation</h2>
-<p><i class="fa-regular fa-circle-check"></i> <strong>Teachers</strong>: wht, ll<br>
-<i class="fa-regular fa-circle-check"></i> <strong>Lab Docs</strong>: <a target="_blank" rel="noopener" href="https://zju-sys.pages.zjusct.io/sys1/sys1-sp24/">浙江大学24年春夏系统贯通一实验</a>( ZJU intranet required )</p>
-<div class="warning">
-<p>Because of some reasons, Chapter 04 should change position with Chapter 05</p>
-</div>
-<h3 id="Index">Index</h3>
-<table>
-<thead>
-<tr>
-<th>Tittle</th>
-<th>Chap(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Introduction</td>
-<td>01</td>
-</tr>
-<tr>
-<td>Binary Representation</td>
-<td>02, 03, 05</td>
-</tr>
-<tr>
-<td>Digital Logic</td>
-<td>04, 06, 07, 08</td>
-</tr>
-</tbody>
-</table>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/computer/" style="color: #00bcd4">computer</a>
-        </span>
-        
-    </div>
-    <a href="/2024/02/26/computer-system-1/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/02/26/info-security-principles/">
-        <h2 class="post-title">信息安全原理与数学基础</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E7%AC%94%E8%AE%B0/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                笔记
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/2/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="基本信息">基本信息</h2>
-<p><i class="fa-regular fa-circle-check"></i> <strong>授课教师</strong>：zbs</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%95%B0%E7%90%86/" style="color: #ffa2c4">数理</a>
-        </span>
-        
-    </div>
-    <a href="/2024/02/26/info-security-principles/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    
-    <span class="current">1</span>
-    
-    <a class="page-num" href="/page/2">2</a>
-    
-    
-    <a class="page-num" href="/page/3">3</a>
-    
-    
-    <span class="page-omit">...</span>
-    <a class="page-num" href="/page/4">4</a>
-    
-    
-    <a class="page-num" href="/page/2/">
-        <i class="fa-solid fa-caret-right fa-fw"></i>
-    </a>
-    
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Vanadium</div>
-        <div class="description">
-            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
-
-        </div>
-        
-        
-    </div>
-</div>
-
-    </div>
-    
-</div>
-
-            <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2024 Vanadium的小屋
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;Vanadium
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
-        
-    </div>
-
-    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-    <script>
-        var now = new Date(); 
-        function createtime() { 
-            var grt= new Date("09/26/2023 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
-            now.setTime(now.getTime()+250); 
-            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-            document.getElementById("timeDate").innerHTML = "本站已经存活 "+dnum+" 天 "; 
-            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-        } 
-    setInterval("createtime()",250);
-    </script>
-
-</footer>
-        </div>
-        
-        <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
-            </div>
-        </transition>
-        
-    </div>
-    <script src="/js/main.js"></script>
-    
-</body>
-</html>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/"><span class="card-category-list-name">实用</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%96%87%E6%A1%A3/"><span class="card-category-list-name">文档</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">5</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/FDS/" style="font-size: 1.23em; color: #999ea6">FDS</a> <a href="/tags/%E6%95%B0%E7%90%86/" style="font-size: 1.37em; color: #99a4b2">数理</a> <a href="/tags/CSS/" style="font-size: 1.23em; color: #999ea6">CSS</a> <a href="/tags/Hexo/" style="font-size: 1.3em; color: #99a1ac">Hexo</a> <a href="/tags/computer/" style="font-size: 1.17em; color: #999c9f">computer</a> <a href="/tags/Terraria/" style="font-size: 1.1em; color: #999">Terraria</a> <a href="/tags/OOP/" style="font-size: 1.43em; color: #99a6b9">OOP</a> <a href="/tags/JavaScript/" style="font-size: 1.1em; color: #999">JavaScript</a> <a href="/tags/Linux/" style="font-size: 1.1em; color: #999">Linux</a> <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 1.23em; color: #999ea6">碎碎念</a> <a href="/tags/minecraft/" style="font-size: 1.1em; color: #999">minecraft</a> <a href="/tags/C-C/" style="font-size: 1.5em; color: #99a9bf">C/C++</a> <a href="/tags/AI/" style="font-size: 1.1em; color: #999">AI</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.43em; color: #99a6b9">前端</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/3939/03/"><span class="card-archive-list-date">三月 3939</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">23</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">39</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-03-27T05:02:08.138Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,797 +1,453 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Vanadium的小屋">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Vanadium的小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg">
+<meta property="article:author" content="Vanadium">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="shortcut icon" href="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="canonical" href="http://example.com/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vanadium的小屋',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-03-27 13:02:08'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="utf-8" />
-    <title>Vanadium的小屋</title>
-    <meta name="author" content="Vanadium" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="icon" href="/images/avatar.jpg" />
-    <link rel="preconnect" href="https://s4.zstatic.net" />
-<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.loli.net" />
-<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
-<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
-<script> const mixins = {}; </script>
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://www.imageoss.com/images/2024/03/27/background86e3a6ceb1c5d968.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Vanadium的小屋"><img class="site-icon" src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"/><span class="site-name">Vanadium的小屋</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Vanadium的小屋</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/20/cpp-stl-3/" title="C++ | STL III">C++ | STL III</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-20T15:43:09.000Z" title="发表于 2023-12-20 23:43:09">2023-12-20</time></span></div><div class="content">
+在这一节, 我们将尝试探讨一个沟通了算法与容器的重要概念–迭代器
+
+前言
+参考资料
 
 
-<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
+C艹STL库官方文档
 
 
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.9/katex.min.css" />
-<script src="/js/lib/math.js"></script>
+咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象
 
 
-<script src="/js/lib/preview.js"></script>
+咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象
 
 
 
+ 
+正文
+从指针到迭代器
+迭代器iterator这个名词初见可能比较陌生, 因此在前一篇有关STL的文章 C++ | STL I 中, 我使用了指针来类比这个概念. 今天让我们继续从指针重新开始, 来理解迭代器.
+数组是最简单的容器辣!
+让我们考虑实现一个数组容器吧, 也不需要支持特别复杂的算法, 有最简单的增改删查就可以了, 因此我们直接考虑用C艹自带的数组来实现我们的数组, 仿照STL的习惯, 我们把成员函数作如下命名
+template &lt;class ItemType, int Size&gt;
+class my_array&#123;
+    private:
+        ItemType array[Size];
+    public:
+        my_array(ItemType initial, int  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/20/teleportpro/" title="网页保存软件TeleportPro软件分享">网页保存软件TeleportPro软件分享</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-20T05:41:31.000Z" title="发表于 2023-12-20 13:41:31">2023-12-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a></span></div><div class="content">
+分享一下网页保存软件TeleportPro
 
 
-<script src="/js/lib/home.js"></script>
+下载链接&amp;食用方法：吾爱破解 | [Windows] 静态网页文件获取神器
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/17/cpp-stl-2/" title="C++ | STL II">C++ | STL II</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-17T15:46:41.000Z" title="发表于 2023-12-17 23:46:41">2023-12-17</time></span></div><div class="content">
+在对STL进行详解之前, 我们先来了解一下怎么使用STL吧! 毕竟在算法竞赛和实际应用中, 我们更加关注使用, 而不是关注底层.
 
-<link rel="stylesheet" href="/css/main.css" />
+前言
+遇事不决, 查标准文档
+参考资料
 
-<meta name="generator" content="Hexo 7.1.1"></head>
-<body>
-    <div id="layout">
-        <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
-                </div>
+
+C艹STL库官方文档
+
+
+咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象
+
+
+咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象
+
+
+
+ 
+正文
+使用STL | 以map为例
+C艹STL库官方文档 | map
+首先我们进入官方文档, 可以看到如下页面
+
+
+
+请不要使用Chrome自带的翻译插件, 他只会让你更加看不懂;
+
+
+另, 实在不行可以去看CSDN等社区的阉割介绍, 但请注意甄别;
+
+
+又另, 这个世界上哪有意思准确的中文文档? 即便是国人自己开发的东西, 你说是吧, 尤雨溪?
+
+
+
+想要使用一个STL, 首先要考虑如何实例化, 因此我们寻找构造函数map::map页面
+
+C艹11为我们贴心的准备了5组构造函数, 而且下面有对应的解释
+其中1最好理解, 构造一个空的map
+map&lt;char, int&gt; demo1;   //demo1为空
+
+2被称为范围构造,  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/17/cpp-stl/" title="C++ | STL I">C++ | STL I</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-17T08:52:50.000Z" title="发表于 2023-12-17 16:52:50">2023-12-17</time></span></div><div class="content">
+终于他喵的写到STL了淦, 前置的乱七八糟的东西太多了, 没错我说的就是你, 友元!
+我打算先从STL的用法开始, 学习到STL的底层, STL系列也会写的更为详细, 因为他真的, 很重要
+
+前言
+STL(Standard Template Library) 源自于C艹第一个标准化版本C艹98(不是CC98哦), 它提供了强大的容器库(Containers library) 和算法库(Algorithm library) 以供使用者直接调用, 其背后体现了泛型编程(Generic programming) 的思想; 即使你像我一样对上面的一堆名词不甚了解, 也可以很好的利用它所提供的常见的数据结构和算法解决很多问题.
+参考资料
+
+
+咸鱼暄的代码空间 | 模板 (I) - 基本知识与 STL 使用
+
+
+咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象
+
+
+咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象
+
+
+YouTube | Back to Basics: Classic STL - Bob Steagall - CppCon 2021
+
+
+
+ 
+为什 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/16/cpp-template/" title="C++ | 模板">C++ | 模板</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-16T15:39:11.000Z" title="发表于 2023-12-16 23:39:11">2023-12-16</time></span></div><div class="content">前言
+在OOP中, 我们经常遇到要用到一些程序片段, 他们实现和完成的功能基本相同, 不同的只是数据类型, 此时我们可以利用模板template大大简化程序书写, 提高简洁性和可读性.
+
+ 
+正文
+函数模板
+template &lt;class 类型参数...&gt;   //模板声明头
+返回值 函数名(形参表)&#123;
+    函数体
+&#125;
+
+//定义一个求最大值的函数模板
+template &lt;class T&gt;
+T MaxElement(T array[], int size)&#123;
+    T _max = array[0];
+    for(int i=1;i&lt;size;++i)
+        if(array[i]&gt;_max)
+            _max = array[i];
+    return _max;
+&#125;
+
+ 
+隐式调用
+当我们像使用普通函数一样直接使用模板函数时, 就会进行隐式调用, 编译器会自动为我们匹配合适的重载
+例如, 当我们运行以下测试程序
+int main()&#123;
+    double a ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/16/cpp-polymorphic/" title="C++ | 多态">C++ | 多态</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-16T13:13:20.000Z" title="发表于 2023-12-16 21:13:20">2023-12-16</time></span></div><div class="content">前言
+多态是C艹众多新东西里面较为抽象的一集, 多态polymorphic可以理解为多种状态, 指如果我们要完成同一个行为, 但是主体却是不同的对象, 会导致不一样的结果, 即调用不一样的函数.
+在OOP中使用多态, 可以增强程序的可扩展性, 在程序需要修改或增加新功能时, 使需要改动的代码量尽可能少.
+
+ 
+正文
+虚函数
+在C艹中, 多态的实现依赖虚函数virtual function.
+class BaseC&#123;
+    virtual void func();
+&#125;
+
+class DerivedC : public BaseC&#123;
+    virtual void func();
+&#125;
+
+void BaseC::func()&#123;&#125;
+
+void DerivedC::func()&#123;&#125;
+
+例如我们有以上声明, 根据我们之前的学习可以知道func()经过了继承和重载, 两个func()虽然名字相同, 但是函数体可以不一样.
+与之前不一样的是, 这个例子中被重载的函数func()是虚函数. 假如p是某个指针, 当我们在外 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/16/cpp-inherit-and-derive/" title="C++ | 继承和派生">C++ | 继承和派生</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-16T08:05:56.000Z" title="发表于 2023-12-16 16:05:56">2023-12-16</time></span></div><div class="content">前言
+继承inherit和派生derive是C艹区别于C的一个重要特征, 他提高了程序的复用性. 在B类继承A类的时候, 我们称A类是基类鸡肋, B类的基类的一个派生类(或子类)
+
+ 
+正文
+定义与声明
+class Derived_class : public Base_class&#123;
+
+&#125;;
+
+注意: 绝大多数情况下, 我们使用public继承而不使用protected或private继承
+ 
+内存占用
+假使基类有成员v1, v2, 派生类有成员v3, 则在内存上, 派生类的内存占用等于基类的内存占用加上v3的内存占用, 且基类的成员物理意义上在派生类成员的前面
+同时, 无论v1, v2是public还是private成员, 都会被基类继承
+
+ 
+复合关系
+当两个类都需要包含对方, 但对方都不适合作为自己的派生类时, 可以用复合关系联系这两个类.
+例如需求是编写Human类和Dog类, 要求一个Human对象可以是5个Dog对象的主人, 而一个Dog对象只能是一个Human对象的宠物. 此时并不适合把Human当作Dog的派生, 也不适合把Dog当作Human的派生 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/16/js-1/" title="JS学习札记 | 基础语法">JS学习札记 | 基础语法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-16T06:17:32.000Z" title="发表于 2023-12-16 14:17:32">2023-12-16</time></span></div><div class="content">
+记录一下学习JS的过程
+
+前言
+其实想学js很久了, 但是没有一个好的理由, 但是想到三件套是很多前端工具基础, 而js更是基础中的基础(&gt;_&lt;), 这下不得不学了. JS的语法和C艹很像, 比如while, for, class的写法, 但是逻辑却和Python很接近, 毕竟同为轻量级的解释性脚本语言, 对于自身的定位自然是易于上手和开发.
+因此我认为对于语法知识的掌握速度应该是没什么问题的, 更重要的是要理解js的本质–一门主要服务于HTML和Web的语言, 这就要求我们要更多的在实战中练习学到的知识, 更要广泛的尝试项目.
+解释环境
+Node: v20.10.0
+参考资料
+
+
+RUNOOB JavaScript教程
+
+
+
+ 
+基础语法
+类型
+JS中有6个数据类型
+
+
+string
+
+
+number
+
+
+boolean
+
+
+object
+
+
+function
+
+
+symbol
+
+
+3个对象类型
+
+
+Object
+
+
+Date
+
+
+Array
+
+
+和2个不包含任何值的数据类型
+
+
+null
+
+
+undefined
+
+
+typeof可以查看数据类型
+typeof &quo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/15/vmware-ubuntu-iso/" title="Windows虚拟机安装Linux软件分享">Windows虚拟机安装Linux软件分享</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-15T12:46:34.000Z" title="发表于 2023-12-15 20:46:34">2023-12-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%9E%E7%94%A8/">实用</a></span></div><div class="content">
+分享一下在Windows上利用VMware安装Ubuntu时用到的软件
+
+
+
+
+VMware
+有10.12.15.16四个版本, 我选择了16
+
+
+Ubuntu iso
+我选择了ubuntu-23.04-desktop-amd64.iso
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/12/15/css-selector/" title="CSS入门学习杂识 | 选择器">CSS入门学习杂识 | 选择器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-15T05:18:03.000Z" title="发表于 2023-12-15 13:18:03">2023-12-15</time></span></div><div class="content">
+记录一点CSS学习心得
+
+参考资料
+
+
+RUNOOB-CSS教程
+
+
+W3C-CSS教程
+
+
+
+ 
+前言
+想要高效快捷的学习CSS，你需要：
+
+
+VSCode, with following extensions
+
+Color Highlight | 颜色显示
+Live Server | html热预览
+
+
+
+前置知识
+
+熟练的html
+入门的JavaScript
+
+
+
+辅助工具/网站
+
+配色参考
+图片素材
+优秀的榜样网站
+
+
+
+信息搜索能力
+
+
+一些小创意和小自信
+
+
+ 
+选择器
+选择器(selector) 是CSS与HTML文档交流的桥梁, 是设置CSS样式必需的工具. 选择器的用法难度方差特别大, 用的高级的选择器不亚于使用JS, 而用的随意的选择器也非常适合入门者使用
+如果你要在CSS中使用选择器, 你需要为HTML元素设置id和class
+&lt;div id=&quot;div_1&quot; class=&quot;container&quot;&gt;...&lt;/div&gt;
+
+ 
+
+基础选择器
+id选择器
+id选择器可以选择有特定id的HTML元素, 在CSS ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
             </div>
-        </transition>
-        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>VANADIUM的小屋</span>
-        </a>
-        
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;主页</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;关于</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;归档</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;分类</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;标签</span>
-        </a>
-        
-        <a href="/categories/%E7%AC%94%E8%AE%B0/">
-            <i class="fa-solid fa-note-sticky fa-fw"></i>
-            <span>&ensp;笔记</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;VANADIUM的小屋</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
-                
-                <a href="/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
-                    </div>
-                </a>
-                
-                <a href="/about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
-                    </div>
-                </a>
-                
-                <a href="/archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
-                    </div>
-                </a>
-                
-                <a href="/categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
-                    </div>
-                </a>
-                
-                <a href="/tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
-                    </div>
-                </a>
-                
-                <a href="/categories/%E7%AC%94%E8%AE%B0/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-note-sticky fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">笔记</div>
-                    </div>
-                </a>
-                
-            </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Vanadium的小屋</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
-    </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/12/20/cpp-stl-3/">
-        <h2 class="post-title">C++ | STL III</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>在这一节, 我们将尝试探讨一个沟通了算法与容器的重要概念–迭代器</p>
-</blockquote>
-<h3 id="前言">前言</h3>
-<h4 id="参考资料">参考资料</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/">C艹STL库官方文档</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/8_stl/">咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/%E7%90%86%E8%A7%A3%20STL%20-%20%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/">咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象</a></p>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/20/cpp-stl-3/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/20/teleportpro/">
-        <h2 class="post-title">网页保存软件TeleportPro软件分享</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E5%AE%9E%E7%94%A8/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                实用
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>分享一下网页保存软件TeleportPro</p>
-</blockquote>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2023/12/20/teleportpro/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/17/cpp-stl-2/">
-        <h2 class="post-title">C++ | STL II</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/17
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>在对STL进行详解之前, 我们先来了解一下<strong>怎么使用</strong>STL吧! 毕竟在算法竞赛和实际应用中, 我们更加关注使用, 而不是关注底层.</p>
-</blockquote>
-<h3 id="前言">前言</h3>
-<p>遇事不决, 查标准文档</p>
-<h4 id="参考资料">参考资料</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/">C艹STL库官方文档</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/8_stl/">咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/%E7%90%86%E8%A7%A3%20STL%20-%20%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/">咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象</a></p>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/OOP/" style="color: #03a9f4">OOP</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/17/cpp-stl-2/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/17/cpp-stl/">
-        <h2 class="post-title">C++ | STL I</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/17
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>终于他喵的写到STL了淦, 前置的乱七八糟的东西太多了, 没错我说的就是你, <strong>友元</strong>!<br>
-我打算先从STL的用法开始, 学习到STL的底层, STL系列也会写的更为详细, 因为<strong>他真的, 很重要</strong></p>
-</blockquote>
-<h3 id="前言">前言</h3>
-<p><strong>STL(Standard Template Library)</strong> 源自于C艹第一个标准化版本C艹98(不是CC98哦), 它提供了强大的<strong>容器库(Containers library)</strong> 和<strong>算法库(Algorithm library)</strong> 以供使用者直接调用, 其背后体现了<strong>泛型编程(Generic programming)</strong> 的思想; 即使你像我一样对上面的一堆名词不甚了解, 也可以很好的利用它所提供的常见的<strong>数据结构和算法</strong>解决很多问题.</p>
-<h4 id="参考资料">参考资料</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/7_template/">咸鱼暄的代码空间 | 模板 (I) - 基本知识与 STL 使用</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/8_stl/">咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/%E7%90%86%E8%A7%A3%20STL%20-%20%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/">咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=tXUXl_RzkAk">YouTube | Back to Basics: Classic STL - Bob Steagall - CppCon 2021</a></p>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #03a9f4">C/C++</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/17/cpp-stl/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/16/cpp-template/">
-        <h2 class="post-title">C++ | 模板</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/16
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="前言">前言</h3>
-<p>在OOP中, 我们经常遇到要用到一些程序片段, 他们实现和完成的功能基本相同, 不同的只是数据类型, 此时我们可以利用<strong>模板template</strong>大大简化程序书写, 提高简洁性和可读性.</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #00bcd4">C/C++</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/OOP/" style="color: #ffa2c4">OOP</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/16/cpp-template/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/16/cpp-polymorphic/">
-        <h2 class="post-title">C++ | 多态</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/16
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="前言">前言</h3>
-<p>多态是C艹众多新东西里面较为抽象的一集, <strong>多态polymorphic</strong>可以理解为<strong>多种状态</strong>, 指如果我们要完成同一个行为, 但是主体却是不同的对象, 会导致不一样的结果, 即调用不一样的函数.</p>
-<p>在OOP中使用多态, 可以增强程序的<strong>可扩展性</strong>, 在程序需要修改或增加新功能时, 使需要改动的代码量尽可能少.</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/OOP/" style="color: #03a9f4">OOP</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/16/cpp-polymorphic/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/16/cpp-inherit-and-derive/">
-        <h2 class="post-title">C++ | 继承和派生</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/16
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="前言">前言</h3>
-<p><strong>继承inherit</strong>和<strong>派生derive</strong>是C艹区别于C的一个重要特征, 他提高了程序的复用性. 在B类继承A类的时候, 我们称A类是<strong>基类</strong><s>鸡肋</s>, B类的基类的一个<strong>派生类</strong>(或<strong>子类</strong>)</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/C-C/" style="color: #ffa2c4">C/C++</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/OOP/" style="color: #ff7d73">OOP</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/16/cpp-inherit-and-derive/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/16/js-1/">
-        <h2 class="post-title">JS学习札记 | 基础语法</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/16
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>记录一下学习JS的过程</p>
-</blockquote>
-<h3 id="前言">前言</h3>
-<p>其实想学js很久了, 但是没有一个好的理由, 但是想到三件套是很多前端工具基础, 而js更是基础中的基础(&gt;_&lt;), 这下不得不学了. <strong>JS的语法和C艹很像</strong>, 比如while, for, class的写法, 但是<strong>逻辑却和Python很接近</strong>, 毕竟同为轻量级的解释性脚本语言, 对于自身的定位自然是易于上手和开发.</p>
-<p>因此我认为对于语法知识的掌握速度应该是没什么问题的, 更重要的是要理解js的本质–一门主要<strong>服务于HTML和Web</strong>的语言, 这就要求我们要更多的在实战中练习学到的知识, 更要广泛的尝试项目.</p>
-<h4 id="解释环境">解释环境</h4>
-<p>Node: v20.10.0</p>
-<h4 id="参考资料">参考资料</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/js/js-tutorial.html">RUNOOB JavaScript教程</a></p>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/JavaScript/" style="color: #03a9f4">JavaScript</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/16/js-1/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/15/vmware-ubuntu-iso/">
-        <h2 class="post-title">Windows虚拟机安装Linux软件分享</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E5%AE%9E%E7%94%A8/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                实用
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/15
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>分享一下在Windows上利用VMware安装Ubuntu时用到的软件</p>
-</blockquote>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Linux/" style="color: #ffa2c4">Linux</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/15/vmware-ubuntu-iso/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/12/15/css-selector/">
-        <h2 class="post-title">CSS入门学习杂识 | 选择器</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/12/15
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>记录一点CSS学习心得</p>
-</blockquote>
-<h3 id="参考资料">参考资料</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css-selectors.html">RUNOOB-CSS教程</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/css/css-selector.html">W3C-CSS教程</a></p>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/CSS/" style="color: #ffa2c4">CSS</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" style="color: #ff7d73">前端</a>
-        </span>
-        
-    </div>
-    <a href="/2023/12/15/css-selector/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    
-    <a class="page-num" href="/page/2/">
-        <i class="fa-solid fa-caret-left fa-fw"></i>
-    </a>
-    <a class="page-num" href="/">1</a>
-    <span class="page-omit">...</span>
-    
-    <span class="current">3</span>
-    
-    <a class="page-num" href="/page/4">4</a>
-    
-    
-    
-    
-    <a class="page-num" href="/page/4/">
-        <i class="fa-solid fa-caret-right fa-fw"></i>
-    </a>
-    
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Vanadium</div>
-        <div class="description">
-            <p>ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP</p>
-
-        </div>
-        
-        
-    </div>
-</div>
-
-    </div>
-    
-</div>
-
-            <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2024 Vanadium的小屋
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;Vanadium
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
-        
-    </div>
-
-    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-    <script>
-        var now = new Date(); 
-        function createtime() { 
-            var grt= new Date("09/26/2023 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
-            now.setTime(now.getTime()+250); 
-            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-            document.getElementById("timeDate").innerHTML = "本站已经存活 "+dnum+" 天 "; 
-            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-        } 
-    setInterval("createtime()",250);
-    </script>
-
-</footer>
-        </div>
-        
-        <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
-            </div>
-        </transition>
-        
-    </div>
-    <script src="/js/main.js"></script>
-    
-</body>
-</html>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/"><span class="card-category-list-name">实用</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%96%87%E6%A1%A3/"><span class="card-category-list-name">文档</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">5</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/FDS/" style="font-size: 1.23em; color: #999ea6">FDS</a> <a href="/tags/%E6%95%B0%E7%90%86/" style="font-size: 1.37em; color: #99a4b2">数理</a> <a href="/tags/CSS/" style="font-size: 1.23em; color: #999ea6">CSS</a> <a href="/tags/Hexo/" style="font-size: 1.3em; color: #99a1ac">Hexo</a> <a href="/tags/computer/" style="font-size: 1.17em; color: #999c9f">computer</a> <a href="/tags/Terraria/" style="font-size: 1.1em; color: #999">Terraria</a> <a href="/tags/OOP/" style="font-size: 1.43em; color: #99a6b9">OOP</a> <a href="/tags/JavaScript/" style="font-size: 1.1em; color: #999">JavaScript</a> <a href="/tags/Linux/" style="font-size: 1.1em; color: #999">Linux</a> <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" style="font-size: 1.23em; color: #999ea6">碎碎念</a> <a href="/tags/minecraft/" style="font-size: 1.1em; color: #999">minecraft</a> <a href="/tags/C-C/" style="font-size: 1.5em; color: #99a9bf">C/C++</a> <a href="/tags/AI/" style="font-size: 1.1em; color: #999">AI</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.43em; color: #99a6b9">前端</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/3939/03/"><span class="card-archive-list-date">三月 3939</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">23</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">39</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-03-27T05:02:08.138Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
