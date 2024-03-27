@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CSS入门学习杂识 | 盒子模型 | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录一点CSS学习心得  参考资料   RUNOOB-CSS教程   CSDN | CSS盒子模型详解">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CSS入门学习杂识 | 盒子模型 | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录一点CSS学习心得  参考资料  RUNOOB-CSS教程 CSDN | CSS盒子模型详解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS入门学习杂识 | 盒子模型">
 <meta property="og:url" content="http://example.com/2023/12/15/css-box-model/index.html">
 <meta property="og:site_name" content="Vanadium的小屋">
-<meta property="og:description" content="记录一点CSS学习心得  参考资料   RUNOOB-CSS教程   CSDN | CSS盒子模型详解">
+<meta property="og:description" content="记录一点CSS学习心得  参考资料  RUNOOB-CSS教程 CSDN | CSS盒子模型详解">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg">
 <meta property="article:published_time" content="2023-12-14T17:29:18.000Z">
@@ -158,47 +158,36 @@
 <p>记录一点CSS学习心得</p>
 </blockquote>
 <h4 id="参考资料">参考资料</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/css3/css3-tutorial.html">RUNOOB-CSS教程</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44992737/article/details/125217906">CSDN | CSS盒子模型详解</a></p>
-</li>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/css3/css3-tutorial.html">RUNOOB-CSS教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44992737/article/details/125217906">CSDN | CSS盒子模型详解</a></li>
 </ul>
 <span id="more"></span>
 <p> </p>
 <h4 id="前言">前言</h4>
 <p>想要高效快捷的学习CSS，你需要：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><strong>VSCode</strong>, with following extensions</p>
-<ul class="lvl-2">
-<li class="lvl-4"><strong>Color Highlight</strong> | 颜色显示</li>
-<li class="lvl-4"><strong>Live Server</strong> | html热预览</li>
+<ul>
+<li><strong>VSCode</strong>, with following extensions
+<ul>
+<li><strong>Color Highlight</strong> | 颜色显示</li>
+<li><strong>Live Server</strong> | html热预览</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p><strong>前置知识</strong></p>
-<ul class="lvl-2">
-<li class="lvl-4">熟练的html</li>
-<li class="lvl-4">入门的JavaScript</li>
+<li><strong>前置知识</strong>
+<ul>
+<li>熟练的html</li>
+<li>入门的JavaScript</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p><strong>辅助工具/网站</strong></p>
-<ul class="lvl-2">
-<li class="lvl-4">配色参考</li>
-<li class="lvl-4">图片素材</li>
-<li class="lvl-4">优秀的榜样网站</li>
+<li><strong>辅助工具/网站</strong>
+<ul>
+<li>配色参考</li>
+<li>图片素材</li>
+<li>优秀的榜样网站</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p><strong>信息搜索能力</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>一些小创意和小自信</strong></p>
-</li>
+<li><strong>信息搜索能力</strong></li>
+<li><strong>一些小创意和小自信</strong></li>
 </ul>
 <p> </p>
 <h4 id="盒子模型">盒子模型</h4>
@@ -208,102 +197,48 @@
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0002.png?raw=true">
 <p>如上图所示，我们选取了一个div属性的元素，其类是.my-home-window，我们可以在右边的源码栏里面看到更详细的信息，比如它的子元素和父元素，它的样式（如果有）以及它的其他可见属性。</p>
 <p>我们可以通过这种方式定位某个元素，再到CSS文件中修改样式，但是这不是这篇文章的重点，重点在于<strong>我们观察网页中被我们选择的元素</strong>，如果我们选择其他元素一一观察，我们会发现：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>元素是矩形的</p>
-</li>
-<li class="lvl-2">
-<p>矩形的主体是蓝色的</p>
-</li>
-<li class="lvl-2">
-<p>有些矩形有黄色、橙色、紫色和绿色等颜色的部分，有些没有</p>
-</li>
+<ul>
+<li>元素是矩形的</li>
+<li>矩形的主体是蓝色的</li>
+<li>有些矩形有黄色、橙色、紫色和绿色等颜色的部分，有些没有</li>
 </ul>
 <p>由于CSS的元素都是矩形的，我们给了他一个很形象的名字：<strong>盒子模型（box model）</strong>——网页上的元素以“盒子”的形式，以特定的方式堆叠在一起，形成一定的相互关系。</p>
 <p>盒子模型能解释第一和第二个发现，那第三个发现中的颜色是什么含义？下图是一个<strong>盒子模型的模型</strong>（？好拗口）</p>
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0009.png?raw=true">
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>蓝色部分是盒子的主体，里面是<strong>html元素</strong>（比如p、a、h3、li等等）的内容，大小是100*100（width*height）；</p>
-</li>
-<li class="lvl-2">
-<p>绿色部分是<strong>内边距padding</strong>，指的是元素内容其<strong>主体部分</strong>边缘的距离，分别有padding-top、padding-left、padding-right和padding-bottom四个方向的子属性，可以类比我们使用Word时的<strong>页边距</strong>概念（如果把盒子比作一页纸的话）；</p>
-</li>
-<li class="lvl-2">
-<p>黄色部分是<strong>边框border</strong>，指的是元素的边框（废话），这里边框宽度是10；</p>
-</li>
-<li class="lvl-2">
-<p>橙色部分是<strong>外边距margin</strong>，指的是元素距离其最近的<strong>同级或更高级元素</strong>的距离，类似于padding，margin也有四个方向的子属性。</p>
-</li>
+<ul>
+<li>蓝色部分是盒子的主体，里面是<strong>html元素</strong>（比如p、a、h3、li等等）的内容，大小是100*100（width*height）；</li>
+<li>绿色部分是<strong>内边距padding</strong>，指的是元素内容其<strong>主体部分</strong>边缘的距离，分别有padding-top、padding-left、padding-right和padding-bottom四个方向的子属性，可以类比我们使用Word时的<strong>页边距</strong>概念（如果把盒子比作一页纸的话）；</li>
+<li>黄色部分是<strong>边框border</strong>，指的是元素的边框（废话），这里边框宽度是10；</li>
+<li>橙色部分是<strong>外边距margin</strong>，指的是元素距离其最近的<strong>同级或更高级元素</strong>的距离，类似于padding，margin也有四个方向的子属性。</li>
 </ul>
 <p>此外，还要知道的是，盒子是可以嵌套的，此时我们就有了<strong>子元素</strong>和<strong>父元素</strong>的概念。一般来说，子元素的定位是从父元素<strong>主体部分的左上角</strong>开始的。</p>
 <p>这四个矩形就组成了“盒子”的概念，我们所看到的花里胡哨的的网站归根结底就是由这些花花绿绿的盒子堆叠而成的。（Tips. CSS的全称Cascading Style Sheets指的就是<strong>层叠样式表</strong>）</p>
 <p> </p>
 <h4 id="DIY">DIY</h4>
 <p>让我们动手试试吧！</p>
-<ul class="lvl-0">
-<li class="lvl-2">
+<ul>
+<li>
 <p>首先在VSCode中，在同一个目录下，新建index.html和main.css并如此摆放（个人习惯，方便对比观察）<br>
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0003.png?raw=true"></p>
 </li>
-<li class="lvl-2">
+<li>
 <p>输入如下代码</p>
-<pre><code class="language-html">&lt;html&gt;
-    &lt;head&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-
-        &lt;div class=&quot;container&quot;&gt;
-            &lt;div class=&quot;content&quot;&gt;
-                &lt;p&gt;
-                    I am text.
-                &lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class=&quot;container&quot;&gt;
-            &lt;div class=&quot;content&quot;&gt;
-                &lt;p&gt;
-                    I am text.
-                &lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="language-css">body&#123;
-    background-color: #fff;
-&#125;
-
-.container&#123;
-    width: 300px;
-    height: 300px;
-    background-color: aqua;
-&#125;
-</code></pre>
+  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;main.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                    I am text.</span><br><span class="line">                <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                    I am text.</span><br><span class="line">                <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: aqua;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0004.png?raw=true">
 </li>
-<li class="lvl-2">
+<li>
 <p>然后点击底边任务栏，右数第3个<kbd>Go Live</kbd>，你的网页就可以在127.0.0.1:5500预览了！<br>
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0005.png?raw=true"></p>
 </li>
-<li class="lvl-2">
+<li>
 <p>接下来用main.css添加padding和margin属性，观察预览网页的变化，可以看到，元素之间的距离改变了，接下来请你自己调整，也可以用上方向属性（Tips. px是长度单位<strong>像素</strong>；你甚至可以尝试<strong>负数</strong>margin）<br>
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0006.png?raw=true"></p>
 </li>
-<li class="lvl-2">
-<p>你还可以调整元素的border，注意，为了显示你的border，你需要设置border-style属性为<strong>非none</strong>。border属性下有很多子属性，比如颜色、样式、宽度、圆角等等例如我在main.css写下如下代码（同时删去了.container的background-color属性）</p>
-<pre><code class="language-css">.container .content&#123;
-    background-color: #eef4ec;
-    border-style: solid;
-    border-color: #39c5bb;
-    border-width: 2px;
-    border-radius: 10px;
-    padding-left: 24px;
-&#125;
-</code></pre>
+<li>
+<p>你还可以调整元素的border，注意，为了显示你的border，你需要设置border-style属性为<strong>非none</strong>。border属性下有很多子属性，比如颜色、样式、宽度、圆角等等<br>
+例如我在main.css写下如下代码（同时删去了.container的background-color属性）</p>
+  <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> <span class="selector-class">.content</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#eef4ec</span>;</span><br><span class="line">    <span class="attribute">border-style</span>: solid;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#39c5bb</span>;</span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">24px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>就能得到如下效果<br>
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0007.png?raw=true"><br>
 Tips. <strong>合理</strong>使用border属性，能使你的网页更好看！</p>
@@ -314,51 +249,27 @@ Tips. <strong>合理</strong>使用border属性，能使你的网页更好看！
 <p>相较于传统盒子模型，<strong>弹性盒子模型（flex box model）</strong> 是CSS3推出的新玩意儿。能够更加智能的适应手机不同分辨率下的阅读，提高阅读体验。</p>
 <p>想要使用弹性盒子模型，只需在父元素声明display: flex，其子元素就会<strong>自动布局</strong>（默认横向排放，即使是div）</p>
 <p>如果要对弹性容器内的子元素<strong>布局</strong>，我们可以使用flex-direction，他接受四个参数：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>row：左对齐</p>
-</li>
-<li class="lvl-2">
-<p>row-reverse：右对齐，从右往左排列</p>
-</li>
-<li class="lvl-2">
-<p>column：纵向排列</p>
-</li>
-<li class="lvl-2">
-<p>column-reverse：反转纵向，从下往上排列</p>
-</li>
+<ul>
+<li>row：左对齐</li>
+<li>row-reverse：右对齐，从右往左排列</li>
+<li>column：纵向排列</li>
+<li>column-reverse：反转纵向，从下往上排列</li>
 </ul>
 <p>设置子元素的<strong>水平对齐方式</strong>，可以使用justify-context属性：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>flex-start：左对齐</p>
-</li>
-<li class="lvl-2">
-<p>flex-end：右对齐</p>
-</li>
-<li class="lvl-2">
-<p>center：左右居中</p>
-</li>
-<li class="lvl-2">
-<p>space-between：左右对齐</p>
-</li>
-<li class="lvl-2">
-<p>space-around：左右对齐，但是盒子会居中</p>
-</li>
+<ul>
+<li>flex-start：左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center：左右居中</li>
+<li>space-between：左右对齐</li>
+<li>space-around：左右对齐，但是盒子会居中</li>
 </ul>
 <p>设置子元素的<strong>垂直对齐方式</strong>，可以使用align-items属性：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>flex-start：上对齐</p>
-</li>
-<li class="lvl-2">
-<p>flex-end：下对齐</p>
-</li>
-<li class="lvl-2">
-<p>center：垂直居中</p>
-</li>
+<ul>
+<li>flex-start：上对齐</li>
+<li>flex-end：下对齐</li>
+<li>center：垂直居中</li>
 </ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/15/css-box-model/">http://example.com/2023/12/15/css-box-model/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CSS/">CSS</a><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/15/css-selector/" title="CSS入门学习杂识 | 选择器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CSS入门学习杂识 | 选择器</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/13/hexo-common-isssues/" title="网站常见异常报错归档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">网站常见异常报错归档</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/03/08/css-application/" title="CSS进阶实战 | 一些实例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-08</div><div class="title">CSS进阶实战 | 一些实例</div></div></a></div><div><a href="/2023/12/15/css-selector/" title="CSS入门学习杂识 | 选择器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-15</div><div class="title">CSS入门学习杂识 | 选择器</div></div></a></div><div><a href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</div></div></a></div><div><a href="/2023/12/08/hexo-userful-command/" title="常用Hexo命令归档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-08</div><div class="title">常用Hexo命令归档</div></div></a></div><div><a href="/2023/12/13/hexo-common-isssues/" title="网站常见异常报错归档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-13</div><div class="title">网站常见异常报错归档</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">盒子模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DIY"><span class="toc-number">4.</span> <span class="toc-text">DIY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">弹性盒子模型</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/15/css-box-model/">http://example.com/2023/12/15/css-box-model/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CSS/">CSS</a><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/15/css-selector/" title="CSS入门学习杂识 | 选择器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CSS入门学习杂识 | 选择器</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/13/hexo-common-isssues/" title="网站常见异常报错归档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">网站常见异常报错归档</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/03/08/css-application/" title="CSS进阶实战 | 一些实例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-08</div><div class="title">CSS进阶实战 | 一些实例</div></div></a></div><div><a href="/2023/12/15/css-selector/" title="CSS入门学习杂识 | 选择器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-15</div><div class="title">CSS入门学习杂识 | 选择器</div></div></a></div><div><a href="/2023/12/13/hexo-common-isssues/" title="网站常见异常报错归档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-13</div><div class="title">网站常见异常报错归档</div></div></a></div><div><a href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</div></div></a></div><div><a href="/2023/12/08/hexo-userful-command/" title="常用Hexo命令归档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-08</div><div class="title">常用Hexo命令归档</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">盒子模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DIY"><span class="toc-number">4.</span> <span class="toc-text">DIY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">弹性盒子模型</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
   document.querySelectorAll('#article-container span.katex-display').forEach(item => {
     btf.wrap(item, 'div', { class: 'katex-wrap'})
   })

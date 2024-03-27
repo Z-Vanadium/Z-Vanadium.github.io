@@ -160,314 +160,80 @@
 <p> </p>
 <h3 id="正文">正文</h3>
 <h4 id="函数模板">函数模板</h4>
-<pre><code class="language-c++">template &lt;class 类型参数...&gt;   //模板声明头
-返回值 函数名(形参表)&#123;
-    函数体
-&#125;
-</code></pre>
-<pre><code class="language-c++">//定义一个求最大值的函数模板
-template &lt;class T&gt;
-T MaxElement(T array[], int size)&#123;
-    T _max = array[0];
-    for(int i=1;i&lt;size;++i)
-        if(array[i]&gt;_max)
-            _max = array[i];
-    return _max;
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> 类型参数...&gt;   <span class="comment">//模板声明头</span></span><br><span class="line">返回值 函数名(形参表)&#123;</span><br><span class="line">    函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义一个求最大值的函数模板</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function">T <span class="title">MaxElement</span><span class="params">(T array[], <span class="type">int</span> size)</span></span>&#123;</span><br><span class="line">    T _max = array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;size;++i)</span><br><span class="line">        <span class="keyword">if</span>(array[i]&gt;_max)</span><br><span class="line">            _max = array[i];</span><br><span class="line">    <span class="keyword">return</span> _max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> </p>
 <h4 id="隐式调用">隐式调用</h4>
 <p>当我们像使用普通函数一样直接使用模板函数时, 就会进行隐式调用, 编译器会自动为我们匹配合适的重载</p>
 <p>例如, 当我们运行以下测试程序</p>
-<pre><code class="language-c++">int main()&#123;
-    double a[3]=&#123;1.5, 2.9, 2.1&#125;;
-    cout&lt;&lt;MaxElement(a,3)&lt;&lt;endl;
-
-    int b[4]=&#123;5, 2, 6, 4&#125;;
-    cout&lt;&lt;MaxElement(b,4)&lt;&lt;endl;
-&#125;
-/*输出结果:
-2.9
-6
-*/
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">double</span> a[<span class="number">3</span>]=&#123;<span class="number">1.5</span>, <span class="number">2.9</span>, <span class="number">2.1</span>&#125;;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">MaxElement</span>(a,<span class="number">3</span>)&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> b[<span class="number">4</span>]=&#123;<span class="number">5</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">MaxElement</span>(b,<span class="number">4</span>)&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*输出结果:</span></span><br><span class="line"><span class="comment">2.9</span></span><br><span class="line"><span class="comment">6</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <p>在行3和行6中, MaxElement分别被实例化为浮点型和整型函数, 将鼠标悬停在函数上面可以看到</p>
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0013.png?raw=true">
 <img src="https://github.com/Z-Vanadium/Z-Vanadium.github.io/blob/main/ImageHost/Illustrations/0014.png?raw=true">
 <p> </p>
 <h4 id="显式调用">显式调用</h4>
 <p>此外, 我们也可以在调用时直接声明类型参数</p>
-<pre><code class="language-c++">int main()&#123;
-    double a[3]=&#123;1.5, 2.9, 2.1&#125;;
-    cout&lt;&lt;MaxElement&lt;int&gt;(a,3)&lt;&lt;endl;   //Error
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">double</span> a[<span class="number">3</span>]=&#123;<span class="number">1.5</span>, <span class="number">2.9</span>, <span class="number">2.1</span>&#125;;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">MaxElement</span>&lt;<span class="type">int</span>&gt;(a,<span class="number">3</span>)&lt;&lt;endl;   <span class="comment">//Error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时声明了整型的MaxElement就会报错, 因为a是浮点型数组</p>
 <p> </p>
 <h4 id="重载">重载</h4>
 <p>模板函数可以重载, 只要他们的<strong>形参表或类型参数表</strong>不同, 以下重载都是合法的</p>
-<pre><code class="language-c++">template &lt;class T&gt;
-void func(T x, T y)&#123;
-&#125;
-
-template &lt;class T1, class T2&gt;
-void func(T1 x, T2 y)&#123;
-&#125;
-
-template &lt;class T1, class T2&gt;
-void func(T1 x, T1 y)&#123;
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(T x, T y)</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(T1 x, T2 y)</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(T1 x, T1 y)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> </p>
 <h4 id="重载的匹配顺序">重载的匹配顺序</h4>
 <p>当存在同名普通函数和模板函数重载时, 编译器的匹配顺序如下</p>
 <ol>
-<li class="lvl-3">
-<p>参数表完全匹配的<strong>普通函数</strong>(指非模板实例化的函数)</p>
-</li>
-<li class="lvl-3">
-<p>参数表完全匹配的<strong>模板函数</strong></p>
-</li>
-<li class="lvl-3">
-<p>参数表通过自动类型转换后能够匹配的<strong>普通函数</strong></p>
-</li>
-<li class="lvl-3">
-<p>报错</p>
-</li>
+<li>参数表完全匹配的<strong>普通函数</strong>(指非模板实例化的函数)</li>
+<li>参数表完全匹配的<strong>模板函数</strong></li>
+<li>参数表通过自动类型转换后能够匹配的<strong>普通函数</strong></li>
+<li>报错</li>
 </ol>
 <p><strong>注意:</strong> 编译器不会进行自动类型转换以匹配<strong>隐式调用</strong>的模板函数</p>
-<pre><code class="language-c++">template &lt;class T&gt;
-void func(T x, T y)&#123;
-    cout&lt;&lt;x&lt;&lt;' '&lt;&lt;y&lt;&lt;endl;
-&#125;
-
-int main()&#123;
-    int x=9;
-    double y=8.1;
-    func(x,y);      //Error
-    func&lt;int&gt;(x,y); //Accepted
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(T x, T y)</span></span>&#123;</span><br><span class="line">    cout&lt;&lt;x&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;y&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> x=<span class="number">9</span>;</span><br><span class="line">    <span class="type">double</span> y=<span class="number">8.1</span>;</span><br><span class="line">    <span class="built_in">func</span>(x,y);      <span class="comment">//Error</span></span><br><span class="line">    <span class="built_in">func</span>&lt;<span class="type">int</span>&gt;(x,y); <span class="comment">//Accepted</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> </p>
 <h4 id="类模板">类模板</h4>
-<pre><code class="language-c++">template &lt;class 类型参数...&gt;   //模板声明头
-class 类名&#123;
-    成员
-&#125;;
-
-类模板名&lt;真实类型参数表&gt; 对象名(构造函数参数表);
-</code></pre>
-<pre><code class="language-c++">//定义一个键值对类
-template &lt;class T1, class T2&gt;
-class JsonNode&#123;
-    public:
-        T1 key;
-        T2 value;
-        JsonNode(T1 _key, T2 _value):key(_key), value(_value)&#123;&#125;;
-        bool operator&lt;(const JsonNode&lt;T1,T2&gt; &amp; tmp) const;
-        bool operator&gt;(const JsonNode&lt;T1,T2&gt; &amp; tmp) const;
-&#125;;
-
-template &lt;class T1, class T2&gt;   //注意这里也要声明是模板函数
-bool JsonNode&lt;T1,T2&gt;::operator&lt;(const JsonNode&lt;T1,T2&gt; &amp; tmp) const&#123;
-    return this-&gt;value &lt; tmp.value;
-&#125;
-
-template &lt;class T1, class T2&gt;   //注意这里也要声明是模板函数
-bool JsonNode&lt;T1,T2&gt;::operator&gt;(const JsonNode&lt;T1,T2&gt; &amp; tmp) const&#123;
-    return !(*this&lt;tmp);
-&#125;
-
-int main()&#123;
-    JsonNode&lt;string,int&gt; A(&quot;Mike&quot;,10);
-    JsonNode&lt;string,int&gt; B(&quot;John&quot;,15);
-    cout&lt;&lt;(A&lt;B)&lt;&lt;endl&lt;&lt;B.key;
-&#125;
-/*
-输出结果:
-1
-John
-*/
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> 类型参数...&gt;   <span class="comment">//模板声明头</span></span><br><span class="line"><span class="keyword">class</span> 类名&#123;</span><br><span class="line">    成员</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">类模板名&lt;真实类型参数表&gt; 对象名(构造函数参数表);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义一个键值对类</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">JsonNode</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T1 key;</span><br><span class="line">        T2 value;</span><br><span class="line">        <span class="built_in">JsonNode</span>(T1 _key, T2 _value):<span class="built_in">key</span>(_key), <span class="built_in">value</span>(_value)&#123;&#125;;</span><br><span class="line">        <span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> JsonNode&lt;T1,T2&gt; &amp; tmp) <span class="type">const</span>;</span><br><span class="line">        <span class="type">bool</span> <span class="keyword">operator</span>&gt;(<span class="type">const</span> JsonNode&lt;T1,T2&gt; &amp; tmp) <span class="type">const</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;   <span class="comment">//注意这里也要声明是模板函数</span></span><br><span class="line"><span class="type">bool</span> JsonNode&lt;T1,T2&gt;::<span class="keyword">operator</span>&lt;(<span class="type">const</span> JsonNode&lt;T1,T2&gt; &amp; tmp) <span class="type">const</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>-&gt;value &lt; tmp.value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;   <span class="comment">//注意这里也要声明是模板函数</span></span><br><span class="line"><span class="type">bool</span> JsonNode&lt;T1,T2&gt;::<span class="keyword">operator</span>&gt;(<span class="type">const</span> JsonNode&lt;T1,T2&gt; &amp; tmp) <span class="type">const</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !(*<span class="keyword">this</span>&lt;tmp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function">JsonNode&lt;string,<span class="type">int</span>&gt; <span class="title">A</span><span class="params">(<span class="string">&quot;Mike&quot;</span>,<span class="number">10</span>)</span></span>;</span><br><span class="line">    <span class="function">JsonNode&lt;string,<span class="type">int</span>&gt; <span class="title">B</span><span class="params">(<span class="string">&quot;John&quot;</span>,<span class="number">15</span>)</span></span>;</span><br><span class="line">    cout&lt;&lt;(A&lt;B)&lt;&lt;endl&lt;&lt;B.key;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输出结果:</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">John</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 <p><strong>注意:</strong> 同一个模板生成的不同类, 例如<code>JsonNode&lt;string,int&gt;</code>和<code>JsonNode&lt;string,double&gt;</code>是不兼容的</p>
 <p> </p>
 <h4 id="非类型参数">非类型参数</h4>
 <p>函数模板和类模板的类型参数表都能接受非类型参数(<strong>但要求是类型typename, 而不是类class</strong>), 以下用法是合法(但不常用)的</p>
-<pre><code class="language-c++">template &lt;class T, int size&gt;
-T MaxElement(T array[])&#123;
-    T _max = array[0];
-    for(int i=1;i&lt;size;++i)
-        if(array[i]&gt;_max)
-            _max = array[i];
-    return _max;
-&#125;
-
-int main()&#123;
-    int array[4] = &#123;2,6,5,9&#125;;
-    cout&lt;&lt;MaxElement&lt;int,4&gt;(array)&lt;&lt;endl;   //这里通过模板生成了只能接受大小为4数组的函数
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>, <span class="type">int</span> size&gt;</span><br><span class="line"><span class="function">T <span class="title">MaxElement</span><span class="params">(T array[])</span></span>&#123;</span><br><span class="line">    T _max = array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;size;++i)</span><br><span class="line">        <span class="keyword">if</span>(array[i]&gt;_max)</span><br><span class="line">            _max = array[i];</span><br><span class="line">    <span class="keyword">return</span> _max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> array[<span class="number">4</span>] = &#123;<span class="number">2</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">9</span>&#125;;</span><br><span class="line">    cout&lt;&lt;<span class="built_in">MaxElement</span>&lt;<span class="type">int</span>,<span class="number">4</span>&gt;(array)&lt;&lt;endl;   <span class="comment">//这里通过模板生成了只能接受大小为4数组的函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以及</p>
-<pre><code class="language-c++">template &lt;class T, int size&gt;
-class Array&#123;
-    private:
-        T array[size]=&#123;0&#125;;
-    public:
-        void Print()&#123;
-            for(int i=0;i&lt;size;++i) cout&lt;&lt;array[i]&lt;&lt;'#';
-            cout&lt;&lt;endl;
-        &#125;
-&#125;;
-
-int main()&#123;
-    Array&lt;int,10&gt; int_array;
-    int_array.Print();
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>, <span class="type">int</span> size&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Array</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        T array[size]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">Print</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;++i) cout&lt;&lt;array[i]&lt;&lt;<span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">            cout&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Array&lt;<span class="type">int</span>,<span class="number">10</span>&gt; int_array;</span><br><span class="line">    int_array.<span class="built_in">Print</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> </p>
 <h4 id="类模板的派生">类模板的派生</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>类模板从<strong>类模板</strong>派生</p>
-</li>
-<li class="lvl-2">
-<p>类模板从<strong>模板类</strong>派生</p>
-</li>
-<li class="lvl-2">
-<p>类模板从普通类派生</p>
-</li>
-<li class="lvl-2">
-<p>普通类从模板类派生</p>
-</li>
+<ul>
+<li>类模板从<strong>类模板</strong>派生</li>
+<li>类模板从<strong>模板类</strong>派生</li>
+<li>类模板从普通类派生</li>
+<li>普通类从模板类派生</li>
 </ul>
 <p>注意主语和限定词:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><strong>类模板</strong>指的是一个尚未实例化的模板, 被继承时仍然是模板</p>
-</li>
-<li class="lvl-2">
-<p><strong>模板类</strong>指的是一个已经实例化的类, 本质上与普通的类是一样的</p>
-</li>
+<ul>
+<li><strong>类模板</strong>指的是一个尚未实例化的模板, 被继承时仍然是模板</li>
+<li><strong>模板类</strong>指的是一个已经实例化的类, 本质上与普通的类是一样的</li>
 </ul>
 <p><strong>类模板从类模板派生</strong></p>
-<pre><code class="language-c++">template&lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        T1 v1;
-        T2 v2;
-&#125;;
-
-template&lt;class T1, class T2&gt;
-class B:public A&lt;T2,T1&gt;&#123;
-    public:
-        T1 v3;
-        T2 v4;
-&#125;;
-
-template&lt;class T&gt;
-class C:public B&lt;T,T&gt;&#123;
-    public:
-        T v5;
-&#125;;
-
-
-int main()&#123;
-    B&lt;int,double&gt; obj1; //v1~v4: double, int, int, double
-    C&lt;char&gt; obj2;       //v1~v5: char, char, char, char, char
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T1 v1;</span><br><span class="line">        T2 v2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>:<span class="keyword">public</span> A&lt;T2,T1&gt;&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T1 v3;</span><br><span class="line">        T2 v4;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>:<span class="keyword">public</span> B&lt;T,T&gt;&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T v5;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    B&lt;<span class="type">int</span>,<span class="type">double</span>&gt; obj1; <span class="comment">//v1~v4: double, int, int, double</span></span><br><span class="line">    C&lt;<span class="type">char</span>&gt; obj2;       <span class="comment">//v1~v5: char, char, char, char, char</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>类模板从模板类派生 | 类模板从普通类派生</strong></p>
 <p>当类模板从模板类或普通类派生时, 由这个类模板生成的类均会以这个模板类或普通类为基类</p>
-<pre><code class="language-c++">template&lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        T1 v1;
-        T2 v2;
-&#125;;
-
-template&lt;class T1, class T2&gt;
-class B:public A&lt;int,char&gt;&#123;
-    public:
-        T1 v3;
-        T2 v4;
-&#125;;
-
-class C&#123;
-    public:
-        int v5;
-&#125;;
-
-template&lt;class T3, class T4&gt;
-class D:public C&#123;
-    public:
-        T3 v6;
-        T4 v7;
-&#125;
-
-
-int main()&#123;
-    B&lt;int,double&gt; obj1; //v1~v4: int, char, int, double
-    D&lt;char,double&gt; obj2;       //v5~v7: int, char, double
-    D&lt;short,float&gt; obj2;       //v5~v7: int, short  , float
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T1 v1;</span><br><span class="line">        T2 v2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>:<span class="keyword">public</span> A&lt;<span class="type">int</span>,<span class="type">char</span>&gt;&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T1 v3;</span><br><span class="line">        T2 v4;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="type">int</span> v5;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T3</span>, <span class="keyword">class</span> <span class="title class_">T4</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">D</span>:<span class="keyword">public</span> C&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T3 v6;</span><br><span class="line">        T4 v7;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    B&lt;<span class="type">int</span>,<span class="type">double</span>&gt; obj1; <span class="comment">//v1~v4: int, char, int, double</span></span><br><span class="line">    D&lt;<span class="type">char</span>,<span class="type">double</span>&gt; obj2;       <span class="comment">//v5~v7: int, char, double</span></span><br><span class="line">    D&lt;<span class="type">short</span>,<span class="type">float</span>&gt; obj2;       <span class="comment">//v5~v7: int, short  , float</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>普通类从模板类派生</strong></p>
 <p>除语法外, 与普通的类的派生无异</p>
-<pre><code class="language-c++">template&lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        T1 v1;
-        T2 v2;
-&#125;;
-
-class B:public A&lt;int,char&gt;&#123;
-    public:
-        T1 v3;
-        T2 v4;
-&#125;;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T1 v1;</span><br><span class="line">        T2 v2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>:<span class="keyword">public</span> A&lt;<span class="type">int</span>,<span class="type">char</span>&gt;&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        T1 v3;</span><br><span class="line">        T2 v4;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p> </p>
 <h4 id="模板与友元">模板与友元</h4>
 <p><strong>函数、类、类的成员函数作为类模板的友元</strong></p>
-<pre><code class="language-c++">void func()&#123;&#125;
-
-class A&#123;&#125;;
-
-class B&#123;
-    public:
-        void g()&#123;&#125;
-&#125;
-
-template &lt;class T&gt;
-class C&#123;
-    friend void func();
-    friend class A;
-    friend void B::g();
-&#125;
-//所有由C实例化的类, 均有以上三个友元
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">g</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">class</span> <span class="title class_">A</span>;</span><br><span class="line">    <span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">B::g</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//所有由C实例化的类, 均有以上三个友元</span></span><br></pre></td></tr></table></figure>
 <p><strong>函数模板作为类模板的友元</strong></p>
-<pre><code class="language-c++">template &lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        template &lt;class T1, class T2&gt;
-        friend void func()&#123;&#125;;
-&#125;;
-//所有函数模板的实例化, 都是类模板实例化的友元
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line">        <span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//所有函数模板的实例化, 都是类模板实例化的友元</span></span><br></pre></td></tr></table></figure>
 <p><strong>类模板作为类模板的友元</strong></p>
-<pre><code class="language-c++">template &lt;class T1, class T2&gt;
-class A&#123;
-    public:
-        template &lt;class T1, class T2&gt;
-        friend class B&#123;&#125;;
-&#125;;
-//所有B类模板的实例化, 都是A类模板实例化的友元
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T1</span>, <span class="keyword">class</span> <span class="title class_">T2</span>&gt;</span><br><span class="line">        <span class="keyword">friend</span> <span class="keyword">class</span> <span class="title class_">B</span>&#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//所有B类模板的实例化, 都是A类模板实例化的友元</span></span><br></pre></td></tr></table></figure>
 <p> </p>
 <h4 id="类模板与静态成员变量">类模板与静态成员变量</h4>
 <p>如果类模板中定义了静态成员变量, 则其所有实例化共用一个静态成员变量</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/16/cpp-template/">http://example.com/2023/12/16/cpp-template/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-C/">C/C++</a><a class="post-meta__tags" href="/tags/OOP/">OOP</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/17/cpp-stl/" title="C++ | STL I"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++ | STL I</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/16/cpp-polymorphic/" title="C++ | 多态"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++ | 多态</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/16/cpp-polymorphic/" title="C++ | 多态"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-16</div><div class="title">C++ | 多态</div></div></a></div><div><a href="/2023/12/16/cpp-inherit-and-derive/" title="C++ | 继承和派生"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-16</div><div class="title">C++ | 继承和派生</div></div></a></div><div><a href="/2023/12/17/cpp-stl-2/" title="C++ | STL II"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-17</div><div class="title">C++ | STL II</div></div></a></div><div><a href="/2023/12/17/cpp-stl/" title="C++ | STL I"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-17</div><div class="title">C++ | STL I</div></div></a></div><div><a href="/2023/12/20/cpp-stl-3/" title="C++ | STL III"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-20</div><div class="title">C++ | STL III</div></div></a></div><div><a href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-24</div><div class="title">C++ | 智能指针</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.1.</span> <span class="toc-text">函数模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text">隐式调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">显式调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD"><span class="toc-number">2.4.</span> <span class="toc-text">重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%B9%E9%85%8D%E9%A1%BA%E5%BA%8F"><span class="toc-number">2.5.</span> <span class="toc-text">重载的匹配顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.6.</span> <span class="toc-text">类模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="toc-number">2.7.</span> <span class="toc-text">非类型参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%B4%BE%E7%94%9F"><span class="toc-number">2.8.</span> <span class="toc-text">类模板的派生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%8F%8B%E5%85%83"><span class="toc-number">2.9.</span> <span class="toc-text">模板与友元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%8E%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">2.10.</span> <span class="toc-text">类模板与静态成员变量</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/16/cpp-template/">http://example.com/2023/12/16/cpp-template/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-C/">C/C++</a><a class="post-meta__tags" href="/tags/OOP/">OOP</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/17/cpp-stl/" title="C++ | STL I"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++ | STL I</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/16/cpp-polymorphic/" title="C++ | 多态"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++ | 多态</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/16/cpp-inherit-and-derive/" title="C++ | 继承和派生"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-16</div><div class="title">C++ | 继承和派生</div></div></a></div><div><a href="/2023/12/16/cpp-polymorphic/" title="C++ | 多态"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-16</div><div class="title">C++ | 多态</div></div></a></div><div><a href="/2023/12/20/cpp-stl-3/" title="C++ | STL III"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-20</div><div class="title">C++ | STL III</div></div></a></div><div><a href="/2023/12/17/cpp-stl/" title="C++ | STL I"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-17</div><div class="title">C++ | STL I</div></div></a></div><div><a href="/2023/12/17/cpp-stl-2/" title="C++ | STL II"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-17</div><div class="title">C++ | STL II</div></div></a></div><div><a href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-20</div><div class="title">cpp | 右值引用 &amp; 移动语义</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.1.</span> <span class="toc-text">函数模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text">隐式调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">显式调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD"><span class="toc-number">2.4.</span> <span class="toc-text">重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%E7%9A%84%E5%8C%B9%E9%85%8D%E9%A1%BA%E5%BA%8F"><span class="toc-number">2.5.</span> <span class="toc-text">重载的匹配顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.6.</span> <span class="toc-text">类模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="toc-number">2.7.</span> <span class="toc-text">非类型参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E6%B4%BE%E7%94%9F"><span class="toc-number">2.8.</span> <span class="toc-text">类模板的派生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%8F%8B%E5%85%83"><span class="toc-number">2.9.</span> <span class="toc-text">模板与友元</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%8E%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">2.10.</span> <span class="toc-text">类模板与静态成员变量</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
   document.querySelectorAll('#article-container span.katex-display').forEach(item => {
     btf.wrap(item, 'div', { class: 'katex-wrap'})
   })

@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>常用Hexo命令归档 | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录一些常用的Hexo命令&#x2F;配置方法   1. 部署相关 summary 撰写前 hexo g -w  撰写后 hexo d &amp;&amp; hexo s  调整CSS&#x2F;ejs文档（F5自动更新） hexo s    将本地仓库生成展示页并且配置到GitHub（需要提前建立ssh链接） hexo c &amp;&amp; hexo g &amp;&amp; hexo d">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>常用Hexo命令归档 | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录一些常用的Hexo命令&#x2F;配置方法   1. 部署相关 summary 撰写前 hexo g -w 撰写后 hexo d &amp;&amp; hexo s 调整CSS&#x2F;ejs文档（F5自动更新） hexo s   将本地仓库生成展示页并且配置到GitHub（需要提前建立ssh链接） hexo c &amp;&amp; hexo g &amp;&amp; hexo d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用Hexo命令归档">
 <meta property="og:url" content="http://example.com/2023/12/08/hexo-userful-command/index.html">
 <meta property="og:site_name" content="Vanadium的小屋">
-<meta property="og:description" content="记录一些常用的Hexo命令&#x2F;配置方法   1. 部署相关 summary 撰写前 hexo g -w  撰写后 hexo d &amp;&amp; hexo s  调整CSS&#x2F;ejs文档（F5自动更新） hexo s    将本地仓库生成展示页并且配置到GitHub（需要提前建立ssh链接） hexo c &amp;&amp; hexo g &amp;&amp; hexo d">
+<meta property="og:description" content="记录一些常用的Hexo命令&#x2F;配置方法   1. 部署相关 summary 撰写前 hexo g -w 撰写后 hexo d &amp;&amp; hexo s 调整CSS&#x2F;ejs文档（F5自动更新） hexo s   将本地仓库生成展示页并且配置到GitHub（需要提前建立ssh链接） hexo c &amp;&amp; hexo g &amp;&amp; hexo d">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg">
 <meta property="article:published_time" content="2023-12-08T05:49:52.000Z">
@@ -161,48 +161,37 @@
 <h4 id="1-部署相关">1. 部署相关</h4>
 <p><strong>summary</strong></p>
 <p>撰写前</p>
-<pre><code class="language-line">hexo g -w
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -w</span><br></pre></td></tr></table></figure>
 <p>撰写后</p>
-<pre><code>hexo d &amp;&amp; hexo s
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo d &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 <p>调整CSS/ejs文档（F5自动更新）</p>
-<pre><code>hexo s
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <hr>
 <br>
 <p>将本地仓库生成展示页并且配置到GitHub（需要提前建立ssh链接）</p>
-<pre><code class="language-line">hexo c &amp;&amp; hexo g &amp;&amp; hexo d
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo c &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
 <br>
 <p>检查ssh链接</p>
-<pre><code class="language-line">ssh -T -v git@github.com
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T -v git@github.com</span><br></pre></td></tr></table></figure>
 <br>
 <p>在本地仓库生成展示页并且配置到本地服务器<a href="localhost:4000">localhost:4000</a><br>
 一般用于预览</p>
-<pre><code class="language-line">hexo c &amp;&amp; hexo g &amp;&amp; hexo s
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo c &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 <br>
 <p>修改端口</p>
-<pre><code class="language-line">hexo server -p [port]
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo server -p [port]</span><br></pre></td></tr></table></figure>
 <br>
 <p>修改IP</p>
-<pre><code class="language-line">hexo server -i [IP]
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo server -i [IP]</span><br></pre></td></tr></table></figure>
 <br>
 <p>监视文件变化并动态生成展示页面</p>
-<pre><code class="language-line">hexo generate --watch
-hexo g -w
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo generate --watch</span><br><span class="line">hexo g -w</span><br></pre></td></tr></table></figure>
 <br>
 <h4 id="2-新建相关">2. 新建相关</h4>
 <br>
 <p>新建文章/页面</p>
-<pre><code class="language-line">hexo new [layout] [file_name]
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new [layout] [file_name]</span><br></pre></td></tr></table></figure>
 <p><b>布局layout:</b><br>
 默认值为post<br>
 可选值</p>
@@ -230,60 +219,37 @@ hexo g -w
 </table>
 <br>
 <p>将草稿转为文章</p>
-<pre><code class="language-line">hexo publish [layout] [file_name]
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo publish [layout] [file_name]</span><br></pre></td></tr></table></figure>
 <br>
 <p>使用模板新建</p>
-<pre><code class="language-line">hexo new [scaffold] [file_name]
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new [scaffold] [file_name]</span><br></pre></td></tr></table></figure>
 <p>此时Hexo会尝试在<b>/scaffold</b>文件夹中寻找<b>scaffold.md</b>，并根据其内容新建文章</p>
 <br>
 <h4 id="3-写作相关">3. 写作相关</h4>
 <br>
-<p>使用<code>&lt;--! more --&gt;</code>以分隔文章的摘要以及正文或者在<b>Front-matter</b>中设置<b>description</b>字段<br>
+<p>使用<code>&lt;--! more --&gt;</code>以分隔文章的摘要以及正文<br>
+或者在<b>Front-matter</b>中设置<b>description</b>字段<br>
 eg.</p>
-<pre><code class="language-markdown">...
-description: |
-    [markdown]
-    [markdown]
-...
-</code></pre>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">description: |</span><br><span class="line"><span class="code">    [markdown]</span></span><br><span class="line"><span class="code">    [markdown]</span></span><br><span class="line"><span class="code">...</span></span><br></pre></td></tr></table></figure>
 <p>注意：<b>|</b> 和<b>缩进</b>是格式的一部分，不能省略</p>
 <br>
-<p>图片援引<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43401552/article/details/104805466">参考文章</a></p>
-<p><b>本地引用</b>在<b>/source</b>里新建文件夹<b>images</b>，将图片统一放到<b>/source/images</b>中</p>
-<pre><code class="language-markdown">![](images/image_name.png)
-</code></pre>
-<p><b>网络引用</b>需要图床</p>
-<pre><code class="language-markdown">![image_name](image_link)
-&lt;!-- following is useful by using html tags, too --&gt;
-&lt;img src=&quot;image_link&quot;&gt;
-&lt;!-- pay attention to write SRC, not SCR --&gt;
-</code></pre>
-<p><b>内部引用</b>将图片编码后储存在md文件后，直接调用</p>
-<pre><code class="language-markdown">![avatar][base64str]
-[base64str]:data:image/png;base64,decoded_image_by_base64
-</code></pre>
+<p>图片援引<br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43401552/article/details/104805466">参考文章</a></p>
+<p><b>本地引用</b><br>
+在<b>/source</b>里新建文件夹<b>images</b>，将图片统一放到<b>/source/images</b>中</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![](<span class="link">images/image_name.png</span>)</span><br></pre></td></tr></table></figure>
+<p><b>网络引用</b><br>
+需要图床</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">image_name</span>](<span class="link">image_link</span>)</span><br><span class="line">&lt;!-- following is useful by using html tags, too --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;image_link&quot;</span>&gt;</span></span></span><br><span class="line">&lt;!-- pay attention to write SRC, not SCR --&gt;</span><br></pre></td></tr></table></figure>
+<p><b>内部引用</b><br>
+将图片编码后储存在md文件后，直接调用</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">avatar</span>][<span class="symbol">base64str</span>]</span><br><span class="line">[<span class="symbol">base64str</span>]:<span class="link">data:image/png;base64,decoded_image_by_base64</span></span><br></pre></td></tr></table></figure>
 <p>base64编码方式 | 利用python脚本  <s>三体人语言就是NB</s></p>
-<pre><code class="language-python">import base64
-#base64 to image
-bs='iVBORw0KGgoAAAANSUhEUg....' # 太长了省略
-imgdata=base64.b64decode(bs)
-file=open('2.jpg','wb')
-file.write(imgdata)
-file.close()
-
-#image to base64
-f=open('723.png','rb') #二进制方式打开
-ls_f=base64.b64encode(f.read()) #读取文件内容，转换为base64编码
-f.close()
-print(ls_f)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="comment">#base64 to image</span></span><br><span class="line">bs=<span class="string">&#x27;iVBORw0KGgoAAAANSUhEUg....&#x27;</span> <span class="comment"># 太长了省略</span></span><br><span class="line">imgdata=base64.b64decode(bs)</span><br><span class="line">file=<span class="built_in">open</span>(<span class="string">&#x27;2.jpg&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">file.write(imgdata)</span><br><span class="line">file.close()</span><br><span class="line"></span><br><span class="line"><span class="comment">#image to base64</span></span><br><span class="line">f=<span class="built_in">open</span>(<span class="string">&#x27;723.png&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>) <span class="comment">#二进制方式打开</span></span><br><span class="line">ls_f=base64.b64encode(f.read()) <span class="comment">#读取文件内容，转换为base64编码</span></span><br><span class="line">f.close()</span><br><span class="line"><span class="built_in">print</span>(ls_f)</span><br></pre></td></tr></table></figure>
 <br>
 <p>空格打法</p>
-<pre><code class="language-markdown">&amp;nbsp; &lt;!--行内使用代表空格，单行使用代表换行，等价于&lt;br&gt;--&gt;
-</code></pre>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/08/hexo-userful-command/">http://example.com/2023/12/08/hexo-userful-command/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/09/record-MSC/" title="“趣味”C语言程序设计竞赛"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">“趣味”C语言程序设计竞赛</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/01/training-program/" title="信息安全培养方案"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">信息安全培养方案</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</div></div></a></div><div><a href="/2023/12/13/hexo-common-isssues/" title="网站常见异常报错归档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-13</div><div class="title">网站常见异常报错归档</div></div></a></div><div><a href="/2024/03/08/css-application/" title="CSS进阶实战 | 一些实例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-08</div><div class="title">CSS进阶实战 | 一些实例</div></div></a></div><div><a href="/2023/12/15/css-box-model/" title="CSS入门学习杂识 | 盒子模型"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-15</div><div class="title">CSS入门学习杂识 | 盒子模型</div></div></a></div><div><a href="/2023/12/15/css-selector/" title="CSS入门学习杂识 | 选择器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-15</div><div class="title">CSS入门学习杂识 | 选择器</div></div></a></div><div><a href="/2024/03/09/katex-support/" title="KaTex公式渲染相关"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-09</div><div class="title">KaTex公式渲染相关</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84Hexo%E5%91%BD%E4%BB%A4-%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">记录一些常用的Hexo命令&#x2F;配置方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%83%A8%E7%BD%B2%E7%9B%B8%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text">1. 部署相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%96%B0%E5%BB%BA%E7%9B%B8%E5%85%B3"><span class="toc-number">3.</span> <span class="toc-text">2. 新建相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%86%99%E4%BD%9C%E7%9B%B8%E5%85%B3"><span class="toc-number">4.</span> <span class="toc-text">3. 写作相关</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&amp;nbsp; &lt;!--行内使用代表空格，单行使用代表换行，等价于<span class="language-xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span>--&gt;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/08/hexo-userful-command/">http://example.com/2023/12/08/hexo-userful-command/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/09/record-MSC/" title="“趣味”C语言程序设计竞赛"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">“趣味”C语言程序设计竞赛</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/01/training-program/" title="信息安全培养方案"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">信息安全培养方案</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/13/hexo-common-isssues/" title="网站常见异常报错归档"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-13</div><div class="title">网站常见异常报错归档</div></div></a></div><div><a href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-17</div><div class="title">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</div></div></a></div><div><a href="/2024/03/08/css-application/" title="CSS进阶实战 | 一些实例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-08</div><div class="title">CSS进阶实战 | 一些实例</div></div></a></div><div><a href="/2023/12/15/css-box-model/" title="CSS入门学习杂识 | 盒子模型"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-15</div><div class="title">CSS入门学习杂识 | 盒子模型</div></div></a></div><div><a href="/2023/12/15/css-selector/" title="CSS入门学习杂识 | 选择器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-15</div><div class="title">CSS入门学习杂识 | 选择器</div></div></a></div><div><a href="/2024/03/09/katex-support/" title="KaTex公式渲染相关"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-09</div><div class="title">KaTex公式渲染相关</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84Hexo%E5%91%BD%E4%BB%A4-%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">记录一些常用的Hexo命令&#x2F;配置方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%83%A8%E7%BD%B2%E7%9B%B8%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text">1. 部署相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%96%B0%E5%BB%BA%E7%9B%B8%E5%85%B3"><span class="toc-number">3.</span> <span class="toc-text">2. 新建相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%86%99%E4%BD%9C%E7%9B%B8%E5%85%B3"><span class="toc-number">4.</span> <span class="toc-text">3. 写作相关</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="cpp | 右值引用 &amp; 移动语义">cpp | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
   document.querySelectorAll('#article-container span.katex-display').forEach(item => {
     btf.wrap(item, 'div', { class: 'katex-wrap'})
   })
