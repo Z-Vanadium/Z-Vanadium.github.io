@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据结构基础(四) | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Chapter 3 Tree Preliminary Terminology Tree: collection of nodes  a distinguishd node rrr, called the root zero or more nonempty (sub)trees T~1~, T~2~, …, each of whose roots are connected by a direct">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据结构基础(四)">
+<meta property="og:url" content="http://example.com/fds-4/index.html">
+<meta property="og:site_name" content="Vanadium的小屋">
+<meta property="og:description" content="Chapter 3 Tree Preliminary Terminology Tree: collection of nodes  a distinguishd node rrr, called the root zero or more nonempty (sub)trees T~1~, T~2~, …, each of whose roots are connected by a direct">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.imageoss.com/images/2024/03/29/f21aec2540ada0be3182a3d0a1feb1c86f0b67d504aa9b8c23799ffa.jpg">
+<meta property="article:published_time" content="2024-02-28T14:07:12.000Z">
+<meta property="article:modified_time" content="2024-03-29T08:18:01.554Z">
+<meta property="article:author" content="Vanadium">
+<meta property="article:tag" content="FDS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imageoss.com/images/2024/03/29/f21aec2540ada0be3182a3d0a1feb1c86f0b67d504aa9b8c23799ffa.jpg"><link rel="shortcut icon" href="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="canonical" href="http://example.com/fds-4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据结构基础(四)',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-03-29 16:18:01'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-note"></i><span> Note</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('https://www.imageoss.com/images/2024/03/27/background86e3a6ceb1c5d968.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Vanadium的小屋"><span class="site-name">Vanadium的小屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-note"></i><span> Note</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">数据结构基础(四)</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h2 id="Chapter-3-Tree">Chapter 3 Tree</h2>
+<h3 id="Preliminary">Preliminary</h3>
+<h4 id="Terminology">Terminology</h4>
+<p>Tree: collection of nodes</p>
+<ol>
+<li>a distinguishd node <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span>, called the <strong>root</strong></li>
+<li>zero or more nonempty <strong>(sub)trees</strong> T~1~, T~2~, …, each of whose roots are connected by a directed <strong>edge</strong> from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span></li>
+</ol>
+<div class="tips">
+<p>N-node tree owns N-1 edges</p>
+</div>
+<p>Other terminologies</p>
+<ul>
+<li>Degree of a node: number of subtrees of the node</li>
+<li>Degree of a tree: maximum of degrees of nodes</li>
+<li>Parent</li>
+<li>Child</li>
+<li>Sibling</li>
+<li>Leaf: a node with degree 0</li>
+<li>Path from n~1~ to n~k~: (unique)</li>
+<li>Length of path: number of <strong>edges</strong> on the path</li>
+<li>Depth of n~i~: depth of root is 0</li>
+<li>Height of n~i~: height of leaves is 0</li>
+<li>Height / Depth of tree: height of root  / depth of deepest leaf</li>
+<li>Ancestors of a node: including its parent node</li>
+<li>Descendants of a node</li>
+</ul>
+<p> </p>
+<h4 id="Implementation">Implementation</h4>
+<ul>
+<li>
+<p>List Representation</p>
+</li>
+<li>
+<p>FirstChild-NextSibling Representaion</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tree&#123;</span><br><span class="line">	ElemType Element;</span><br><span class="line">	Tree FisrtChild, NextSibling;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<div class="tips">
+<p>it is not unique; but it can change any common tree to a binary tree</p>
+</div>
+<p> </p>
+<h3 id="Binary-Tree">Binary Tree</h3>
+<p>Degree &lt;= 2</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> *<span class="title">Tree</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>&#123;</span></span><br><span class="line">	ElemType element;</span><br><span class="line">	Tree left, right;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="Expression-Trees">Expression Trees</h4>
+<p>[Eg1] Constructing an Expression Tree From Postfix Expression</p>
+<p>[Solve] Stack</p>
+<p> </p>
+<h4 id="Tree-Traversals">Tree Traversals</h4>
+<blockquote>
+<p>visit each node exactly once</p>
+</blockquote>
+<p>T(N) = O(N)</p>
+<p><strong>Preorder Traversal</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Preorder</span><span class="params">(Tree tree)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tree)&#123;</span><br><span class="line">		Visit(tree);</span><br><span class="line">		Preorder(tree-&gt;left);</span><br><span class="line">		Preorder(tree-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Postorder Traversal</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Postorder</span><span class="params">(Tree tree)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tree)&#123;</span><br><span class="line">		Postorder(tree-&gt;left);</span><br><span class="line">		Postorder(tree-&gt;right);</span><br><span class="line">		Visit(tree);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Levelorder Traversal</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Levelorder</span><span class="params">(Tree tree)</span>&#123;</span><br><span class="line">	Queue que;</span><br><span class="line">	que.push(tree);</span><br><span class="line">	<span class="keyword">while</span>(!que.empty())&#123;</span><br><span class="line">		Visit(que.pop());</span><br><span class="line">		que.push(tree-&gt;left);</span><br><span class="line">		que.push(tree-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Inorder Traversal</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Inorder</span><span class="params">(Tree tree)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tree)&#123;</span><br><span class="line">		Inorder(tree-&gt;left);</span><br><span class="line">		Visit(tree);</span><br><span class="line">		Inorder(tree-&gt;right);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InorderIterative</span><span class="params">(Tree tree)</span>&#123;</span><br><span class="line">	Stack st;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">while</span>(tree)&#123;</span><br><span class="line">			st.push(tree);</span><br><span class="line">			tree = tree-&gt;left;</span><br><span class="line">		&#125;</span><br><span class="line">		tree = st.top();</span><br><span class="line">		st.pop();</span><br><span class="line">		<span class="keyword">if</span>(!tree)	<span class="keyword">break</span>;</span><br><span class="line">		Visit(tree);</span><br><span class="line">		tree = tree-&gt;right;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="tips">
+<p>Preorder &amp; Postorder traversals could be used in common trees but Inorder traversal could not</p>
+</div>
+<p>[Eg1] Directory listing in a hierarchical file index</p>
+<p>[Eg2] Calculatiing the size of a directory</p>
+<p>In Linux, we could</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tree</span><br></pre></td></tr></table></figure>
+<p> </p>
+<h4 id="Threaded-Binary-Tree">Threaded Binary Tree</h4>
+<blockquote>
+<p>there are N + 1 pointers to NULL wasted in common binary tree with N nodes</p>
+</blockquote>
+<ul>
+<li>Rule 1: if tree-&gt;left is NULL, replace it with a pointer to the inorder predocessor of tree</li>
+<li>Rule 2: if tree-&gt;right is NULL, replace it with a pointer to the inorder successor of tree</li>
+<li>Rule 3: Dummy-head node is needed, pointers of node ordered first or last in inorder traversal pointing to NULL should point to the dummy-head node</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThreadedTreeNode</span> *<span class="title">ThreadedTree</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ThreadedTreeNode</span>&#123;</span></span><br><span class="line">	ElemType Element;</span><br><span class="line">	<span class="comment">// if left/right represents a thread, then assign it with TRUE</span></span><br><span class="line">	<span class="type">bool</span> leftThread, rightThread;</span><br><span class="line">	ThreadedTree left, right;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p> </p>
+<h4 id="Complete-Binary-Tree">Complete Binary Tree</h4>
+<p>All leaf node are on 2 adjacent levels</p>
+<p>The maxinum number of nodes on level <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{i-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8247em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span><br>
+The maxinum number of nodes in a binary tree of depth of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9324em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></p>
+<p> </p>
+<h3 id="The-Search-Tree-ADT-–-BST">The Search Tree ADT – BST</h3>
+<h4 id="Defination">Defination</h4>
+<p>A Binary Tree</p>
+<ul>
+<li>Each key is an integer</li>
+<li>left &lt; right</li>
+<li>right &gt; left</li>
+</ul>
+<p> </p>
+<h4 id="Implementations">Implementations</h4>
+<ol>
+<li>Find</li>
+<li>FindMin</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Tree <span class="title function_">FindMin</span><span class="params">(Tree root)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">NULL</span> || root-&gt;left == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(root-&gt;left)&#123;</span><br><span class="line">        <span class="keyword">return</span> FindMin(root-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>FindMax</li>
+<li>Insert</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Tree <span class="title function_">Insert</span><span class="params">(ElemType key, Tree root)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        root = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> TreeNode));</span><br><span class="line">        root-&gt;element = key;</span><br><span class="line">        root-&gt;left = root-&gt;right = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(key &lt; root-&gt;element)&#123;</span><br><span class="line">            root-&gt;left = Insert(key, root-&gt;left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(key &gt; root-&gt;element)&#123;</span><br><span class="line">            root-&gt;right = Insert(key, root-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>delete
+<ul>
+<li>Delete a leaf node: Reset its parent link to NULL</li>
+<li>Delete a degree 1 node: Replace the node by its single child</li>
+<li>Delete a degree 2 or more node:
+<ul>
+<li>Replace the node by the <strong>largest</strong> onr in its <strong>left</strong> subtree / the <strong>smallest</strong> one in its <strong>right</strong> subtree</li>
+<li>Delete the replacing node from the subtree</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Tree <span class="title function_">Delete</span><span class="params">(ElemType key, Tree root)</span>&#123;</span><br><span class="line">    Tree tmpNode;</span><br><span class="line">    <span class="keyword">if</span>(root == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(key &lt; root-&gt;element)&#123;</span><br><span class="line">        root-&gt;left = Delete(key, root-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(key &gt; root-&gt;element)&#123;</span><br><span class="line">        root-&gt;right = Delete(key, root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;right)&#123;</span><br><span class="line">            tmpNode = FindMin(root-&gt;right);</span><br><span class="line">            root-&gt;element = tmpNode-&gt;element;</span><br><span class="line">            root-&gt;right = Delete(tmpNode-&gt;element, root-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            tmpNode = root;</span><br><span class="line">            <span class="keyword">if</span>(root-&gt;left == <span class="literal">NULL</span>)&#123;</span><br><span class="line">                root = root-&gt;right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(root-&gt;right == <span class="literal">NULL</span>)&#123;</span><br><span class="line">                root = root-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">free</span>(tmpNode);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Z-Vanadium"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!<br>
+ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP
+</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/30/cpp-inherit/" title="C++ | 继承">C++ | 继承</a><time datetime="2024-03-30T06:06:13.000Z" title="发表于 2024-03-30 14:06:13">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/info-security-principles-index/" title="信息安全原理与数学基础">信息安全原理与数学基础</a><time datetime="2024-03-27T11:01:18.000Z" title="发表于 2024-03-27 19:01:18">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/fds-index/" title="数据结构基础">数据结构基础</a><time datetime="2024-03-27T10:57:07.000Z" title="发表于 2024-03-27 18:57:07">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/computer-system-1-index/" title="计算机系统I">计算机系统I</a><time datetime="2024-03-27T10:40:44.000Z" title="发表于 2024-03-27 18:40:44">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/calculus-2-index/" title="微积分II">微积分II</a><time datetime="2024-03-27T10:31:05.000Z" title="发表于 2024-03-27 18:31:05">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="C++ | 右值引用 &amp; 移动语义">C++ | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/"><span class="card-category-list-name">实用</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">5</span></a></li>
+            </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">28</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-09-25T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">71k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-03-30T08:37:21.572Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
