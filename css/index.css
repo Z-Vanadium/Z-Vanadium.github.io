@@ -1481,6 +1481,8 @@ canvas:not(#ribbon-canvas),
   --default-bg-color: #39c5bb;
   --zoom-bg: #fff;
   --mark-bg: rgba(0,0,0,0.3);
+  --card-info-color-1: #a3e9eb;
+  --card-info-color-2: #eec1ea;
 }
 body {
   position: relative;
@@ -1664,6 +1666,15 @@ blockquote > :last-child {
   left: -20px;
   font-size: 16px;
   color: #d9534f;
+}
+#aside-content .card-info {
+  -webkit-box-shadow: 0 0 5px #424444;
+  box-shadow: 0 0 5px #424444;
+  background: -webkit-linear-gradient(135deg, var(--card-info-color-1), var(--card-info-color-2));
+  background: -moz-linear-gradient(135deg, var(--card-info-color-1), var(--card-info-color-2));
+  background: -o-linear-gradient(135deg, var(--card-info-color-1), var(--card-info-color-2));
+  background: -ms-linear-gradient(135deg, var(--card-info-color-1), var(--card-info-color-2));
+  background: linear-gradient(-45deg, var(--card-info-color-1), var(--card-info-color-2));
 }
 :root {
   --hl-color: #eff;
@@ -6016,6 +6027,8 @@ blockquote.pullquote.right {
   --timeline-bg: #1f1f1f;
   --zoom-bg: #121212;
   --mark-bg: rgba(0,0,0,0.6);
+  --card-info-color-1: #3e595a;
+  --card-info-color-2: #8c6689;
 }
 [data-theme='dark'] #web_bg:before {
   position: absolute;
