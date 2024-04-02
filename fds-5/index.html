@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数据结构基础(五) | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Chapter 4 Heap Heap is a kind of priority_queue(PQ), which guarantees that the head node is the largest &#x2F; smallest one ADT Operations  PQ Initialize(int maxElem) void Insert(ElemType key, PQ heap) Ele">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据结构基础(五)">
+<meta property="og:url" content="http://example.com/fds-5/index.html">
+<meta property="og:site_name" content="Vanadium的小屋">
+<meta property="og:description" content="Chapter 4 Heap Heap is a kind of priority_queue(PQ), which guarantees that the head node is the largest &#x2F; smallest one ADT Operations  PQ Initialize(int maxElem) void Insert(ElemType key, PQ heap) Ele">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.imageoss.com/images/2024/03/28/7308e5ac7bbd2f51fdf31298297a24d7487738c966f46b2d.jpg">
+<meta property="article:published_time" content="2024-02-28T14:07:12.000Z">
+<meta property="article:modified_time" content="2024-04-02T05:50:37.697Z">
+<meta property="article:author" content="Vanadium">
+<meta property="article:tag" content="FDS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imageoss.com/images/2024/03/28/7308e5ac7bbd2f51fdf31298297a24d7487738c966f46b2d.jpg"><link rel="shortcut icon" href="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="canonical" href="http://example.com/fds-5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据结构基础(五)',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-02 13:50:37'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-share-nodes"></i><span> Share</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chishenme/"><i class="fa-fw fas fa-utensils"></i><span> What2Eat</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> Songs</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-note-sticky"></i><span> Notes</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('https://www.imageoss.com/images/2024/03/27/background86e3a6ceb1c5d968.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Vanadium的小屋"><span class="site-name">Vanadium的小屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-share-nodes"></i><span> Share</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chishenme/"><i class="fa-fw fas fa-utensils"></i><span> What2Eat</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> Songs</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-note-sticky"></i><span> Notes</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">数据结构基础(五)</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h2 id="Chapter-4-Heap">Chapter 4 Heap</h2>
+<p>Heap is a kind of <strong>priority_queue(PQ)</strong>, which guarantees that the head node is the largest / smallest one</p>
+<h3 id="ADT">ADT</h3>
+<h4 id="Operations">Operations</h4>
+<ul>
+<li>PQ Initialize(int maxElem)</li>
+<li>void Insert(ElemType key, PQ heap)</li>
+<li>ElemType DeleteMin(PQ heap)</li>
+<li>ElemType FindMin(PQ heap)</li>
+</ul>
+<p> </p>
+<h3 id="Simple-Implementations">Simple Implementations</h3>
+<ul>
+<li>Array</li>
+<li>Linked List</li>
+<li>Ordered Array</li>
+<li>Ordered Linked List</li>
+<li>BST</li>
+</ul>
+<p> </p>
+<h3 id="Binary-Heap">Binary Heap</h3>
+<h4 id="Structure-Property">Structure Property</h4>
+<p>Heap is a fulfilled <strong>complete binary tree</strong></p>
+<div class="tips">
+<p><strong>完全二叉树 complete binary tree</strong>: 除了最后一层全部填满</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi></mrow><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h=\mathrm{int}(\log N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">int</span></span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<p><strong>完美二叉树 perfect binary tree</strong>: 最后一层也全部填满</p>
+</div>
+<p>Array Representation</p>
+<blockquote>
+<p>put a complete tree in a  array of (N + 1) length without array[0] by level-order traversal</p>
+</blockquote>
+<p><strong>Lemma</strong></p>
+<p>For any node with index <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>p</mi><mi>a</mi><mi>r</mi><mi>e</mi><mi>n</mi><mi>t</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>i</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">f</mi></mrow><mtext> </mtext><mi>i</mi><mo mathvariant="normal">≠</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi></mrow><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">f</mi></mrow><mtext> </mtext><mi>i</mi><mo>=</mo><mn>1</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">parent(i)=\begin{cases}
+    i//2,&amp;\mathrm{if}\ i\ne 1\\
+    \mathrm{None},&amp;\mathrm{if}\ i= 1\\
+\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">a</span><span class="mord mathnormal">re</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="mord">//2</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">None</span></span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm" style="margin-right:0.07778em;">if</span></span><span class="mspace"> </span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">1</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm" style="margin-right:0.07778em;">if</span></span><span class="mspace"> </span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>l</mi><mi>e</mi><mi>f</mi><mi>t</mi><mi mathvariant="normal">_</mi><mi>c</mi><mi>h</mi><mi>i</mi><mi>l</mi><mi>d</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>2</mn><mi>i</mi><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">f</mi></mrow><mtext> </mtext><mn>2</mn><mi>i</mi><mo>≤</mo><mi>n</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi></mrow><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">f</mi></mrow><mtext> </mtext><mn>2</mn><mi>i</mi><mo>&gt;</mo><mi>n</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">left\_child(i)=\begin{cases}
+    2i,&amp;\mathrm{if}\ 2i\le n\\
+    \mathrm{None},&amp;\mathrm{if}\ 2i&gt;n\\
+\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">t</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal">c</span><span class="mord mathnormal">hi</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal">i</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">None</span></span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm" style="margin-right:0.07778em;">if</span></span><span class="mspace"> </span><span class="mord">2</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">n</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm" style="margin-right:0.07778em;">if</span></span><span class="mspace"> </span><span class="mord">2</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>r</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi><mi mathvariant="normal">_</mi><mi>c</mi><mi>h</mi><mi>i</mi><mi>l</mi><mi>d</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>2</mn><mi>i</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">f</mi></mrow><mtext> </mtext><mn>2</mn><mi>i</mi><mo>+</mo><mn>1</mn><mo>≥</mo><mi>n</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">e</mi></mrow><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">f</mi></mrow><mtext> </mtext><mn>2</mn><mi>i</mi><mo>+</mo><mn>1</mn><mo>&gt;</mo><mi>n</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">right\_child(i)=\begin{cases}
+    2i+1,&amp;\mathrm{if}\ 2i+1\ge n\\
+    \mathrm{None},&amp;\mathrm{if}\ 2i+1&gt;n\\
+\end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">h</span><span class="mord mathnormal">t</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal">c</span><span class="mord mathnormal">hi</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord mathnormal">i</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">None</span></span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm" style="margin-right:0.07778em;">if</span></span><span class="mspace"> </span><span class="mord">2</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">n</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord"><span class="mord mathrm" style="margin-right:0.07778em;">if</span></span><span class="mspace"> </span><span class="mord">2</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> minData = <span class="number">0x80000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> capacity, size;</span><br><span class="line">    ElemType* elems;</span><br><span class="line">&#125; HeapStruct;</span><br><span class="line"><span class="keyword">typedef</span> HeapStruct* Priority_Queue;</span><br><span class="line"></span><br><span class="line">Priority_Queue <span class="title function_">Initialize</span><span class="params">(<span class="type">int</span> maxElem)</span>&#123;</span><br><span class="line">    Priority_Queue heap;</span><br><span class="line">    heap = (Priority_Queue)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(HeapStruct));</span><br><span class="line">    heap-&gt;elems = (ElemType*)<span class="built_in">malloc</span>((maxElem + <span class="number">1</span>) * <span class="keyword">sizeof</span>(ElemType));</span><br><span class="line">    heap-&gt;capacity = maxElem;</span><br><span class="line">    heap-&gt;size = <span class="number">0</span>;</span><br><span class="line">    heap-&gt;elems[<span class="number">0</span>] = minData;</span><br><span class="line">    <span class="keyword">return</span> heap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="tips">
+<p><strong>哨兵 sentinel</strong>: 哨兵是小根堆的最小值或大根堆的最大值, 并不是真实存在的, 而是虚拟的, 防止越界<br>
+<strong>小根堆 min heap</strong>: 父节点小于等于子节点<br>
+<strong>大根堆 max heap</strong>: 父节点大于等于子节点</p>
+</div>
+<p> </p>
+<h4 id="Basic-Heap-Operations">Basic Heap Operations</h4>
+<p><strong>Insertion</strong></p>
+<ul>
+<li>Percolate up</li>
+<li>Insert</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Insertion</span><span class="params">(ElemType key, PriorityQueue heap)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(heap-&gt;capacity == heap-&gt;size)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ++heap-&gt;size;</span><br><span class="line">    <span class="type">int</span> i = heap-&gt;size;</span><br><span class="line">    <span class="keyword">while</span>(heap-&gt;elems[i / <span class="number">2</span>] &gt; key)&#123;    <span class="comment">// Percolate up</span></span><br><span class="line">        heap-&gt;elems[i] = heap-&gt;elems[i / <span class="number">2</span>];</span><br><span class="line">        i /= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    heap-&gt;elems[i] = key;   <span class="comment">// Insert</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>DeleteMin</strong></p>
+<ul>
+<li>Move back to top</li>
+<li>Percolate down</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">ElemType <span class="title function_">DeleteMin</span><span class="params">(PriorityQueue heap)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(heap-&gt;size == <span class="number">0</span>) <span class="keyword">return</span> heap-&gt;elems[<span class="number">0</span>];</span><br><span class="line">    ElemType minElem, lastElem;</span><br><span class="line">    minElem = heap-&gt;elems[<span class="number">1</span>];</span><br><span class="line">    lastElem = heap-&gt;elems[heap-&gt;size]; <span class="comment">// Move back to top</span></span><br><span class="line">    --(heap-&gt;size);</span><br><span class="line">    <span class="type">int</span> i, child;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; <span class="number">2</span> * i &lt; heap-&gt;size; i = child)&#123;  <span class="comment">// Percolate down</span></span><br><span class="line">        child = <span class="number">2</span> * i;</span><br><span class="line">        <span class="keyword">if</span>(child &lt; heap-&gt;size &amp;&amp; heap-&gt;elems[child + <span class="number">1</span>] &lt; heap-&gt;elems[child])&#123;</span><br><span class="line">            ++child;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(lastElem &gt; heap-&gt;elems[child])&#123;</span><br><span class="line">            heap-&gt;elems[i] = heap-&gt;elems[child];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    heap-&gt;elems[i] = lastElem;</span><br><span class="line">    <span class="keyword">return</span> minElem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> </p>
+<h4 id="Other-Heap-Operations">Other Heap Operations</h4>
+<p><strong>DecreaseKey(int position, unsigned delta, PQ heap)</strong></p>
+<ul>
+<li>Decrease</li>
+<li>Percolate up</li>
+</ul>
+<p><strong>IncreaseKey(int position, unsigned delta, PQ heap)</strong></p>
+<ul>
+<li>Increase</li>
+<li>Percolate down</li>
+</ul>
+<p><strong>Delete(int positon, PQ heap)</strong></p>
+<ul>
+<li>Decrease(position, INF, heap)</li>
+<li>DeleteMin(heap)</li>
+</ul>
+<p><strong>BuildHeap(Elem* seq, PQ heap)</strong></p>
+<ol>
+<li>Method 1
+<ul>
+<li>heap = Initialize(…)</li>
+<li>N times of Insertion(seq[i], heap)</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mi>log</mi><mo>⁡</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N\log N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>Methos 2
+<ul>
+<li>Shift seq to a complete tree</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\log N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> times of precolate down from the last but one level</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+</ol>
+<p><strong>Theorem</strong>: for a perfert binary tree og height <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span>, the sum of the heights of the nodes is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>h</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn><mo>−</mo><mo stretchy="false">(</mo><mi>h</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">2^{h+1}-1-(h+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9324em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">h</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></p>
+<p> </p>
+<h3 id="Applications-of-Priority-Queue">Applications of Priority Queue</h3>
+<p>[Eg] Find the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>th largest / smallest element from N elements</p>
+<p> </p>
+<h3 id="d-Heaps">d-Heaps</h3>
+<p>the time complexity of Insertion of d-heaps decreases to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mi>d</mi></msub><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log_dN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.242em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>; but DeleteMin may increase to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>d</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mi>d</mi></msub><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(d\log_dN)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.242em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></p>
+<p> </p>
+<h3 id="C">C++</h3>
+<p>Using C++ STL can help to implement heaps</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> std::priority_queue&lt;<span class="type">int</span>&gt; maxPQ; <span class="comment">// max heap</span></span><br><span class="line"><span class="keyword">typedef</span> std::priority_queue&lt;<span class="type">int</span>, std::vector&lt;<span class="type">int</span>&gt;, std::greater&lt;<span class="type">int</span>&gt;&gt; minPQ;    <span class="comment">// min heap</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    maxPQ maxHeap;</span><br><span class="line">    minPQ minHeap;</span><br><span class="line">    <span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec</span><span class="params">(&#123;<span class="number">5</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">9</span>&#125;)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:vec)&#123;</span><br><span class="line">        maxHeap.<span class="built_in">push</span>(i);</span><br><span class="line">        minHeap.<span class="built_in">push</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout&lt;&lt;maxHeap.<span class="built_in">top</span>()&lt;&lt;std::endl;</span><br><span class="line">    std::cout&lt;&lt;minHeap.<span class="built_in">top</span>()&lt;&lt;std::endl;</span><br><span class="line"></span><br><span class="line">    maxHeap.<span class="built_in">pop</span>();</span><br><span class="line">    minHeap.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">    std::cout&lt;&lt;maxHeap.<span class="built_in">top</span>()&lt;&lt;std::endl;</span><br><span class="line">    std::cout&lt;&lt;minHeap.<span class="built_in">top</span>()&lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">output:</span></span><br><span class="line"><span class="comment">9</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">7</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<div class="tips">
+<p>在 STL 中, priority_queue 被称为容器适配器, 因此他没有自己的 ADT 实现, 需要依赖既有的容器, 比如 vector, deque 等等<br>
+因此 priority_queue 的完整声明如下:<br>
+<code>priority_queue&lt;ElemType, Container, CompareFunc&gt;</code></p>
+<ul>
+<li>ElemType: 数据类型</li>
+<li>Container: 容器类型, 默认为 vector</li>
+<li>CompareFunc: 比较所用的函数对象, 默认为 less<ElemType>(大根堆), 可选 greater<ElemType>(小根堆), 本质上是对 operator() 的重载</li>
+</ul>
+<p>然而实际上默认的 greater 和 less 就是对 operator&lt; 的调用, 因此可以直接重载 ElemType 的 operator&lt; 实现自定义排序方式</p>
+<p>例如以下的代码就对自定义类 Node 实现了小根堆</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">    <span class="type">int</span> negaVal;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> <span class="keyword">operator</span>&lt; (<span class="type">const</span> Node x, <span class="type">const</span> Node y)&#123;</span><br><span class="line">    <span class="keyword">return</span> -(y.negaVal - x.negaVal);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::priority_queue&lt;Node, std::vector&lt;Node&gt;&gt; heap;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Node x, y, z;</span><br><span class="line">    x.negaVal = <span class="number">4</span>, y.negaVal = <span class="number">6</span>, z.negaVal = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    heap.<span class="built_in">push</span>(x);</span><br><span class="line">    heap.<span class="built_in">push</span>(y);</span><br><span class="line">    heap.<span class="built_in">push</span>(z);</span><br><span class="line"></span><br><span class="line">    std::cout&lt;&lt;heap.<span class="built_in">top</span>().negaVal&lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// output: 3</span></span><br></pre></td></tr></table></figure>
+</div>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Z-Vanadium"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!<br>
+ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chapter-4-Heap"><span class="toc-number">1.</span> <span class="toc-text">Chapter 4 Heap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ADT"><span class="toc-number">1.1.</span> <span class="toc-text">ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Operations"><span class="toc-number">1.1.1.</span> <span class="toc-text">Operations</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-Implementations"><span class="toc-number">1.2.</span> <span class="toc-text">Simple Implementations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Binary-Heap"><span class="toc-number">1.3.</span> <span class="toc-text">Binary Heap</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Structure-Property"><span class="toc-number">1.3.1.</span> <span class="toc-text">Structure Property</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Basic-Heap-Operations"><span class="toc-number">1.3.2.</span> <span class="toc-text">Basic Heap Operations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Other-Heap-Operations"><span class="toc-number">1.3.3.</span> <span class="toc-text">Other Heap Operations</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Applications-of-Priority-Queue"><span class="toc-number">1.4.</span> <span class="toc-text">Applications of Priority Queue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#d-Heaps"><span class="toc-number">1.5.</span> <span class="toc-text">d-Heaps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C"><span class="toc-number">1.6.</span> <span class="toc-text">C++</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/30/cpp-inherit/" title="C++ | 继承">C++ | 继承</a><time datetime="2024-03-30T06:06:13.000Z" title="发表于 2024-03-30 14:06:13">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/info-security-principles-index/" title="信息安全原理与数学基础">信息安全原理与数学基础</a><time datetime="2024-03-27T11:01:18.000Z" title="发表于 2024-03-27 19:01:18">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/fds-index/" title="数据结构基础">数据结构基础</a><time datetime="2024-03-27T10:57:07.000Z" title="发表于 2024-03-27 18:57:07">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/computer-system-1-index/" title="计算机系统I">计算机系统I</a><time datetime="2024-03-27T10:40:44.000Z" title="发表于 2024-03-27 18:40:44">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/calculus-2-index/" title="微积分II">微积分II</a><time datetime="2024-03-27T10:31:05.000Z" title="发表于 2024-03-27 18:31:05">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="C++ | 右值引用 &amp; 移动语义">C++ | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/17/hexo-change-render/" title="Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法">Hexo 修改渲染器为 hexo-renderer-markdown-it 以及一些新的语法</a><time datetime="2024-03-17T09:12:51.000Z" title="发表于 2024-03-17 17:12:51">2024-03-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/katex-support/" title="KaTex公式渲染相关">KaTex公式渲染相关</a><time datetime="2024-03-09T15:58:51.000Z" title="发表于 2024-03-09 23:58:51">2024-03-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%9E%E7%94%A8/"><span class="card-category-list-name">实用</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">5</span></a></li>
+            </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">28</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-09-25T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">71k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-04-02T05:51:58.267Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
