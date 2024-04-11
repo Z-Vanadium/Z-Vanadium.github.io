@@ -6351,6 +6351,42 @@ blockquote.pullquote.right {
 #article-container img {
   border-radius: 10px;
 }
+#article-container h2,
+#article-container h3,
+#article-container h4 {
+  padding-left: 24px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+#article-container h2:hover,
+#article-container h3:hover,
+#article-container h4:hover {
+  padding-left: 28px;
+}
+#article-container h2::before,
+#article-container h3::before,
+#article-container h4::before {
+  position: absolute;
+  left: 0;
+  top: calc(50% - 7px);
+  color: #f47466;
+  content: '\f0c1';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 600;
+  line-height: 1;
+}
+#article-container h2::before {
+  font-size: 16px;
+}
+#article-container h3::before {
+  font-size: 14px;
+}
+#article-container h4::before {
+  font-size: 12px;
+}
 .search-dialog {
   position: fixed;
   top: 10%;
