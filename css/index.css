@@ -6387,6 +6387,14 @@ blockquote.pullquote.right {
 #article-container h4::before {
   font-size: 12px;
 }
+#live2d-widget {
+  right: 20px !important;
+  bottom: -50px !important;
+  zoom: 1.4;
+  opacity: 0.6 !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)" !important;
+  filter: alpha(opacity=60) !important;
+}
 .search-dialog {
   position: fixed;
   top: 10%;
