@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C++ | STL I | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="终于他喵的写到STL了淦, 前置的乱七八糟的东西太多了, 没错我说的就是你, 友元! 我打算先从STL的用法开始, 学习到STL的底层, STL系列也会写的更为详细, 因为他真的, 很重要  前言 STL(Standard Template Library) 源自于C艹第一个标准化版本C艹98(不是CC98哦), 它提供了强大的容器库(Containers library) 和算法库(Algor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ | STL I">
+<meta property="og:url" content="http://z-vanadium.github.io/2023/12/17/cpp-stl/index.html">
+<meta property="og:site_name" content="Vanadium的小屋">
+<meta property="og:description" content="终于他喵的写到STL了淦, 前置的乱七八糟的东西太多了, 没错我说的就是你, 友元! 我打算先从STL的用法开始, 学习到STL的底层, STL系列也会写的更为详细, 因为他真的, 很重要  前言 STL(Standard Template Library) 源自于C艹第一个标准化版本C艹98(不是CC98哦), 它提供了强大的容器库(Containers library) 和算法库(Algor">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201912_28_20191228172926_smljv.jpgreferhttp___c-ssl.duitangbc31325b0c973950.png">
+<meta property="article:published_time" content="2023-12-17T08:52:50.000Z">
+<meta property="article:modified_time" content="2024-04-12T06:23:20.010Z">
+<meta property="article:author" content="Vanadium">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="STL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201912_28_20191228172926_smljv.jpgreferhttp___c-ssl.duitangbc31325b0c973950.png"><link rel="shortcut icon" href="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="canonical" href="http://z-vanadium.github.io/2023/12/17/cpp-stl/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++ | STL I',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-12 14:23:20'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> Games</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/finddiffcolor/"><i class="fa-fw fas fa-puzzle-piece"></i><span> FindDiffColor</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-share-nodes"></i><span> Share</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chishenme/"><i class="fa-fw fas fa-utensils"></i><span> What2Eat</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> Songs</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-note-sticky"></i><span> Notes</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201912_28_20191228172926_smljv.jpgreferhttp___c-ssl.duitangbc31325b0c973950.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Vanadium的小屋"><span class="site-name">Vanadium的小屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> Games</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/finddiffcolor/"><i class="fa-fw fas fa-puzzle-piece"></i><span> FindDiffColor</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-share-nodes"></i><span> Share</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chishenme/"><i class="fa-fw fas fa-utensils"></i><span> What2Eat</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> Songs</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-note-sticky"></i><span> Notes</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++ | STL I</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-17T08:52:50.000Z" title="发表于 2023-12-17 16:52:50">2023-12-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-12T06:23:20.010Z" title="更新于 2024-04-12 14:23:20">2024-04-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++ | STL I"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>终于他喵的写到STL了淦, 前置的乱七八糟的东西太多了, 没错我说的就是你, <strong>友元</strong>!<br>
+我打算先从STL的用法开始, 学习到STL的底层, STL系列也会写的更为详细, 因为<strong>他真的, 很重要</strong></p>
+</blockquote>
+<h3 id="前言">前言</h3>
+<p><strong>STL(Standard Template Library)</strong> 源自于C艹第一个标准化版本C艹98(不是CC98哦), 它提供了强大的<strong>容器库(Containers library)</strong> 和<strong>算法库(Algorithm library)</strong> 以供使用者直接调用, 其背后体现了<strong>泛型编程(Generic programming)</strong> 的思想; 即使你像我一样对上面的一堆名词不甚了解, 也可以很好的利用它所提供的常见的<strong>数据结构和算法</strong>解决很多问题.</p>
+<h4 id="参考资料">参考资料</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/7_template/">咸鱼暄的代码空间 | 模板 (I) - 基本知识与 STL 使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/cpp_restart/8_stl/">咸鱼暄的代码空间 | 模板 (II) - 理解 STL：迭代器与函数对象</a></li>
+<li><a target="_blank" rel="noopener" href="https://xuan-insr.github.io/cpp/%E7%90%86%E8%A7%A3%20STL%20-%20%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1/">咸鱼暄的代码空间 | 理解 STL - 迭代器与函数对象</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=tXUXl_RzkAk">YouTube | Back to Basics: Classic STL - Bob Steagall - CppCon 2021</a></li>
+</ul>
+<span id="more"></span>
+<p> </p>
+<h3 id="为什么要STL">为什么要STL</h3>
+<p>在我<a href="../../../../2023/12/06/fds1/">数据结构杂谈（一）</a>这篇文章中, 我曾经提到, ADT的出现, 是为了处理更加普遍的情况, 而算法正是基于ADT实现的. 在这里, 我想用更加学术的语言重制这句话.</p>
+<p>解释数据结构与算法, 就要从<strong>数据</strong>这个概念本身开始, 在那一片文章中, 我曾经将胡图图一家人看作是一个数据结构, 把胡图图, 张小丽等人看作是数据, 如果我们再深挖下去, 思考一个人是否还有其他从属于他自己的属性. 答案显然是肯定的. 胡图图是张小丽的儿子, 这个关系就可以视作一个<strong>元素</strong>, 同样, 胡图图的生理数据, 比如他的三根头发, 也是一个元素. 因此我们可以说:</p>
+<ul>
+<li>
+<p>数据几乎总是 <em><strong>元素</strong></em> 的 <em><strong>集合</strong></em> | Data is almost always <em><strong>collections</strong></em> of <em><strong>elements</strong></em>.</p>
+</li>
+<li>
+<p>每种集合有一定的 <em><strong>表现形式</strong></em> | Each collection of elements has some <em><strong>representation</strong></em>.</p>
+</li>
+</ul>
+<p>而针对特定表现形式的数据结构, 也就是集合的表现形式的特定操作, 就是算法:</p>
+<ul>
+<li>有很多处理方法(<em><strong>算法</strong></em>) | There are many kinds of progressing(<em><strong>algorithms</strong></em>)</li>
+</ul>
+<p>然而在我们的宇宙中, 即便是一个问题空间中, 数据结构的数量总是一个非常巨大的数字N, 假如数据结构两两之间需要进行数据交换, 我们就要设计C(N,2)种算法, 这个数字不是我们能轻易接受的.</p>
+<p>为了解决以上问题, C艹引入了泛型编程的概念, 可以通俗的理解为模板, 来解决程序段复用性的问题, 而STL正是其中一个最具典型性的代表–C标准委员会提供了一组库, 以供使用者复用这个库里面的代码.</p>
+<p>STL库最初的设计准则, 即是:</p>
+<ul>
+<li>综合性 Comprehensive</li>
+<li>可扩展性 Extensible</li>
+<li>高效性 Efficient</li>
+<li>自然性 Natural</li>
+</ul>
+<p>正是由于对上述准则的坚持, C艹STL库才能至今仍在跟进维护 <s>, 不像某个友元的概念</s></p>
+<p> </p>
+<h4 id="容器、算法与迭代器">容器、算法与迭代器</h4>
+<p>在STL里面, 我们用<strong>容器container</strong>来描述一个<strong>数据结构</strong>, 或者说是元素集合的储存, 容器为下列操作提供支持：</p>
+<ul>
+<li>增删元素</li>
+<li>通过相关的迭代器读取或更新某个元素</li>
+<li>容器的迭代器脱离于容器的内部结构而存在，但是能完成对容器的特定操作并支持算法的实现</li>
+</ul>
+<p><strong>算法algorithm</strong>对应的就是普遍意义上的算法, 是对容器的操作, 但是算法并不能直接操作容器, 而是<strong>通过定义清晰的迭代器</strong></p>
+<p><strong>迭代器iterator</strong>为容器与算法的交流提供一个<strong>共同单位</strong>, 确保有一个提供清晰的方法得到元素</p>
+<p> </p>
+<h4 id="容器">容器</h4>
+<p>STL为我们提供了丰富的<strong>容器库Container library</strong>，其中主要包含了三大类，十数种容器模板：</p>
+<ul>
+<li>
+<p><strong>序列容器Sequence container</strong><br>
+序列容器是抽象于数据按某一个顺序排列的数据结构的容器：</p>
+<ul>
+<li><strong>向量vector</strong>：虽然单词原意是向量，但是人们更愿意称之为<strong>可变数组</strong> ，这是因为相比于数组，vector可以通过成员函数动态的改变自己的长度</li>
+<li><strong>双向队列deque</strong>：一个可以在两端进行增删操作的队列，假如对其两端的操作权限作出限制，可以特化为队列或栈，因此deque相比队列或是栈，更加的灵活，但是一定程度上，也更加臃肿</li>
+<li><strong>数组array</strong>：固定长度的数组</li>
+<li><strong>双向链表list</strong>：相当于迭代器没有随机访问能力的deque</li>
+<li><strong>单向链表forward_list</strong>：单向的链表</li>
+</ul>
+</li>
+<li>
+<p><strong>关联容器Associative container</strong><br>
+关联容器是抽象于数据没有一个固定排列，而是通过相互之间的关系组织在一起的数据结构的容器，在C艹（以及大多数其他高级语言中）中是用红黑树（一种高效的BST）实现的：</p>
+<ul>
+<li><strong>集合set</strong>：储存的是无重复、无顺序的数据集合，与数学上集合的概念相仿，但不能储存无穷多的元素（显然）</li>
+<li><strong>映射map</strong>：在有些高级语言中，map也被叫做dictionary，map的储存单位是一一对应的键值对，其中键是无序、无重的</li>
+<li><strong>可重集合multiset</strong></li>
+<li><strong>可重映射multimap</strong>：上述容器的可重版本，允许元素的重复</li>
+</ul>
+</li>
+<li>
+<p><strong>无序关联容器Unordered associative container</strong><br>
+无序关联容器是上述关联容器的无序版，其底层使用hash表而不是红黑树实现：</p>
+<ul>
+<li><strong>unordered_set</strong></li>
+<li><strong>unordered_map</strong></li>
+<li><strong>unordered_multiset</strong></li>
+<li><strong>unordered_multimap</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>适配器Adaptor</strong><br>
+适配器不是严格意义上的容器，而是对既有容器（包括STL容器和使用者自定义的容器）接口的封装：</p>
+<ul>
+<li><strong>栈stack</strong></li>
+<li><strong>队列queue</strong></li>
+<li><strong>优先队列priority_queue</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>扩展阅读：</strong><br>
+<a target="_blank" rel="noopener" href="https://cplusplus.com/reference/stl/">C艹STL库官方文档 ｜ 容器</a></p>
+<p> </p>
+<h4 id="算法">算法</h4>
+<p>C++同样为我们提供了丰富的<strong>算法库Algorithm library</strong>，如同前面所说，算法是脱离于容器存在的，但是实现确是通过迭代器操作容器，因此在对算法做介绍之前，我们需要简单讲一下如何获取某个容器的迭代器。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> i = v.<span class="built_in">begin</span>();</span><br><span class="line"><span class="keyword">auto</span> j = v.<span class="built_in">end</span>();</span><br></pre></td></tr></table></figure>
+<p>这两个函数分别可以获取指向容器v开头或结尾的迭代器（是的，你可以将迭代器<strong>粗浅的理解为指针</strong>，一个有自己重载后的++运算符的特殊指针）</p>
+<p>在上面的例子中，使用了一个全新的变量类型声明关键字<strong>auto</strong>，这代表了使用者并不关心i、j的具体变量类型，而是交由编译器自行推导（类似于模板函数参数表的推导）</p>
+<p> </p>
+<h4 id="不修改序列的操作">不修改序列的操作</h4>
+<p><strong>find()</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> res = <span class="built_in">find</span>(start, stop, target);</span><br></pre></td></tr></table></figure>
+<p>其中res、start、stop的数据类型均为迭代器，target的数据类型为v的元素的数据类型；</p>
+<p>函数的作用是在v（通常是array或vector）中左闭右开区间[start,stop)上寻找值等于target的元素，并返回其迭代器，找不到则返回stop</p>
+<p><strong>count()</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> cnt = <span class="built_in">count</span>(start, stop, target);</span><br></pre></td></tr></table></figure>
+<p><strong>count_if()</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> cnt = <span class="built_in">count_if</span>(start, stop, p);</span><br></pre></td></tr></table></figure>
+<p>其中p是一个<strong>谓词</strong> ，可以是函数、函数指针、函数对象（即对<code>()</code>进行重载）或lambda函数。</p>
+<p>这个函数会返回区间上满足谓词p的元素的数量</p>
+<p><strong>for_each()</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">for_each(start, stop, func);</span><br></pre></td></tr></table></figure>
+<p>类似于其他高级语言中的map()函数，即对区间上所有的元素调用函数func</p>
+<p> </p>
+<h4 id="修改序列的操作">修改序列的操作</h4>
+<p><strong>reverse()</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">reverse</span>(start, stop);</span><br></pre></td></tr></table></figure>
+<p><strong>fill()</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">fill</span>(start, stop, value);</span><br></pre></td></tr></table></figure>
+<p> </p>
+<h4 id="排序操作">排序操作</h4>
+<p><strong>sort</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sort</span>(strat, end);       <span class="comment">//重载&lt;运算符后</span></span><br><span class="line"><span class="built_in">sort</span>(start, end, cmp);  <span class="comment">//用cmp()函数或对象作为比较依据</span></span><br></pre></td></tr></table></figure>
+<p><strong>stable_sort</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">stable_sort</span>(strat, end);        <span class="comment">//重载&lt;运算符后</span></span><br><span class="line"><span class="built_in">stable_sort</span>(start, end, cmp);   <span class="comment">//用cmp()函数或对象作为比较依据</span></span><br></pre></td></tr></table></figure>
+<p>与<code>sort()</code>不同的是, <code>stable_sort()</code>是稳定的排序</p>
+<p><strong>partial_sort</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">partial_sort</span>(start, middle, end);       <span class="comment">//重载&lt;运算符后</span></span><br><span class="line"><span class="built_in">partial_sort</span>(start, middle, end, cmp);  <span class="comment">//用cmp()函数或对象作为比较依据</span></span><br></pre></td></tr></table></figure>
+<p>重新排序, (默认)把<strong>最小</strong>的一部分元素按<strong>升序</strong>置于区间[start,middle)中</p>
+<p> </p>
+<h4 id="二分查找操作-对于有序序列">二分查找操作(对于有序序列)</h4>
+<p><strong>binary_search</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> res = <span class="built_in">binary_search</span>(start, stop, target, cmp);</span><br></pre></td></tr></table></figure>
+<p><strong>lower_bound</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> lower = <span class="built_in">lower_bound</span>(start, stop, target, cmp);</span><br></pre></td></tr></table></figure>
+<p>(默认)返回区间内大于target的第一个元素的迭代器</p>
+<p><strong>upper_bound</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> upper = <span class="built_in">upper_bound</span>(start, stop, target, cmp);</span><br></pre></td></tr></table></figure>
+<p>(默认)返回区间内不小于target的第一个元素的迭代器</p>
+<p> </p>
+<h4 id="其他操作">其他操作</h4>
+<p><strong>集合操作(对于有序序列)</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">includes</span>(start1, stop1, strat2, stop2, cmp);    <span class="comment">//返回序列1是否包含了序列2</span></span><br><span class="line"><span class="built_in">set_difference</span>(start1, stop1, strat2, stop2, res, cmp); <span class="comment">//求序列1和序列2的差集, 结果储存在迭代器res里</span></span><br><span class="line"><span class="built_in">set_intersection</span>(start1, stop1, strat2, stop2, res, cmp);   <span class="comment">//求序列1和序列2的交集, 结果储存在迭代器res里</span></span><br><span class="line"><span class="built_in">set_symmetric_difference</span>(start1, stop1, strat2, stop2, res, cmp);   <span class="comment">//求序列1和序列2的并集与交集的差集, 结果储存在迭代器res里</span></span><br><span class="line"><span class="built_in">set_union</span>(start1, stop1, strat2, stop2, res, cmp);   <span class="comment">//求序列1和序列2的并集, 结果储存在迭代器res里</span></span><br></pre></td></tr></table></figure>
+<p><strong>大小比较操作</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> maxn = <span class="built_in">max</span>(a, b, cmp);</span><br><span class="line"><span class="keyword">auto</span> maxn = <span class="built_in">max</span>(&#123;a, b, c, d&#125;);</span><br><span class="line"><span class="keyword">auto</span> maxn = <span class="built_in">max_element</span>(start, stop, cmp);  <span class="comment">//返回第一个最大值的迭代器</span></span><br></pre></td></tr></table></figure>
+<p><strong>堆操作</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make_heap</span>(start, stop, cmp);</span><br><span class="line"><span class="built_in">pop_heap</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), cmp);  <span class="keyword">auto</span> top = v.<span class="built_in">back</span>();</span><br><span class="line">v.<span class="built_in">push_back</span>(value); <span class="built_in">push_heap</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+<p><strong>比较操作</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> res = <span class="built_in">equal</span>(start1, stop1, start2);    <span class="comment">//判断两个对象是否相等</span></span><br><span class="line"><span class="type">bool</span> res = <span class="built_in">lexicographical_compare</span>(start1, stop1, start2, stop2);    <span class="comment">//按照字典序判断对象1是否大于对象2</span></span><br></pre></td></tr></table></figure>
+<p> </p>
+<h4 id="cmp函数参数">cmp函数参数</h4>
+<p>上文中所有带<code>cmp</code>参数的函数, 都可以省略之, 编译器会自动用<code>&lt;</code>或重载后的<code>&lt;</code>来替代之.</p>
+<p>在函数实现时:</p>
+<ul>
+<li><code>x &gt; y</code>等价于<code>!(x &lt; y)</code>或<code>!cmp(x,y)</code></li>
+<li><code>x != y</code>等价于<code>!(x &lt; y) &amp;&amp; !(y &lt; x)</code>或<code>!cmp(x,y) &amp;&amp; !cmp(y,x)</code></li>
+</ul>
+<p>因此, 当你想按照降序排列某个序列时, 请使用</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !(x&lt;y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> _array[] = &#123;<span class="number">1</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">array</span><span class="params">(_array, _array+<span class="number">6</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i=array.<span class="built_in">begin</span>();i&lt;array.<span class="built_in">end</span>();++i)&#123;</span><br><span class="line">        cout&lt;&lt;*i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">    <span class="built_in">sort</span>(array.<span class="built_in">begin</span>(), array.<span class="built_in">end</span>(), cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i=array.<span class="built_in">begin</span>();i&lt;array.<span class="built_in">end</span>();++i)&#123;</span><br><span class="line">        cout&lt;&lt;*i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输出结果:</span></span><br><span class="line"><span class="comment">1 4 6 2 4 5 </span></span><br><span class="line"><span class="comment">6 5 4 4 2 1 </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><strong>扩展阅读：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://cplusplus.com/reference/algorithm/">C艹STL库官方文档 ｜ 算法</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://z-vanadium.github.io">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://z-vanadium.github.io/2023/12/17/cpp-stl/">http://z-vanadium.github.io/2023/12/17/cpp-stl/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://z-vanadium.github.io" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C-C/">C/C++</a><a class="post-meta__tags" href="/tags/STL/">STL</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201912_28_20191228172926_smljv.jpgreferhttp___c-ssl.duitangbc31325b0c973950.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/17/cpp-stl-2/" title="C++ | STL II"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/srchttp___c-ssl.duitang.com_uploads_blog_202010_13_20201013230437_ac139.thumb.1000_0.jpgreferhttp___c-ssl.duitang574dbf6245cd87a4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++ | STL II</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/16/js-1/" title="JS学习札记 | 基础语法"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/srchttp___c-ssl.duitang.com_uploads_blog_202010_06_20201006081139_2044e.thumb.1000_0.pngreferhttp___c-ssl.duitangf6b6c98ed62c7826.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JS学习札记 | 基础语法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/12/20/cpp-stl-3/" title="C++ | STL III"><img class="cover" src="https://www.imageoss.com/images/2024/03/28/e7cd7b899e510fb368383107d533c895d1430c787b07c8e89c591cb1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-20</div><div class="title">C++ | STL III</div></div></a></div><div><a href="/2023/12/17/cpp-stl-2/" title="C++ | STL II"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/srchttp___c-ssl.duitang.com_uploads_blog_202010_13_20201013230437_ac139.thumb.1000_0.jpgreferhttp___c-ssl.duitang574dbf6245cd87a4.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-17</div><div class="title">C++ | STL II</div></div></a></div><div><a href="/2024/04/03/cpp-fctn-object-and-lambda-fctn/" title="C++ | 函数对象 &amp; 匿名函数"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/20211119082454_f5ba7cd2c856fa9c4da3e.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-03</div><div class="title">C++ | 函数对象 &amp; 匿名函数</div></div></a></div><div><a href="/2024/04/06/cpp-fmt-and-print-lib/" title="C++ | Formatting &amp; Print Library"><img class="cover" src="https://www.imageoss.com/images/2024/03/28/820429453f40dc1e63987a16f61ed5445fb76a9188bd985e97b5e294.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-06</div><div class="title">C++ | Formatting &amp; Print Library</div></div></a></div><div><a href="/2024/03/30/cpp-inherit/" title="C++ | 继承"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/u30565844262908868523fm253app138fJPEGfdbbebc8db924d01.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-30</div><div class="title">C++ | 继承</div></div></a></div><div><a href="/2024/03/20/cpp-lvalue-and-rvalue/" title="C++ | 右值引用 &amp; 移动语义"><img class="cover" src="https://www.imageoss.com/images/2024/03/28/u4112399949772045700fm253fmtautoapp138fJPEG44159c9564bc0bb8.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-20</div><div class="title">C++ | 右值引用 &amp; 移动语义</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Z-Vanadium"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!<br>
+ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">1.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81STL"><span class="toc-number">2.</span> <span class="toc-text">为什么要STL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">容器、算法与迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E4%BF%AE%E6%94%B9%E5%BA%8F%E5%88%97%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">2.4.</span> <span class="toc-text">不修改序列的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%BA%8F%E5%88%97%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">2.5.</span> <span class="toc-text">修改序列的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">2.6.</span> <span class="toc-text">排序操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C-%E5%AF%B9%E4%BA%8E%E6%9C%89%E5%BA%8F%E5%BA%8F%E5%88%97"><span class="toc-number">2.7.</span> <span class="toc-text">二分查找操作(对于有序序列)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="toc-number">2.8.</span> <span class="toc-text">其他操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cmp%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-number">2.9.</span> <span class="toc-text">cmp函数参数</span></a></li></ol></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>系列文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/06/cpp-fmt-and-print-lib/" title="C++ | Formatting &amp; Print Library">C++ | Formatting &amp; Print Library</a><time datetime="2024-04-06T09:42:33.000Z" title="发表于 2024-04-06 17:42:33">2024-04-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/03/cpp-fctn-object-and-lambda-fctn/" title="C++ | 函数对象 &amp; 匿名函数">C++ | 函数对象 &amp; 匿名函数</a><time datetime="2024-04-03T03:27:08.000Z" title="发表于 2024-04-03 11:27:08">2024-04-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/30/cpp-inherit/" title="C++ | 继承">C++ | 继承</a><time datetime="2024-03-30T06:06:13.000Z" title="发表于 2024-03-30 14:06:13">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/cpp-smart-pointer/" title="C++ | 智能指针">C++ | 智能指针</a><time datetime="2024-03-24T08:26:27.000Z" title="发表于 2024-03-24 16:26:27">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/20/cpp-lvalue-and-rvalue/" title="C++ | 右值引用 &amp; 移动语义">C++ | 右值引用 &amp; 移动语义</a><time datetime="2024-03-20T05:18:36.000Z" title="发表于 2024-03-20 13:18:36">2024-03-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/cpp-stl-3/" title="C++ | STL III">C++ | STL III</a><time datetime="2023-12-20T15:43:09.000Z" title="发表于 2023-12-20 23:43:09">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/17/cpp-stl-2/" title="C++ | STL II">C++ | STL II</a><time datetime="2023-12-17T15:46:41.000Z" title="发表于 2023-12-17 23:46:41">2023-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/17/cpp-stl/" title="C++ | STL I">C++ | STL I</a><time datetime="2023-12-17T08:52:50.000Z" title="发表于 2023-12-17 16:52:50">2023-12-17</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/14/game-develop-cpp/" title="Re:从零开始的C++游戏开发 | 日经记录贴">Re:从零开始的C++游戏开发 | 日经记录贴</a><time datetime="2024-04-14T09:42:33.000Z" title="发表于 2024-04-14 17:42:33">2024-04-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/12/fds-sorts/" title="FDS | 常见排序算法实现 C 语言版">FDS | 常见排序算法实现 C 语言版</a><time datetime="2024-04-12T08:42:16.000Z" title="发表于 2024-04-12 16:42:16">2024-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/06/cpp-fmt-and-print-lib/" title="C++ | Formatting &amp; Print Library">C++ | Formatting &amp; Print Library</a><time datetime="2024-04-06T09:42:33.000Z" title="发表于 2024-04-06 17:42:33">2024-04-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/03/cpp-fctn-object-and-lambda-fctn/" title="C++ | 函数对象 &amp; 匿名函数">C++ | 函数对象 &amp; 匿名函数</a><time datetime="2024-04-03T03:27:08.000Z" title="发表于 2024-04-03 11:27:08">2024-04-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/30/cpp-inherit/" title="C++ | 继承">C++ | 继承</a><time datetime="2024-03-30T06:06:13.000Z" title="发表于 2024-03-30 14:06:13">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/info-security-principles-index/" title="信息安全原理与数学基础">信息安全原理与数学基础</a><time datetime="2024-03-27T11:01:18.000Z" title="发表于 2024-03-27 19:01:18">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/fds-index/" title="数据结构基础">数据结构基础</a><time datetime="2024-03-27T10:57:07.000Z" title="发表于 2024-03-27 18:57:07">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/computer-system-1-index/" title="计算机系统I">计算机系统I</a><time datetime="2024-03-27T10:40:44.000Z" title="发表于 2024-03-27 18:40:44">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/calculus-2-index/" title="微积分II">微积分II</a><time datetime="2024-03-27T10:31:05.000Z" title="发表于 2024-03-27 18:31:05">2024-03-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
