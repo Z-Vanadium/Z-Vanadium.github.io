@@ -1,0 +1,482 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>文明 6 游戏机制 | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="写在前面 搜集自网络, 部分经过测试 所有数据均为标准速度 (500回合), 对应联机速度时要除以 2 公式 游戏进度相关 游戏进度 GP 定义变量 GP (Game Processing), 表示玩家的游戏的进度占全游戏流程的百分比, 是计算区域涨价, 项目涨价, 收割以及掠夺收益的前置系数 GP&#x3D;max⁡{T,C}GP &#x3D; \max\{T,C\}  GP&#x3D;max{T,C} 其中变量 T 表示玩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文明 6 游戏机制">
+<meta property="og:url" content="http://z-vanadium.github.io/2024/07/16/civ-1/index.html">
+<meta property="og:site_name" content="Vanadium的小屋">
+<meta property="og:description" content="写在前面 搜集自网络, 部分经过测试 所有数据均为标准速度 (500回合), 对应联机速度时要除以 2 公式 游戏进度相关 游戏进度 GP 定义变量 GP (Game Processing), 表示玩家的游戏的进度占全游戏流程的百分比, 是计算区域涨价, 项目涨价, 收割以及掠夺收益的前置系数 GP&#x3D;max⁡{T,C}GP &#x3D; \max\{T,C\}  GP&#x3D;max{T,C} 其中变量 T 表示玩">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201808_31_20180831194410_nFUxH.pngreferhttp___c-ssl.duitang36b656c70b11e82e.jpg">
+<meta property="article:published_time" content="2024-07-15T22:31:04.000Z">
+<meta property="article:modified_time" content="2024-07-16T02:02:48.423Z">
+<meta property="article:author" content="Vanadium">
+<meta property="article:tag" content="Sid Meier&#39;s Civilization VI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201808_31_20180831194410_nFUxH.pngreferhttp___c-ssl.duitang36b656c70b11e82e.jpg"><link rel="shortcut icon" href="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="canonical" href="http://z-vanadium.github.io/2024/07/16/civ-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '文明 6 游戏机制',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-16 10:02:48'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> Games</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/finddiffcolor/"><i class="fa-fw fas fa-puzzle-piece"></i><span> FindDiffColor</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-share-nodes"></i><span> Share</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chishenme/"><i class="fa-fw fas fa-utensils"></i><span> What2Eat</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> Songs</span></a></li><li><a class="site-page child" href="/reg_exp_visualize/"><i class="fa-fw fas fa-folder-open"></i><span> RegExpVisual</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/note-index/"><i class="fa-fw fas fa-note-sticky"></i><span> Notes</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201808_31_20180831194410_nFUxH.pngreferhttp___c-ssl.duitang36b656c70b11e82e.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Vanadium的小屋"><span class="site-name">Vanadium的小屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> Games</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/finddiffcolor/"><i class="fa-fw fas fa-puzzle-piece"></i><span> FindDiffColor</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-share-nodes"></i><span> Share</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chishenme/"><i class="fa-fw fas fa-utensils"></i><span> What2Eat</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> Songs</span></a></li><li><a class="site-page child" href="/reg_exp_visualize/"><i class="fa-fw fas fa-folder-open"></i><span> RegExpVisual</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/note-index/"><i class="fa-fw fas fa-note-sticky"></i><span> Notes</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">文明 6 游戏机制</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-15T22:31:04.000Z" title="发表于 2024-07-16 06:31:04">2024-07-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-16T02:02:48.423Z" title="更新于 2024-07-16 10:02:48">2024-07-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="文明 6 游戏机制"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="写在前面">写在前面</h2>
+<p>搜集自网络, 部分经过测试</p>
+<p>所有数据均为标准速度 (500回合), 对应联机速度时要除以 2</p>
+<h2 id="公式">公式</h2>
+<h3 id="游戏进度相关">游戏进度相关</h3>
+<h4 id="游戏进度-GP">游戏进度 GP</h4>
+<p>定义变量 GP (Game Processing), 表示玩家的游戏的进度占全游戏流程的百分比, 是计算区域涨价, 项目涨价, 收割以及掠夺收益的前置系数</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>G</mi><mi>P</mi><mo>=</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mi>T</mi><mo separator="true">,</mo><mi>C</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">GP = \max\{T,C\} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">}</span></span></span></span></span></p>
+<p>其中变量 T 表示玩家已经解锁的科技占科技树的比例, C 表示玩家已经解锁的市政占市政树的比例; GP 保留两位小数 (并非四舍五入, 而是舍弃小数点后第三位)</p>
+<p>在文明 6 中, 科技树总量为 77, 市政树总量为 61</p>
+<p><strong>Eg</strong> 如果一个玩家解锁了 27 个科技和 23 个市政, 那么它的 GP 可以计算为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>G</mi><mi>P</mi><mo>=</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mn>27</mn><mi mathvariant="normal">/</mi><mn>77</mn><mo separator="true">,</mo><mn>23</mn><mi mathvariant="normal">/</mi><mn>61</mn><mo stretchy="false">}</mo><mo>=</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mn>0.35</mn><mo separator="true">,</mo><mn>0.37</mn><mo stretchy="false">}</mo><mo>=</mo><mn>0.37</mn></mrow><annotation encoding="application/x-tex">GP = \max\{27/77,23/61\}=\max\{0.35,0.37\}=0.37
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord">27/77</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">23/61</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord">0.35</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0.37</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.37</span></span></span></span></span></p>
+<h4 id="涨价系数">涨价系数</h4>
+<p>在文明 6 中, 区域和项目的造价 (生产力, 金币或是信仰的消耗) 是跟随 GP 变大而变大的, 定义涨价系数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span> 为某个区域或项目当前的造价与基准价格的比值, 则涨价系数与游戏进度 GP 有如下关系</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>β</mi><mo>=</mo><mn>1</mn><mo>+</mo><mo stretchy="false">(</mo><mi>N</mi><mi mathvariant="normal">%</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>∗</mo><mi>G</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\beta=1+(N\%-1)*GP
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord">%</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span></span></span></span></span></p>
+<p>其中 N 是一个定值, 对于不同的游戏行为, N 会取一个由游戏制作方确定的数字, 对于常见的游戏行为, N 的取值如下表所示</p>
+<table>
+<thead>
+<tr>
+<th>游戏行为</th>
+<th>N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>砍树/掠夺/建造区域</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>训练商人</td>
+<td>400</td>
+</tr>
+<tr>
+<td>购买地块</td>
+<td>500</td>
+</tr>
+<tr>
+<td>项目</td>
+<td>1500</td>
+</tr>
+</tbody>
+</table>
+<p>N% 的数学意义在于, 使涨价机制呈现线性增长规律, 即在游戏开始时, 所有游戏行为的造价都是原价, 在游戏进度到达 100% 时, 所有的游戏行为的造价都是原价的 N% 倍</p>
+<h4 id="区域造价">区域造价</h4>
+<p>在文明 6 中, 区域具有独特的六折机制, 因此区域的造价 P 的计算公式可以写作</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>9</mn><mo>∗</mo><mi>G</mi><mi>P</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>γ</mi><mo>∗</mo><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P=(1+9*GP)*\gamma*P_0
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6597em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span></span> 表示区域的<strong>打折系数</strong>, 具体关于游戏的区域六折机制将在之后讨论; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 表示区域的基准价格</p>
+<p>和 GP 一样, P 也是向下取整的, 保留至整数</p>
+<p>对于常见的游戏区域, 其基准价格为</p>
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>学院/商业区/剧院等, 具有伟人点数产出的专用区域</td>
+<td>54</td>
+</tr>
+<tr>
+<td>某些文明 “造价更低” 的区域, 如毛子的修道院</td>
+<td>27</td>
+</tr>
+<tr>
+<td>市政广场, 外交区</td>
+<td>30</td>
+</tr>
+<tr>
+<td>水渠 (罗马的浴场)</td>
+<td>36 (18)</td>
+</tr>
+<tr>
+<td>社区 (刚果的姆班赞)</td>
+<td>54 (27)</td>
+</tr>
+<tr>
+<td>运河, 水坝</td>
+<td>81</td>
+</tr>
+</tbody>
+</table>
+<p>此外, 市场广场和外交区仅享受 75% 的打折系数, 但是文明的半价区域依然可以享受 60% 的打折系数</p>
+<p><strong>Eg</strong> 当科技树解锁了制陶术, 写作和货币, 市政树解锁了法典, 对外贸易和帝国初期时, 商业中心的价格计算如下:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>G</mi><mi>P</mi><mo>=</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mn>3</mn><mi mathvariant="normal">/</mi><mn>77</mn><mo separator="true">,</mo><mn>3</mn><mi mathvariant="normal">/</mi><mn>61</mn><mo stretchy="false">}</mo><mo>=</mo><mn>0.04</mn></mrow><annotation encoding="application/x-tex">GP = \max\{3/77,3/61\}=0.04
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord">3/77</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3/61</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.04</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>9</mn><mo>∗</mo><mn>0.04</mn><mo stretchy="false">)</mo><mo>∗</mo><mn>1</mn><mo>∗</mo><mn>54</mn><mo>=</mo><mn>73</mn></mrow><annotation encoding="application/x-tex">P=(1+9*0.04)*1*54=73
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.04</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">54</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">73</span></span></span></span></span></p>
+<p>如果这个文明为马里, 即商业中心被替换为半价的曼丁哥市场, 造价则为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>9</mn><mo>∗</mo><mn>0.04</mn><mo stretchy="false">)</mo><mo>∗</mo><mn>1</mn><mo>∗</mo><mn>27</mn><mo>=</mo><mn>36</mn></mrow><annotation encoding="application/x-tex">P=(1+9*0.04)*1*27=36
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.04</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">27</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">36</span></span></span></span></span></p>
+<p>如果这个文明通过提前修好两个学院, 使商业中心吃到了六折, 则打折后的价格为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>9</mn><mo>∗</mo><mn>0.04</mn><mo stretchy="false">)</mo><mo>∗</mo><mn>0.6</mn><mo>∗</mo><mn>54</mn><mo>=</mo><mn>44</mn></mrow><annotation encoding="application/x-tex">P=(1+9*0.04)*0.6*54=44
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.04</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.6</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">54</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">44</span></span></span></span></span></p>
+<h4 id="地块">地块</h4>
+<p>二环的基准价格为 50, 三环的基准价格为 75</p>
+<h4 id="收割和掠夺收益">收割和掠夺收益</h4>
+<p>收割和掠夺的基准收益根据行为的不同而不同</p>
+<ol>
+<li>移除地貌
+<ul>
+<li>树林: 20 锤</li>
+<li>雨林: 10 锤 10 粮</li>
+<li>沼泽: 20 粮</li>
+</ul>
+</li>
+<li>收割资源
+<ul>
+<li>石头, 鹿: 20 锤</li>
+<li>香蕉, 牛, 鱼, 大米, 小麦, 羊: 20 粮</li>
+<li>铜, 玉米, 螃蟹: 40 金</li>
+</ul>
+</li>
+<li>掠夺改良
+<ul>
+<li>采石场, 牧场, 种植园: 25 信仰</li>
+<li>矿山, 伐木场: 50 金</li>
+</ul>
+</li>
+<li>掠夺区域
+<ul>
+<li>学院, 工业区, 宇航中心: 25 科技</li>
+<li>商业区, 娱乐区, 机场, 运河, 水渠, 社区: 50 金</li>
+<li>剧院, 市政广场: 25 文化</li>
+<li>圣地: 25 信仰</li>
+</ul>
+</li>
+</ol>
+<h4 id="项目产出">项目产出</h4>
+<p>所有的项目的基准造价 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 都是 25</p>
+<p>与区域类似, 项目的造价 P 的计算公式可以写作</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>=</mo><mn>25</mn><mo>∗</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>14</mn><mo>∗</mo><mi>G</mi><mi>P</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P=25*(1+14*GP)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">25</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">14</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span><span class="mclose">)</span></span></span></span></span></p>
+<p>项目产出的数据 T 的计算公式为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>T</mi><mo>=</mo><mn>0.15</mn><mo>∗</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">T=0.15*P
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.15</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span></span></p>
+<ul>
+<li>对于商业中心, 享受 200% 的修正值, 即产出对应数量的金币</li>
+<li>对于军营 (港口), 圣地, 剧院, 学院, 产出对应数量的金币, 信仰, 文化和科技</li>
+</ul>
+<p>项目生产的伟人点数 G 的计算公式为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>G</mi><mo>=</mo><mn>10</mn><mo>∗</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>7</mn><mo>∗</mo><mi>G</mi><mi>P</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0.20</mn><mo>∗</mo><mi>P</mi><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">G=10*(1+7*GP)=0.20*P+5
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">GP</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.20</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span></span></p>
+<p>如果一个项目可以产出多种伟人点数, 如剧院项目, 则 G 享受 50% 的修正, 即  1 次剧院项目产出 0.5 单位的大作家, 0.5 单位的大艺术家和 0.5 单位的大音乐家点数</p>
+<p>此外:</p>
+<ol>
+<li>
+<p>一些文明拥有独特的项目, 如金法的宫廷玉液酒和迦太基的迁都, 其 N 同样为 1500, 但是基准造价分别是 65 和 100</p>
+</li>
+<li>
+<p>不同于区域的落地锁锤, 项目的价格是<strong>动态计算</strong>的, 由于文明 6 的回合结算顺序为<strong>科文锤粮</strong>, 加之项目高额的涨价倍率, 有可能出现上一回合显示一回合结束的项目, 由于过回合时科技树 / 市政树推动 GP 使项目涨价, 导致这一回合任然显示一回合结束 (很讨人厌, 不是吗)</p>
+</li>
+</ol>
+<h4 id="碎碎念">碎碎念</h4>
+<p>由于席德梅尔<strong>高超的数值平衡能力</strong>, 在游戏后期, 唯一能跟上区域和项目涨价速度的只有砍树, 因此在游戏后期, 玩家想让一座新城发育起来的<strong>唯一方法</strong>就是砍树 – 毕竟不论什么时候, 一刀树都能加快区域约 1/3 的进度, 但是后期工业区给新城的辐射在天价区域 (当 GP 为 0.50 时约为 300) 面前几乎可以忽略不计; 这就导致了游戏的畸形玩法: 中后期新城落地砍砍砍然后只能转项目… 甚至于有的玩家在进入中世纪之后就停止扩张</p>
+<p>另外一种能跟上区域和项目涨价速度的就是掠夺的收益, 因此席德梅尔或许是在鼓励玩家在后期就要通过战争和掠夺补齐扩张的资源消耗吧</p>
+<h3 id="生产力相关">生产力相关</h3>
+<p>生产单位所需生产力 P 计算公式</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>P</mi><mn>0</mn></msub><mo>+</mo><mi>n</mi><mo>∗</mo><mi mathvariant="normal">Δ</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">P=P_0+n*\Delta P
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4653em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为基准值, n 为已经生产的此单位的数量, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\Delta P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 为增加值</p>
+<p>常见平民和宗教单位的基准值和增加值如下</p>
+<table>
+<thead>
+<tr>
+<th>单位</th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">P_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\Delta P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>移民</td>
+<td>80</td>
+<td>30</td>
+</tr>
+<tr>
+<td>工人</td>
+<td>50</td>
+<td>4</td>
+</tr>
+<tr>
+<td>间谍</td>
+<td>225</td>
+<td>75</td>
+</tr>
+<tr>
+<td>传教士</td>
+<td>150</td>
+<td>12</td>
+</tr>
+<tr>
+<td>使徒</td>
+<td>400</td>
+<td>30</td>
+</tr>
+<tr>
+<td>审判官</td>
+<td>150</td>
+<td>12</td>
+</tr>
+<tr>
+<td>自然学家</td>
+<td>600</td>
+<td>100</td>
+</tr>
+<tr>
+<td>摇滚乐队</td>
+<td>600</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p>军事单位没有增加值</p>
+<h3 id="战斗相关">战斗相关</h3>
+<h4 id="力差伤害计算">力差伤害计算</h4>
+<p>定义战斗造成的伤害 HT, 则计算公式为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mi>T</mi><mo>=</mo><mi>F</mi><mi>T</mi><mo>∗</mo><msup><mi mathvariant="normal">e</mi><mrow><mi mathvariant="normal">Δ</mi><mi>X</mi><mo>∗</mo><mn>0.04</mn></mrow></msup></mrow><annotation encoding="application/x-tex">HT=FT*\mathrm{e}^{\Delta X * 0.04}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">FT</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8913em;"></span><span class="mord"><span class="mord mathrm">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">Δ</span><span class="mord mathnormal mtight" style="margin-right:0.07847em;">X</span><span class="mbin mtight">∗</span><span class="mord mtight">0.04</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>其中 FT 为 Continuous Uniform Random Variable, 分布在 24 到 36 之间; e 是自然对数的底数; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>X</mi></mrow><annotation encoding="application/x-tex">\Delta X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span> 为战力差, 即己方的力减去对方的力</p>
+<p>根据公式计算得知, 不存在力差时, 期望造成 29.5 伤害, 力差达到 26 时, 有可能一击必杀, 力差达到 31 时, 期望伤害一击必杀, 力差达到 36 时, 一击必杀</p>
+<p>近战与抗骑兵战斗时 + 10 力</p>
+<p>抗骑兵与轻重骑战斗时 + 10 力</p>
+<p>攻城单位对陆地单位 - 17 攻击 (注意不是减力, 对海军单位造成全额攻)</p>
+<p>远程单位对海军和城市 -17 攻击</p>
+<p>此外, 文明 6 中不会出现同归于尽的情况, 两个残血单位互打, <strong>扣血后负的少的单位存活</strong>, 因此用低力兵找残血高力兵自爆是不现实的, 很可能高力残血变丝血, 满血低力兵直接死了</p>
+<h4 id="城防计算">城防计算</h4>
+<p>定义城防面板值 D 为显示在游戏地图中, 城市词条上方的数字, 表示城防的强度, 计算公式如下</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>D</mi><mo>=</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>−</mo><mn>10</mn><mo stretchy="false">}</mo><mo>+</mo><mn>2</mn><mo>∗</mo><mi>N</mi><mi>D</mi><mo>+</mo><mn>3</mn><mo>∗</mo><mi>W</mi><mi>L</mi><mo>+</mo><mn>3</mn><mo stretchy="false">(</mo><mtext>首都</mtext><mo stretchy="false">)</mo><mo>+</mo><mn>5</mn><mo stretchy="false">(</mo><mtext>光头总督</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">D=\max\{X,Y-10\}+2*ND+3*WL+3(首都)+5(光头总督)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">10</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mopen">(</span><span class="mord cjk_fallback">首都</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mopen">(</span><span class="mord cjk_fallback">光头总督</span><span class="mclose">)</span></span></span></span></span></p>
+<p>其中 X 为城市驻守单位的近战力 (计算掉血减力), Y 为玩家拥有的最高力的单位的基础力, ND 为区域数 (如果被掠夺, 则不计入), WL 为城墙等级 (远古 = 1, 古典 = 2, 文艺复兴 = 3)</p>
+<p>值得注意的是, D 仅为城市的面板力, 进攻城市时, 实战力还会受到丘陵加力, 隔河加力和难度加力等</p>
+<ol>
+<li>
+<p>通过城防可以推断玩家拥有的最高力兵种, 例如一座有一个区域的城市城防力为 28, 则反推出玩家拥有 36 力的兵种, 可能是小马或铁剑; 如果你看到你附近的玩家首都城防力突然变成了 55 左右, 小心对面的追猎 / 马镫!</p>
+</li>
+<li>
+<p>进攻城市前可以踩区域, 一个区域被彻底掠夺后可以降低 2 点城防力, 可以很好的减少战损</p>
+</li>
+</ol>
+<h3 id="城市相关">城市相关</h3>
+<h4 id="扩地机制">扩地机制</h4>
+<p>文明 6 的自然扩地最多扩到 5 环, 且只会对无主地块扩地, 扩地机制优先级为</p>
+<ol>
+<li><strong>内环优先于外环</strong>, 即二环扩完前, 不会扩到三环</li>
+<li><strong>资源奇观优先于无资源非奇观地块</strong></li>
+<li><strong>计算地块分数, 优先分高的地块</strong>, 分数 = 产出总量 + 相邻无主资源数量 + 2 * 相邻无主奇观数量
+<ol>
+<li>得分相同时, 随机扩地</li>
+<li>无资源的水体优先级最低, 甚至低于山脉</li>
+</ol>
+</li>
+</ol>
+<p>值得注意的是, 计算分数时, 金币和粮锤等值, 即 213 玉米的分数是 6, 甚至比 23 的鹿和 32 大香蕉还要高 (席德梅尔你自己觉得这合理吗); 此外, 30 大米也会比 22 丘陵树更优先 (席德梅尔的逆天机制)</p>
+<p>山脉算作 0 产, 计算产出不会计算被圈入国家后的加成, 比如毛子对冻土的 1 锤 1 信仰, 印加对山脉的 2 锤都不会计算</p>
+<p>毛子和宗移落地的额外圈地也按照上述优先级计算</p>
+<p>扩地消耗的文化值 (城市的文化值积累) 为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>10</mn><mo>+</mo><mo stretchy="false">[</mo><mn>6</mn><mo>∗</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><msup><mo stretchy="false">]</mo><mn>1.3</mn></msup></mrow><annotation encoding="application/x-tex">P(n)=10+[6*(n-1)]^{1.3}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">10</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.3</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>其中 n 为城市文化扩地的扩地次序</p>
+<p>扩张 n 个地块需要消耗的总量为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">Σ</mi><mi>P</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo stretchy="false">[</mo><mn>10</mn><mo>+</mo><mo stretchy="false">(</mo><mn>6</mn><mo>∗</mo><mi>i</mi><msup><mo stretchy="false">)</mo><mn>1.3</mn></msup><mo stretchy="false">]</mo></mstyle></mrow><annotation encoding="application/x-tex">\Sigma P(n)=\displaystyle\sum_{i=0}^{n-1}[10+(6*i)^{1.3}]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">Σ</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.0788em;vertical-align:-1.2777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8011em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mopen">[</span><span class="mord">10</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord mathnormal">i</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.3</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></span></p>
+<p>买地不会影响文化扩地的积累, 但是可能影响文化扩地的顺序</p>
+<h4 id="人口增长机制">人口增长机制</h4>
+<p>人口增加到下一个人口数量时, 所需的粮食 F 的计算公式如下</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>15</mn><mo>+</mo><mn>8</mn><mo>∗</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mn>1.5</mn></msup></mrow><annotation encoding="application/x-tex">F(n)=15+8*(n-1)+(n-1)^{1.5}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">15</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1.5</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>其中 n 为城市当前的人口数量</p>
+<p>当城市产出移民 (或苏丹亲兵) 时, 会消耗 (n - 1) 个人口涨到 n 个人口时所需的粮食, 即 F(n - 1) 数量的粮食</p>
+<p>因此在标准速下, 保证出移民不掉人口的余粮数量为</p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo mathvariant="normal">′</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>F</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F^\prime(n)/F(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>15 / 24</td>
+</tr>
+<tr>
+<td>3</td>
+<td>24 / 33</td>
+</tr>
+<tr>
+<td>4</td>
+<td>33 / 44</td>
+</tr>
+<tr>
+<td>5</td>
+<td>44 / 55</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文胜相关">文胜相关</h3>
+<h4 id="名词解释">名词解释</h4>
+<p>国内游客: 文明每累计 100 文化 (包括炸鼓舞), 即可获得 1 个国内游客 (文化是盾, 用来防御别的文明的文化胜利)</p>
+<p>国际游客: 每对一个文明累计 [200 * N] 旅游业绩则将该文明 1 个国内游客转化为 1 个来本国的国际游客 (旅游业绩是剑, 用来进攻别的文明的文化), 其中 N 是本局游戏初始的文明数量</p>
+<ul>
+<li>强调对特定文明积累旅游业绩是因为, 文明对文明的旅游业绩的量是会随着政策卡, 政体, 商路和宗教信仰产生修正值的</li>
+<li>转化完低文化国家的游客后, 需要转化高文化国家的游客, 其难度更加大</li>
+</ul>
+<p>文化胜利: 当某个文明完成来本国的国家游客数量大于其他文明中最多的国内游客时, 这个文明完成了文化胜利</p>
+<h4 id="灭国">灭国</h4>
+<p>灭国会导致所有文明失去这个国家的国际游客, 导致所有文明都更加难以文化胜利, 也就是灭国利好文化防御</p>
+<h4 id="文化-boss">文化 boss</h4>
+<p>指的是文胜时, 敌方文化最高的文明, 由于文胜的机制是 “其他文明中最多的国内游客”, 因此能拉到文化 boss 的游客的收益是两倍于拉到低文化国家的</p>
+<h2 id="参考文献">参考文献</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.gamersky.com/handbook/201701/860732.shtml">《文明6》文本词条对照表一览 词条中英文对照翻译</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv8390885/?spm_id_from=333.999.0.0">文明6常用公式 季票版——游戏进度类</a></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://z-vanadium.github.io">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://z-vanadium.github.io/2024/07/16/civ-1/">http://z-vanadium.github.io/2024/07/16/civ-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://z-vanadium.github.io" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Sid-Meier-s-Civilization-VI/">Sid Meier's Civilization VI</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201808_31_20180831194410_nFUxH.pngreferhttp___c-ssl.duitang36b656c70b11e82e.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/f21aec2540ada0be3182a3d0a1feb1c86f0b67d504aa9b8c23799ffa.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Vanadium的小屋御用公告板</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/24/sys1-lab/" title="Computer System I Lab project 实验报告"><img class="cover" src="https://www.imageoss.com/images/2024/03/28/4a495e2f99eebaaa258b487e5eb3f1d21446c0f59b1a3cb4dc3e6b47.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Computer System I Lab project 实验报告</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Z-Vanadium"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!<br>
+ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E8%BF%9B%E5%BA%A6%E7%9B%B8%E5%85%B3"><span class="toc-number">2.1.</span> <span class="toc-text">游戏进度相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E8%BF%9B%E5%BA%A6-GP"><span class="toc-number">2.1.1.</span> <span class="toc-text">游戏进度 GP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B6%A8%E4%BB%B7%E7%B3%BB%E6%95%B0"><span class="toc-number">2.1.2.</span> <span class="toc-text">涨价系数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E9%80%A0%E4%BB%B7"><span class="toc-number">2.1.3.</span> <span class="toc-text">区域造价</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E5%9D%97"><span class="toc-number">2.1.4.</span> <span class="toc-text">地块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B6%E5%89%B2%E5%92%8C%E6%8E%A0%E5%A4%BA%E6%94%B6%E7%9B%8A"><span class="toc-number">2.1.5.</span> <span class="toc-text">收割和掠夺收益</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BA%A7%E5%87%BA"><span class="toc-number">2.1.6.</span> <span class="toc-text">项目产出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A2%8E%E7%A2%8E%E5%BF%B5"><span class="toc-number">2.1.7.</span> <span class="toc-text">碎碎念</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E5%8A%9B%E7%9B%B8%E5%85%B3"><span class="toc-number">2.2.</span> <span class="toc-text">生产力相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%98%E6%96%97%E7%9B%B8%E5%85%B3"><span class="toc-number">2.3.</span> <span class="toc-text">战斗相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9B%E5%B7%AE%E4%BC%A4%E5%AE%B3%E8%AE%A1%E7%AE%97"><span class="toc-number">2.3.1.</span> <span class="toc-text">力差伤害计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%8E%E9%98%B2%E8%AE%A1%E7%AE%97"><span class="toc-number">2.3.2.</span> <span class="toc-text">城防计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%8E%E5%B8%82%E7%9B%B8%E5%85%B3"><span class="toc-number">2.4.</span> <span class="toc-text">城市相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%9C%B0%E6%9C%BA%E5%88%B6"><span class="toc-number">2.4.1.</span> <span class="toc-text">扩地机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%BA%E5%8F%A3%E5%A2%9E%E9%95%BF%E6%9C%BA%E5%88%B6"><span class="toc-number">2.4.2.</span> <span class="toc-text">人口增长机制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E8%83%9C%E7%9B%B8%E5%85%B3"><span class="toc-number">2.5.</span> <span class="toc-text">文胜相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">2.5.1.</span> <span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%81%AD%E5%9B%BD"><span class="toc-number">2.5.2.</span> <span class="toc-text">灭国</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E5%8C%96-boss"><span class="toc-number">2.5.3.</span> <span class="toc-text">文化 boss</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">3.</span> <span class="toc-text">参考文献</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/16/civ-1/" title="文明 6 游戏机制">文明 6 游戏机制</a><time datetime="2024-07-15T22:31:04.000Z" title="发表于 2024-07-16 06:31:04">2024-07-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/24/sys1-lab/" title="Computer System I Lab project 实验报告">Computer System I Lab project 实验报告</a><time datetime="2024-06-24T13:01:50.046Z" title="发表于 2024-06-24 21:01:50">2024-06-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/16/cpp-perfect-forwarding/" title="C++ | 完美转发">C++ | 完美转发</a><time datetime="2024-05-16T13:46:38.000Z" title="发表于 2024-05-16 21:46:38">2024-05-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/13/riscv/" title="RISC-V 初探">RISC-V 初探</a><time datetime="2024-05-13T12:47:34.000Z" title="发表于 2024-05-13 20:47:34">2024-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/02/game-develop-cpp-plus/" title="Se:从零开始的C++游戏开发 | 日经记录贴">Se:从零开始的C++游戏开发 | 日经记录贴</a><time datetime="2024-05-02T12:25:08.000Z" title="发表于 2024-05-02 20:25:08">2024-05-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/01/cpp-callback-func/" title="C++ | 回调函数">C++ | 回调函数</a><time datetime="2024-05-01T13:49:08.000Z" title="发表于 2024-05-01 21:49:08">2024-05-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/14/game-develop-cpp/" title="Re:从零开始的C++游戏开发 | 日经记录贴">Re:从零开始的C++游戏开发 | 日经记录贴</a><time datetime="2024-04-14T09:42:33.000Z" title="发表于 2024-04-14 17:42:33">2024-04-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/12/fds-sorts/" title="FDS | 常见排序算法实现 C 语言版">FDS | 常见排序算法实现 C 语言版</a><time datetime="2024-04-12T08:42:16.000Z" title="发表于 2024-04-12 16:42:16">2024-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/06/cpp-fmt-and-print-lib/" title="C++ | Formatting &amp; Print Library">C++ | Formatting &amp; Print Library</a><time datetime="2024-04-06T09:42:33.000Z" title="发表于 2024-04-06 17:42:33">2024-04-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
