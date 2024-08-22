@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>文明 6 mod 制作学习笔记 (2) 新的单位 | Vanadium的小屋</title><meta name="author" content="Vanadium"><meta name="copyright" content="Vanadium"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="文明6 Mod教程（2）创建人物 Mod 相关文件类型 文明 6 的 mod 主要由以下文件构成  xml: 最主要的文件 artdef: 模型定义 xlp: 图像资源变量名 dds: 贴图   本质上, 后面 3 个其实也是 xml 文件, 只是后缀名不同, 语法格式是相同的  创建新的单位 设计目标 设计一个单位, 名称为职业军队 ProfessionalArmy, 替代步兵, 造价和维护费低">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文明 6 mod 制作学习笔记 (2) 新的单位">
+<meta property="og:url" content="http://z-vanadium.github.io/2024/08/07/civ6-mod-make-2/index.html">
+<meta property="og:site_name" content="Vanadium的小屋">
+<meta property="og:description" content="文明6 Mod教程（2）创建人物 Mod 相关文件类型 文明 6 的 mod 主要由以下文件构成  xml: 最主要的文件 artdef: 模型定义 xlp: 图像资源变量名 dds: 贴图   本质上, 后面 3 个其实也是 xml 文件, 只是后缀名不同, 语法格式是相同的  创建新的单位 设计目标 设计一个单位, 名称为职业军队 ProfessionalArmy, 替代步兵, 造价和维护费低">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_blog_202011_10_20201110212403_62f28.pngreferhttp___c-ssl.duitanga11808921cabe140.png">
+<meta property="article:published_time" content="2024-08-07T08:58:59.037Z">
+<meta property="article:modified_time" content="2024-08-08T06:32:36.268Z">
+<meta property="article:author" content="Vanadium">
+<meta property="article:tag" content="Sid Meier&#39;s Civilization VI">
+<meta property="article:tag" content="游戏开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_blog_202011_10_20201110212403_62f28.pngreferhttp___c-ssl.duitanga11808921cabe140.png"><link rel="shortcut icon" href="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg"><link rel="canonical" href="http://z-vanadium.github.io/2024/08/07/civ6-mod-make-2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '文明 6 mod 制作学习笔记 (2) 新的单位',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-08 14:32:36'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> Games</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/finddiffcolor/"><i class="fa-fw fas fa-puzzle-piece"></i><span> FindDiffColor</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-share-nodes"></i><span> Share</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chishenme/"><i class="fa-fw fas fa-utensils"></i><span> What2Eat</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> Songs</span></a></li><li><a class="site-page child" href="/reg_exp_visualize/"><i class="fa-fw fas fa-folder-open"></i><span> RegExpVisual</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/note-index/"><i class="fa-fw fas fa-note-sticky"></i><span> Notes</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_blog_202011_10_20201110212403_62f28.pngreferhttp___c-ssl.duitanga11808921cabe140.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Vanadium的小屋"><span class="site-name">Vanadium的小屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> Games</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/finddiffcolor/"><i class="fa-fw fas fa-puzzle-piece"></i><span> FindDiffColor</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-share-nodes"></i><span> Share</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chishenme/"><i class="fa-fw fas fa-utensils"></i><span> What2Eat</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-music"></i><span> Songs</span></a></li><li><a class="site-page child" href="/reg_exp_visualize/"><i class="fa-fw fas fa-folder-open"></i><span> RegExpVisual</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/note-index/"><i class="fa-fw fas fa-note-sticky"></i><span> Notes</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">文明 6 mod 制作学习笔记 (2) 新的单位</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-07T08:58:59.037Z" title="发表于 2024-08-07 16:58:59">2024-08-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-08T06:32:36.268Z" title="更新于 2024-08-08 14:32:36">2024-08-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="文明 6 mod 制作学习笔记 (2) 新的单位"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wb411c7db/?spm_id_from=333.788.recommend_more_video.-1&amp;vd_source=fb60086411a6996e53c3014541e4a3ee">文明6 Mod教程（2）创建人物</a></p>
+<h2 id="Mod-相关文件类型">Mod 相关文件类型</h2>
+<p>文明 6 的 mod 主要由以下文件构成</p>
+<ol>
+<li><strong>xml</strong>: 最主要的文件</li>
+<li><strong>artdef</strong>: 模型定义</li>
+<li><strong>xlp</strong>: 图像资源变量名</li>
+<li><strong>dds</strong>: 贴图</li>
+</ol>
+<blockquote>
+<p>本质上, 后面 3 个其实也是 xml 文件, 只是后缀名不同, 语法格式是相同的</p>
+</blockquote>
+<h2 id="创建新的单位">创建新的单位</h2>
+<h3 id="设计目标">设计目标</h3>
+<p>设计一个单位, 名称为职业军队 ProfessionalArmy, 替代步兵, 造价和维护费低于步兵, 速度更快, 强于步兵</p>
+<h3 id="新建-project">新建 project</h3>
+<p>与修改文本类似, 这次新建一个 unit project, 命名为 UNIT_ProfessionalArmy</p>
+<p>删除无用的 GettingStarted.html, 无视不重要的 .Art.xml 文件</p>
+<p>重要的是下面几个文件</p>
+<ol>
+<li>Units.artdef: 模型定义</li>
+<li>UNIT_ProfessionalArmy_Gameplay.xml: 参数设置</li>
+<li>UNIT_ProfessionalArmy_Icons.xml: 图标设置</li>
+<li>UNIT_ProfessionalArmy_Text.xml: 文本设置</li>
+</ol>
+<h3 id="单位参数设置">单位参数设置</h3>
+<h4 id="原版单位结构">原版单位结构</h4>
+<p>作为参考, 打开含有原版单位参数的文件 Sid Meier’s Civilization VI\Base\Assets\Gameplay\Data\Units.xml</p>
+<p>文明 6 的单位命名一般以 UNIT 开头, 步兵为 UNIT_INFANTRY</p>
+<p>第一项在 Types 标签下, 代表单位的名称</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">Type</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span> <span class="attr">Kind</span>=<span class="string">&quot;KIND_UNIT&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第二项在 UnitAiInfos 标签下, 代表单位的信息</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span> <span class="attr">AiType</span>=<span class="string">&quot;UNITAI_COMBAT&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span> <span class="attr">AiType</span>=<span class="string">&quot;UNITAI_EXPLORE&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span> <span class="attr">AiType</span>=<span class="string">&quot;UNITTYPE_MELEE&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span> <span class="attr">AiType</span>=<span class="string">&quot;UNITTYPE_LAND_COMBAT&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这段代码表示步兵是战斗单位, 探索单位, 近战单位, 地面战斗单位</p>
+<p>第三项是 UnitReplaces, 即单位替换 (步兵没有)</p>
+<p>例如重装步兵替换了枪兵</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">UnitReplaces</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">CivUniqueUnitType</span>=<span class="string">&quot;UNIT_GREEK_HOPLITE&quot;</span> <span class="attr">ReplacesUnitType</span>=<span class="string">&quot;UNIT_SPEARMAN&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">UnitReplaces</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第四项在 TypeTags 标签下, 代表单位类型</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">Type</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span> <span class="attr">Tag</span>=<span class="string">&quot;CLASS_MELEE&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这段代码表示步兵是近战单位</p>
+<p>最关键的第五项在 Unit 标签下, 代表单位的具体参数</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span> <span class="attr">Cost</span>=<span class="string">&quot;430&quot;</span> <span class="attr">Maintenance</span>=<span class="string">&quot;6&quot;</span> <span class="attr">BaseMoves</span>=<span class="string">&quot;2&quot;</span> <span class="attr">BaseSightRange</span>=<span class="string">&quot;2&quot;</span> <span class="attr">ZoneOfControl</span>=<span class="string">&quot;true&quot;</span> <span class="attr">Domain</span>=<span class="string">&quot;DOMAIN_LAND&quot;</span> <span class="attr">Combat</span>=<span class="string">&quot;75&quot;</span> <span class="attr">FormationClass</span>=<span class="string">&quot;FORMATION_CLASS_LAND_COMBAT&quot;</span> <span class="attr">PromotionClass</span>=<span class="string">&quot;PROMOTION_CLASS_MELEE&quot;</span> <span class="attr">AdvisorType</span>=<span class="string">&quot;ADVISOR_CONQUEST&quot;</span> <span class="attr">Name</span>=<span class="string">&quot;LOC_UNIT_INFANTRY_NAME&quot;</span> <span class="attr">Description</span>=<span class="string">&quot;LOC_UNIT_INFANTRY_DESCRIPTION&quot;</span> <span class="attr">PurchaseYield</span>=<span class="string">&quot;YIELD_GOLD&quot;</span> <span class="attr">PrereqTech</span>=<span class="string">&quot;TECH_REPLACEABLE_PARTS&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>包括:</p>
+<ol>
+<li>花费的生产力 Cost,</li>
+<li>维护费 Maintenance,</li>
+<li>基础移速 BaseMoves,</li>
+<li>基础视野 BaseSightRange,</li>
+<li>是否有控制区 ZoneOfControl,</li>
+<li>空中或地面单位 Domain,</li>
+<li>近战力 Combat,</li>
+<li>编队类型 FormationClass,</li>
+<li>晋升类型 PromotionClass,</li>
+<li>顾问提示类型 AdvisorType,</li>
+<li>名称 Name,</li>
+<li>描述 Description,</li>
+<li>购买力范围 PurchaseYield,</li>
+<li>生产所需科技 PrereqTech,</li>
+<li>淘汰科技 MandatoryObsoleteTech (如有),</li>
+<li>特质类型 TraitType (如果是文明独有的),</li>
+<li>战略资源消耗 StrategicResource (如有),</li>
+<li>远程攻击力 RangedCombat (如有),</li>
+<li>远程攻击范围 Range (如有)</li>
+</ol>
+<blockquote>
+<p>在 xml 中, 下面两种写法是等效的</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TagA</span> <span class="attr">RowA</span>=<span class="string">&quot;A&quot;</span> <span class="attr">RowB</span>=<span class="string">&quot;B&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">TagA</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">RowA</span>&gt;</span>A<span class="tag">&lt;/<span class="name">RowA</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">RowB</span>&gt;</span>B<span class="tag">&lt;/<span class="name">RowB</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">TagA</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>第六项在 UnitUpgrades 标签下, 表示单位的升级目标</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">Unit</span>=<span class="string">&quot;UNIT_LINE_INFANTRY&quot;</span> <span class="attr">UpgradeUnit</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">Unit</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span> <span class="attr">UpgradeUnit</span>=<span class="string">&quot;UNIT_MECHANIZED_INFANTRY&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在原版的升级线中, 线列步兵可以升级为步兵, 步兵可以升级为机械化步兵</p>
+<h4 id="编写职业化军队">编写职业化军队</h4>
+<p>仿照步兵, 编写职业化军队的 UNIT_ProfessionalArmy_Gameplay.xml 文件</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">GameData</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- Almost all gameplay types should first be added to the types table. --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- This serves as a central way to reference any type --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Types</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Type</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">Kind</span>=<span class="string">&quot;KIND_UNIT&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Types</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">UnitAiInfos</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">AiType</span>=<span class="string">&quot;UNITAI_COMBAT&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">AiType</span>=<span class="string">&quot;UNITAI_EXPLORE&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">AiType</span>=<span class="string">&quot;UNITTYPE_MELEE&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">AiType</span>=<span class="string">&quot;UNITTYPE_LAND_COMBAT&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">UnitAiInfos</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">UnitReplaces</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Row</span> <span class="attr">CivUniqueUnitType</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">ReplacesUnitType</span>=<span class="string">&quot;UNIT_INFANTRY&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">UnitReplaces</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">TypeTags</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Row</span> <span class="attr">Type</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">Tag</span>=<span class="string">&quot;CLASS_MELEE&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;/<span class="name">TypeTags</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Define the actual unit here. For examples of additional properties and values, look at Units.xml in /Base/Assets/Gameplay/Data/--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Units</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">Row</span> <span class="attr">UnitType</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">Cost</span>=<span class="string">&quot;215&quot;</span> <span class="attr">Maintenance</span>=<span class="string">&quot;3&quot;</span> <span class="attr">BaseMoves</span>=<span class="string">&quot;3&quot;</span> <span class="attr">BaseSightRange</span>=<span class="string">&quot;2&quot;</span> <span class="attr">ZoneOfControl</span>=<span class="string">&quot;true&quot;</span> <span class="attr">Domain</span>=<span class="string">&quot;DOMAIN_LAND&quot;</span> <span class="attr">Combat</span>=<span class="string">&quot;80&quot;</span> <span class="attr">FormationClass</span>=<span class="string">&quot;FORMATION_CLASS_LAND_COMBAT&quot;</span> <span class="attr">PromotionClass</span>=<span class="string">&quot;PROMOTION_CLASS_MELEE&quot;</span> <span class="attr">AdvisorType</span>=<span class="string">&quot;ADVISOR_CONQUEST&quot;</span> <span class="attr">Name</span>=<span class="string">&quot;LOC_UNIT_PROFESSIONAL_ARMY_NAME&quot;</span> <span class="attr">Description</span>=<span class="string">&quot;LOC_UNIT_PROFESSIONAL_ARMY_DESCRIPTION&quot;</span> <span class="attr">PurchaseYield</span>=<span class="string">&quot;YIELD_GOLD&quot;</span> <span class="attr">PrereqTech</span>=<span class="string">&quot;TECH_REPLACEABLE_PARTS&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Units</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">UnitUpgrades</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Row</span> <span class="attr">Unit</span>=<span class="string">&quot;UNIT_LINE_INFANTRY&quot;</span> <span class="attr">UpgradeUnit</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">Row</span> <span class="attr">Unit</span>=<span class="string">&quot;UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">UpgradeUnit</span>=<span class="string">&quot;UNIT_MECHANIZED_INFANTRY&quot;</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">UnitUpgrades</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">GameData</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="文本标签">文本标签</h3>
+<p>对于 LOC_UNIT_PROFESSIONAL_ARMY_NAME 和 LOC_UNIT_PROFESSIONAL_ARMY_DESCRIPTION 两个文本标签, 需要在 UNIT_ProfessionalArmy_Text.xml 中编写</p>
+<p>开发环境已经提供了模板, 不过是英文 en_US 的, 照着写中文 zh_Hans_CN 即可</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">GameData</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">LocalizedText</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- The name of the unit. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Tag</span>=<span class="string">&quot;LOC_UNIT_PROFESSIONAL_ARMY_NAME&quot;</span> <span class="attr">Language</span>=<span class="string">&quot;zh_Hans_CN&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Text</span>&gt;</span>职业化军队<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Row</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- It&#x27;s description. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Tag</span>=<span class="string">&quot;LOC_UNIT_PROFESSIONAL_ARMY_DESCRIPTION&quot;</span> <span class="attr">Language</span>=<span class="string">&quot;zh_Hans_CN&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Text</span>&gt;</span>强大的现代近战单位，替代步兵，造价和维护费更低，战斗力和移动速度更强<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Row</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">LocalizedText</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">GameData</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="图标">图标</h3>
+<p>单位图标可以用游戏自带的, 也可以用自己的</p>
+<p>在文件 Sid Meier’s Civilization VI\Base\Assets\UI\Icons\Icons_Units.xml 中保存了游戏自带的单位图标</p>
+<p>标签 IconDefinitions 下定义了游戏内所有单位的图标</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">Name</span>=<span class="string">&quot;ICON_UNIT_INFANTRY&quot;</span>                 <span class="attr">Atlas</span>=<span class="string">&quot;ICON_ATLAS_UNITS&quot;</span> <span class="attr">Index</span>=<span class="string">&quot;71&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>步兵的图标序号是 71, 代表其图标为游戏自带画册 ICON_ATLAS_UNITS 的 71 号</p>
+<p>在文件 Sid Meier’s Civilization VI\Base\Assets\UI\Icons\Icons_UnitPortraits.xml 中保存了游戏自带的单位头像</p>
+<p>标签 IconDefinitions 下定义了游戏内所有单位的头像</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Row</span> <span class="attr">Name</span>=<span class="string">&quot;ICON_UNIT_INFANTRY_PORTRAIT&quot;</span>                     <span class="attr">Atlas</span>=<span class="string">&quot;ICON_ATLAS_UNIT_PORTRAITS_2&quot;</span> <span class="attr">Index</span>=<span class="string">&quot;5&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于不同地域的同一个单位, 单位头像是不一样的</p>
+</blockquote>
+<p>对应的编写 UNIT_ProfessionalArmy_Icons.xml 文件</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">GameData</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- For simplicity sake, we&#x27;re going to reuse existing icons. --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">IconDefinitions</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- This is the unit icon for the unit. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Name</span>=<span class="string">&quot;ICON_UNIT_PROFESSIONAL_ARMY&quot;</span> <span class="attr">Atlas</span>=<span class="string">&quot;ICON_ATLAS_UNITS&quot;</span> <span class="attr">Index</span>=<span class="string">&quot;71&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- This is the portrait of the unit. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Name</span>=<span class="string">&quot;ICON_UNIT_PROFESSIONAL_ARMY_PORTRAIT&quot;</span> <span class="attr">Atlas</span>=<span class="string">&quot;ICON_ATLAS_UNIT_PORTRAITS_2&quot;</span> <span class="attr">Index</span>=<span class="string">&quot;5&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Ethnic specific portrait of the unit.  This changes based on the leader. --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Name</span>=<span class="string">&quot;ICON_ETHNICITY_ASIAN_UNIT_PROFESSIONAL_ARMY_PORTRAIT&quot;</span> <span class="attr">Atlas</span>=<span class="string">&quot;ICON_ATLAS_ASIAN_UNIT_PORTRAITS&quot;</span> <span class="attr">Index</span>=<span class="string">&quot;1&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Name</span>=<span class="string">&quot;ICON_ETHNICITY_MEDIT_UNIT_PROFESSIONAL_ARMY_PORTRAIT&quot;</span> <span class="attr">Atlas</span>=<span class="string">&quot;ICON_ATLAS_MEDITERRANEAN_UNIT_PORTRAITS&quot;</span> <span class="attr">Index</span>=<span class="string">&quot;1&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Name</span>=<span class="string">&quot;ICON_ETHNICITY_SOUTHAM_UNIT_PROFESSIONAL_ARMY_PORTRAIT&quot;</span> <span class="attr">Atlas</span>=<span class="string">&quot;ICON_ATLAS_SOUTH_AMERICAN_UNIT_PORTRAITS&quot;</span> <span class="attr">Index</span>=<span class="string">&quot;1&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Row</span> <span class="attr">Name</span>=<span class="string">&quot;ICON_ETHNICITY_AFRICAN_UNIT_PROFESSIONAL_ARMY_PORTRAIT&quot;</span> <span class="attr">Atlas</span>=<span class="string">&quot;ICON_ATLAS_AFRICAN_UNIT_PORTRAITS&quot;</span> <span class="attr">Index</span>=<span class="string">&quot;1&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">IconDefinitions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">GameData</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="单位模型设置">单位模型设置</h3>
+<p>在文件 Sid Meier’s Civilization VI\Base\ArtDefs\Units.artdef 中定义了游戏内的单位模型</p>
+<p>搜索 UNIT_INFANTRY, 将其所在的 Element 标签赋值到 Units.artdef 对应位置并替换 UNIT_INFANTRY 为 UNIT_PROFESSIONAL_ARMY 即可</p>
+<p><a target="_blank" rel="noopener" href="https://www.imageoss.com/image/vz2XG5"><img src="https://www.imageoss.com/images/2024/08/07/image-56f1b4358939fc0e9.png" alt="image-56f1b4358939fc0e9.png"></a></p>
+<h3 id="导出-mod">导出 mod</h3>
+<p>设置好 mod 信息, 由于是通过模板制作的 mod, FontEnd Actions 和 In-Game Actions 是编写好的, 如果有其他额外内容, 需要自行设置加载顺序</p>
+<div class="tips">
+<p>如果出现了类似以下的报错: Error 1 The “GeneratePantryPaths” task was not given a value for the required parameter “AssetsPath”. E:\steam\steamapps\common\Sid Meier’s Civilization VI SDK\ModBuddy\Extensions\Application\Civ6.targets 104 6 Unit_Dies</p>
+<p>请参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv6660890/?from=search&amp;spm_id_from=333.337.0.0">专栏</a></p>
+</div>
+<p>按照上一篇笔记的方法导出 mod, 加载进游戏</p>
+<blockquote>
+<p>由于模型设置的偷懒, 导致显示为了工人, 其实修改一下即可</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.imageoss.com/image/vz2EE8"><img src="https://www.imageoss.com/images/2024/08/07/image-7fc912c30628334f3.png" alt="image-7fc912c30628334f3.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.imageoss.com/image/vz27Is"><img src="https://www.imageoss.com/images/2024/08/07/image-6c5b8727be6f9577b.png" alt="image-6c5b8727be6f9577b.png"></a></p>
+<h2 id="Mod-的本质">Mod 的本质</h2>
+<p>由于官方提供了足够的接口, 编写文明 6 的 mod 相比来说更加容易上手</p>
+<p>实际上, 文明 6 的 mod 本质上就是通过官方给的接口, 修改 sql 数据库, 间接达到修改游戏内容的目的</p>
+<p>游戏在启动的时候会创建数据库, 通过游戏自带的 xml 文件给数据库中填预设好的数据 (如文明, 单位等等)</p>
+<p>第三方 mod 在游戏启动后加载, 并在特定时候加载 xml 文件, 覆盖游戏数据库, 达到增加或修改游戏内容的目的</p>
+<h3 id="SQL-替代-XML">SQL 替代 XML</h3>
+<p>实际上许多简单的 mod 不需要大费周章的使用 ModBuddy 开发, 例如 “修改城市间距最小为 5” 这个需求, 就可以通过 sql 文件完成</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">update</span> GlobalParameters <span class="keyword">set</span> <span class="keyword">Value</span><span class="operator">=</span><span class="number">5</span> <span class="keyword">where</span> Name<span class="operator">=</span>&quot;CITY_MIN_RNGE&quot;;</span><br></pre></td></tr></table></figure>
+<p>如果使用 xml, 将会是如下写法</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml ... ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">GameInfo</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">GlobalParameters</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Replace</span> <span class="attr">Name</span>=<span class="string">&quot;CITY_MIN_RNGE&quot;</span> <span class="attr">Value</span>=<span class="string">5/</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">GlobalParameters</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">GameInfo</span>&gt;</span></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://z-vanadium.github.io">Vanadium</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://z-vanadium.github.io/2024/08/07/civ6-mod-make-2/">http://z-vanadium.github.io/2024/08/07/civ6-mod-make-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://z-vanadium.github.io" target="_blank">Vanadium的小屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Sid-Meier-s-Civilization-VI/">Sid Meier's Civilization VI</a><a class="post-meta__tags" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a></div><div class="post_share"><div class="social-share" data-image="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_blog_202011_10_20201110212403_62f28.pngreferhttp___c-ssl.duitanga11808921cabe140.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/08/08/civ6-mod-make-3/" title="文明 6 mod 制作学习笔记 (3) 新的文明"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/u9652726292071240151fm253fmtautoapp120fJPEGcce8d06eb4942622.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">文明 6 mod 制作学习笔记 (3) 新的文明</div></div></a></div><div class="next-post pull-right"><a href="/2024/08/07/civ6-mod-make-1/" title="文明 6 mod 制作学习笔记 (1) 从水下第一个 mod 开始"><img class="cover" src="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201808_31_20180831194410_nFUxH.pngreferhttp___c-ssl.duitang36b656c70b11e82e.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">文明 6 mod 制作学习笔记 (1) 从水下第一个 mod 开始</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/08/07/civ6-mod-make-1/" title="文明 6 mod 制作学习笔记 (1) 从水下第一个 mod 开始"><img class="cover" src="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201808_31_20180831194410_nFUxH.pngreferhttp___c-ssl.duitang36b656c70b11e82e.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-07</div><div class="title">文明 6 mod 制作学习笔记 (1) 从水下第一个 mod 开始</div></div></a></div><div><a href="/2024/08/08/civ6-mod-make-3/" title="文明 6 mod 制作学习笔记 (3) 新的文明"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/u9652726292071240151fm253fmtautoapp120fJPEGcce8d06eb4942622.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-08</div><div class="title">文明 6 mod 制作学习笔记 (3) 新的文明</div></div></a></div><div><a href="/2024/07/16/civ-1/" title="文明 6 游戏机制"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/srchttp___c-ssl.duitang.com_uploads_item_201904_30_20190430004717_hruma.thumb.1000_0.jpgreferhttp___c-ssl.duitangcbb1b107ff8c30a4.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-16</div><div class="title">文明 6 游戏机制</div></div></a></div><div><a href="/2024/05/02/game-develop-cpp-plus/" title="Se:从零开始的C++游戏开发 | 日经记录贴"><img class="cover" src="https://www.imageoss.com/images/2024/03/29/srchttp___c-ssl.duitang.com_uploads_item_201904_30_20190430004717_hruma.thumb.1000_0.jpgreferhttp___c-ssl.duitangcbb1b107ff8c30a4.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-02</div><div class="title">Se:从零开始的C++游戏开发 | 日经记录贴</div></div></a></div><div><a href="/2024/04/14/game-develop-cpp/" title="Re:从零开始的C++游戏开发 | 日经记录贴"><img class="cover" src="https://www.imageoss.com/images/2024/03/28/7308e5ac7bbd2f51fdf31298297a24d7487738c966f46b2d.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-14</div><div class="title">Re:从零开始的C++游戏开发 | 日经记录贴</div></div></a></div><div><a href="/2024/02/03/minecraft-datapack/" title="玩游戏大师 | MC数据包开发攻略"><img class="cover" src="https://www.imageoss.com/images/2024/03/28/srchttp___c-ssl.duitang.com_uploads_item_201808_31_20180831194410_nFUxH.pngreferhttp___c-ssl.duitang36b656c70b11e82e.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-03</div><div class="title">玩游戏大师 | MC数据包开发攻略</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.imageoss.com/images/2024/03/27/avatar84f10990023d148a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Vanadium</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">37</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Z-Vanadium"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to Vanadium's Blog!<br>
+ZJUer | Freshman | IS | 术力口 | 摸鱼 | OP
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mod-%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">Mod 相关文件类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E5%8D%95%E4%BD%8D"><span class="toc-number">2.</span> <span class="toc-text">创建新的单位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">2.1.</span> <span class="toc-text">设计目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA-project"><span class="toc-number">2.2.</span> <span class="toc-text">新建 project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.3.</span> <span class="toc-text">单位参数设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%89%88%E5%8D%95%E4%BD%8D%E7%BB%93%E6%9E%84"><span class="toc-number">2.3.1.</span> <span class="toc-text">原版单位结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E8%81%8C%E4%B8%9A%E5%8C%96%E5%86%9B%E9%98%9F"><span class="toc-number">2.3.2.</span> <span class="toc-text">编写职业化军队</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A0%87%E7%AD%BE"><span class="toc-number">2.4.</span> <span class="toc-text">文本标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87"><span class="toc-number">2.5.</span> <span class="toc-text">图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E6%A8%A1%E5%9E%8B%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.6.</span> <span class="toc-text">单位模型设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA-mod"><span class="toc-number">2.7.</span> <span class="toc-text">导出 mod</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mod-%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">3.</span> <span class="toc-text">Mod 的本质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E6%9B%BF%E4%BB%A3-XML"><span class="toc-number">3.1.</span> <span class="toc-text">SQL 替代 XML</span></a></li></ol></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>系列文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/08/civ6-mod-make-3/" title="文明 6 mod 制作学习笔记 (3) 新的文明">文明 6 mod 制作学习笔记 (3) 新的文明</a><time datetime="2024-08-08T06:33:11.653Z" title="发表于 2024-08-08 14:33:11">2024-08-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/07/civ6-mod-make-2/" title="文明 6 mod 制作学习笔记 (2) 新的单位">文明 6 mod 制作学习笔记 (2) 新的单位</a><time datetime="2024-08-07T08:58:59.037Z" title="发表于 2024-08-07 16:58:59">2024-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/07/civ6-mod-make-1/" title="文明 6 mod 制作学习笔记 (1) 从水下第一个 mod 开始">文明 6 mod 制作学习笔记 (1) 从水下第一个 mod 开始</a><time datetime="2024-08-07T07:48:33.537Z" title="发表于 2024-08-07 15:48:33">2024-08-07</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/3939/03/09/bulletin-board/" title="Vanadium的小屋御用公告板">Vanadium的小屋御用公告板</a><time datetime="3939-03-08T19:09:39.000Z" title="发表于 3939-03-09 03:09:39">3939-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/08/civ6-mod-make-3/" title="文明 6 mod 制作学习笔记 (3) 新的文明">文明 6 mod 制作学习笔记 (3) 新的文明</a><time datetime="2024-08-08T06:33:11.653Z" title="发表于 2024-08-08 14:33:11">2024-08-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/07/civ6-mod-make-2/" title="文明 6 mod 制作学习笔记 (2) 新的单位">文明 6 mod 制作学习笔记 (2) 新的单位</a><time datetime="2024-08-07T08:58:59.037Z" title="发表于 2024-08-07 16:58:59">2024-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/07/civ6-mod-make-1/" title="文明 6 mod 制作学习笔记 (1) 从水下第一个 mod 开始">文明 6 mod 制作学习笔记 (1) 从水下第一个 mod 开始</a><time datetime="2024-08-07T07:48:33.537Z" title="发表于 2024-08-07 15:48:33">2024-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/21/prototype-chain-pollution-vulnerability-in-js/" title="Javascript 中的原型链污染漏洞">Javascript 中的原型链污染漏洞</a><time datetime="2024-07-20T20:40:11.000Z" title="发表于 2024-07-21 04:40:11">2024-07-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/16/civ-1/" title="文明 6 游戏机制">文明 6 游戏机制</a><time datetime="2024-07-15T22:31:04.000Z" title="发表于 2024-07-16 06:31:04">2024-07-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/24/sys1-lab/" title="Computer System I Lab project 实验报告">Computer System I Lab project 实验报告</a><time datetime="2024-06-24T13:01:50.046Z" title="发表于 2024-06-24 21:01:50">2024-06-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/16/cpp-perfect-forwarding/" title="C++ | 完美转发">C++ | 完美转发</a><time datetime="2024-05-16T13:46:38.000Z" title="发表于 2024-05-16 21:46:38">2024-05-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/13/riscv/" title="RISC-V 初探">RISC-V 初探</a><time datetime="2024-05-13T12:47:34.000Z" title="发表于 2024-05-13 20:47:34">2024-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/02/game-develop-cpp-plus/" title="Se:从零开始的C++游戏开发 | 日经记录贴">Se:从零开始的C++游戏开发 | 日经记录贴</a><time datetime="2024-05-02T12:25:08.000Z" title="发表于 2024-05-02 20:25:08">2024-05-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Vanadium</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
